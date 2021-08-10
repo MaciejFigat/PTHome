@@ -7,8 +7,8 @@ export const NavContainer = styled.nav`
   top: 0;
   height: fit-content;
   max-width: 100%;
-  background: var(--background-tertiary5);
-  box-shadow: inset 6px 6px 31px #5c171c, inset -6px -6px 31px #ff5b70;
+  background: var(--background1-main);
+  box-shadow: inset 20px 20px 40px #171718, inset -20px -20px 40px #252526;
   z-index: 22;
 `
 export const NavList = styled.ul`

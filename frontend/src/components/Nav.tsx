@@ -14,7 +14,7 @@ const Nav: React.FC<NavProps> = () => {
             smooth
             to='/home/#home'
             activeClassName='selected'
-            activeStyle={{ fontWeight: 'bold', color: 'lightcoral' }}
+            activeStyle={{ fontWeight: 'bold', color: '#A2A1A6' }}
           >
             O mnie
           </NavHashLink>
@@ -25,7 +25,7 @@ const Nav: React.FC<NavProps> = () => {
             smooth
             to='/home/#fitness'
             activeClassName='selected'
-            activeStyle={{ fontWeight: 'bold', color: 'lightcoral' }}
+            activeStyle={{ fontWeight: 'bold', color: '#A2A1A6' }}
           >
             Usługi
           </NavHashLink>
@@ -36,7 +36,7 @@ const Nav: React.FC<NavProps> = () => {
             smooth
             to='/home/#plans'
             activeClassName='selected'
-            activeStyle={{ fontWeight: 'bold', color: 'lightcoral' }}
+            activeStyle={{ fontWeight: 'bold', color: '#A2A1A6' }}
           >
             Exe
           </NavHashLink>
@@ -47,7 +47,7 @@ const Nav: React.FC<NavProps> = () => {
             smooth
             to='/home/#training'
             activeClassName='selected'
-            activeStyle={{ fontWeight: 'bold', color: 'lightcoral' }}
+            activeStyle={{ fontWeight: 'bold', color: '#CBC9CF' }}
           >
             Blog
           </NavHashLink>
