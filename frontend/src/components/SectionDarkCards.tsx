@@ -1,9 +1,9 @@
 import React from 'react'
 import {
-  CardContainer,
   CardDark,
   CardTitle,
   CardContent,
+  CardContainerDark,
 } from '../styles/sectionCards'
 interface SectionDarkCardsProps {
   cardData: { id: Number; title: String; description: String }[]
@@ -11,7 +11,7 @@ interface SectionDarkCardsProps {
 
 const SectionDarkCards: React.FC<SectionDarkCardsProps> = ({ cardData }) => {
   return (
-    <CardContainer>
+    <CardContainerDark>
       {cardData &&
         cardData.map((example) => (
           <CardDark key={example.id}>
@@ -19,7 +19,7 @@ const SectionDarkCards: React.FC<SectionDarkCardsProps> = ({ cardData }) => {
             <CardContent>{example.description}</CardContent>
           </CardDark>
         ))}
-    </CardContainer>
+    </CardContainerDark>
   )
 }
 export default SectionDarkCards
