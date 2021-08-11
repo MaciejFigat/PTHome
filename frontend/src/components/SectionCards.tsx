@@ -2,6 +2,7 @@ import React from 'react'
 import {
   CardContainer,
   Card,
+  CardSecondary,
   CardTitle,
   CardContent,
 } from '../styles/sectionCards'
