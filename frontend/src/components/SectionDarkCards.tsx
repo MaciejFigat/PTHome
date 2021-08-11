@@ -1,25 +1,25 @@
 import React from 'react'
 import {
   CardContainer,
-  Card,
+  CardDark,
   CardTitle,
   CardContent,
 } from '../styles/sectionCards'
-interface SectionCardsProps {
+interface SectionDarkCardsProps {
   cardData: { id: Number; title: String; description: String }[]
 }
 
-const SectionCards: React.FC<SectionCardsProps> = ({ cardData }) => {
+const SectionDarkCards: React.FC<SectionDarkCardsProps> = ({ cardData }) => {
   return (
     <CardContainer>
       {cardData &&
         cardData.map((example) => (
-          <Card key={example.id}>
+          <CardDark key={example.id}>
             <CardTitle>{example.title}</CardTitle>
             <CardContent>{example.description}</CardContent>
-          </Card>
+          </CardDark>
         ))}
     </CardContainer>
   )
 }
-export default SectionCards
+export default SectionDarkCards

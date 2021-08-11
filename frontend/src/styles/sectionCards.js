@@ -31,7 +31,7 @@ export const Card = styled.div`
     margin: 0.5rem;
   }
 `
-export const CardSecondary = styled.div`
+export const CardDark = styled.div`
   /* for color #A2A1A6 */
   background: linear-gradient(145deg, #adacb2, #929195);
   box-shadow: 6px 6px 12px #7b7a7e, -6px -6px 12px #c9c8ce;
