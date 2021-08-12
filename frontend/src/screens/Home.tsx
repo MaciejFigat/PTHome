@@ -1,6 +1,6 @@
 import React from 'react'
 import SectionCards from '../components/SectionCards'
-import SectionDarkCards from '../components/SectionDarkCards'
+
 interface HomeProps {}
 
 const cardDataOne = [
@@ -13,7 +13,9 @@ const Home: React.FC<HomeProps> = () => {
   return (
     <>
       <SectionCards cardData={cardDataOne} />
-      <SectionDarkCards cardData={cardDataOne} />
+      <SectionCards cardData={cardDataOne} variant='secondary' />
+      <SectionCards cardData={cardDataOne} variant='primary' />
+      <SectionCards cardData={cardDataOne} variant='dark' />
     </>
   )
 }

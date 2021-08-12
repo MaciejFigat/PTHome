@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-
+/* Light Card styling */
 export const CardContainer = styled.div`
   height: 100vh;
   display: flex;
@@ -10,17 +10,7 @@ export const CardContainer = styled.div`
     flex-direction: column;
   }
 `
-export const CardContainerDark = styled.div`
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
-  place-items: center;
-  background-color: var(--background1-main);
-  justify-content: center;
-  @media (max-width: 880px) {
-    flex-direction: column;
-  }
-`
+
 export const Card = styled.div`
   /* for color #A2A1A6 */
   background: linear-gradient(145deg, #adacb2, #929195);
@@ -40,6 +30,18 @@ export const Card = styled.div`
     max-width: 84vw;
     padding: 0.75rem;
     margin: 0.5rem;
+  }
+`
+/* Dark Card styling */
+export const CardContainerDark = styled.div`
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  place-items: center;
+  background-color: var(--background1-main);
+  justify-content: center;
+  @media (max-width: 880px) {
+    flex-direction: column;
   }
 `
 export const CardDark = styled.div`
@@ -63,6 +65,77 @@ export const CardDark = styled.div`
     margin: 0.5rem;
   }
 `
+/* Primary Card styling */
+export const CardContainerPrimary = styled.div`
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  place-items: center;
+  background-color: var(--background2-main);
+  justify-content: center;
+  @media (max-width: 880px) {
+    flex-direction: column;
+  }
+`
+
+export const CardPrimary = styled.div`
+  /* for color #3C3B3D */
+  background: linear-gradient(145deg, #363537, #403f41);
+  box-shadow: 5px 5px 10px #2b2a2b, -5px -5px 10px #4d4c4f;
+  color: var(--background5-main);
+  height: 400px;
+  width: 360px;
+  padding: 2rem;
+  margin: 1rem;
+  border-radius: 0.55rem;
+  transition: 0.3s;
+  &:hover {
+    box-shadow: 10px 10px 20px #2b2a2b, -10px -10px 20px #4d4c4f;
+
+    transition: 0.3s;
+  }
+  @media (max-width: 880px) {
+    max-width: 84vw;
+    padding: 0.75rem;
+    margin: 0.5rem;
+  }
+`
+/* Secondary Card styling */
+export const CardContainerSecondary = styled.div`
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  place-items: center;
+  background-color: var(--background5-main);
+  justify-content: center;
+  @media (max-width: 880px) {
+    flex-direction: column;
+  }
+`
+
+export const CardSecondary = styled.div`
+  /* for color #CBC9CF */
+  background: var(--background5-main);
+  box-shadow: inset 5px 5px 10px #9a999d, inset -5px -5px 10px #fcf9ff;
+  color: var(--background1-main);
+  height: 400px;
+  width: 360px;
+  padding: 2rem;
+  margin: 1rem;
+  border-radius: 0.55rem;
+  transition: 0.3s;
+  &:hover {
+    box-shadow: inset 16px 16px 32px #9e9da1, inset -16px -16px 32px #f8f5fd;
+
+    transition: 0.3s;
+  }
+  @media (max-width: 880px) {
+    max-width: 84vw;
+    padding: 0.75rem;
+    margin: 0.5rem;
+  }
+`
+
 export const CardTitle = styled.h1`
   font-size: 2rem;
 `
