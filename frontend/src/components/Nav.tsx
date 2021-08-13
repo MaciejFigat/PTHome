@@ -53,9 +53,6 @@ const Nav: React.FC<NavProps> = () => {
           </NavHashLink>
         </ListItem>
         <ListItem> </ListItem>
-        <ListItem>
-          <ContactIcons />
-        </ListItem>
       </NavList>
     </NavContainer>
   )

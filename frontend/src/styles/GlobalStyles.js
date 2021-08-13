@@ -14,7 +14,9 @@ body {
     max-width: 100vw;
     height: 100%;
     background-color: var(--background4-main);  
-    font-family: 'Quicksand', sans-serif; 
+    // font-family: 'Quicksand', sans-serif; 
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 
 :root {
