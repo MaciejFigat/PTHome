@@ -37,3 +37,19 @@ export const HeaderItem = styled.li`
     margin-right: 0.25rem;
   }
 `
+export const HeaderSvgContainer = styled.div`
+  width: 15vw;
+  height: 10vh;
+  /* min-width: 150px; */
+  display: flex;
+  place-content: center;
+  overflow: hidden;
+`
+export const HeaderSvgItem = styled.svg`
+  width: 96%;
+  overflow: visible;
+  stroke: var(--background4-main);
+  stroke-width: 0.85;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+`

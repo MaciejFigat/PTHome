@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavHashLink } from 'react-router-hash-link'
 import { NavContainer, NavList, ListItem } from '../styles/nav'
-import ContactIcons from './ContactIcons'
+
 interface NavProps {}
 
 const Nav: React.FC<NavProps> = () => {
