@@ -18,7 +18,7 @@ const Nav: React.FC<NavProps> = () => {
 
   // on scroll I update scrollDirection
   useEffect(() => {
-    if (scroll.y > 150 && scroll.y - scroll.lastY > 0)
+    if (scroll.y > 250 && scroll.y - scroll.lastY > 0)
       setScrollDirection('down')
     else {
       setScrollDirection('up')

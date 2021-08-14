@@ -35,5 +35,5 @@ export default function useScrollListener() {
 
   return data
 }
-
-export const ScrollContext = createContext(null)
+// context is added so I could use listener elswhere in my app
+export const ScrollContext: React.Context<null> = createContext(null)
