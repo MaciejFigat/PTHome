@@ -1,5 +1,27 @@
 import styled from 'styled-components'
 
+export const TransitionWrapper = styled.div`
+  /* position: sticky;
+  top: 0; */
+
+  .active {
+    /* position: sticky;
+    top: 0; */
+
+    visibility: visible;
+    transition: all 200ms ease-in;
+  }
+  .hidden {
+    visibility: hidden;
+    /* position: sticky;
+    top: -100px; */
+    /* position: sticky;
+    top: 0; */
+
+    transition: all 200ms ease-out;
+    transform: translate(0, -100%);
+  }
+`
 export const NavContainer = styled.nav`
   display: grid;
   place-items: center;
@@ -7,7 +29,7 @@ export const NavContainer = styled.nav`
   top: 0;
   height: fit-content;
   max-width: 100%;
-  background: var(--background1-main);
+  /* background: var(--background1-main); */
   box-shadow: inset 20px 20px 40px #171718, inset -20px -20px 40px #252526;
   z-index: 22;
 `
