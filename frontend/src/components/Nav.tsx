@@ -1,4 +1,4 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 import { NavHashLink } from 'react-router-hash-link'
 import {
   TransitionWrapper,
@@ -6,22 +6,30 @@ import {
   NavList,
   ListItem,
 } from '../styles/nav'
-import useScroll from '../hooks/useScroll'
+
+import useScrollListener from '../hooks/useScrollListener'
 interface NavProps {}
 
 const Nav: React.FC<NavProps> = () => {
-  // const { scrollX, scrollY, scrollDirection } = useScroll()
-  const { scrollDirection } = useScroll()
+  const [scrollDirection, setScrollDirection] = useState<
+    'up' | 'down' | undefined | null
+  >()
+  const scroll = useScrollListener()
+
+  // on scroll I update scrollDirection
+  useEffect(() => {
+    if (scroll.y > 150 && scroll.y - scroll.lastY > 0)
+      setScrollDirection('down')
+    else {
+      setScrollDirection('up')
+    }
+  }, [scroll.y, scroll.lastY])
+
   return (
-    <TransitionWrapper
-    // className={
-    //   scrollDirection === 'down' || null || undefined ? 'active' : 'hidden'
-    // }
-    // className={scrollDirection === 'up' || null ? 'active' : 'hidden'}
-    >
+    <TransitionWrapper>
       <NavContainer
         className={
-          scrollDirection === 'down' || null || undefined ? 'active' : 'hidden'
+          scrollDirection === 'up' || null || undefined ? 'active' : 'hidden'
         }
       >
         <NavList>
@@ -31,7 +39,7 @@ const Nav: React.FC<NavProps> = () => {
               smooth
               to='/home/#home'
               activeClassName='selected'
-              activeStyle={{ fontWeight: 'bold', color: '#A2A1A6' }}
+              activeStyle={{ color: '#A2A1A6' }}
             >
               O mnie
             </NavHashLink>
@@ -42,7 +50,7 @@ const Nav: React.FC<NavProps> = () => {
               smooth
               to='/home/#fitness'
               activeClassName='selected'
-              activeStyle={{ fontWeight: 'bold', color: '#A2A1A6' }}
+              activeStyle={{ color: '#A2A1A6' }}
             >
               Usługi
             </NavHashLink>
@@ -53,7 +61,7 @@ const Nav: React.FC<NavProps> = () => {
               smooth
               to='/home/#plans'
               activeClassName='selected'
-              activeStyle={{ fontWeight: 'bold', color: '#A2A1A6' }}
+              activeStyle={{ color: '#A2A1A6' }}
             >
               Exe
             </NavHashLink>
@@ -64,7 +72,7 @@ const Nav: React.FC<NavProps> = () => {
               smooth
               to='/home/#training'
               activeClassName='selected'
-              activeStyle={{ fontWeight: 'bold', color: '#CBC9CF' }}
+              activeStyle={{ color: '#CBC9CF' }}
             >
               Blog
             </NavHashLink>
