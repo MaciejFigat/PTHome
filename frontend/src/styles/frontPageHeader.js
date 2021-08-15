@@ -38,7 +38,7 @@ export const HeaderItem = styled.li`
   }
 `
 export const HeaderSvgContainer = styled.div`
-  width: 15vw;
+  /* width: 10vw; */
   height: 10vh;
   /* min-width: 150px; */
   display: flex;
