@@ -17,5 +17,6 @@ export const SectionTitle = styled.h1`
   font-size: 2rem;
 `
 export const SectionDescription = styled.p`
-  font-size: 0.75rem;
+  font-size: 1.25rem;
+  margin-left: 1rem;
 `
