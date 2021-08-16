@@ -25,15 +25,15 @@ export const TransitionWrapper = styled.div`
     transform: translateY(-100%);
   }
 
-  /* @media (max-width: 1020px) {
-    .opened {
+  @media (max-width: 1020px) {
+    .active {
       transition: all 200ms ease-in;
     }
-    .closed {
+    .hidden {
       transition: all 300ms ease-in;
       transform: translateX(-100%);
     }
-  } */
+  }
 `
 export const NavContainer = styled.nav`
   display: flex;
