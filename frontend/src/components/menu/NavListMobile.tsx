@@ -13,6 +13,10 @@ const NavListMobile: React.FC<NavListMobileProps> = () => {
       </ListItem>
       <ListItem>
         {' '}
+        <ContactIcons />
+      </ListItem>
+      <ListItem>
+        {' '}
         <NavHashLink
           smooth
           to='/home/#home'
@@ -54,10 +58,6 @@ const NavListMobile: React.FC<NavListMobileProps> = () => {
         >
           Blog
         </NavHashLink>
-      </ListItem>
-      <ListItem>
-        {' '}
-        <ContactIcons />
       </ListItem>
     </NavListSmall>
   )

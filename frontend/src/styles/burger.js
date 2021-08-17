@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
-export const BurgerWrapper = styled.div``
+export const BurgerWrapper = styled.div`
+  max-width: fit-content;
+`
 export const BurgerContainer = styled.div`
   display: none;
   @media (max-width: 1020px) {

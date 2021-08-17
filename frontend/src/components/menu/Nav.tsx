@@ -4,7 +4,9 @@ import {
   TransitionWrapperMain,
   TransitionWrapper,
   NavContainer,
+  MobileViewContainer,
 } from '../../styles/nav'
+import { HeaderTitleMobile } from '../../styles/frontPageHeader'
 import NavListDesktop from './NavListDesktop'
 import NavListMobile from './NavListMobile'
 import useScrollListener from '../../hooks/useScrollListener'
@@ -36,10 +38,12 @@ const Nav: React.FC<NavProps> = () => {
           scrollDirection === 'up' || null || undefined ? 'active' : 'hidden'
         }
       >
-        <div onClick={handleClickMenu}>
-          <Burger menuOpen={menuOpen} />
-        </div>
-
+        <MobileViewContainer>
+          <div onClick={handleClickMenu}>
+            <Burger menuOpen={menuOpen} />{' '}
+          </div>{' '}
+          <HeaderTitleMobile>Nina K - trener</HeaderTitleMobile>
+        </MobileViewContainer>
         <NavContainer
           className={
             scrollDirection === 'up' || null || undefined

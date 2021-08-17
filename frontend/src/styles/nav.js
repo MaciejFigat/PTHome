@@ -15,15 +15,16 @@ export const TransitionWrapper = styled.div`
   position: sticky;
   top: 0;
   min-width: 100vw;
-  max-height: 3rem;
+  max-height: 3.1rem;
+
   background: var(--background1-main);
-  .active {
+  /* .active {
     transition: all 200ms ease-in;
   }
   .hidden {
     transition: all 300ms ease-in;
     transform: translateY(-100%);
-  }
+  } */
 
   @media (max-width: 1020px) {
     .active {
@@ -45,14 +46,13 @@ export const NavContainer = styled.nav`
   background: var(--background1-main);
   box-shadow: inset 20px 20px 40px #171718, inset -20px -20px 40px #252526;
   z-index: 22;
+
   @media (max-width: 1020px) {
-    /* justify-content: start; */
     justify-content: center;
     padding-left: 1rem;
     padding-right: 1rem;
     max-width: fit-content;
     transform: translateX(-100%);
-    /* min-width: 20vw; */
     min-width: 300px;
     transition: all 200ms ease-in;
     &.true {
@@ -68,7 +68,6 @@ export const NavList = styled.ul`
   justify-content: center;
   padding: 0;
   @media (max-width: 1020px) {
-    /* flex-direction: column; */
     display: none;
   }
 `
@@ -98,4 +97,11 @@ export const ListItem = styled.li`
     padding: 0.5rem;
     margin: 0;
   }
+`
+
+export const MobileViewContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 2rem 0 1rem;
 `
