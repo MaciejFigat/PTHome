@@ -49,11 +49,12 @@ export const NavContainer = styled.nav`
 
   @media (max-width: 1020px) {
     justify-content: center;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    /* padding-left: 1rem; */
+    /* padding-right: 1rem; */
     max-width: fit-content;
     transform: translateX(-100%);
-    min-width: 300px;
+    /* min-width: 300px; */
+    min-width: 100vw;
     transition: all 200ms ease-in;
     &.true {
       transition: all 300ms ease-in;
