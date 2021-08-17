@@ -27,6 +27,3 @@ export const BurgerLine = styled.div`
     transform: rotate(45deg) translate(-4.95px, 2.75px);
   }
 `
-// export const LineOne = styled.div``
-// export const LineTwo = styled.div``
-// export const LineThree = styled.div``

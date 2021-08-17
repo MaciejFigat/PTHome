@@ -9,6 +9,9 @@ export const HeaderContainer = styled.div`
   background: var(--background1-main);
   box-shadow: inset 20px 20px 40px #171718, inset -20px -20px 40px #252526;
   z-index: 22;
+  @media (max-width: 1020px) {
+    display: none;
+  }
 `
 export const HeaderTitle = styled.h1`
   color: var(--background4-main);

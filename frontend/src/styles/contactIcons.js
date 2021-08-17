@@ -5,15 +5,17 @@ export const IconsWrapper = styled.ul`
   padding: 0;
 
   display: flex;
+  justify-content: center;
   flex-direction: row;
-  padding-right: 0.5rem;
-  &:first-child {
-    margin-left: 1.25rem;
-  }
 `
 export const IconsItem = styled.li`
   margin-right: 1rem;
-  @media (max-width: 740px) {
-    margin-right: 0.5rem;
+  display: flex;
+  justify-content: center;
+  @media (max-width: 1020px) {
+    margin-right: 0.75rem;
+    &:last-child {
+      margin-right: 0rem;
+    }
   }
 `

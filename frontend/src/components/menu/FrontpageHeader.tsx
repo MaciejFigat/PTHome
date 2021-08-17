@@ -4,13 +4,15 @@ import {
   HeaderTitle,
   HeaderList,
   HeaderItem,
-} from '../styles/frontPageHeader'
-import ContactIcons from './ContactIcons'
-import HeaderSvg from './HeaderSvg'
+} from '../../styles/frontPageHeader'
+import ContactIcons from '../ContactIcons'
+import HeaderSvg from '../HeaderSvg'
 
-interface FrontpageHeaderProps {}
+interface FrontpageHeaderProps {
+  title: string
+}
 
-const FrontpageHeader: React.FC<FrontpageHeaderProps> = () => {
+const FrontpageHeader: React.FC<FrontpageHeaderProps> = ({ title }) => {
   return (
     <HeaderContainer>
       <HeaderList>
@@ -18,7 +20,7 @@ const FrontpageHeader: React.FC<FrontpageHeaderProps> = () => {
           <HeaderSvg />{' '}
         </HeaderItem>
         <HeaderItem>
-          <HeaderTitle>Nina K. trener personalny</HeaderTitle>
+          <HeaderTitle>{title}</HeaderTitle>
         </HeaderItem>
         <HeaderItem>
           {' '}
