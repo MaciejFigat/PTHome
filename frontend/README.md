@@ -1,9 +1,10 @@
 ### `Structure explanation - Navigation`
 ├──FrontpageHeader (this header is rendered only in desktop view)
 ├──Nav.tsx (this component implements a custom hook that enables changing classess of certain components according to screen scrolling)
-
-    ├──NavListDesktop(menu for desktop view)- only one is rendered
-    ├──NavListMobile(menu for mobile view) - it contains social media icons that are absent in the above menu 
+    ├── for example TransitionWrapper gets additional class active or hidden depending on direction of the scroll and the distance - it enables hiding and sliding it in view depending on scroll input
+    also HeaderTitleDesktop is a title component that shows only when user is not at the top of the page ie. when header is out of the view
+    ├──NavListDesktop- contains components that are only rendered in mobile view 
+  
     ├──
 
 

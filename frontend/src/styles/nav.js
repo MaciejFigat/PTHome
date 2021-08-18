@@ -56,10 +56,10 @@ export const NavList = styled.ul`
 
 export const ListItem = styled.li`
   margin-right: 1rem;
-  font-size: 1.75rem;
-  font-weight: 500;
+  font-size: 1.15rem;
+  font-weight: 600;
   display: flex;
-
+  text-transform: uppercase;
   color: var(--background5-main);
   @media (max-width: 1020px) {
     flex-direction: column;

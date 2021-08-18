@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavList, ListItem, ListItemMobile } from '../../styles/nav'
 import { NavHashLink } from 'react-router-hash-link'
+import { NavLink } from 'react-router-dom'
 import ContactIcons from '../ContactIcons'
 
 interface NavListMobileProps {}
@@ -18,47 +19,63 @@ const NavListDesktop: React.FC<NavListMobileProps> = () => {
       </ListItemMobile>
       <ListItem>
         {' '}
-        <NavHashLink
-          smooth
-          to='/home/#home'
-          activeClassName='selected'
-          activeStyle={{ color: '#A2A1A6' }}
+        <NavLink
+          exact
+          to='/home'
+          className='nav_link'
+          activeClassName='nav_link_active'
         >
-          O mnie
-        </NavHashLink>
+          {' '}
+          Home
+        </NavLink>
       </ListItem>
       <ListItem>
         {' '}
-        <NavHashLink
-          smooth
-          to='/home/#fitness'
-          activeClassName='selected'
-          activeStyle={{ color: '#A2A1A6' }}
+        <NavLink
+          exact
+          to='/blog'
+          className='nav_link'
+          activeClassName='nav_link_active'
         >
-          Usługi
-        </NavHashLink>
-      </ListItem>
-      <ListItem>
-        {' '}
-        <NavHashLink
-          smooth
-          to='/home/#plans'
-          activeClassName='selected'
-          activeStyle={{ color: '#A2A1A6' }}
-        >
-          Exe
-        </NavHashLink>
-      </ListItem>
-      <ListItem>
-        {' '}
-        <NavHashLink
-          smooth
-          to='/home/#training'
-          activeClassName='selected'
-          activeStyle={{ color: '#CBC9CF' }}
-        >
+          {' '}
           Blog
-        </NavHashLink>
+        </NavLink>
+      </ListItem>
+      <ListItem>
+        {' '}
+        <NavLink
+          exact
+          to='/exercise'
+          className='nav_link'
+          activeClassName='nav_link_active'
+        >
+          {' '}
+          Ćwiczenia
+        </NavLink>
+      </ListItem>
+      <ListItem>
+        {' '}
+        <NavLink
+          exact
+          to='/shop'
+          className='nav_link'
+          activeClassName='nav_link_active'
+        >
+          {' '}
+          Shop
+        </NavLink>
+      </ListItem>
+      <ListItem>
+        {' '}
+        <NavLink
+          exact
+          to='/contact'
+          className='nav_link'
+          activeClassName='nav_link_active'
+        >
+          {' '}
+          Kontakt
+        </NavLink>
       </ListItem>
     </NavList>
   )
