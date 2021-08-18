@@ -30,6 +30,9 @@ export const Card = styled.div`
     max-width: 84vw;
     padding: 0.75rem;
     margin: 0.5rem;
+    &:hover {
+      box-shadow: 6px 6px 12px #7b7a7e, -6px -6px 12px #c9c8ce;
+    }
   }
 `
 /* Dark Card styling */
@@ -63,6 +66,9 @@ export const CardDark = styled.div`
     max-width: 84vw;
     padding: 0.75rem;
     margin: 0.5rem;
+    &:hover {
+      box-shadow: 5px 5px 10px #131313, -5px -5px 10px #29292b;
+    }
   }
 `
 /* Primary Card styling */
@@ -98,6 +104,9 @@ export const CardPrimary = styled.div`
     max-width: 84vw;
     padding: 0.75rem;
     margin: 0.5rem;
+    &:hover {
+      box-shadow: 5px 5px 10px #2b2a2b, -5px -5px 10px #4d4c4f;
+    }
   }
 `
 /* Secondary Card styling */
@@ -126,19 +135,28 @@ export const CardSecondary = styled.div`
   transition: 0.3s;
   &:hover {
     box-shadow: inset 16px 16px 32px #9e9da1, inset -16px -16px 32px #f8f5fd;
-
     transition: 0.3s;
   }
+
   @media (max-width: 880px) {
     max-width: 84vw;
     padding: 0.75rem;
     margin: 0.5rem;
+    &:hover {
+      box-shadow: inset 5px 5px 10px #9a999d, inset -5px -5px 10px #fcf9ff;
+    }
   }
 `
 
 export const CardTitle = styled.h1`
   font-size: 2rem;
+  @media (max-width: 880px) {
+    font-size: 1.25rem;
+  }
 `
 export const CardContent = styled.p`
   font-size: 1.25rem;
+  @media (max-width: 880px) {
+    font-size: 0.95rem;
+  }
 `
