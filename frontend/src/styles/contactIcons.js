@@ -12,6 +12,8 @@ export const IconsItem = styled.li`
   margin-right: 1rem;
   display: flex;
   justify-content: center;
+  align-items: center;
+  color: var(--background4-main);
   @media (max-width: 1020px) {
     margin-right: 0.75rem;
     &:last-child {

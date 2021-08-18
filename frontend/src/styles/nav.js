@@ -15,13 +15,13 @@ export const TransitionWrapper = styled.div`
   position: sticky;
   top: 0;
   min-width: 100vw;
-  max-height: 3.1rem;
+  max-height: 3.2rem;
   z-index: 9999;
   background: var(--background1-main);
 `
 export const NavContainer = styled.nav`
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   position: sticky;
   top: 0;
   height: fit-content;
@@ -30,16 +30,15 @@ export const NavContainer = styled.nav`
   box-shadow: inset 20px 20px 40px #171718, inset -20px -20px 40px #252526;
   z-index: -1;
   @media (max-width: 1020px) {
+    flex-direction: column;
     justify-content: center;
     max-width: fit-content;
-    opacity: 0;
     transform: translateX(-130%);
     min-width: 100vw;
     transition: all 200ms ease-in;
     &.true {
       transition: all 300ms ease-in;
       transform: translateX(0%);
-      opacity: 100%;
     }
   }
 `
@@ -47,23 +46,14 @@ export const NavContainer = styled.nav`
 export const NavList = styled.ul`
   list-style: none;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   padding: 0;
+  min-width: 50vw;
   @media (max-width: 1020px) {
-    display: none;
+    flex-direction: column;
   }
 `
-// the following list is used for mobile devices
-export const NavListSmall = styled.ul`
-  display: none;
-  list-style: none;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0;
-  @media (max-width: 1020px) {
-    display: flex;
-  }
-`
+
 export const ListItem = styled.li`
   margin-right: 1rem;
   font-size: 1.75rem;
@@ -78,6 +68,21 @@ export const ListItem = styled.li`
     margin-right: 0.25rem;
     padding: 0.5rem;
     margin: 0;
+  }
+`
+
+export const ListItemMobile = styled.li`
+  font-weight: 500;
+  display: none;
+  font-size: 1.25rem;
+  margin-right: 0.25rem;
+  color: var(--background5-main);
+  margin: 0;
+  flex-direction: column;
+  padding: 0.5rem;
+  @media (max-width: 1020px) {
+    align-items: center;
+    display: flex;
   }
 `
 
@@ -105,7 +110,6 @@ export const HeaderTitleDesktop = styled.h1`
   margin: 0;
   display: flex;
   align-items: center;
-  /* opacity: 0; */
   transition: all 200ms ease-in;
   &.show {
     transition: all 200ms ease-in;

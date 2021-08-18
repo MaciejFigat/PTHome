@@ -2,8 +2,9 @@ import styled from 'styled-components'
 
 export const HeaderContainer = styled.div`
   display: flex;
-  justify-content: space-evenly;
-
+  /* justify-content: space-evenly; */
+  /* justify-content: space-around; */
+  /* justify-content: space-between; */
   height: fit-content;
   max-width: 100%;
   background: var(--background1-main);
@@ -24,11 +25,11 @@ export const HeaderTitle = styled.h1`
 `
 
 export const HeaderList = styled.ul`
+  justify-content: space-around;
   list-style: none;
   display: flex;
-  justify-content: center;
   align-items: center;
-
+  width: 100vw;
   padding: 0;
 `
 export const HeaderItem = styled.li`

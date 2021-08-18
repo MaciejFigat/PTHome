@@ -10,8 +10,9 @@ import {
 } from '../../styles/nav'
 // import { HeaderTitleMobile } from '../../styles/frontPageHeader'
 import NavListDesktop from './NavListDesktop'
-import NavListMobile from './NavListMobile'
+
 import useScrollListener from '../../hooks/useScrollListener'
+import ShopIcon from '../ShopIcon'
 interface NavProps {}
 
 const Nav: React.FC<NavProps> = () => {
@@ -56,7 +57,8 @@ const Nav: React.FC<NavProps> = () => {
             Nina K.
           </HeaderTitleDesktop>
           <NavListDesktop />
-          <NavListMobile />
+
+          <ShopIcon />
         </NavContainer>
       </TransitionWrapper>
     </TransitionWrapperMain>
