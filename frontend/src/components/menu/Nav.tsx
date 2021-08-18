@@ -5,8 +5,10 @@ import {
   TransitionWrapper,
   NavContainer,
   MobileViewContainer,
+  HeaderTitleMobile,
+  HeaderTitleDesktop,
 } from '../../styles/nav'
-import { HeaderTitleMobile } from '../../styles/frontPageHeader'
+// import { HeaderTitleMobile } from '../../styles/frontPageHeader'
 import NavListDesktop from './NavListDesktop'
 import NavListMobile from './NavListMobile'
 import useScrollListener from '../../hooks/useScrollListener'
@@ -20,6 +22,7 @@ const Nav: React.FC<NavProps> = () => {
   const [scrollDirection, setScrollDirection] = useState<
     'up' | 'down' | undefined | null
   >()
+  const [scrollTop, setScrollTop] = useState<boolean>(true)
   const scroll = useScrollListener()
 
   // on scroll I update scrollDirection
@@ -28,6 +31,10 @@ const Nav: React.FC<NavProps> = () => {
       setScrollDirection('down')
     else {
       setScrollDirection('up')
+    }
+    if (scroll.y === 0) setScrollTop(true)
+    else {
+      setScrollTop(false)
     }
   }, [scroll.y, scroll.lastY])
 
@@ -42,15 +49,12 @@ const Nav: React.FC<NavProps> = () => {
           <div onClick={handleClickMenu}>
             <Burger menuOpen={menuOpen} />{' '}
           </div>{' '}
-          <HeaderTitleMobile>Nina K - trener</HeaderTitleMobile>
+          <HeaderTitleMobile>Nina K.</HeaderTitleMobile>
         </MobileViewContainer>
-        <NavContainer
-          className={
-            scrollDirection === 'up' || null || undefined
-              ? `active ${menuOpen}`
-              : `hidden ${menuOpen}`
-          }
-        >
+        <NavContainer className={menuOpen}>
+          <HeaderTitleDesktop className={scrollTop === true ? 'hide' : 'show'}>
+            Nina K.
+          </HeaderTitleDesktop>
           <NavListDesktop />
           <NavListMobile />
         </NavContainer>

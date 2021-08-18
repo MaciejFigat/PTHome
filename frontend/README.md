@@ -1,6 +1,7 @@
 ### `Structure explanation - Navigation`
 ├──FrontpageHeader (this header is rendered only in desktop view)
 ├──Nav.tsx (this component implements a custom hook that enables changing classess of certain components according to screen scrolling)
+
     ├──NavListDesktop(menu for desktop view)- only one is rendered
     ├──NavListMobile(menu for mobile view) - it contains social media icons that are absent in the above menu 
     ├──

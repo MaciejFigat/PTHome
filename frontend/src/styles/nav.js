@@ -8,7 +8,7 @@ export const TransitionWrapperMain = styled.div`
   }
   .hidden {
     transition: all 300ms ease-in;
-    transform: translateY(-100%);
+    transform: translateY(-130%);
   }
 `
 export const TransitionWrapper = styled.div`
@@ -16,25 +16,8 @@ export const TransitionWrapper = styled.div`
   top: 0;
   min-width: 100vw;
   max-height: 3.1rem;
-
+  z-index: 9999;
   background: var(--background1-main);
-  /* .active {
-    transition: all 200ms ease-in;
-  }
-  .hidden {
-    transition: all 300ms ease-in;
-    transform: translateY(-100%);
-  } */
-
-  @media (max-width: 1020px) {
-    .active {
-      transition: all 200ms ease-in;
-    }
-    .hidden {
-      transition: all 300ms ease-in;
-      transform: translateX(-100%);
-    }
-  }
 `
 export const NavContainer = styled.nav`
   display: flex;
@@ -45,20 +28,18 @@ export const NavContainer = styled.nav`
   max-width: 100%;
   background: var(--background1-main);
   box-shadow: inset 20px 20px 40px #171718, inset -20px -20px 40px #252526;
-  z-index: 22;
-
+  z-index: -1;
   @media (max-width: 1020px) {
     justify-content: center;
-    /* padding-left: 1rem; */
-    /* padding-right: 1rem; */
     max-width: fit-content;
-    transform: translateX(-100%);
-    /* min-width: 300px; */
+    opacity: 0;
+    transform: translateX(-130%);
     min-width: 100vw;
     transition: all 200ms ease-in;
     &.true {
       transition: all 300ms ease-in;
       transform: translateX(0%);
+      opacity: 100%;
     }
   }
 `
@@ -105,4 +86,36 @@ export const MobileViewContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   margin: 0 2rem 0 1rem;
+`
+export const HeaderTitleMobile = styled.h1`
+  color: var(--background5-main);
+  font-size: 1.75rem;
+  font-weight: 400;
+  display: none;
+  max-width: fit-content;
+  @media (max-width: 1020px) {
+    display: block;
+    font-size: 1.25rem;
+  }
+`
+export const HeaderTitleDesktop = styled.h1`
+  color: var(--background4-main);
+  font-size: 1.25rem;
+  font-weight: 200;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  /* opacity: 0; */
+  transition: all 200ms ease-in;
+  &.show {
+    transition: all 200ms ease-in;
+    opacity: 100%;
+  }
+  &.hide {
+    transition: all 300ms ease-in;
+    opacity: 0;
+  }
+  @media (max-width: 1020px) {
+    display: none;
+  }
 `

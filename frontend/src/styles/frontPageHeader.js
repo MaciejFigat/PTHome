@@ -22,17 +22,7 @@ export const HeaderTitle = styled.h1`
     font-size: 1rem;
   }
 `
-export const HeaderTitleMobile = styled.h1`
-  color: var(--background4-main);
-  font-size: 1.75rem;
-  font-weight: 200;
-  display: none;
-  max-width: fit-content;
-  @media (max-width: 1020px) {
-    display: block;
-    font-size: 1rem;
-  }
-`
+
 export const HeaderList = styled.ul`
   list-style: none;
   display: flex;
