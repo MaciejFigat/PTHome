@@ -33,7 +33,7 @@ const Nav: React.FC<NavProps> = () => {
     else {
       setScrollDirection('up')
     }
-    if (scroll.y === 0) setScrollTop(true)
+    if (scroll.y <= 300) setScrollTop(true)
     else {
       setScrollTop(false)
     }

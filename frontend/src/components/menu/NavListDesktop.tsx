@@ -1,6 +1,5 @@
 import React from 'react'
 import { NavList, ListItem, ListItemMobile } from '../../styles/nav'
-import { NavHashLink } from 'react-router-hash-link'
 import { NavLink } from 'react-router-dom'
 import ContactIcons from '../ContactIcons'
 
