@@ -14,7 +14,7 @@ export const TransitionWrapperMain = styled.div`
 export const TransitionWrapper = styled.div`
   position: sticky;
   top: 0;
-  min-width: 100vw;
+  /* min-width: 100vw; */
   max-height: 3.2rem;
   z-index: 9999;
   background: var(--background1-main);
@@ -25,7 +25,7 @@ export const NavContainer = styled.nav`
   position: sticky;
   top: 0;
   height: fit-content;
-  max-width: 100%;
+  max-width: 100vw;
   background: var(--background1-main);
   box-shadow: inset 20px 20px 40px #171718, inset -20px -20px 40px #252526;
   z-index: -1;

@@ -111,14 +111,19 @@ export const CardPrimary = styled.div`
 `
 /* Secondary Card styling */
 export const CardContainerSecondary = styled.div`
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
+  min-height: 100vh;
+  height: fit-content;
+  /* display: flex;
+  flex-direction: row; */
+  display: grid;
+  grid-template-columns: 1fr minmax(min-content, 3fr);
   place-items: center;
   background-color: var(--background5-main);
   justify-content: center;
   @media (max-width: 880px) {
-    flex-direction: column;
+    /* flex-direction: column; */
+    display: grid;
+    grid-template-columns: none;
   }
 `
 
