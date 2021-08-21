@@ -2,12 +2,16 @@ import styled from 'styled-components'
 /* Light Card styling */
 export const CardContainer = styled.div`
   height: 100vh;
-  display: flex;
-  flex-direction: row;
+  /* display: flex;
+  flex-direction: row; */
   place-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   justify-content: center;
   @media (max-width: 880px) {
-    flex-direction: column;
+    /* flex-direction: column; */
+    display: grid;
+    grid-template-columns: none;
   }
 `
 
@@ -17,7 +21,7 @@ export const Card = styled.div`
   box-shadow: 6px 6px 12px #7b7a7e, -6px -6px 12px #c9c8ce;
   color: var(--background1-main);
   height: 400px;
-  width: 360px;
+  /* width: 360px; */
   padding: 2rem;
   margin: 1rem;
   border-radius: 0.55rem;
@@ -39,12 +43,16 @@ export const Card = styled.div`
 export const CardContainerDark = styled.div`
   height: 100vh;
   display: flex;
-  flex-direction: row;
-  place-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  /* flex-direction: row;
+  place-items: center; */
   background-color: var(--background1-main);
   justify-content: center;
   @media (max-width: 880px) {
-    flex-direction: column;
+    /* flex-direction: column; */
+    display: grid;
+    grid-template-columns: none;
   }
 `
 export const CardDark = styled.div`
@@ -53,7 +61,7 @@ export const CardDark = styled.div`
   box-shadow: 5px 5px 10px #131313, -5px -5px 10px #29292b;
   color: var(--background4-main);
   height: 400px;
-  width: 360px;
+  /* width: 360px; */
   padding: 2rem;
   margin: 1rem;
   border-radius: 0.55rem;
@@ -75,12 +83,16 @@ export const CardDark = styled.div`
 export const CardContainerPrimary = styled.div`
   height: 100vh;
   display: flex;
-  flex-direction: row;
-  place-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  /* flex-direction: row;
+  place-items: center; */
   background-color: var(--background2-main);
   justify-content: center;
   @media (max-width: 880px) {
-    flex-direction: column;
+    /* flex-direction: column; */
+    display: grid;
+    grid-template-columns: none;
   }
 `
 
@@ -90,7 +102,7 @@ export const CardPrimary = styled.div`
   box-shadow: 5px 5px 10px #2b2a2b, -5px -5px 10px #4d4c4f;
   color: var(--background5-main);
   height: 400px;
-  width: 360px;
+  /* width: 360px; */
   padding: 2rem;
   margin: 1rem;
   border-radius: 0.55rem;
@@ -115,9 +127,9 @@ export const CardContainerSecondary = styled.div`
   height: fit-content;
   /* display: flex;
   flex-direction: row; */
+
   display: grid;
-  /* grid-template-columns: 1fr minmax(min-content, 1fr); */
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   place-items: center;
   background-color: var(--background5-main);
   justify-content: center;
