@@ -116,7 +116,8 @@ export const CardContainerSecondary = styled.div`
   /* display: flex;
   flex-direction: row; */
   display: grid;
-  grid-template-columns: 1fr minmax(min-content, 3fr);
+  /* grid-template-columns: 1fr minmax(min-content, 1fr); */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   place-items: center;
   background-color: var(--background5-main);
   justify-content: center;
@@ -133,7 +134,7 @@ export const CardSecondary = styled.div`
   box-shadow: inset 5px 5px 10px #9a999d, inset -5px -5px 10px #fcf9ff;
   color: var(--background1-main);
   height: 400px;
-  width: 360px;
+  /* width: 360px; */
   padding: 2rem;
   margin: 1rem;
   border-radius: 0.55rem;
