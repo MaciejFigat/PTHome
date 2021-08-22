@@ -50,7 +50,7 @@ const Shop: React.FC<ShopProps> = () => {
         description="hey I'm a small section in the shop!"
       />
 
-      <SectionCardsv2 cardData={cardDataOne} variant='primary' />
+      <SectionCardsv2 cardData={cardDataOne} variant='secondary' />
     </>
   )
 }

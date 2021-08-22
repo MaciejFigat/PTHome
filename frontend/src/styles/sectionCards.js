@@ -111,6 +111,16 @@ const secondaryStyle = {
   color: `var(--background1-main);`,
   cardBackground: `var(--background5-main);`,
 }
+const handleCardContainerColor = (props) => {
+  switch (props.variant) {
+    case 'primary':
+      return `background-color: ${primaryStyle.cardBackground}`
+    case 'secondary':
+      return `background-color: ${secondaryStyle.cardBackground}`
+    default:
+      return 'background-color: red'
+  }
+}
 
 /* Secondary Card styling */
 export const CardContainerSecondary = styled.div`
@@ -119,12 +129,19 @@ export const CardContainerSecondary = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   place-items: center;
-  background-color: ${(props) =>
-    props.variant === 'primary'
-      ? primaryStyle.cardBackground
-      : secondaryStyle.cardBackground};
   justify-content: center;
+  /*checking if switch will work  */
+  ${(props) => handleCardContainerColor(props)}
 `
+
+/* switch(props) {
+   case 'primary':
+    return primaryStyle.cardBackground;
+   case 'secondary': 
+   return secondaryStyle.cardBackground
+   default:
+     return 'red';
+ } */
 
 export const CardSecondary = styled.div`
   /* for color #CBC9CF */
