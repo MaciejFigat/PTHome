@@ -98,6 +98,20 @@ export const CardPrimary = styled.div`
     }
   }
 `
+/*variables for styling */
+const primaryStyle = {
+  background: `linear-gradient(145deg, #363537, #403f41);`,
+  boxShadow: `5px 5px 10px #2b2a2b, -5px -5px 10px #4d4c4f;`,
+  color: `var(--background5-main);`,
+  cardBackground: `var(--background2-main);`,
+}
+const secondaryStyle = {
+  background: `var(--background5-main);`,
+  boxShadow: `inset 5px 5px 10px #9a999d, inset -5px -5px 10px #fcf9ff;`,
+  color: `var(--background1-main);`,
+  cardBackground: `var(--background5-main);`,
+}
+
 /* Secondary Card styling */
 export const CardContainerSecondary = styled.div`
   min-height: 100vh;
@@ -105,15 +119,29 @@ export const CardContainerSecondary = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   place-items: center;
-  background-color: var(--background5-main);
+  background-color: ${(props) =>
+    props.variant === 'primary'
+      ? primaryStyle.cardBackground
+      : secondaryStyle.cardBackground};
   justify-content: center;
 `
 
 export const CardSecondary = styled.div`
   /* for color #CBC9CF */
-  background: var(--background5-main);
+  /* background: var(--background5-main);
   box-shadow: inset 5px 5px 10px #9a999d, inset -5px -5px 10px #fcf9ff;
-  color: var(--background1-main);
+  color: var(--background1-main); */
+
+  background: ${(props) =>
+    props.variant === 'primary'
+      ? primaryStyle.background
+      : secondaryStyle.background};
+  box-shadow: ${(props) =>
+    props.variant === 'primary'
+      ? primaryStyle.boxShadow
+      : secondaryStyle.boxShadow};
+  color: ${(props) =>
+    props.variant === 'primary' ? primaryStyle.color : secondaryStyle.color};
   height: 400px;
   padding: 2rem;
   margin: 1rem;
