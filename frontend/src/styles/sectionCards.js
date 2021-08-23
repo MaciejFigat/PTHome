@@ -7,7 +7,7 @@ export const CardContainer = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   justify-content: center;
 `
-
+// light card
 export const Card = styled.div`
   height: 400px;
   padding: 2rem;
@@ -102,21 +102,42 @@ export const CardPrimary = styled.div`
 const primaryStyle = {
   background: `linear-gradient(145deg, #363537, #403f41);`,
   boxShadow: `5px 5px 10px #2b2a2b, -5px -5px 10px #4d4c4f;`,
+  boxShadowHover: `5px 5px 10px #2b2a2b, -5px -5px 10px #4d4c4f;`,
   color: `var(--background5-main);`,
   cardBackground: `var(--background2-main);`,
 }
 const secondaryStyle = {
   background: `var(--background5-main);`,
   boxShadow: `inset 5px 5px 10px #9a999d, inset -5px -5px 10px #fcf9ff;`,
+  boxShadowHover: `inset 16px 16px 32px #9e9da1, inset -16px -16px 32px #f8f5fd;`,
   color: `var(--background1-main);`,
   cardBackground: `var(--background5-main);`,
 }
+const lightStyle = {
+  background: `linear-gradient(145deg, #adacb2, #929195);`,
+  boxShadow: `6px 6px 12px #7b7a7e, -6px -6px 12px #c9c8ce;`,
+  boxShadowHover: `15px 15px 30px #7b7a7e, -15px -15px 30px #c9c8ce;`,
+  color: `var(--background1-main);`,
+  cardBackground: `var(--background4-main);`,
+}
+const darkStyle = {
+  background: `linear-gradient(145deg, #1b1b1c, #202021);`,
+  boxShadow: `5px 5px 10px #131313, -5px -5px 10px #29292b;`,
+  boxShadowHover: `5px 5px 10px #131313, -5px -5px 10px #29292b;`,
+  color: `var(--background1-main);`,
+  cardBackground: `var(--background4-main);`,
+}
+
 const handleCardContainerColor = (props) => {
   switch (props.variant) {
     case 'primary':
       return `background-color: ${primaryStyle.cardBackground}`
     case 'secondary':
       return `background-color: ${secondaryStyle.cardBackground}`
+    case 'dark':
+      return `background-color: ${darkStyle.cardBackground}`
+    case 'light':
+      return `background-color: ${lightStyle.cardBackground}`
     default:
       return 'background-color: red'
   }
@@ -133,15 +154,6 @@ export const CardContainerSecondary = styled.div`
   /*checking if switch will work  */
   ${(props) => handleCardContainerColor(props)}
 `
-
-/* switch(props) {
-   case 'primary':
-    return primaryStyle.cardBackground;
-   case 'secondary': 
-   return secondaryStyle.cardBackground
-   default:
-     return 'red';
- } */
 
 export const CardSecondary = styled.div`
   /* for color #CBC9CF */
