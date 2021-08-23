@@ -1,5 +1,5 @@
 import React from 'react'
-import SectionCards from '../components/SectionCards'
+import SectionCardsv2 from '../components/SectionCardsv2'
 import SmallSection from '../components/SmallSection'
 
 const cardDataOne = [
@@ -31,7 +31,7 @@ const Blog: React.FC<BlogProps> = () => {
         title='!st section'
         description="hey I'm a small section!"
       />
-      <SectionCards cardData={cardDataOne} />
+      <SectionCardsv2 cardData={cardDataOne} />
     </>
   )
 }

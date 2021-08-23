@@ -1,5 +1,5 @@
 import React from 'react'
-import SectionCards from '../components/SectionCards'
+import SectionCardsv2 from '../components/SectionCardsv2'
 import SmallSection from '../components/SmallSection'
 interface HomeProps {}
 
@@ -31,14 +31,14 @@ const Home: React.FC<HomeProps> = () => {
         title='!st section'
         description="hey I'm a small section!"
       />
-      <SectionCards cardData={cardDataOne} />
+      <SectionCardsv2 cardData={cardDataOne} variant='light' />
       <SmallSection
         title='2nd section'
         description="hey I'm a small section!"
       />
-      <SectionCards cardData={cardDataOne} variant='secondary' />
-      <SectionCards cardData={cardDataOne} variant='primary' />
-      <SectionCards cardData={cardDataOne} variant='dark' />
+      <SectionCardsv2 cardData={cardDataOne} variant='secondary' />
+      <SectionCardsv2 cardData={cardDataOne} variant='primary' />
+      <SectionCardsv2 cardData={cardDataOne} variant='dark' />
     </>
   )
 }

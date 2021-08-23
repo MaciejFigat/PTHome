@@ -1,5 +1,5 @@
 import React from 'react'
-import SectionCards from '../components/SectionCards'
+import SectionCardsv2 from '../components/SectionCardsv2'
 import SmallSection from '../components/SmallSection'
 
 const cardDataOne = [
@@ -26,7 +26,8 @@ const Contact: React.FC<ContactProps> = () => {
         title='Here you can contact me'
         description='I like emails'
       />
-      <SectionCards cardData={cardDataOne} variant='dark' />
+      <SectionCardsv2 cardData={cardDataOne} variant='dark' />
+      <SectionCardsv2 cardData={cardDataOne} variant='light' />
     </>
   )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import {
-  CardContainerSecondary,
-  CardSecondary,
+  CardContainer,
+  Card,
   CardTitle,
   CardContent,
 } from '../styles/sectionCards'
@@ -15,15 +15,15 @@ const SectionCardsv2: React.FC<SectionCardsPropsv2> = ({
   variant,
 }) => {
   return (
-    <CardContainerSecondary variant={variant}>
+    <CardContainer variant={variant}>
       {cardData &&
         cardData.map((example) => (
-          <CardSecondary key={example.id} variant={variant}>
+          <Card key={example.id} variant={variant}>
             <CardTitle>{example.title}</CardTitle>
             <CardContent>{example.description}</CardContent>
-          </CardSecondary>
+          </Card>
         ))}
-    </CardContainerSecondary>
+    </CardContainer>
   )
 }
 export default SectionCardsv2
