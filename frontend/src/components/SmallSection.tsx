@@ -7,12 +7,16 @@ import {
 interface SmallSectionProps {
   title: string
   description?: string
-  variant?: string
+  variant?: 'dark' | 'light' | 'primary' | 'secondary'
 }
 
-const SmallSection: React.FC<SmallSectionProps> = ({ title, description }) => {
+const SmallSection: React.FC<SmallSectionProps> = ({
+  title,
+  description,
+  variant,
+}) => {
   return (
-    <SectionContainer>
+    <SectionContainer variant={variant}>
       <SectionTitle>{title}</SectionTitle>
       <SectionDescription>{description}</SectionDescription>
     </SectionContainer>

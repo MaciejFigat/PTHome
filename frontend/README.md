@@ -4,8 +4,10 @@
     ├── for example TransitionWrapper gets additional class active or hidden depending on direction of the scroll and the distance - it enables hiding and sliding it in view depending on scroll input
     also HeaderTitleDesktop is a title component that shows only when user is not at the top of the page ie. when header is out of the view
     ├──NavListDesktop- contains components that are only rendered in mobile view 
-  
-    ├──
+
+### `Styling assets - miscellaneous`  
+    ├──utils.ts 
+        ├──it exports a helper function that is a big switch statement which governs styling for different variant props for elements that require them ie. SectionCards
 
 
 ## Available Scripts

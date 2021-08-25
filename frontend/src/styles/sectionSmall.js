@@ -1,12 +1,13 @@
 import styled from 'styled-components'
+import { handleCardContainerColor as handleSectionColor } from './utils'
 
 export const SectionContainer = styled.div`
   height: 20vh;
   display: flex;
   flex-direction: row;
   place-items: center;
-  background: var(--background1-main);
-  color: var(--background5-main);
+  ${(props) => handleSectionColor(props).color}
+  ${(props) => handleSectionColor(props).containerBackground}
   justify-content: center;
   @media (max-width: 880px) {
     flex-direction: column;
