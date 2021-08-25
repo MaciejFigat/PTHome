@@ -1,5 +1,5 @@
 import React from 'react'
-import SectionCardsv2 from '../components/SectionCardsv2'
+import SectionCards from '../components/SectionCards'
 import SmallSection from '../components/SmallSection'
 
 const cardDataOne = [
@@ -32,7 +32,7 @@ const Exercise: React.FC<ExerciseProps> = () => {
         title='Here you can contact me'
         description='I like emails'
       />
-      <SectionCardsv2 cardData={cardDataOne} variant='primary' />
+      <SectionCards cardData={cardDataOne} variant='primary' />
     </>
   )
 }

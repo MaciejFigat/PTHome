@@ -5,15 +5,12 @@ import {
   CardTitle,
   CardContent,
 } from '../styles/sectionCards'
-interface SectionCardsPropsv2 {
+interface SectionCardsProps {
   cardData: { id: Number; title: String; description: String }[]
   variant?: 'dark' | 'light' | 'primary' | 'secondary'
 }
 
-const SectionCardsv2: React.FC<SectionCardsPropsv2> = ({
-  cardData,
-  variant,
-}) => {
+const SectionCards: React.FC<SectionCardsProps> = ({ cardData, variant }) => {
   return (
     <CardContainer variant={variant}>
       {cardData &&
@@ -26,4 +23,4 @@ const SectionCardsv2: React.FC<SectionCardsPropsv2> = ({
     </CardContainer>
   )
 }
-export default SectionCardsv2
+export default SectionCards

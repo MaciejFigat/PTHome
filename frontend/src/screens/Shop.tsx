@@ -1,5 +1,5 @@
 import React from 'react'
-import SectionCardsv2 from '../components/SectionCardsv2'
+import SectionCards from '../components/SectionCards'
 import SmallSection from '../components/SmallSection'
 
 const cardDataOne = [
@@ -50,7 +50,7 @@ const Shop: React.FC<ShopProps> = () => {
         description="hey I'm a small section in the shop!"
       />
 
-      <SectionCardsv2 cardData={cardDataOne} variant='secondary' />
+      <SectionCards cardData={cardDataOne} variant='secondary' />
     </>
   )
 }
