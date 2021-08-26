@@ -1,5 +1,6 @@
 ### Server setup log
 helper file for posterior
+***don't forget about .gitignore***
 
 *** npm init -y ***
 to generate package.json
@@ -20,5 +21,20 @@ necessary to enable this script
 *** npm i -D nodemon ***
 does the same as the one above (need only one)
 "dev": "nodemon --exec ts-node src/index.ts",
+*** npm i express ***
+the framework I use for node
+*** npm i -D @types/express ***
+type definitions for express
+*** npm i -D @types/node ***
+package with node type definitions
 *** 2 ***
 *** 2 ***
+*** 2 ***
+*** 2 ***
+
+### misc
+to add types for a module that I can't find types for 
+I created a folder  ├──@types
+                            ├──`example.d.ts` that contains `declare module 'example';`
+                 
+         
