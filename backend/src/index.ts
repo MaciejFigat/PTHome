@@ -1,6 +1,10 @@
-import { writeFile } from 'fs'
+import express from 'express'
 
-writeFile;
+const app = express()
 
-console.log('starting the server work with TS')
+app.get('/', (req) => { req.name = 'bob' })
 
+
+app.listen(3001, () => {
+    console.log('it is on!')
+})

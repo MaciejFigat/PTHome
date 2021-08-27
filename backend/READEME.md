@@ -1,4 +1,4 @@
-### Server setup log
+### Server setup log and notes
 helper file for posterior
 ***don't forget about .gitignore***
 
@@ -32,9 +32,48 @@ package with node type definitions
 *** 2 ***
 *** 2 ***
 
-### misc
+### misc 
 to add types for a module that I can't find types for 
 I created a folder  ├──@types
                             ├──`example.d.ts` that contains `declare module 'example';`
-                 
-         
+                            this declares the module as any type 
+
+***When TS compiler lags ctrl + shift + p -> typeScript reset TS server ***
+
+***req.name = 'bob' - when things don't work in TS I can escape it***
+`req.name = 'bob'` - no such thing in definitions
+         `(req as any).name = 'bob'`
+
+*** functions as per usual TS,  ***
+`const add = (a: number, b?: number): number => {                                                    return a+b                                                                                               }`
+<!-- if I don't pass b  -->
+add(1)
+<!-- then - there will be TS error  -->
+`object is possibly undefined`
+<!-- one way to get rid of it is: -->
+`const add = (a: number, b?: number): number => {
+    if(b) {
+    return a+b}  
+    } else {
+        return a
+    }
+}` 
+ 
+<!-- or I can add ! if I know it's defined -->
+
+`const add = (a: number, b?: number): number => {                                                    return a+b!}`
+<!-- or I can add above it -->
+`// @ts-ignore` 
+`const add = (a: number, b?: number): number => {                                                    return a+b!}`
+
+***Interface and Type***
+interface Params {
+    a: number
+    b: number
+}
+
+type Add =(x: Params) => number
+
+const add: Add = x => {
+    return x.a + a.b
+}
