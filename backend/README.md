@@ -27,7 +27,7 @@ the framework I use for node
 type definitions for express
 *** npm i -D @types/node ***
 package with node type definitions
-*** 2 ***
+***installed: axios, bcrypt, colors, dotenv, express-async-handler, jsonwebtoken, mongoose***
 *** 2 ***
 *** 2 ***
 *** 2 ***
