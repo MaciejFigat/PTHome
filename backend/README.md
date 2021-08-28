@@ -10,17 +10,17 @@ adding typescript as dev dependency
 ts config file 
 
 *** npm i -D ts-node ***
-module for compiling index.ts and running an output index.js with node
-"start": "ts-node src/index.ts",
+module for compiling server.ts and running an output server.js with node
+"start": "ts-node src/server.ts",
 
 *** npm i -D ts-node-dev ***
 to watch the files for changes and to restart the server
 necessary to enable this script
- "start": "ts-node-dev --respawn src/index.ts",
+ "start": "ts-node-dev --respawn backend/src/server.ts",
  
 *** npm i -D nodemon ***
 does the same as the one above (need only one)
-"dev": "nodemon --exec ts-node src/index.ts",
+"dev": "nodemon --exec ts-node backend/src/server.ts",
 *** npm i express ***
 the framework I use for node
 *** npm i -D @types/express ***
