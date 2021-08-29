@@ -27,8 +27,8 @@ the framework I use for node
 type definitions for express
 *** npm i -D @types/node ***
 package with node type definitions
-***installed: axios, bcrypt, colors, dotenv, express-async-handler, jsonwebtoken, mongoose***
-*** 2 ***
+**installed: axios, bcrypt, colors, dotenv, express-async-handler, jsonwebtoken, mongoose**
+**added the db.ts** // useCreateIndex: true, this option was no longer supported - I think it was depreciated 
 *** 2 ***
 *** 2 ***
 
@@ -45,7 +45,7 @@ I created a folder  ├──@types
          `(req as any).name = 'bob'`
 
 *** functions as per usual TS,  ***
-`const add = (a: number, b?: number): number => {                                                    return a+b                                                                                               }`
+`const add = (a: number, b?: number): number => {return a+b}`
 <!-- if I don't pass b  -->
 add(1)
 <!-- then - there will be TS error  -->

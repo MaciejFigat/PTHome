@@ -1,15 +1,18 @@
 import mongoose from 'mongoose'
 
+
 const connectDB = async () => {
   try {
+    // @ts-ignore
     const conn = await mongoose.connect(process.env.MONGO_URI, {
       useUnifiedTopology: true,
       useNewUrlParser: true,
-      useCreateIndex: true,
+      // useCreateIndex: false,
     })
     console.log(`MongoDB Connected: ${conn.connection.host}`.cyan.underline)
   } catch (error) {
-    console.error(`Error: ${error.message}`.red.underline.bold)
+    // @ts-ignore
+    console.error(`Error: ${error.message}`.bgRed.bold)
     process.exit(1)
   }
 }
