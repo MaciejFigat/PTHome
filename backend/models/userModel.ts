@@ -1,12 +1,12 @@
-import { model, Schema } from "mongoose"
+import { model, Schema, Document } from "mongoose"
 import bcrypt from 'bcryptjs'
 
-export interface User {
+export interface User extends Document {
     name: string
     email: string
     password: string
     isAdmin: boolean
-
+    matchPassword: (password: string) => Promise<boolean>
 }
 
 const userSchema = new Schema<User>(
@@ -29,6 +29,7 @@ const userSchema = new Schema<User>(
             required: true,
             default: false,
         },
+
     },
     {
         timestamps: true,
