@@ -1,6 +1,14 @@
 import bcrypt from 'bcryptjs'
 
-const users = [
+export interface User {
+    name: string
+    email: string
+    password: string
+    isAdmin?: boolean
+    // matchPassword: (password: string) => Promise<boolean>
+}
+
+const users: User[] = [
     {
         name: 'Admin User',
         email: 'admin@somethin.com',
@@ -11,6 +19,7 @@ const users = [
         name: 'Donald T.',
         email: 'donald@somethin.com',
         password: bcrypt.hashSync('123456', 10),
+        isAdmin: false,
     }
 ]
 export default users
