@@ -30,6 +30,9 @@ package with node type definitions
 **installed: axios, bcrypt, colors, dotenv, express-async-handler, jsonwebtoken, mongoose**
 **added the db.ts** // useCreateIndex: true, this option was no longer supported - I think it was depreciated 
 ok. moongose 6.0+ doesn't support the following: useNewUrlParser, useUnifiedTopology, useFindAndModify, and useCreateIndex. It's safe to remove it from my code. (I used it in moongose ver 5.12.5.)
+*** src/seeder *** + "data:import": "node backend/src/seeder",
+    "data:destroy": "node backend/src/seeder -d" - still doesn't work 
+*** 2 ***
 *** 2 ***
 *** 2 ***
 
