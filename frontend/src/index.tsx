@@ -4,7 +4,7 @@ import './index.css'
 import App from './App'
 import smoothScrollPolyfill from 'smoothscroll-polyfill'
 import { Provider } from 'react-redux'
-import store from './store'
+import { store } from './app/store'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter as Router } from 'react-router-dom'
 
