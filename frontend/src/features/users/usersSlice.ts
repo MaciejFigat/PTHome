@@ -29,51 +29,47 @@ const userSlice = createSlice({
     reducers: {
 
         login(state, { payload: (email: string, password: string)
-}: PayloadAction<{ userInfo: User }>) 
-        
-        {
-             = (email: string, password: string) => async (dispatch: any) => {
-        try {
-            // dispatch({
-            //     type: USER_LOGIN_REQUEST,
-            // })
-            const config = {
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            }
+}: PayloadAction<any>) => async (dispatch: any) => {
+    try {
 
-            const { data } = await axios.post(
-                '/api/users/login',
-                { email, password },
-                config
-            )
-
-            dispatch({
-                // type: USER_LOGIN_SUCCESS,
-                payload: data,
-            })
-
-            localStorage.setItem('userInfo', JSON.stringify(data))
-        } catch (error: any) {
-            dispatch({
-                type: USER_LOGIN_FAIL,
-                payload:
-                    error.response && error.response.data.message
-                        ? error.response.data.message
-                        : error.message,
-            })
+        const config = {
+            headers: {
+                'Content-Type': 'application/json',
+            },
         }
+
+        const { data } = await axios.post(
+            '/api/users/login',
+            { email, password },
+            config
+        )
+
+        dispatch({
+            // type: USER_LOGIN_SUCCESS,
+            payload: data,
+        })
+
+        localStorage.setItem('userInfo', JSON.stringify(data))
+    } catch (error: any) {
+        dispatch({
+            // type: USER_LOGIN_FAIL,
+            payload:
+                error.response && error.response.data.message
+                    ? error.response.data.message
+                    : error.message,
+        })
     }
-        },
-// increment by fixed amount 
-amountAdded(state, action: PayloadAction<number>) {
-    state.value += action.payload
-},
-        // decrement
-        // reset
+}
+
+
+
+    
+
+        
+
+        
     }
 })
 
-export const { incremented, amountAdded } = counterSlice.actions
-export default counterSlice.reducer
+export const { login } = userSlice.actions
+export default userSlice.reducer
