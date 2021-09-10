@@ -1,75 +1,66 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit"
+import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit"
 import axios from 'axios'
-// interface CounterState {
 
-//     userLogin: {}
-// }
-export interface User {
-    name: string
-    email: string
-    password: string
-    isAdmin?: boolean
+export const postUser = createAsyncThunk(
+    'users/postUser', async (_, thunkAPI) => {
+        try {
+            const config = {
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            }
 
-}
+            const { data } = await axios.post(
+                '/api/users/login',
+                //@ts-ignore
+                { email, password },
+                config
+            )
+            return data
+
+        } catch (error: any) {
+            return thunkAPI.rejectWithValue({
+                error: error.response && error.response.data.message
+                    ? error.response.data.message
+                    : error.message
+            })
+        }
+    })
 
 const userInfoFromStorage = localStorage.getItem('userInfo')
+    //@ts-ignore
     ? JSON.parse(localStorage.getItem('userInfo'))
     : null
 
-interface UserState { userInfo: User | null }
-
-const initialState: UserState = {
-
-    userInfo: userInfoFromStorage
-}
-
-const userSlice = createSlice({
-    name: 'userAction',
-    initialState,
-    reducers: {
-
-        login(state, { payload: (email: string, password: string)
-}: PayloadAction<any>) => async (dispatch: any) => {
-    try {
-
-        const config = {
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        }
-
-        const { data } = await axios.post(
-            '/api/users/login',
-            { email, password },
-            config
+const userLoginSlice = createSlice({
+    name: 'userLogin',
+    initialState: {
+        userInfo: userInfoFromStorage,
+        loading: 'idle',
+        error: '',
+    },
+    reducers: {},
+    extraReducers: (builder) => {
+        builder.addCase(postUser.pending, (state) => {
+            state.userInfo = {}
+            state.loading = 'loading'
+        })
+        builder.addCase(
+            postUser.fulfilled, (state, { payload }) => {
+                state.userInfo = payload
+                state.loading = 'success'
+            }
         )
-
-        dispatch({
-            // type: USER_LOGIN_SUCCESS,
-            payload: data,
-        })
-
-        localStorage.setItem('userInfo', JSON.stringify(data))
-    } catch (error: any) {
-        dispatch({
-            // type: USER_LOGIN_FAIL,
-            payload:
-                error.response && error.response.data.message
-                    ? error.response.data.message
-                    : error.message,
-        })
-    }
-}
-
-
-
-    
-
-        
-
-        
+        builder.addCase(
+            postUser.rejected, (state, action) => {
+                state.loading = 'error'
+                state.userInfo = action.error.message
+            })
     }
 })
 
-export const { login } = userSlice.actions
-export default userSlice.reducer
+
+
+
+export const { login } = userLoginSlice.actions
+export default userLoginSlice.reducer
