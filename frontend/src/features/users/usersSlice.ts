@@ -1,5 +1,7 @@
-import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit"
+import { createSlice, createAction, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit"
 import axios from 'axios'
+
+// const login = createAction('login')
 
 export const postUser = createAsyncThunk(
     'users/postUser', async (_, thunkAPI) => {
@@ -39,24 +41,28 @@ const userLoginSlice = createSlice({
         loading: 'idle',
         error: '',
     },
-    reducers: {},
-    extraReducers: (builder) => {
-        builder.addCase(postUser.pending, (state) => {
-            state.userInfo = {}
-            state.loading = 'loading'
-        })
-        builder.addCase(
-            postUser.fulfilled, (state, { payload }) => {
-                state.userInfo = payload
-                state.loading = 'success'
-            }
-        )
-        builder.addCase(
-            postUser.rejected, (state, action) => {
-                state.loading = 'error'
-                state.userInfo = action.error.message
+    reducers: {
+
+    },
+    extraReducers:
+        // login(state) {}
+        (builder) => {
+            builder.addCase(postUser.pending, (state) => {
+                state.userInfo = {}
+                state.loading = 'loading'
             })
-    }
+            builder.addCase(
+                postUser.fulfilled, (state, { payload }) => {
+                    state.userInfo = payload
+                    state.loading = 'success'
+                }
+            )
+            builder.addCase(
+                postUser.rejected, (state, action) => {
+                    state.loading = 'error'
+                    state.userInfo = action.error.message
+                })
+        }
 })
 
 
