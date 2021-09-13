@@ -5,9 +5,15 @@ import { configureStore } from '@reduxjs/toolkit'
 // also turns on some development checks for common mistakes like accidental mutations
 import counterReducer from '../features/counter/counterSlice'
 import { apiSlice } from '../features/dogs/dogsApiSlice'
+import {
+  userLoginReducer,
+  userRegisterReducer,
+} from '../features/users/userReducers'
 
 export const store = configureStore({
   reducer: {
+    user: userRegisterReducer,
+    userLoginReducer,
     counter: counterReducer,
     // this will automatically call combineReducers, so that we end up with state.counter field in our state
     [apiSlice.reducerPath]: apiSlice.reducer,
