@@ -5,9 +5,18 @@ import axios from 'axios'
 
 const fetchUserById = createAsyncThunk(
     'user/postingCredentials',
-    async (userId, thunkAPI) => {
-        const response = await userAPI.fetchById(userId)
-        return response.data
+    async (userInfo, thunkAPI) => {
+        const config = {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        }
+        const { data } = await axios.post(
+            '/api/users/login',
+            { email, password },
+            config
+        )
+        return data
     }
 )
 
@@ -31,9 +40,15 @@ const userSlice = createSlice({
             // state.loading = false
             state.error = action.payload
         }
+    },
+    extraReducers: {
+        // Add reducers for additional action types here, and handle loading state as needed
+        [fetchUserById.fulfilled]: (state, action) => {
+            state.userInfo = action.payload
+        }
     }
 })
-
+// dispatch(fetchUserById(123)) 
 
 export const { loginUser, registerUser } = userSlice.actions
 // export const { actions, reducer } = userSlice
