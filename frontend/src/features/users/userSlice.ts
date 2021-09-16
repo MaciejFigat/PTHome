@@ -2,59 +2,56 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import axios from 'axios'
 
 // the thunk for posting the header
-interface UserInfo {
-    name: string
-    email: string
-    password: string
-    isAdmin: boolean
-}
-interface UserData {
-    name: string
-    email: string
-    password: string
-    isAdmin: boolean
-    token: string
+// interface UserInfo {
+//     name: string
+//     email: string
+//     password: string
+//     isAdmin: boolean
+// }
+// interface UserData {
+//     name: string
+//     email: string
+//     password: string
+//     isAdmin: boolean
+//     token: string
 
-}
-interface ErrorMessage {
-    error: string
-}
-//@ts-ignore
-// { password, email },
+// }
+// interface ErrorMessage {
+//     error: string
+// }
 
-const sendUserId = createAsyncThunk < data: UserData, userInfo: UserInfo, { rejectValue: ErrorMessage } > (
+
+const sendUserId = createAsyncThunk(
     'user/sendUser',
 
-    async (userInfo, thunkAPI) => {
+    async (userInfo: any, thunkAPI) => {
+
         try {
 
+            const { email, password } = userInfo
             const config = {
                 headers: {
                     'Content-Type': 'application/json',
                 },
             }
-
             const { data } = await axios.post(
                 '/api/users/login',
                 { email, password },
                 config
             )
 
+            localStorage.setItem('userInfo', JSON.stringify(data))
+            return data
 
-
-            payload: data,
-
-
-                localStorage.setItem('userInfo', JSON.stringify(data))
         } catch (error: any) {
 
+            return error
 
-            payload:
-            error.response && error.response.data.message
-                ? error.response.data.message
-                : error.message,
-                
-            }
+            // error.response && error.response.data.message
+            //     ? error.response.data.message
+            //     : error.message,
+
+        }
     }
 )
 
