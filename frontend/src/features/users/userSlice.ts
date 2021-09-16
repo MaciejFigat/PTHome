@@ -8,14 +8,10 @@ import axios from 'axios'
 //     password: string
 //     isAdmin: boolean
 // }
-// interface UserData {
-//     name: string
-//     email: string
-//     password: string
-//     isAdmin: boolean
-//     token: string
-
-// }
+interface UserLogin {
+    email: string
+    password: string
+}
 // interface ErrorMessage {
 //     error: string
 // }
@@ -24,11 +20,11 @@ import axios from 'axios'
 const sendUserId = createAsyncThunk(
     'user/sendUser',
 
-    async (userInfo: any, thunkAPI) => {
+    async (userLogin: UserLogin, thunkAPI) => {
 
         try {
 
-            const { email, password } = userInfo
+            const { email, password } = userLogin
             const config = {
                 headers: {
                     'Content-Type': 'application/json',
@@ -41,7 +37,7 @@ const sendUserId = createAsyncThunk(
             )
 
             localStorage.setItem('userInfo', JSON.stringify(data))
-            return data
+            return thunkApi.data
 
         } catch (error: any) {
 
@@ -76,13 +72,25 @@ const userSlice = createSlice({
             state.error = action.payload
         }
     },
-    extraReducers: {
-        // Add reducers for additional action types here, and handle loading state as needed
-        [sendUserId.fulfilled]: (state, action) => {
-            state.userInfo = action.payload
-        },
 
-    }
+    extraReducers: (builder) => {
+        builder.addCase(sendUserId.fulfilled, (state, { payload }) => {
+            // ->HERE
+            // state.entities[payload.id] = payload
+        })
+        builder.addCase(sendUserId.rejected, (state, action) => {
+            if (action.payload) {
+                // Since we passed in `MyKnownError` to `rejectValue` in `updateUser`, the type information will be available here.
+
+                // ->HERE
+
+                // state.error = action.payload.errorMessage
+            } else {
+                state.error = action.error
+            }
+        })
+    },
+
 })
 // dispatch(fetchUserById(123)) 
 
