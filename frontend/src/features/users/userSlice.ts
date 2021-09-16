@@ -7,18 +7,27 @@ interface UserInfo {
     email: string
     password: string
     isAdmin: boolean
+}
+interface UserData {
+    name: string
+    email: string
+    password: string
+    isAdmin: boolean
     token: string
 
 }
-
+interface ErrorMessage {
+    error: string
+}
 //@ts-ignore
 // { password, email },
 
-const sendUserId = (email: string, password: string) => {
-    createAsyncThunk(
-        'user/sendUser',
+const sendUserId = createAsyncThunk < data: UserData, userInfo: UserInfo, { rejectValue: ErrorMessage } > (
+    'user/sendUser',
 
-        async (thunkAPI) => {
+    async (userInfo, thunkAPI) => {
+        try {
+
             const config = {
                 headers: {
                     'Content-Type': 'application/json',
@@ -30,10 +39,25 @@ const sendUserId = (email: string, password: string) => {
                 { email, password },
                 config
             )
-            return data
-        }
-    )
-}
+
+
+
+            payload: data,
+
+
+                localStorage.setItem('userInfo', JSON.stringify(data))
+        } catch (error: any) {
+
+
+            payload:
+            error.response && error.response.data.message
+                ? error.response.data.message
+                : error.message,
+                
+            }
+    }
+)
+
 
 
 const userSlice = createSlice({
