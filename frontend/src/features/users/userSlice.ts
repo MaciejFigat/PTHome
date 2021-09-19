@@ -1,5 +1,20 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import axios from 'axios'
+// HERE 
+// const updateUser = createAsyncThunk(
+//     'user/update',
+//     async (userData, { rejectWithValue }) => {
+//       const { id, ...fields } = userData
+//       try {
+//         const response = await userAPI.updateById(id, fields)
+//         return response.data.user
+//       } catch (err) {
+//         // Use `err.response.data` as `action.payload` for a `rejected` action,
+//         // by explicitly returning it using the `rejectWithValue()` utility
+//         return rejectWithValue(err.response.data)
+//       }
+//     }
+//   )
 
 // the thunk for posting the header
 // interface UserInfo {
