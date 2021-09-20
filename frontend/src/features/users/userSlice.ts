@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit"
 import axios from 'axios'
 // HERE 
 // const updateUser = createAsyncThunk(
@@ -52,7 +52,8 @@ const sendUserId = createAsyncThunk(
             )
 
             localStorage.setItem('userInfo', JSON.stringify(data))
-            return thunkApi.data
+            // return thunkAPI.data
+            return data
 
         } catch (error: any) {
 
@@ -76,30 +77,31 @@ const userSlice = createSlice({
         error: {}
     },
     reducers: {
-        login: (state, action) => {
+        // login: (state, action) => {
+        // state.userInfo = action.payload
+        // state.loading = false
+        // state.error = action.payload
+        // },
+        register: (state, action: PayloadAction<string>) => {
             state.userInfo = action.payload
-            // state.loading = false
             state.error = action.payload
         },
-        register: (state, action) => {
-            state.userInfo = action.payload
-            // state.loading = false
-            state.error = action.payload
-        }
+        logout: (state, action: PayloadAction) => {
+            state.userInfo = {}
+        },
     },
 
     extraReducers: (builder) => {
         builder.addCase(sendUserId.fulfilled, (state, { payload }) => {
-            // ->HERE
-            // state.entities[payload.id] = payload
+
+            state.userInfo = payload
         })
         builder.addCase(sendUserId.rejected, (state, action) => {
             if (action.payload) {
-                // Since we passed in `MyKnownError` to `rejectValue` in `updateUser`, the type information will be available here.
 
-                // ->HERE
 
-                // state.error = action.payload.errorMessage
+
+                state.error = action.error
             } else {
                 state.error = action.error
             }
@@ -109,7 +111,7 @@ const userSlice = createSlice({
 })
 // dispatch(fetchUserById(123)) 
 
-export const { login, register } = userSlice.actions
+export const { logout, register } = userSlice.actions
 // export const { actions, reducer } = userSlice
 export default userSlice.reducer
 
