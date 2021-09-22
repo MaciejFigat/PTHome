@@ -2,6 +2,14 @@ import React, { useState } from 'react'
 // import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { Form, Row, Col } from 'react-bootstrap'
+import {
+  MainContainer,
+  WelcomeText,
+  InputContainer,
+  ButtonContainer,
+  LoginWith,
+  IconsContainer,
+} from '../styles/login'
 import FormContainer from '../components/FormContainer'
 // import { login } from '../features/users/userActions'
 
@@ -55,3 +63,30 @@ const Login: React.FC<LoginProps> = () => {
   )
 }
 export default Login
+
+{
+  /* <MainContainer>
+      <WelcomeText>Welcome</WelcomeText>
+      <InputContainer>
+        <Input type="text" placeholder="Email" />
+        <Input type="password" placeholder="Password" />
+      </InputContainer>
+      <ButtonContainer>
+        <Button content="Sign Up" />
+      </ButtonContainer>
+      <LoginWith>OR LOGIN WITH</LoginWith>
+      <HorizontalRule />
+      <IconsContainer>
+        <Icon color={FacebookBackground}>
+          <FaFacebookF />
+        </Icon>
+        <Icon color={InstagramBackground}>
+          <FaInstagram />
+        </Icon>
+        <Icon color={TwitterBackground}>
+          <FaTwitter />
+        </Icon>
+      </IconsContainer>
+      <ForgotPassword>Forgot Password ?</ForgotPassword>
+    </MainContainer> */
+}
