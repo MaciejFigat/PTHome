@@ -96,3 +96,36 @@ export const IconsContainer = styled.div`
 export const ForgotPassword = styled.h4`
   cursor: pointer;
 `
+// TO IMPORT
+// import {
+//   MainContainer,
+//   WelcomeText,
+//   InputContainer,
+//   ButtonContainer,
+//   LoginWith,
+//   IconsContainer,
+// } from '../styles/login'
+/* <MainContainer>
+      <WelcomeText>Welcome</WelcomeText>
+      <InputContainer>
+        <Input type="text" placeholder="Email" />
+        <Input type="password" placeholder="Password" />
+      </InputContainer>
+      <ButtonContainer>
+        <Button content="Sign Up" />
+      </ButtonContainer>
+      <LoginWith>OR LOGIN WITH</LoginWith>
+      <HorizontalRule />
+      <IconsContainer>
+        <Icon color={FacebookBackground}>
+          <FaFacebookF />
+        </Icon>
+        <Icon color={InstagramBackground}>
+          <FaInstagram />
+        </Icon>
+        <Icon color={TwitterBackground}>
+          <FaTwitter />
+        </Icon>
+      </IconsContainer>
+      <ForgotPassword>Forgot Password ?</ForgotPassword>
+    </MainContainer> */

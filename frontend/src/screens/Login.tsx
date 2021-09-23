@@ -1,29 +1,29 @@
 import React, { useState } from 'react'
-// import { useDispatch, useSelector } from 'react-redux'
+
 import { Link } from 'react-router-dom'
 import { Form, Row, Col } from 'react-bootstrap'
-import {
-  MainContainer,
-  WelcomeText,
-  InputContainer,
-  ButtonContainer,
-  LoginWith,
-  IconsContainer,
-} from '../styles/login'
+import { useAppDispatch } from '../app/reduxHooks'
+import { login, logout } from '../features/users/userSlice'
 import FormContainer from '../components/FormContainer'
 // import { login } from '../features/users/userActions'
 
 interface LoginProps {}
 
 const Login: React.FC<LoginProps> = () => {
+  const dispatch = useAppDispatch()
+
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const userInfo = { email, password }
 
   const submitHandler = (e: any) => {
     e.preventDefault()
-    // dispatch(login(email, password))
+    dispatch(login(userInfo))
   }
-
+  const logoutHandler = (e: any) => {
+    e.preventDefault()
+    dispatch(logout())
+  }
   return (
     <FormContainer>
       <Form onSubmit={submitHandler}>
@@ -57,6 +57,7 @@ const Login: React.FC<LoginProps> = () => {
           >
             Register
           </Link>
+          <button onSubmit={logoutHandler}>LOGOUT</button>
         </Col>
       </Row>
     </FormContainer>

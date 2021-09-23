@@ -37,9 +37,9 @@ const sendUserId = createAsyncThunk(
 
     async (userLogin: UserLogin, thunkAPI) => {
 
+        const { email, password } = userLogin
         try {
 
-            const { email, password } = userLogin
             const config = {
                 headers: {
                     'Content-Type': 'application/json',
@@ -77,11 +77,11 @@ const userSlice = createSlice({
         error: {}
     },
     reducers: {
-        // login: (state, action) => {
-        // state.userInfo = action.payload
-        // state.loading = false
-        // state.error = action.payload
-        // },
+        login: (state, action) => {
+            state.userInfo = action.payload
+            state.loading = false
+            state.error = action.payload
+        },
         register: (state, action: PayloadAction<string>) => {
             state.userInfo = action.payload
             state.error = action.payload
@@ -111,7 +111,7 @@ const userSlice = createSlice({
 })
 // dispatch(fetchUserById(123)) 
 
-export const { logout, register } = userSlice.actions
+export const { login, logout, register } = userSlice.actions
 // export const { actions, reducer } = userSlice
 export default userSlice.reducer
 
