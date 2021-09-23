@@ -72,7 +72,7 @@ const sendUserId = createAsyncThunk(
 const userSlice = createSlice({
     name: 'userLogin',
     initialState: {
-        userInfo: {},
+        userInfo: {} || null,
         loading: false,
         error: {}
     },
@@ -80,13 +80,13 @@ const userSlice = createSlice({
         login: (state, action) => {
             state.userInfo = action.payload
             state.loading = false
-            state.error = action.payload
+            state.error = action.payload.error
         },
         register: (state, action: PayloadAction<string>) => {
             state.userInfo = action.payload
             state.error = action.payload
         },
-        logout: (state, action: PayloadAction) => {
+        logout: (state) => {
             state.userInfo = {}
         },
     },

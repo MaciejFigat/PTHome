@@ -23,6 +23,7 @@ const Login: React.FC<LoginProps> = () => {
   const logoutHandler = (e: any) => {
     e.preventDefault()
     dispatch(logout())
+    console.log('logout')
   }
   return (
     <FormContainer>
@@ -57,37 +58,10 @@ const Login: React.FC<LoginProps> = () => {
           >
             Register
           </Link>
-          <button onSubmit={logoutHandler}>LOGOUT</button>
+          <button onClick={logoutHandler}>LOGOUT</button>
         </Col>
       </Row>
     </FormContainer>
   )
 }
 export default Login
-
-{
-  /* <MainContainer>
-      <WelcomeText>Welcome</WelcomeText>
-      <InputContainer>
-        <Input type="text" placeholder="Email" />
-        <Input type="password" placeholder="Password" />
-      </InputContainer>
-      <ButtonContainer>
-        <Button content="Sign Up" />
-      </ButtonContainer>
-      <LoginWith>OR LOGIN WITH</LoginWith>
-      <HorizontalRule />
-      <IconsContainer>
-        <Icon color={FacebookBackground}>
-          <FaFacebookF />
-        </Icon>
-        <Icon color={InstagramBackground}>
-          <FaInstagram />
-        </Icon>
-        <Icon color={TwitterBackground}>
-          <FaTwitter />
-        </Icon>
-      </IconsContainer>
-      <ForgotPassword>Forgot Password ?</ForgotPassword>
-    </MainContainer> */
-}
