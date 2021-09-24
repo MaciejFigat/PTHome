@@ -3,10 +3,10 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Form, Row, Col } from 'react-bootstrap'
 import { useAppDispatch } from '../app/reduxHooks'
-import { login, logout } from '../features/users/userSlice'
-import sendUserId from '../features/users/userSlice'
+import { login, logout, sendUserId } from '../features/users/userSlice'
+// import sendUserId from '../features/users/userSlice'
 import FormContainer from '../components/FormContainer'
-import e from 'express'
+
 // import { login } from '../features/users/userActions'
 
 interface LoginProps {}
@@ -16,24 +16,12 @@ const Login: React.FC<LoginProps> = () => {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+
   const userInfo = { email, password }
 
-  // const submitHandler = (e: any) => {
-  //   e.preventDefault()
-  //   dispatch(sendUserId(userInfo))
-  // }
-
-  const submitHandler = async (e: any) => {
+  const submitHandler = (e: any) => {
     e.preventDefault()
-    try {
-      const originalPromiseResult = await dispatch(
-        //@ts-ignore
-        sendUserId(email, password)
-      ).unwrap()
-      // handle result here
-    } catch (rejectedValueOrSerializedError) {
-      // handle error here
-    }
+    dispatch(sendUserId(userInfo))
   }
 
   const logoutHandler = (e: any) => {

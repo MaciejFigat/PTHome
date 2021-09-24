@@ -16,7 +16,6 @@ import axios from 'axios'
 //     }
 //   )
 
-// the thunk for posting the header
 // interface UserInfo {
 //     name: string
 //     email: string
@@ -27,15 +26,15 @@ interface UserLogin {
     email: string
     password: string
 }
-// interface ErrorMessage {
-//     error: string
-// }
+
+// the thunk for posting the header
 
 
-const sendUserId = createAsyncThunk(
+export const sendUserId = createAsyncThunk(
     'user/sendUser',
 
-    async (userLogin: UserLogin, thunkAPI) => {
+    // async (userLogin: UserLogin, thunkAPI) => {
+    async (userLogin: UserLogin) => {
 
         const { email, password } = userLogin
         try {
@@ -52,16 +51,14 @@ const sendUserId = createAsyncThunk(
             )
 
             localStorage.setItem('userInfo', JSON.stringify(data))
-            // return thunkAPI.data
+
             return data
 
         } catch (error: any) {
 
             return error
 
-            // error.response && error.response.data.message
-            //     ? error.response.data.message
-            //     : error.message,
+
 
         }
     }
@@ -72,9 +69,9 @@ const sendUserId = createAsyncThunk(
 const userSlice = createSlice({
     name: 'userLogin',
     initialState: {
-        userInfo: {} || null,
+        userInfo: {},
         loading: false,
-        error: {}
+        error: {},
     },
     reducers: {
         login: (state, action) => {
@@ -92,20 +89,32 @@ const userSlice = createSlice({
     },
 
     extraReducers: (builder) => {
-        builder.addCase(sendUserId.fulfilled, (state, { payload }) => {
-
-            state.userInfo = payload
+        builder.addCase(sendUserId.pending, (state, action) => {
+            state.loading = true
+        })
+        builder.addCase(sendUserId.fulfilled, (state, action) => {
+            state.loading = false
+            state.userInfo = action.payload
         })
         builder.addCase(sendUserId.rejected, (state, action) => {
-            if (action.payload) {
-
-
-
-                state.error = action.error
-            } else {
-                state.error = action.error
-            }
+            state.loading = false
+            // state.error = action.error
+            // state.error = action.payload.error
         })
+        // builder.addCase(sendUserId.fulfilled, (state, { payload }) => {
+
+        //     state.userInfo = payload
+        // })
+        // builder.addCase(sendUserId.rejected, (state, action) => {
+        //     if (action.payload) {
+
+
+
+        //         state.error = action.error
+        //     } else {
+        //         state.error = action.error
+        //     }
+        // })
     },
 
 })
