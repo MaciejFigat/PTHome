@@ -10,7 +10,7 @@ import {
 } from './userConstants'
 
 
-export const login: any = (email: string, password: string) => async (dispatch: any) => {
+export const loginVanilla: any = (email: string, password: string) => async (dispatch: any) => {
     try {
         dispatch({
             type: USER_LOGIN_REQUEST,

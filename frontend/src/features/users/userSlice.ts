@@ -34,7 +34,7 @@ export const sendUserId = createAsyncThunk(
     'user/sendUser',
 
     // async (userLogin: UserLogin, thunkAPI) => {
-    async (userLogin: UserLogin) => {
+    async (userLogin: UserLogin, { rejectWithValue }) => {
 
         const { email, password } = userLogin
         try {
@@ -56,9 +56,9 @@ export const sendUserId = createAsyncThunk(
 
         } catch (error: any) {
 
+            // return thunkAPI.rejectWithError(error)
             return error
-
-
+            // return rejectWithValue(error.data)
 
         }
     }
@@ -91,6 +91,7 @@ const userSlice = createSlice({
     extraReducers: (builder) => {
         builder.addCase(sendUserId.pending, (state, action) => {
             state.loading = true
+
         })
         builder.addCase(sendUserId.fulfilled, (state, action) => {
             state.loading = false

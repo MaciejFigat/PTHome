@@ -6,7 +6,7 @@ import { useAppDispatch } from '../app/reduxHooks'
 import { login, logout, sendUserId } from '../features/users/userSlice'
 // import sendUserId from '../features/users/userSlice'
 import FormContainer from '../components/FormContainer'
-
+import { loginVanilla } from '../features/users/userActions'
 // import { login } from '../features/users/userActions'
 
 interface LoginProps {}
@@ -19,9 +19,13 @@ const Login: React.FC<LoginProps> = () => {
 
   const userInfo = { email, password }
 
+  // const submitHandler = (e: any) => {
+  //   e.preventDefault()
+  //   dispatch(sendUserId(userInfo))
+  // }
   const submitHandler = (e: any) => {
     e.preventDefault()
-    dispatch(sendUserId(userInfo))
+    dispatch(loginVanilla(email, password))
   }
 
   const logoutHandler = (e: any) => {
