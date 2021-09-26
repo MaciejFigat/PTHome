@@ -1,4 +1,3 @@
-
 import {
     USER_LOGIN_REQUEST,
     USER_LOGIN_SUCCESS,
@@ -8,8 +7,8 @@ import {
     USER_REGISTER_SUCCESS,
     USER_REGISTER_FAIL,
 } from './userConstants'
-//@ts-ignore
-export const userLoginReducer = (state = {}, action) => {
+
+export const userLoginReducer = (state = {}, action: any) => {
     switch (action.type) {
         case USER_LOGIN_REQUEST:
             return { loading: true }
@@ -23,8 +22,8 @@ export const userLoginReducer = (state = {}, action) => {
             return state
     }
 }
-//@ts-ignore
-export const userRegisterReducer = (state = {}, action) => {
+
+export const userRegisterReducer = (state = {}, action: any) => {
     switch (action.type) {
         case USER_REGISTER_REQUEST:
             return { loading: true }

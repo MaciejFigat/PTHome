@@ -9,8 +9,8 @@ import {
     USER_REGISTER_FAIL,
 } from './userConstants'
 
-//@ts-ignore
-export const loginVanilla = (email, password) => async (dispatch) => {
+
+export const loginVanilla: any = (email: string, password: string) => async (dispatch: any) => {
     try {
         dispatch({
             type: USER_LOGIN_REQUEST,
@@ -33,27 +33,24 @@ export const loginVanilla = (email, password) => async (dispatch) => {
         })
 
         localStorage.setItem('userInfo', JSON.stringify(data))
-    } catch (error) {
+    } catch (error: any) {
         dispatch({
             type: USER_LOGIN_FAIL,
             payload:
-                //@ts-ignore
                 error.response && error.response.data.message
-                    //@ts-ignore
                     ? error.response.data.message
-                    //@ts-ignore
                     : error.message,
         })
     }
 }
-//@ts-ignore
-export const logout = () => (dispatch) => {
-    localStorage.removeItem('userInfo')
+
+export const logout = () => (dispatch: any) => {
+    // localStorage.removeItem('userInfo')
     dispatch({ type: USER_LOGOUT })
 
 }
-//@ts-ignore
-export const register = (name, email, password) => async (dispatch) => {
+
+export const register = (name: string, email: string, password: string) => async (dispatch: any) => {
     try {
         dispatch({
             type: USER_REGISTER_REQUEST,
@@ -81,15 +78,12 @@ export const register = (name, email, password) => async (dispatch) => {
         })
 
         localStorage.setItem('userInfo', JSON.stringify(data))
-    } catch (error) {
+    } catch (error: any) {
         dispatch({
             type: USER_REGISTER_FAIL,
             payload:
-                //@ts-ignore
                 error.response && error.response.data.message
-                    //@ts-ignore
                     ? error.response.data.message
-                    //@ts-ignore
                     : error.message,
         })
     }

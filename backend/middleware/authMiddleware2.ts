@@ -1,8 +1,9 @@
 import jwt from 'jsonwebtoken'
 import asyncHandler from 'express-async-handler'
 import User from '../models/userModel.js'
+import { NextFunction } from 'express'
 
-const protect = asyncHandler(async (req, res, next) => {
+const protect = asyncHandler(async (req: any, res: any, next: NextFunction) => {
     let token
 
     if (
@@ -12,8 +13,7 @@ const protect = asyncHandler(async (req, res, next) => {
         try {
             token = req.headers.authorization.split(' ')[1]
             //   it will split by the space and will take 1 element from array that is [Bearer token123]
-            //@ts-ignore
-            const decoded = jwt.verify(token, process.env.JWT_SECRET)
+            const decoded = jwt.verify(token, `${process.env.JWT_SECRET}`)
             //@ts-ignore
             req.user = await User.findById(decoded.id).select('-password')
 
@@ -31,8 +31,7 @@ const protect = asyncHandler(async (req, res, next) => {
     }
 })
 
-//@ts-ignore
-const admin = (req, res, next) => {
+const admin = (req: any, res: any, next: Function) => {
     if (req.user && req.user.isAdmin) {
         next()
     } else {

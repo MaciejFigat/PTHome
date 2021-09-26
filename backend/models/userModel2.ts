@@ -1,7 +1,15 @@
-import mongoose from 'mongoose'
+import { model, Schema, Document } from "mongoose"
 import bcrypt from 'bcryptjs'
-//@ts-ignore
-const userSchema = mongoose.Schema(
+
+export interface User extends Document {
+    name: string
+    email: string
+    password: string
+    isAdmin?: boolean
+    matchPassword: (password: string) => Promise<boolean>
+}
+
+const userSchema = new Schema<User>(
     {
         name: {
             type: String,
@@ -21,27 +29,28 @@ const userSchema = mongoose.Schema(
             required: true,
             default: false,
         },
+
     },
     {
         timestamps: true,
     }
 )
-//@ts-ignore
-userSchema.methods.matchPassword = async function (enteredPassword) {
+
+userSchema.methods.matchPassword = async function (enteredPassword: string) {
     return await bcrypt.compare(enteredPassword, this.password)
 }
-//@ts-ignore
-userSchema.pre('save', async function (next) {
-    //@ts-ignore
+
+userSchema.pre('save', async function (this: any, next: Function,) {
     if (!this.isModified('password')) {
         next()
     }
 
     const salt = await bcrypt.genSalt(10)
-    //@ts-ignore
     this.password = await bcrypt.hash(this.password, salt)
 })
 
-const User = mongoose.model('User', userSchema)
+const User = model<User>('User', userSchema)
 
 export default User
+
+
