@@ -1,5 +1,7 @@
-//@ts-ignore
-const notFound = (req, res, next) => {
+import { NextFunction } from 'express'
+
+
+const notFound = (req: any, res: any, next: NextFunction) => {
     const error = new Error(`Not found - ${req.originalUrl}`)
     res.status(404)
     next(error)
@@ -8,8 +10,7 @@ const notFound = (req, res, next) => {
 //middleware example - detects requests for the routes
 // to overtake error response  - it needs to have err as 1st argument
 // it means that we assign res.statusCode to error unless its 200 then we assign 500 (if res.statusCode === 200 then error === 500)
-//@ts-ignore
-const errorHandler = (err, req, res, next) => {
+const errorHandler = (err: any, req: any, res: any, next: NextFunction) => {
     const statusCode = res.statusCode === 200 ? 500 : res.statusCode
 
     res.status(statusCode)
