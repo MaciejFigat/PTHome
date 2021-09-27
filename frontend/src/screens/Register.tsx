@@ -7,17 +7,18 @@ import { useDispatch } from 'react-redux'
 // import { login, logout, sendUserId } from '../features/users/userSlice'
 // import sendUserId from '../features/users/userSlice'
 import FormContainer from '../components/FormContainer'
-import { loginVanilla, logout } from '../features/users/userActions'
+import { register } from '../features/users/userActions'
 // import { login } from '../features/users/userActions'
 
-interface LoginProps {}
+interface RegisterProps {}
 
-const Login: React.FC<LoginProps> = () => {
+const Register: React.FC<RegisterProps> = () => {
   // const dispatch: any = useAppDispatch()
   const dispatch: any = useDispatch()
 
-  const [email, setEmail] = useState('admin@somethin.com')
-  const [password, setPassword] = useState('123456')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [name, setName] = useState('')
 
   // const userInfo = { email, password }
 
@@ -27,24 +28,23 @@ const Login: React.FC<LoginProps> = () => {
   // }
   const submitHandler = (e: any) => {
     e.preventDefault()
-    dispatch(loginVanilla(email, password))
-  }
-  const submitHandler2 = (e: any) => {
-    e.preventDefault()
-    // dispatch(loginVanilla(email, password))
-    dispatch(loginVanilla('admin@somethin.com', '123456'))
+    dispatch(register(name, email, password))
   }
 
-  const logoutHandler = (e: any) => {
-    e.preventDefault()
-
-    dispatch(logout())
-  }
   return (
     <FormContainer>
       <Form onSubmit={submitHandler}>
         <Form.Group controlId='email'>
-          <h1>Log in</h1>
+          <h1>Register</h1>
+          <Form.Group controlId='currentName'>
+            <p>Enter your name:</p>
+            <Form.Control
+              type='name'
+              placeholder='Enter your Name'
+              value={password}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </Form.Group>
           <Form.Label>Enter your email:</Form.Label>
           <Form.Control
             type='email'
@@ -64,19 +64,7 @@ const Login: React.FC<LoginProps> = () => {
         </Form.Group>
         <button type='submit'>Login</button>
       </Form>
-      <Row className='py-3'>
-        <Col>
-          New user?{' '}
-          <Link
-            //   to={redirect ? `/register?redirect=${redirect}` : '/register'}
-            to='/'
-          >
-            Register
-          </Link>
-          <button onClick={logoutHandler}>LOGOUT</button>
-        </Col>
-      </Row>
     </FormContainer>
   )
 }
-export default Login
+export default Register

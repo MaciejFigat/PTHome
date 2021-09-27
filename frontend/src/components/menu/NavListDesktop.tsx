@@ -87,6 +87,17 @@ const NavListDesktop: React.FC<NavListMobileProps> = () => {
           Login
         </NavLink>
       </ListItem>
+      <ListItem>
+        <NavLink
+          exact
+          to='/register'
+          className='nav_link'
+          activeClassName='nav_link_active'
+        >
+          {' '}
+          Register
+        </NavLink>
+      </ListItem>
     </NavList>
   )
 }
