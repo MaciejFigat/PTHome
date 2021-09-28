@@ -24,7 +24,7 @@ const __dirname = path.resolve()
 //   'Content-Type': 'application/javascript',
 // })
 
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'development') {
     app.use(express.static(path.join(__dirname, '/frontend/build')))
 
     app.get('service-worker.js', (req, res) => {

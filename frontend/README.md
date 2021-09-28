@@ -23,7 +23,8 @@ The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
 
-
+### for development proxy in package.json in frontend is needed
+"proxy": "http://127.0.0.1:5000",
 
 
 

@@ -20,7 +20,9 @@ export const loginVanilla = (email, password) => async (dispatch) => {
                 'Content-Type': 'application/json',
             },
         }
+        // 'Access-Control-Allow-Origin': 'http://localhost:3000',
 
+        // 'http://localhost:5000/api/users/login',
         const { data } = await axios.post(
             '/api/users/login',
             { email, password },
