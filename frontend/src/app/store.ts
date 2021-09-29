@@ -1,6 +1,6 @@
-import { userLoginReducer, userRegisterReducer } from '../features/users/userReducers'
 import { configureStore } from '@reduxjs/toolkit'
-
+import { userLoginReducer, userRegisterReducer } from '../features/users/userReducers'
+import userReducer from '../features/users/userSlice'
 
 // const userInfoFromStorage = localStorage.getItem('userInfo')
 //     //@ts-ignore
@@ -15,7 +15,7 @@ import { configureStore } from '@reduxjs/toolkit'
 
 export const store = configureStore({
     reducer: {
-        // user: userReducer,
+        user: userReducer,
         userLogin: userLoginReducer,
         userRegister: userRegisterReducer,
     },
