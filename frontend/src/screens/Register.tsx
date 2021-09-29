@@ -41,7 +41,7 @@ const Register: React.FC<RegisterProps> = () => {
             <Form.Control
               type='name'
               placeholder='Enter your Name'
-              value={password}
+              value={name}
               onChange={(e) => setName(e.target.value)}
             />
           </Form.Group>
@@ -62,7 +62,7 @@ const Register: React.FC<RegisterProps> = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
-        <button type='submit'>Login</button>
+        <button type='submit'>Register</button>
       </Form>
     </FormContainer>
   )
