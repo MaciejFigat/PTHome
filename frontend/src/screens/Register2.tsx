@@ -1,33 +1,28 @@
 import React, { useState } from 'react'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Form, Row, Col } from 'react-bootstrap'
-// import { useAppDispatch } from '../app/reduxHooks'
-import { useDispatch } from 'react-redux'
+import { useAppDispatch } from '../app/reduxHooks'
+// import { useDispatch } from 'react-redux'
 
 // import { login, logout, sendUserId } from '../features/users/userSlice'
-// import sendUserId from '../features/users/userSlice'
+import createUser from '../features/users/userSlice'
 import FormContainer from '../components/FormContainer'
-import { register } from '../features/users/userActions'
+// import { register } from '../features/users/userActions'
 
-interface RegisterProps {}
+interface Register2Props {}
 
-const Register: React.FC<RegisterProps> = () => {
-  // const dispatch: any = useAppDispatch()
-  const dispatch: any = useDispatch()
+const Register2: React.FC<Register2Props> = () => {
+  const dispatch: any = useAppDispatch()
 
+  const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [name, setName] = useState('')
 
-  // const userInfo = { email, password }
+  const newUserInfo = { name, email, password }
 
-  // const submitHandler = (e: any) => {
-  //   e.preventDefault()
-  //   dispatch(sendUserId(userInfo))
-  // }
   const submitHandler = (e: any) => {
     e.preventDefault()
-    dispatch(register(name, email, password))
+    dispatch(createUser(newUserInfo))
   }
 
   return (
@@ -66,4 +61,4 @@ const Register: React.FC<RegisterProps> = () => {
     </FormContainer>
   )
 }
-export default Register
+export default Register2

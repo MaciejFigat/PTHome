@@ -1,20 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit"
 import axios from 'axios'
-// HERE 
-// const updateUser = createAsyncThunk(
-//     'user/update',
-//     async (userData, { rejectWithValue }) => {
-//       const { id, ...fields } = userData
-//       try {
-//         const response = await userAPI.updateById(id, fields)
-//         return response.data.user
-//       } catch (err) {
-//         // Use `err.response.data` as `action.payload` for a `rejected` action,
-//         // by explicitly returning it using the `rejectWithValue()` utility
-//         return rejectWithValue(err.response.data)
-//       }
-//     }
-//   )
+
 
 // interface UserInfo {
 //     name: string
@@ -27,13 +13,12 @@ interface UserLogin {
     password: string
 }
 
-// the thunk for posting the header
+// the thunk for posting the header - used for logging in
 
 
 export const sendUserId = createAsyncThunk(
     'user/sendUser',
 
-    // async (userLogin: UserLogin, thunkAPI) => {
     async (userLogin: UserLogin, { rejectWithValue }) => {
 
         const { email, password } = userLogin
@@ -57,6 +42,45 @@ export const sendUserId = createAsyncThunk(
         } catch (error: any) {
 
             // return thunkAPI.rejectWithError(error)
+            return error
+            // return rejectWithValue(error.data)
+
+        }
+    }
+)
+
+interface NewUserInfo {
+    name: string
+    email: string
+    password: string
+}
+
+// Here the thunk for registering
+export const createUser = createAsyncThunk(
+    'user/registerUser',
+
+    async (newUserInfo: NewUserInfo, { rejectWithValue }) => {
+
+        const { name, email, password } = newUserInfo
+
+        try {
+
+            const config = {
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            }
+
+            const { data } = await axios.post(
+                '/api/users/',
+                { name, email, password },
+                config
+            )
+            return data
+
+        } catch (error: any) {
+
+
             return error
             // return rejectWithValue(error.data)
 
@@ -102,20 +126,7 @@ const userSlice = createSlice({
             // state.error = action.error
             // state.error = action.payload.error
         })
-        // builder.addCase(sendUserId.fulfilled, (state, { payload }) => {
 
-        //     state.userInfo = payload
-        // })
-        // builder.addCase(sendUserId.rejected, (state, action) => {
-        //     if (action.payload) {
-
-
-
-        //         state.error = action.error
-        //     } else {
-        //         state.error = action.error
-        //     }
-        // })
     },
 
 })
