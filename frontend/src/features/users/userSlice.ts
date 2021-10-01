@@ -126,6 +126,19 @@ const userSlice = createSlice({
             // state.error = action.error
             // state.error = action.payload.error
         })
+        builder.addCase(createUser.pending, (state, action) => {
+            state.loading = true
+
+        })
+        builder.addCase(createUser.fulfilled, (state, action) => {
+            state.loading = false
+            state.userInfo = action.payload
+        })
+        builder.addCase(createUser.rejected, (state, action) => {
+            state.loading = false
+            // state.error = action.error
+            // state.error = action.payload.error
+        })
 
     },
 

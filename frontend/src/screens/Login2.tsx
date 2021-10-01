@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Form, Row, Col } from 'react-bootstrap'
 import { useAppDispatch } from '../app/reduxHooks'
 
-import { login, logout, sendUserId } from '../features/users/userSlice'
+import { logout, sendUserId } from '../features/users/userSlice'
 // import sendUserId from '../features/users/userSlice'
 import FormContainer from '../components/FormContainer'
 // import { loginVanilla, logout } from '../features/users/userActions'
@@ -23,10 +23,6 @@ const Login2: React.FC<LoginProps> = () => {
     e.preventDefault()
     dispatch(sendUserId(userInfo))
   }
-  //   const submitHandler = (e: any) => {
-  //     e.preventDefault()
-  //     dispatch(loginVanilla(email, password))
-  //   }
 
   const logoutHandler = (e: any) => {
     e.preventDefault()
