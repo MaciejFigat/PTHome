@@ -22,6 +22,7 @@ const Register2: React.FC<Register2Props> = () => {
 
   const submitHandler = (e: any) => {
     e.preventDefault()
+    // @ts-ignore
     dispatch(createUser(newUserInfo))
   }
 
