@@ -1,21 +1,22 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Form, Row, Col } from 'react-bootstrap'
-import { useDispatch } from 'react-redux'
-import FormContainer from '../components/FormContainer'
-import { loginVanilla, logout } from '../features/users/userActions'
+import { useAppDispatch } from '../app/reduxHooks'
+import { logout, sendUserId } from '../features/users/userSlice'
+import { Wrapper, Form, Input, Button } from '../styles/login'
 
 interface LoginProps {}
 
 const Login: React.FC<LoginProps> = () => {
-  const dispatch: any = useDispatch()
+  const dispatch: any = useAppDispatch()
 
-  const [email, setEmail] = useState('admin@somethin.com')
-  const [password, setPassword] = useState('123456')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
+  const userInfo = { email, password }
 
   const submitHandler = (e: any) => {
     e.preventDefault()
-    dispatch(loginVanilla(email, password))
+    dispatch(sendUserId(userInfo))
   }
 
   const logoutHandler = (e: any) => {
@@ -24,42 +25,31 @@ const Login: React.FC<LoginProps> = () => {
     dispatch(logout())
   }
   return (
-    <FormContainer>
-      <Form onSubmit={submitHandler}>
-        <Form.Group controlId='email'>
-          <h1>Log in</h1>
-          <Form.Label>Enter your email:</Form.Label>
-          <Form.Control
+    <>
+      <Wrapper>
+        <Form onSubmit={submitHandler}>
+          <Input
             type='email'
+            name='email'
             placeholder='Enter your email'
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e: any) => setEmail(e.target.value)}
           />
-        </Form.Group>
-        <Form.Group controlId='currentPassword'>
-          <p>Enter your password:</p>
-          <Form.Control
+          <Input
             type='password'
+            name='password'
             placeholder='Enter your password'
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e: any) => setPassword(e.target.value)}
           />
-        </Form.Group>
-        <button type='submit'>Login</button>
-      </Form>
-      <Row className='py-3'>
-        <Col>
-          New user?{' '}
-          <Link
-            //   to={redirect ? `/register?redirect=${redirect}` : '/register'}
-            to='/'
-          >
-            Register
-          </Link>
-          <button onClick={logoutHandler}>LOGOUT</button>
-        </Col>
-      </Row>
-    </FormContainer>
+          <Button>Login</Button>
+        </Form>
+        <Button>
+          <Link to='/register'>Register !!!!!!</Link>
+        </Button>
+        <Button onClick={logoutHandler}>Logout</Button>
+      </Wrapper>
+    </>
   )
 }
 export default Login
