@@ -10,6 +10,7 @@ import Exercise from './screens/Exercise'
 import Blog from './screens/Blog'
 import Login from './screens/Login'
 import Login2 from './screens/Login2'
+import Register2 from './screens/Register2'
 import Register from './screens/Register'
 function App() {
   const location = useLocation()
@@ -25,7 +26,8 @@ function App() {
         <Route exact path='/contact' component={Contact} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/login2' component={Login2} />
-        <Route exact path='/register' component={Register} />
+        <Route exact path='/register' component={Register2} />
+        <Route exact path='/register1' component={Register} />
         <Route exact path='/blog' component={Blog} />
         <Route path='/' component={Home} />
       </Switch>

@@ -1,131 +1,74 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
-export const MainContainer = styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  height: 80vh;
-  width: 30vw;
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(8.5px);
-  -webkit-backdrop-filter: blur(8.5px);
-  border-radius: 10px;
-  color: #ffffff;
-  text-transform: uppercase;
-  letter-spacing: 0.4rem;
-  @media only screen and (max-width: 320px) {
-    width: 80vw;
-    height: 90vh;
-    hr {
-      margin-bottom: 0.3rem;
-    }
-    h4 {
-      font-size: small;
-    }
+const jump = keyframes`
+  from{
+    transform: translateY(0)
   }
-  @media only screen and (min-width: 360px) {
-    width: 80vw;
-    height: 90vh;
-    h4 {
-      font-size: small;
-    }
-  }
-  @media only screen and (min-width: 411px) {
-    width: 80vw;
-    height: 90vh;
-  }
-
-  @media only screen and (min-width: 768px) {
-    width: 80vw;
-    height: 80vh;
-  }
-  @media only screen and (min-width: 1024px) {
-    width: 70vw;
-    height: 50vh;
-  }
-  @media only screen and (min-width: 1280px) {
-    width: 30vw;
-    height: 80vh;
+  to{
+    transform: translateY(-2px)
   }
 `
 
-export const WelcomeText = styled.h2`
-  margin: 3rem 0 2rem 0;
-`
-
-export const InputContainer = styled.div`
+export const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  height: 20%;
-  width: 100%;
-`
-
-export const ButtonContainer = styled.div`
-  margin: 1rem 0 2rem 0;
-  width: 100%;
-  display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
 `
 
-export const LoginWith = styled.h5`
-  cursor: pointer;
-`
-
-export const HorizontalRule = styled.hr`
-  width: 90%;
-  height: 0.3rem;
-  border-radius: 0.8rem;
-  border: none;
-  background: linear-gradient(to right, #14163c 0%, #03217b 79%);
-  background-color: #ebd0d0;
-  margin: 1.5rem 0 1rem 0;
-  backdrop-filter: blur(25px);
-`
-
-export const IconsContainer = styled.div`
+export const Form = styled.form`
+  margin: 0 auto;
+  width: 100%;
+  max-width: 414px;
+  padding: 1.3rem;
   display: flex;
-  justify-content: space-evenly;
-  margin: 2rem 0 3rem 0;
-  width: 80%;
+  flex-direction: column;
+  position: relative;
 `
 
-export const ForgotPassword = styled.h4`
-  cursor: pointer;
+export const Input = styled.input`
+  max-width: 100%;
+  padding: 11px 13px;
+  background: #f9f9fa;
+  color: #f03d4e;
+  margin-bottom: 0.9rem;
+  border-radius: 4px;
+  outline: 0;
+  border: 1px solid rgba(245, 245, 245, 0.7);
+  font-size: 14px;
+  transition: all 0.3s ease-out;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.1);
+  :focus,
+  :hover {
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.15), 0 1px 5px rgba(0, 0, 0, 0.1);
+  }
 `
-// TO IMPORT
-// import {
-//   MainContainer,
-//   WelcomeText,
-//   InputContainer,
-//   ButtonContainer,
-//   LoginWith,
-//   IconsContainer,
-// } from '../styles/login'
-/* <MainContainer>
-      <WelcomeText>Welcome</WelcomeText>
-      <InputContainer>
-        <Input type="text" placeholder="Email" />
-        <Input type="password" placeholder="Password" />
-      </InputContainer>
-      <ButtonContainer>
-        <Button content="Sign Up" />
-      </ButtonContainer>
-      <LoginWith>OR LOGIN WITH</LoginWith>
-      <HorizontalRule />
-      <IconsContainer>
-        <Icon color={FacebookBackground}>
-          <FaFacebookF />
-        </Icon>
-        <Icon color={InstagramBackground}>
-          <FaInstagram />
-        </Icon>
-        <Icon color={TwitterBackground}>
-          <FaTwitter />
-        </Icon>
-      </IconsContainer>
-      <ForgotPassword>Forgot Password ?</ForgotPassword>
-    </MainContainer> */
+
+export const Button = styled.button`
+  max-width: 100%;
+  padding: 11px 13px;
+  color: rgb(253, 249, 243);
+  font-weight: 600;
+  text-transform: uppercase;
+  background: #f03d4e;
+  border: none;
+  border-radius: 3px;
+  outline: 0;
+  cursor: pointer;
+  margin-top: 0.6rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-out;
+  :hover {
+    background: rgb(200, 50, 70);
+    animation: ${jump} 0.2s ease-out forwards;
+  }
+`
+
+export const Title = styled.h2`
+  font-weight: normal;
+  color: #2a2a29;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
+  text-align: center;
+`

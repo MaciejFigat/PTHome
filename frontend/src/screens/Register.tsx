@@ -1,30 +1,18 @@
 import React, { useState } from 'react'
-// import { Link } from 'react-router-dom'
-import { Form, Row, Col } from 'react-bootstrap'
-// import { useAppDispatch } from '../app/reduxHooks'
+import { Form } from 'react-bootstrap'
 import { useDispatch } from 'react-redux'
-
-// import { login, logout, sendUserId } from '../features/users/userSlice'
-// import sendUserId from '../features/users/userSlice'
 import FormContainer from '../components/FormContainer'
 import { register } from '../features/users/userActions'
 
 interface RegisterProps {}
 
 const Register: React.FC<RegisterProps> = () => {
-  // const dispatch: any = useAppDispatch()
   const dispatch: any = useDispatch()
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [name, setName] = useState('')
 
-  // const userInfo = { email, password }
-
-  // const submitHandler = (e: any) => {
-  //   e.preventDefault()
-  //   dispatch(sendUserId(userInfo))
-  // }
   const submitHandler = (e: any) => {
     e.preventDefault()
     dispatch(register(name, email, password))

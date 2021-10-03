@@ -1,38 +1,21 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Form, Row, Col } from 'react-bootstrap'
-// import { useAppDispatch } from '../app/reduxHooks'
 import { useDispatch } from 'react-redux'
-
-// import { login, logout, sendUserId } from '../features/users/userSlice'
-// import sendUserId from '../features/users/userSlice'
 import FormContainer from '../components/FormContainer'
 import { loginVanilla, logout } from '../features/users/userActions'
-// import { login } from '../features/users/userActions'
 
 interface LoginProps {}
 
 const Login: React.FC<LoginProps> = () => {
-  // const dispatch: any = useAppDispatch()
   const dispatch: any = useDispatch()
 
   const [email, setEmail] = useState('admin@somethin.com')
   const [password, setPassword] = useState('123456')
 
-  // const userInfo = { email, password }
-
-  // const submitHandler = (e: any) => {
-  //   e.preventDefault()
-  //   dispatch(sendUserId(userInfo))
-  // }
   const submitHandler = (e: any) => {
     e.preventDefault()
     dispatch(loginVanilla(email, password))
-  }
-  const submitHandler2 = (e: any) => {
-    e.preventDefault()
-    // dispatch(loginVanilla(email, password))
-    dispatch(loginVanilla('admin@somethin.com', '123456'))
   }
 
   const logoutHandler = (e: any) => {

@@ -1,17 +1,8 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Form, Row, Col } from 'react-bootstrap'
 import { useAppDispatch } from '../app/reduxHooks'
 import { logout, sendUserId } from '../features/users/userSlice'
-import FormContainer from '../components/FormContainer'
-import {
-  MainContainer,
-  WelcomeText,
-  InputContainer,
-  ButtonContainer,
-  LoginWith,
-  IconsContainer,
-} from '../styles/login'
+import { Wrapper, Form, Input, Button } from '../styles/login'
 
 interface LoginProps {}
 
@@ -35,56 +26,29 @@ const Login2: React.FC<LoginProps> = () => {
   }
   return (
     <>
-      <MainContainer>
-        <WelcomeText>Welcome</WelcomeText>
-        <InputContainer>
-          <input type='text' placeholder='Email' />
-          <input type='password' placeholder='Password' />
-        </InputContainer>
-        <ButtonContainer>
-          <button>Sign up</button>
-        </ButtonContainer>
-        <LoginWith>OR LOGIN WITH</LoginWith>
-
-        <IconsContainer></IconsContainer>
-        <h3>Forgot Password ?</h3>
-      </MainContainer>
-      <FormContainer>
+      <Wrapper>
         <Form onSubmit={submitHandler}>
-          <Form.Group controlId='email'>
-            <h1>Log in - redux toolkit</h1>
-            <Form.Label>Enter your email:</Form.Label>
-            <Form.Control
-              type='email'
-              placeholder='Enter your email'
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </Form.Group>
-          <Form.Group controlId='currentPassword'>
-            <p>Enter your password:</p>
-            <Form.Control
-              type='password'
-              placeholder='Enter your password'
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </Form.Group>
-          <button type='submit'>Login</button>
+          <Input
+            type='email'
+            name='email'
+            placeholder='Enter your email'
+            value={email}
+            onChange={(e: any) => setEmail(e.target.value)}
+          />
+          <Input
+            type='password'
+            name='password'
+            placeholder='Enter your password'
+            value={password}
+            onChange={(e: any) => setPassword(e.target.value)}
+          />
+          <Button>Login</Button>
         </Form>
-        <Row className='py-3'>
-          <Col>
-            New user?{' '}
-            <Link
-              //   to={redirect ? `/register?redirect=${redirect}` : '/register'}
-              to='/'
-            >
-              Register
-            </Link>
-            <button onClick={logoutHandler}>LOGOUT</button>
-          </Col>
-        </Row>
-      </FormContainer>
+        <Button>
+          <Link to='/register'>Register !!!!!!</Link>
+        </Button>
+        <Button onClick={logoutHandler}>Logout</Button>
+      </Wrapper>
     </>
   )
 }

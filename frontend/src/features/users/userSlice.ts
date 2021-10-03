@@ -59,6 +59,7 @@ interface NewUserInfo {
 export const createUser = createAsyncThunk(
     'user/registerUser',
 
+
     async (newUserInfo: NewUserInfo, { rejectWithValue }) => {
 
         const { name, email, password } = newUserInfo
