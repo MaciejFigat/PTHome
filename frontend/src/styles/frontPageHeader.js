@@ -43,9 +43,7 @@ export const HeaderItem = styled.li`
   }
 `
 export const HeaderSvgContainer = styled.div`
-  /* width: 10vw; */
   height: 10vh;
-  /* min-width: 150px; */
   display: flex;
   place-content: center;
   overflow: hidden;

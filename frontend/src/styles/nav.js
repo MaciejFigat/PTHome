@@ -16,7 +16,7 @@ export const TransitionWrapper = styled.div`
   top: 0;
   /* min-width: 100vw; */
   max-height: 3.2rem;
-  z-index: 9999;
+  z-index: 20;
   background: var(--background1-main);
 `
 export const NavContainer = styled.nav`

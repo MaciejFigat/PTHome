@@ -11,8 +11,8 @@ export const BurgerContainer = styled.div`
   }
 `
 export const BurgerLine = styled.div`
-  width: 25px;
-  height: 4px;
+  width: 26px;
+  height: 5px;
   border-radius: 25%;
   background: var(--background5-main);
   margin: 5px;
