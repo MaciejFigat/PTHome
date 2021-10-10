@@ -20,6 +20,12 @@ const Nav: React.FC<NavProps> = () => {
   const handleClickMenu = () => {
     setMenuOpen(!menuOpen)
   }
+  const handleCloseMenu = () => {
+    if (menuOpen === true) {
+      setMenuOpen(false)
+    }
+  }
+
   const [scrollDirection, setScrollDirection] = useState<
     'up' | 'down' | undefined | null
   >()
@@ -52,7 +58,7 @@ const Nav: React.FC<NavProps> = () => {
           </div>{' '}
           <HeaderTitleMobile>Nina K.</HeaderTitleMobile>
         </MobileViewContainer>
-        <NavContainer className={menuOpen}>
+        <NavContainer className={menuOpen} onClick={handleCloseMenu}>
           <HeaderTitleDesktop className={scrollTop === true ? 'hide' : 'show'}>
             Nina K.
           </HeaderTitleDesktop>
