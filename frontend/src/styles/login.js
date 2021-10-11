@@ -21,7 +21,7 @@ export const Wrapper = styled.section`
 export const Form = styled.form`
   margin: 0 auto;
   width: 100%;
-  z-index: -1;
+  z-index: 1;
   max-width: 414px;
   padding: 1.3rem;
   display: flex;
@@ -33,7 +33,7 @@ export const Input = styled.input`
   max-width: 100%;
   padding: 11px 13px;
   background: #f9f9fa;
-  color: #f03d4e;
+  color: var(--background4-main);
   margin-bottom: 0.9rem;
   border-radius: 4px;
   outline: 0;
@@ -53,7 +53,7 @@ export const Button = styled.button`
   color: rgb(253, 249, 243);
   font-weight: 600;
   text-transform: uppercase;
-  background: #f03d4e;
+  background: var(--background1-main);
   border: none;
   border-radius: 3px;
   outline: 0;

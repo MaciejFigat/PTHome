@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const TransitionWrapperMain = styled.div`
   position: sticky;
+  z-index: 3;
   top: 0;
   .active {
     transition: all 200ms ease-in;
@@ -16,7 +17,7 @@ export const TransitionWrapper = styled.div`
   top: 0;
   /* min-width: 100vw; */
   max-height: 3.2rem;
-  z-index: 20;
+
   background: var(--background1-main);
 `
 export const NavContainer = styled.nav`
@@ -24,11 +25,12 @@ export const NavContainer = styled.nav`
   justify-content: space-around;
   position: sticky;
   top: 0;
+
   height: fit-content;
   max-width: 100vw;
   background: var(--background1-main);
   box-shadow: inset 20px 20px 40px #171718, inset -20px -20px 40px #252526;
-  z-index: -1;
+
   @media (max-width: 1020px) {
     flex-direction: column;
     justify-content: center;
@@ -48,6 +50,7 @@ export const NavList = styled.ul`
   display: flex;
   justify-content: space-evenly;
   padding: 0;
+
   min-width: 50vw;
   @media (max-width: 1020px) {
     flex-direction: column;
@@ -58,6 +61,7 @@ export const ListItem = styled.li`
   margin-right: 1rem;
   font-size: 1.15rem;
   font-weight: 600;
+
   display: flex;
   text-transform: uppercase;
   color: var(--background5-main);
@@ -73,6 +77,7 @@ export const ListItem = styled.li`
 
 export const ListItemMobile = styled.li`
   font-weight: 500;
+
   display: none;
   font-size: 1.25rem;
   margin-right: 0.25rem;
@@ -88,6 +93,7 @@ export const ListItemMobile = styled.li`
 
 export const MobileViewContainer = styled.div`
   display: flex;
+
   flex-direction: row;
   justify-content: space-between;
   margin: 0 2rem 0 1rem;
@@ -95,6 +101,7 @@ export const MobileViewContainer = styled.div`
 export const HeaderTitleMobile = styled.h1`
   color: var(--background5-main);
   font-size: 1.75rem;
+
   font-weight: 400;
   display: none;
   max-width: fit-content;
@@ -107,6 +114,7 @@ export const HeaderTitleDesktop = styled.h1`
   color: var(--background4-main);
   font-size: 1.25rem;
   font-weight: 200;
+
   margin: 0;
   display: flex;
   align-items: center;
