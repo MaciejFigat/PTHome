@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useAppDispatch } from '../app/reduxHooks'
 import { logout, sendUserId } from '../features/users/userSlice'
-import { Wrapper, Form, Input, Button } from '../styles/login'
+import { Wrapper, Form, Input, Button, Title, LoginLink } from '../styles/login'
 
 interface LoginProps {}
 
@@ -43,10 +43,14 @@ const Login: React.FC<LoginProps> = () => {
             onChange={(e: any) => setPassword(e.target.value)}
           />
           <Button>Login</Button>
+          <Title>
+            Please feel free to{' '}
+            <Link to='/register'>
+              <LoginLink>&nbsp;register.</LoginLink>
+            </Link>
+          </Title>
         </Form>
-        <Button>
-          <Link to='/register'>Register !!!!!!</Link>
-        </Button>
+
         <Button onClick={logoutHandler}>Logout</Button>
       </Wrapper>
     </>

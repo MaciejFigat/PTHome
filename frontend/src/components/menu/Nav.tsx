@@ -8,11 +8,12 @@ import {
   HeaderTitleMobile,
   HeaderTitleDesktop,
 } from '../../styles/nav'
-// import { HeaderTitleMobile } from '../../styles/frontPageHeader'
+import { NavLink } from 'react-router-dom'
+
 import NavListDesktop from './NavListDesktop'
 
 import useScrollListener from '../../hooks/useScrollListener'
-import ShopIcon from '../ShopIcon'
+import SvgIcon from '../SvgIcon'
 interface NavProps {}
 
 const Nav: React.FC<NavProps> = () => {
@@ -56,15 +57,23 @@ const Nav: React.FC<NavProps> = () => {
           <div onClick={handleClickMenu}>
             <Burger menuOpen={menuOpen} />{' '}
           </div>{' '}
-          <HeaderTitleMobile>Nina K.</HeaderTitleMobile>
+          <HeaderTitleMobile>G. Brzęczyszczykiewicz</HeaderTitleMobile>
         </MobileViewContainer>
         <NavContainer className={menuOpen} onClick={handleCloseMenu}>
           <HeaderTitleDesktop className={scrollTop === true ? 'hide' : 'show'}>
-            Nina K.
+            George Brzęczyszczykiewicz
           </HeaderTitleDesktop>
           <NavListDesktop />
 
-          <ShopIcon />
+          <NavLink
+            exact
+            to='/login'
+            className='nav_link'
+            activeClassName='nav_link_active'
+          >
+            {' '}
+            <SvgIcon variant='login' />
+          </NavLink>
         </NavContainer>
       </TransitionWrapper>
     </TransitionWrapperMain>

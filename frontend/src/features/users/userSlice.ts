@@ -99,17 +99,11 @@ const userSlice = createSlice({
         error: {},
     },
     reducers: {
-        login: (state, action) => {
-            state.userInfo = action.payload
-            state.loading = false
-            state.error = action.payload.error
-        },
-        register: (state, action: PayloadAction<string>) => {
-            state.userInfo = action.payload
-            state.error = action.payload
-        },
+
         logout: (state) => {
             state.userInfo = {}
+            state.error = {}
+
         },
     },
 
@@ -120,12 +114,14 @@ const userSlice = createSlice({
         })
         builder.addCase(sendUserId.fulfilled, (state, action) => {
             state.loading = false
-            state.userInfo = action.payload
+            state.userInfo = { id: action.payload._id, email: action.payload.email, isAdmin: action.payload.isAdmin, token: action.payload.token }
+            state.error = action.payload.message
+
         })
         builder.addCase(sendUserId.rejected, (state, action) => {
             state.loading = false
-            // state.error = action.error
-            // state.error = action.payload.error
+
+
         })
         builder.addCase(createUser.pending, (state, action) => {
             state.loading = true
@@ -133,12 +129,13 @@ const userSlice = createSlice({
         })
         builder.addCase(createUser.fulfilled, (state, action) => {
             state.loading = false
+            // state.userInfo = { id: action.payload._id, email: action.payload.email, isAdmin: action.payload.isAdmin, token: action.payload.token }
             state.userInfo = action.payload
+            state.error = action.payload.message
         })
         builder.addCase(createUser.rejected, (state, action) => {
             state.loading = false
-            // state.error = action.error
-            // state.error = action.payload.error
+
         })
 
     },
@@ -146,7 +143,7 @@ const userSlice = createSlice({
 })
 // dispatch(fetchUserById(123)) 
 
-export const { login, logout, register } = userSlice.actions
+export const { logout } = userSlice.actions
 // export const { actions, reducer } = userSlice
 export default userSlice.reducer
 

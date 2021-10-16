@@ -67,9 +67,23 @@ export const Button = styled.button`
   }
 `
 
-export const Title = styled.h2`
+export const Title = styled.p`
   font-weight: normal;
-  color: #2a2a29;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
+  color: var(--background1-main);
+  /* text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1); */
   text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+`
+export const LoginLink = styled.p`
+  color: var(--background1-main);
+  max-width: fit-content;
+  font-weight: 600;
+  :hover {
+    color: rgb(200, 50, 70);
+
+    animation: 0.2s ease-out forwards;
+  }
 `

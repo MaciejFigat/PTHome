@@ -17,7 +17,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <FrontpageHeader title='Nina K. trener personalny' />
+      <FrontpageHeader title='George B. trener personalny' />
       <Nav />
       <Switch location={location} key={location.key}>
         <Route exact path='/exercise' component={Exercise} />
