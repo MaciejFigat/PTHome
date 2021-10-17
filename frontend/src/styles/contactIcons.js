@@ -10,6 +10,7 @@ export const IconsWrapper = styled.ul`
 `
 export const IconsItem = styled.li`
   margin-right: 1rem;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;

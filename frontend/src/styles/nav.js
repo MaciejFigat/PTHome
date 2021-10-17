@@ -50,7 +50,6 @@ export const NavList = styled.ul`
   display: flex;
   justify-content: space-evenly;
   padding: 0;
-
   min-width: 50vw;
   @media (max-width: 1020px) {
     flex-direction: column;
@@ -59,7 +58,7 @@ export const NavList = styled.ul`
 
 export const ListItem = styled.li`
   margin-right: 1rem;
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 600;
 
   display: flex;
@@ -68,7 +67,7 @@ export const ListItem = styled.li`
   @media (max-width: 1020px) {
     flex-direction: column;
     align-items: center;
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     margin-right: 0.25rem;
     padding: 0.5rem;
     margin: 0;
@@ -77,12 +76,12 @@ export const ListItem = styled.li`
 
 export const ListItemMobile = styled.li`
   font-weight: 500;
-
   display: none;
   font-size: 1.25rem;
   margin-right: 0.25rem;
   color: var(--background5-main);
   margin: 0;
+
   flex-direction: column;
   padding: 0.5rem;
   @media (max-width: 1020px) {
@@ -93,20 +92,20 @@ export const ListItemMobile = styled.li`
 
 export const MobileViewContainer = styled.div`
   display: flex;
-
   flex-direction: row;
   justify-content: space-between;
-  margin: 0 2rem 0 1rem;
+  margin: 0 1.5rem 0 1rem;
+  margin-top: -1px !important;
 `
 export const HeaderTitleMobile = styled.h1`
   color: var(--background5-main);
   font-size: 1.75rem;
-
   font-weight: 400;
   display: none;
+
   max-width: fit-content;
   @media (max-width: 1020px) {
-    display: block;
+    /* display: block; */
     font-size: 1.25rem;
   }
 `
@@ -114,7 +113,6 @@ export const HeaderTitleDesktop = styled.h1`
   color: var(--background4-main);
   font-size: 1.25rem;
   font-weight: 200;
-
   margin: 0;
   display: flex;
   align-items: center;
