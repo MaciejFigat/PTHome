@@ -7,7 +7,8 @@ import { Wrapper, Form, Input, Button, Title, LoginLink } from '../styles/login'
 interface LoginProps {}
 
 const Login: React.FC<LoginProps> = () => {
-  const dispatch: any = useAppDispatch()
+  // const dispatch: any = useAppDispatch()
+  const dispatch = useAppDispatch()
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')

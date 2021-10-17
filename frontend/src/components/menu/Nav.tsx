@@ -9,14 +9,27 @@ import {
   HeaderTitleDesktop,
 } from '../../styles/nav'
 import { NavLink } from 'react-router-dom'
-
+import { useAppDispatch, useAppSelector } from '../../app/reduxHooks'
 import NavListDesktop from './NavListDesktop'
-
 import useScrollListener from '../../hooks/useScrollListener'
 import SvgIcon from '../SvgIcon'
-interface NavProps {}
+import { logout } from '../../features/users/userSlice'
 
+interface NavProps {}
+interface UserInfo {
+  id?: string
+  name?: string
+  email?: string
+  isAdmin?: boolean
+  token?: string
+  loading?: boolean
+}
 const Nav: React.FC<NavProps> = () => {
+  const dispatch = useAppDispatch()
+
+  const userInfo: UserInfo = useAppSelector((state) => state.user.userInfo)
+  const { id } = userInfo
+
   const [menuOpen, setMenuOpen] = useState<boolean>(false)
   const handleClickMenu = () => {
     setMenuOpen(!menuOpen)
@@ -25,6 +38,11 @@ const Nav: React.FC<NavProps> = () => {
     if (menuOpen === true) {
       setMenuOpen(false)
     }
+  }
+
+  const logoutHandler = (e: any) => {
+    e.preventDefault()
+    dispatch(logout())
   }
 
   const [scrollDirection, setScrollDirection] = useState<
@@ -64,16 +82,28 @@ const Nav: React.FC<NavProps> = () => {
             George Brzęczyszczykiewicz
           </HeaderTitleDesktop>
           <NavListDesktop />
-
-          <NavLink
-            exact
-            to='/login'
-            className='nav_link'
-            activeClassName='nav_link_active'
-          >
-            {' '}
-            <SvgIcon variant='login' />
-          </NavLink>
+          {id ? (
+            <NavLink
+              exact
+              to='/'
+              onClick={logoutHandler}
+              className='nav_link'
+              activeClassName='nav_link_active'
+            >
+              {' '}
+              <SvgIcon variant='logout' />
+            </NavLink>
+          ) : (
+            <NavLink
+              exact
+              to='/login'
+              className='nav_link'
+              activeClassName='nav_link_active'
+            >
+              {' '}
+              <SvgIcon variant='login' />
+            </NavLink>
+          )}
         </NavContainer>
       </TransitionWrapper>
     </TransitionWrapperMain>
