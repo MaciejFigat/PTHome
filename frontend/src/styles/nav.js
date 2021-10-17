@@ -23,6 +23,7 @@ export const TransitionWrapper = styled.div`
 export const NavContainer = styled.nav`
   display: flex;
   justify-content: space-around;
+
   position: sticky;
   top: 0;
 
@@ -48,7 +49,9 @@ export const NavContainer = styled.nav`
 export const NavList = styled.ul`
   list-style: none;
   display: flex;
-  justify-content: space-evenly;
+
+  justify-content: flex-start;
+
   padding: 0;
   min-width: 50vw;
   @media (max-width: 1020px) {
@@ -95,6 +98,7 @@ export const MobileViewContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   margin: 0 1.5rem 0 1rem;
+  /* this below fixes the irritating gap in nav when you scroll it down */
   margin-top: -1px !important;
 `
 export const HeaderTitleMobile = styled.h1`
