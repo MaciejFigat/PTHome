@@ -28,7 +28,7 @@ const Nav: React.FC<NavProps> = () => {
   const dispatch = useAppDispatch()
 
   const userInfo: UserInfo = useAppSelector((state) => state.user.userInfo)
-  const { id } = userInfo
+  const { id, name } = userInfo
 
   const [menuOpen, setMenuOpen] = useState<boolean>(false)
   const handleClickMenu = () => {
@@ -79,7 +79,7 @@ const Nav: React.FC<NavProps> = () => {
         </MobileViewContainer>
         <NavContainer className={menuOpen} onClick={handleCloseMenu}>
           <HeaderTitleDesktop className={scrollTop === true ? 'hide' : 'show'}>
-            George Brzęczyszczykiewicz
+            {name ? `Witaj ${name}!` : `Witaj!`}
           </HeaderTitleDesktop>
           <NavListDesktop />
           {id ? (

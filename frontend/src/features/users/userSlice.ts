@@ -114,7 +114,7 @@ const userSlice = createSlice({
         })
         builder.addCase(sendUserId.fulfilled, (state, action) => {
             state.loading = false
-            state.userInfo = { id: action.payload._id, email: action.payload.email, isAdmin: action.payload.isAdmin, token: action.payload.token }
+            state.userInfo = (action.payload.name !== 'Error') && { id: action.payload._id, name: action.payload.name, email: action.payload.email, isAdmin: action.payload.isAdmin, token: action.payload.token }
             state.error = action.payload.message
 
         })
