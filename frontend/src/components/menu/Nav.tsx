@@ -75,7 +75,31 @@ const Nav: React.FC<NavProps> = () => {
           <div onClick={handleClickMenu}>
             <Burger menuOpen={menuOpen} />{' '}
           </div>{' '}
-          <HeaderTitleMobile>G. Brzęczyszczykiewicz</HeaderTitleMobile>
+          <HeaderTitleMobile>
+            {name ? `Witaj ${name}!` : `Witaj!`}
+          </HeaderTitleMobile>
+          {/* {id ? (
+            <NavLink
+              exact
+              to='/'
+              onClick={logoutHandler}
+              className='nav_link'
+              activeClassName='nav_link_active'
+            >
+              {' '}
+              <SvgIcon variant='logout' />
+            </NavLink>
+          ) : (
+            <NavLink
+              exact
+              to='/login'
+              className='nav_link'
+              activeClassName='nav_link_active'
+            >
+              {' '}
+              <SvgIcon variant='login' />
+            </NavLink>
+          )} */}
         </MobileViewContainer>
         <NavContainer className={menuOpen} onClick={handleCloseMenu}>
           <HeaderTitleDesktop className={scrollTop === true ? 'hide' : 'show'}>
