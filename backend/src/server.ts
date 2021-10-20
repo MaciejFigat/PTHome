@@ -18,7 +18,7 @@ app.use(express.json())
 
 app.use('/api/users', userRoutes)
 
-const __dirname = path.resolve()
+// const __dirname = path.resolve()
 
 // response.writeHead(201, {
 //   'Content-Type': 'application/javascript',
