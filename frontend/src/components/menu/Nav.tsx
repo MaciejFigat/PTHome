@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import Burger from './Burger'
+import BurgerSecondary from './BurgerSecondary'
 import {
   TransitionWrapperMain,
   TransitionWrapper,
@@ -73,7 +74,7 @@ const Nav: React.FC<NavProps> = () => {
       >
         <MobileViewContainer>
           <div onClick={handleClickMenu}>
-            <Burger menuOpen={menuOpen} />{' '}
+            <Burger menuOpen={menuOpen} /> <BurgerSecondary />
           </div>{' '}
           <HeaderTitleMobile>
             {name ? `Witaj ${name}!` : `Witaj!`}
