@@ -19,14 +19,13 @@ export const BurgerContainer = styled.div`
   @media (max-width: 1020px) {
     /* padding-top: 0.4rem; */
     display: flex;
-
+    min-height: 50px;
+    align-items: baseline;
     /* align-items: center; */
   }
 `
 
 export const BurgerLine = styled.div`
-  width: 26px;
-  height: 3px;
   border-radius: 6%;
   background: var(--background5-main);
   margin: 5px;
