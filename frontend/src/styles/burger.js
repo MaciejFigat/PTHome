@@ -1,31 +1,85 @@
 import styled from 'styled-components'
 
 export const BurgerWrapper = styled.div`
-  max-width: fit-content;
+  /* max-width: fit-content; */
+  /* height: 100%; */
+
+  /* display: flex;
+  align-items: center; */
 `
+// export const BurgerContainer = styled.div`
+//   display: none;
+//   @media (max-width: 1020px) {
+//     padding: 0.5rem;
+//     display: block;
+//   }
+// `
 export const BurgerContainer = styled.div`
   display: none;
   @media (max-width: 1020px) {
-    padding: 0.5rem;
-    display: block;
+    /* padding-top: 0.4rem; */
+    display: flex;
+
+    /* align-items: center; */
   }
 `
+
 export const BurgerLine = styled.div`
   width: 26px;
-  height: 5px;
-  border-radius: 25%;
+  height: 3px;
+  border-radius: 6%;
   background: var(--background5-main);
   margin: 5px;
+  align-self: center;
   transition: all 0.3s ease;
-  &.lineOne.true {
-    height: 4.5px;
-    transform: rotate(-45deg) translate(-4.95px, -2.75px);
+  &.lineFour {
+    width: 8px;
+    height: 22px;
+    margin: 0px;
+    display: none;
+    &.true {
+      display: block;
+      border-radius: 9%;
+    }
   }
-  &.lineTwo.true {
-    opacity: 0;
+  &.lineOne {
+    width: 10px;
+    height: 26px;
+    margin: 2px;
+    &.true {
+      border-radius: 9%;
+    }
   }
-  &.lineThree.true {
-    height: 4.5px;
-    transform: rotate(45deg) translate(-4.95px, 2.75px);
+  &.lineTwo {
+    width: 8px;
+    height: 26px;
+    margin: 2px;
+    transform: rotate(-19deg);
+    &.true {
+      transform: rotate(-90deg);
+      width: 4px;
+      height: 42px;
+      margin: 3px;
+    }
   }
+  &.lineThree {
+    width: 6px;
+    height: 26px;
+    margin: 2px;
+    transform: rotate(-19deg);
+    transform-origin: bottom;
+    &.true {
+      width: 10px;
+      height: 26px;
+      margin: 2px;
+      transform: rotate(0deg);
+      border-radius: 9%;
+    }
+  }
+
+  /*
+  &.lineThree:hover {
+    width: 28px;
+    width: 12px;
+  } */
 `
