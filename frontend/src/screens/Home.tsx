@@ -10,6 +10,7 @@ const Home: React.FC<HomeProps> = () => {
         topline={homeData.topline}
         headline={homeData.headline}
         subtitle={homeData.subtitle}
+        img={homeData.img}
       ></InfoSection>
     </>
   )

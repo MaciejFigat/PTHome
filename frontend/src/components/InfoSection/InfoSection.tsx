@@ -9,18 +9,22 @@ import {
   Heading,
   Subtitle,
   Button,
+  ImgWrapper,
+  Img,
 } from './InfoSection.styled'
 
 interface InfoSectionProps {
   topline: string
   headline: string
   subtitle: string
+  img: any
 }
 
 const InfoSection: React.FC<InfoSectionProps> = ({
   topline,
   headline,
   subtitle,
+  img,
 }) => {
   return (
     <>
@@ -35,9 +39,14 @@ const InfoSection: React.FC<InfoSectionProps> = ({
                 <Heading light>{headline}</Heading>
                 <Subtitle light>{subtitle}</Subtitle>
                 <Button large fontLarge primary>
-                  KLAK THE BATAN
+                  Klak it!
                 </Button>
               </TextWrapper>
+            </InfoColumn>
+            <InfoColumn>
+              <ImgWrapper>
+                <Img src={img} start></Img>
+              </ImgWrapper>
             </InfoColumn>
           </InfoRow>
         </Container>

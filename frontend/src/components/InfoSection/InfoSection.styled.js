@@ -8,7 +8,7 @@ export const InfoSec = styled.div`
 export const InfoRow = styled.div`
   display: flex;
   margin: 0 -15px -15px -15px;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   align-items: center;
   flex-direction: ${({ imgStart }) => (imgStart ? 'row-reverse' : 'row')};
 `
@@ -88,3 +88,18 @@ export const Subtitle = styled.p`
   line-height: 24px;
   color: ${({ light }) => (light ? 'var(--secondary2)' : 'var(--secondary1)')};
 `
+export const ImgWrapper = styled.div`
+  max-width: 555px;
+  display: flex;
+  justify-content: ${({ start }) => (start ? 'flex-start' : 'flex-end')};
+`
+export const Img = styled.img`
+  padding-right: 0;
+  border: 0;
+  max-width: 100%;
+  vertical-align: middle;
+  display: inline-block;
+  max-height: 500px;
+`
+
+// export const
