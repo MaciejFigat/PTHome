@@ -28,6 +28,12 @@ body {
    --background4-main: #A2A1A6;
    --background5-main: #CBC9CF;
 
+   --secondary1: #264653;
+   --secondary2: #2a9d8f;
+   --secondary3: #e9c46a;
+   --secondary4: #f4a261;
+   --secondary5: #e76f51;
+
     // --color1-main: #102a43;
     // --color2-main: #393232;
     // --color3-main: #151515;

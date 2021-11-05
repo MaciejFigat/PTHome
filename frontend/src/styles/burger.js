@@ -7,21 +7,13 @@ export const BurgerWrapper = styled.div`
   /* display: flex;
   align-items: center; */
 `
-// export const BurgerContainer = styled.div`
-//   display: none;
-//   @media (max-width: 1020px) {
-//     padding: 0.5rem;
-//     display: block;
-//   }
-// `
+
 export const BurgerContainer = styled.div`
   display: none;
   @media (max-width: 1020px) {
-    /* padding-top: 0.4rem; */
     display: flex;
     min-height: 50px;
     align-items: baseline;
-    /* align-items: center; */
   }
 `
 
@@ -31,14 +23,18 @@ export const BurgerLine = styled.div`
   margin: 5px;
   align-self: center;
   transition: all 0.3s ease;
+
+  /* &:hover {
+    background: var(--background4-main);
+  } */
   &.lineFour {
     width: 8px;
     height: 22px;
     margin: 0px;
     display: none;
+    border-radius: 12%;
     &.true {
       display: block;
-      border-radius: 9%;
     }
   }
   &.lineOne {
@@ -75,10 +71,4 @@ export const BurgerLine = styled.div`
       border-radius: 9%;
     }
   }
-
-  /*
-  &.lineThree:hover {
-    width: 28px;
-    width: 12px;
-  } */
 `
