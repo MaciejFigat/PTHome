@@ -1,9 +1,22 @@
 import styled from 'styled-components'
+import { handleSectionColor } from '../../styles/utilsSection'
+// handleSectionColor includes these
+
+// sectionBackground
+// color
+// subtitleColor
+// headingColor
+// toplineColor
+// buttonColor
+// buttonBackground
+// buttonBackgroundHover
+//  buttonBackgroundColor
 
 export const InfoSec = styled.div`
-  color: var(--background1-main);
+  ${(props) => handleSectionColor(props).color}
   padding: 160px 0;
-  background: var(--secondary3);
+
+  ${(props) => handleSectionColor(props).sectionBackground}
 `
 export const InfoRow = styled.div`
   display: flex;
@@ -40,27 +53,28 @@ export const Container = styled.div`
   margin-left: auto;
   margin-right: auto;
   padding: 0 50px 0 50px;
-
   @media screen and (max-width: 991px) {
     padding: 0 30px 0 30px;
   }
 `
 export const Button = styled.button`
   border-radius: 4px;
-  background: ${({ primary }) =>
-    primary ? 'var(--secondary1)' : 'var(--secondary2)'};
   white-space: nowrap;
   padding: ${({ large }) => (large ? '12px 64px' : '10px 20px')};
   font-size: ${({ fontLarge }) => (fontLarge ? '22px' : '16px')};
-  color: var(--background1-main);
-  outline: none;
+  /* buttonBackground */
+  ${(props) => handleSectionColor(props).buttonBackground}
+  /* buttonColor */
+ ${(props) => handleSectionColor(props).buttonColor}
+ outline: none;
   cursor: pointer;
   border: none;
   &:hover {
     transition: all 0.3s ease-out;
-    background: ${({ primary }) =>
-      primary ? 'var(--secondary2)' : 'var(--secondary1)'};
-    color: var(--background5-main);
+    /* buttonBackgroundHover */
+    ${(props) => handleSectionColor(props).buttonBackgroundHover}
+    /* buttonColorHover */
+        ${(props) => handleSectionColor(props).buttonColorHover}
   }
   @media screen and (max-width: 960px) {
     width: 100%;
@@ -68,7 +82,8 @@ export const Button = styled.button`
 `
 
 export const TopLine = styled.div`
-  color: ${({ light }) => (light ? 'var(--secondary2)' : 'var(--secondary1)')};
+  /* toplineColor */
+  ${(props) => handleSectionColor(props).toplineColor}
   font-size: 18px;
   line-height: 16px;
   font-weight: 700;
@@ -79,14 +94,16 @@ export const Heading = styled.h1`
   margin-bottom: 24px;
   font-size: 48px;
   line-height: 1.1;
-  color: ${({ light }) => (light ? 'var(--secondary5)' : 'var(--secondary4)')};
+  /* headingColor */
+  ${(props) => handleSectionColor(props).headingColor}
 `
 export const Subtitle = styled.p`
   max-width: 440px;
   margin-bottom: 35px;
   font-size: 18px;
   line-height: 24px;
-  color: ${({ light }) => (light ? 'var(--secondary2)' : 'var(--secondary1)')};
+  /* subtitleColor */
+  ${(props) => handleSectionColor(props).subtitleColor}
 `
 export const ImgWrapper = styled.div`
   max-width: 555px;
@@ -101,5 +118,3 @@ export const Img = styled.img`
   display: inline-block;
   max-height: 500px;
 `
-
-// export const

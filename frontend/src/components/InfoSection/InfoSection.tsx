@@ -17,35 +17,43 @@ interface InfoSectionProps {
   topline: string
   headline: string
   subtitle: string
+  buttonLabel?: string
   img: any
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'blue'
+  imgStart?: boolean
 }
 
 const InfoSection: React.FC<InfoSectionProps> = ({
   topline,
   headline,
   subtitle,
+  buttonLabel,
   img,
+  variant,
+  imgStart,
 }) => {
   return (
     <>
-      <InfoSec>
+      <InfoSec variant={variant}>
         <Container>
           {/* <InfoRow imgStart={imgStart}> */}
 
-          <InfoRow imgStart>
+          <InfoRow imgStart={imgStart}>
             <InfoColumn>
               <TextWrapper>
-                <TopLine light>{topline}</TopLine>
-                <Heading light>{headline}</Heading>
-                <Subtitle light>{subtitle}</Subtitle>
-                <Button large fontLarge primary>
-                  Klak it!
-                </Button>
+                <TopLine variant={variant}>{topline}</TopLine>
+                <Heading variant={variant}>{headline}</Heading>
+                <Subtitle variant={variant}>{subtitle}</Subtitle>
+                {buttonLabel && (
+                  <Button large fontLarge variant={variant} primary>
+                    {buttonLabel}
+                  </Button>
+                )}
               </TextWrapper>
             </InfoColumn>
             <InfoColumn>
-              <ImgWrapper>
-                <Img src={img} start></Img>
+              <ImgWrapper start>
+                <Img src={img}></Img>
               </ImgWrapper>
             </InfoColumn>
           </InfoRow>
