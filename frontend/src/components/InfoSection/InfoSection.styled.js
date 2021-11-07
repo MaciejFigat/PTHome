@@ -27,9 +27,9 @@ export const InfoRow = styled.div`
   align-items: center;
   flex-direction: ${({ imgStart }) => (imgStart ? 'row-reverse' : 'row')};
   @media (max-width: 880px) {
-    flex-wrap: nowrap;
+    /* flex-wrap: nowrap; */
     flex-direction: column;
-    align-items: stretch;
+    /* align-items: stretch; */
   }
 `
 export const InfoColumn = styled.div`
