@@ -17,20 +17,22 @@ interface StyleVariant {
 // --background - blue1:
 // --background - blue7:
 
-export const primaryStyle: StyleVariant = {
+ const primaryStyle: StyleVariant = {
+
     sectionBackground: `var(--background1-main);`,
     color: `var(--background5-main);`,
     subtitleColor: 'var(--background5-main);',
     headingColor: 'var(--background5-main);',
     toplineColor: 'var(--background5-main);',
     buttonColor: 'var(--background5-main);',
-    buttonBackground: 'var(--background1-main);',
-    buttonBackgroundHover: 'var(--background2-main);',
-    buttonColorHover: 'var(--background2-main);'
+    buttonBackground: 'var(--background2-main);',
+    buttonBackgroundHover: 'var(--background4-main);',
+    buttonColorHover: 'var(--background1-main);'
 }
 
 
-export const secondaryStyle: StyleVariant = {
+ const secondaryStyle: StyleVariant = {
+
     sectionBackground: `var(--secondary3);`,
     color: `var(--background1-main);`,
     subtitleColor: 'var(--secondary1);',
@@ -43,7 +45,8 @@ export const secondaryStyle: StyleVariant = {
 
 }
 
-export const tertiaryStyle: StyleVariant = {
+ const tertiaryStyle: StyleVariant = {
+
     sectionBackground: `var(--background-tertiary1);`,
     color: `var(--background-tertiary2);`,
     subtitleColor: 'var(--background-tertiary4);',
@@ -54,7 +57,8 @@ export const tertiaryStyle: StyleVariant = {
     buttonBackgroundHover: 'var(--background-tertiary4);',
     buttonColorHover: 'var(--background-tertiary1);'
 }
-export const blueStyle: StyleVariant = {
+ const blueStyle: StyleVariant = {
+
     sectionBackground: `var(--background-blue1);`,
     color: `var(--background-blue2);`,
     subtitleColor: 'var(--background-blue5);',
@@ -65,7 +69,68 @@ export const blueStyle: StyleVariant = {
     buttonBackgroundHover: 'var(--background-blue7);',
     buttonColorHover: 'var(--background-blue5);'
 }
+ const defaultStyle: StyleVariant = {
 
+    color: `color: var(--background-quaternary5);`,
+    sectionBackground: `background-color: var(--background-quaternary2);`,
+    subtitleColor: `color: var(--background-quaternary1);`,
+    headingColor: `color: var(--background-quaternary1);`,
+    toplineColor: `color: var(--background-quaternary1);`,
+    buttonColor: `color: var(--background-quaternary2);`,
+    buttonBackground: `background-color: var(--background-quaternary1);`,
+    buttonBackgroundHover: `background-color: var(--background-quaternary3);`,
+    buttonColorHover: `color: var(--background-quaternary1);`
+}
+
+let style: StyleVariant = {  color: `color: var(--background-quaternary5);`,
+    sectionBackground: `background-color: var(--background-quaternary2);`,
+    subtitleColor: `color: var(--background-quaternary1);`,
+    headingColor: `color: var(--background-quaternary1);`,
+    toplineColor: `color: var(--background-quaternary1);`,
+    buttonColor: `color: var(--background-quaternary2);`,
+    buttonBackground: `background-color: var(--background-quaternary1);`,
+    buttonBackgroundHover: `background-color: var(--background-quaternary3);`,
+    buttonColorHover: `color: var(--background-quaternary1);`}
+  
+//   const propsHandler = (props:any) =>{   
+       
+//         switch (props.variant) {
+//         case 'primary':
+//         style = primaryStyle
+//            return (style)
+            
+//         case 'secondary':
+//         style =  secondaryStyle
+//            return (style)
+            
+//         case 'tertiary':
+//          style = tertiaryStyle
+//            return (style)
+            
+//         case 'blue':
+//          style = blueStyle
+//           return (style)
+           
+//         default:
+//           style = defaultStyle
+//           return (style)
+           
+//     }}
+// export const handleSectionColor: (props: any) => {} = (props: any) => {
+
+//     return {    color: `color: ${style.color}`,
+//                 sectionBackground: `background-color: ${style.sectionBackground}`,
+//                 subtitleColor: `color: ${style.subtitleColor}`,
+//                 headingColor: `color: ${style.headingColor}`,
+//                 toplineColor: `color: ${style.toplineColor}`,
+//                 buttonColor: `color: ${style.buttonColor}`,
+//                 buttonBackground: `background-color: ${style.buttonBackground}`,
+//                 buttonBackgroundHover: `background-color: ${style.buttonBackgroundHover}`,
+//                 buttonColorHover: `color: ${style.buttonColorHover}`,
+//             }
+// }
+
+         
 
 export const handleSectionColor: (props: any) => {} = (props: any) => {
     switch (props.variant) {
@@ -93,8 +158,6 @@ export const handleSectionColor: (props: any) => {} = (props: any) => {
                 buttonBackground: `background-color: ${secondaryStyle.buttonBackground}`,
                 buttonBackgroundHover: `background-color: ${secondaryStyle.buttonBackgroundHover}`,
                 buttonColorHover: `color: ${secondaryStyle.buttonColorHover}`,
-
-
             }
         case 'tertiary':
             return {
@@ -107,8 +170,6 @@ export const handleSectionColor: (props: any) => {} = (props: any) => {
                 buttonBackground: `background-color: ${tertiaryStyle.buttonBackground}`,
                 buttonBackgroundHover: `background-color: ${tertiaryStyle.buttonBackgroundHover}`,
                 buttonColorHover: `color: ${tertiaryStyle.buttonColorHover}`,
-
-
             }
         case 'blue':
             return {
@@ -121,21 +182,19 @@ export const handleSectionColor: (props: any) => {} = (props: any) => {
                 buttonBackground: `background-color: ${blueStyle.buttonBackground}`,
                 buttonBackgroundHover: `background-color: ${blueStyle.buttonBackgroundHover}`,
                 buttonColorHover: `color: ${blueStyle.buttonColorHover}`,
-
-
             }
 
         default:
             return {
-                color: `color: var(--background5-main);`,
-                sectionBackground: `background-color: var(--background1-main);`,
-                subtitleColor: `color: var(--background5-main);`,
-                headingColor: `color: var(--background4-main);`,
-                toplineColor: `color: var(--background3-main);`,
-                buttonColor: `color: var(--background2-main);`,
-                buttonBackground: `background-color: var(--background4-main);`,
-                buttonBackgroundHover: `background-color: var(--background1-main);`,
-                buttonColorHover: `color: var(--background1-main);`,
+                color: `color: var(--background-quaternary5);`,
+                sectionBackground: `background-color: var(--background-quaternary2);`,
+                subtitleColor: `color: var(--background-quaternary1);`,
+                headingColor: `color: var(--background-quaternary1);`,
+                toplineColor: `color: var(--background-quaternary1);`,
+                buttonColor: `color: var(--background-quaternary2);`,
+                buttonBackground: `background-color: var(--background-quaternary1);`,
+                buttonBackgroundHover: `background-color: var(--background-quaternary3);`,
+                buttonColorHover: `color: var(--background-quaternary1);`,
             }
     }
 }

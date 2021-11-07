@@ -52,6 +52,15 @@ const Home: React.FC<HomeProps> = () => {
         headline={homeDataFive.headline}
         subtitle={homeDataFive.subtitle}
         img={homeDataFive.img}
+        buttonLabel={homeDataFive.buttonLabel}
+      ></InfoSection>
+      <InfoSection
+        variant='primary'
+        topline={homeDataFive.topline}
+        headline={homeDataFive.headline}
+        subtitle={homeDataFive.subtitle}
+        img={homeDataFive.img}
+        buttonLabel={homeDataFive.buttonLabel}
       ></InfoSection>
     </>
   )

@@ -8,7 +8,23 @@
 ### `Styling assets - miscellaneous`  
     ├──utils.ts 
         ├──it exports a helper function that is a big switch statement which governs styling for different variant props for elements that require them ie. SectionCards
+### `Styling InfoSection - miscellaneous v2`  
+  ├──InfoSection 
+        ├──InfoSection.styled.js - styles for the InfoSection
+            ├──it uses handleSectionColor function which governs over its styles depending on the props passed through variant prop while rendering `<InfoSection/>` component, ie. variant?: 'primary' | 'secondary' | 'tertiary' | 'blue'
+             ├──if you want to change styles for particular variants do so in the styles/utilsSection.ts 
+        ├──InfoSection.styled.tsx - structure
+            ├──it can receive variant props or it defaults to a regular one 
+            ├──it expects certain data props ie.  topline: string, headline: string, subtitle: string,  img: any
+            ├──buttonLabel ? it renders button : it does not (buttonLabel?: string)
+             
+            ├──if imgStart is present (imgStart?: boolean) img element at the start of the row if not it's at the end
+ 
+  buttonLabel?: string
 
+  
+  
+           
 
 ## Available Scripts
 

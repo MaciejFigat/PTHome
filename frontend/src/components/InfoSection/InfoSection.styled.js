@@ -24,6 +24,9 @@ export const InfoRow = styled.div`
   /* flex-wrap: wrap; */
   align-items: center;
   flex-direction: ${({ imgStart }) => (imgStart ? 'row-reverse' : 'row')};
+  @media (max-width: 880px) {
+    flex-direction: column;
+  }
 `
 export const InfoColumn = styled.div`
   margin-bottom: 15px;
@@ -63,7 +66,7 @@ export const Button = styled.button`
   padding: ${({ large }) => (large ? '12px 64px' : '10px 20px')};
   font-size: ${({ fontLarge }) => (fontLarge ? '22px' : '16px')};
   /* buttonBackground */
-  ${(props) => handleSectionColor(props).buttonBackground}
+   ${(props) => handleSectionColor(props).buttonBackground}
   /* buttonColor */
  ${(props) => handleSectionColor(props).buttonColor}
  outline: none;
