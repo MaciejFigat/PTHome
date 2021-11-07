@@ -1,5 +1,6 @@
 import React from 'react'
 import Nav from './components/menu/Nav'
+
 import Home from './screens/Home'
 import Contact from './screens/Contact'
 import { GlobalStyle } from './styles/GlobalStyles'
@@ -8,9 +9,9 @@ import FrontpageHeader from './components/menu/FrontpageHeader'
 import Shop from './screens/Shop'
 import Exercise from './screens/Exercise'
 import Blog from './screens/Blog'
-
 import Login from './screens/Login'
 import Register from './screens/Register'
+import Footer from './components/Footer/Footer'
 function App() {
   const location = useLocation()
 
@@ -29,6 +30,7 @@ function App() {
         <Route exact path='/blog' component={Blog} />
         <Route path='/' component={Home} />
       </Switch>
+      <Footer />
     </>
   )
 }

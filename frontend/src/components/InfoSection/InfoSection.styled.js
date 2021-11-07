@@ -17,15 +17,19 @@ export const InfoSec = styled.div`
   padding: 160px 0;
 
   ${(props) => handleSectionColor(props).sectionBackground}
+  @media (max-width: 880px) {
+    padding: 30px 0;
+  }
 `
 export const InfoRow = styled.div`
   display: flex;
   margin: 0 -15px -15px -15px;
-  /* flex-wrap: wrap; */
   align-items: center;
   flex-direction: ${({ imgStart }) => (imgStart ? 'row-reverse' : 'row')};
   @media (max-width: 880px) {
+    flex-wrap: nowrap;
     flex-direction: column;
+    align-items: stretch;
   }
 `
 export const InfoColumn = styled.div`
@@ -33,7 +37,7 @@ export const InfoColumn = styled.div`
   margin-right: 15px;
   padding-left: 15px;
   flex: 1;
-  max-width: 50%;
+  /* max-width: 50%; */
   flex-basis: 50%;
   @media screen and (min-width: 770px) {
     max-width: 100%;
@@ -46,30 +50,34 @@ export const TextWrapper = styled.div`
   padding-top: 0;
   padding-bottom: 60;
   @media screen and (max-width: 770px) {
-    padding-bottom: 65px;
+    padding-bottom: 25px;
   }
 `
 export const Container = styled.div`
   z-index: 1;
-  width: 100%;
-  max-width: 1300px;
+  max-width: 100%;
+  /* max-width: 1300px; */
   margin-left: auto;
   margin-right: auto;
-  padding: 0 50px 0 50px;
+
+  padding-right: 50px;
+  padding-left: 50px;
   @media screen and (max-width: 991px) {
-    padding: 0 30px 0 30px;
+    padding-right: 20px;
+    padding-left: 20px;
   }
 `
 export const Button = styled.button`
   border-radius: 4px;
   white-space: nowrap;
+  min-width: fit-content;
   padding: ${({ large }) => (large ? '12px 64px' : '10px 20px')};
   font-size: ${({ fontLarge }) => (fontLarge ? '22px' : '16px')};
   /* buttonBackground */
-   ${(props) => handleSectionColor(props).buttonBackground}
+  ${(props) => handleSectionColor(props).buttonBackground}
   /* buttonColor */
  ${(props) => handleSectionColor(props).buttonColor}
- outline: none;
+  outline: none;
   cursor: pointer;
   border: none;
   &:hover {
@@ -79,8 +87,8 @@ export const Button = styled.button`
     /* buttonColorHover */
         ${(props) => handleSectionColor(props).buttonColorHover}
   }
-  @media screen and (max-width: 960px) {
-    width: 100%;
+  @media screen and (max-width: 760px) {
+    padding: '8px 14px';
   }
 `
 
@@ -98,7 +106,11 @@ export const Heading = styled.h1`
   font-size: 48px;
   line-height: 1.1;
   /* headingColor */
-  ${(props) => handleSectionColor(props).headingColor}
+  color: ${(props) => handleSectionColor(props).headingColor};
+
+  @media screen and (max-width: 760px) {
+    font-size: 36px;
+  }
 `
 export const Subtitle = styled.p`
   max-width: 440px;
