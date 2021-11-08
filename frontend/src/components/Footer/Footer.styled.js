@@ -27,3 +27,6 @@ export const FooterSectionText = styled.div`
   margin-bottom: 24px;
   font-size: 20px;
 `
+
+export const FotterForm = styled.form``
+export const FormInput = styled.input``

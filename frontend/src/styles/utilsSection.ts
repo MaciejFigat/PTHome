@@ -72,12 +72,13 @@ const blueStyle: StyleVariant = {
 const defaultStyle: StyleVariant = {
 
     color: `color: var(--background-quaternary5);`,
-    sectionBackground: `background-color: var(--background-quaternary2);`,
+    sectionBackground: `background-color: var(--background-blue5);`,
+    // sectionBackground: `background-color: var(--background-quaternary2);`,
     subtitleColor: `color: var(--background-quaternary1);`,
     headingColor: `color: var(--background-quaternary1);`,
     toplineColor: `color: var(--background-quaternary1);`,
     buttonColor: `color: var(--background-quaternary2);`,
-    buttonBackground: `background-color: var(--background-quaternary1);`,
+    buttonBackground: `background-color: var(--background-quaternary4);`,
     buttonBackgroundHover: `background-color: var(--background-quaternary3);`,
     buttonColorHover: `color: var(--background-quaternary1);`
 }
@@ -122,69 +123,3 @@ export const handleSectionColor: (props: any) => {} = (props: any) => {
 
 
 
-// export const handleSectionColor: (props: any) => {} = (props: any) => {
-//     switch (props.variant) {
-//         case 'primary':
-//             return {
-
-//                 color: `color: ${primaryStyle.color}`,
-//                 sectionBackground: `background-color: ${primaryStyle.sectionBackground}`,
-//                 subtitleColor: `color: ${primaryStyle.subtitleColor}`,
-//                 headingColor: `color: ${primaryStyle.headingColor}`,
-//                 toplineColor: `color: ${primaryStyle.toplineColor}`,
-//                 buttonColor: `color: ${primaryStyle.buttonColor}`,
-//                 buttonBackground: `background-color: ${primaryStyle.buttonBackground}`,
-//                 buttonBackgroundHover: `background-color: ${primaryStyle.buttonBackgroundHover}`,
-//                 buttonColorHover: `color: ${primaryStyle.buttonColorHover}`,
-//             }
-//         case 'secondary':
-//             return {
-//                 color: `color: ${secondaryStyle.color}`,
-//                 sectionBackground: `background-color: ${secondaryStyle.sectionBackground}`,
-//                 subtitleColor: `color: ${secondaryStyle.subtitleColor}`,
-//                 headingColor: `color: ${secondaryStyle.headingColor}`,
-//                 toplineColor: `color: ${secondaryStyle.toplineColor}`,
-//                 buttonColor: `color: ${secondaryStyle.buttonColor}`,
-//                 buttonBackground: `background-color: ${secondaryStyle.buttonBackground}`,
-//                 buttonBackgroundHover: `background-color: ${secondaryStyle.buttonBackgroundHover}`,
-//                 buttonColorHover: `color: ${secondaryStyle.buttonColorHover}`,
-//             }
-//         case 'tertiary':
-//             return {
-//                 color: `color: ${tertiaryStyle.color}`,
-//                 sectionBackground: `background-color: ${tertiaryStyle.sectionBackground}`,
-//                 subtitleColor: `color: ${tertiaryStyle.subtitleColor}`,
-//                 headingColor: `color: ${tertiaryStyle.headingColor}`,
-//                 toplineColor: `color: ${tertiaryStyle.toplineColor}`,
-//                 buttonColor: `color: ${tertiaryStyle.buttonColor}`,
-//                 buttonBackground: `background-color: ${tertiaryStyle.buttonBackground}`,
-//                 buttonBackgroundHover: `background-color: ${tertiaryStyle.buttonBackgroundHover}`,
-//                 buttonColorHover: `color: ${tertiaryStyle.buttonColorHover}`,
-//             }
-//         case 'blue':
-//             return {
-//                 color: `color: ${blueStyle.color}`,
-//                 sectionBackground: `background-color: ${blueStyle.sectionBackground}`,
-//                 subtitleColor: `color: ${blueStyle.subtitleColor}`,
-//                 headingColor: `color: ${blueStyle.headingColor}`,
-//                 toplineColor: `color: ${blueStyle.toplineColor}`,
-//                 buttonColor: `color: ${blueStyle.buttonColor}`,
-//                 buttonBackground: `background-color: ${blueStyle.buttonBackground}`,
-//                 buttonBackgroundHover: `background-color: ${blueStyle.buttonBackgroundHover}`,
-//                 buttonColorHover: `color: ${blueStyle.buttonColorHover}`,
-//             }
-
-//         default:
-//             return {
-//                 color: `color: var(--background-quaternary5);`,
-//                 sectionBackground: `background-color: var(--background-quaternary2);`,
-//                 subtitleColor: `color: var(--background-quaternary1);`,
-//                 headingColor: `color: var(--background-quaternary1);`,
-//                 toplineColor: `color: var(--background-quaternary1);`,
-//                 buttonColor: `color: var(--background-quaternary2);`,
-//                 buttonBackground: `background-color: var(--background-quaternary1);`,
-//                 buttonBackgroundHover: `background-color: var(--background-quaternary3);`,
-//                 buttonColorHover: `color: var(--background-quaternary1);`,
-//             }
-//     }
-// }

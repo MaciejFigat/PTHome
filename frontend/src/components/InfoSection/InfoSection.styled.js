@@ -18,7 +18,7 @@ export const InfoSec = styled.div`
 
   ${(props) => handleSectionColor(props).sectionBackground}
   @media (max-width: 880px) {
-    padding: 30px 0;
+    padding: 60px 0;
   }
 `
 export const InfoRow = styled.div`
@@ -28,7 +28,7 @@ export const InfoRow = styled.div`
   flex-direction: ${({ imgStart }) => (imgStart ? 'row-reverse' : 'row')};
   @media (max-width: 880px) {
     /* flex-wrap: nowrap; */
-    flex-direction: column;
+    flex-direction: column-reverse;
     /* align-items: stretch; */
   }
 `
@@ -124,6 +124,9 @@ export const ImgWrapper = styled.div`
   max-width: 555px;
   display: flex;
   justify-content: ${({ start }) => (start ? 'flex-start' : 'flex-end')};
+  @media (max-width: 880px) {
+    padding-bottom: 20px;
+  }
 `
 export const Img = styled.img`
   padding-right: 0;

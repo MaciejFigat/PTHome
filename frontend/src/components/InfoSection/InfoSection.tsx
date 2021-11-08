@@ -19,7 +19,7 @@ interface InfoSectionProps {
   subtitle: string
   buttonLabel?: string
   img: any
-  variant?: 'primary' | 'secondary' | 'tertiary' | 'blue'
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'blue' | string
   imgStart?: boolean
 }
 
@@ -45,7 +45,7 @@ const InfoSection: React.FC<InfoSectionProps> = ({
                 <Heading variant={variant}>{headline}</Heading>
                 <Subtitle variant={variant}>{subtitle}</Subtitle>
                 {buttonLabel && (
-                  <Button large fontLarge variant={variant} primary>
+                  <Button large fontLarge variant={variant}>
                     {buttonLabel}
                   </Button>
                 )}
