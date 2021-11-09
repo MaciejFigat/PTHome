@@ -19,7 +19,8 @@ interface InfoSectionProps {
   subtitle: string
   buttonLabel?: string
   img: any
-  variant?: 'primary' | 'secondary' | 'tertiary' | 'blue' | string
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'blue'
+
   imgStart?: boolean
 }
 

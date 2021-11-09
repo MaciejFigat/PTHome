@@ -47,7 +47,7 @@ const Home: React.FC<HomeProps> = () => {
         img={homeDataFour.img}
       ></InfoSection>
       <InfoSection
-        variant='none'
+        // variant='default'
         topline={homeDataFive.topline}
         headline={homeDataFive.headline}
         subtitle={homeDataFive.subtitle}

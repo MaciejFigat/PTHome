@@ -71,16 +71,16 @@ const blueStyle: StyleVariant = {
 }
 const defaultStyle: StyleVariant = {
 
-    color: `color: var(--background-quaternary5);`,
-    sectionBackground: `background-color: var(--background-blue5);`,
-    // sectionBackground: `background-color: var(--background-quaternary2);`,
-    subtitleColor: `color: var(--background-quaternary1);`,
-    headingColor: `color: var(--background-quaternary1);`,
-    toplineColor: `color: var(--background-quaternary1);`,
-    buttonColor: `color: var(--background-quaternary2);`,
-    buttonBackground: `background-color: var(--background-quaternary4);`,
-    buttonBackgroundHover: `background-color: var(--background-quaternary3);`,
-    buttonColorHover: `color: var(--background-quaternary1);`
+
+    sectionBackground: `var(--background-tertiary1);`,
+    color: `var(--background-tertiary2);`,
+    subtitleColor: 'var(--background-tertiary4);',
+    headingColor: 'var(--background-tertiary5);',
+    toplineColor: 'var(--background-tertiary3);',
+    buttonColor: 'var(--background-tertiary4);',
+    buttonBackground: 'var(--background-tertiary5);',
+    buttonBackgroundHover: 'var(--background-tertiary4);',
+    buttonColorHover: 'var(--background-tertiary1);'
 }
 
 
