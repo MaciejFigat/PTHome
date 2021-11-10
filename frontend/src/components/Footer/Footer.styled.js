@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const FooterContainer = styled.div`
   display: flex;
-  background-color: var(--background1-main);
+  background-color: var(--background2-main);
   padding: 4rem 0 2rem 0;
   justify-content: center;
   align-items: center;
@@ -28,5 +28,20 @@ export const FooterSectionText = styled.div`
   font-size: 20px;
 `
 
-export const FotterForm = styled.form``
-export const FormInput = styled.input``
+export const FooterForm = styled.form`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: 770px) {
+    flex-direction: column;
+    width: 85%;
+  }
+`
+export const FormInput = styled.input`
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin-right: 10px;
+  border: 2px solid var(--background5-main);
+  font-size: 18px;
+  outline: none;
+`

@@ -5,7 +5,7 @@ import {
   FooterSectionHeading,
   FooterSectionText,
   FormInput,
-  FotterForm,
+  FooterForm,
 } from './Footer.styled'
 import { Button } from '../InfoSection/InfoSection.styled'
 interface FooterProps {}
@@ -21,14 +21,14 @@ const Footer: React.FC<FooterProps> = () => {
         <FooterSectionText>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum, quia!
         </FooterSectionText>
-        <FotterForm>
+        <FooterForm>
           <FormInput
             name='email'
             type='email'
             placeholder='your email if you wish to subscribe'
           ></FormInput>
           <Button variant='tertiary'>Subscribe to me </Button>
-        </FotterForm>
+        </FooterForm>
       </FooterSection>
     </FooterContainer>
   )
