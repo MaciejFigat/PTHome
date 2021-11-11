@@ -2,9 +2,6 @@ import styled from 'styled-components'
 
 export const HeaderContainer = styled.div`
   display: flex;
-  /* justify-content: space-evenly; */
-  /* justify-content: space-around; */
-  /* justify-content: space-between; */
   height: fit-content;
   max-width: 100%;
   background: var(--background1-main);

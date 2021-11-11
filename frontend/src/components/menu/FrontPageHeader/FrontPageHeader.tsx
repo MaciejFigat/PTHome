@@ -4,15 +4,15 @@ import {
   HeaderTitle,
   HeaderList,
   HeaderItem,
-} from '../../styles/frontPageHeader'
-import ContactIcons from '../ContactIcons'
-import HeaderSvg from '../HeaderSvg'
+} from './frontPageHeader.styled'
+import ContactIcons from '../../SvgIcon/ContactIcons'
+import HeaderSvg from '../../HeaderSvg'
 
-interface FrontpageHeaderProps {
+interface FrontPageHeaderProps {
   title: string
 }
 
-const FrontpageHeader: React.FC<FrontpageHeaderProps> = ({ title }) => {
+const FrontPageHeader: React.FC<FrontPageHeaderProps> = ({ title }) => {
   return (
     <HeaderContainer>
       <HeaderList>
@@ -30,4 +30,4 @@ const FrontpageHeader: React.FC<FrontpageHeaderProps> = ({ title }) => {
     </HeaderContainer>
   )
 }
-export default FrontpageHeader
+export default FrontPageHeader

@@ -3,19 +3,14 @@ import { NavHashLink } from 'react-router-hash-link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'
-import { IconsItem, IconsWrapper } from '../styles/contactIcons'
+import { IconsItem, IconsWrapper } from './iconsSvg.styled'
 interface ContactIconsProps {}
 
 const ContactIcons: React.FC<ContactIconsProps> = () => {
   return (
     <IconsWrapper>
       <IconsItem>
-        <NavHashLink
-          smooth
-          to='/home/#ending'
-          activeClassName='selected'
-          activeStyle={{ fontWeight: 'bold', color: 'lightcoral' }}
-        >
+        <NavHashLink smooth to='/home/#ending' activeClassName='selected'>
           <FontAwesomeIcon icon={faEnvelopeSquare} />
         </NavHashLink>
       </IconsItem>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { BurgerWrapper, BurgerContainer, BurgerLine } from '../../styles/burger'
+import { BurgerWrapper, BurgerContainer, BurgerLine } from './burger.styled'
 interface BurgerProps {
   menuOpen: boolean
 }

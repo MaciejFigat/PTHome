@@ -1,7 +1,7 @@
 import React from 'react'
-import { NavList, ListItem, ListItemMobile } from '../../styles/nav'
+import { NavList, ListItem, ListItemMobile } from './nav.styled'
 import { NavLink } from 'react-router-dom'
-import ContactIcons from '../ContactIcons'
+import ContactIcons from '../SvgIcon/ContactIcons'
 
 interface NavListMobileProps {}
 
