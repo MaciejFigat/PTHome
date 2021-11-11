@@ -67,6 +67,7 @@ export const Container = styled.div`
     padding-left: 20px;
   }
 `
+
 export const Button = styled.button`
   border-radius: 4px;
   white-space: nowrap;
@@ -75,23 +76,42 @@ export const Button = styled.button`
   font-size: ${({ fontLarge }) => (fontLarge ? '22px' : '16px')};
   /* buttonBackground */
   ${(props) => handleSectionColor(props).buttonBackground}
-  /* buttonColor */
- ${(props) => handleSectionColor(props).buttonColor}
   outline: none;
   cursor: pointer;
   border: none;
+  /* buttonColor */
+  ${(props) => handleSectionColor(props).buttonColor}
+  /* color for the link inside the button */
+  a {
+    ${(props) => handleSectionColor(props).buttonColor}
+  }
   &:hover {
     transition: all 0.3s ease-out;
     /* buttonBackgroundHover */
     ${(props) => handleSectionColor(props).buttonBackgroundHover}
     /* buttonColorHover */
-        ${(props) => handleSectionColor(props).buttonColorHover}
+    ${(props) => handleSectionColor(props).buttonColorHover}
+    /* buttonColor as color for the link nested inside the Button */
+  a {
+      transition: all 0.3s ease-out;
+      ${(props) => handleSectionColor(props).buttonColorHover}
+    }
   }
+
   @media screen and (max-width: 760px) {
     padding: '8px 14px';
   }
 `
-
+export const ButtonLink = styled.a`
+  /* buttonColor */
+  /* ${(props) => handleSectionColor(props).buttonColor} */
+  /* buttonColorHover */
+  ${Button}:hover & {
+    /* transition: all 0.3s ease-out; */
+    /* for some reason the props are not read in this instance REMIND ME to check for issues in styled-components */
+    /* ${(props) => handleSectionColor(props).buttonColorHover} */
+  }
+`
 export const TopLine = styled.div`
   /* toplineColor */
   ${(props) => handleSectionColor(props).toplineColor}

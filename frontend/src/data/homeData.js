@@ -10,7 +10,7 @@ export const homeData = {
   subtitle:
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat perspiciatis non deleniti doloremque, iure laudantium quaerat esse odit. Similique nihil voluptate voluptatem sed tempora sunt libero, saepe corrupti laboriosam suscipit.',
   img: sumo2,
-  buttonLabel: 'Klak the button',
+  buttonLabel: 'In memoriam of Wallace Stevens',
 }
 
 export const homeDataTwo = {

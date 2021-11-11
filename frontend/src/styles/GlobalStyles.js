@@ -82,18 +82,23 @@ body {
     --background-quaternary5: #e63946;
 
    
-
+    .nav_link {
+      color: var(--background4-main);
+    }
+    .nav_link:hover  {
+      color: var(--background5-main);
+   
+      transition: 0.3s; 
+    }
     a, a:link, a:visited {
       text-decoration: none;
      
-      color: var(--background4-main);
-      transition: 0.3s;
+      // color: var(--background4-main);
+  
+      // transition: 0.3s;
       
     }
-    a:hover  {
-      color: var(--background5-main);
-      transition: 0.3s; 
-    }
+    
     
     
 }

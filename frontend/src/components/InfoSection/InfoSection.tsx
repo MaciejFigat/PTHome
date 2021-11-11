@@ -9,6 +9,7 @@ import {
   Heading,
   Subtitle,
   Button,
+  ButtonLink,
   ImgWrapper,
   Img,
 } from './InfoSection.styled'
@@ -20,7 +21,6 @@ interface InfoSectionProps {
   buttonLabel?: string
   img: any
   variant?: 'primary' | 'secondary' | 'tertiary' | 'blue'
-
   imgStart?: boolean
 }
 
@@ -47,7 +47,12 @@ const InfoSection: React.FC<InfoSectionProps> = ({
                 <Subtitle variant={variant}>{subtitle}</Subtitle>
                 {buttonLabel && (
                   <Button large fontLarge variant={variant}>
-                    {buttonLabel}
+                    <ButtonLink
+                      variant={variant}
+                      href='https://www.poetryfoundation.org/play/75764'
+                    >
+                      {buttonLabel}
+                    </ButtonLink>
                   </Button>
                 )}
               </TextWrapper>
