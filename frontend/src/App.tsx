@@ -1,5 +1,5 @@
 import React from 'react'
-import Nav from './components/menu/Nav'
+import Nav from './components/menu/Nav/Nav'
 
 import Home from './screens/Home'
 import Contact from './screens/Contact'

@@ -4,7 +4,7 @@ import {
   Card,
   CardTitle,
   CardContent,
-} from '../styles/sectionCards'
+} from './sectionCards.styled'
 interface SectionCardsProps {
   cardData: { id: Number; title: String; description: String }[]
   variant?: 'dark' | 'light' | 'primary' | 'secondary'

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { handleSectionColor } from '../../styles/utilsSection'
+import { handleSectionColor } from './utilsSection'
 // handleSectionColor includes these
 
 // sectionBackground

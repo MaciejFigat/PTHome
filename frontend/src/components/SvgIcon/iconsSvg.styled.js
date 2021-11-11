@@ -7,6 +7,12 @@ export const IconsWrapper = styled.ul`
   display: flex;
   justify-content: center;
   flex-direction: row;
+  a {
+    color: var(--background4-main);
+    &:hover {
+      color: var(--background5-main);
+    }
+  }
 `
 export const IconsItem = styled.li`
   margin-right: 1rem;

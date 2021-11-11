@@ -3,7 +3,7 @@ import {
   SectionContainer,
   SectionTitle,
   SectionDescription,
-} from '../styles/sectionSmall'
+} from './sectionSmall.styled'
 interface SmallSectionProps {
   title: string
   description?: string

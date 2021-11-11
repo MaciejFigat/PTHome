@@ -1,6 +1,6 @@
 import React from 'react'
-import SectionCards from '../components/SectionCards'
-import SmallSection from '../components/SmallSection'
+import SectionCards from '../components/SectionCards/SectionCards'
+import SmallSection from '../components/SectionSmall/SmallSection'
 
 const cardDataOne = [
   {

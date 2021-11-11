@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import Burger from './Burger/Burger'
+import Burger from '../Burger/Burger'
 import {
   TransitionWrapperMain,
   TransitionWrapper,
@@ -9,11 +9,11 @@ import {
   HeaderTitleDesktop,
 } from './nav.styled'
 import { NavLink } from 'react-router-dom'
-import { useAppDispatch, useAppSelector } from '../../app/reduxHooks'
+import { useAppDispatch, useAppSelector } from '../../../app/reduxHooks'
 import NavListDesktop from './NavListDesktop'
-import useScrollListener from '../../hooks/useScrollListener'
-import SvgIcon from '../SvgIcon/SvgIcon'
-import { logout } from '../../features/users/userSlice'
+import useScrollListener from '../../../hooks/useScrollListener'
+import SvgIcon from '../../SvgIcon/SvgIcon'
+import { logout } from '../../../features/users/userSlice'
 
 interface NavProps {}
 interface UserInfo {

@@ -6,7 +6,7 @@ import {
   HeaderItem,
 } from './frontPageHeader.styled'
 import ContactIcons from '../../SvgIcon/ContactIcons'
-import HeaderSvg from '../../HeaderSvg'
+import HeaderSvg from './HeaderSvg'
 
 interface FrontPageHeaderProps {
   title: string

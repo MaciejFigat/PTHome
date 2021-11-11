@@ -1,9 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import {
-  HeaderSvgContainer,
-  HeaderSvgItem,
-} from './menu/FrontPageHeader/frontPageHeader.styled'
+import { HeaderSvgContainer, HeaderSvgItem } from './frontPageHeader.styled'
 
 const icon = {
   visible: {

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { handleCardContainerColor as handleSectionColor } from './utils'
+import { handleCardContainerColor as handleSectionColor } from '../SectionCards/utils'
 
 export const SectionContainer = styled.div`
   height: 20vh;
