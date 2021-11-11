@@ -50,6 +50,7 @@ const InfoSection: React.FC<InfoSectionProps> = ({
                     <ButtonLink
                       variant={variant}
                       href='https://www.poetryfoundation.org/play/75764'
+                      target='_blank'
                     >
                       {buttonLabel}
                     </ButtonLink>
