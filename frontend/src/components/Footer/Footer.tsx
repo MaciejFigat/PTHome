@@ -20,6 +20,15 @@ import {
   SocialIconLink,
 } from './Footer.styled'
 import { Button } from '../InfoSection/InfoSection.styled'
+import {} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faFacebook,
+  faInstagram,
+  faLinkedin,
+  faTwitter,
+  faYoutube,
+} from '@fortawesome/free-brands-svg-icons'
 interface FooterProps {}
 
 const Footer: React.FC<FooterProps> = () => {
@@ -78,25 +87,31 @@ const Footer: React.FC<FooterProps> = () => {
               href='https://www.poetryfoundation.org/play/75764'
               target='_blank'
             >
-              Lorem ipsum dolor sit.
+              <FontAwesomeIcon icon={faTwitter} /> Twitter
             </SocialIconLink>
             <SocialIconLink
               href='https://www.poetryfoundation.org/play/75764'
               target='_blank'
             >
-              Lorem ipsum dolor sit.
+              <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
             </SocialIconLink>
             <SocialIconLink
               href='https://www.poetryfoundation.org/play/75764'
               target='_blank'
             >
-              Lorem ipsum dolor sit.
+              <FontAwesomeIcon icon={faYoutube} /> Youtube
             </SocialIconLink>
             <SocialIconLink
               href='https://www.poetryfoundation.org/play/75764'
               target='_blank'
             >
-              Lorem ipsum dolor sit.
+              <FontAwesomeIcon icon={faInstagram} /> Instagram
+            </SocialIconLink>
+            <SocialIconLink
+              href='https://www.poetryfoundation.org/play/75764'
+              target='_blank'
+            >
+              <FontAwesomeIcon icon={faFacebook} /> facebook
             </SocialIconLink>
           </SocialIcons>
         </FooterMediaWrapper>
