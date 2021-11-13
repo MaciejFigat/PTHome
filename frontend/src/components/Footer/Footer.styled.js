@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const FooterContainer = styled.div`
   display: flex;
@@ -105,7 +106,6 @@ export const FooterLink = styled(Link)`
   }
 `
 export const FooterMedia = styled.div`
-  color: var(--secondary3);
   max-width: 1000px;
   width: 100%;
 `
@@ -114,15 +114,44 @@ export const FooterMediaWrapper = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%auto;
+  width: 90%;
   max-width: 1000px;
   margin: 40px auto 0 auto;
   @media screen and (max-width: 770px) {
     flex-direction: column;
   }
 `
-export const FooterLogo = styled.div``
-export const FooterIcon = styled.div``
-export const FooterRights = styled.div``
-export const SocialIcons = styled.div``
-export const SocialIconLink = styled.div``
+export const FooterLogo = styled(Link)`
+  color: var(--secondary3);
+  justify-self: start;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.9rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+`
+export const FooterIcon = styled(FontAwesomeIcon)`
+  margin-right: 12px;
+`
+export const FooterRights = styled.div`
+  display: flex;
+  color: var(--secondary4);
+  @media screen and (max-width: 770px) {
+    margin-bottom: 18px;
+  }
+`
+export const SocialIcons = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 260px;
+`
+export const SocialIconLink = styled.a`
+  color: var(--secondary4);
+  font-size: 18px;
+  &:hover {
+    transition: all 0.3s ease-out;
+    color: var(--secondary2);
+  }
+`

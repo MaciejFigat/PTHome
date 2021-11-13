@@ -15,7 +15,6 @@ import { handleSectionColor } from './utilsSection'
 export const InfoSec = styled.div`
   ${(props) => handleSectionColor(props).color}
   padding: 160px 0;
-
   ${(props) => handleSectionColor(props).sectionBackground}
   @media (max-width: 880px) {
     padding: 60px 0;

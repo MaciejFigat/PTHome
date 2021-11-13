@@ -13,15 +13,13 @@ import {
   FooterLinkTitle,
   FooterMedia,
   FooterMediaWrapper,
-  FooterLogo,
   FooterIcon,
   FooterRights,
   SocialIcons,
   SocialIconLink,
 } from './Footer.styled'
 import { Button } from '../InfoSection/InfoSection.styled'
-import {} from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import {
   faFacebook,
   faInstagram,
@@ -67,6 +65,15 @@ const Footer: React.FC<FooterProps> = () => {
             <FooterLink to='/'>Lorem, ipsum.</FooterLink>
             <FooterLink to='/'>Lorem, ipsum.</FooterLink>
           </FooterLinksItems>
+        </FooterLinksWrapper>
+        <FooterLinksWrapper>
+          <FooterLinksItems>
+            <FooterLinkTitle>Lorem, ipsum dolor.</FooterLinkTitle>
+            <FooterLink to='/'>Lorem, ipsum.</FooterLink>
+            <FooterLink to='/'>Lorem, ipsum.</FooterLink>
+            <FooterLink to='/'>Lorem, ipsum.</FooterLink>
+            <FooterLink to='/'>Lorem, ipsum.</FooterLink>
+          </FooterLinksItems>
           <FooterLinksItems>
             <FooterLinkTitle>Lorem, ipsum dolor.</FooterLinkTitle>
             <FooterLink to='/'>Lorem, ipsum.</FooterLink>
@@ -78,24 +85,21 @@ const Footer: React.FC<FooterProps> = () => {
       </FooterLinksContainer>
       <FooterMedia>
         <FooterMediaWrapper>
-          <FooterLogo>
-            <FooterIcon />
-          </FooterLogo>
-          <FooterRights>copyright 2021</FooterRights>
+          <FooterRights>BestWorksYet &copy; 2021</FooterRights>
           <SocialIcons>
             <SocialIconLink
               href='https://www.poetryfoundation.org/play/75764'
               target='_blank'
               aria-label='Twitter'
             >
-              <FontAwesomeIcon icon={faTwitter} /> Twitter
+              <FooterIcon icon={faTwitter} />
             </SocialIconLink>
             <SocialIconLink
               href='https://www.poetryfoundation.org/play/75764'
               target='_blank'
               aria-label='LinkedIn'
             >
-              <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
+              <FooterIcon icon={faLinkedin} />
             </SocialIconLink>
             <SocialIconLink
               href='https://www.poetryfoundation.org/play/75764'
@@ -103,21 +107,21 @@ const Footer: React.FC<FooterProps> = () => {
               aria-label='Youtube'
               rel='noopener noreferrer'
             >
-              <FontAwesomeIcon icon={faYoutube} /> Youtube
+              <FooterIcon icon={faYoutube} />
             </SocialIconLink>
             <SocialIconLink
               href='https://www.poetryfoundation.org/play/75764'
               target='_blank'
               aria-label='Instagram'
             >
-              <FontAwesomeIcon icon={faInstagram} /> Instagram
+              <FooterIcon icon={faInstagram} />
             </SocialIconLink>
             <SocialIconLink
               href='https://www.poetryfoundation.org/play/75764'
               target='_blank'
               aria-label='Facebook'
             >
-              <FontAwesomeIcon icon={faFacebook} /> Facebook
+              <FooterIcon icon={faFacebook} />
             </SocialIconLink>
           </SocialIcons>
         </FooterMediaWrapper>
