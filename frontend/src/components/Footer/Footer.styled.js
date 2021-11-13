@@ -106,9 +106,21 @@ export const FooterLink = styled(Link)`
 `
 export const FooterMedia = styled.div`
   color: var(--secondary3);
+  max-width: 1000px;
+  width: 100%;
 `
 
-export const FooterMediaWrapper = styled.div``
+export const FooterMediaWrapper = styled.section`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%auto;
+  max-width: 1000px;
+  margin: 40px auto 0 auto;
+  @media screen and (max-width: 770px) {
+    flex-direction: column;
+  }
+`
 export const FooterLogo = styled.div``
 export const FooterIcon = styled.div``
 export const FooterRights = styled.div``

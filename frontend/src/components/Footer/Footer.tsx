@@ -86,32 +86,38 @@ const Footer: React.FC<FooterProps> = () => {
             <SocialIconLink
               href='https://www.poetryfoundation.org/play/75764'
               target='_blank'
+              aria-label='Twitter'
             >
               <FontAwesomeIcon icon={faTwitter} /> Twitter
             </SocialIconLink>
             <SocialIconLink
               href='https://www.poetryfoundation.org/play/75764'
               target='_blank'
+              aria-label='LinkedIn'
             >
               <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
             </SocialIconLink>
             <SocialIconLink
               href='https://www.poetryfoundation.org/play/75764'
               target='_blank'
+              aria-label='Youtube'
+              rel='noopener noreferrer'
             >
               <FontAwesomeIcon icon={faYoutube} /> Youtube
             </SocialIconLink>
             <SocialIconLink
               href='https://www.poetryfoundation.org/play/75764'
               target='_blank'
+              aria-label='Instagram'
             >
               <FontAwesomeIcon icon={faInstagram} /> Instagram
             </SocialIconLink>
             <SocialIconLink
               href='https://www.poetryfoundation.org/play/75764'
               target='_blank'
+              aria-label='Facebook'
             >
-              <FontAwesomeIcon icon={faFacebook} /> facebook
+              <FontAwesomeIcon icon={faFacebook} /> Facebook
             </SocialIconLink>
           </SocialIcons>
         </FooterMediaWrapper>
