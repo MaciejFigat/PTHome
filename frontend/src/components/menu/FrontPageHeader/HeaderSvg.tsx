@@ -2,20 +2,32 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { HeaderSvgContainer, HeaderSvgItem } from './frontPageHeader.styled'
 
-const icon = {
-  visible: {
-    pathLength: 0,
-    fill: '#A2A1A6',
-    stroke: '#1E1E1F',
-  },
-  hidden: {
-    fill: '#1E1E1F',
-    stroke: '#1E1E1F',
-    pathLength: 1,
-  },
+interface HeaderSvgProps {
+  colorVisibleFill?: string
+  colorVisibleStroke?: string
+  colorHiddenFill?: string
+  colorHiddenStroke?: string
 }
 
-const HeaderSvg = () => {
+const HeaderSvg: React.FC<HeaderSvgProps> = ({
+  colorVisibleFill,
+  colorVisibleStroke,
+  colorHiddenFill,
+  colorHiddenStroke,
+}) => {
+  const icon = {
+    visible: {
+      pathLength: 0,
+      fill: colorVisibleFill ? colorVisibleFill : '#A2A1A6',
+
+      stroke: colorVisibleStroke ? colorVisibleStroke : '#1E1E1F',
+    },
+    hidden: {
+      fill: colorHiddenFill ? colorHiddenFill : '#1E1E1F',
+      stroke: colorHiddenStroke ? colorHiddenStroke : '#1E1E1F',
+      pathLength: 1,
+    },
+  }
   return (
     <>
       <HeaderSvgContainer>

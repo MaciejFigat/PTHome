@@ -27,6 +27,7 @@ import {
   faTwitter,
   faYoutube,
 } from '@fortawesome/free-brands-svg-icons'
+import HeaderSvg from '../menu/FrontPageHeader/HeaderSvg'
 interface FooterProps {}
 
 const Footer: React.FC<FooterProps> = () => {
@@ -85,6 +86,12 @@ const Footer: React.FC<FooterProps> = () => {
       </FooterLinksContainer>
       <FooterMedia>
         <FooterMediaWrapper>
+          <HeaderSvg
+            colorVisibleFill='#f4a261'
+            colorVisibleStroke=' #3C3B3D'
+            colorHiddenStroke='#3C3B3D'
+            colorHiddenFill='#3C3B3D'
+          />
           <FooterRights>BestWorksYet &copy; 2021</FooterRights>
           <SocialIcons>
             <SocialIconLink
