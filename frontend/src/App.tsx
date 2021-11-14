@@ -12,12 +12,14 @@ import Blog from './screens/Blog'
 import Login from './screens/Login'
 import Register from './screens/Register'
 import Footer from './components/Footer/Footer'
+import ScrollTopHelper from './components/ScrollTopHelper'
 function App() {
   const location = useLocation()
 
   return (
     <>
       <GlobalStyle />
+      <ScrollTopHelper />
       <FrontPageHeader title='George B. trener personalny' />
       <Nav />
       <Switch location={location} key={location.key}>
