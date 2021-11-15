@@ -14,22 +14,22 @@ import {
   Img,
 } from './InfoSection.styled'
 
-interface InfoSectionProps {
+interface InfoData {
   topline: string
   headline: string
   subtitle: string
   buttonLabel?: string
   img: any
+}
+
+interface InfoSectionProps {
+  data: InfoData
   variant?: 'primary' | 'secondary' | 'tertiary' | 'blue'
   imgStart?: boolean
 }
 
 const InfoSection: React.FC<InfoSectionProps> = ({
-  topline,
-  headline,
-  subtitle,
-  buttonLabel,
-  img,
+  data,
   variant,
   imgStart,
 }) => {
@@ -42,17 +42,17 @@ const InfoSection: React.FC<InfoSectionProps> = ({
           <InfoRow imgStart={imgStart}>
             <InfoColumn>
               <TextWrapper>
-                <TopLine variant={variant}>{topline}</TopLine>
-                <Heading variant={variant}>{headline}</Heading>
-                <Subtitle variant={variant}>{subtitle}</Subtitle>
-                {buttonLabel && (
+                <TopLine variant={variant}>{data.topline}</TopLine>
+                <Heading variant={variant}>{data.headline}</Heading>
+                <Subtitle variant={variant}>{data.subtitle}</Subtitle>
+                {data.buttonLabel && (
                   <Button large fontLarge variant={variant}>
                     <ButtonLink
                       variant={variant}
                       href='https://www.poetryfoundation.org/play/75764'
                       target='_blank'
                     >
-                      {buttonLabel}
+                      {data.buttonLabel}
                     </ButtonLink>
                   </Button>
                 )}
@@ -60,7 +60,7 @@ const InfoSection: React.FC<InfoSectionProps> = ({
             </InfoColumn>
             <InfoColumn>
               <ImgWrapper start>
-                <Img src={img}></Img>
+                <Img src={data.img}></Img>
               </ImgWrapper>
             </InfoColumn>
           </InfoRow>

@@ -45,9 +45,9 @@ const Footer: React.FC<FooterProps> = () => {
           <FormInput
             name='email'
             type='email'
-            placeholder='your email if you wish to subscribe'
+            placeholder='Do You wish to subscribe?'
           ></FormInput>
-          <Button variant='tertiary'>Subscribe to me </Button>
+          <Button variant='tertiary'>Subscribe</Button>
         </FooterForm>
       </FooterSection>
       <FooterLinksContainer>

@@ -7,61 +7,20 @@ import {
   homeDataFour,
   homeDataFive,
 } from '../data/homeData'
-interface HomeProps {}
 
-const Home: React.FC<HomeProps> = () => {
+const Home: React.FC = () => {
   return (
     <>
+      <InfoSection data={homeData} variant='blue' imgStart></InfoSection>
+      <InfoSection data={homeDataTwo} variant='primary'></InfoSection>
       <InfoSection
-        variant='blue'
-        topline={homeData.topline}
-        headline={homeData.headline}
-        subtitle={homeData.subtitle}
-        buttonLabel={homeData.buttonLabel}
-        img={homeData.img}
-        imgStart
-      ></InfoSection>
-      <InfoSection
-        variant='primary'
-        topline={homeDataTwo.topline}
-        headline={homeDataTwo.headline}
-        subtitle={homeDataTwo.subtitle}
-        buttonLabel={homeDataTwo.buttonLabel}
-        img={homeDataTwo.img}
-      ></InfoSection>
-      <InfoSection
+        data={homeDataThree}
         variant='secondary'
-        topline={homeDataThree.topline}
-        headline={homeDataThree.headline}
-        subtitle={homeDataThree.subtitle}
-        buttonLabel={homeDataThree.buttonLabel}
-        img={homeDataThree.img}
         imgStart
       ></InfoSection>
-      <InfoSection
-        variant='tertiary'
-        topline={homeDataFour.topline}
-        headline={homeDataFour.headline}
-        subtitle={homeDataFour.subtitle}
-        buttonLabel={homeDataFour.buttonLabel}
-        img={homeDataFour.img}
-      ></InfoSection>
-      <InfoSection
-        // variant='default'
-        topline={homeDataFive.topline}
-        headline={homeDataFive.headline}
-        subtitle={homeDataFive.subtitle}
-        img={homeDataFive.img}
-        buttonLabel={homeDataFive.buttonLabel}
-      ></InfoSection>
-      <InfoSection
-        variant='primary'
-        topline={homeDataFive.topline}
-        headline={homeDataFive.headline}
-        subtitle={homeDataFive.subtitle}
-        img={homeDataFive.img}
-        buttonLabel={homeDataFive.buttonLabel}
-      ></InfoSection>
+      <InfoSection data={homeDataFour} variant='tertiary'></InfoSection>
+      <InfoSection variant='secondary' data={homeDataFive}></InfoSection>
+      <InfoSection variant='primary' data={homeDataFive}></InfoSection>
     </>
   )
 }

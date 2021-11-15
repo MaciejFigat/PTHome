@@ -102,7 +102,7 @@ export const FooterLink = styled(Link)`
   margin-bottom: 10px;
   &:hover {
     transition: all 0.3s ease-out;
-    color: var(--secondary5);
+    color: var(--secondary2);
   }
 `
 export const FooterMedia = styled.div`
