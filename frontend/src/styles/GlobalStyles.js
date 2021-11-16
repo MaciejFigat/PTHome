@@ -84,6 +84,8 @@ body {
    
     .nav_link {
       color: var(--background4-main);
+      display: flex;
+      align-items: center;
     }
     .nav_link:hover  {
       color: var(--background5-main);
@@ -118,6 +120,7 @@ body {
   border-radius: 2px;
   background-color: #CBC9CF;
 }
+
 `
 
 export { GlobalStyle }

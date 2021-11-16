@@ -3,7 +3,6 @@ import styled from 'styled-components'
 export const IconsWrapper = styled.ul`
   list-style: none;
   padding: 0;
-
   display: flex;
   justify-content: center;
   flex-direction: row;

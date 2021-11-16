@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const TransitionWrapperMain = styled.div`
   position: sticky;
   z-index: 3;
-  top: 0;
+  top: -2px;
   .active {
     transition: all 200ms ease-in;
   }
@@ -64,7 +64,6 @@ export const ListItem = styled.li`
   margin-right: 1rem;
   font-size: 1.25rem;
   font-weight: 600;
-
   display: flex;
   text-transform: uppercase;
   color: var(--background5-main);

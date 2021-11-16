@@ -88,7 +88,7 @@ const Footer: React.FC<FooterProps> = () => {
         <FooterMediaWrapper>
           <HeaderSvg
             colorVisibleFill='#f4a261'
-            colorVisibleStroke=' #3C3B3D'
+            colorVisibleStroke='#3C3B3D'
             colorHiddenStroke='#3C3B3D'
             colorHiddenFill='#3C3B3D'
           />

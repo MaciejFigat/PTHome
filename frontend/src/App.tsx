@@ -18,8 +18,8 @@ function App() {
 
   return (
     <>
-      <GlobalStyle />
       <ScrollTopHelper />
+      <GlobalStyle />
       <FrontPageHeader title='George B. trener personalny' />
       <Nav />
       <Switch location={location} key={location.key}>
