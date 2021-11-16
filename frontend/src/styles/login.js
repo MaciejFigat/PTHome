@@ -83,7 +83,6 @@ export const LoginLink = styled.p`
   font-weight: 600;
   :hover {
     color: rgb(200, 50, 70);
-
     animation: 0.2s ease-out forwards;
   }
 `

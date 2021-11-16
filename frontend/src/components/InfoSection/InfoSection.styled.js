@@ -24,7 +24,8 @@ export const InfoRow = styled.div`
   display: flex;
   margin: 0 -15px -15px -15px;
   align-items: center;
-  flex-direction: ${({ imgStart }) => (imgStart ? 'row-reverse' : 'row')};
+  flex-direction: ${({ imgStart }) =>
+    imgStart === true ? 'row-reverse' : 'row'};
   @media (max-width: 880px) {
     /* flex-wrap: nowrap; */
     flex-direction: column-reverse;
@@ -142,7 +143,7 @@ export const Subtitle = styled.p`
 export const ImgWrapper = styled.div`
   max-width: 555px;
   display: flex;
-  justify-content: ${({ start }) => (start ? 'flex-start' : 'flex-end')};
+  justify-content: ${({ imgStart }) => (imgStart ? 'flex-start' : 'flex-end')};
   @media (max-width: 880px) {
     padding-bottom: 20px;
   }

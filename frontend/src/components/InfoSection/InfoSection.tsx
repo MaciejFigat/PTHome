@@ -59,7 +59,7 @@ const InfoSection: React.FC<InfoSectionProps> = ({
               </TextWrapper>
             </InfoColumn>
             <InfoColumn>
-              <ImgWrapper start>
+              <ImgWrapper imgStart>
                 <Img src={data.img}></Img>
               </ImgWrapper>
             </InfoColumn>
