@@ -1,5 +1,5 @@
 import React from 'react'
-import { BlogCard } from './BlogCards.styled'
+import { BlogCard, BlogCardImg } from './BlogCards.styled'
 
 interface BlogData {
   topline: string
@@ -18,10 +18,13 @@ interface BlogCardsProps {
 const BlogCards: React.FC<BlogCardsProps> = ({ data }) => {
   return (
     <>
-      <h3>{data.topline}</h3>
-      <h2>{data.headline}</h2>
-      <h1>{data.subtitle}</h1>
-      <BlogCard>BlogCard 1</BlogCard>
+      <BlogCard>
+        {' '}
+        <BlogCardImg src={data.img} />
+        <h3>{data.topline}</h3>
+        <h2>{data.headline}</h2>
+        <p>{data.subtitle}</p>
+      </BlogCard>
     </>
   )
 }
