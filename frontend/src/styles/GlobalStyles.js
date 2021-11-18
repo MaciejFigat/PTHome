@@ -21,7 +21,8 @@ body {
 }
 
 :root {
-    
+   --padding: 1rem;
+   
    --background1-main: #1E1E1F;
    --background2-main: #3C3B3D;
    --background3-main: #6D6C70;
