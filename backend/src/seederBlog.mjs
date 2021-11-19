@@ -1,8 +1,8 @@
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import colors from 'colors'
-import users from '../data/users'
-import User from '../models/userModel'
+import blogArticles from '../data/blogArticles'
+import BlogArticle from '../models/blogArticleModel'
 import connectDB from '../config/db'
 
 dotenv.config()
@@ -11,13 +11,11 @@ connectDB()
 
 const importData = async () => {
   try {
-    await User.deleteMany()
+    await BlogArticle.deleteMany()
 
-    const createdUsers = await User.insertMany(users)
+    const createdArticles = await BlogArticle.insertMany(blogArticles)
 
-    const adminUser = createdUsers[0]._id
-
-    console.log('Data Imported!'.green.inverse)
+    console.log('Blog data Imported!'.green.inverse)
     process.exit()
   } catch (error) {
     console.error(`${error}`.red.inverse)
@@ -27,9 +25,9 @@ const importData = async () => {
 
 const destroyData = async () => {
   try {
-    await User.deleteMany()
+    await BlogArticle.deleteMany()
 
-    console.log('Data Destroyed!'.red.inverse)
+    console.log('Blog data Destroyed!'.red.inverse)
     process.exit()
   } catch (error) {
     console.error(`${error}`.red.inverse)

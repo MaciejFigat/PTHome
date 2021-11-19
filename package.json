@@ -11,7 +11,9 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "data:import": "node backend/src/seeder",
-    "data:destroy": "node backend/src/seeder -d"
+    "data:destroy": "node backend/src/seeder -d",
+    "blogData:import": "node backend/src/seederBlog.mjs",
+    "blogData:destroy": "node backend/src/seederBlog -d"
   },
   "repository": {
     "type": "git",

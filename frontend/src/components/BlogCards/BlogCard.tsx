@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 import {
   BlogCardContainer,
   BlogCardImg,
@@ -34,7 +34,9 @@ const BlogCard: React.FC<BlogCardProps> = ({ data }) => {
         <CardBody>{data.headline}</CardBody>
         <CardFooter>
           <CardButton>Button 1</CardButton>
-          <CardButton>Button 2</CardButton>
+          <CardButton>
+            <Link to='/blog/articleOne'>go to blog</Link>
+          </CardButton>
         </CardFooter>
       </BlogCardContainer>
     </>
