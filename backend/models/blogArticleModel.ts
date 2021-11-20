@@ -36,6 +36,6 @@ const blogArticleSchema = new Schema<BlogArticle>(
 
 
 
-const BlogArticle = model<BlogArticle>('BlogArticle', blogArticleSchema)
+const Article = model<BlogArticle>('Article', blogArticleSchema)
 
-export default BlogArticle
+export default Article

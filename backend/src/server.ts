@@ -4,9 +4,11 @@ import colors from 'colors'
 import morgan from 'morgan'
 import path from 'path'
 import userRoutes from '../routes/userRoutes'
+import articleRoutes from '../routes/articleRoutes'
 import connectDB from '../config/db'
 
 import { notFound, errorHandler } from '../middleware/errorMiddleware'
+
 
 dotenv.config()
 connectDB()
@@ -17,6 +19,8 @@ app.use(express.json())
 
 
 app.use('/api/users', userRoutes)
+app.use('/api/articles', articleRoutes)
+
 
 // const __dirname = path.resolve()
 
