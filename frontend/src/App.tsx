@@ -14,6 +14,7 @@ import Register from './screens/Register'
 import Footer from './components/Footer/Footer'
 import ScrollTopHelper from './components/ScrollTopHelper'
 import BlogArticle from './screens/BlogArticle'
+import CreateArticle from './screens/CreateArticle'
 function App() {
   const location = useLocation()
 
@@ -31,6 +32,7 @@ function App() {
         <Route exact path='/register' component={Register} />
         <Route exact path='/blog' component={Blog} />
         <Route exact path='/blog/articleOne' component={BlogArticle} />
+        <Route exact path='/blog/create' component={CreateArticle} />
         <Route path='/' component={Home} />
       </Switch>
       <Footer />
