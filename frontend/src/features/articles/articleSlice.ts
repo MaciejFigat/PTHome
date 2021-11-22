@@ -43,12 +43,50 @@ export const createArticle = createAsyncThunk(
         }
     }
 )
+export const getArticles = createAsyncThunk(
+    'article/getArticles',
+    async () => {
+
+        try {
+
+            const { data } = await axios.get(
+                `/api/articles/`
+            )
+
+            return data
+
+        } catch (error: any) {
+
+            return error
+        }
+    }
+)
+export const deleteArticle = createAsyncThunk(
+    'article/deleteArticle',
+    async (id: string) => {
+
+        try {
+
+            const { data } = await axios.delete(
+                `/api/articles/${id}`
+            )
+
+            return data
+
+        } catch (error: any) {
+
+            return error
+        }
+    }
+)
 
 
 const articleSlice = createSlice({
     name: 'blogArticles',
     initialState: {
+        articles: [],
         articleInfo: {},
+        articleCreated: {},
         loading: false,
         error: {},
     },
@@ -65,10 +103,36 @@ const articleSlice = createSlice({
         })
         builder.addCase(createArticle.fulfilled, (state, action) => {
             state.loading = false
-            state.articleInfo = action.payload
+            state.articleCreated = action.payload
             state.error = action.payload.message
         })
         builder.addCase(createArticle.rejected, (state, action) => {
+            state.loading = false
+
+        })
+        builder.addCase(getArticles.pending, (state, action) => {
+            state.loading = true
+
+        })
+        builder.addCase(getArticles.fulfilled, (state, action) => {
+            state.loading = false
+            state.articles = action.payload
+            state.error = action.payload.message
+        })
+        builder.addCase(getArticles.rejected, (state, action) => {
+            state.loading = false
+
+        })
+
+        builder.addCase(deleteArticle.pending, (state, action) => {
+            state.loading = true
+
+        })
+        builder.addCase(deleteArticle.fulfilled, (state, action) => {
+            state.loading = false
+            state.error = action.payload.message
+        })
+        builder.addCase(deleteArticle.rejected, (state, action) => {
             state.loading = false
 
         })

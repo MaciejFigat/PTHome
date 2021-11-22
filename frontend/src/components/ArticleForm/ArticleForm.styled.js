@@ -82,6 +82,7 @@ export const ContactFieldContent = styled.input`
     color: var(--background4-main);
     font-weight: 300;
   }
+
   font-family: 'Quicksand', sans-serif;
   outline: none;
   border: none;
@@ -89,8 +90,9 @@ export const ContactFieldContent = styled.input`
   background: none;
   line-height: 1.2;
   cursor: text;
-  min-height: fit-content;
-  max-height: 45px;
+  /* min-height: 90%; */
+  /* max-height: 45px; */
+
   font-size: 15px;
   line-height: 1.2;
   padding: 0.8rem 1.2rem;
@@ -109,6 +111,10 @@ export const MessageField = styled(ContactFieldContent)`
   min-height: 25vh;
   resize: none;
   overflow-y: auto;
+  /* textarea {
+    width: 80%;
+    min-height: 90%;
+  } */
 `
 export const SendButtonWrapper = styled.div`
   display: flex;

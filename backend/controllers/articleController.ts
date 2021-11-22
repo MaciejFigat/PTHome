@@ -76,15 +76,31 @@ const deleteArticle = asyncHandler(async (req, res) => {
 // @access private/admin
 
 const createArticle = asyncHandler(async (req, res) => {
+
+    const {
+        topline,
+        headline,
+        subtitle,
+        imgLink,
+        author
+    } = req.body
+
     const article = new Article({
-        topline: 'Lorem ipsum dolor sit.2',
-        headline:
-            'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure, mollitia?',
-        subtitle:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat perspiciatis non deleniti doloremque, iure laudantium quaerat esse odit. Similique nihil voluptate voluptatem sed tempora sunt libero, saepe corrupti laboriosam suscipit.Lorem ipsum dolor sit amet consectetur adipisicing elit. ',
-        imgLink: 'https://source.unsplash.com/IZOAOjvwhaM',
-        author: 'Bob Nowak'
+        topline,
+        headline,
+        subtitle,
+        imgLink,
+        author
     })
+    // const article = new Article({
+    //     topline: 'Lorem ipsum dolor sit.2',
+    //     headline:
+    //         'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure, mollitia?',
+    //     subtitle:
+    //         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat perspiciatis non deleniti doloremque, iure laudantium quaerat esse odit. Similique nihil voluptate voluptatem sed tempora sunt libero, saepe corrupti laboriosam suscipit.Lorem ipsum dolor sit amet consectetur adipisicing elit. ',
+    //     imgLink: 'https://source.unsplash.com/IZOAOjvwhaM',
+    //     author: 'Bob Nowak'
+    // })
     const createdArticle = await article.save()
     // const createdArticle = await Article.create(article)
     res.status(201).json(createdArticle)

@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 import { useAppDispatch } from '../../app/reduxHooks'
-import { createArticle } from '../../features/articles/articleSlice'
+import {
+  createArticle,
+  getArticles,
+  deleteArticle,
+} from '../../features/articles/articleSlice'
 import {
   ResponsiveDiv,
   FormContainerDiv,
@@ -30,12 +34,20 @@ const ArticleForm: React.FC<ArticleFormProps> = () => {
   const editHandler = (e: any) => {
     e.preventDefault()
   }
+  // testing deleteArticle thunk
+  const id = '6197f2e60855d331b0177fd8'
   const deleteHandler = (e: any) => {
     e.preventDefault()
+    dispatch(deleteArticle(id))
   }
+
   const createHandler = (e: any) => {
     e.preventDefault()
     dispatch(createArticle(newArticleInfo))
+  }
+  const getHandler = (e: any) => {
+    e.preventDefault()
+    dispatch(getArticles())
   }
 
   return (
@@ -56,7 +68,7 @@ const ArticleForm: React.FC<ArticleFormProps> = () => {
                 />
               </ContactField>
               <ContactField>
-                <label> Headline</label>
+                <label>Headline</label>
                 <ContactFieldContent
                   type='email'
                   value={headline}
@@ -65,15 +77,17 @@ const ArticleForm: React.FC<ArticleFormProps> = () => {
                 />
               </ContactField>
               <ContactField>
-                <label> Subtitle</label>
+                <label>Subtitle</label>
                 <MessageField
+                  as='textarea'
+                  row='8'
                   value={subtitle}
                   placeholder='Subtitle here'
                   onChange={(e: any) => setSubtitle(e.target.value)}
                 ></MessageField>
               </ContactField>
               <ContactField>
-                <label> Author</label>
+                <label>Author</label>
                 <ContactFieldContent
                   value={author}
                   placeholder='Set the author'
@@ -81,14 +95,10 @@ const ArticleForm: React.FC<ArticleFormProps> = () => {
                 ></ContactFieldContent>
               </ContactField>
               <SendButtonWrapper>
-                <SendButton onClick={editHandler}>Edit the article</SendButton>
-
-                <SendButton onClick={deleteHandler}>
-                  Delete the article
-                </SendButton>
-                <SendButton onClick={createHandler}>
-                  Create an article
-                </SendButton>
+                <SendButton onClick={getHandler}>Get Test</SendButton>
+                <SendButton onClick={editHandler}>Edit</SendButton>
+                <SendButton onClick={deleteHandler}>Delete</SendButton>
+                <SendButton onClick={createHandler}>Create</SendButton>
               </SendButtonWrapper>
             </ContactFormStyled>{' '}
           </ContactFormContainer>
