@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import axios from 'axios'
 
 interface NewArticleInfo {
+    _id?: string
     topline: string
     headline: string
     subtitle: string
@@ -30,6 +31,37 @@ export const createArticle = createAsyncThunk(
             const { data } = await axios.post(
                 '/api/articles/',
                 { topline, headline, subtitle, imgLink, author },
+                config
+            )
+            return data
+
+        } catch (error: any) {
+
+
+            return error
+            // return rejectWithValue(error.data)
+
+        }
+    }
+)
+export const editArticle = createAsyncThunk(
+    'article/createArticle',
+
+    async (article: NewArticleInfo) => {
+
+
+
+        try {
+
+            const config = {
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            }
+
+            const { data } = await axios.put(
+                `/api/articles/${article._id}`,
+                article,
                 config
             )
             return data

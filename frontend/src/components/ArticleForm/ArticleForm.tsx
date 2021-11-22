@@ -4,6 +4,7 @@ import {
   createArticle,
   getArticles,
   deleteArticle,
+  editArticle,
 } from '../../features/articles/articleSlice'
 import {
   ResponsiveDiv,
@@ -25,17 +26,32 @@ const ArticleForm: React.FC<ArticleFormProps> = () => {
   const [headline, setHeadline] = useState('headline')
   const [subtitle, setSubtitle] = useState('subtitle')
   const [author, setAuthor] = useState('author')
+  const [imgLink, setImgLink] = useState('link')
   const newArticleInfo = {
     topline: topline,
     headline: headline,
     subtitle: subtitle,
     author: author,
+    imgLink: imgLink,
   }
+  // testing editArticle
+  const article = {
+    _id: '6197f2fe0855d331b0177fd9',
+    topline: 'testing Editing',
+    headline:
+      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure, mollitia?',
+    subtitle: 'Lorem ipsum dolor sit amet consectet.',
+    imgLink: 'https://source.unsplash.com/-fkLJ9Ws5XQ',
+    author: 'James 2',
+  }
+
   const editHandler = (e: any) => {
     e.preventDefault()
+    dispatch(editArticle(article))
   }
   // testing deleteArticle thunk
-  const id = '6197f2e60855d331b0177fd8'
+  const id = '619c17a52144c9f97081d817'
+
   const deleteHandler = (e: any) => {
     e.preventDefault()
     dispatch(deleteArticle(id))
@@ -92,6 +108,14 @@ const ArticleForm: React.FC<ArticleFormProps> = () => {
                   value={author}
                   placeholder='Set the author'
                   onChange={(e: any) => setAuthor(e.target.value)}
+                ></ContactFieldContent>
+              </ContactField>
+              <ContactField>
+                <label>Img link</label>
+                <ContactFieldContent
+                  value={imgLink}
+                  placeholder='put on the lotion'
+                  onChange={(e: any) => setImgLink(e.target.value)}
                 ></ContactFieldContent>
               </ContactField>
               <SendButtonWrapper>
