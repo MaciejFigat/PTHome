@@ -6,6 +6,7 @@ import {
   deleteArticle,
   editArticle,
 } from '../../features/articles/articleSlice'
+import { useAppSelector } from '../../app/reduxHooks'
 import {
   ResponsiveDiv,
   FormContainerDiv,
@@ -17,16 +18,21 @@ import {
   SendButtonWrapper,
   SendButton,
 } from './ArticleForm.styled'
+
 interface ArticleFormProps {}
 
 const ArticleForm: React.FC<ArticleFormProps> = () => {
   const dispatch: any = useAppDispatch()
+
+  const articles: any[] = useAppSelector((state) => state.article.articles)
+  // const { id, headline } = articles
 
   const [topline, setTopline] = useState('topline')
   const [headline, setHeadline] = useState('headline')
   const [subtitle, setSubtitle] = useState('subtitle')
   const [author, setAuthor] = useState('author')
   const [imgLink, setImgLink] = useState('link')
+
   const newArticleInfo = {
     topline: topline,
     headline: headline,
@@ -50,10 +56,9 @@ const ArticleForm: React.FC<ArticleFormProps> = () => {
     dispatch(editArticle(article))
   }
   // testing deleteArticle thunk
-  const id = '619c17a52144c9f97081d817'
+  // const id = '619c17a52144c9f97081d817'
 
-  const deleteHandler = (e: any) => {
-    e.preventDefault()
+  const deleteHandler = (id: string) => {
     dispatch(deleteArticle(id))
   }
 
@@ -68,7 +73,41 @@ const ArticleForm: React.FC<ArticleFormProps> = () => {
 
   return (
     <>
-      {' '}
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Topline</th>
+            <th>Headline</th>
+            <th>Author</th>
+            <th>Last update</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {articles !== [] &&
+            articles.map((article) => (
+              <tr key={article._id}>
+                <td>{article._id}</td>
+                <td>{article.topline}</td>
+                <td>{article.headline}</td>
+                <td>{article.author}</td>
+                <td>{article.updatedAt}</td>
+                <td>
+                  <SendButton>Edit</SendButton>
+
+                  <SendButton
+                    variant='danger'
+                    className='btn-sm'
+                    onClick={() => deleteHandler(article._id)}
+                  >
+                    Delete
+                  </SendButton>
+                </td>
+              </tr>
+            ))}
+        </tbody>
+      </table>
       <FormContainerDiv>
         <ResponsiveDiv>
           {' '}
