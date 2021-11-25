@@ -1,27 +1,33 @@
 import React from 'react'
+import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
 import BlogCard from '../components/BlogCards/BlogCard'
 import { BlogCardWrapper } from '../components/BlogCards/BlogCards.styled'
-import {
-  homeData,
-  homeDataTwo,
-  homeDataThree,
-  homeDataFour,
-  homeDataFive,
-  homeDataSix,
-} from '../data/blogData'
+import { getArticles } from '../features/articles/articleSlice'
 
 interface BlogProps {}
 
 const Blog: React.FC<BlogProps> = () => {
+  const dispatch: any = useAppDispatch()
+
+  const articles: any[] = useAppSelector((state) => state.article.articles)
+
+  const getHandler = (e: any) => {
+    e.preventDefault()
+    dispatch(getArticles())
+  }
+
   return (
     <>
       <BlogCardWrapper>
-        <BlogCard data={homeData} />
-        <BlogCard data={homeDataTwo} />
-        <BlogCard data={homeDataThree} />
-        <BlogCard data={homeDataFour} />
-        <BlogCard data={homeDataFive} />
-        <BlogCard data={homeDataSix} />
+        {articles.length > 0 &&
+          articles.map((article) => (
+            <BlogCard data={article} key={article._id} />
+          ))}
+        {articles.length === 0 && (
+          <button onClick={getHandler}>
+            <h1>GET THEM ALL </h1>
+          </button>
+        )}
       </BlogCardWrapper>
     </>
   )
