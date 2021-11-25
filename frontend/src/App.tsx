@@ -1,6 +1,5 @@
 import React from 'react'
 import Nav from './components/menu/Nav/Nav'
-
 import Home from './screens/Home'
 import Contact from './screens/Contact'
 import { GlobalStyle } from './styles/GlobalStyles'
@@ -31,7 +30,7 @@ function App() {
         <Route exact path='/login' component={Login} />
         <Route exact path='/register' component={Register} />
         <Route exact path='/blog' component={Blog} />
-        <Route exact path='/blog/articleOne' component={BlogArticle} />
+        <Route exact path='/blog/article/:id' component={BlogArticle} />
         <Route exact path='/admin/blog/create' component={CreateArticle} />
         <Route path='/' component={Home} />
       </Switch>

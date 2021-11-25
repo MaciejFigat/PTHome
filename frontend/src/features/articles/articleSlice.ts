@@ -93,6 +93,24 @@ export const getArticles = createAsyncThunk(
         }
     }
 )
+export const getArticleById = createAsyncThunk(
+    'article/getArticleById',
+    async (id: string) => {
+
+        try {
+
+            const { data } = await axios.get(
+                `/api/articles/${id}`
+            )
+
+            return data
+
+        } catch (error: any) {
+
+            return error
+        }
+    }
+)
 export const deleteArticle = createAsyncThunk(
     'article/deleteArticle',
     async (id: string) => {
@@ -118,6 +136,14 @@ const articleSlice = createSlice({
     initialState: {
         articles: [],
         articleInfo: {},
+        articleById: {
+            _id: '',
+            topline: '',
+            headline: '',
+            subtitle: '',
+            author: '',
+            imgLink: '',
+        },
         articleCreated: {},
         loading: false,
         error: {},
@@ -165,6 +191,19 @@ const articleSlice = createSlice({
             state.error = action.payload.message
         })
         builder.addCase(deleteArticle.rejected, (state, action) => {
+            state.loading = false
+
+        })
+        builder.addCase(getArticleById.pending, (state, action) => {
+            state.loading = true
+
+        })
+        builder.addCase(getArticleById.fulfilled, (state, action) => {
+            state.loading = false
+            state.articleById = action.payload
+            state.error = action.payload.message
+        })
+        builder.addCase(getArticleById.rejected, (state, action) => {
             state.loading = false
 
         })

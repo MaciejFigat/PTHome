@@ -10,6 +10,7 @@ import {
 } from './BlogCards.styled'
 
 interface BlogData {
+  _id?: string
   topline: string
   headline: string
   subtitle: string
@@ -33,7 +34,10 @@ const BlogCard: React.FC<BlogCardProps> = ({ data }) => {
         <CardHeader>{data.topline}</CardHeader>
         <CardBody>{data.headline}</CardBody>
         <CardFooter>
-          <CardButton>Button 1</CardButton>
+          <CardButton>
+            {' '}
+            <Link to={`/blog/article/${data._id}`}>Test GO</Link>
+          </CardButton>
           <CardButton>
             <Link to='/blog/articleOne'>go to blog</Link>
           </CardButton>

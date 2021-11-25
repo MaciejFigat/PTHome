@@ -1,16 +1,26 @@
 import React from 'react'
 
-interface BlogData {
+// interface BlogData {
+//   _id?: string
+//   topline?: string
+//   headline?: string
+//   subtitle?: string
+//   buttonLabel?: string
+//   img?: any
+//   imgLink?: any
+//   author?: string
+// }
+interface ArticleById {
+  _id: string
   topline: string
   headline: string
   subtitle: string
-  buttonLabel?: string
-  img?: any
-  imgLink?: any
+  author: string
+  imgLink: string
 }
 
 interface ArticleProps {
-  data: BlogData
+  data: ArticleById
   variant?: 'primary' | 'secondary' | 'tertiary' | 'blue'
   imgStart?: boolean
 }
