@@ -32,7 +32,7 @@ function App() {
         <Route exact path='/register' component={Register} />
         <Route exact path='/blog' component={Blog} />
         <Route exact path='/blog/articleOne' component={BlogArticle} />
-        <Route exact path='/blog/create' component={CreateArticle} />
+        <Route exact path='/admin/blog/create' component={CreateArticle} />
         <Route path='/' component={Home} />
       </Switch>
       <Footer />

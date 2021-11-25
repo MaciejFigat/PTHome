@@ -28,6 +28,7 @@ const Login: React.FC<LoginProps> = () => {
   return (
     <>
       <Wrapper>
+        <h3>Welcome back</h3>
         <Form onSubmit={submitHandler}>
           <Input
             type='email'

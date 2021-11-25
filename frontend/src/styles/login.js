@@ -16,6 +16,7 @@ export const Wrapper = styled.section`
   align-items: center;
   height: 100%;
   width: 100%;
+  margin-top: 1rem;
 `
 
 export const Form = styled.form`
@@ -58,7 +59,8 @@ export const Button = styled.button`
   border-radius: 3px;
   outline: 0;
   cursor: pointer;
-  margin-top: 0.6rem;
+  /* margin-top: 0.6rem; */
+  margin-bottom: 0.6rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-out;
   :hover {
@@ -67,7 +69,7 @@ export const Button = styled.button`
   }
 `
 
-export const Title = styled.p`
+export const Title = styled.div`
   font-weight: normal;
   color: var(--background1-main);
   /* text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1); */
@@ -76,8 +78,9 @@ export const Title = styled.p`
   justify-content: center;
   flex-direction: row;
   align-items: center;
+  margin-top: 1rem;
 `
-export const LoginLink = styled.p`
+export const LoginLink = styled.div`
   color: var(--background1-main);
   max-width: fit-content;
   font-weight: 600;

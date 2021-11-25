@@ -22,6 +22,7 @@ const Register: React.FC<RegisterProps> = () => {
 
   return (
     <Wrapper>
+      <h3>Welcome!</h3>
       <Form onSubmit={submitHandler}>
         <Input
           type='name'
