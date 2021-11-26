@@ -45,7 +45,7 @@ export const createArticle = createAsyncThunk(
     }
 )
 export const editArticle = createAsyncThunk(
-    'article/createArticle',
+    'article/editArticle',
 
     async (article: NewArticleInfo) => {
 

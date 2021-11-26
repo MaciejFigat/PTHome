@@ -13,7 +13,9 @@ import Register from './screens/Register'
 import Footer from './components/Footer/Footer'
 import ScrollTopHelper from './components/ScrollTopHelper'
 import BlogArticle from './screens/BlogArticle'
-import CreateArticle from './screens/CreateArticle'
+import BlogAdmin from './screens/BlogAdmin'
+import BlogAdminEdit from './screens/BlogAdminEdit'
+import BlogAdminCreate from './screens/BlogAdminCreate'
 function App() {
   const location = useLocation()
 
@@ -31,7 +33,9 @@ function App() {
         <Route exact path='/register' component={Register} />
         <Route exact path='/blog' component={Blog} />
         <Route exact path='/blog/article/:id' component={BlogArticle} />
-        <Route exact path='/admin/blog/create' component={CreateArticle} />
+        <Route exact path='/admin/blog/manage' component={BlogAdmin} />
+        <Route exact path='/admin/blog/create' component={BlogAdminCreate} />
+        <Route exact path='/admin/blog/:id' component={BlogAdminEdit} />
         <Route path='/' component={Home} />
       </Switch>
       <Footer />

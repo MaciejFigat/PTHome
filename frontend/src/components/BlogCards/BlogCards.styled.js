@@ -74,4 +74,7 @@ export const CardButton = styled.button`
   &:focus {
     background-color: var(--secondary5);
   }
+  a {
+    color: inherit;
+  }
 `

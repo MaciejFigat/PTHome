@@ -157,4 +157,7 @@ export const SendButton = styled.button`
     font-weight: 400;
     margin-left: 3px;
   }
+  a {
+    color: inherit;
+  }
 `

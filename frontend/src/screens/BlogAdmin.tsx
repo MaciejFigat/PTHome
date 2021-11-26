@@ -1,13 +1,13 @@
 import React from 'react'
 import ArticleForm from '../components/ArticleForm/ArticleForm'
 
-interface CreateArticleProps {}
+interface BlogAdminProps {}
 
-const CreateArticle: React.FC<CreateArticleProps> = () => {
+const BlogAdmin: React.FC<BlogAdminProps> = () => {
   return (
     <>
       <ArticleForm />
     </>
   )
 }
-export default CreateArticle
+export default BlogAdmin

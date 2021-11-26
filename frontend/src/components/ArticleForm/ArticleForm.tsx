@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../../app/reduxHooks'
 import {
   createArticle,
@@ -55,8 +56,6 @@ const ArticleForm: React.FC<ArticleFormProps> = () => {
     e.preventDefault()
     dispatch(editArticle(article))
   }
-  // testing deleteArticle thunk
-  // const id = '619c17a52144c9f97081d817'
 
   const deleteHandler = (id: string) => {
     dispatch(deleteArticle(id))
@@ -76,7 +75,6 @@ const ArticleForm: React.FC<ArticleFormProps> = () => {
       <table>
         <thead>
           <tr>
-            <th>ID</th>
             <th>Topline</th>
             <th>Headline</th>
             <th>Author</th>
@@ -88,13 +86,15 @@ const ArticleForm: React.FC<ArticleFormProps> = () => {
           {articles !== [] &&
             articles.map((article) => (
               <tr key={article._id}>
-                <td>{article._id}</td>
                 <td>{article.topline}</td>
                 <td>{article.headline}</td>
                 <td>{article.author}</td>
                 <td>{article.updatedAt}</td>
                 <td>
-                  <SendButton>Edit</SendButton>
+                  <SendButton>
+                    {' '}
+                    <Link to={`/admin/blog/${article._id}`}>Test Edit</Link>
+                  </SendButton>
 
                   <SendButton
                     variant='danger'
