@@ -12,7 +12,7 @@ import {
   MessageField,
   SendButtonWrapper,
   SendButton,
-} from '../components/ArticleForm/ArticleForm.styled'
+} from '../components/ArticleTable/ArticleForm.styled'
 interface ArticleById {
   _id: string
   topline: string

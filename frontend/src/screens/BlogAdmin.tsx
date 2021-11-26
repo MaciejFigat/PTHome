@@ -1,12 +1,12 @@
 import React from 'react'
-import ArticleForm from '../components/ArticleForm/ArticleForm'
+import ArticleTable from '../components/ArticleTable/ArticleTable'
 
 interface BlogAdminProps {}
 
 const BlogAdmin: React.FC<BlogAdminProps> = () => {
   return (
     <>
-      <ArticleForm />
+      <ArticleTable />
     </>
   )
 }

@@ -11,7 +11,7 @@ import {
   MessageField,
   SendButtonWrapper,
   SendButton,
-} from '../components/ArticleForm/ArticleForm.styled'
+} from '../components/ArticleTable/ArticleForm.styled'
 interface BlogAdminCreateProps {}
 
 const BlogAdminCreate: React.FC<BlogAdminCreateProps> = ({}) => {
