@@ -26,7 +26,6 @@ const ArticleForm: React.FC<ArticleFormProps> = () => {
   const dispatch: any = useAppDispatch()
 
   const articles: any[] = useAppSelector((state) => state.article.articles)
-  // const { id, headline } = articles
 
   const [topline, setTopline] = useState('topline')
   const [headline, setHeadline] = useState('headline')
@@ -72,6 +71,9 @@ const ArticleForm: React.FC<ArticleFormProps> = () => {
 
   return (
     <>
+      <SendButton>
+        <Link to='/admin/blog/create'>Create New Article</Link>
+      </SendButton>
       <table>
         <thead>
           <tr>
@@ -125,9 +127,9 @@ const ArticleForm: React.FC<ArticleFormProps> = () => {
               <ContactField>
                 <label>Headline</label>
                 <ContactFieldContent
-                  type='email'
+                  type='headline'
                   value={headline}
-                  placeholder='Wpisz email kontaktowy'
+                  placeholder='Headlin here'
                   onChange={(e: any) => setHeadline(e.target.value)}
                 />
               </ContactField>
