@@ -36,7 +36,7 @@ const ArticleTable: React.FC<ArticleTableProps> = () => {
           <thead>
             <tr>
               <th>Topline</th>
-              <th>Headline</th>
+
               <th>Author</th>
               <th>Last update</th>
               <th></th>
@@ -47,13 +47,13 @@ const ArticleTable: React.FC<ArticleTableProps> = () => {
               articles.map((article) => (
                 <tr key={article._id}>
                   <td>{article.topline}</td>
-                  <td>{article.headline}</td>
+
                   <td>{article.author}</td>
                   <td>{article.updatedAt}</td>
                   <td>
                     <SendButton>
                       {' '}
-                      <Link to={`/admin/blog/${article._id}`}>Test Edit</Link>
+                      <Link to={`/admin/blog/${article._id}`}>Edit</Link>
                     </SendButton>
 
                     <SendButton
