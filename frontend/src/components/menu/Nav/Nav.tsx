@@ -7,6 +7,8 @@ import {
   MobileViewContainer,
   HeaderTitleMobile,
   HeaderTitleDesktop,
+  ListLoginWrapper,
+  HeaderLoginWrapper,
 } from './nav.styled'
 import { NavLink } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../../../app/reduxHooks'
@@ -78,28 +80,32 @@ const Nav: React.FC<NavProps> = () => {
           <HeaderTitleMobile>
             {name ? `Witaj ${name}!` : `Witaj!`}
           </HeaderTitleMobile>
-          {/* {id ? (
-            <NavLink
-              exact
-              to='/'
-              onClick={logoutHandler}
-              className='nav_link'
-              activeClassName='nav_link_active'
-            >
-              {' '}
-              <SvgIcon variant='logout' />
-            </NavLink>
+          {id ? (
+            <HeaderLoginWrapper>
+              <NavLink
+                exact
+                to='/'
+                onClick={logoutHandler}
+                className='nav_link'
+                activeClassName='nav_link_active'
+              >
+                {' '}
+                <SvgIcon variant='logout' />
+              </NavLink>
+            </HeaderLoginWrapper>
           ) : (
-            <NavLink
-              exact
-              to='/login'
-              className='nav_link'
-              activeClassName='nav_link_active'
-            >
-              {' '}
-              <SvgIcon variant='login' />
-            </NavLink>
-          )} */}
+            <HeaderLoginWrapper>
+              <NavLink
+                exact
+                to='/login'
+                className='nav_link'
+                activeClassName='nav_link_active'
+              >
+                {' '}
+                <SvgIcon variant='login' />
+              </NavLink>
+            </HeaderLoginWrapper>
+          )}
         </MobileViewContainer>
         <NavContainer className={menuOpen} onClick={handleCloseMenu}>
           <HeaderTitleDesktop className={scrollTop === true ? 'hide' : 'show'}>
@@ -107,26 +113,30 @@ const Nav: React.FC<NavProps> = () => {
           </HeaderTitleDesktop>
           <NavListDesktop />
           {id ? (
-            <NavLink
-              exact
-              to='/'
-              onClick={logoutHandler}
-              className='nav_link'
-              activeClassName='nav_link_active'
-            >
-              {' '}
-              <SvgIcon variant='logout' />
-            </NavLink>
+            <ListLoginWrapper>
+              <NavLink
+                exact
+                to='/'
+                onClick={logoutHandler}
+                className='nav_link'
+                activeClassName='nav_link_active'
+              >
+                {' '}
+                <SvgIcon variant='logout' />
+              </NavLink>
+            </ListLoginWrapper>
           ) : (
-            <NavLink
-              exact
-              to='/login'
-              className='nav_link'
-              activeClassName='nav_link_active'
-            >
-              {' '}
-              <SvgIcon variant='login' />
-            </NavLink>
+            <ListLoginWrapper>
+              <NavLink
+                exact
+                to='/login'
+                className='nav_link'
+                activeClassName='nav_link_active'
+              >
+                {' '}
+                <SvgIcon variant='login' />
+              </NavLink>
+            </ListLoginWrapper>
           )}
         </NavContainer>
       </TransitionWrapper>

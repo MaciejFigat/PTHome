@@ -59,6 +59,16 @@ export const NavList = styled.ul`
     flex-direction: column;
   }
 `
+export const ListLoginWrapper = styled.div`
+  @media (max-width: 1020px) {
+    display: none;
+  }
+`
+export const HeaderLoginWrapper = styled.div`
+  @media (min-width: 1020px) {
+    display: none;
+  }
+`
 
 export const ListItem = styled.li`
   margin-right: 1rem;
