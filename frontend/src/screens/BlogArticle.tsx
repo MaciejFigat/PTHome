@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import Article from '../components/BlogArticle/Article'
-
 import { RouteComponentProps } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
 import { getArticleById } from '../features/articles/articleSlice'

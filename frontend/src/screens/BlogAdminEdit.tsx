@@ -10,7 +10,6 @@ import {
   ContactField,
   ContactFieldContent,
   MessageField,
-  SendButtonWrapper,
   SendButton,
 } from '../components/ArticleTable/ArticleForm.styled'
 interface ArticleById {
@@ -59,6 +58,15 @@ const BlogAdminEdit: React.FC<BlogAdminEditProps> = ({ history, match }) => {
     e.preventDefault()
     dispatch(editArticle(editedArticle))
   }
+  const resetArticleHandler = (e: any) => {
+    e.preventDefault()
+    dispatch(editArticle(editedArticle))
+    setTopline(toplineState)
+    setHeadline(headlineState)
+    setSubtitle(subtitleState)
+    setAuthor(authorState)
+    setImgLink(imgLinkState)
+  }
 
   useEffect(() => {
     dispatch(getArticleById(match.params.id))
@@ -66,6 +74,10 @@ const BlogAdminEdit: React.FC<BlogAdminEditProps> = ({ history, match }) => {
   return (
     <>
       <h1>EDIT THIS ARTICLE</h1>
+
+      <SendButton onClick={resetArticleHandler}>Fetch original data</SendButton>
+      <SendButton onClick={editHandler}>Save changes</SendButton>
+
       <FormContainerDiv>
         <ResponsiveDiv>
           {' '}
@@ -115,9 +127,6 @@ const BlogAdminEdit: React.FC<BlogAdminEditProps> = ({ history, match }) => {
                   onChange={(e: any) => setImgLink(e.target.value)}
                 ></ContactFieldContent>
               </ContactField>
-              <SendButtonWrapper>
-                <SendButton onClick={editHandler}>Edit</SendButton>
-              </SendButtonWrapper>
             </ContactFormStyled>{' '}
           </ContactFormContainer>
         </ResponsiveDiv>

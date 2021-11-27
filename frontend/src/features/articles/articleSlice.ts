@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import axios from 'axios'
-
+import { store } from '../../app/store'
 interface NewArticleInfo {
     _id?: string
     topline: string
@@ -10,21 +10,38 @@ interface NewArticleInfo {
     author: string
 
 }
+// interface UserInfo2 {
+//     id: string
+//     name: string
+//     email: string
+//     password: string
+//     isAdmin: boolean
+//     token: string
+// }
+// interface UserData {
+//     userInfo?: UserInfo2
+//     loading?: boolean
+// }
 
 export const createArticle = createAsyncThunk(
     'article/createArticle',
 
 
     // async (newArticleInfo: NewArticleInfo, { rejectWithValue }) => {
-    async (newArticleInfo: NewArticleInfo) => {
+    async (newArticleInfo: NewArticleInfo, thunkAPI) => {
 
         const { topline, headline, subtitle, imgLink, author } = newArticleInfo
 
         try {
 
+            const state: any = thunkAPI.getState()
+            const userInfo = state.user.userInfo
+
             const config = {
                 headers: {
                     'Content-Type': 'application/json',
+
+                    Authorization: `Bearer ${userInfo.token}`,
                 },
             }
 
@@ -47,15 +64,19 @@ export const createArticle = createAsyncThunk(
 export const editArticle = createAsyncThunk(
     'article/editArticle',
 
-    async (article: NewArticleInfo) => {
+    async (article: NewArticleInfo, thunkAPI) => {
 
 
 
         try {
+            const state: any = thunkAPI.getState()
+            const userInfo = state.user.userInfo
+
 
             const config = {
                 headers: {
                     'Content-Type': 'application/json',
+                    Authorization: `Bearer ${userInfo.token}`,
                 },
             }
 
@@ -113,12 +134,22 @@ export const getArticleById = createAsyncThunk(
 )
 export const deleteArticle = createAsyncThunk(
     'article/deleteArticle',
-    async (id: string) => {
+    async (id: string, thunkAPI) => {
 
         try {
 
+            const state: any = thunkAPI.getState()
+            const userInfo = state.user.userInfo
+
+            const config = {
+                headers: {
+                    Authorization: `Bearer ${userInfo.token}`,
+                },
+            }
+
             const { data } = await axios.delete(
-                `/api/articles/${id}`
+                `/api/articles/${id}`,
+                config
             )
 
             return data

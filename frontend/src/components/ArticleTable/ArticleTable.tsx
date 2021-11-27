@@ -36,10 +36,8 @@ const ArticleTable: React.FC<ArticleTableProps> = () => {
           <thead>
             <tr>
               <th>Topline</th>
-
               <th>Author</th>
               <th>Last update</th>
-              <th></th>
             </tr>
           </thead>
           <tbody>
