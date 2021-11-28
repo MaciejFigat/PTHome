@@ -5,14 +5,15 @@ export const BlogCardWrapper = styled.div`
   margin-bottom: 1rem;
   display: grid;
   max-width: 100%;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem;
-
-  align-items: flex-end;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 2rem;
   place-items: center;
-  @media screen and (max-width: 770px) {
+  column-gap: 0;
+
+  @media screen and (max-width: 470px) {
     margin-top: 1rem;
-    gap: 0.25rem;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   }
 `
 export const BlogCardImg = styled.img`
@@ -31,7 +32,8 @@ export const BlogCardImg = styled.img`
 
 export const BlogCardContainer = styled.div`
   /* padding: var(--padding); */
-  width: 350px;
+  /* justify-self: last baseline; */
+  width: 450px;
   max-width: 100%;
   background-color: var(--secondary2);
   color: var(--background5-main);
@@ -41,8 +43,8 @@ export const BlogCardContainer = styled.div`
   &:hover ${BlogCardImg} {
     transform: scale(1.025);
   }
-  @media screen and (max-width: 770px) {
-    /* max-width: 91%; */
+  @media screen and (max-width: 470px) {
+    width: 350px;
   }
 `
 export const CardHeader = styled.div`

@@ -14,6 +14,7 @@ body {
     padding: 0;
     max-width: 100vw;
     height: 100%;
+    overflow-wrap: break-word;
     background-color: var(--secondary3);  
     // font-family: 'Quicksand', sans-serif; 
     font-family: 'Atkinson Hyperlegible', sans-serif;
@@ -34,7 +35,8 @@ body {
    --secondary3: #e9c46a;
    --secondary4: #f4a261;
    --secondary5: #e76f51;
-
+   
+   --pink1: #f7a14e;
     // --color1-main: #102a43;
     // --color2-main: #393232;
     // --color3-main: #151515;

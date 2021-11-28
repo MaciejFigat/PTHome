@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
 import BlogCard from '../components/BlogCards/BlogCard'
 import { BlogCardWrapper } from '../components/BlogCards/BlogCards.styled'
@@ -8,6 +8,10 @@ interface BlogProps {}
 
 const Blog: React.FC<BlogProps> = () => {
   const dispatch: any = useAppDispatch()
+
+  useEffect(() => {
+    dispatch(getArticles())
+  }, [dispatch])
 
   const articles: any[] = useAppSelector((state) => state.article.articles)
 
