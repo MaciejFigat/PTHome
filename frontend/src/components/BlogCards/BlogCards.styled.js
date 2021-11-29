@@ -22,7 +22,7 @@ export const BlogCardWrapper = styled.div`
 export const BlogCardImg = styled.img`
   padding-right: 0;
   border: 0;
-  max-width: 100%;
+  max-width: fit-content;
   max-height: 200px;
   overflow: hidden;
   display: block;

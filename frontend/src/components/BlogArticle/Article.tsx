@@ -1,4 +1,10 @@
 import React from 'react'
+import {
+  ArticleImage,
+  ArticleWrapper,
+  ArticleTitle,
+  ArticleSection,
+} from './Article.styled'
 
 interface ArticleById {
   _id: string
@@ -18,13 +24,14 @@ interface ArticleProps {
 
 const Article: React.FC<ArticleProps> = ({ data }) => {
   return (
-    <>
-      <h5>{data.createdAt}</h5>
-      <p>{data.headline}</p>
+    <ArticleWrapper>
+      <h5>{data.createdAt.substring(0, 10)}</h5>
+      <p>by {data.author}</p>
+      <ArticleTitle>{data.headline}</ArticleTitle>
       <h4>{data.topline}</h4>
-      <img src={data.imgLink} alt='for posteriority' />
-      <p>{data.subtitle}</p>
-    </>
+      <ArticleImage src={data.imgLink} alt='for posteriority' />
+      <ArticleSection>{data.subtitle}</ArticleSection>
+    </ArticleWrapper>
   )
 }
 export default Article
