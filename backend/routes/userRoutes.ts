@@ -6,7 +6,8 @@ import {
     deleteUser,
     updateUser,
     getUserById,
-
+    getUserProfile,
+    updateUserProfile
 } from '../controllers/userController'
 import { protect, admin } from '../middleware/authMiddleware'
 const router = express.Router()
@@ -14,6 +15,11 @@ const router = express.Router()
 router.route('/').post(registerUser).get(protect, admin, getUsers)
 
 router.post('/login', authUser)
+
+router
+    .route('/profile')
+    .get(protect, getUserProfile)
+    .put(protect, updateUserProfile)
 
 router
     .route('/:id')
