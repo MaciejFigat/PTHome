@@ -22,7 +22,7 @@ body {
 }
 
 :root {
-   --padding: 1rem;
+   --padding: 2rem;
    
    --background1-main: #1E1E1F;
    --background2-main: #3C3B3D;

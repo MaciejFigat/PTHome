@@ -15,26 +15,20 @@ interface ArticleById {
   subtitle: string
   author: string
   imgLink: string
+  createdAt: string
 }
 const BlogArticle: React.FC<BlogArticleProps> = ({ history, match }) => {
   const dispatch: any = useAppDispatch()
 
-  const testGetHandler = () => {
-    dispatch(getArticleById(match.params.id))
-  }
-
   const article: ArticleById = useAppSelector(
     (state) => state.article.articleById
   )
-
-  // const { _id: id } = article
 
   useEffect(() => {
     dispatch(getArticleById(match.params.id))
   }, [dispatch, match])
   return (
     <>
-      <button onClick={testGetHandler}>TEST GET BU ID</button>
       <Article data={article} />
     </>
   )

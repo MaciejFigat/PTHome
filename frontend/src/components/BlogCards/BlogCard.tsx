@@ -4,7 +4,6 @@ import {
   BlogCardContainer,
   BlogCardImg,
   CardBody,
-  CardButton,
   CardFooter,
   CardHeader,
 } from './BlogCards.styled'
@@ -17,6 +16,7 @@ interface BlogData {
   buttonLabel?: string
   img?: any
   imgLink?: any
+  author: string
 }
 
 interface BlogCardProps {
@@ -28,21 +28,15 @@ interface BlogCardProps {
 const BlogCard: React.FC<BlogCardProps> = ({ data }) => {
   return (
     <>
-      <BlogCardContainer>
-        {' '}
-        <BlogCardImg src={data.imgLink} />
-        <CardHeader>{data.topline}</CardHeader>
-        <CardBody>{data.headline}</CardBody>
-        <CardFooter>
-          <CardButton>
-            {' '}
-            <Link to={`/blog/article/${data._id}`}>Test GO</Link>
-          </CardButton>
-          <CardButton>
-            <Link to='/blog/articleOne'>go to blog</Link>
-          </CardButton>
-        </CardFooter>
-      </BlogCardContainer>
+      <Link to={`/blog/article/${data._id}`}>
+        <BlogCardContainer>
+          {' '}
+          <BlogCardImg src={data.imgLink} />
+          <CardHeader>{data.headline}</CardHeader>
+          <CardBody>{data.topline}</CardBody>
+          <CardFooter>by {data.author}</CardFooter>
+        </BlogCardContainer>
+      </Link>
     </>
   )
 }

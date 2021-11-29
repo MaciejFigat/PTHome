@@ -1,15 +1,5 @@
 import React from 'react'
 
-// interface BlogData {
-//   _id?: string
-//   topline?: string
-//   headline?: string
-//   subtitle?: string
-//   buttonLabel?: string
-//   img?: any
-//   imgLink?: any
-//   author?: string
-// }
 interface ArticleById {
   _id: string
   topline: string
@@ -17,6 +7,7 @@ interface ArticleById {
   subtitle: string
   author: string
   imgLink: string
+  createdAt: string
 }
 
 interface ArticleProps {
@@ -28,9 +19,10 @@ interface ArticleProps {
 const Article: React.FC<ArticleProps> = ({ data }) => {
   return (
     <>
-      <img src={data.imgLink} alt='for posteriority' />
-      <h1>{data.topline}</h1>
+      <h5>{data.createdAt}</h5>
       <p>{data.headline}</p>
+      <h4>{data.topline}</h4>
+      <img src={data.imgLink} alt='for posteriority' />
       <p>{data.subtitle}</p>
     </>
   )

@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import axios from 'axios'
-import { store } from '../../app/store'
+
 interface NewArticleInfo {
     _id?: string
     topline: string
@@ -10,18 +10,7 @@ interface NewArticleInfo {
     author: string
 
 }
-// interface UserInfo2 {
-//     id: string
-//     name: string
-//     email: string
-//     password: string
-//     isAdmin: boolean
-//     token: string
-// }
-// interface UserData {
-//     userInfo?: UserInfo2
-//     loading?: boolean
-// }
+
 
 export const createArticle = createAsyncThunk(
     'article/createArticle',
@@ -53,8 +42,6 @@ export const createArticle = createAsyncThunk(
             return data
 
         } catch (error: any) {
-
-
             return error
             // return rejectWithValue(error.data)
 
@@ -65,8 +52,6 @@ export const editArticle = createAsyncThunk(
     'article/editArticle',
 
     async (article: NewArticleInfo, thunkAPI) => {
-
-
 
         try {
             const state: any = thunkAPI.getState()
@@ -101,15 +86,12 @@ export const getArticles = createAsyncThunk(
     async () => {
 
         try {
-
             const { data } = await axios.get(
                 `/api/articles/`
             )
-
             return data
 
         } catch (error: any) {
-
             return error
         }
     }
@@ -174,6 +156,7 @@ const articleSlice = createSlice({
             subtitle: '',
             author: '',
             imgLink: '',
+            createdAt: '',
         },
         articleCreated: {},
         loading: false,
