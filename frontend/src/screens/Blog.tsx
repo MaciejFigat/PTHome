@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
 import BlogCard from '../components/BlogCards/BlogCard'
-import { BlogCardWrapper } from '../components/BlogCards/BlogCards.styled'
+import {
+  BlogCardWrapper,
+  BlogWrapper,
+} from '../components/BlogCards/BlogCards.styled'
 import { getArticles } from '../features/articles/articleSlice'
 
 interface BlogProps {}
@@ -21,7 +24,7 @@ const Blog: React.FC<BlogProps> = () => {
   }
 
   return (
-    <>
+    <BlogWrapper>
       <BlogCardWrapper>
         {articles.length > 0 &&
           articles.map((article) => (
@@ -33,7 +36,7 @@ const Blog: React.FC<BlogProps> = () => {
           </button>
         )}
       </BlogCardWrapper>
-    </>
+    </BlogWrapper>
   )
 }
 export default Blog

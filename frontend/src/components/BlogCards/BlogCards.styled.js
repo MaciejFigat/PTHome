@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+export const BlogWrapper = styled.div`
+  display: grid;
+  place-items: center;
+`
 export const BlogCardWrapper = styled.div`
   margin-top: 3rem;
   margin-bottom: 1rem;
@@ -8,7 +12,10 @@ export const BlogCardWrapper = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   gap: 2rem;
   place-items: center;
-  column-gap: 0;
+  /* column-gap: 0; */
+  /* @media screen and (max-width: 970px) and (max-width: 1300px) {
+    max-width: 100%;
+  } */
 
   @media screen and (max-width: 470px) {
     margin-top: 1rem;
