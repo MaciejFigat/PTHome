@@ -16,6 +16,8 @@ import BlogArticle from './screens/BlogArticle'
 import BlogAdmin from './screens/BlogAdmin'
 import BlogAdminEdit from './screens/BlogAdminEdit'
 import BlogAdminCreate from './screens/BlogAdminCreate'
+import UserAdminEdit from './screens/UserAdminEdit'
+import UserAdmin from './screens/UserAdmin'
 function App() {
   const location = useLocation()
 
@@ -36,6 +38,8 @@ function App() {
         <Route exact path='/admin/blog/manage' component={BlogAdmin} />
         <Route exact path='/admin/blog/create' component={BlogAdminCreate} />
         <Route exact path='/admin/blog/:id' component={BlogAdminEdit} />
+        <Route exact path='/admin/userlist' component={UserAdmin} />
+        <Route exact path='/admin/user/:id/edit' component={UserAdminEdit} />
         <Route path='/' component={Home} />
       </Switch>
       <Footer />

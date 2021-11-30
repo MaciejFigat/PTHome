@@ -26,6 +26,9 @@ const ArticleTable: React.FC<ArticleTableProps> = () => {
   return (
     <AdminContainer>
       <SendButton>
+        <Link to='/admin/userlist'>To user List</Link>
+      </SendButton>
+      <SendButton>
         <Link to='/admin/blog/create'>Create New Article</Link>
       </SendButton>
       <SendButton>

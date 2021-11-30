@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
+
 import axios from 'axios'
 
 
@@ -88,8 +89,34 @@ export const createUser = createAsyncThunk(
         }
     }
 )
+// interface GetThunkAPI {
+
+// }
+export const getUsers = createAsyncThunk(
+    'user/getUsers',
+    // x- below is nothing, just a temporary solution so thunkAPI is recognized as a parameter
 
 
+    async (x: any, thunkAPI) => {
+        try {
+            const state: any = thunkAPI.getState()
+            const userInfo = state.user.userInfo
+            const config = {
+                headers: {
+                    Authorization: `Bearer ${userInfo.token}`,
+                },
+            }
+
+            const { data } = await axios.get(
+                `/api/users/`, config
+            )
+            return data
+
+        } catch (error: any) {
+            return error
+        }
+    }
+)
 
 const userSlice = createSlice({
     name: 'userLogin',
@@ -97,6 +124,7 @@ const userSlice = createSlice({
         userInfo: {},
         loading: false,
         error: {},
+        allUsers: [],
     },
     reducers: {
 
@@ -134,6 +162,18 @@ const userSlice = createSlice({
             state.error = action.payload.message
         })
         builder.addCase(createUser.rejected, (state, action) => {
+            state.loading = false
+
+        })
+        builder.addCase(getUsers.pending, (state, action) => {
+            state.loading = true
+        })
+        builder.addCase(getUsers.fulfilled, (state, action) => {
+            state.loading = false
+            state.allUsers = action.payload
+            state.error = action.payload.message
+        })
+        builder.addCase(getUsers.rejected, (state, action) => {
             state.loading = false
 
         })
