@@ -1,6 +1,10 @@
 import React, { useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
-import { getUsers } from '../features/users/userSlice'
+import {
+  getUsers,
+  updateUserProfile,
+  deleteUser,
+} from '../features/users/userSlice'
 interface UserAdminProps {}
 
 const UserAdmin: React.FC<UserAdminProps> = ({}) => {
@@ -10,7 +14,18 @@ const UserAdmin: React.FC<UserAdminProps> = ({}) => {
   const getUsersHandler = () => {
     dispatch(getUsers(1))
   }
+  const updatedUser = {
+    name: 'BobTheTest2',
+    password: '123',
+  }
+  const updateUserHandler = () => {
+    dispatch(updateUserProfile(updatedUser))
+  }
+  const deleteUserHandler = (id: string) => {
+    dispatch(deleteUser(id))
+  }
 
+  // getUsers I have to pass an argument (anything really) because my thunk in the slice needs an argument to also receive thunkAPI, when thunkAPI is alone it's not working
   useEffect(() => {
     dispatch(getUsers(1))
   }, [dispatch])
@@ -18,38 +33,37 @@ const UserAdmin: React.FC<UserAdminProps> = ({}) => {
   return (
     <div>
       <button onClick={getUsersHandler}>GET USERS TEST</button>
+      <button onClick={updateUserHandler}>update User TEST</button>
       <table>
         <thead>
           <tr>
-            <th>Topline</th>
-            <th>Author</th>
-            <th>Last update</th>
+            <th>name</th>
+            <th>email</th>
           </tr>
         </thead>
         <tbody>
-          {users === [] &&
-            users.map((user) => (
-              <tr key={user._id}>
-                <td>{user.topline}</td>
+          {/* {users === [] && */}
+          {users.map((user) => (
+            <tr key={user._id}>
+              <td>{user.name}</td>
+              <td>{user.email}</td>
 
-                <td>{user.author}</td>
-                <td>{user.updatedAt}</td>
-                <td>
-                  <button>
-                    {' '}
-                    {/* <a to={`/admin/blog/${user._id}`}>Edit</a> */}
-                  </button>
+              <td>
+                <button>
+                  {' '}
+                  {/* <a to={`/admin/blog/${user._id}`}>Edit</a> */}
+                </button>
 
-                  <button
-                    // variant='danger'
-                    className='btn-sm'
-                    // onClick={() => deleteHandler(article._id)}
-                  >
-                    Delete
-                  </button>
-                </td>
-              </tr>
-            ))}
+                <button
+                  // variant='danger'
+                  className='btn-sm'
+                  onClick={() => deleteUserHandler(user._id)}
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
