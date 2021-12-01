@@ -30,6 +30,7 @@ const Nav: React.FC<NavProps> = () => {
   const dispatch = useAppDispatch()
 
   const userInfo: UserInfo = useAppSelector((state) => state.user.userInfo)
+  const loading: boolean = useAppSelector((state) => state.user.loading)
   const { id, name } = userInfo
 
   const [menuOpen, setMenuOpen] = useState<boolean>(false)
@@ -80,7 +81,7 @@ const Nav: React.FC<NavProps> = () => {
           <HeaderTitleMobile>
             {name ? `Witaj ${name}!` : `Witaj!`}
           </HeaderTitleMobile>
-          {id ? (
+          {id && id.length > 0 && loading === false ? (
             <HeaderLoginWrapper>
               <NavLink
                 exact

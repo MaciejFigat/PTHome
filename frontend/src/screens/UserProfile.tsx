@@ -73,7 +73,7 @@ const UserProfile: React.FC<UserProfileProps> = ({}) => {
                 />
               </ContactField>
               <ContactField>
-                <label>Password</label>
+                <label>New password</label>
                 <ContactFieldContent
                   type='text'
                   value={password}
