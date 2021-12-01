@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
 import {
   getUsers,
@@ -42,28 +43,27 @@ const UserAdmin: React.FC<UserAdminProps> = ({}) => {
           </tr>
         </thead>
         <tbody>
-          {/* {users === [] && */}
-          {users.map((user) => (
-            <tr key={user._id}>
-              <td>{user.name}</td>
-              <td>{user.email}</td>
+          {users.length > 0 &&
+            users.map((user) => (
+              <tr key={user._id}>
+                <td>{user.name}</td>
+                <td>{user.email}</td>
 
-              <td>
-                <button>
-                  {' '}
-                  {/* <a to={`/admin/blog/${user._id}`}>Edit</a> */}
-                </button>
+                <td>
+                  <button>
+                    <Link to={`/admin/user/${user._id}/edit`}>Edit</Link>
+                  </button>
 
-                <button
-                  // variant='danger'
-                  className='btn-sm'
-                  onClick={() => deleteUserHandler(user._id)}
-                >
-                  Delete
-                </button>
-              </td>
-            </tr>
-          ))}
+                  <button
+                    // variant='danger'
+                    className='btn-sm'
+                    onClick={() => deleteUserHandler(user._id)}
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
         </tbody>
       </table>
     </div>

@@ -4,6 +4,7 @@ import axios from 'axios'
 
 
 interface UserInfo {
+    _id?: string
     name?: string
     email?: string
     password?: string
@@ -86,7 +87,7 @@ export const createUser = createAsyncThunk(
 )
 // to update the profile by the user
 export const updateUserProfile = createAsyncThunk(
-    'user/updateUser',
+    'user/updateUserProfile',
     async (updatedUserInfo: UserInfo, thunkAPI) => {
 
         const { name, email, password } = updatedUserInfo
@@ -114,7 +115,86 @@ export const updateUserProfile = createAsyncThunk(
         }
     }
 )
+// done by the Admin
+export const updateUser = createAsyncThunk(
+    'user/updateUser',
+    async (updatedUserInfo: UserInfo, thunkAPI) => {
 
+        const { name, email, isAdmin, _id } = updatedUserInfo
+
+        try {
+            const state: any = thunkAPI.getState()
+            const userInfo = state.user.userInfo
+            const config = {
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${userInfo.token}`,
+                },
+            }
+
+            const { data } = await axios.put(
+                `/api/users/${_id}`,
+                { name, email, isAdmin },
+                config
+            )
+            return data
+
+        } catch (error: any) {
+            return error
+
+        }
+    }
+)
+// get user profile details by the Admin
+export const getUserById = createAsyncThunk(
+    'user/getUserById',
+
+    async (id: string, thunkAPI) => {
+        try {
+            const state: any = thunkAPI.getState()
+            const userInfo = state.user.userInfo
+            const config = {
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${userInfo.token}`,
+                },
+            }
+
+            const { data } = await axios.get(
+                `/api/users/${id}`, config
+            )
+            return data
+
+        } catch (error: any) {
+            return error
+        }
+    }
+)
+// get user profile details by the user
+export const getUserDetails = createAsyncThunk(
+    'user/getUserDetails',
+
+    async (id: string, thunkAPI) => {
+        try {
+            const state: any = thunkAPI.getState()
+            const userInfo = state.user.userInfo
+            const config = {
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${userInfo.token}`,
+                },
+            }
+
+            const { data } = await axios.get(
+                `/api/users/profile`, config
+            )
+            return data
+
+        } catch (error: any) {
+            return error
+        }
+    }
+)
 export const getUsers = createAsyncThunk(
     'user/getUsers',
     // x- below is nothing, just a temporary solution so thunkAPI is recognized as a parameter
@@ -162,6 +242,7 @@ export const deleteUser = createAsyncThunk(
     }
 )
 
+
 const userSlice = createSlice({
     name: 'userLogin',
     initialState: {
@@ -169,6 +250,7 @@ const userSlice = createSlice({
         loading: false,
         error: {},
         allUsers: [],
+        selectedUserInfo: {}
     },
     reducers: {
 
@@ -239,6 +321,41 @@ const userSlice = createSlice({
             state.error = action.payload.message
         })
         builder.addCase(deleteUser.rejected, (state, action) => {
+            state.loading = false
+
+        })
+        builder.addCase(updateUser.pending, (state, action) => {
+            state.loading = true
+        })
+        builder.addCase(updateUser.fulfilled, (state, action) => {
+            state.loading = false
+            state.error = action.payload.message
+        })
+        builder.addCase(updateUser.rejected, (state, action) => {
+            state.loading = false
+
+        })
+        builder.addCase(getUserById.pending, (state, action) => {
+            state.loading = true
+        })
+        builder.addCase(getUserById.fulfilled, (state, action) => {
+            state.loading = false
+            state.selectedUserInfo = action.payload
+            state.error = action.payload.message
+        })
+        builder.addCase(getUserById.rejected, (state, action) => {
+            state.loading = false
+
+        })
+        builder.addCase(getUserDetails.pending, (state, action) => {
+            state.loading = true
+        })
+        builder.addCase(getUserDetails.fulfilled, (state, action) => {
+            state.loading = false
+            state.selectedUserInfo = action.payload
+            state.error = action.payload.message
+        })
+        builder.addCase(getUserDetails.rejected, (state, action) => {
             state.loading = false
 
         })
