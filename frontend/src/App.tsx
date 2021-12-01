@@ -18,6 +18,7 @@ import BlogAdminEdit from './screens/BlogAdminEdit'
 import BlogAdminCreate from './screens/BlogAdminCreate'
 import UserAdminEdit from './screens/UserAdminEdit'
 import UserAdmin from './screens/UserAdmin'
+import UserProfile from './screens/UserProfile'
 function App() {
   const location = useLocation()
 
@@ -40,6 +41,7 @@ function App() {
         <Route exact path='/admin/blog/:id' component={BlogAdminEdit} />
         <Route exact path='/admin/userlist' component={UserAdmin} />
         <Route exact path='/admin/user/:id/edit' component={UserAdminEdit} />
+        <Route exact path='/profile' component={UserProfile} />
         <Route path='/' component={Home} />
       </Switch>
       <Footer />

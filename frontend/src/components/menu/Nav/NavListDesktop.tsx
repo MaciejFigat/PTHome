@@ -14,7 +14,7 @@ interface UserInfo {
 }
 const NavListDesktop: React.FC<NavListMobileProps> = () => {
   const userInfo: UserInfo = useAppSelector((state) => state.user.userInfo)
-  const { id, name } = userInfo
+  // const { id, name } = userInfo
   return (
     <NavList>
       <ListItemMobile>
@@ -25,6 +25,18 @@ const NavListDesktop: React.FC<NavListMobileProps> = () => {
         {' '}
         <ContactIcons />
       </ListItemMobile>
+      <ListItem>
+        {' '}
+        <NavLink
+          exact
+          to='/profile'
+          className='nav_link'
+          activeClassName='nav_link_active'
+        >
+          {' '}
+          Profile
+        </NavLink>
+      </ListItem>
       {userInfo && userInfo.isAdmin && (
         <ListItem>
           {' '}
