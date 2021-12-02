@@ -45,7 +45,7 @@ const UserProfile: React.FC<UserProfileProps> = ({}) => {
     dispatch(getUserDetails(id))
     setName(nameState)
     setEmail(emailState)
-  }, [dispatch, nameState, emailState])
+  }, [dispatch, nameState, emailState, id])
   return (
     <div>
       <SendButton onClick={updateUserHandler}>Save changes</SendButton>

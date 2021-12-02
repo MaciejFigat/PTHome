@@ -15,7 +15,11 @@ export const TableWrapper = styled.div`
   max-width: 80%;
   /* width: 100%; */
   padding: 1rem;
+  font-weight: 600;
+  overflow-wrap: break-word;
   @media screen and (max-width: 770px) {
+    font-weight: 500;
+    font-size: 0.7rem;
     padding: 0;
     max-width: 100%;
   }
@@ -34,7 +38,7 @@ export const Table = styled.table`
     word-wrap: break-word;
   }
   @media screen and (max-width: 770px) {
-    padding: 10px;
+    padding: 0;
     overflow-x: auto;
     display: block;
   }

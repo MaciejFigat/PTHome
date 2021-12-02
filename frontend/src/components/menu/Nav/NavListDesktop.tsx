@@ -42,7 +42,7 @@ const NavListDesktop: React.FC<NavListMobileProps> = () => {
           {' '}
           <NavLink
             exact
-            to='/admin/blog/manage'
+            to='/admin'
             className='nav_link'
             activeClassName='nav_link_active'
           >

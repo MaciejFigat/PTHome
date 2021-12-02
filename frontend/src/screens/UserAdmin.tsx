@@ -6,6 +6,12 @@ import {
   updateUserProfile,
   deleteUser,
 } from '../features/users/userSlice'
+import { SendButton } from '../components/ArticleTable/ArticleForm.styled'
+import {
+  AdminContainer,
+  Table,
+  TableWrapper,
+} from '../components/ArticleTable/ArticleTable.styled'
 interface UserAdminProps {}
 
 const UserAdmin: React.FC<UserAdminProps> = ({}) => {
@@ -32,41 +38,44 @@ const UserAdmin: React.FC<UserAdminProps> = ({}) => {
   }, [dispatch])
 
   return (
-    <div>
-      <button onClick={getUsersHandler}>GET USERS TEST</button>
-      <button onClick={updateUserHandler}>update User TEST</button>
-      <table>
-        <thead>
-          <tr>
-            <th>name</th>
-            <th>email</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.length > 0 &&
-            users.map((user) => (
-              <tr key={user._id}>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
+    <AdminContainer>
+      <SendButton onClick={getUsersHandler}>GET USERS TEST</SendButton>
+      <SendButton onClick={updateUserHandler}>update User TEST</SendButton>
+      <TableWrapper>
+        <Table>
+          <thead>
+            <tr>
+              <th>name | email | admin</th>
+            </tr>
+          </thead>
+          <tbody>
+            {users.length > 0 &&
+              users.map((user) => (
+                <tr key={user._id}>
+                  <td>
+                    {user.name} | {user.email} |
+                    {user.isAdmin === true ? 'Yes' : 'No'}
+                  </td>
 
-                <td>
-                  <button>
-                    <Link to={`/admin/user/${user._id}/edit`}>Edit</Link>
-                  </button>
+                  <td>
+                    <SendButton>
+                      <Link to={`/admin/user/${user._id}/edit`}>Edit</Link>
+                    </SendButton>
 
-                  <button
-                    // variant='danger'
-                    className='btn-sm'
-                    onClick={() => deleteUserHandler(user._id)}
-                  >
-                    Delete
-                  </button>
-                </td>
-              </tr>
-            ))}
-        </tbody>
-      </table>
-    </div>
+                    <SendButton
+                      // variant='danger'
+                      className='btn-sm'
+                      onClick={() => deleteUserHandler(user._id)}
+                    >
+                      Delete
+                    </SendButton>
+                  </td>
+                </tr>
+              ))}
+          </tbody>
+        </Table>
+      </TableWrapper>
+    </AdminContainer>
   )
 }
 export default UserAdmin
