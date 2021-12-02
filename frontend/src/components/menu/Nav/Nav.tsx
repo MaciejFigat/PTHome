@@ -31,7 +31,7 @@ const Nav: React.FC<NavProps> = () => {
 
   const userInfo: UserInfo = useAppSelector((state) => state.user.userInfo)
   const loading: boolean = useAppSelector((state) => state.user.loading)
-  const { id, name } = userInfo
+  const { id, name, isAdmin } = userInfo
 
   const [menuOpen, setMenuOpen] = useState<boolean>(false)
   const handleClickMenu = () => {
@@ -113,6 +113,32 @@ const Nav: React.FC<NavProps> = () => {
             {name ? `Witaj ${name}!` : `Witaj!`}
           </HeaderTitleDesktop>
           <NavListDesktop />
+          {id && isAdmin && (
+            <ListLoginWrapper>
+              <NavLink
+                exact
+                to='/admin'
+                className='nav_link'
+                activeClassName='nav_link_active'
+              >
+                {' '}
+                <SvgIcon variant='admin' />
+              </NavLink>
+            </ListLoginWrapper>
+          )}
+          {id && isAdmin === false && (
+            <ListLoginWrapper>
+              <NavLink
+                exact
+                to='/profile'
+                className='nav_link'
+                activeClassName='nav_link_active'
+              >
+                {' '}
+                <SvgIcon variant='user' />
+              </NavLink>
+            </ListLoginWrapper>
+          )}{' '}
           {id ? (
             <ListLoginWrapper>
               <NavLink

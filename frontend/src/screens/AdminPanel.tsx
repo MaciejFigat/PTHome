@@ -13,6 +13,9 @@ const AdminPanel: React.FC<AdminPanelProps> = ({}) => {
       <SendButton>
         <Link to='/admin/blog/manage'>Article List</Link>
       </SendButton>
+      <SendButton>
+        <Link to='/profile'>Edit Admin Account</Link>
+      </SendButton>
     </AdminContainer>
   )
 }
