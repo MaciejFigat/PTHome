@@ -25,13 +25,13 @@ const ArticleTable: React.FC<ArticleTableProps> = () => {
 
   return (
     <AdminContainer>
-      <SendButton>
+      <SendButton variant='success'>
         <Link to='/admin/blog/create'>Create New Article</Link>
       </SendButton>
-      <SendButton>
+      <SendButton variant='primary'>
         <Link to='/admin'>Go back to Admin Panel</Link>
       </SendButton>
-      <SendButton>
+      <SendButton variant='secondary'>
         <Link to='/blog'>Go back to blog</Link>
       </SendButton>
       <TableWrapper>
@@ -52,7 +52,7 @@ const ArticleTable: React.FC<ArticleTableProps> = () => {
                   <td>{article.author}</td>
                   <td>{article.updatedAt}</td>
                   <td>
-                    <SendButton>
+                    <SendButton variant='info'>
                       {' '}
                       <Link to={`/admin/blog/${article._id}`}>Edit</Link>
                     </SendButton>

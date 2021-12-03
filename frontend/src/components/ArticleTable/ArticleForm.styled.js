@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { handleButtonColor } from './utilsButton'
 
 export const ResponsiveDiv = styled.div`
   display: grid;
@@ -124,30 +125,42 @@ export const SendButtonWrapper = styled.div`
 `
 
 export const SendButton = styled.button`
+  /* buttonBackground */
+  ${(props) => handleButtonColor(props).buttonBackground}
+  ${(props) => handleButtonColor(props).buttonColor}
+  /* color for the link inside the button */
+  a {
+    ${(props) => handleButtonColor(props).buttonColor}
+  }
+  &:hover {
+    transition: all 0.3s ease-out;
+    /* buttonBackgroundHover */
+    ${(props) => handleButtonColor(props).buttonBackgroundHover}
+    /* buttonColorHover */
+    ${(props) => handleButtonColor(props).buttonColorHover}
+    /* buttonColor as color for the link nested inside the Button */
+  a {
+      transition: all 0.3s ease-out;
+      ${(props) => handleButtonColor(props).buttonColorHover}
+    }
+  }
   font-family: 'Quicksand', sans-serif;
   outline: none;
   border: none;
-  padding: 10px 20px 35px;
-  margin: 5px 0px 5px 10px;
+  padding: 10px 20px 25px;
+  /* margin: 5px 0px 5px 10px; */
   cursor: pointer;
   max-width: 20%;
   min-width: fit-content;
   height: 3vh;
   min-height: 25px;
   border-radius: 3px;
-  font-size: 20px;
   font-weight: 700;
-  color: var(--background4-main);
-  background: var(--background1-main);
-  box-shadow: inset 6px 6px 9px #1c1e24, inset -6px -6px 9px #343a44;
   text-align: center;
   transition: 0.5s;
-  &:hover {
-    transition: 0.5s;
-    box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem var(--background1-main);
-  }
+
   &:active {
-    background: var(--background5-main);
+    /* background: var(--background5-main); */
   }
   @media (max-width: 798px) {
     padding: 5px 10px 25px;
@@ -157,7 +170,7 @@ export const SendButton = styled.button`
     font-weight: 400;
     margin-left: 3px;
   }
-  a {
+  /* a {
     color: inherit;
-  }
+  } */
 `

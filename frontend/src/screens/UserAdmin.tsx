@@ -53,7 +53,7 @@ const UserAdmin: React.FC<UserAdminProps> = ({}) => {
               users.map((user) => (
                 <tr key={user._id}>
                   <td>
-                    {user.name} | {user.email} |
+                    {user.name} | {user.email} |&nbsp;
                     {user.isAdmin === true ? 'Yes' : 'No'}
                   </td>
 
