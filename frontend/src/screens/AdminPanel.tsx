@@ -7,7 +7,7 @@ interface AdminPanelProps {}
 const AdminPanel: React.FC<AdminPanelProps> = ({}) => {
   return (
     <AdminContainer>
-      <SendButton>
+      <SendButton variant='primary' large fontLarge>
         <Link to='/admin/userlist'>User List</Link>
       </SendButton>
       <SendButton>

@@ -52,7 +52,7 @@ const ArticleTable: React.FC<ArticleTableProps> = () => {
                   <td>{article.author}</td>
                   <td>{article.updatedAt}</td>
                   <td>
-                    <SendButton variant='info'>
+                    <SendButton variant='info' large>
                       {' '}
                       <Link to={`/admin/blog/${article._id}`}>Edit</Link>
                     </SendButton>

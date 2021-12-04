@@ -147,8 +147,9 @@ export const SendButton = styled.button`
   font-family: 'Quicksand', sans-serif;
   outline: none;
   border: none;
-  padding: 10px 20px 25px;
-  /* margin: 5px 0px 5px 10px; */
+  padding: ${({ large }) => (large ? '12px 40px 38px' : '10px 20px 25px')};
+  font-size: ${({ fontLarge }) => (fontLarge ? '20px' : '14px')};
+  margin: 5px 0px 5px 10px;
   cursor: pointer;
   max-width: 20%;
   min-width: fit-content;
@@ -159,18 +160,12 @@ export const SendButton = styled.button`
   text-align: center;
   transition: 0.5s;
 
-  &:active {
-    /* background: var(--background5-main); */
-  }
   @media (max-width: 798px) {
     padding: 5px 10px 25px;
     height: 2vh;
     min-height: 20px;
     font-size: 15px;
-    font-weight: 400;
-    margin-left: 3px;
+    font-weight: 600;
+    margin: 0;
   }
-  /* a {
-    color: inherit;
-  } */
 `
