@@ -83,6 +83,28 @@ const Nav: React.FC<NavProps> = () => {
           </HeaderTitleMobile>
           {id && id.length > 0 && loading === false ? (
             <HeaderLoginWrapper>
+              {id && isAdmin && (
+                <NavLink
+                  exact
+                  to='/admin'
+                  className='nav_link'
+                  activeClassName='nav_link_active'
+                >
+                  {' '}
+                  <SvgIcon variant='admin' />
+                </NavLink>
+              )}
+              {id && isAdmin === false && (
+                <NavLink
+                  exact
+                  to='/profile'
+                  className='nav_link'
+                  activeClassName='nav_link_active'
+                >
+                  {' '}
+                  <SvgIcon variant='user' />
+                </NavLink>
+              )}{' '}
               <NavLink
                 exact
                 to='/'

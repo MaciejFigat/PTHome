@@ -2,6 +2,8 @@ import styled from 'styled-components'
 
 export const AdminContainer = styled.div`
   display: grid;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   place-items: center;
   /* max-width: 100%; */
   @media screen and (max-width: 770px) {

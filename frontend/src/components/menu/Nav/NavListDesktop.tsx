@@ -2,19 +2,10 @@ import React from 'react'
 import { NavList, ListItem, ListItemMobile } from './nav.styled'
 import { NavLink } from 'react-router-dom'
 import ContactIcons from '../../SvgIcon/ContactIcons'
-import { useAppSelector } from '../../../app/reduxHooks'
+
 interface NavListMobileProps {}
-interface UserInfo {
-  id?: string
-  name?: string
-  email?: string
-  isAdmin?: boolean
-  token?: string
-  loading?: boolean
-}
+
 const NavListDesktop: React.FC<NavListMobileProps> = () => {
-  const userInfo: UserInfo = useAppSelector((state) => state.user.userInfo)
-  // const { id, name } = userInfo
   return (
     <NavList>
       <ListItemMobile>

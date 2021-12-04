@@ -52,7 +52,6 @@ export const NavList = styled.ul`
 
   /* justify-content: flex-start; */
   justify-content: space-around;
-
   padding: 0;
   min-width: 50vw;
   @media (max-width: 1020px) {
@@ -65,6 +64,8 @@ export const ListLoginWrapper = styled.div`
   }
 `
 export const HeaderLoginWrapper = styled.div`
+  display: flex;
+  gap: 2rem;
   @media (min-width: 1020px) {
     display: none;
   }
@@ -107,6 +108,7 @@ export const MobileViewContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
   margin: 0 1.5rem 0 1rem;
   /* this below fixes the irritating gap in nav when you scroll it down */
   margin-top: -1px !important;
