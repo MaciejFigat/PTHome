@@ -18,16 +18,6 @@ const UserAdmin: React.FC<UserAdminProps> = ({}) => {
   const dispatch: any = useAppDispatch()
   const users: any[] = useAppSelector((state) => state.user.allUsers)
 
-  const getUsersHandler = () => {
-    dispatch(getUsers(1))
-  }
-  const updatedUser = {
-    name: 'BobTheTest2',
-    password: '123',
-  }
-  const updateUserHandler = () => {
-    dispatch(updateUserProfile(updatedUser))
-  }
   const deleteUserHandler = (id: string) => {
     dispatch(deleteUser(id))
   }
@@ -39,8 +29,6 @@ const UserAdmin: React.FC<UserAdminProps> = ({}) => {
 
   return (
     <AdminContainer>
-      <SendButton onClick={getUsersHandler}>GET USERS TEST</SendButton>
-      <SendButton onClick={updateUserHandler}>update User TEST</SendButton>
       <TableWrapper>
         <Table>
           <thead>
@@ -58,13 +46,12 @@ const UserAdmin: React.FC<UserAdminProps> = ({}) => {
                   </td>
 
                   <td>
-                    <SendButton>
+                    <SendButton variant='info'>
                       <Link to={`/admin/user/${user._id}/edit`}>Edit</Link>
                     </SendButton>
 
                     <SendButton
-                      // variant='danger'
-                      className='btn-sm'
+                      variant='danger'
                       onClick={() => deleteUserHandler(user._id)}
                     >
                       Delete

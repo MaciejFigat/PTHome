@@ -25,32 +25,7 @@ const NavListDesktop: React.FC<NavListMobileProps> = () => {
         {' '}
         <ContactIcons />
       </ListItemMobile>
-      <ListItem>
-        {' '}
-        <NavLink
-          exact
-          to='/profile'
-          className='nav_link'
-          activeClassName='nav_link_active'
-        >
-          {' '}
-          Profile
-        </NavLink>
-      </ListItem>
-      {userInfo && userInfo.isAdmin && (
-        <ListItem>
-          {' '}
-          <NavLink
-            exact
-            to='/admin'
-            className='nav_link'
-            activeClassName='nav_link_active'
-          >
-            {' '}
-            Admin
-          </NavLink>
-        </ListItem>
-      )}
+
       <ListItem>
         {' '}
         <NavLink
