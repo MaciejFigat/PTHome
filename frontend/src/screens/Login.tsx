@@ -2,7 +2,15 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useAppDispatch } from '../app/reduxHooks'
 import { logout, sendUserId } from '../features/users/userSlice'
-import { Wrapper, Form, Input, Button, Title, LoginLink } from '../styles/login'
+import {
+  Wrapper,
+  Form,
+  Input,
+  Button,
+  Title,
+  LoginLink,
+  LoginContainer,
+} from '../styles/login'
 
 interface LoginProps {}
 
@@ -26,7 +34,7 @@ const Login: React.FC<LoginProps> = () => {
     dispatch(logout())
   }
   return (
-    <>
+    <LoginContainer>
       <Wrapper>
         <h3>Welcome back</h3>
         <Form onSubmit={submitHandler}>
@@ -55,7 +63,7 @@ const Login: React.FC<LoginProps> = () => {
 
         <Button onClick={logoutHandler}>Logout</Button>
       </Wrapper>
-    </>
+    </LoginContainer>
   )
 }
 export default Login

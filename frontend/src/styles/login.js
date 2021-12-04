@@ -9,6 +9,10 @@ const jump = keyframes`
   }
 `
 
+export const LoginContainer = styled.div`
+  display: grid;
+  place-items: center;
+`
 export const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
@@ -17,6 +21,9 @@ export const Wrapper = styled.section`
   height: 100%;
   width: 100%;
   margin-top: 1rem;
+  @media screen and (max-width: 760px) {
+    max-width: 90%;
+  }
 `
 
 export const Form = styled.form`
@@ -28,6 +35,9 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   position: relative;
+  @media screen and (max-width: 760px) {
+    max-width: 90%;
+  }
 `
 
 export const Input = styled.input`
