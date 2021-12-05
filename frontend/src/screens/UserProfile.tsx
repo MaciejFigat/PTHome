@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react'
-import UserData from '../components/UserData/UserData'
+
 import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
 import { updateUserProfile, getUserDetails } from '../features/users/userSlice'
+
 import {
-  ResponsiveDiv,
-  FormContainerDiv,
-  ContactFormContainer,
-  ContactFormStyled,
+  EditFormContainer,
+  EditForm,
   ContactField,
   ContactFieldContent,
   SendButton,
-} from '../components/ArticleTable/ArticleForm.styled'
+} from '../components/ArticleTable/UserEdit.styled'
+import { AdminContainer } from '../components/ArticleTable/ArticleTable.styled'
 interface UserProfileProps {}
 interface UserInfo {
   _id?: string
@@ -47,46 +47,43 @@ const UserProfile: React.FC<UserProfileProps> = ({}) => {
     setEmail(emailState)
   }, [dispatch, nameState, emailState, id])
   return (
-    <div>
-      <SendButton onClick={updateUserHandler}>Save changes</SendButton>
-      <FormContainerDiv>
-        <ResponsiveDiv>
-          {' '}
-          <ContactFormContainer>
-            <ContactFormStyled>
-              <ContactField>
-                <label>Name</label>
-                <ContactFieldContent
-                  type='text'
-                  value={name}
-                  placeholder='Name'
-                  onChange={(e: any) => setName(e.target.value)}
-                />
-              </ContactField>
-              <ContactField>
-                <label>Email</label>
-                <ContactFieldContent
-                  type='text'
-                  value={email}
-                  placeholder='Email'
-                  onChange={(e: any) => setEmail(e.target.value)}
-                />
-              </ContactField>
-              <ContactField>
-                <label>New password</label>
-                <ContactFieldContent
-                  type='text'
-                  value={password}
-                  placeholder='password'
-                  onChange={(e: any) => setPassword(e.target.value)}
-                />
-              </ContactField>
-            </ContactFormStyled>{' '}
-          </ContactFormContainer>
-        </ResponsiveDiv>
-      </FormContainerDiv>
-      <UserData />
-    </div>
+    <AdminContainer>
+      <h1>Hello {nameState}!</h1> <h2>edit your account</h2>
+      <EditFormContainer>
+        <EditForm>
+          <ContactField>
+            <label>Name</label>
+            <ContactFieldContent
+              type='text'
+              value={name}
+              placeholder='Name'
+              onChange={(e: any) => setName(e.target.value)}
+            />
+          </ContactField>
+          <ContactField>
+            <label>Email</label>
+            <ContactFieldContent
+              type='text'
+              value={email}
+              placeholder='Email'
+              onChange={(e: any) => setEmail(e.target.value)}
+            />
+          </ContactField>
+          <ContactField>
+            <label>New password</label>
+            <ContactFieldContent
+              type='text'
+              value={password}
+              placeholder='password'
+              onChange={(e: any) => setPassword(e.target.value)}
+            />
+          </ContactField>
+        </EditForm>{' '}
+      </EditFormContainer>
+      <SendButton onClick={updateUserHandler} variant='success'>
+        Save changes
+      </SendButton>
+    </AdminContainer>
   )
 }
 export default UserProfile

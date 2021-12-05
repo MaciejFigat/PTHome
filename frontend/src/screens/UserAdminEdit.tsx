@@ -2,16 +2,16 @@ import React, { useState, useEffect } from 'react'
 import { RouteComponentProps } from 'react-router-dom'
 import { getUserById, updateUser } from '../features/users/userSlice'
 import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
-import UserData from '../components/UserData/UserData'
+
 import {
-  ResponsiveDiv,
-  FormContainerDiv,
-  ContactFormContainer,
-  ContactFormStyled,
+  EditFormContainer,
+  EditForm,
   ContactField,
   ContactFieldContent,
   SendButton,
-} from '../components/ArticleTable/ArticleForm.styled'
+} from '../components/ArticleTable/UserEdit.styled'
+import { AdminContainer } from '../components/ArticleTable/ArticleTable.styled'
+
 interface UserAdminEditProps {
   history: RouteComponentProps
   match: any
@@ -23,6 +23,7 @@ interface UserInfo {
   password?: string
   isAdmin?: boolean
 }
+
 const UserAdminEdit: React.FC<UserAdminEditProps> = ({ history, match }) => {
   const dispatch: any = useAppDispatch()
 
@@ -49,13 +50,7 @@ const UserAdminEdit: React.FC<UserAdminEditProps> = ({ history, match }) => {
     e.preventDefault()
     dispatch(updateUser(updatedUser))
   }
-  const fetchDataHandler = (e: any) => {
-    e.preventDefault()
-    dispatch(getUserById(match.params.id))
-    setName(nameState)
-    setEmail(emailState)
-    setIsAdmin(isAdminState)
-  }
+
   const adminGiveHandler = (e: any) => {
     e.preventDefault()
     setIsAdmin(true)
@@ -73,53 +68,65 @@ const UserAdminEdit: React.FC<UserAdminEditProps> = ({ history, match }) => {
   }, [dispatch, match, nameState, emailState, isAdminState])
 
   return (
-    <div>
-      <h1>EDIT THIS USER</h1>
-
-      <SendButton onClick={fetchDataHandler}>Fetch data</SendButton>
-      <SendButton onClick={editHandler}>Save changes</SendButton>
-
-      <FormContainerDiv>
-        <ResponsiveDiv>
-          {' '}
-          <ContactFormContainer>
-            <ContactFormStyled>
-              <ContactField>
-                <label>Name</label>
-                <ContactFieldContent
-                  type='text'
-                  value={name}
-                  placeholder='Name'
-                  onChange={(e: any) => setName(e.target.value)}
-                />
-              </ContactField>
-              <ContactField>
-                <label>Email</label>
-                <ContactFieldContent
-                  type='email'
-                  value={email}
-                  placeholder='Email'
-                  onChange={(e: any) => setEmail(e.target.value)}
-                />
-              </ContactField>
-              <ContactField>
-                {isAdmin === true ? (
-                  <p style={{ color: 'limegreen' }}>{user.name} is an Admin</p>
-                ) : (
-                  <p style={{ color: 'red' }}>{user.name} is not an Admin</p>
-                )}
-
-                <SendButton onClick={adminGiveHandler}>set as Admin</SendButton>
-                <SendButton onClick={adminRemoveHandler}>
-                  remove Admin rights
-                </SendButton>
-              </ContactField>
-            </ContactFormStyled>{' '}
-          </ContactFormContainer>
-        </ResponsiveDiv>
-      </FormContainerDiv>
-      <UserData />
-    </div>
+    <>
+      <AdminContainer>
+        <h1>EDIT USER: {nameState}</h1>{' '}
+        {isAdmin === true ? (
+          <p
+            style={{
+              color: 'var(--success1)',
+              fontSize: '20px',
+              fontWeight: 700,
+            }}
+          >
+            {user.name} is an Admin
+          </p>
+        ) : (
+          <p
+            style={{
+              color: 'red',
+              fontSize: '20px',
+              fontWeight: 700,
+            }}
+          >
+            {user.name} is not an Admin
+          </p>
+        )}
+        <SendButton onClick={adminGiveHandler} variant='info'>
+          set as Admin
+        </SendButton>
+        <SendButton onClick={adminRemoveHandler} variant='danger'>
+          remove Admin rights
+        </SendButton>
+        <EditFormContainer>
+          <EditForm>
+            <ContactField>
+              <label>Name</label>
+              <ContactFieldContent
+                type='text'
+                value={name}
+                placeholder='Name'
+                onChange={(e: any) => setName(e.target.value)}
+              />
+            </ContactField>
+            <ContactField>
+              <label>Email</label>
+              <ContactFieldContent
+                type='email'
+                value={email}
+                placeholder='Email'
+                onChange={(e: any) => setEmail(e.target.value)}
+              />
+            </ContactField>
+          </EditForm>{' '}
+        </EditFormContainer>
+        <div>
+          <SendButton onClick={editHandler} variant='success'>
+            Save changes
+          </SendButton>
+        </div>
+      </AdminContainer>
+    </>
   )
 }
 export default UserAdminEdit

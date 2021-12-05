@@ -37,26 +37,11 @@ body {
    --secondary5: #e76f51;
    
    --pink1: #f7a14e;
-    // --color1-main: #102a43;
-    // --color2-main: #393232;
-    // --color3-main: #151515;
-    // --text-main: lightcoral;
-    // --text2-main: #d996a8;
-    // --text3-main: #d4b8c0;
-    // --text4-main: #393232;
-    // --border-main: pink;
-    // --border-main2: green;
-    // --border-main3: brown;
-    // --border-main4: yellow;
-    // --border-main5: silver;
-    // --border-main6: gold;
-    
-    // --color1-secondary: #236677;
-    // --color2-secondary: #1bb9ac;
-   
-    // --color1-shadow: hotpink;
-    // --color2-shadow: #486581;
-
+     
+  
+    --success1: #008000;
+    --success2: #38b000;
+    --success3: #70e000;
 
     --background-blue1: #ADD7F6;
     --background-blue2: #87BFFF;

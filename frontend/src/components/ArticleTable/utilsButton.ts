@@ -30,8 +30,8 @@ const secondaryStyle: StyleVariant = {
 
 const successStyle: StyleVariant = {
     buttonColor: 'var(--background-tertiary4);',
-    buttonBackground: 'var(--background-tertiary5);',
-    buttonBackgroundHover: 'var(--background-tertiary4);',
+    buttonBackground: 'var(--success1);',
+    buttonBackgroundHover: 'var(--success2);',
     buttonColorHover: 'var(--background-tertiary1);'
 }
 const infoStyle: StyleVariant = {
