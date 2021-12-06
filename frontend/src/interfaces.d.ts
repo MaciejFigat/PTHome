@@ -15,8 +15,16 @@ interface ArticleById {
     imgLink: string
     createdAt: string
 }
+interface ArticleCreated {
+    topline: string
+    headline: string
+    subtitle: string
+    author: string
+    imgLink: string
+}
 
 export {
     UserInfo,
-    ArticleById
+    ArticleById,
+    ArticleCreated
 }

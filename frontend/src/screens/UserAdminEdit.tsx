@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-// import { RouteComponentProps } from 'react-router-dom'
 import { getUserById, updateUser } from '../features/users/userSlice'
 import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
 import { UserInfo } from '../interfaces'

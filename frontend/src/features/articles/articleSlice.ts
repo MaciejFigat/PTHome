@@ -1,4 +1,5 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit"
+import { ArticleCreated } from '../../interfaces'
 import axios from 'axios'
 
 interface NewArticleInfo {
@@ -158,12 +159,21 @@ const articleSlice = createSlice({
             imgLink: '',
             createdAt: '',
         },
+        articleTest: {
+            topline: '',
+            headline: '',
+            subtitle: '',
+            author: '',
+            imgLink: '',
+        },
         articleCreated: {},
         loading: false,
         error: {},
     },
     reducers: {
-
+        articleTest(state, action: PayloadAction<ArticleCreated>) {
+            state.articleTest = action.payload
+        },
 
     },
 
@@ -227,6 +237,6 @@ const articleSlice = createSlice({
 })
 
 
-// export const {  } = articleSlice.actions
+export const { articleTest } = articleSlice.actions
 
 export default articleSlice.reducer

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
 import { UserInfo } from '../interfaces'
-import { createArticle } from '../features/articles/articleSlice'
+import { createArticle, articleTest } from '../features/articles/articleSlice'
 import {
   ResponsiveDiv,
   FormContainerDiv,
@@ -38,6 +39,11 @@ const BlogAdminCreate: React.FC<BlogAdminCreateProps> = ({ history }) => {
     e.preventDefault()
     dispatch(createArticle(newArticleInfo))
   }
+  const testHandler = (e: any) => {
+    e.preventDefault()
+    dispatch(articleTest(newArticleInfo))
+  }
+
   useEffect(() => {
     if (Object.keys(userInfo).length === 0) {
       history.push('/login')
@@ -96,7 +102,13 @@ const BlogAdminCreate: React.FC<BlogAdminCreateProps> = ({ history }) => {
                 ></ContactFieldContent>
               </ContactField>
               <SendButtonWrapper>
-                <SendButton onClick={createHandler}>Create</SendButton>
+                <SendButton variant='success' onClick={createHandler}>
+                  Create & Save
+                </SendButton>
+                <SendButton variant='info' onClick={testHandler}>
+                  {' '}
+                  <Link to={`/admin/blog/preview`}>Create & Preview</Link>
+                </SendButton>
               </SendButtonWrapper>
             </ContactFormStyled>{' '}
           </ContactFormContainer>
