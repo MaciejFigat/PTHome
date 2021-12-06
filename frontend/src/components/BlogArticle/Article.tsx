@@ -20,7 +20,7 @@ const Article: React.FC<ArticleProps> = ({ data }) => {
       <p>by {data.author}</p>
       <ArticleTitle>{data.headline}</ArticleTitle>
       <h4>{data.topline}</h4>
-      <ArticleImage src={data.imgLink} alt='for posteriority' />
+      <ArticleImage src={data.imgLink} alt='article ilustration' />
       <ArticleSection>{data.subtitle}</ArticleSection>
     </ArticleWrapper>
   )

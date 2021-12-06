@@ -2,8 +2,10 @@ import React, { useEffect } from 'react'
 import { UserInfo, ArticleCreated } from '../interfaces'
 import { Link } from 'react-router-dom'
 import { SendButton } from '../components/ArticleTable/ArticleForm.styled'
+import Article from '../components/BlogArticle/Article'
 import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
 import { createArticle } from '../features/articles/articleSlice'
+import { AdminContainer } from '../components/ArticleTable/ArticleTable.styled'
 interface BlogAdminPreviewProps {
   history: any
 }
@@ -22,6 +24,15 @@ const BlogAdminPreview: React.FC<BlogAdminPreviewProps> = ({ history }) => {
     author: author,
     imgLink: imgLink,
   }
+  const testData = {
+    _id: 'testId',
+    topline: topline,
+    headline: headline,
+    subtitle: subtitle,
+    author: author,
+    imgLink: imgLink,
+    createdAt: '2021-11-20TtestDate',
+  }
   const createHandler = (e: any) => {
     e.preventDefault()
     dispatch(createArticle(newArticleInfo))
@@ -33,18 +44,18 @@ const BlogAdminPreview: React.FC<BlogAdminPreviewProps> = ({ history }) => {
     }
   }, [userInfo, history])
   return (
-    <div>
-      <h2>Topline</h2>
-      <h2>Subtitle</h2>
-      <h2>Author</h2>
-      <SendButton variant='success' onClick={createHandler}>
-        Create
-      </SendButton>
-      <SendButton variant='info'>
-        {' '}
-        <Link to={`/admin/blog/create`}>Back to articles editing</Link>
-      </SendButton>
-    </div>
+    <>
+      <Article data={testData} />
+      <AdminContainer>
+        <SendButton variant='success' onClick={createHandler} large fontLarge>
+          Save the article
+        </SendButton>
+        <SendButton variant='info' large fontLarge>
+          {' '}
+          <Link to={`/admin/blog/create`}>Back to articles editing</Link>
+        </SendButton>
+      </AdminContainer>
+    </>
   )
 }
 export default BlogAdminPreview

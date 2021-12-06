@@ -161,11 +161,12 @@ export const SendButton = styled.button`
   transition: 0.5s;
 
   @media (max-width: 798px) {
-    padding: 5px 10px 25px;
+    /* padding: 25px 20px 25px; */
     height: 2vh;
-    min-height: 20px;
-    font-size: 15px;
-    font-weight: 600;
+    min-height: 30px;
+    font-size: ${({ fontLarge }) => (fontLarge ? '18px' : '12px')};
+    /* font-weight: 600; */
     margin: 0;
+    margin-top: 10px;
   }
 `
