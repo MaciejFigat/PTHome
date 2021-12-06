@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-
+import { UserInfo } from '../interfaces'
 import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
 import { updateUserProfile, getUserDetails } from '../features/users/userSlice'
 
@@ -11,15 +11,11 @@ import {
   SendButton,
 } from '../components/ArticleTable/UserEdit.styled'
 import { AdminContainer } from '../components/ArticleTable/ArticleTable.styled'
-interface UserProfileProps {}
-interface UserInfo {
-  _id?: string
-  name?: string
-  email?: string
-  password?: string
-  isAdmin?: boolean
+interface UserProfileProps {
+  history: any
 }
-const UserProfile: React.FC<UserProfileProps> = ({}) => {
+
+const UserProfile: React.FC<UserProfileProps> = ({ history }) => {
   const dispatch: any = useAppDispatch()
   const user: UserInfo = useAppSelector((state) => state.user.userInfo)
 
@@ -41,11 +37,14 @@ const UserProfile: React.FC<UserProfileProps> = ({}) => {
     dispatch(updateUserProfile(updatedUser))
   }
   useEffect(() => {
+    if (Object.keys(user).length === 0) {
+      history.push('/login')
+    }
     // @ts-ignore
     dispatch(getUserDetails(id))
     setName(nameState)
     setEmail(emailState)
-  }, [dispatch, nameState, emailState, id])
+  }, [dispatch, nameState, emailState, id, user, history])
   return (
     <AdminContainer>
       <h1>Hello {nameState}!</h1> <h2>edit your account</h2>

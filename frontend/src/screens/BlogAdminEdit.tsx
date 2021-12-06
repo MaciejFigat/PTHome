@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { RouteComponentProps } from 'react-router-dom'
+import { UserInfo, ArticleById } from '../interfaces'
 import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
 import { getArticleById, editArticle } from '../features/articles/articleSlice'
 import {
@@ -12,22 +12,15 @@ import {
   MessageField,
   SendButton,
 } from '../components/ArticleTable/ArticleForm.styled'
-interface ArticleById {
-  _id: string
-  topline: string
-  headline: string
-  subtitle: string
-  author: string
-  imgLink: string
-}
+
 interface BlogAdminEditProps {
-  history: RouteComponentProps
+  history: any
   match: any
 }
 
 const BlogAdminEdit: React.FC<BlogAdminEditProps> = ({ history, match }) => {
   const dispatch: any = useAppDispatch()
-
+  const userInfo: UserInfo = useAppSelector((state) => state.user.userInfo)
   const article: ArticleById = useAppSelector(
     (state) => state.article.articleById
   )
@@ -69,8 +62,11 @@ const BlogAdminEdit: React.FC<BlogAdminEditProps> = ({ history, match }) => {
   }
 
   useEffect(() => {
+    if (Object.keys(userInfo).length === 0) {
+      history.push('/login')
+    }
     dispatch(getArticleById(match.params.id))
-  }, [dispatch, match])
+  }, [dispatch, match, userInfo, history])
   return (
     <>
       <h1>EDIT THIS ARTICLE</h1>

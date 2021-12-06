@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { UserInfo } from '../interfaces'
 import { Link } from 'react-router-dom'
-import { useAppDispatch } from '../app/reduxHooks'
+import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
 import { logout, sendUserId } from '../features/users/userSlice'
 import {
   Wrapper,
@@ -12,15 +13,16 @@ import {
   LoginContainer,
 } from '../styles/login'
 
-interface LoginProps {}
+interface LoginProps {
+  history: any
+}
 
-const Login: React.FC<LoginProps> = () => {
-  // const dispatch: any = useAppDispatch()
+const Login: React.FC<LoginProps> = ({ history }) => {
   const dispatch = useAppDispatch()
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-
+  const user: UserInfo = useAppSelector((state) => state.user.userInfo)
   const userInfo = { email, password }
 
   const submitHandler = (e: any) => {
@@ -33,6 +35,12 @@ const Login: React.FC<LoginProps> = () => {
 
     dispatch(logout())
   }
+  useEffect(() => {
+    if (Object.keys(user).length > 0) {
+      history.push('/')
+    }
+  }, [user, history])
+
   return (
     <LoginContainer>
       <Wrapper>

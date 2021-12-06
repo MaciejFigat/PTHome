@@ -1,10 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { UserInfo } from '../interfaces'
 import { Link } from 'react-router-dom'
 import { SendButton } from '../components/ArticleTable/ArticleForm.styled'
 import { AdminContainer } from '../components/ArticleTable/ArticleTable.styled'
-interface AdminPanelProps {}
+import { useAppSelector } from '../app/reduxHooks'
+interface AdminPanelProps {
+  history: any
+}
 
-const AdminPanel: React.FC<AdminPanelProps> = ({}) => {
+const AdminPanel: React.FC<AdminPanelProps> = ({ history }) => {
+  const userInfo: UserInfo = useAppSelector((state) => state.user.userInfo)
+
+  useEffect(() => {
+    if (Object.keys(userInfo).length === 0) {
+      history.push('/login')
+    }
+  }, [userInfo, history])
+
   return (
     <AdminContainer>
       <SendButton variant='primary' large fontLarge>

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { RouteComponentProps } from 'react-router-dom'
+// import { RouteComponentProps } from 'react-router-dom'
 import { getUserById, updateUser } from '../features/users/userSlice'
 import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
-
+import { UserInfo } from '../interfaces'
 import {
   EditFormContainer,
   EditForm,
@@ -13,21 +13,15 @@ import {
 import { AdminContainer } from '../components/ArticleTable/ArticleTable.styled'
 
 interface UserAdminEditProps {
-  history: RouteComponentProps
+  history: any
   match: any
-}
-interface UserInfo {
-  _id?: string
-  name?: string
-  email?: string
-  password?: string
-  isAdmin?: boolean
 }
 
 const UserAdminEdit: React.FC<UserAdminEditProps> = ({ history, match }) => {
   const dispatch: any = useAppDispatch()
 
   const user: UserInfo = useAppSelector((state) => state.user.selectedUserInfo)
+  const userInfo: UserInfo = useAppSelector((state) => state.user.userInfo)
 
   const {
     _id: id,
@@ -61,11 +55,15 @@ const UserAdminEdit: React.FC<UserAdminEditProps> = ({ history, match }) => {
   }
 
   useEffect(() => {
+    // this checks whether userInfo is empty
+    if (Object.keys(userInfo).length === 0) {
+      history.push('/login')
+    }
     dispatch(getUserById(match.params.id))
     setName(nameState)
     setEmail(emailState)
     setIsAdmin(isAdminState)
-  }, [dispatch, match, nameState, emailState, isAdminState])
+  }, [dispatch, match, nameState, emailState, isAdminState, userInfo, history])
 
   return (
     <>

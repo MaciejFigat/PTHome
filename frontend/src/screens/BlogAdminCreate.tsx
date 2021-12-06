@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
-import { useAppDispatch } from '../app/reduxHooks'
+import React, { useState, useEffect } from 'react'
+import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
+import { UserInfo } from '../interfaces'
 import { createArticle } from '../features/articles/articleSlice'
 import {
   ResponsiveDiv,
@@ -12,11 +13,13 @@ import {
   SendButtonWrapper,
   SendButton,
 } from '../components/ArticleTable/ArticleForm.styled'
-interface BlogAdminCreateProps {}
+interface BlogAdminCreateProps {
+  history: any
+}
 
-const BlogAdminCreate: React.FC<BlogAdminCreateProps> = ({}) => {
+const BlogAdminCreate: React.FC<BlogAdminCreateProps> = ({ history }) => {
   const dispatch: any = useAppDispatch()
-
+  const userInfo: UserInfo = useAppSelector((state) => state.user.userInfo)
   const [topline, setTopline] = useState('')
   const [headline, setHeadline] = useState('')
   const [subtitle, setSubtitle] = useState('')
@@ -35,6 +38,11 @@ const BlogAdminCreate: React.FC<BlogAdminCreateProps> = ({}) => {
     e.preventDefault()
     dispatch(createArticle(newArticleInfo))
   }
+  useEffect(() => {
+    if (Object.keys(userInfo).length === 0) {
+      history.push('/login')
+    }
+  }, [userInfo, history])
   return (
     <>
       <h1>Blog ADMIN CREATE</h1>{' '}

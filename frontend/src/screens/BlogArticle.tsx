@@ -1,22 +1,14 @@
 import React, { useEffect } from 'react'
 import Article from '../components/BlogArticle/Article'
-import { RouteComponentProps } from 'react-router-dom'
+import { ArticleById } from '../interfaces'
 import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
 import { getArticleById } from '../features/articles/articleSlice'
 interface BlogArticleProps {
-  history: RouteComponentProps
-  // match: RouteComponentProps
+  history: any
+
   match: any
 }
-interface ArticleById {
-  _id: string
-  topline: string
-  headline: string
-  subtitle: string
-  author: string
-  imgLink: string
-  createdAt: string
-}
+
 const BlogArticle: React.FC<BlogArticleProps> = ({ history, match }) => {
   const dispatch: any = useAppDispatch()
 

@@ -1,20 +1,11 @@
 import React from 'react'
+import { ArticleById } from '../../interfaces'
 import {
   ArticleImage,
   ArticleWrapper,
   ArticleTitle,
   ArticleSection,
 } from './Article.styled'
-
-interface ArticleById {
-  _id: string
-  topline: string
-  headline: string
-  subtitle: string
-  author: string
-  imgLink: string
-  createdAt: string
-}
 
 interface ArticleProps {
   data: ArticleById

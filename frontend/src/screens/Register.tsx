@@ -1,13 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { UserInfo } from '../interfaces'
 import { Wrapper, Form, Input, Button, LoginContainer } from '../styles/login'
-import { useAppDispatch } from '../app/reduxHooks'
+import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
 import { createUser } from '../features/users/userSlice'
 
-interface RegisterProps {}
+interface RegisterProps {
+  history: any
+}
 
-const Register: React.FC<RegisterProps> = () => {
+const Register: React.FC<RegisterProps> = ({ history }) => {
   const dispatch: any = useAppDispatch()
-
+  const user: UserInfo = useAppSelector((state) => state.user.userInfo)
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -19,7 +22,11 @@ const Register: React.FC<RegisterProps> = () => {
 
     dispatch(createUser(newUserInfo))
   }
-
+  useEffect(() => {
+    if (Object.keys(user).length > 0) {
+      history.push('/')
+    }
+  }, [user, history])
   return (
     <LoginContainer>
       <Wrapper>
