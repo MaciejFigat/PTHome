@@ -107,7 +107,9 @@ const BlogAdminCreate: React.FC<BlogAdminCreateProps> = ({ history }) => {
                 </SendButton>
                 <SendButton variant='info' onClick={testHandler}>
                   {' '}
-                  <Link to={`/admin/blog/preview`}>Create & Preview</Link>
+                  <Link to={`/admin/blog/create/preview`}>
+                    Create & Preview
+                  </Link>
                 </SendButton>
               </SendButtonWrapper>
             </ContactFormStyled>{' '}

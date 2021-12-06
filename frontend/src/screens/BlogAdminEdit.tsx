@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { UserInfo, ArticleById } from '../interfaces'
 import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
-import { getArticleById, editArticle } from '../features/articles/articleSlice'
+import {
+  getArticleById,
+  editArticle,
+  articleEditTest,
+} from '../features/articles/articleSlice'
+import { Link } from 'react-router-dom'
 import {
   ResponsiveDiv,
   FormContainerDiv,
@@ -12,6 +17,7 @@ import {
   MessageField,
   SendButton,
 } from '../components/ArticleTable/ArticleForm.styled'
+import { AdminContainer } from '../components/ArticleTable/ArticleTable.styled'
 
 interface BlogAdminEditProps {
   history: any
@@ -51,14 +57,9 @@ const BlogAdminEdit: React.FC<BlogAdminEditProps> = ({ history, match }) => {
     e.preventDefault()
     dispatch(editArticle(editedArticle))
   }
-  const resetArticleHandler = (e: any) => {
-    e.preventDefault()
-    dispatch(editArticle(editedArticle))
-    setTopline(toplineState)
-    setHeadline(headlineState)
-    setSubtitle(subtitleState)
-    setAuthor(authorState)
-    setImgLink(imgLinkState)
+
+  const editPreviewHandler = () => {
+    dispatch(articleEditTest(editedArticle))
   }
 
   useEffect(() => {
@@ -66,13 +67,35 @@ const BlogAdminEdit: React.FC<BlogAdminEditProps> = ({ history, match }) => {
       history.push('/login')
     }
     dispatch(getArticleById(match.params.id))
-  }, [dispatch, match, userInfo, history])
+    setTopline(toplineState)
+    setHeadline(headlineState)
+    setSubtitle(subtitleState)
+    setAuthor(authorState)
+    setImgLink(imgLinkState)
+  }, [
+    dispatch,
+    match,
+    userInfo,
+    history,
+    headlineState,
+    subtitleState,
+    authorState,
+    imgLinkState,
+    toplineState,
+  ])
   return (
     <>
-      <h1>EDIT THIS ARTICLE</h1>
-
-      <SendButton onClick={resetArticleHandler}>Fetch original data</SendButton>
-      <SendButton onClick={editHandler}>Save changes</SendButton>
+      <AdminContainer>
+        {' '}
+        <h1>EDIT THIS ARTICLE</h1>
+        <SendButton onClick={editHandler} version='success' large fontLarge>
+          Save changes
+        </SendButton>
+        <SendButton variant='info' onClick={editPreviewHandler} large fontLarge>
+          {' '}
+          <Link to={`/admin/blog/edit/preview`}>Preview changes</Link>
+        </SendButton>
+      </AdminContainer>
 
       <FormContainerDiv>
         <ResponsiveDiv>
