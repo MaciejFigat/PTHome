@@ -9,8 +9,9 @@ export const ResponsiveDiv = styled.div`
   padding: 40px 50px 20px;
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
-  background: var(--background1-main);
-  box-shadow: inset 8px 8px 16px #0b0b0d, inset -8px -8px 16px #25272b;
+  /* background: var(--background1-main); */
+  background: var(--secondary5);
+  /* box-shadow: inset 8px 8px 16px #0b0b0d, inset -8px -8px 16px #25272b; */
 
   @media (max-width: 1024px) {
     width: 85vw;
@@ -25,8 +26,8 @@ export const FormContainerDiv = styled.div`
   display: grid;
   place-items: center;
   @media (min-width: 1191px) {
-    padding-top: 110px;
-    padding-bottom: 110px;
+    /* padding-top: 110px; */
+    /* padding-bottom: 110px; */
   }
 `
 export const ContactFormContainer = styled.div`
@@ -49,15 +50,16 @@ export const ContactField = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
-
+  border-bottom: 1px solid var(--secondary1);
   label {
-    color: var(--secondary2);
+    font-size: 20px;
+    color: var(--background1-main);
     font-weight: 700;
     @media (max-width: 798px) {
-      font-size: 15px;
+      font-size: 18px;
     }
   }
-  &:after {
+  /* &:after {
     content: '';
     display: block;
     position: relative;
@@ -74,27 +76,27 @@ export const ContactField = styled.div`
         var(--secondary3)
       )
       1;
-    animation: 8s rotate linear infinite;
-  }
+    animation: 8s rotate linear infinite; */
+  /* } */
 `
 
 export const ContactFieldContent = styled.input`
   &::placeholder {
-    color: var(--background4-main);
-    font-weight: 300;
+    color: var(--background2-main);
+    font-weight: 500;
   }
 
   font-family: 'Quicksand', sans-serif;
   outline: none;
   border: none;
-  color: var(--background5-main);
+  color: var(--background1-main);
   background: none;
   line-height: 1.2;
   cursor: text;
   /* min-height: 90%; */
   /* max-height: 45px; */
 
-  font-size: 15px;
+  font-size: 20px;
   line-height: 1.2;
   padding: 0.8rem 1.2rem;
   /* min-width: 60vw; */
@@ -103,7 +105,7 @@ export const ContactFieldContent = styled.input`
   font-weight: 600;
 
   @media (max-width: 798px) {
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 500;
   }
 `
@@ -122,6 +124,9 @@ export const SendButtonWrapper = styled.div`
   justify-content: flex-end;
   max-width: 100%;
   margin-bottom: 1.5rem;
+  @media (max-width: 798px) {
+    flex-direction: column;
+  }
 `
 
 export const SendButton = styled.button`

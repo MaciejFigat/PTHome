@@ -14,6 +14,7 @@ import {
   SendButtonWrapper,
   SendButton,
 } from '../components/ArticleTable/ArticleForm.styled'
+import { AdminContainer } from '../components/ArticleTable/ArticleTable.styled'
 interface BlogAdminCreateProps {
   history: any
 }
@@ -51,7 +52,10 @@ const BlogAdminCreate: React.FC<BlogAdminCreateProps> = ({ history }) => {
   }, [userInfo, history])
   return (
     <>
-      <h1>Blog ADMIN CREATE</h1>{' '}
+      {' '}
+      <AdminContainer>
+        <h1>Blog ADMIN CREATE</h1>{' '}
+      </AdminContainer>
       <FormContainerDiv>
         <ResponsiveDiv>
           {' '}
@@ -102,14 +106,22 @@ const BlogAdminCreate: React.FC<BlogAdminCreateProps> = ({ history }) => {
                 ></ContactFieldContent>
               </ContactField>
               <SendButtonWrapper>
-                <SendButton variant='success' onClick={createHandler}>
+                <SendButton
+                  variant='success'
+                  large
+                  fontLarge
+                  onClick={createHandler}
+                >
                   Create & Save
                 </SendButton>
-                <SendButton variant='info' onClick={testHandler}>
+                <SendButton
+                  variant='info'
+                  large
+                  fontLarge
+                  onClick={testHandler}
+                >
                   {' '}
-                  <Link to={`/admin/blog/create/preview`}>
-                    Create & Preview
-                  </Link>
+                  <Link to={`/admin/blog/create/preview`}>Preview</Link>
                 </SendButton>
               </SendButtonWrapper>
             </ContactFormStyled>{' '}

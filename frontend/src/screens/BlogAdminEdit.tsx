@@ -16,6 +16,7 @@ import {
   ContactFieldContent,
   MessageField,
   SendButton,
+  SendButtonWrapper,
 } from '../components/ArticleTable/ArticleForm.styled'
 import { AdminContainer } from '../components/ArticleTable/ArticleTable.styled'
 
@@ -88,15 +89,7 @@ const BlogAdminEdit: React.FC<BlogAdminEditProps> = ({ history, match }) => {
       <AdminContainer>
         {' '}
         <h1>EDIT THIS ARTICLE</h1>
-        <SendButton onClick={editHandler} version='success' large fontLarge>
-          Save changes
-        </SendButton>
-        <SendButton variant='info' onClick={editPreviewHandler} large fontLarge>
-          {' '}
-          <Link to={`/admin/blog/edit/preview`}>Preview changes</Link>
-        </SendButton>
       </AdminContainer>
-
       <FormContainerDiv>
         <ResponsiveDiv>
           {' '}
@@ -116,7 +109,7 @@ const BlogAdminEdit: React.FC<BlogAdminEditProps> = ({ history, match }) => {
                 <ContactFieldContent
                   type='headline'
                   value={headline}
-                  placeholder='Headlin here'
+                  placeholder='Headline here'
                   onChange={(e: any) => setHeadline(e.target.value)}
                 />
               </ContactField>
@@ -142,14 +135,44 @@ const BlogAdminEdit: React.FC<BlogAdminEditProps> = ({ history, match }) => {
                 <label>Img link</label>
                 <ContactFieldContent
                   value={imgLink}
-                  placeholder='put on the lotion'
+                  placeholder='put html link to the picture'
                   onChange={(e: any) => setImgLink(e.target.value)}
                 ></ContactFieldContent>
               </ContactField>
+              <SendButtonWrapper>
+                {' '}
+                <SendButton
+                  onClick={editHandler}
+                  variant='success'
+                  large
+                  fontLarge
+                >
+                  Save changes
+                </SendButton>
+                <SendButton
+                  variant='info'
+                  onClick={editPreviewHandler}
+                  large
+                  fontLarge
+                >
+                  {' '}
+                  <Link to={`/admin/blog/edit/preview`}>Preview changes</Link>
+                </SendButton>
+              </SendButtonWrapper>
             </ContactFormStyled>{' '}
           </ContactFormContainer>
         </ResponsiveDiv>
       </FormContainerDiv>
+      <AdminContainer>
+        {' '}
+        <SendButton onClick={editHandler} variant='success' large fontLarge>
+          Save changes
+        </SendButton>
+        <SendButton variant='info' onClick={editPreviewHandler} large fontLarge>
+          {' '}
+          <Link to={`/admin/blog/edit/preview`}>Preview changes</Link>
+        </SendButton>
+      </AdminContainer>
     </>
   )
 }

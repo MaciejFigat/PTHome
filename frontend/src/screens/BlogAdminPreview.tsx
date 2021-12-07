@@ -52,7 +52,7 @@ const BlogAdminPreview: React.FC<BlogAdminPreviewProps> = ({ history }) => {
         </SendButton>
         <SendButton variant='info' large fontLarge>
           {' '}
-          <Link to={`/admin/blog/create`}>Back to articles editing</Link>
+          <Link to={`/admin/blog/create`}>Back to article creation</Link>
         </SendButton>
       </AdminContainer>
     </>
