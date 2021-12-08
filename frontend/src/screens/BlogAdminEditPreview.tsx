@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react'
-import { UserInfo, ArticleCreated, ArticleById } from '../interfaces'
+import { UserInfo, ArticleById } from '../interfaces'
 import { Link } from 'react-router-dom'
+import { RouteComponentProps } from 'react-router-dom'
 import { SendButton } from '../components/ArticleTable/ArticleForm.styled'
 import Article from '../components/BlogArticle/Article'
 import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
 import { editArticle } from '../features/articles/articleSlice'
 import { AdminContainer } from '../components/ArticleTable/ArticleTable.styled'
-interface BlogAdminEditPreviewProps {
-  history: any
-}
+
+interface BlogAdminEditPreviewProps extends RouteComponentProps<any> {}
 
 const BlogAdminEditPreview: React.FC<BlogAdminEditPreviewProps> = ({
   history,

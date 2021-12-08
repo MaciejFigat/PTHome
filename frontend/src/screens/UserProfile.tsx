@@ -11,9 +11,9 @@ import {
   SendButton,
 } from '../components/ArticleTable/UserEdit.styled'
 import { AdminContainer } from '../components/ArticleTable/ArticleTable.styled'
-interface UserProfileProps {
-  history: any
-}
+import { RouteComponentProps } from 'react-router-dom'
+
+interface UserProfileProps extends RouteComponentProps<any> {}
 
 const UserProfile: React.FC<UserProfileProps> = ({ history }) => {
   const dispatch: any = useAppDispatch()

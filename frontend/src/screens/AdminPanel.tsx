@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 import { SendButton } from '../components/ArticleTable/ArticleForm.styled'
 import { AdminContainer } from '../components/ArticleTable/ArticleTable.styled'
 import { useAppSelector } from '../app/reduxHooks'
-interface AdminPanelProps {
-  history: any
-}
+import { RouteComponentProps } from 'react-router-dom'
+
+interface AdminPanelProps extends RouteComponentProps<any> {}
 
 const AdminPanel: React.FC<AdminPanelProps> = ({ history }) => {
   const userInfo: UserInfo = useAppSelector((state) => state.user.userInfo)

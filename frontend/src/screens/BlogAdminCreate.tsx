@@ -15,9 +15,9 @@ import {
   SendButton,
 } from '../components/ArticleTable/ArticleForm.styled'
 import { AdminContainer } from '../components/ArticleTable/ArticleTable.styled'
-interface BlogAdminCreateProps {
-  history: any
-}
+import { RouteComponentProps } from 'react-router-dom'
+
+interface BlogAdminCreateProps extends RouteComponentProps<any> {}
 
 const BlogAdminCreate: React.FC<BlogAdminCreateProps> = ({ history }) => {
   const dispatch: any = useAppDispatch()

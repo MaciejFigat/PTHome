@@ -19,11 +19,9 @@ import {
   SendButtonWrapper,
 } from '../components/ArticleTable/ArticleForm.styled'
 import { AdminContainer } from '../components/ArticleTable/ArticleTable.styled'
+import { RouteComponentProps } from 'react-router-dom'
 
-interface BlogAdminEditProps {
-  history: any
-  match: any
-}
+interface BlogAdminEditProps extends RouteComponentProps<any> {}
 
 const BlogAdminEdit: React.FC<BlogAdminEditProps> = ({ history, match }) => {
   const dispatch: any = useAppDispatch()

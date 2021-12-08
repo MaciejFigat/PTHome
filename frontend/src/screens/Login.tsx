@@ -12,10 +12,9 @@ import {
   LoginLink,
   LoginContainer,
 } from '../styles/login'
+import { RouteComponentProps } from 'react-router-dom'
 
-interface LoginProps {
-  history: any
-}
+interface LoginProps extends RouteComponentProps<any> {}
 
 const Login: React.FC<LoginProps> = ({ history }) => {
   const dispatch = useAppDispatch()

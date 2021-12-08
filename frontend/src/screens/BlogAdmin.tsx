@@ -2,10 +2,9 @@ import React, { useEffect } from 'react'
 import { useAppSelector } from '../app/reduxHooks'
 import { UserInfo } from '../interfaces'
 import ArticleTable from '../components/ArticleTable/ArticleTable'
+import { RouteComponentProps } from 'react-router-dom'
 
-interface BlogAdminProps {
-  history: any
-}
+interface BlogAdminProps extends RouteComponentProps<any> {}
 
 const BlogAdmin: React.FC<BlogAdminProps> = ({ history }) => {
   const userInfo: UserInfo = useAppSelector((state) => state.user.userInfo)

@@ -3,10 +3,9 @@ import { UserInfo } from '../interfaces'
 import { Wrapper, Form, Input, Button, LoginContainer } from '../styles/login'
 import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
 import { createUser } from '../features/users/userSlice'
+import { RouteComponentProps } from 'react-router-dom'
 
-interface RegisterProps {
-  history: any
-}
+interface RegisterProps extends RouteComponentProps<any> {}
 
 const Register: React.FC<RegisterProps> = ({ history }) => {
   const dispatch: any = useAppDispatch()

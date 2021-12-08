@@ -6,9 +6,9 @@ import Article from '../components/BlogArticle/Article'
 import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
 import { createArticle } from '../features/articles/articleSlice'
 import { AdminContainer } from '../components/ArticleTable/ArticleTable.styled'
-interface BlogAdminPreviewProps {
-  history: any
-}
+import { RouteComponentProps } from 'react-router-dom'
+
+interface BlogAdminPreviewProps extends RouteComponentProps<any> {}
 
 const BlogAdminPreview: React.FC<BlogAdminPreviewProps> = ({ history }) => {
   const dispatch: any = useAppDispatch()

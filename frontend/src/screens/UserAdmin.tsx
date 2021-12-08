@@ -9,9 +9,9 @@ import {
   Table,
   TableWrapper,
 } from '../components/ArticleTable/ArticleTable.styled'
-interface UserAdminProps {
-  history: any
-}
+import { RouteComponentProps } from 'react-router-dom'
+
+interface UserAdminProps extends RouteComponentProps<any> {}
 
 const UserAdmin: React.FC<UserAdminProps> = ({ history }) => {
   const dispatch: any = useAppDispatch()

@@ -3,13 +3,11 @@ import Article from '../components/BlogArticle/Article'
 import { ArticleById } from '../interfaces'
 import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
 import { getArticleById } from '../features/articles/articleSlice'
-interface BlogArticleProps {
-  history: any
+import { RouteComponentProps } from 'react-router-dom'
 
-  match: any
-}
+interface BlogArticleProps extends RouteComponentProps<any> {}
 
-const BlogArticle: React.FC<BlogArticleProps> = ({ history, match }) => {
+const BlogArticle: React.FC<BlogArticleProps> = ({ match }) => {
   const dispatch: any = useAppDispatch()
 
   const article: ArticleById = useAppSelector(

@@ -10,11 +10,9 @@ import {
   SendButton,
 } from '../components/ArticleTable/UserEdit.styled'
 import { AdminContainer } from '../components/ArticleTable/ArticleTable.styled'
+import { RouteComponentProps } from 'react-router-dom'
 
-interface UserAdminEditProps {
-  history: any
-  match: any
-}
+interface UserAdminEditProps extends RouteComponentProps<any> {}
 
 const UserAdminEdit: React.FC<UserAdminEditProps> = ({ history, match }) => {
   const dispatch: any = useAppDispatch()
