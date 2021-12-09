@@ -3,10 +3,10 @@ import { ToastBody, ToastContainer } from './Toast.styled'
 
 interface ToastProps {
   toastMessage: string
-  toastVersion: string
+  variant: 'none' | 'success' | 'danger' | 'info' | 'warning'
 }
 
-const Toast: React.FC<ToastProps> = ({ toastMessage, toastVersion }) => {
+const Toast: React.FC<ToastProps> = ({ toastMessage, variant }) => {
   const [toastPosition, setToastPosition] = useState<string>('show')
 
   useEffect(() => {
@@ -16,8 +16,8 @@ const Toast: React.FC<ToastProps> = ({ toastMessage, toastVersion }) => {
     return () => clearTimeout(timer)
   }, [])
   return (
-    <ToastContainer toastVersion position={toastPosition}>
-      <ToastBody>{toastMessage}</ToastBody>
+    <ToastContainer variant={variant} position={toastPosition}>
+      <ToastBody variant={variant}>{toastMessage}</ToastBody>
     </ToastContainer>
   )
 }

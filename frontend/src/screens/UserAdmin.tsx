@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { UserInfo } from '../interfaces'
 import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
@@ -21,9 +21,10 @@ const UserAdmin: React.FC<UserAdminProps> = ({ history }) => {
   const deleteUserHandler = (id: string) => {
     dispatch(deleteUser(id))
   }
-
+  const [toastVariant, setToastVariant] = useState<
+    'none' | 'success' | 'danger' | 'info' | 'warning'
+  >('none')
   // getUsers I have to pass an argument (anything really) because my thunk in the slice needs an argument to also receive thunkAPI, when thunkAPI is alone it's not working
-
   useEffect(() => {
     if (Object.keys(userInfo).length === 0) {
       history.push('/login')
@@ -31,9 +32,16 @@ const UserAdmin: React.FC<UserAdminProps> = ({ history }) => {
     dispatch(getUsers(1))
   }, [dispatch, userInfo, history])
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setToastVariant('success')
+    }, 1000)
+    return () => clearTimeout(timer)
+  }, [])
+
   return (
     <>
-      <Toast toastMessage='Hello test toast' toastVersion='none' />
+      <Toast toastMessage='Hello test toast' variant={toastVariant} />
       <AdminContainer>
         <TableWrapper>
           <Table>

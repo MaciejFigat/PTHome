@@ -1,22 +1,5 @@
 import styled from 'styled-components'
-
-const handlePosition = ({ position }) => {
-  if (position === 'show') {
-    return `top: 200px;
-    right: 100px;
-    @media (max-width: 1010px) {
-      top: 50px;
-      right: 0px;
-    }`
-  } else if (position === 'hide') {
-    return `top: 300px;
-    right: 100px;
-    @media (max-width: 1010px) {
-      top: 50px;
-      right: 0px;
-    }`
-  }
-}
+import { handleToastColor, handlePosition } from './utils'
 
 export const ToastContainer = styled.div`
   position: absolute;
@@ -24,16 +7,18 @@ export const ToastContainer = styled.div`
   flex-direction: column;
   align-items: flex-end;
   transition: 0.7s;
-  ${(props) => handlePosition(props)}
+  ${(props) => handlePosition(props.position)}
+  ${(props) => props.variant === 'none' && 'opacity: 0;'}
 `
+
 export const ToastBody = styled.div`
   position: relative;
   right: 0px;
-  color: rgb(15, 13, 10);
+  ${(props) => handleToastColor(props.variant).toastColor}
+  ${(props) => handleToastColor(props.variant).toastBackground}
   border-radius: 5px;
   padding: 1rem 1rem;
   min-width: fit-content;
   z-index: 12;
   transition: ease-out 0.7s;
-  background-color: rgb(57, 214, 84);
 `
