@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
 * {
+  
   -webkit-tap-highlight-color: transparent;
 }
 html {
@@ -22,6 +23,7 @@ body {
 }
 
 :root {
+  
    --padding: 2rem;
    
    --background1-main: #1E1E1F;

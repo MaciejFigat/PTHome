@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { ToastBody, ToastContainer } from './Toast.styled'
+import { ToastBody, ToastContainer, ToastWrapper } from './Toast.styled'
 
 interface ToastProps {
   toastMessage: string
@@ -16,9 +16,11 @@ const Toast: React.FC<ToastProps> = ({ toastMessage, variant }) => {
     return () => clearTimeout(timer)
   }, [])
   return (
-    <ToastContainer variant={variant} position={toastPosition}>
-      <ToastBody variant={variant}>{toastMessage}</ToastBody>
-    </ToastContainer>
+    <ToastWrapper>
+      <ToastContainer variant={variant} position={toastPosition}>
+        <ToastBody variant={variant}>{toastMessage}</ToastBody>
+      </ToastContainer>
+    </ToastWrapper>
   )
 }
 export default Toast

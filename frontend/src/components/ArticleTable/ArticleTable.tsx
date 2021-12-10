@@ -7,7 +7,7 @@ import {
 } from '../../features/articles/articleSlice'
 import { SendButton } from './ArticleForm.styled'
 import { Table, TableWrapper, AdminContainer } from './ArticleTable.styled'
-
+import Toast from '../Toast/Toast'
 interface ArticleTableProps {}
 
 const ArticleTable: React.FC<ArticleTableProps> = () => {

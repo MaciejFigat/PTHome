@@ -6,6 +6,7 @@ import { getUsers, deleteUser } from '../features/users/userSlice'
 import { SendButton } from '../components/ArticleTable/ArticleForm.styled'
 import {
   AdminContainer,
+  AdminWrapper,
   Table,
   TableWrapper,
 } from '../components/ArticleTable/ArticleTable.styled'
@@ -24,6 +25,8 @@ const UserAdmin: React.FC<UserAdminProps> = ({ history }) => {
   const [toastVariant, setToastVariant] = useState<
     'none' | 'success' | 'danger' | 'info' | 'warning'
   >('none')
+  const [toastMessage, setToastMessage] = useState<string>('')
+
   // getUsers I have to pass an argument (anything really) because my thunk in the slice needs an argument to also receive thunkAPI, when thunkAPI is alone it's not working
   useEffect(() => {
     if (Object.keys(userInfo).length === 0) {
@@ -35,13 +38,14 @@ const UserAdmin: React.FC<UserAdminProps> = ({ history }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setToastVariant('success')
+      setToastMessage('testing testing')
     }, 1000)
     return () => clearTimeout(timer)
   }, [])
 
   return (
-    <>
-      <Toast toastMessage='Hello test toast' variant={toastVariant} />
+    <AdminWrapper>
+      <Toast toastMessage={toastMessage} variant={toastVariant} />
       <AdminContainer>
         <TableWrapper>
           <Table>
@@ -77,7 +81,7 @@ const UserAdmin: React.FC<UserAdminProps> = ({ history }) => {
           </Table>
         </TableWrapper>
       </AdminContainer>
-    </>
+    </AdminWrapper>
   )
 }
 export default UserAdmin

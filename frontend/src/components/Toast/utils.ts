@@ -13,10 +13,12 @@ export const handlePosition: (position: string) => string | undefined = (positio
       }`
     } else if (position === 'hide') {
         return `top: 200px;
-      right: -200px;
+      right: 100px;
+      transform: translateX(300px);
       @media (max-width: 1010px) {
         top: 60px;
-        right: -200px;
+        right: 100px;
+        transform: translateX(300px);
       }`
     }
 }

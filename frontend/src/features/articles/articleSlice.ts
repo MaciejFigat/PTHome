@@ -169,6 +169,7 @@ const articleSlice = createSlice({
         articleCreated: {},
         loading: false,
         error: {},
+        success: false,
     },
     reducers: {
         articleTest(state, action: PayloadAction<ArticleCreated>) {
@@ -215,10 +216,12 @@ const articleSlice = createSlice({
 
         builder.addCase(deleteArticle.pending, (state, action) => {
             state.loading = true
+            state.success = false
 
         })
         builder.addCase(deleteArticle.fulfilled, (state, action) => {
             state.loading = false
+            state.success = true
             state.error = action.payload.message
         })
         builder.addCase(deleteArticle.rejected, (state, action) => {

@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 import { handleToastColor, handlePosition } from './utils'
 
+export const ToastWrapper = styled.div``
 export const ToastContainer = styled.div`
-  position: absolute;
+  position: fixed;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
