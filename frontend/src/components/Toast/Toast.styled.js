@@ -9,8 +9,13 @@ export const ToastContainer = styled.div`
   align-items: flex-end;
   transition: 0.7s;
   ${(props) => handlePosition(props.position)}
+  /* ${(props) =>
+    props.variant === 'none'
+      ? 'top: 200px; right: 100px;'
+      : handlePosition(props.position)} */
   ${(props) => props.variant === 'none' && 'opacity: 0;'}
 `
+/* ${(props) => handlePosition(props.position)} */
 
 export const ToastBody = styled.div`
   position: relative;

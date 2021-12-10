@@ -7,7 +7,7 @@ import {
 } from '../../features/articles/articleSlice'
 import { SendButton } from './ArticleForm.styled'
 import { Table, TableWrapper, AdminContainer } from './ArticleTable.styled'
-import Toast from '../Toast/Toast'
+
 interface ArticleTableProps {}
 
 const ArticleTable: React.FC<ArticleTableProps> = () => {
@@ -15,9 +15,16 @@ const ArticleTable: React.FC<ArticleTableProps> = () => {
 
   const articles: any[] = useAppSelector((state) => state.article.articles)
 
+  const articleSuccess: boolean = useAppSelector(
+    (state) => state.article.success
+  )
+
   useEffect(() => {
     dispatch(getArticles())
-  }, [dispatch])
+    if (articleSuccess === true) {
+      dispatch(getArticles())
+    }
+  }, [dispatch, articleSuccess])
 
   const deleteHandler = (id: string) => {
     dispatch(deleteArticle(id))
@@ -44,13 +51,14 @@ const ArticleTable: React.FC<ArticleTableProps> = () => {
             </tr>
           </thead>
           <tbody>
-            {articles !== [] &&
+            {Object.keys(articles).length !== 0 &&
+              articles !== [] &&
               articles.map((article) => (
                 <tr key={article._id}>
                   <td>{article.topline}</td>
 
                   <td>{article.author}</td>
-                  <td>{article.updatedAt}</td>
+                  <td>{article.updatedAt.substring(0, 10)}</td>
                   <td>
                     <SendButton variant='info'>
                       {' '}

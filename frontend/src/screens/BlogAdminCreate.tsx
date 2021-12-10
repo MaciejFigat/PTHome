@@ -14,7 +14,10 @@ import {
   SendButtonWrapper,
   SendButton,
 } from '../components/ArticleTable/ArticleForm.styled'
-import { AdminContainer } from '../components/ArticleTable/ArticleTable.styled'
+import {
+  AdminContainer,
+  AdminWrapper,
+} from '../components/ArticleTable/ArticleTable.styled'
 import { RouteComponentProps } from 'react-router-dom'
 
 interface BlogAdminCreateProps extends RouteComponentProps<any> {}
@@ -51,7 +54,7 @@ const BlogAdminCreate: React.FC<BlogAdminCreateProps> = ({ history }) => {
     }
   }, [userInfo, history])
   return (
-    <>
+    <AdminWrapper>
       {' '}
       <AdminContainer>
         <h1>Blog ADMIN CREATE</h1>{' '}
@@ -128,7 +131,7 @@ const BlogAdminCreate: React.FC<BlogAdminCreateProps> = ({ history }) => {
           </ContactFormContainer>
         </ResponsiveDiv>
       </FormContainerDiv>
-    </>
+    </AdminWrapper>
   )
 }
 export default BlogAdminCreate

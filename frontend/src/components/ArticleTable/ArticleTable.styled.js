@@ -8,7 +8,6 @@ export const AdminContainer = styled.div`
   padding-top: 3rem;
   padding-bottom: 3rem;
   place-items: center;
-  /* max-width: 100%; */
   overflow: hidden;
   @media screen and (max-width: 770px) {
     /* max-width: 50%;

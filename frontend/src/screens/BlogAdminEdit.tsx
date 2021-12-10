@@ -18,7 +18,10 @@ import {
   SendButton,
   SendButtonWrapper,
 } from '../components/ArticleTable/ArticleForm.styled'
-import { AdminContainer } from '../components/ArticleTable/ArticleTable.styled'
+import {
+  AdminContainer,
+  AdminWrapper,
+} from '../components/ArticleTable/ArticleTable.styled'
 import { RouteComponentProps } from 'react-router-dom'
 
 interface BlogAdminEditProps extends RouteComponentProps<any> {}
@@ -83,7 +86,7 @@ const BlogAdminEdit: React.FC<BlogAdminEditProps> = ({ history, match }) => {
     toplineState,
   ])
   return (
-    <>
+    <AdminWrapper>
       <AdminContainer>
         {' '}
         <h1>EDIT THIS ARTICLE</h1>
@@ -171,7 +174,7 @@ const BlogAdminEdit: React.FC<BlogAdminEditProps> = ({ history, match }) => {
           <Link to={`/admin/blog/edit/preview`}>Preview changes</Link>
         </SendButton>
       </AdminContainer>
-    </>
+    </AdminWrapper>
   )
 }
 export default BlogAdminEdit

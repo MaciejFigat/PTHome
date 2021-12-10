@@ -6,7 +6,10 @@ import { SendButton } from '../components/ArticleTable/ArticleForm.styled'
 import Article from '../components/BlogArticle/Article'
 import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
 import { editArticle } from '../features/articles/articleSlice'
-import { AdminContainer } from '../components/ArticleTable/ArticleTable.styled'
+import {
+  AdminContainer,
+  AdminWrapper,
+} from '../components/ArticleTable/ArticleTable.styled'
 
 interface BlogAdminEditPreviewProps extends RouteComponentProps<any> {}
 
@@ -48,7 +51,7 @@ const BlogAdminEditPreview: React.FC<BlogAdminEditPreviewProps> = ({
     }
   }, [userInfo, history])
   return (
-    <>
+    <AdminWrapper>
       <Article data={editedArticle} />
       <AdminContainer>
         <SendButton variant='success' onClick={editHandler} large fontLarge>
@@ -59,8 +62,7 @@ const BlogAdminEditPreview: React.FC<BlogAdminEditPreviewProps> = ({
           <Link to={`/admin/blog/${id}`}>Back to editing</Link>
         </SendButton>
       </AdminContainer>
-    </>
+    </AdminWrapper>
   )
 }
 export default BlogAdminEditPreview
-// /admin/blog/create

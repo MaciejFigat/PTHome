@@ -9,7 +9,10 @@ import {
   ContactFieldContent,
   SendButton,
 } from '../components/ArticleTable/UserEdit.styled'
-import { AdminContainer } from '../components/ArticleTable/ArticleTable.styled'
+import {
+  AdminContainer,
+  AdminWrapper,
+} from '../components/ArticleTable/ArticleTable.styled'
 import { RouteComponentProps } from 'react-router-dom'
 
 interface UserAdminEditProps extends RouteComponentProps<any> {}
@@ -63,7 +66,7 @@ const UserAdminEdit: React.FC<UserAdminEditProps> = ({ history, match }) => {
   }, [dispatch, match, nameState, emailState, isAdminState, userInfo, history])
 
   return (
-    <>
+    <AdminWrapper>
       <AdminContainer>
         <h1>EDIT USER: {nameState}</h1>{' '}
         {isAdmin === true ? (
@@ -121,7 +124,7 @@ const UserAdminEdit: React.FC<UserAdminEditProps> = ({ history, match }) => {
           </SendButton>
         </div>
       </AdminContainer>
-    </>
+    </AdminWrapper>
   )
 }
 export default UserAdminEdit

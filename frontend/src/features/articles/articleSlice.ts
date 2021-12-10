@@ -175,6 +175,9 @@ const articleSlice = createSlice({
         articleTest(state, action: PayloadAction<ArticleCreated>) {
             state.articleTest = action.payload
         },
+        articleSuccessReset(state) {
+            state.success = false
+        },
         articleEditTest(state, action: PayloadAction<ArticleCreated>) {
             state.articleById.topline = action.payload.topline
             state.articleById.headline = action.payload.headline
@@ -247,6 +250,6 @@ const articleSlice = createSlice({
 })
 
 
-export const { articleTest, articleEditTest } = articleSlice.actions
+export const { articleTest, articleEditTest, articleSuccessReset } = articleSlice.actions
 
 export default articleSlice.reducer
