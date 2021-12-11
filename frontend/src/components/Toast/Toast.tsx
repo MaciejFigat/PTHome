@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { ToastBody, ToastContainer, ToastWrapper } from './Toast.styled'
 
 interface ToastProps {
@@ -7,17 +7,9 @@ interface ToastProps {
 }
 
 const Toast: React.FC<ToastProps> = ({ toastMessage, variant }) => {
-  const [toastPosition, setToastPosition] = useState<string>('show')
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setToastPosition('hide')
-    }, 3000)
-    return () => clearTimeout(timer)
-  }, [])
   return (
     <ToastWrapper>
-      <ToastContainer variant={variant} position={toastPosition}>
+      <ToastContainer variant={variant}>
         <ToastBody variant={variant}>{toastMessage}</ToastBody>
       </ToastContainer>
     </ToastWrapper>

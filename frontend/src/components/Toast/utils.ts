@@ -3,27 +3,7 @@ interface StyleVariant {
     toastBackground: string
 }
 
-export const handlePosition: (position: string) => string | undefined = (position) => {
-    if (position === 'show') {
-        return `
-        top: 200px;
-        right: 100px;
-      @media (max-width: 1010px) {
-        top: 60px;
-        right: 10px;
-      }`
-    } else if (position === 'hide') {
-        return `
-        top: 200px;
-        right: 100px;
-                @media (max-width: 1010px) {
-            top: 60px;
-            right: 10px;
-        }`
-    }
-    //   transform: translateX(300px);
-    // transform: translateX(300px);
-}
+
 const successStyle: StyleVariant = {
     toastColor: 'var(--background-tertiary4);',
     toastBackground: 'var(--success1);',

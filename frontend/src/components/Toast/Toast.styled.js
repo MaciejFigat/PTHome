@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { handleToastColor, handlePosition } from './utils'
+import { handleToastColor } from './utils'
 
 export const ToastWrapper = styled.div``
 export const ToastContainer = styled.div`
@@ -8,14 +8,15 @@ export const ToastContainer = styled.div`
   flex-direction: column;
   align-items: flex-end;
   transition: 0.7s;
-  ${(props) => handlePosition(props.position)}
-  /* ${(props) =>
-    props.variant === 'none'
-      ? 'top: 200px; right: 100px;'
-      : handlePosition(props.position)} */
-  ${(props) => props.variant === 'none' && 'opacity: 0;'}
+  top: 200px;
+  right: 100px;
+  @media (max-width: 1010px) {
+    top: 60px;
+    right: 10px;
+  }
+  ${(props) =>
+    props.variant === 'none' && 'transform: translateX(300px); opacity: 0;'}
 `
-/* ${(props) => handlePosition(props.position)} */
 
 export const ToastBody = styled.div`
   position: relative;

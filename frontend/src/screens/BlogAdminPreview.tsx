@@ -1,10 +1,12 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { UserInfo, ArticleCreated } from '../interfaces'
 import { Link } from 'react-router-dom'
+import Toast from '../components/Toast/Toast'
 import { SendButton } from '../components/ArticleTable/ArticleForm.styled'
 import Article from '../components/BlogArticle/Article'
 import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
 import { createArticle } from '../features/articles/articleSlice'
+import { articleSuccessReset } from '../features/articles/articleSlice'
 import {
   AdminContainer,
   AdminWrapper,
@@ -20,6 +22,12 @@ const BlogAdminPreview: React.FC<BlogAdminPreviewProps> = ({ history }) => {
     (state) => state.article.articleTest
   )
   const { topline, headline, subtitle, author, imgLink } = articleTest
+  const successCreate: boolean = useAppSelector(
+    (state) => state.article.success
+  )
+  const loadingCreate: boolean = useAppSelector(
+    (state) => state.article.loading
+  )
   const newArticleInfo = {
     topline: topline,
     headline: headline,
@@ -36,11 +44,27 @@ const BlogAdminPreview: React.FC<BlogAdminPreviewProps> = ({ history }) => {
     imgLink: imgLink,
     createdAt: '2021-11-20TtestDate',
   }
+  const [toastVariant, setToastVariant] = useState<
+    'none' | 'success' | 'danger' | 'info' | 'warning'
+  >('none')
+  const [toastMessage, setToastMessage] = useState<string>('')
   const createHandler = (e: any) => {
     e.preventDefault()
     dispatch(createArticle(newArticleInfo))
   }
-
+  useEffect(() => {
+    if (successCreate === true && loadingCreate === false) {
+      setToastVariant('info')
+      setToastMessage('Article Created')
+    }
+  }, [loadingCreate, successCreate])
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setToastVariant('none')
+      dispatch(articleSuccessReset())
+    }, 3000)
+    return () => clearTimeout(timer)
+  }, [dispatch, loadingCreate])
   useEffect(() => {
     if (Object.keys(userInfo).length === 0) {
       history.push('/login')
@@ -48,6 +72,7 @@ const BlogAdminPreview: React.FC<BlogAdminPreviewProps> = ({ history }) => {
   }, [userInfo, history])
   return (
     <AdminWrapper>
+      <Toast toastMessage={toastMessage} variant={toastVariant} />
       <Article data={testData} />
       <AdminContainer>
         <SendButton variant='success' onClick={createHandler} large fontLarge>

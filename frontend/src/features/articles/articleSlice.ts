@@ -192,12 +192,14 @@ const articleSlice = createSlice({
 
         builder.addCase(createArticle.pending, (state, action) => {
             state.loading = true
+            state.success = false
 
         })
         builder.addCase(createArticle.fulfilled, (state, action) => {
             state.loading = false
             state.articleCreated = action.payload
             state.error = action.payload.message
+            state.success = true
         })
         builder.addCase(createArticle.rejected, (state, action) => {
             state.loading = false
@@ -224,8 +226,8 @@ const articleSlice = createSlice({
         })
         builder.addCase(deleteArticle.fulfilled, (state, action) => {
             state.loading = false
-            state.success = true
             state.error = action.payload.message
+            state.success = true
         })
         builder.addCase(deleteArticle.rejected, (state, action) => {
             state.loading = false
@@ -239,8 +241,22 @@ const articleSlice = createSlice({
             state.loading = false
             state.articleById = action.payload
             state.error = action.payload.message
+
         })
         builder.addCase(getArticleById.rejected, (state, action) => {
+            state.loading = false
+
+        })
+        builder.addCase(editArticle.pending, (state, action) => {
+            state.loading = true
+            state.success = false
+        })
+        builder.addCase(editArticle.fulfilled, (state, action) => {
+            state.loading = false
+            state.error = action.payload.message
+            state.success = true
+        })
+        builder.addCase(editArticle.rejected, (state, action) => {
             state.loading = false
 
         })

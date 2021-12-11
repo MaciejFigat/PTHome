@@ -7,6 +7,8 @@ import {
   articleEditTest,
 } from '../features/articles/articleSlice'
 import { Link } from 'react-router-dom'
+import Toast from '../components/Toast/Toast'
+import { articleSuccessReset } from '../features/articles/articleSlice'
 import {
   ResponsiveDiv,
   FormContainerDiv,
@@ -32,6 +34,12 @@ const BlogAdminEdit: React.FC<BlogAdminEditProps> = ({ history, match }) => {
   const article: ArticleById = useAppSelector(
     (state) => state.article.articleById
   )
+  const successCreate: boolean = useAppSelector(
+    (state) => state.article.success
+  )
+  const loadingCreate: boolean = useAppSelector(
+    (state) => state.article.loading
+  )
   const {
     _id: id,
     topline: toplineState,
@@ -47,6 +55,10 @@ const BlogAdminEdit: React.FC<BlogAdminEditProps> = ({ history, match }) => {
   const [author, setAuthor] = useState(authorState)
   const [imgLink, setImgLink] = useState(imgLinkState)
 
+  const [toastVariant, setToastVariant] = useState<
+    'none' | 'success' | 'danger' | 'info' | 'warning'
+  >('none')
+  const [toastMessage, setToastMessage] = useState<string>('')
   const editedArticle = {
     _id: id,
     topline: topline,
@@ -63,7 +75,19 @@ const BlogAdminEdit: React.FC<BlogAdminEditProps> = ({ history, match }) => {
   const editPreviewHandler = () => {
     dispatch(articleEditTest(editedArticle))
   }
-
+  useEffect(() => {
+    if (successCreate === true && loadingCreate === false) {
+      setToastVariant('info')
+      setToastMessage('Article Edited')
+    }
+  }, [loadingCreate, successCreate])
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setToastVariant('none')
+      dispatch(articleSuccessReset())
+    }, 3000)
+    return () => clearTimeout(timer)
+  }, [dispatch, loadingCreate])
   useEffect(() => {
     if (Object.keys(userInfo).length === 0) {
       history.push('/login')
@@ -87,6 +111,7 @@ const BlogAdminEdit: React.FC<BlogAdminEditProps> = ({ history, match }) => {
   ])
   return (
     <AdminWrapper>
+      <Toast toastMessage={toastMessage} variant={toastVariant} />
       <AdminContainer>
         {' '}
         <h1>EDIT THIS ARTICLE</h1>
@@ -164,16 +189,6 @@ const BlogAdminEdit: React.FC<BlogAdminEditProps> = ({ history, match }) => {
           </ContactFormContainer>
         </ResponsiveDiv>
       </FormContainerDiv>
-      <AdminContainer>
-        {' '}
-        <SendButton onClick={editHandler} variant='success' large fontLarge>
-          Save changes
-        </SendButton>
-        <SendButton variant='info' onClick={editPreviewHandler} large fontLarge>
-          {' '}
-          <Link to={`/admin/blog/edit/preview`}>Preview changes</Link>
-        </SendButton>
-      </AdminContainer>
     </AdminWrapper>
   )
 }

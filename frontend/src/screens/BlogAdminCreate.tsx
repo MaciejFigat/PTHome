@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import Toast from '../components/Toast/Toast'
+import { articleSuccessReset } from '../features/articles/articleSlice'
 import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
 import { UserInfo } from '../interfaces'
 import { createArticle, articleTest } from '../features/articles/articleSlice'
@@ -25,11 +27,23 @@ interface BlogAdminCreateProps extends RouteComponentProps<any> {}
 const BlogAdminCreate: React.FC<BlogAdminCreateProps> = ({ history }) => {
   const dispatch: any = useAppDispatch()
   const userInfo: UserInfo = useAppSelector((state) => state.user.userInfo)
+  const successCreate: boolean = useAppSelector(
+    (state) => state.article.success
+  )
+  const loadingCreate: boolean = useAppSelector(
+    (state) => state.article.loading
+  )
+
   const [topline, setTopline] = useState('')
   const [headline, setHeadline] = useState('')
   const [subtitle, setSubtitle] = useState('')
   const [author, setAuthor] = useState('')
   const [imgLink, setImgLink] = useState('')
+
+  const [toastVariant, setToastVariant] = useState<
+    'none' | 'success' | 'danger' | 'info' | 'warning'
+  >('none')
+  const [toastMessage, setToastMessage] = useState<string>('')
 
   const newArticleInfo = {
     topline: topline,
@@ -53,9 +67,25 @@ const BlogAdminCreate: React.FC<BlogAdminCreateProps> = ({ history }) => {
       history.push('/login')
     }
   }, [userInfo, history])
+
+  useEffect(() => {
+    if (successCreate === true && loadingCreate === false) {
+      setToastVariant('info')
+      setToastMessage('Article Created')
+    }
+  }, [loadingCreate, successCreate])
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setToastVariant('none')
+      dispatch(articleSuccessReset())
+    }, 3000)
+    return () => clearTimeout(timer)
+  }, [dispatch, loadingCreate])
+
   return (
     <AdminWrapper>
-      {' '}
+      <Toast toastMessage={toastMessage} variant={toastVariant} />
       <AdminContainer>
         <h1>Blog ADMIN CREATE</h1>{' '}
       </AdminContainer>

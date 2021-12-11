@@ -51,8 +51,8 @@ const ArticleTable: React.FC<ArticleTableProps> = () => {
             </tr>
           </thead>
           <tbody>
-            {Object.keys(articles).length !== 0 &&
-              articles !== [] &&
+            {articles &&
+              Object.keys(articles).length > 0 &&
               articles.map((article) => (
                 <tr key={article._id}>
                   <td>{article.topline}</td>
