@@ -6,6 +6,7 @@ export const ToastContainer = styled.div`
   position: fixed;
   display: flex;
   flex-direction: column;
+  font-weight: 600;
   align-items: flex-end;
   transition: 0.7s;
   top: 200px;

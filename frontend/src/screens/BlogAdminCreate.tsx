@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Toast from '../components/Toast/Toast'
-import { articleSuccessReset } from '../features/articles/articleSlice'
 import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
 import { UserInfo } from '../interfaces'
 import { createArticle, articleTest } from '../features/articles/articleSlice'
@@ -27,23 +26,20 @@ interface BlogAdminCreateProps extends RouteComponentProps<any> {}
 const BlogAdminCreate: React.FC<BlogAdminCreateProps> = ({ history }) => {
   const dispatch: any = useAppDispatch()
   const userInfo: UserInfo = useAppSelector((state) => state.user.userInfo)
-  const successCreate: boolean = useAppSelector(
-    (state) => state.article.success
-  )
-  const loadingCreate: boolean = useAppSelector(
-    (state) => state.article.loading
-  )
 
-  const [topline, setTopline] = useState('')
-  const [headline, setHeadline] = useState('')
-  const [subtitle, setSubtitle] = useState('')
-  const [author, setAuthor] = useState('')
-  const [imgLink, setImgLink] = useState('')
-
-  const [toastVariant, setToastVariant] = useState<
-    'none' | 'success' | 'danger' | 'info' | 'warning'
-  >('none')
-  const [toastMessage, setToastMessage] = useState<string>('')
+  const [topline, setTopline] = useState(
+    '“That God is colouring Newton doth shew”—William Blake'
+  )
+  const [headline, setHeadline] = useState(
+    'Structure of Rime XXVIII: In Memoriam Wallace Stevens'
+  )
+  const [subtitle, setSubtitle] = useState(
+    '       Erecting beyond the boundaries of all government his grand Station and Customs, I find what I have made there a Gate, a staking out of his art in Inconsequence.  I have in mind a poetry that will frame the willingness of the heart and deliver it over to the arrest of Time, a sentence  as if there could stand some solidity  most spacial in its intent against the drifts and appearances that arise and fall away in time from the crude events of physical space.  The Mind alone holds the consequence of the erection to be true, so that Desire and Imagination usurp the place of the Invisible Throne. It is an angel then, weeping and yet ever attending the betrayal of the Word I mean to come to in the end.'
+  )
+  const [author, setAuthor] = useState('ROBERT DUNCAN')
+  const [imgLink, setImgLink] = useState(
+    'https://source.unsplash.com/NvFkYV2ngOk'
+  )
 
   const newArticleInfo = {
     topline: topline,
@@ -68,24 +64,10 @@ const BlogAdminCreate: React.FC<BlogAdminCreateProps> = ({ history }) => {
     }
   }, [userInfo, history])
 
-  useEffect(() => {
-    if (successCreate === true && loadingCreate === false) {
-      setToastVariant('info')
-      setToastMessage('Article Created')
-    }
-  }, [loadingCreate, successCreate])
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setToastVariant('none')
-      dispatch(articleSuccessReset())
-    }, 3000)
-    return () => clearTimeout(timer)
-  }, [dispatch, loadingCreate])
-
   return (
     <AdminWrapper>
-      <Toast toastMessage={toastMessage} variant={toastVariant} />
+      <Toast option='createArticle' />
+
       <AdminContainer>
         <h1>Blog ADMIN CREATE</h1>{' '}
       </AdminContainer>

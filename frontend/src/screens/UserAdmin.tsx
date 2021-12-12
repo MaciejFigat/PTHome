@@ -45,7 +45,7 @@ const UserAdmin: React.FC<UserAdminProps> = ({ history }) => {
 
   return (
     <AdminWrapper>
-      <Toast toastMessage={toastMessage} variant={toastVariant} />
+      {/* <Toast option='userRegister' /> */}
       <AdminContainer>
         <TableWrapper>
           <Table>

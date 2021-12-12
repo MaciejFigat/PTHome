@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { UserInfo, ArticleById } from '../interfaces'
 import { Link } from 'react-router-dom'
 import Toast from '../components/Toast/Toast'
-import { articleSuccessReset } from '../features/articles/articleSlice'
 import { RouteComponentProps } from 'react-router-dom'
 import { SendButton } from '../components/ArticleTable/ArticleForm.styled'
 import Article from '../components/BlogArticle/Article'
@@ -23,16 +22,7 @@ const BlogAdminEditPreview: React.FC<BlogAdminEditPreviewProps> = ({
   const articleEdit: ArticleById = useAppSelector(
     (state) => state.article.articleById
   )
-  const successCreate: boolean = useAppSelector(
-    (state) => state.article.success
-  )
-  const loadingCreate: boolean = useAppSelector(
-    (state) => state.article.loading
-  )
-  const [toastVariant, setToastVariant] = useState<
-    'none' | 'success' | 'danger' | 'info' | 'warning'
-  >('none')
-  const [toastMessage, setToastMessage] = useState<string>('')
+
   const {
     _id: id,
     topline,
@@ -56,19 +46,6 @@ const BlogAdminEditPreview: React.FC<BlogAdminEditPreviewProps> = ({
     e.preventDefault()
     dispatch(editArticle(editedArticle))
   }
-  useEffect(() => {
-    if (successCreate === true && loadingCreate === false) {
-      setToastVariant('info')
-      setToastMessage('Article Edited')
-    }
-  }, [loadingCreate, successCreate])
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setToastVariant('none')
-      dispatch(articleSuccessReset())
-    }, 3000)
-    return () => clearTimeout(timer)
-  }, [dispatch, loadingCreate])
 
   useEffect(() => {
     if (Object.keys(userInfo).length === 0) {
@@ -77,7 +54,7 @@ const BlogAdminEditPreview: React.FC<BlogAdminEditPreviewProps> = ({
   }, [userInfo, history])
   return (
     <AdminWrapper>
-      <Toast toastMessage={toastMessage} variant={toastVariant} />
+      <Toast option='editArticle' />
       <Article data={editedArticle} />
       <AdminContainer>
         <SendButton variant='success' onClick={editHandler} large fontLarge>

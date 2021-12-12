@@ -20,8 +20,8 @@ const dangerStyle: StyleVariant = {
 
 }
 const warningStyle: StyleVariant = {
-    toastColor: 'var(--background-tertiary3);',
-    toastBackground: 'var(--background-tertiary5);',
+    toastColor: 'var(--background1-main);',
+    toastBackground: 'var(--orange2);',
 
 }
 const noneStyle: StyleVariant = {

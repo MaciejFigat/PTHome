@@ -37,10 +37,19 @@ body {
    --secondary3: #e9c46a;
    --secondary4: #f4a261;
    --secondary5: #e76f51;
+
+   --redblue1: #e63946;
+   --redblue2: #f1faee;
+   --redblue3: #a8dadc;
+   --redblue4: #457b9d;
+   --redblue5: #1d3557;
    
    --pink1: #f7a14e;
      
-  
+  --orange1: #ca6702;
+  --orange2: #ee9b00;
+  --orange3: #fca311;
+
     --success1: #008000;
     --success2: #38b000;
     --success3: #70e000;
