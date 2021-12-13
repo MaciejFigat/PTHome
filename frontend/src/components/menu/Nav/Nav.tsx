@@ -19,7 +19,8 @@ import { logout } from '../../../features/users/userSlice'
 
 interface NavProps {}
 interface UserInfo {
-  id?: string
+  // id?: string
+  _id?: string
   name?: string
   email?: string
   isAdmin?: boolean
@@ -29,8 +30,8 @@ const Nav: React.FC<NavProps> = () => {
   const dispatch = useAppDispatch()
 
   const userInfo: UserInfo = useAppSelector((state) => state.user.userInfo)
+  const { _id: id, name, isAdmin } = userInfo
   const loading: boolean = useAppSelector((state) => state.user.loading)
-  const { id, name, isAdmin } = userInfo
 
   const [menuOpen, setMenuOpen] = useState<boolean>(false)
   const handleClickMenu = () => {
@@ -134,7 +135,7 @@ const Nav: React.FC<NavProps> = () => {
             {name ? `Witaj ${name}!` : `Witaj!`}
           </HeaderTitleDesktop>
           <NavListDesktop />
-          {id && isAdmin && (
+          {Object.keys(userInfo).length > 0 && isAdmin && (
             <ListLoginWrapper>
               <NavLink
                 exact
@@ -147,7 +148,7 @@ const Nav: React.FC<NavProps> = () => {
               </NavLink>
             </ListLoginWrapper>
           )}
-          {id && isAdmin === false && (
+          {Object.keys(userInfo).length > 0 && isAdmin === false && (
             <ListLoginWrapper>
               <NavLink
                 exact
@@ -160,7 +161,7 @@ const Nav: React.FC<NavProps> = () => {
               </NavLink>
             </ListLoginWrapper>
           )}{' '}
-          {id ? (
+          {Object.keys(userInfo).length > 0 ? (
             <ListLoginWrapper>
               <NavLink
                 exact

@@ -78,7 +78,7 @@ const Toast: React.FC<ToastProps> = ({ option }) => {
       default:
         break
     }
-  }, [loadingArticle, successArticle, option, successUser, loadingUser])
+  }, [loadingArticle, successArticle, option, successUser, loadingUser, name])
 
   useEffect(() => {
     const timer = setTimeout(() => {

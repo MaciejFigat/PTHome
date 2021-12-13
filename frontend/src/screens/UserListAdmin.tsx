@@ -17,6 +17,7 @@ interface UserListAdminProps extends RouteComponentProps<any> {}
 const UserListAdmin: React.FC<UserListAdminProps> = ({ history }) => {
   const dispatch: any = useAppDispatch()
   const users: any[] = useAppSelector((state) => state.user.allUsers)
+  const userSuccess = useAppSelector((state) => state.user.success)
   const userInfo: UserInfo = useAppSelector((state) => state.user.userInfo)
   const deleteUserHandler = (id: string) => {
     dispatch(deleteUser(id))
@@ -28,7 +29,10 @@ const UserListAdmin: React.FC<UserListAdminProps> = ({ history }) => {
       history.push('/login')
     }
     dispatch(getUsers(1))
-  }, [dispatch, userInfo, history])
+    if (userSuccess === true) {
+      dispatch(getUsers(1))
+    }
+  }, [dispatch, userInfo, history, userSuccess])
 
   return (
     <AdminWrapper>
