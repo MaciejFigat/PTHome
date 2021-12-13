@@ -16,16 +16,9 @@ import NavListDesktop from './NavListDesktop'
 import useScrollListener from '../../../hooks/useScrollListener'
 import SvgIcon from '../../SvgIcon/SvgIcon'
 import { logout } from '../../../features/users/userSlice'
-
+import { UserInfo } from '../../../interfaces'
 interface NavProps {}
-interface UserInfo {
-  // id?: string
-  _id?: string
-  name?: string
-  email?: string
-  isAdmin?: boolean
-  token?: string
-}
+
 const Nav: React.FC<NavProps> = () => {
   const dispatch = useAppDispatch()
 
