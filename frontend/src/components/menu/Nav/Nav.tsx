@@ -24,7 +24,6 @@ interface UserInfo {
   email?: string
   isAdmin?: boolean
   token?: string
-  loading?: boolean
 }
 const Nav: React.FC<NavProps> = () => {
   const dispatch = useAppDispatch()

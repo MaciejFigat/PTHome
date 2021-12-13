@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { UserInfo } from '../interfaces'
 import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
 import { updateUserProfile, getUserDetails } from '../features/users/userSlice'
+import Toast from '../components/Toast/Toast'
 
 import {
   EditFormContainer,
@@ -50,6 +51,7 @@ const UserProfile: React.FC<UserProfileProps> = ({ history }) => {
   }, [dispatch, nameState, emailState, id, user, history])
   return (
     <AdminWrapper>
+      <Toast option='editUser' />
       <AdminContainer>
         <h1>Hello {nameState}!</h1> <h2>edit your account</h2>
         <EditFormContainer>

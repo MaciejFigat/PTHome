@@ -4,6 +4,7 @@ import { Wrapper, Form, Input, Button, LoginContainer } from '../styles/login'
 import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
 import { createUser } from '../features/users/userSlice'
 import { RouteComponentProps } from 'react-router-dom'
+import Toast from '../components/Toast/Toast'
 
 interface RegisterProps extends RouteComponentProps<any> {}
 
@@ -28,6 +29,7 @@ const Register: React.FC<RegisterProps> = ({ history }) => {
   }, [user, history])
   return (
     <LoginContainer>
+      <Toast option='registerUser' />
       <Wrapper>
         <h3>Welcome!</h3>
         <Form onSubmit={submitHandler}>

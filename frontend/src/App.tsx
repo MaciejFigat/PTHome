@@ -17,7 +17,7 @@ import BlogAdmin from './screens/BlogAdmin'
 import BlogAdminEdit from './screens/BlogAdminEdit'
 import BlogAdminCreate from './screens/BlogAdminCreate'
 import UserAdminEdit from './screens/UserAdminEdit'
-import UserAdmin from './screens/UserAdmin'
+import UserListAdmin from './screens/UserListAdmin'
 import UserProfile from './screens/UserProfile'
 import AdminPanel from './screens/AdminPanel'
 import BlogAdminPreview from './screens/BlogAdminPreview'
@@ -53,7 +53,7 @@ function App() {
           component={BlogAdminEditPreview}
         />
         <Route exact path='/admin/blog/:id' component={BlogAdminEdit} />
-        <Route exact path='/admin/userlist' component={UserAdmin} />
+        <Route exact path='/admin/userlist' component={UserListAdmin} />
         <Route exact path='/admin/user/:id/edit' component={UserAdminEdit} />
         <Route exact path='/profile' component={UserProfile} />
         <Route path='/' component={Home} />

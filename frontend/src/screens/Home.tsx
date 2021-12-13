@@ -7,10 +7,12 @@ import {
   homeDataFour,
   homeDataFive,
 } from '../data/homeData'
+import Toast from '../components/Toast/Toast'
 
 const Home: React.FC = () => {
   return (
     <>
+      <Toast option='registerUser' />
       <InfoSection data={homeData} variant='blue' imgStart></InfoSection>
       <InfoSection data={homeDataTwo} variant='primary'></InfoSection>
       <InfoSection

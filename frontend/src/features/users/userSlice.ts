@@ -250,7 +250,8 @@ const userSlice = createSlice({
         loading: false,
         error: {},
         allUsers: [],
-        selectedUserInfo: {}
+        selectedUserInfo: {},
+        success: false
     },
     reducers: {
 
@@ -258,6 +259,9 @@ const userSlice = createSlice({
             state.userInfo = {}
             state.error = {}
 
+        },
+        userSuccessReset(state) {
+            state.success = false
         },
     },
 
@@ -271,6 +275,7 @@ const userSlice = createSlice({
             state.userInfo = (action.payload.name !== 'Error') && { id: action.payload._id, name: action.payload.name, email: action.payload.email, isAdmin: action.payload.isAdmin, token: action.payload.token }
             state.error = action.payload.message
 
+
         })
         builder.addCase(sendUserId.rejected, (state, action) => {
             state.loading = false
@@ -278,12 +283,14 @@ const userSlice = createSlice({
         })
         builder.addCase(createUser.pending, (state, action) => {
             state.loading = true
+            state.success = false
 
         })
         builder.addCase(createUser.fulfilled, (state, action) => {
             state.loading = false
             state.userInfo = action.payload
             state.error = action.payload.message
+            state.success = true
         })
         builder.addCase(createUser.rejected, (state, action) => {
             state.loading = false
@@ -291,6 +298,7 @@ const userSlice = createSlice({
         })
         builder.addCase(getUsers.pending, (state, action) => {
             state.loading = true
+
         })
         builder.addCase(getUsers.fulfilled, (state, action) => {
             state.loading = false
@@ -303,11 +311,13 @@ const userSlice = createSlice({
         })
         builder.addCase(updateUserProfile.pending, (state, action) => {
             state.loading = true
+            state.success = false
         })
         builder.addCase(updateUserProfile.fulfilled, (state, action) => {
             state.loading = false
             state.userInfo = action.payload
             state.error = action.payload.message
+            state.success = true
         })
         builder.addCase(updateUserProfile.rejected, (state, action) => {
             state.loading = false
@@ -315,10 +325,12 @@ const userSlice = createSlice({
         })
         builder.addCase(deleteUser.pending, (state, action) => {
             state.loading = true
+            state.success = false
         })
         builder.addCase(deleteUser.fulfilled, (state, action) => {
             state.loading = false
             state.error = action.payload.message
+            state.success = true
         })
         builder.addCase(deleteUser.rejected, (state, action) => {
             state.loading = false
@@ -326,10 +338,12 @@ const userSlice = createSlice({
         })
         builder.addCase(updateUser.pending, (state, action) => {
             state.loading = true
+            state.success = false
         })
         builder.addCase(updateUser.fulfilled, (state, action) => {
             state.loading = false
             state.error = action.payload.message
+            state.success = true
         })
         builder.addCase(updateUser.rejected, (state, action) => {
             state.loading = false
@@ -337,11 +351,13 @@ const userSlice = createSlice({
         })
         builder.addCase(getUserById.pending, (state, action) => {
             state.loading = true
+
         })
         builder.addCase(getUserById.fulfilled, (state, action) => {
             state.loading = false
             state.selectedUserInfo = action.payload
             state.error = action.payload.message
+
         })
         builder.addCase(getUserById.rejected, (state, action) => {
             state.loading = false
@@ -349,11 +365,13 @@ const userSlice = createSlice({
         })
         builder.addCase(getUserDetails.pending, (state, action) => {
             state.loading = true
+
         })
         builder.addCase(getUserDetails.fulfilled, (state, action) => {
             state.loading = false
             state.selectedUserInfo = action.payload
             state.error = action.payload.message
+
         })
         builder.addCase(getUserDetails.rejected, (state, action) => {
             state.loading = false
@@ -365,7 +383,7 @@ const userSlice = createSlice({
 })
 
 
-export const { logout } = userSlice.actions
+export const { logout, userSuccessReset } = userSlice.actions
 // export const { actions, reducer } = userSlice
 export default userSlice.reducer
 

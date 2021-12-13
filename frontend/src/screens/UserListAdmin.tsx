@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { UserInfo } from '../interfaces'
 import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
@@ -11,21 +11,16 @@ import {
   TableWrapper,
 } from '../components/ArticleTable/ArticleTable.styled'
 import { RouteComponentProps } from 'react-router-dom'
-import Toast from '../components/Toast/Toast'
 
-interface UserAdminProps extends RouteComponentProps<any> {}
+interface UserListAdminProps extends RouteComponentProps<any> {}
 
-const UserAdmin: React.FC<UserAdminProps> = ({ history }) => {
+const UserListAdmin: React.FC<UserListAdminProps> = ({ history }) => {
   const dispatch: any = useAppDispatch()
   const users: any[] = useAppSelector((state) => state.user.allUsers)
   const userInfo: UserInfo = useAppSelector((state) => state.user.userInfo)
   const deleteUserHandler = (id: string) => {
     dispatch(deleteUser(id))
   }
-  const [toastVariant, setToastVariant] = useState<
-    'none' | 'success' | 'danger' | 'info' | 'warning'
-  >('none')
-  const [toastMessage, setToastMessage] = useState<string>('')
 
   // getUsers I have to pass an argument (anything really) because my thunk in the slice needs an argument to also receive thunkAPI, when thunkAPI is alone it's not working
   useEffect(() => {
@@ -35,17 +30,8 @@ const UserAdmin: React.FC<UserAdminProps> = ({ history }) => {
     dispatch(getUsers(1))
   }, [dispatch, userInfo, history])
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setToastVariant('success')
-      setToastMessage('testing testing')
-    }, 1000)
-    return () => clearTimeout(timer)
-  }, [])
-
   return (
     <AdminWrapper>
-      {/* <Toast option='userRegister' /> */}
       <AdminContainer>
         <TableWrapper>
           <Table>
@@ -84,4 +70,4 @@ const UserAdmin: React.FC<UserAdminProps> = ({ history }) => {
     </AdminWrapper>
   )
 }
-export default UserAdmin
+export default UserListAdmin
