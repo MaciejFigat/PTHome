@@ -25,11 +25,13 @@ const Blog: React.FC<BlogProps> = () => {
 
   return (
     <BlogWrapper>
+      <h1>Blog</h1>
+      <h3>Ostatnie posty</h3>
       <BlogCardWrapper>
         {articles.length > 0 &&
-          articles.map((article) => (
-            <BlogCard data={article} key={article._id} />
-          ))}
+          articles
+            .map((article) => <BlogCard data={article} key={article._id} />)
+            .reverse()}
         {articles.length === 0 && (
           <button onClick={getHandler}>
             <h1>GET THEM ALL </h1>
