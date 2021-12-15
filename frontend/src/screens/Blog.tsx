@@ -5,6 +5,7 @@ import {
   BlogCardWrapper,
   BlogWrapper,
 } from '../components/BlogCards/BlogCards.styled'
+import SmallSection from '../components/SectionSmall/SmallSection'
 import { getArticles } from '../features/articles/articleSlice'
 
 interface BlogProps {}
@@ -24,21 +25,27 @@ const Blog: React.FC<BlogProps> = () => {
   }
 
   return (
-    <BlogWrapper>
-      <h1>Blog</h1>
-      <h3>Ostatnie posty</h3>
-      <BlogCardWrapper>
-        {articles.length > 0 &&
-          articles
-            .map((article) => <BlogCard data={article} key={article._id} />)
-            .reverse()}
-        {articles.length === 0 && (
-          <button onClick={getHandler}>
-            <h1>GET THEM ALL </h1>
-          </button>
-        )}
-      </BlogCardWrapper>
-    </BlogWrapper>
+    <>
+      {' '}
+      <SmallSection
+        title='My blog'
+        description='most recent articles'
+        variant='secondary'
+      />
+      <BlogWrapper>
+        <BlogCardWrapper>
+          {articles.length > 0 &&
+            articles
+              .map((article) => <BlogCard data={article} key={article._id} />)
+              .reverse()}
+          {articles.length === 0 && (
+            <button onClick={getHandler}>
+              <h1>GET THEM ALL </h1>
+            </button>
+          )}
+        </BlogCardWrapper>
+      </BlogWrapper>
+    </>
   )
 }
 export default Blog

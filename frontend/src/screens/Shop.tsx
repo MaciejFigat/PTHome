@@ -25,7 +25,7 @@ const Shop: React.FC<ShopProps> = () => {
       <SmallSection
         title='Shop section'
         description="hey I'm a small section in the shop!"
-        variant='secondary'
+        variant='light'
       />
 
       <SectionCards cardData={cardDataOne} variant='secondary' />

@@ -17,7 +17,7 @@ const SmallSection: React.FC<SmallSectionProps> = ({
 }) => {
   return (
     <SectionContainer variant={variant}>
-      <SectionTitle>{title}</SectionTitle>
+      <SectionTitle variant={variant}>{title}</SectionTitle>
       <SectionDescription>{description}</SectionDescription>
     </SectionContainer>
   )

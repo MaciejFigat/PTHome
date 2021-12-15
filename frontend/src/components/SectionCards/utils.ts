@@ -81,7 +81,7 @@ export const handleCardContainerColor: (props: any) => {} = (props: any) => {
     boxShadow: `box-shadow: ${style.boxShadow}`,
     boxShadowHover: `box-shadow: ${style.boxShadowHover}`,
     color: `color: ${style.color}`,
-    cardBackground: `background-color: ${style.background}`,
+    cardBackground: `background-color: ${style.background} 1;`,
   }
 
 
