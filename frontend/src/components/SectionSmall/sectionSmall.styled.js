@@ -24,7 +24,7 @@ export const SectionTitle = styled.h1`
     display: block;
     position: relative;
     bottom: -10px;
-    left: -10px;
+    left: -10%;
     width: 120%;
     height: 10px;
     --angle: 0deg;

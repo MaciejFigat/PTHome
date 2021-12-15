@@ -19,6 +19,7 @@ const Exercise: React.FC<ExerciseProps> = () => {
       <SmallSection
         title='Here you can contact me'
         description='I like emails'
+        variant='dark'
       />
       <SectionCards cardData={cardDataOne} variant='primary' />
     </>
