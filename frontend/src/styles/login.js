@@ -12,6 +12,9 @@ const jump = keyframes`
 export const LoginContainer = styled.div`
   display: grid;
   place-items: center;
+  @media screen and (max-width: 760px) {
+    /* max-width: 90%; */
+  }
 `
 export const Wrapper = styled.section`
   display: flex;
