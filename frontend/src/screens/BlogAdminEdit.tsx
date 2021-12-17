@@ -23,14 +23,16 @@ import {
   AdminContainer,
   AdminWrapper,
 } from '../components/ArticleTable/ArticleTable.styled'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+import useRedirectListener from '../hooks/useRedirectListener'
 
 interface BlogAdminEditProps {}
 
 const BlogAdminEdit: React.FC<BlogAdminEditProps> = () => {
   const dispatch: any = useAppDispatch()
   const params = useParams()
-  let navigate = useNavigate()
+  // hook used to redirect to /login when not logged in
+  useRedirectListener()
   const userInfo: UserInfo = useAppSelector((state) => state.user.userInfo)
   const article: ArticleById = useAppSelector(
     (state) => state.article.articleById
@@ -69,9 +71,6 @@ const BlogAdminEdit: React.FC<BlogAdminEditProps> = () => {
   }
 
   useEffect(() => {
-    if (Object.keys(userInfo).length === 0) {
-      navigate('/login')
-    }
     if (typeof params.id === 'string') {
       dispatch(getArticleById(params.id))
     }
@@ -84,7 +83,7 @@ const BlogAdminEdit: React.FC<BlogAdminEditProps> = () => {
     dispatch,
     params,
     userInfo,
-    navigate,
+
     headlineState,
     subtitleState,
     authorState,

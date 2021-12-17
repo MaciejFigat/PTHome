@@ -45,8 +45,10 @@ const UserProfile: React.FC<UserProfileProps> = () => {
     if (Object.keys(user).length === 0) {
       navigate('/login')
     }
-    // @ts-ignore
-    dispatch(getUserDetails(id))
+
+    if (typeof id === 'string') {
+      dispatch(getUserDetails(id))
+    }
     setName(nameState)
     setEmail(emailState)
   }, [dispatch, nameState, emailState, id, user, navigate])

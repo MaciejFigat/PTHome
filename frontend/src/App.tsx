@@ -1,4 +1,3 @@
-import React from 'react'
 import Nav from './components/menu/Nav/Nav'
 import Home from './screens/Home'
 import Contact from './screens/Contact'
@@ -31,8 +30,8 @@ function App() {
       <GlobalStyle />
       <FrontPageHeader title='George B. trener personalny' />
       <Nav />
-      {/* <Switch location={location} key={location.key}> */}
-      <Routes>
+
+      <Routes location={location} key={location.key}>
         <Route path='/exercise' element={<Exercise />} />
         <Route path='/shop' element={<Shop />} />
         <Route path='/contact' element={<Contact />} />

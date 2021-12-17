@@ -12,17 +12,17 @@ import {
   LoginLink,
   LoginContainer,
 } from '../styles/login'
-import { useNavigate } from 'react-router-dom'
+import useRedirectLoggedListener from '../hooks/useRedirectListenerLogged'
 
 interface LoginProps {}
 
 const Login: React.FC<LoginProps> = () => {
   const dispatch = useAppDispatch()
-  let navigate = useNavigate()
 
+  useRedirectLoggedListener()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const user: UserInfo = useAppSelector((state) => state.user.userInfo)
+
   const userInfo = { email, password }
 
   const submitHandler = (e: any) => {
@@ -35,11 +35,6 @@ const Login: React.FC<LoginProps> = () => {
 
     dispatch(logout())
   }
-  useEffect(() => {
-    if (Object.keys(user).length > 0) {
-      navigate('/')
-    }
-  }, [user, navigate])
 
   return (
     <LoginContainer>

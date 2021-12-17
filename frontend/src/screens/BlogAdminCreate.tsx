@@ -19,14 +19,14 @@ import {
   AdminContainer,
   AdminWrapper,
 } from '../components/ArticleTable/ArticleTable.styled'
-import { useNavigate } from 'react-router-dom'
+import useRedirectListener from '../hooks/useRedirectListener'
 
 interface BlogAdminCreateProps {}
 
 const BlogAdminCreate: React.FC<BlogAdminCreateProps> = () => {
   const dispatch: any = useAppDispatch()
-  const userInfo: UserInfo = useAppSelector((state) => state.user.userInfo)
-  let navigate = useNavigate()
+  // hook used to redirect to /login when not logged in
+  useRedirectListener()
   const [topline, setTopline] = useState(
     '“That God is colouring Newton doth shew”—William Blake'
   )
@@ -57,12 +57,6 @@ const BlogAdminCreate: React.FC<BlogAdminCreateProps> = () => {
     e.preventDefault()
     dispatch(articleTest(newArticleInfo))
   }
-
-  useEffect(() => {
-    if (Object.keys(userInfo).length === 0) {
-      navigate('/login')
-    }
-  }, [userInfo, navigate])
 
   return (
     <AdminWrapper>

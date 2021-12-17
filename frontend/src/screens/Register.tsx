@@ -1,18 +1,16 @@
-import React, { useState, useEffect } from 'react'
-import { UserInfo } from '../interfaces'
+import React, { useState } from 'react'
 import { Wrapper, Form, Input, Button, LoginContainer } from '../styles/login'
-import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
+import { useAppDispatch } from '../app/reduxHooks'
 import { createUser } from '../features/users/userSlice'
 import Toast from '../components/Toast/Toast'
-import { useNavigate } from 'react-router-dom'
 
+import useRedirectLoggedListener from '../hooks/useRedirectListenerLogged'
 interface RegisterProps {}
 
 const Register: React.FC<RegisterProps> = () => {
   const dispatch: any = useAppDispatch()
-  let navigate = useNavigate()
 
-  const user: UserInfo = useAppSelector((state) => state.user.userInfo)
+  useRedirectLoggedListener()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -24,11 +22,7 @@ const Register: React.FC<RegisterProps> = () => {
 
     dispatch(createUser(newUserInfo))
   }
-  useEffect(() => {
-    if (Object.keys(user).length > 0) {
-      navigate('/')
-    }
-  }, [user, navigate])
+
   return (
     <LoginContainer>
       <Toast option='registerUser' />

@@ -10,14 +10,14 @@ import {
   AdminContainer,
   AdminWrapper,
 } from '../components/ArticleTable/ArticleTable.styled'
-import { useNavigate } from 'react-router-dom'
+import useRedirectListener from '../hooks/useRedirectListener'
 
 interface BlogAdminPreviewProps {}
 
 const BlogAdminPreview: React.FC<BlogAdminPreviewProps> = () => {
   const dispatch: any = useAppDispatch()
-  let navigate = useNavigate()
-  const userInfo: UserInfo = useAppSelector((state) => state.user.userInfo)
+
+  useRedirectListener()
   const articleTest: ArticleCreated = useAppSelector(
     (state) => state.article.articleTest
   )
@@ -45,11 +45,6 @@ const BlogAdminPreview: React.FC<BlogAdminPreviewProps> = () => {
     dispatch(createArticle(newArticleInfo))
   }
 
-  useEffect(() => {
-    if (Object.keys(userInfo).length === 0) {
-      navigate('/login')
-    }
-  }, [userInfo, navigate])
   return (
     <AdminWrapper>
       <Toast option='createArticle' />

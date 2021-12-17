@@ -23,8 +23,7 @@ const Nav: React.FC<NavProps> = () => {
   const dispatch = useAppDispatch()
 
   const userInfo: UserInfo = useAppSelector((state) => state.user.userInfo)
-  const { _id: id, name, isAdmin } = userInfo
-  const loading: boolean = useAppSelector((state) => state.user.loading)
+  const { name, isAdmin } = userInfo
 
   const [menuOpen, setMenuOpen] = useState<boolean>(false)
   const handleClickMenu = () => {

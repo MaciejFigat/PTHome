@@ -1,24 +1,14 @@
-import React, { useEffect } from 'react'
-import { UserInfo } from '../interfaces'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { SendButton } from '../components/ArticleTable/ArticleForm.styled'
 import { AdminContainer } from '../components/ArticleTable/ArticleTable.styled'
-import { useAppSelector } from '../app/reduxHooks'
-
-import { useNavigate } from 'react-router-dom'
+import useRedirectListener from '../hooks/useRedirectListener'
 
 interface AdminPanelProps {}
 
 const AdminPanel: React.FC<AdminPanelProps> = () => {
-  let navigate = useNavigate()
-
-  const userInfo: UserInfo = useAppSelector((state) => state.user.userInfo)
-
-  useEffect(() => {
-    if (Object.keys(userInfo).length === 0) {
-      navigate('/login')
-    }
-  }, [userInfo, navigate])
+  // hook used to redirect to /login when not logged in
+  useRedirectListener()
 
   return (
     <AdminContainer>

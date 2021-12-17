@@ -10,14 +10,15 @@ import {
   AdminContainer,
   AdminWrapper,
 } from '../components/ArticleTable/ArticleTable.styled'
-import { useNavigate } from 'react-router-dom'
+import useRedirectListener from '../hooks/useRedirectListener'
 
 interface BlogAdminEditPreviewProps {}
 
 const BlogAdminEditPreview: React.FC<BlogAdminEditPreviewProps> = () => {
   const dispatch: any = useAppDispatch()
-  let navigate = useNavigate()
-  const userInfo: UserInfo = useAppSelector((state) => state.user.userInfo)
+
+  useRedirectListener()
+
   const articleEdit: ArticleById = useAppSelector(
     (state) => state.article.articleById
   )
@@ -46,11 +47,6 @@ const BlogAdminEditPreview: React.FC<BlogAdminEditPreviewProps> = () => {
     dispatch(editArticle(editedArticle))
   }
 
-  useEffect(() => {
-    if (Object.keys(userInfo).length === 0) {
-      navigate('/login')
-    }
-  }, [userInfo, navigate])
   return (
     <AdminWrapper>
       <Toast option='editArticle' />

@@ -1,23 +1,14 @@
-import React, { useEffect } from 'react'
-import { useAppSelector } from '../app/reduxHooks'
-import { UserInfo } from '../interfaces'
+import React from 'react'
 import ArticleTable from '../components/ArticleTable/ArticleTable'
 import Toast from '../components/Toast/Toast'
-
 import { AdminWrapper } from '../components/ArticleTable/ArticleTable.styled'
-import { useNavigate } from 'react-router-dom'
+import useRedirectListener from '../hooks/useRedirectListener'
 
 interface BlogAdminProps {}
 
 const BlogAdmin: React.FC<BlogAdminProps> = () => {
-  const userInfo: UserInfo = useAppSelector((state) => state.user.userInfo)
-  let navigate = useNavigate()
-  useEffect(() => {
-    if (Object.keys(userInfo).length === 0) {
-      navigate('/login')
-    }
-  }, [userInfo, navigate])
-
+  // hook used to redirect to /login when not logged in
+  useRedirectListener()
   return (
     <AdminWrapper>
       <Toast option='deleteArticle' />
