@@ -3,20 +3,21 @@ import Article from '../components/BlogArticle/Article'
 import { ArticleById } from '../interfaces'
 import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
 import { getArticleById } from '../features/articles/articleSlice'
-import { RouteComponentProps } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
-interface BlogArticleProps extends RouteComponentProps<any> {}
+interface BlogArticleProps {}
 
-const BlogArticle: React.FC<BlogArticleProps> = ({ match }) => {
+const BlogArticle: React.FC<BlogArticleProps> = () => {
   const dispatch: any = useAppDispatch()
+  const params = useParams()
 
   const article: ArticleById = useAppSelector(
     (state) => state.article.articleById
   )
 
   useEffect(() => {
-    dispatch(getArticleById(match.params.id))
-  }, [dispatch, match])
+    if (typeof params.id === 'string') dispatch(getArticleById(params.id))
+  }, [dispatch, params])
   return (
     <>
       <Article data={article} />

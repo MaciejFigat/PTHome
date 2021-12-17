@@ -10,12 +10,13 @@ import {
   Table,
   TableWrapper,
 } from '../components/ArticleTable/ArticleTable.styled'
-import { RouteComponentProps } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
-interface UserListAdminProps extends RouteComponentProps<any> {}
+interface UserListAdminProps {}
 
-const UserListAdmin: React.FC<UserListAdminProps> = ({ history }) => {
+const UserListAdmin: React.FC<UserListAdminProps> = () => {
   const dispatch: any = useAppDispatch()
+  let navigate = useNavigate()
   const users: any[] = useAppSelector((state) => state.user.allUsers)
   const userSuccess = useAppSelector((state) => state.user.success)
   const userInfo: UserInfo = useAppSelector((state) => state.user.userInfo)
@@ -26,13 +27,13 @@ const UserListAdmin: React.FC<UserListAdminProps> = ({ history }) => {
   // getUsers I have to pass an argument (anything really) because my thunk in the slice needs an argument to also receive thunkAPI, when thunkAPI is alone it's not working
   useEffect(() => {
     if (Object.keys(userInfo).length === 0) {
-      history.push('/login')
+      navigate('/login')
     }
     dispatch(getUsers(1))
     if (userSuccess === true) {
       dispatch(getUsers(1))
     }
-  }, [dispatch, userInfo, history, userSuccess])
+  }, [dispatch, userInfo, navigate, userSuccess])
 
   return (
     <AdminWrapper>

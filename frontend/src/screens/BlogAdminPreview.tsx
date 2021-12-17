@@ -10,12 +10,13 @@ import {
   AdminContainer,
   AdminWrapper,
 } from '../components/ArticleTable/ArticleTable.styled'
-import { RouteComponentProps } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
-interface BlogAdminPreviewProps extends RouteComponentProps<any> {}
+interface BlogAdminPreviewProps {}
 
-const BlogAdminPreview: React.FC<BlogAdminPreviewProps> = ({ history }) => {
+const BlogAdminPreview: React.FC<BlogAdminPreviewProps> = () => {
   const dispatch: any = useAppDispatch()
+  let navigate = useNavigate()
   const userInfo: UserInfo = useAppSelector((state) => state.user.userInfo)
   const articleTest: ArticleCreated = useAppSelector(
     (state) => state.article.articleTest
@@ -46,9 +47,9 @@ const BlogAdminPreview: React.FC<BlogAdminPreviewProps> = ({ history }) => {
 
   useEffect(() => {
     if (Object.keys(userInfo).length === 0) {
-      history.push('/login')
+      navigate('/login')
     }
-  }, [userInfo, history])
+  }, [userInfo, navigate])
   return (
     <AdminWrapper>
       <Toast option='createArticle' />

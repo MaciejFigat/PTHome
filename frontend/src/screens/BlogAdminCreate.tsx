@@ -19,14 +19,14 @@ import {
   AdminContainer,
   AdminWrapper,
 } from '../components/ArticleTable/ArticleTable.styled'
-import { RouteComponentProps } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
-interface BlogAdminCreateProps extends RouteComponentProps<any> {}
+interface BlogAdminCreateProps {}
 
-const BlogAdminCreate: React.FC<BlogAdminCreateProps> = ({ history }) => {
+const BlogAdminCreate: React.FC<BlogAdminCreateProps> = () => {
   const dispatch: any = useAppDispatch()
   const userInfo: UserInfo = useAppSelector((state) => state.user.userInfo)
-
+  let navigate = useNavigate()
   const [topline, setTopline] = useState(
     '“That God is colouring Newton doth shew”—William Blake'
   )
@@ -60,9 +60,9 @@ const BlogAdminCreate: React.FC<BlogAdminCreateProps> = ({ history }) => {
 
   useEffect(() => {
     if (Object.keys(userInfo).length === 0) {
-      history.push('/login')
+      navigate('/login')
     }
-  }, [userInfo, history])
+  }, [userInfo, navigate])
 
   return (
     <AdminWrapper>

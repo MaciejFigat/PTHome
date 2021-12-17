@@ -20,10 +20,10 @@ const NavListDesktop: React.FC<NavListMobileProps> = () => {
       <ListItem>
         {' '}
         <NavLink
-          exact
           to='/home'
-          className='nav_link'
-          activeClassName='nav_link_active'
+          className={({ isActive }) =>
+            'nav_link' + (isActive ? ' activated' : '')
+          }
         >
           {' '}
           Home
@@ -32,10 +32,10 @@ const NavListDesktop: React.FC<NavListMobileProps> = () => {
       <ListItem>
         {' '}
         <NavLink
-          exact
           to='/blog'
-          className='nav_link'
-          activeClassName='nav_link_active'
+          className={({ isActive }) =>
+            'nav_link' + (isActive ? ' activated' : '')
+          }
         >
           {' '}
           Blog
@@ -44,10 +44,10 @@ const NavListDesktop: React.FC<NavListMobileProps> = () => {
       <ListItem>
         {' '}
         <NavLink
-          exact
           to='/exercise'
-          className='nav_link'
-          activeClassName='nav_link_active'
+          className={({ isActive }) =>
+            'nav_link' + (isActive ? ' activated' : '')
+          }
         >
           {' '}
           Ćwiczenia
@@ -56,10 +56,10 @@ const NavListDesktop: React.FC<NavListMobileProps> = () => {
       <ListItem>
         {' '}
         <NavLink
-          exact
           to='/shop'
-          className='nav_link'
-          activeClassName='nav_link_active'
+          className={({ isActive }) =>
+            'nav_link' + (isActive ? ' activated' : '')
+          }
         >
           {' '}
           Shop
@@ -68,10 +68,10 @@ const NavListDesktop: React.FC<NavListMobileProps> = () => {
       <ListItem>
         {' '}
         <NavLink
-          exact
           to='/contact'
-          className='nav_link'
-          activeClassName='nav_link_active'
+          className={({ isActive }) =>
+            'nav_link' + (isActive ? ' activated' : '')
+          }
         >
           {' '}
           Kontakt

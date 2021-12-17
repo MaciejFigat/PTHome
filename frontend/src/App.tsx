@@ -3,7 +3,7 @@ import Nav from './components/menu/Nav/Nav'
 import Home from './screens/Home'
 import Contact from './screens/Contact'
 import { GlobalStyle } from './styles/GlobalStyles'
-import { Switch, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import FrontPageHeader from './components/menu/FrontPageHeader/FrontPageHeader'
 import Shop from './screens/Shop'
 import Exercise from './screens/Exercise'
@@ -31,33 +31,33 @@ function App() {
       <GlobalStyle />
       <FrontPageHeader title='George B. trener personalny' />
       <Nav />
-      <Switch location={location} key={location.key}>
-        <Route exact path='/exercise' component={Exercise} />
-        <Route exact path='/shop' component={Shop} />
-        <Route exact path='/contact' component={Contact} />
-        <Route exact path='/login' component={Login} />
-        <Route exact path='/register' component={Register} />
-        <Route exact path='/blog' component={Blog} />
-        <Route exact path='/blog/article/:id' component={BlogArticle} />
-        <Route exact path='/admin' component={AdminPanel} />
-        <Route exact path='/admin/blog/manage' component={BlogAdmin} />
-        <Route exact path='/admin/blog/create' component={BlogAdminCreate} />
+      {/* <Switch location={location} key={location.key}> */}
+      <Routes>
+        <Route path='/exercise' element={<Exercise />} />
+        <Route path='/shop' element={<Shop />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/blog' element={<Blog />} />
+        <Route path='/blog/article/:id' element={<BlogArticle />} />
+        <Route path='/admin' element={<AdminPanel />} />
+        <Route path='/admin/blog/manage' element={<BlogAdmin />} />
+        <Route path='/admin/blog/create' element={<BlogAdminCreate />} />
         <Route
-          exact
           path='/admin/blog/create/preview'
-          component={BlogAdminPreview}
+          element={<BlogAdminPreview />}
         />
         <Route
-          exact
           path='/admin/blog/edit/preview'
-          component={BlogAdminEditPreview}
+          element={<BlogAdminEditPreview />}
         />
-        <Route exact path='/admin/blog/:id' component={BlogAdminEdit} />
-        <Route exact path='/admin/userlist' component={UserListAdmin} />
-        <Route exact path='/admin/user/:id/edit' component={UserAdminEdit} />
-        <Route exact path='/profile' component={UserProfile} />
-        <Route path='/' component={Home} />
-      </Switch>
+        <Route path='/admin/blog/:id' element={<BlogAdminEdit />} />
+        <Route path='/admin/userlist' element={<UserListAdmin />} />
+        <Route path='/admin/user/:id/edit' element={<UserAdminEdit />} />
+        <Route path='/profile' element={<UserProfile />} />
+        <Route path='/' element={<Home />} />
+      </Routes>
+
       <Footer />
     </>
   )

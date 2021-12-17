@@ -12,12 +12,13 @@ import {
   LoginLink,
   LoginContainer,
 } from '../styles/login'
-import { RouteComponentProps } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
-interface LoginProps extends RouteComponentProps<any> {}
+interface LoginProps {}
 
-const Login: React.FC<LoginProps> = ({ history }) => {
+const Login: React.FC<LoginProps> = () => {
   const dispatch = useAppDispatch()
+  let navigate = useNavigate()
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -36,9 +37,9 @@ const Login: React.FC<LoginProps> = ({ history }) => {
   }
   useEffect(() => {
     if (Object.keys(user).length > 0) {
-      history.push('/')
+      navigate('/')
     }
-  }, [user, history])
+  }, [user, navigate])
 
   return (
     <LoginContainer>

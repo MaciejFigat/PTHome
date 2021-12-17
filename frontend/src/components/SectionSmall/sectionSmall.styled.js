@@ -26,6 +26,10 @@ export const SectionTitle = styled.h1`
     bottom: -10px;
     left: -10%;
     width: 120%;
+    @media (max-width: 880px) {
+      width: 100%;
+      left: 0%;
+    }
     height: 10px;
     --angle: 0deg;
     border-bottom: 2px solid;

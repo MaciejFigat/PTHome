@@ -4,18 +4,21 @@ import { Link } from 'react-router-dom'
 import { SendButton } from '../components/ArticleTable/ArticleForm.styled'
 import { AdminContainer } from '../components/ArticleTable/ArticleTable.styled'
 import { useAppSelector } from '../app/reduxHooks'
-import { RouteComponentProps } from 'react-router-dom'
 
-interface AdminPanelProps extends RouteComponentProps<any> {}
+import { useNavigate } from 'react-router-dom'
 
-const AdminPanel: React.FC<AdminPanelProps> = ({ history }) => {
+interface AdminPanelProps {}
+
+const AdminPanel: React.FC<AdminPanelProps> = () => {
+  let navigate = useNavigate()
+
   const userInfo: UserInfo = useAppSelector((state) => state.user.userInfo)
 
   useEffect(() => {
     if (Object.keys(userInfo).length === 0) {
-      history.push('/login')
+      navigate('/login')
     }
-  }, [userInfo, history])
+  }, [userInfo, navigate])
 
   return (
     <AdminContainer>

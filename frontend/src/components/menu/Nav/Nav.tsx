@@ -74,36 +74,36 @@ const Nav: React.FC<NavProps> = () => {
           <HeaderTitleMobile>
             {name ? `Witaj ${name}!` : `Witaj!`}
           </HeaderTitleMobile>
-          {id && id.length > 0 && loading === false ? (
+          {Object.keys(userInfo).length > 0 ? (
             <HeaderLoginWrapper>
-              {id && isAdmin && (
+              {isAdmin && (
                 <NavLink
-                  exact
                   to='/admin'
-                  className='nav_link'
-                  activeClassName='nav_link_active'
+                  className={({ isActive }) =>
+                    'nav_link' + (isActive ? ' activated' : '')
+                  }
                 >
                   {' '}
                   <SvgIcon variant='admin' />
                 </NavLink>
               )}
-              {id && isAdmin === false && (
+              {isAdmin === false && (
                 <NavLink
-                  exact
                   to='/profile'
-                  className='nav_link'
-                  activeClassName='nav_link_active'
+                  className={({ isActive }) =>
+                    'nav_link' + (isActive ? ' activated' : '')
+                  }
                 >
                   {' '}
                   <SvgIcon variant='user' />
                 </NavLink>
               )}{' '}
               <NavLink
-                exact
                 to='/'
                 onClick={logoutHandler}
-                className='nav_link'
-                activeClassName='nav_link_active'
+                className={({ isActive }) =>
+                  'nav_link' + (isActive ? ' activated' : '')
+                }
               >
                 {' '}
                 <SvgIcon variant='logout' />
@@ -112,10 +112,10 @@ const Nav: React.FC<NavProps> = () => {
           ) : (
             <HeaderLoginWrapper>
               <NavLink
-                exact
                 to='/login'
-                className='nav_link'
-                activeClassName='nav_link_active'
+                className={({ isActive }) =>
+                  'nav_link' + (isActive ? ' activated' : '')
+                }
               >
                 {' '}
                 <SvgIcon variant='login' />
@@ -131,10 +131,10 @@ const Nav: React.FC<NavProps> = () => {
           {Object.keys(userInfo).length > 0 && isAdmin && (
             <ListLoginWrapper>
               <NavLink
-                exact
                 to='/admin'
-                className='nav_link'
-                activeClassName='nav_link_active'
+                className={({ isActive }) =>
+                  'nav_link' + (isActive ? ' activated' : '')
+                }
               >
                 {' '}
                 <SvgIcon variant='admin' />
@@ -144,10 +144,10 @@ const Nav: React.FC<NavProps> = () => {
           {Object.keys(userInfo).length > 0 && isAdmin === false && (
             <ListLoginWrapper>
               <NavLink
-                exact
                 to='/profile'
-                className='nav_link'
-                activeClassName='nav_link_active'
+                className={({ isActive }) =>
+                  'nav_link' + (isActive ? ' activated' : '')
+                }
               >
                 {' '}
                 <SvgIcon variant='user' />
@@ -157,11 +157,11 @@ const Nav: React.FC<NavProps> = () => {
           {Object.keys(userInfo).length > 0 ? (
             <ListLoginWrapper>
               <NavLink
-                exact
                 to='/'
                 onClick={logoutHandler}
-                className='nav_link'
-                activeClassName='nav_link_active'
+                className={({ isActive }) =>
+                  'nav_link' + (isActive ? ' activated' : '')
+                }
               >
                 {' '}
                 <SvgIcon variant='logout' />
@@ -170,10 +170,10 @@ const Nav: React.FC<NavProps> = () => {
           ) : (
             <ListLoginWrapper>
               <NavLink
-                exact
                 to='/login'
-                className='nav_link'
-                activeClassName='nav_link_active'
+                className={({ isActive }) =>
+                  'nav_link' + (isActive ? ' activated' : '')
+                }
               >
                 {' '}
                 <SvgIcon variant='login' />

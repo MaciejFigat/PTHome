@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import { UserInfo, ArticleById } from '../interfaces'
 import { Link } from 'react-router-dom'
 import Toast from '../components/Toast/Toast'
-import { RouteComponentProps } from 'react-router-dom'
 import { SendButton } from '../components/ArticleTable/ArticleForm.styled'
 import Article from '../components/BlogArticle/Article'
 import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
@@ -11,13 +10,13 @@ import {
   AdminContainer,
   AdminWrapper,
 } from '../components/ArticleTable/ArticleTable.styled'
+import { useNavigate } from 'react-router-dom'
 
-interface BlogAdminEditPreviewProps extends RouteComponentProps<any> {}
+interface BlogAdminEditPreviewProps {}
 
-const BlogAdminEditPreview: React.FC<BlogAdminEditPreviewProps> = ({
-  history,
-}) => {
+const BlogAdminEditPreview: React.FC<BlogAdminEditPreviewProps> = () => {
   const dispatch: any = useAppDispatch()
+  let navigate = useNavigate()
   const userInfo: UserInfo = useAppSelector((state) => state.user.userInfo)
   const articleEdit: ArticleById = useAppSelector(
     (state) => state.article.articleById
@@ -49,9 +48,9 @@ const BlogAdminEditPreview: React.FC<BlogAdminEditPreviewProps> = ({
 
   useEffect(() => {
     if (Object.keys(userInfo).length === 0) {
-      history.push('/login')
+      navigate('/login')
     }
-  }, [userInfo, history])
+  }, [userInfo, navigate])
   return (
     <AdminWrapper>
       <Toast option='editArticle' />

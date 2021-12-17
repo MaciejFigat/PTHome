@@ -85,6 +85,14 @@ body {
       color: var(--background4-main);
       display: flex;
       align-items: center;
+      
+    }
+    .nav_link.activated {
+      // color: var(--background5-main);
+      color: var(--secondary2);
+
+     
+      
     }
     .nav_link:hover  {
       color: var(--background5-main);

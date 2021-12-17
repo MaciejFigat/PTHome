@@ -3,13 +3,15 @@ import { UserInfo } from '../interfaces'
 import { Wrapper, Form, Input, Button, LoginContainer } from '../styles/login'
 import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
 import { createUser } from '../features/users/userSlice'
-import { RouteComponentProps } from 'react-router-dom'
 import Toast from '../components/Toast/Toast'
+import { useNavigate } from 'react-router-dom'
 
-interface RegisterProps extends RouteComponentProps<any> {}
+interface RegisterProps {}
 
-const Register: React.FC<RegisterProps> = ({ history }) => {
+const Register: React.FC<RegisterProps> = () => {
   const dispatch: any = useAppDispatch()
+  let navigate = useNavigate()
+
   const user: UserInfo = useAppSelector((state) => state.user.userInfo)
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -24,9 +26,9 @@ const Register: React.FC<RegisterProps> = ({ history }) => {
   }
   useEffect(() => {
     if (Object.keys(user).length > 0) {
-      history.push('/')
+      navigate('/')
     }
-  }, [user, history])
+  }, [user, navigate])
   return (
     <LoginContainer>
       <Toast option='registerUser' />

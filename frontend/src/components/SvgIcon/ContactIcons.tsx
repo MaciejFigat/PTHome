@@ -10,7 +10,7 @@ const ContactIcons: React.FC<ContactIconsProps> = () => {
   return (
     <IconsWrapper>
       <IconsItem>
-        <NavHashLink smooth to='/home/#ending' activeClassName='selected'>
+        <NavHashLink smooth to='/home/#ending'>
           <FontAwesomeIcon icon={faEnvelopeSquare} />
         </NavHashLink>
       </IconsItem>

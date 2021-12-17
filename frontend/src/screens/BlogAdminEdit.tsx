@@ -23,12 +23,14 @@ import {
   AdminContainer,
   AdminWrapper,
 } from '../components/ArticleTable/ArticleTable.styled'
-import { RouteComponentProps } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
-interface BlogAdminEditProps extends RouteComponentProps<any> {}
+interface BlogAdminEditProps {}
 
-const BlogAdminEdit: React.FC<BlogAdminEditProps> = ({ history, match }) => {
+const BlogAdminEdit: React.FC<BlogAdminEditProps> = () => {
   const dispatch: any = useAppDispatch()
+  const params = useParams()
+  let navigate = useNavigate()
   const userInfo: UserInfo = useAppSelector((state) => state.user.userInfo)
   const article: ArticleById = useAppSelector(
     (state) => state.article.articleById
@@ -68,9 +70,11 @@ const BlogAdminEdit: React.FC<BlogAdminEditProps> = ({ history, match }) => {
 
   useEffect(() => {
     if (Object.keys(userInfo).length === 0) {
-      history.push('/login')
+      navigate('/login')
     }
-    dispatch(getArticleById(match.params.id))
+    if (typeof params.id === 'string') {
+      dispatch(getArticleById(params.id))
+    }
     setTopline(toplineState)
     setHeadline(headlineState)
     setSubtitle(subtitleState)
@@ -78,9 +82,9 @@ const BlogAdminEdit: React.FC<BlogAdminEditProps> = ({ history, match }) => {
     setImgLink(imgLinkState)
   }, [
     dispatch,
-    match,
+    params,
     userInfo,
-    history,
+    navigate,
     headlineState,
     subtitleState,
     authorState,

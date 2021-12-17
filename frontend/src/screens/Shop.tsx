@@ -1,6 +1,5 @@
 import React from 'react'
 
-import SectionCards from '../components/SectionCards/SectionCards'
 import SmallSection from '../components/SectionSmall/SmallSection'
 
 interface ShopProps {}

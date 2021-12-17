@@ -15,12 +15,13 @@ import {
   AdminContainer,
   AdminWrapper,
 } from '../components/ArticleTable/ArticleTable.styled'
-import { RouteComponentProps } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
-interface UserProfileProps extends RouteComponentProps<any> {}
+interface UserProfileProps {}
 
-const UserProfile: React.FC<UserProfileProps> = ({ history }) => {
+const UserProfile: React.FC<UserProfileProps> = () => {
   const dispatch: any = useAppDispatch()
+  let navigate = useNavigate()
   const user: UserInfo = useAppSelector((state) => state.user.userInfo)
 
   const { _id: id, name: nameState, email: emailState } = user
@@ -42,13 +43,13 @@ const UserProfile: React.FC<UserProfileProps> = ({ history }) => {
   }
   useEffect(() => {
     if (Object.keys(user).length === 0) {
-      history.push('/login')
+      navigate('/login')
     }
     // @ts-ignore
     dispatch(getUserDetails(id))
     setName(nameState)
     setEmail(emailState)
-  }, [dispatch, nameState, emailState, id, user, history])
+  }, [dispatch, nameState, emailState, id, user, navigate])
   return (
     <AdminWrapper>
       <Toast option='editUser' />

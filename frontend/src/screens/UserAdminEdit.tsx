@@ -14,13 +14,14 @@ import {
   AdminContainer,
   AdminWrapper,
 } from '../components/ArticleTable/ArticleTable.styled'
-import { RouteComponentProps } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
-interface UserAdminEditProps extends RouteComponentProps<any> {}
+interface UserAdminEditProps {}
 
-const UserAdminEdit: React.FC<UserAdminEditProps> = ({ history, match }) => {
+const UserAdminEdit: React.FC<UserAdminEditProps> = () => {
   const dispatch: any = useAppDispatch()
-
+  let navigate = useNavigate()
+  const params = useParams()
   const user: UserInfo = useAppSelector((state) => state.user.selectedUserInfo)
   const userInfo: UserInfo = useAppSelector((state) => state.user.userInfo)
 
@@ -58,13 +59,14 @@ const UserAdminEdit: React.FC<UserAdminEditProps> = ({ history, match }) => {
   useEffect(() => {
     // this checks whether userInfo is empty
     if (Object.keys(userInfo).length === 0) {
-      history.push('/login')
+      navigate('/login')
     }
-    dispatch(getUserById(match.params.id))
+    // @ts-ignore
+    dispatch(getUserById(params.id))
     setName(nameState)
     setEmail(emailState)
     setIsAdmin(isAdminState)
-  }, [dispatch, match, nameState, emailState, isAdminState, userInfo, history])
+  }, [dispatch, nameState, emailState, isAdminState, userInfo, params])
 
   return (
     <AdminWrapper>
