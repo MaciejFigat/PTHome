@@ -3,6 +3,7 @@ import { UserInfo } from '../interfaces'
 import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
 import { updateUserProfile, getUserDetails } from '../features/users/userSlice'
 import Toast from '../components/Toast/Toast'
+import SmallSection from '../components/SectionSmall/SmallSection'
 
 import {
   EditFormContainer,
@@ -53,46 +54,52 @@ const UserProfile: React.FC<UserProfileProps> = () => {
     setEmail(emailState)
   }, [dispatch, nameState, emailState, id, user, navigate])
   return (
-    <AdminWrapper>
-      <Toast option='editUser' />
-      <AdminContainer>
-        <h1>Hello {nameState}!</h1> <h2>edit your account</h2>
-        <EditFormContainer>
-          <EditForm>
-            <ContactField>
-              <label>Name</label>
-              <ContactFieldContent
-                type='text'
-                value={name}
-                placeholder='Name'
-                onChange={(e: any) => setName(e.target.value)}
-              />
-            </ContactField>
-            <ContactField>
-              <label>Email</label>
-              <ContactFieldContent
-                type='text'
-                value={email}
-                placeholder='Email'
-                onChange={(e: any) => setEmail(e.target.value)}
-              />
-            </ContactField>
-            <ContactField>
-              <label>New password</label>
-              <ContactFieldContent
-                type='text'
-                value={password}
-                placeholder='password'
-                onChange={(e: any) => setPassword(e.target.value)}
-              />
-            </ContactField>
-          </EditForm>{' '}
-        </EditFormContainer>
-        <SendButton onClick={updateUserHandler} variant='success'>
-          Save changes
-        </SendButton>
-      </AdminContainer>
-    </AdminWrapper>
+    <>
+      <SmallSection
+        title='Edit your account'
+        description={name ? `${nameState}` : 'Hello'}
+        variant='primary'
+      />
+      <AdminWrapper>
+        <Toast option='editUser' />
+        <AdminContainer>
+          <EditFormContainer>
+            <EditForm>
+              <ContactField>
+                <label>Name</label>
+                <ContactFieldContent
+                  type='text'
+                  value={name}
+                  placeholder='Name'
+                  onChange={(e: any) => setName(e.target.value)}
+                />
+              </ContactField>
+              <ContactField>
+                <label>Email</label>
+                <ContactFieldContent
+                  type='text'
+                  value={email}
+                  placeholder='Email'
+                  onChange={(e: any) => setEmail(e.target.value)}
+                />
+              </ContactField>
+              <ContactField>
+                <label>New password</label>
+                <ContactFieldContent
+                  type='text'
+                  value={password}
+                  placeholder='password'
+                  onChange={(e: any) => setPassword(e.target.value)}
+                />
+              </ContactField>
+            </EditForm>{' '}
+          </EditFormContainer>
+          <SendButton onClick={updateUserHandler} variant='success'>
+            Save changes
+          </SendButton>
+        </AdminContainer>
+      </AdminWrapper>
+    </>
   )
 }
 export default UserProfile

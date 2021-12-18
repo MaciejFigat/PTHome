@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavList, ListItem, ListItemMobile } from './nav.styled'
 import { NavLink } from 'react-router-dom'
+
 import ContactIcons from '../../SvgIcon/ContactIcons'
 
 interface NavListMobileProps {}
@@ -20,9 +21,9 @@ const NavListDesktop: React.FC<NavListMobileProps> = () => {
       <ListItem>
         {' '}
         <NavLink
-          to='/home'
-          className={({ isActive }) =>
-            'nav_link' + (isActive ? ' activated' : '')
+          to='/'
+          className={(navData) =>
+            'nav_link' + (navData.isActive ? ' activated' : '')
           }
         >
           {' '}
@@ -33,8 +34,8 @@ const NavListDesktop: React.FC<NavListMobileProps> = () => {
         {' '}
         <NavLink
           to='/blog'
-          className={({ isActive }) =>
-            'nav_link' + (isActive ? ' activated' : '')
+          className={(navData) =>
+            'nav_link' + (navData.isActive ? ' activated' : '')
           }
         >
           {' '}
@@ -45,8 +46,8 @@ const NavListDesktop: React.FC<NavListMobileProps> = () => {
         {' '}
         <NavLink
           to='/exercise'
-          className={({ isActive }) =>
-            'nav_link' + (isActive ? ' activated' : '')
+          className={(navData) =>
+            'nav_link' + (navData.isActive ? ' activated' : '')
           }
         >
           {' '}
@@ -57,8 +58,8 @@ const NavListDesktop: React.FC<NavListMobileProps> = () => {
         {' '}
         <NavLink
           to='/shop'
-          className={({ isActive }) =>
-            'nav_link' + (isActive ? ' activated' : '')
+          className={(navData) =>
+            'nav_link' + (navData.isActive ? ' activated' : '')
           }
         >
           {' '}
@@ -69,8 +70,8 @@ const NavListDesktop: React.FC<NavListMobileProps> = () => {
         {' '}
         <NavLink
           to='/contact'
-          className={({ isActive }) =>
-            'nav_link' + (isActive ? ' activated' : '')
+          className={(navData) =>
+            'nav_link' + (navData.isActive ? ' activated' : '')
           }
         >
           {' '}

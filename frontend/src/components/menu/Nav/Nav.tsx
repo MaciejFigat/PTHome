@@ -78,8 +78,8 @@ const Nav: React.FC<NavProps> = () => {
               {isAdmin && (
                 <NavLink
                   to='/admin'
-                  className={({ isActive }) =>
-                    'nav_link' + (isActive ? ' activated' : '')
+                  className={(navData) =>
+                    'nav_link' + (navData.isActive ? ' activated' : '')
                   }
                 >
                   {' '}
@@ -89,8 +89,8 @@ const Nav: React.FC<NavProps> = () => {
               {isAdmin === false && (
                 <NavLink
                   to='/profile'
-                  className={({ isActive }) =>
-                    'nav_link' + (isActive ? ' activated' : '')
+                  className={(navData) =>
+                    'nav_link' + (navData.isActive ? ' activated' : '')
                   }
                 >
                   {' '}
@@ -100,8 +100,8 @@ const Nav: React.FC<NavProps> = () => {
               <NavLink
                 to='/'
                 onClick={logoutHandler}
-                className={({ isActive }) =>
-                  'nav_link' + (isActive ? ' activated' : '')
+                className={(navData) =>
+                  'nav_link' + (navData.isActive ? ' activated' : '')
                 }
               >
                 {' '}
@@ -112,8 +112,8 @@ const Nav: React.FC<NavProps> = () => {
             <HeaderLoginWrapper>
               <NavLink
                 to='/login'
-                className={({ isActive }) =>
-                  'nav_link' + (isActive ? ' activated' : '')
+                className={(navData) =>
+                  'nav_link' + (navData.isActive ? ' activated' : '')
                 }
               >
                 {' '}
@@ -131,8 +131,8 @@ const Nav: React.FC<NavProps> = () => {
             <ListLoginWrapper>
               <NavLink
                 to='/admin'
-                className={({ isActive }) =>
-                  'nav_link' + (isActive ? ' activated' : '')
+                className={(navData) =>
+                  'nav_link' + (navData.isActive ? ' activated' : '')
                 }
               >
                 {' '}
@@ -144,8 +144,8 @@ const Nav: React.FC<NavProps> = () => {
             <ListLoginWrapper>
               <NavLink
                 to='/profile'
-                className={({ isActive }) =>
-                  'nav_link' + (isActive ? ' activated' : '')
+                className={(navData) =>
+                  'nav_link' + (navData.isActive ? ' activated' : '')
                 }
               >
                 {' '}
@@ -158,8 +158,8 @@ const Nav: React.FC<NavProps> = () => {
               <NavLink
                 to='/'
                 onClick={logoutHandler}
-                className={({ isActive }) =>
-                  'nav_link' + (isActive ? ' activated' : '')
+                className={(navData) =>
+                  'nav_link' + (navData.isActive ? ' activated' : '')
                 }
               >
                 {' '}
@@ -170,8 +170,8 @@ const Nav: React.FC<NavProps> = () => {
             <ListLoginWrapper>
               <NavLink
                 to='/login'
-                className={({ isActive }) =>
-                  'nav_link' + (isActive ? ' activated' : '')
+                className={(navData) =>
+                  'nav_link' + (navData.isActive ? ' activated' : '')
                 }
               >
                 {' '}

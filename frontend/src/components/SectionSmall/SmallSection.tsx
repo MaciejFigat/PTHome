@@ -7,7 +7,7 @@ import {
 interface SmallSectionProps {
   title: string
   description?: string
-  variant?: 'dark' | 'light' | 'primary' | 'secondary'
+  variant?: 'dark' | 'light' | 'primary' | 'secondary' | 'tertiary'
 }
 
 const SmallSection: React.FC<SmallSectionProps> = ({

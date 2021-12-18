@@ -21,11 +21,20 @@ const primaryStyle: StyleVariant = {
 
 /* for color #CBC9CF */
 const secondaryStyle: StyleVariant = {
-    color: `var(--background5-main);`,
+    color: `var(--background1-main);`,
     containerBackground: `var(--secondary2);`,
     linearGradient: `
         var(--secondary1),
         var(--secondary2),
+        var(--secondary3)
+      `,
+}
+const tertiaryStyle: StyleVariant = {
+    color: `var(--background1-main);`,
+    containerBackground: `var(--secondary5);`,
+    linearGradient: `
+        var(--secondary5),
+        var(--secondary4),
         var(--secondary3)
       `,
 }
@@ -72,6 +81,9 @@ export const handleSectionColor: (props: any) => {} = (props: any) => {
 
         case 'secondary':
             style = secondaryStyle
+            break;
+        case 'tertiary':
+            style = tertiaryStyle
             break;
 
         case 'dark':

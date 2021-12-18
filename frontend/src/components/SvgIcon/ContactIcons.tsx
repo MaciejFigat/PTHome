@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavHashLink } from 'react-router-hash-link'
+import { NavLink } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'
@@ -10,9 +10,9 @@ const ContactIcons: React.FC<ContactIconsProps> = () => {
   return (
     <IconsWrapper>
       <IconsItem>
-        <NavHashLink smooth to='/home/#ending'>
+        <NavLink to='/contact'>
           <FontAwesomeIcon icon={faEnvelopeSquare} />
-        </NavHashLink>
+        </NavLink>
       </IconsItem>
       <IconsItem>
         <a
