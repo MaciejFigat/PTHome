@@ -91,6 +91,7 @@ const Footer: React.FC<FooterProps> = () => {
             colorVisibleStroke='#3C3B3D'
             colorHiddenStroke='#3C3B3D'
             colorHiddenFill='#3C3B3D'
+            version='sumo2'
           />
           <FooterRights>BestWorksYet &copy; 2021</FooterRights>
           <SocialIcons>

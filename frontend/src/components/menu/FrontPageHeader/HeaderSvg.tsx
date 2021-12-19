@@ -51,7 +51,7 @@ const HeaderSvg: React.FC<HeaderSvgProps> = ({
         return
       case 'sumo2':
         setPath(svgPathSumo2)
-        setViewBox('0 20 548 382')
+        setViewBox('0 20 548 432')
         return
       case 'woman':
         setPath(svgPathWoman)
