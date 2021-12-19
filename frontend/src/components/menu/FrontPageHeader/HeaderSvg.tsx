@@ -1,12 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { HeaderSvgContainer, HeaderSvgItem } from './frontPageHeader.styled'
+import { svgPathBirds } from './svgPathBirds'
+import { svgPathSumo } from './svgPathSumo'
+import { svgPathSumo2 } from './svgPathSumo2'
+import { svgPathWoman } from './svgPathWoman'
+import { svgPathHandstand } from './svgPathHandstand'
+import { svgPathWrestlers } from './svgPathWrestlers'
 
 interface HeaderSvgProps {
   colorVisibleFill?: string
   colorVisibleStroke?: string
   colorHiddenFill?: string
   colorHiddenStroke?: string
+  version?: 'sumo' | 'birds' | 'sumo2' | 'woman' | 'wrestlers' | 'handstand'
 }
 
 const HeaderSvg: React.FC<HeaderSvgProps> = ({
@@ -14,6 +21,7 @@ const HeaderSvg: React.FC<HeaderSvgProps> = ({
   colorVisibleStroke,
   colorHiddenFill,
   colorHiddenStroke,
+  version,
 }) => {
   const icon = {
     visible: {
@@ -28,16 +36,51 @@ const HeaderSvg: React.FC<HeaderSvgProps> = ({
       pathLength: 1,
     },
   }
+  const [path, setPath] = useState('')
+  const [viewBox, setViewBox] = useState('')
+
+  useEffect(() => {
+    switch (version) {
+      case 'birds':
+        setPath(svgPathBirds)
+        setViewBox('0 0 130 130')
+        return
+      case 'sumo':
+        setPath(svgPathSumo)
+        setViewBox('0 0 698.4375 806.25')
+        return
+      case 'sumo2':
+        setPath(svgPathSumo2)
+        setViewBox('0 20 548 382')
+        return
+      case 'woman':
+        setPath(svgPathWoman)
+        setViewBox('0 0 276 330.4277')
+        return
+      case 'handstand':
+        setPath(svgPathHandstand)
+        setViewBox('0 0 1845.9375 2584.6875')
+        return
+      case 'wrestlers':
+        setPath(svgPathWrestlers)
+        setViewBox('20 1930 1300 500')
+        return
+      default:
+        setPath(svgPathBirds)
+        setViewBox('0 0 130 130')
+        return
+    }
+  }, [version])
   return (
     <>
       <HeaderSvgContainer>
         <HeaderSvgItem
           xmlns='http://www.w3.org/2000/svg'
-          viewBox='0 0 130 130'
+          viewBox={viewBox}
           as={motion.svg}
         >
           <motion.path
-            d={svgPath}
+            d={path}
             variants={icon}
             initial='hidden'
             animate='visible'
