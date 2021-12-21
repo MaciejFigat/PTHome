@@ -13,9 +13,13 @@ interface ToastProps {
     | 'loginUser'
     | 'editUser'
     | 'deleteUser'
+    | 'sentEmail'
+    | 'errorEmail'
+    | 'warningEmail'
+  emailMessage?: string
 }
 
-const Toast: React.FC<ToastProps> = ({ option }) => {
+const Toast: React.FC<ToastProps> = ({ option, emailMessage }) => {
   const dispatch: any = useAppDispatch()
 
   const successArticle: boolean = useAppSelector(
@@ -74,11 +78,40 @@ const Toast: React.FC<ToastProps> = ({ option }) => {
           setToastMessage(`Welcome ${name}`)
         }
         break
+      case 'sentEmail':
+        setToastVariant('success')
+        if (emailMessage) {
+          setToastMessage(emailMessage)
+        }
+
+        break
+      case 'errorEmail':
+        setToastVariant('danger')
+        if (emailMessage) {
+          setToastMessage(emailMessage)
+        }
+
+        break
+      case 'warningEmail':
+        setToastVariant('warning')
+        if (emailMessage) {
+          setToastMessage(emailMessage)
+        }
+
+        break
 
       default:
         break
     }
-  }, [loadingArticle, successArticle, option, successUser, loadingUser, name])
+  }, [
+    loadingArticle,
+    successArticle,
+    option,
+    successUser,
+    loadingUser,
+    name,
+    emailMessage,
+  ])
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -95,6 +128,11 @@ const Toast: React.FC<ToastProps> = ({ option }) => {
         case 'deleteUser':
           setToastVariant('none')
           dispatch(userSuccessReset())
+          break
+        case 'sentEmail':
+        case 'errorEmail':
+        case 'warningEmail':
+          setToastVariant('none')
           break
       }
     }, 3000)

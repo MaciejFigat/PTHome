@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import emailjs from 'emailjs-com'
-// import Toast from '../Toast/Toast'
+import Toast from '../../components/Toast/Toast'
 import {
   ResponsiveDiv,
   FormContainerDiv,
@@ -18,19 +18,30 @@ const ContactForm: React.FC<ContactFormProps> = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [formMessage, setFormMessage] = useState('')
-  const [toastVersion, setToastVersion] = useState('none')
+  const [toastOption, setToastOption] = useState<
+    | 'deleteArticle'
+    | 'createArticle'
+    | 'editArticle'
+    | 'registerUser'
+    | 'loginUser'
+    | 'editUser'
+    | 'deleteUser'
+    | 'sentEmail'
+    | 'errorEmail'
+    | 'warningEmail'
+  >('warningEmail')
   const [toastMessage, setToastMessage] = useState('')
 
   const messageResetHandler = (e: any) => {
     e.preventDefault()
-    setToastVersion('reset')
-    setToastMessage('Formularz zresetowany')
+    setToastOption('warningEmail')
+    setToastMessage('Reset')
   }
 
   // EmailJS
-  const EMAILJS_ID = process.env.MY_EMAILJS_ID
-  const SERVICE_ID = process.env.MY_SERVICE_ID
-  const TEMPLATE_ID = process.env.MY_TEMPLATE_ID
+  const EMAILJS_ID = process.env.REACT_APP_MY_EMAILJS_ID
+  const SERVICE_ID = process.env.REACT_APP_MY_SERVICE_ID
+  const TEMPLATE_ID = process.env.REACT_APP_MY_TEMPLATE_ID
 
   const templateParams = {
     from_name: name,
@@ -43,36 +54,38 @@ const ContactForm: React.FC<ContactFormProps> = () => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i
     // setSpinnerVisible(true)
     if (name.length < 1) {
-      setToastVersion('failure')
+      setToastOption('warningEmail')
       // setSpinnerVisible(false)
       setToastMessage('Podaj imię')
     } else if (!regex.test(email)) {
-      setToastVersion('failure')
+      setToastOption('warningEmail')
       // setSpinnerVisible(false)
       setToastMessage('Wpisz prawidłowy email')
     } else if (formMessage.length < 3) {
-      setToastVersion('failure')
+      setToastOption('warningEmail')
       // setSpinnerVisible(false)
       setToastMessage('Wpisz wiadomość')
     } else {
-      // @ts-ignore
-      emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, EMAILJS_ID).then(
-        function () {
-          setToastVersion('success')
-          // setSpinnerVisible(false)
-          setToastMessage('Wiadomość wysłana!')
-        },
-        function () {
-          setToastVersion('failure')
-          // setSpinnerVisible(false)
-          setToastMessage('Nie udało się wysłać wiadomości')
-        }
-      )
+      if (SERVICE_ID && TEMPLATE_ID && EMAILJS_ID) {
+        emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, EMAILJS_ID).then(
+          function () {
+            setToastOption('sentEmail')
+            // setSpinnerVisible(false)
+            setToastMessage('Wiadomość wysłana')
+          },
+          function () {
+            setToastOption('errorEmail')
+            // setSpinnerVisible(false)
+            setToastMessage('Error')
+          }
+        )
+      }
     }
   }
   return (
     <>
       <FormContainerDiv>
+        <Toast option={toastOption} emailMessage={toastMessage} />
         <ResponsiveDiv>
           {' '}
           <ContactFormContainer>
