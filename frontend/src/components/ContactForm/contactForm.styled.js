@@ -3,18 +3,13 @@ import styled from 'styled-components'
 export const ResponsiveDiv = styled.div`
   display: grid;
   place-items: left;
-  border-radius: 10px;
-  width: 80vw;
+  border-radius: 4px;
+  width: 40vw;
   padding: 40px 50px 20px;
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
   background: var(--background-tertiary1);
-  box-shadow: inset 8px 8px 16px #0b0b0d, inset -8px -8px 16px #25272b;
 
-  @media (max-width: 1024px) {
-    width: 85vw;
-    padding: 20px 20px 20px;
-  }
   @media (max-width: 768px) {
     width: 90vw;
     padding: 10px 10px 10px;
@@ -23,10 +18,6 @@ export const ResponsiveDiv = styled.div`
 export const FormContainerDiv = styled.div`
   display: grid;
   place-items: center;
-  @media (min-width: 1191px) {
-    padding-top: 110px;
-    padding-bottom: 110px;
-  }
 `
 export const ContactFormContainer = styled.div`
   display: grid;
@@ -35,11 +26,7 @@ export const ContactFormContainer = styled.div`
 export const ContactFormStyled = styled.form`
   width: 85%;
   margin-top: 2rem;
-  @media (min-width: 640px) and (max-width: 798px) {
-    margin-top: 40px;
-    min-width: fit-content;
-  }
-  @media (max-width: 639px) {
+  @media (max-width: 798px) {
     min-width: fit-content;
   }
 `

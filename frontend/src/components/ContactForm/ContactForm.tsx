@@ -10,8 +10,8 @@ import {
   ContactFieldContent,
   MessageField,
   SendButtonWrapper,
-  SendButton,
 } from './contactForm.styled.js'
+import { SendButton } from '../ArticleTable/ArticleForm.styled'
 interface ContactFormProps {}
 
 const ContactForm: React.FC<ContactFormProps> = () => {
@@ -25,8 +25,9 @@ const ContactForm: React.FC<ContactFormProps> = () => {
 
   const messageResetHandler = (e: any) => {
     e.preventDefault()
-    setToastOption('warningEmail')
-    setToastMessage('Reset')
+    setName('')
+    setEmail('')
+    setFormMessage('')
   }
 
   // EmailJS
@@ -115,9 +116,13 @@ const ContactForm: React.FC<ContactFormProps> = () => {
                 ></MessageField>
               </ContactField>
               <SendButtonWrapper>
-                <SendButton onClick={emailJSSendHandler}>Wyślij</SendButton>
+                <SendButton variant='success' onClick={emailJSSendHandler}>
+                  Wyślij
+                </SendButton>
 
-                <SendButton onClick={messageResetHandler}>reset</SendButton>
+                <SendButton variant='secondary' onClick={messageResetHandler}>
+                  Usuń
+                </SendButton>
               </SendButtonWrapper>
             </ContactFormStyled>{' '}
           </ContactFormContainer>
