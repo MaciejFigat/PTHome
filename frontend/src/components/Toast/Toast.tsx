@@ -16,6 +16,7 @@ interface ToastProps {
     | 'sentEmail'
     | 'errorEmail'
     | 'warningEmail'
+    | 'noneEmail'
   emailMessage?: string
 }
 
@@ -90,6 +91,10 @@ const Toast: React.FC<ToastProps> = ({ option, emailMessage }) => {
         if (emailMessage) {
           setToastMessage(emailMessage)
         }
+
+        break
+      case 'noneEmail':
+        setToastVariant('none')
 
         break
       case 'warningEmail':

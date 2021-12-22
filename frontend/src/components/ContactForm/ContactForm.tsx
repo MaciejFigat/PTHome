@@ -19,17 +19,8 @@ const ContactForm: React.FC<ContactFormProps> = () => {
   const [email, setEmail] = useState('')
   const [formMessage, setFormMessage] = useState('')
   const [toastOption, setToastOption] = useState<
-    | 'deleteArticle'
-    | 'createArticle'
-    | 'editArticle'
-    | 'registerUser'
-    | 'loginUser'
-    | 'editUser'
-    | 'deleteUser'
-    | 'sentEmail'
-    | 'errorEmail'
-    | 'warningEmail'
-  >('warningEmail')
+    'noneEmail' | 'sentEmail' | 'errorEmail' | 'warningEmail'
+  >('noneEmail')
   const [toastMessage, setToastMessage] = useState('')
 
   const messageResetHandler = (e: any) => {
