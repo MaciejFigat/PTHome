@@ -10,7 +10,7 @@ export const ResponsiveDiv = styled.div`
   margin-bottom: 1.25rem;
   background: var(--background-tertiary1);
 
-  @media (max-width: 768px) {
+  @media (max-width: 860px) {
     width: 90vw;
     padding: 10px 10px 10px;
   }

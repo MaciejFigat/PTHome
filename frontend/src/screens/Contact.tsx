@@ -1,6 +1,6 @@
 import React from 'react'
 import ContactForm from '../components/ContactForm/ContactForm'
-import InfoSection from '../components/InfoSection/InfoSection'
+import ContactSection from '../components/ContactSection/ContactSection'
 import SmallSection from '../components/SectionSmall/SmallSection'
 
 interface ContactProps {}
@@ -22,10 +22,10 @@ const Contact: React.FC<ContactProps> = () => {
         description='I like emails'
         variant='primary'
       />
-      <InfoSection data={contactData} variant='blue' imgStart>
+      <ContactSection data={contactData} variant='blue' imgStart>
         {' '}
         <ContactForm />
-      </InfoSection>
+      </ContactSection>
     </>
   )
 }
