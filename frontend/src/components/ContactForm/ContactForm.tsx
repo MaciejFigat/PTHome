@@ -116,11 +116,21 @@ const ContactForm: React.FC<ContactFormProps> = () => {
                 ></MessageField>
               </ContactField>
               <SendButtonWrapper>
-                <SendButton variant='success' onClick={emailJSSendHandler}>
+                <SendButton
+                  variant='primary'
+                  large
+                  fontLarge
+                  onClick={emailJSSendHandler}
+                >
                   Wyślij
                 </SendButton>
 
-                <SendButton variant='secondary' onClick={messageResetHandler}>
+                <SendButton
+                  variant='secondary'
+                  large
+                  fontLarge
+                  onClick={messageResetHandler}
+                >
                   Usuń
                 </SendButton>
               </SendButtonWrapper>

@@ -1,9 +1,8 @@
 import styled from 'styled-components'
 
 export const InfoSec = styled.div`
-  color: white;
   padding: 160px 0;
-  background: white;
+  background: var(--background5-main);
   @media (max-width: 880px) {
     padding: 60px 0;
   }
@@ -22,7 +21,6 @@ export const InfoColumn = styled.div`
   margin-right: 15px;
   padding-left: 15px;
   flex: 1;
-
   flex-basis: 50%;
   @media screen and (min-width: 770px) {
     max-width: 100%;
@@ -31,6 +29,7 @@ export const InfoColumn = styled.div`
   }
 `
 export const TextWrapper = styled.div`
+  color: var(--background-tertiary2);
   max-width: 540px;
   padding-top: 0;
   padding-bottom: 60;
@@ -41,10 +40,8 @@ export const TextWrapper = styled.div`
 export const Container = styled.div`
   z-index: 1;
   max-width: 100%;
-
   margin-left: auto;
   margin-right: auto;
-
   padding-right: 50px;
   padding-left: 50px;
   @media screen and (max-width: 991px) {
@@ -53,33 +50,7 @@ export const Container = styled.div`
   }
 `
 
-export const Button = styled.button`
-  border-radius: 4px;
-  white-space: nowrap;
-  min-width: fit-content;
-  padding: '10px 20px'
-  font-size: '22px' 
-  
-  outline: none;
-  cursor: pointer;
-  border: none;
-
-
-  &:hover {
-    transition: all 0.3s ease-out;
-   
-  }
-
-  @media screen and (max-width: 760px) {
-    padding: '8px 14px';
-  }
-`
-export const ButtonLink = styled.a`
-  ${Button}:hover & {
-  }
-`
 export const TopLine = styled.div`
-  color: black;
   font-size: 18px;
   line-height: 16px;
   font-weight: 700;
@@ -91,19 +62,16 @@ export const Heading = styled.h1`
   font-size: 48px;
   line-height: 1.1;
 
-  color: black;
-
   @media screen and (max-width: 760px) {
     font-size: 36px;
   }
 `
 export const Subtitle = styled.p`
+  color: var(--background-tertiary1);
   max-width: 440px;
   margin-bottom: 35px;
   font-size: 18px;
   line-height: 24px;
-
-  color: black;
 `
 export const ImgWrapper = styled.div`
   max-width: 555px;
