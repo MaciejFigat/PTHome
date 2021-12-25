@@ -59,25 +59,6 @@ export const ContactField = styled.div`
       font-size: 18px;
     }
   }
-  /* &:after {
-    content: '';
-    display: block;
-    position: relative;
-    bottom: 24px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    --angle: 0deg;
-    border-bottom: 2px solid;
-    border-image: linear-gradient(
-        45deg,
-        var(--secondary1),
-        var(--secondary2),
-        var(--secondary3)
-      )
-      1;
-    animation: 8s rotate linear infinite; */
-  /* } */
 `
 
 export const ContactFieldContent = styled.input`

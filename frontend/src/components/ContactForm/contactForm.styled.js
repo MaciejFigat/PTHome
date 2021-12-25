@@ -8,8 +8,15 @@ export const ResponsiveDiv = styled.div`
   padding: 40px 50px 20px;
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
-  background: var(--background-tertiary2);
-
+  background: var(--background5-main);
+  transition: all 0.6s ease-out;
+  box-shadow: 0.5px 0.5px 1px var(--background4-main),
+    -0.5px -0.5px 1px var(--background1-main);
+  &:hover {
+    background: var(--background-tertiary2);
+    box-shadow: 0.5px 0.5px 1px var(--background-tertiary1),
+      -0.5px -0.5px 1px var(--background-tertiary1);
+  }
   @media (max-width: 860px) {
     width: 90vw;
     padding: 10px 10px 10px;
@@ -37,7 +44,11 @@ export const ContactField = styled.div`
   text-align: left;
 
   label {
-    color: var(--background-tertiary3);
+    color: var(--background2-main);
+    transition: all 0.3s ease-out;
+    ${ResponsiveDiv}:hover & {
+      color: var(--background-tertiary3);
+    }
     font-weight: 700;
     @media (max-width: 798px) {
       font-size: 15px;
@@ -52,15 +63,25 @@ export const ContactField = styled.div`
     width: 100%;
     height: 5px;
     --angle: 0deg;
-    border-bottom: 3px solid;
+    border-bottom: 2px solid;
     border-image: linear-gradient(
         45deg,
-        var(--background-tertiary3),
-        var(--background-tertiary1),
-        var(--background-tertiary5)
+        var(--background-tertiary5),
+        var(--background-tertiary4),
+        var(--background-tertiary3)
       )
       1;
-    animation: 8s rotate linear infinite;
+    transition: all 0.9s ease-out;
+    ${ResponsiveDiv}:hover & {
+      border-image: linear-gradient(
+          45deg,
+          var(--background-tertiary3),
+          var(--background-tertiary1),
+          var(--background-tertiary5)
+        )
+        1;
+    }
+    animation: 4s rotate linear infinite;
   }
 `
 
@@ -72,7 +93,11 @@ export const ContactFieldContent = styled.input`
   font-family: 'Quicksand', sans-serif;
   outline: none;
   border: none;
-  color: var(--background-tertiary3);
+  color: var(--background-tertiary4);
+  transition: all 0.3s ease-out;
+  ${ResponsiveDiv}:hover & {
+    color: var(--background-tertiary3);
+  }
   background: none;
   line-height: 1.2;
   cursor: text;
@@ -97,7 +122,13 @@ export const MessageField = styled(ContactFieldContent)`
   overflow-y: auto;
 `
 export const SendButtonWrapper = styled.div`
+  opacity: 0.7;
+  transition: all 0.3s ease-in;
+  ${ResponsiveDiv}:hover & {
+    opacity: 1;
+  }
   display: flex;
+
   justify-content: flex-end;
   max-width: 100%;
   margin-bottom: 1.5rem;

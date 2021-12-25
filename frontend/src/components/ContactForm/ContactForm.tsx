@@ -112,6 +112,8 @@ const ContactForm: React.FC<ContactFormProps> = () => {
                 <MessageField
                   value={formMessage}
                   placeholder='Wpisz wiadomość'
+                  as='textarea'
+                  row='8'
                   onChange={(e: any) => setFormMessage(e.target.value)}
                 ></MessageField>
               </ContactField>
