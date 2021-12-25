@@ -50,14 +50,14 @@ export const ContactField = styled.div`
     bottom: 24px;
     left: 0;
     width: 100%;
-    height: 2px;
+    height: 5px;
     --angle: 0deg;
-    border-bottom: 2px solid;
+    border-bottom: 3px solid;
     border-image: linear-gradient(
         45deg,
-        var(--color2-shadow),
-        var(--color1-shadow),
-        var(--color2-shadow)
+        var(--background-tertiary3),
+        var(--background-tertiary1),
+        var(--background-tertiary5)
       )
       1;
     animation: 8s rotate linear infinite;

@@ -21,30 +21,39 @@ interface InfoData {
 }
 
 interface ContactSectionProps {
-  data: InfoData
-  variant?: 'primary' | 'secondary' | 'tertiary' | 'blue'
+  data?: InfoData
   imgStart?: boolean
   children?: ReactNode
-  buttonLink?: string
 }
 
 const ContactSection: React.FC<ContactSectionProps> = ({
   data,
-  variant,
   imgStart,
   children,
 }) => {
   return (
     <>
       {' '}
-      <InfoSec variant={variant}>
+      <InfoSec>
         <Container>
           <InfoRow imgStart={imgStart}>
             <InfoColumn>
               <TextWrapper>
-                <TopLine variant={variant}>{data.topline}</TopLine>
-                <Heading variant={variant}>{data.headline}</Heading>
-                <Subtitle variant={variant}>{data.subtitle}</Subtitle>
+                <Heading>Lorem ipsum dolor sit.</Heading>
+                <TopLine>
+                  Lorem ipsum dolor sit amet consectetur adipisicing.
+                </TopLine>
+                <TopLine>
+                  Lorem ipsum dolor sit amet consectetur adipisicing.
+                </TopLine>
+                <TopLine>
+                  Lorem ipsum dolor sit amet consectetur adipisicing.
+                </TopLine>
+                <Heading>Join me here</Heading>
+                <Subtitle>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
+                  vero omnis harum laborum voluptatum delectus.
+                </Subtitle>
               </TextWrapper>
             </InfoColumn>
             <InfoColumn>
@@ -52,7 +61,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                 children
               ) : (
                 <ImgWrapper imgStart>
-                  <Img src={data.img}></Img>
+                  {data && <Img src={data.img}></Img>}
                 </ImgWrapper>
               )}
             </InfoColumn>
