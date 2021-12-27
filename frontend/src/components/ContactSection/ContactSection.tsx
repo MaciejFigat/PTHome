@@ -1,4 +1,4 @@
-import React, { useState, useRef, ReactNode } from 'react'
+import React, { useState, ReactNode } from 'react'
 import {
   InfoSec,
   Container,
@@ -32,17 +32,18 @@ const ContactSection: React.FC<ContactSectionProps> = ({
   children,
 }) => {
   const [copySuccess, setCopySuccess] = useState('')
-  // const textAreaRef = useRef(undefined)
 
-  const copyHandler = (e: any) => {
-    const copyText = document.getElementById('copyEmail')
-    // @ts-ignore
-    copyText.select()
-    // @ts-ignore
-    copyText.setSelectionRange(0, 99999)
-    document.execCommand('copy')
-    setCopySuccess('Copied!')
-    console.log(copySuccess)
+  const copyHandler = (id: string) => {
+    const copyText = document.getElementById(id)?.innerText
+    if (copyText) {
+      const dummy = document.createElement('textarea')
+      document.body.appendChild(dummy)
+      dummy.value = copyText
+      dummy.select()
+      document.execCommand('copy')
+      document.body.removeChild(dummy)
+      setCopySuccess('Copied!')
+    }
   }
 
   return (
@@ -63,8 +64,11 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                 <TopLine>
                   Lorem ipsum dolor sit amet consectetur adipisicing.
                 </TopLine>
-                <Heading as='textarea' id='copyEmail' onClick={copyHandler}>
-                  Join me here
+                <Heading
+                  id='copyEmail'
+                  onClick={() => copyHandler('copyEmail')}
+                >
+                  secretEmail@special.com
                 </Heading>
                 <Subtitle>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
