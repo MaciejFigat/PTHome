@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React, { useState, useRef, ReactNode } from 'react'
 import {
   InfoSec,
   Container,
@@ -31,6 +31,20 @@ const ContactSection: React.FC<ContactSectionProps> = ({
   imgStart,
   children,
 }) => {
+  const [copySuccess, setCopySuccess] = useState('')
+  // const textAreaRef = useRef(undefined)
+
+  const copyHandler = (e: any) => {
+    const copyText = document.getElementById('copyEmail')
+    // @ts-ignore
+    copyText.select()
+    // @ts-ignore
+    copyText.setSelectionRange(0, 99999)
+    document.execCommand('copy')
+    setCopySuccess('Copied!')
+    console.log(copySuccess)
+  }
+
   return (
     <>
       {' '}
@@ -49,7 +63,9 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                 <TopLine>
                   Lorem ipsum dolor sit amet consectetur adipisicing.
                 </TopLine>
-                <Heading>Join me here</Heading>
+                <Heading as='textarea' id='copyEmail' onClick={copyHandler}>
+                  Join me here
+                </Heading>
                 <Subtitle>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
                   vero omnis harum laborum voluptatum delectus.
