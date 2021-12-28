@@ -17,7 +17,7 @@ export const ResponsiveDiv = styled.div`
     box-shadow: 0.5px 0.5px 1px var(--background-tertiary1),
       -0.5px -0.5px 1px var(--background-tertiary1);
   }
-  @media (max-width: 860px) {
+  @media (max-width: 1100px) {
     width: 90vw;
     padding: 10px 10px 10px;
   }

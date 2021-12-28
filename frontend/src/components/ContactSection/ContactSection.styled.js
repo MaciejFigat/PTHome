@@ -12,7 +12,7 @@ export const InfoRow = styled.div`
   margin: 0 -15px -15px -15px;
   align-items: center;
   flex-direction: 'row-reverse';
-  @media (max-width: 860px) {
+  @media (max-width: 1100px) {
     flex-direction: column;
   }
 `
@@ -64,6 +64,33 @@ export const Heading = styled.h1`
 
   @media screen and (max-width: 760px) {
     font-size: 36px;
+  }
+`
+export const CopyHeading = styled.h1`
+  margin-bottom: 24px;
+  font-size: 36px;
+  line-height: 1.1;
+  transition: all 0.3s ease-in;
+  &:hover {
+    color: var(--background-tertiary4);
+  }
+  @media screen and (max-width: 760px) {
+    font-size: 24px;
+  }
+
+  &:after {
+    /* content: ${(props) =>
+      !!props.contentAfter ? props.contentAfter : ' 🦄'}; */
+    opacity: ${(props) => (props.contentAfter ? `1` : '0')};
+    transition: all 0.3s ease-in;
+    content: 'Copied!';
+    font-size: 18px;
+    display: block;
+    position: relative;
+    bottom: 4px;
+    left: 0;
+    width: 100%;
+    height: 5px;
   }
 `
 export const Subtitle = styled.p`

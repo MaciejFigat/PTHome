@@ -27,9 +27,7 @@ export const InfoRow = styled.div`
   flex-direction: ${({ imgStart }) =>
     imgStart === true ? 'row-reverse' : 'row'};
   @media (max-width: 880px) {
-    /* flex-wrap: nowrap; */
     flex-direction: column-reverse;
-    /* align-items: stretch; */
   }
 `
 export const InfoColumn = styled.div`
@@ -37,7 +35,6 @@ export const InfoColumn = styled.div`
   margin-right: 15px;
   padding-left: 15px;
   flex: 1;
-  /* max-width: 50%; */
   flex-basis: 50%;
   @media screen and (min-width: 770px) {
     max-width: 100%;
@@ -56,10 +53,8 @@ export const TextWrapper = styled.div`
 export const Container = styled.div`
   z-index: 1;
   max-width: 100%;
-  /* max-width: 1300px; */
   margin-left: auto;
   margin-right: auto;
-
   padding-right: 50px;
   padding-left: 50px;
   @media screen and (max-width: 991px) {

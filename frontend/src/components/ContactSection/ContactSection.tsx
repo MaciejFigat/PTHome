@@ -1,4 +1,4 @@
-import React, { useState, ReactNode } from 'react'
+import React, { useState, ReactNode, useEffect } from 'react'
 import {
   InfoSec,
   Container,
@@ -10,6 +10,7 @@ import {
   Subtitle,
   ImgWrapper,
   Img,
+  CopyHeading,
 } from './ContactSection.styled'
 
 interface InfoData {
@@ -31,7 +32,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
   imgStart,
   children,
 }) => {
-  const [copySuccess, setCopySuccess] = useState('')
+  const [copySuccess, setCopySuccess] = useState('Copied!')
 
   const copyHandler = (id: string) => {
     const copyText = document.getElementById(id)?.innerText
@@ -43,9 +44,15 @@ const ContactSection: React.FC<ContactSectionProps> = ({
       document.execCommand('copy')
       document.body.removeChild(dummy)
       setCopySuccess('Copied!')
+      console.log(copySuccess)
     }
   }
-
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setCopySuccess('')
+    }, 3000)
+    return () => clearTimeout(timer)
+  }, [copySuccess])
   return (
     <>
       {' '}
@@ -64,12 +71,13 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                 <TopLine>
                   Lorem ipsum dolor sit amet consectetur adipisicing.
                 </TopLine>
-                <Heading
+                <CopyHeading
+                  contentAfter={copySuccess}
                   id='copyEmail'
                   onClick={() => copyHandler('copyEmail')}
                 >
                   secretEmail@special.com
-                </Heading>
+                </CopyHeading>
                 <Subtitle>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
                   vero omnis harum laborum voluptatum delectus.
