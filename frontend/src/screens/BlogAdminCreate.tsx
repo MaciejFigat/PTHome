@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Toast from '../components/Toast/Toast'
-import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
-import { UserInfo } from '../interfaces'
+import { useAppDispatch } from '../app/reduxHooks'
+
 import { createArticle, articleTest } from '../features/articles/articleSlice'
 import {
   ResponsiveDiv,

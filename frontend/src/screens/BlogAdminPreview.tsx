@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import { UserInfo, ArticleCreated } from '../interfaces'
+import React from 'react'
+import { ArticleCreated } from '../interfaces'
 import { Link } from 'react-router-dom'
 import Toast from '../components/Toast/Toast'
 import { SendButton } from '../components/ArticleTable/ArticleForm.styled'

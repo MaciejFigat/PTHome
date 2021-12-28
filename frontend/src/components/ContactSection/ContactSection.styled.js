@@ -79,11 +79,10 @@ export const CopyHeading = styled.h1`
   }
 
   &:after {
-    /* content: ${(props) =>
-      !!props.contentAfter ? props.contentAfter : ' 🦄'}; */
+    color: var(--background-tertiary4);
+    content: '${(props) => props.contentAfter}';
     opacity: ${(props) => (props.contentAfter ? `1` : '0')};
     transition: all 0.3s ease-in;
-    content: 'Copied!';
     font-size: 18px;
     display: block;
     position: relative;

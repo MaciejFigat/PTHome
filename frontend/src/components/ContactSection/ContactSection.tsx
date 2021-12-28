@@ -47,6 +47,13 @@ const ContactSection: React.FC<ContactSectionProps> = ({
       console.log(copySuccess)
     }
   }
+  const hoverHelper = () => {
+    setCopySuccess('Copy to clipboard?')
+  }
+  const leaveHelper = () => {
+    setCopySuccess('')
+  }
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setCopySuccess('')
@@ -75,6 +82,8 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                   contentAfter={copySuccess}
                   id='copyEmail'
                   onClick={() => copyHandler('copyEmail')}
+                  onMouseEnter={() => hoverHelper()}
+                  onMouseLeave={() => leaveHelper()}
                 >
                   secretEmail@special.com
                 </CopyHeading>

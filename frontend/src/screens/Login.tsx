@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import { UserInfo } from '../interfaces'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
+import { useAppDispatch } from '../app/reduxHooks'
 import { logout, sendUserId } from '../features/users/userSlice'
 import {
   Wrapper,
@@ -32,7 +31,6 @@ const Login: React.FC<LoginProps> = () => {
 
   const logoutHandler = (e: any) => {
     e.preventDefault()
-
     dispatch(logout())
   }
 

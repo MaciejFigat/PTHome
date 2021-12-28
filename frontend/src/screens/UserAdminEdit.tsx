@@ -61,12 +61,21 @@ const UserAdminEdit: React.FC<UserAdminEditProps> = () => {
     if (Object.keys(userInfo).length === 0) {
       navigate('/login')
     }
-    // @ts-ignore
-    dispatch(getUserById(params.id))
-    setName(nameState)
-    setEmail(emailState)
-    setIsAdmin(isAdminState)
-  }, [dispatch, nameState, emailState, isAdminState, userInfo, params])
+    if (typeof params.id === 'string') {
+      dispatch(getUserById(params.id))
+      setName(nameState)
+      setEmail(emailState)
+      setIsAdmin(isAdminState)
+    }
+  }, [
+    dispatch,
+    nameState,
+    emailState,
+    isAdminState,
+    userInfo,
+    params,
+    navigate,
+  ])
 
   return (
     <AdminWrapper>
