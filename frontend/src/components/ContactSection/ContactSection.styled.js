@@ -79,14 +79,14 @@ export const CopyHeading = styled.h1`
   }
 
   &:after {
-    color: var(--background-tertiary4);
+    color: var(--background-tertiary2);
     content: '${(props) => props.contentAfter}';
     opacity: ${(props) => (props.contentAfter ? `1` : '0')};
     transition: all 0.3s ease-in;
     font-size: 18px;
     display: block;
     position: relative;
-    bottom: 4px;
+    bottom: 0px;
     left: 0;
     width: 100%;
     height: 5px;

@@ -1,4 +1,5 @@
 import React, { useState, ReactNode, useEffect } from 'react'
+import SocialIcons from '../SvgIcon/SocialIcons'
 import {
   InfoSec,
   Container,
@@ -87,6 +88,8 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                 >
                   secretEmail@special.com
                 </CopyHeading>
+
+                <SocialIcons />
                 <Subtitle>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
                   vero omnis harum laborum voluptatum delectus.

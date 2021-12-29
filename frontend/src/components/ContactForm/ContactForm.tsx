@@ -12,6 +12,8 @@ import {
   SendButtonWrapper,
 } from './contactForm.styled.js'
 import { SendButton } from '../ArticleTable/ArticleForm.styled'
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 interface ContactFormProps {}
 
 const ContactForm: React.FC<ContactFormProps> = () => {
@@ -133,7 +135,7 @@ const ContactForm: React.FC<ContactFormProps> = () => {
                   fontLarge
                   onClick={messageResetHandler}
                 >
-                  Usuń
+                  <FontAwesomeIcon icon={faTrashAlt} />
                 </SendButton>
               </SendButtonWrapper>
             </ContactFormStyled>{' '}
