@@ -7,6 +7,7 @@ export const IconsWrapper = styled.ul`
   justify-content: left;
   flex-direction: row;
   font-size: 1.8rem;
+  min-width: fit-content;
   @media (max-width: 360px) {
     font-size: 1.5rem;
   }
@@ -26,7 +27,8 @@ export const IconsItemDiv = styled.div`
 export const IconsItem = styled.li`
   display: grid;
   place-items: center;
-
+  width: 100%;
+  height: 100%;
   a {
     color: var(--background-tertiary2);
     ${IconsItemDiv}:hover & {

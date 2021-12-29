@@ -21,7 +21,7 @@ export const TransitionWrapper = styled.div`
 export const NavContainer = styled.nav`
   display: flex;
   justify-content: space-around;
-  max-width: 50%;
+  /* max-width: 50%; */
   position: sticky;
   top: 0;
   height: fit-content;
@@ -32,10 +32,8 @@ export const NavContainer = styled.nav`
   @media (max-width: 1020px) {
     flex-direction: column;
     justify-content: center;
-    /* max-width: 99.5vw; */
     max-width: 100%;
     transform: translateX(-130%);
-    /* min-width: 100vw; */
     transition: all 200ms ease-in;
     &.true {
       transition: all 300ms ease-in;
@@ -51,8 +49,13 @@ export const NavList = styled.ul`
   padding: 0;
   min-width: 50vw;
   @media (max-width: 1020px) {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    height: calc(100vh - 50px);
     flex-direction: column;
-    padding-top: 3rem;
+    justify-content: center;
+    min-height: 85vh;
     max-width: 50vw;
     padding-bottom: 3rem;
     gap: 1.75rem;
