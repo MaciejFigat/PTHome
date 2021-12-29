@@ -86,10 +86,11 @@ export const FooterLinksItems = styled.div`
   margin: 18px;
   box-sizing: border-box;
   color: var(--background4-main);
-  @media screen and (max-width: 770px) {
-    margin: 0;
-    padding: 10px;
-    width: 100%;
+  @media screen and (max-width: 880px) {
+    padding: 0px;
+    width: 80%;
+    margin: 0px;
+    margin-left: 3px;
   }
 `
 export const FooterLinkTitle = styled.h2`

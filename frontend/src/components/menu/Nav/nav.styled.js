@@ -21,21 +21,21 @@ export const TransitionWrapper = styled.div`
 export const NavContainer = styled.nav`
   display: flex;
   justify-content: space-around;
-
+  max-width: 50%;
   position: sticky;
   top: 0;
-
   height: fit-content;
-  max-width: 100vw;
+  /* max-width: 100vw; */
   background: var(--background1-main);
   box-shadow: inset 20px 20px 40px #171718, inset -20px -20px 40px #252526;
 
   @media (max-width: 1020px) {
     flex-direction: column;
     justify-content: center;
-    max-width: fit-content;
+    /* max-width: 99.5vw; */
+    max-width: 100%;
     transform: translateX(-130%);
-    min-width: 100vw;
+    /* min-width: 100vw; */
     transition: all 200ms ease-in;
     &.true {
       transition: all 300ms ease-in;
@@ -53,6 +53,7 @@ export const NavList = styled.ul`
   @media (max-width: 1020px) {
     flex-direction: column;
     padding-top: 3rem;
+    max-width: 50vw;
     padding-bottom: 3rem;
     gap: 1.75rem;
   }
@@ -87,7 +88,7 @@ export const ListItem = styled.li`
   }
 `
 
-export const ListItemMobile = styled.li`
+export const ListItemMobile = styled.div`
   font-weight: 500;
   display: none;
   font-size: 1.25rem;
@@ -97,8 +98,9 @@ export const ListItemMobile = styled.li`
   flex-direction: column;
   padding: 0.5rem;
   @media (max-width: 1020px) {
-    align-items: center;
+    align-items: left;
     display: flex;
+    margin-left: 0.5rem;
   }
 `
 

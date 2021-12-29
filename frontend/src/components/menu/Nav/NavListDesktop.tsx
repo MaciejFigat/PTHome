@@ -1,6 +1,7 @@
 import React from 'react'
-import { NavList, ListItem } from './nav.styled'
+import { NavList, ListItem, ListItemMobile } from './nav.styled'
 import { NavLink } from 'react-router-dom'
+import SocialIcons from '../../SvgIcon/SocialIcons'
 
 interface NavListMobileProps {}
 
@@ -67,6 +68,10 @@ const NavListDesktop: React.FC<NavListMobileProps> = () => {
           Kontakt
         </NavLink>
       </ListItem>
+
+      <ListItemMobile>
+        <SocialIcons />
+      </ListItemMobile>
     </NavList>
   )
 }
