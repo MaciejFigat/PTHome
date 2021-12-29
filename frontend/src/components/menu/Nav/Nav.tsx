@@ -70,9 +70,7 @@ const Nav: React.FC<NavProps> = () => {
           <div onClick={handleClickMenu}>
             <Burger menuOpen={menuOpen} />
           </div>{' '}
-          <HeaderTitleMobile>
-            {name ? `Witaj ${name}!` : `Witaj!`}
-          </HeaderTitleMobile>
+          <HeaderTitleMobile>{name && `${name}`}</HeaderTitleMobile>
           {Object.keys(userInfo).length > 0 ? (
             <HeaderLoginWrapper>
               {isAdmin && (
@@ -124,7 +122,7 @@ const Nav: React.FC<NavProps> = () => {
         </MobileViewContainer>
         <NavContainer className={menuOpen} onClick={handleCloseMenu}>
           <HeaderTitleDesktop className={scrollTop === true ? 'hide' : 'show'}>
-            {name ? `Witaj ${name}!` : `Witaj!`}
+            {name && `${name}`}
           </HeaderTitleDesktop>
           <NavListDesktop />
           {Object.keys(userInfo).length > 0 && isAdmin && (

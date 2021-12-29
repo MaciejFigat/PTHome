@@ -122,7 +122,7 @@ export const HeaderTitleMobile = styled.h1`
   display: none;
   max-width: fit-content;
   @media (max-width: 1020px) {
-    /* display: block; */
+    display: block;
     font-size: 1.25rem;
   }
 `

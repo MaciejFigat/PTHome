@@ -2,6 +2,7 @@ import React from 'react'
 import { NavList, ListItem, ListItemMobile } from './nav.styled'
 import { NavLink } from 'react-router-dom'
 import SocialIcons from '../../SvgIcon/SocialIcons'
+import HeaderSvg from '../FrontPageHeader/HeaderSvg'
 
 interface NavListMobileProps {}
 
@@ -70,6 +71,7 @@ const NavListDesktop: React.FC<NavListMobileProps> = () => {
       </ListItem>
 
       <ListItemMobile>
+        <HeaderSvg version='handstand' />
         <SocialIcons />
       </ListItemMobile>
     </NavList>
