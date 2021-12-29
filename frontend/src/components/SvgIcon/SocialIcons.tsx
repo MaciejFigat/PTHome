@@ -1,9 +1,9 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-  faFacebook,
+  faFacebookF,
   faInstagram,
-  faTelegram,
+  faTelegramPlane,
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons'
 import { IconsItem, IconsWrapper, IconsItemDiv } from './SocialIcons.styled'
@@ -20,7 +20,7 @@ const SocialIcons: React.FC<SocialIconsProps> = () => {
               aria-label='telegram'
             >
               {' '}
-              <FontAwesomeIcon icon={faTelegram} />
+              <FontAwesomeIcon icon={faTelegramPlane} />
             </a>
           </IconsItem>
         </IconsItemDiv>
@@ -51,7 +51,7 @@ const SocialIcons: React.FC<SocialIconsProps> = () => {
               href='https://www.facebook.com/profile.php?id=100044161188998'
               aria-label='facebook'
             >
-              <FontAwesomeIcon icon={faFacebook} />
+              <FontAwesomeIcon icon={faFacebookF} />
             </a>
           </IconsItem>
         </IconsItemDiv>

@@ -92,28 +92,25 @@ const ContactForm: React.FC<ContactFormProps> = () => {
             /> */}
             <ContactFormStyled>
               <ContactField>
-                <label> Imię</label>
                 <ContactFieldContent
                   type='text'
                   value={name}
-                  placeholder='Wpisz swoje imię'
+                  placeholder='Name'
                   onChange={(e: any) => setName(e.target.value)}
                 />
               </ContactField>
               <ContactField>
-                <label> Email:</label>
                 <ContactFieldContent
                   type='email'
                   value={email}
-                  placeholder='Wpisz email kontaktowy'
+                  placeholder='Email'
                   onChange={(e: any) => setEmail(e.target.value)}
                 />
               </ContactField>
               <ContactField>
-                <label> Wiadomość:</label>
                 <MessageField
                   value={formMessage}
-                  placeholder='Wpisz wiadomość'
+                  placeholder='Message'
                   as='textarea'
                   row='8'
                   onChange={(e: any) => setFormMessage(e.target.value)}

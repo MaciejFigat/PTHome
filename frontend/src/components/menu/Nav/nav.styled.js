@@ -15,9 +15,7 @@ export const TransitionWrapperMain = styled.div`
 export const TransitionWrapper = styled.div`
   position: sticky;
   top: 0;
-  /* min-width: 100vw; */
   max-height: 3.2rem;
-
   background: var(--background1-main);
 `
 export const NavContainer = styled.nav`
@@ -49,13 +47,14 @@ export const NavContainer = styled.nav`
 export const NavList = styled.ul`
   list-style: none;
   display: flex;
-
-  /* justify-content: flex-start; */
   justify-content: space-around;
   padding: 0;
   min-width: 50vw;
   @media (max-width: 1020px) {
     flex-direction: column;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    gap: 1.75rem;
   }
 `
 export const ListLoginWrapper = styled.div`
@@ -80,11 +79,11 @@ export const ListItem = styled.li`
   color: var(--background5-main);
   @media (max-width: 1020px) {
     flex-direction: column;
-    align-items: center;
-    font-size: 1.15rem;
+    align-content: flex-start;
+    font-size: 2.55rem;
     margin-right: 0.25rem;
-    padding: 0.5rem;
-    margin: 0;
+    margin-left: 1.25rem;
+    font-weight: 800;
   }
 `
 
@@ -95,7 +94,6 @@ export const ListItemMobile = styled.li`
   margin-right: 0.25rem;
   color: var(--background5-main);
   margin: 0;
-
   flex-direction: column;
   padding: 0.5rem;
   @media (max-width: 1020px) {
@@ -108,7 +106,6 @@ export const MobileViewContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
   margin: 0 1.5rem 0 1rem;
   /* this below fixes the irritating gap in nav when you scroll it down */
   margin-top: -1px !important;

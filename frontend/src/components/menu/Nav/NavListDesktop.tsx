@@ -1,23 +1,12 @@
 import React from 'react'
-import { NavList, ListItem, ListItemMobile } from './nav.styled'
+import { NavList, ListItem } from './nav.styled'
 import { NavLink } from 'react-router-dom'
-
-import ContactIcons from '../../SvgIcon/ContactIcons'
 
 interface NavListMobileProps {}
 
 const NavListDesktop: React.FC<NavListMobileProps> = () => {
   return (
     <NavList>
-      <ListItemMobile>
-        {' '}
-        <b>Trener personalny</b>
-      </ListItemMobile>
-      <ListItemMobile>
-        {' '}
-        <ContactIcons />
-      </ListItemMobile>
-
       <ListItem>
         {' '}
         <NavLink

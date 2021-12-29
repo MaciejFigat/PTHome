@@ -43,17 +43,6 @@ export const ContactField = styled.div`
   flex-direction: column;
   text-align: left;
 
-  label {
-    color: var(--background2-main);
-    transition: all 0.3s ease-out;
-    ${ResponsiveDiv}:hover & {
-      color: var(--background-tertiary3);
-    }
-    font-weight: 700;
-    @media (max-width: 798px) {
-      font-size: 15px;
-    }
-  }
   &:after {
     content: '';
     display: block;
@@ -87,8 +76,8 @@ export const ContactField = styled.div`
 
 export const ContactFieldContent = styled.input`
   &::placeholder {
-    color: var(--text3-main);
-    font-weight: 300;
+    color: var(--background3-main);
+    font-weight: 500;
   }
   font-family: 'Quicksand', sans-serif;
   outline: none;
