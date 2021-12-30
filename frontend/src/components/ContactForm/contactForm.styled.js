@@ -78,6 +78,9 @@ export const ContactFieldContent = styled.input`
   &::placeholder {
     color: var(--background3-main);
     font-weight: 500;
+    ${ResponsiveDiv}:hover & {
+      color: var(--background-tertiary3);
+    }
   }
   font-family: 'Quicksand', sans-serif;
   outline: none;

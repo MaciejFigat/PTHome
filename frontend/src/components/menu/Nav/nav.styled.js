@@ -99,6 +99,7 @@ export const ListItemMobile = styled.div`
   color: var(--background5-main);
   margin: 0;
   flex-direction: column;
+  gap: 2rem;
   padding: 0.5rem;
   @media (max-width: 1020px) {
     align-items: left;

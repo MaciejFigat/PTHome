@@ -119,7 +119,9 @@ export const SendButton = styled.button`
     /* buttonColorHover */
     ${(props) => handleButtonColor(props).buttonColorHover}
     /* buttonColor as color for the link nested inside the Button */
-  a {
+    border: none;
+    ${(props) => handleButtonColor(props).buttonBorderHover};
+    a {
       transition: all 0.3s ease-out;
       ${(props) => handleButtonColor(props).buttonColorHover}
     }
@@ -127,6 +129,7 @@ export const SendButton = styled.button`
   font-family: 'Quicksand', sans-serif;
   outline: none;
   border: none;
+  ${(props) => handleButtonColor(props).buttonBorder};
   padding: ${({ large }) => (large ? '12px 40px 38px' : '10px 20px 25px')};
   font-size: ${({ fontLarge }) => (fontLarge ? '20px' : '14px')};
   margin: 5px 0px 5px 10px;

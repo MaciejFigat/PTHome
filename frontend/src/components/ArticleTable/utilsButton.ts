@@ -3,6 +3,8 @@ interface StyleVariant {
     buttonBackground: string
     buttonBackgroundHover: string
     buttonColorHover: string
+    buttonBorder?: string
+    buttonBorderHover?: string
 }
 
 
@@ -18,6 +20,14 @@ const primaryStyle: StyleVariant = {
     buttonBackgroundHover: 'var(--background4-main);',
     buttonColorHover: 'var(--background1-main);'
 }
+const primaryEmptyStyle: StyleVariant = {
+    buttonColor: 'var(--background1-main);',
+    buttonBackground: 'transparent;',
+    buttonBackgroundHover: 'transparent;',
+    buttonColorHover: 'var(--background-tertiary3);',
+    buttonBorder: '2px solid var(--background-tertiary3);',
+    buttonBorderHover: '2px solid var(--background-tertiary1);',
+}
 
 
 const secondaryStyle: StyleVariant = {
@@ -25,6 +35,15 @@ const secondaryStyle: StyleVariant = {
     buttonBackground: 'var(--secondary1);',
     buttonBackgroundHover: 'var(--secondary2);',
     buttonColorHover: 'var(--secondary1);'
+
+}
+const secondaryEmptyStyle: StyleVariant = {
+    buttonColor: 'var(--secondary4);',
+    buttonBackground: 'transparent;',
+    buttonBorder: '2px solid var(--secondary4);',
+    buttonBorderHover: '2px solid var(--secondary3);',
+    buttonBackgroundHover: 'transparent;',
+    buttonColorHover: 'var(--secondary3);',
 
 }
 
@@ -60,6 +79,12 @@ export const handleButtonColor: (props: any) => {} = (props: any) => {
         case 'primary':
             style = primaryStyle
             break;
+        case 'primaryEmpty':
+            style = primaryEmptyStyle
+            break;
+        case 'secondaryEmpty':
+            style = secondaryEmptyStyle
+            break;
 
         case 'secondary':
             style = secondaryStyle
@@ -88,6 +113,8 @@ export const handleButtonColor: (props: any) => {} = (props: any) => {
         buttonBackground: `background-color: ${style.buttonBackground}`,
         buttonBackgroundHover: `background-color: ${style.buttonBackgroundHover}`,
         buttonColorHover: `color: ${style.buttonColorHover}`,
+        buttonBorder: `border: ${style.buttonBorder}`,
+        buttonBorderHover: `border: ${style.buttonBorderHover}`
     }
 }
 

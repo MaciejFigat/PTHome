@@ -51,11 +51,14 @@ export const Container = styled.div`
 `
 
 export const TopLine = styled.div`
-  font-size: 18px;
+  font-size: 22px;
   line-height: 16px;
   font-weight: 700;
   letter-spacing: 1.4px;
   margin-bottom: 10px;
+  @media screen and (max-width: 880px) {
+    font-size: 18px;
+  }
 `
 export const Heading = styled.h1`
   margin-bottom: 24px;

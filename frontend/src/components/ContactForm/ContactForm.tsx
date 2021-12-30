@@ -118,7 +118,7 @@ const ContactForm: React.FC<ContactFormProps> = () => {
               </ContactField>
               <SendButtonWrapper>
                 <SendButton
-                  variant='primary'
+                  variant='primaryEmpty'
                   large
                   fontLarge
                   onClick={emailJSSendHandler}
@@ -127,7 +127,7 @@ const ContactForm: React.FC<ContactFormProps> = () => {
                 </SendButton>
 
                 <SendButton
-                  variant='secondary'
+                  variant='secondaryEmpty'
                   large
                   fontLarge
                   onClick={messageResetHandler}
