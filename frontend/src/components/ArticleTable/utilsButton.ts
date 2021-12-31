@@ -5,6 +5,8 @@ interface StyleVariant {
     buttonColorHover: string
     buttonBorder?: string
     buttonBorderHover?: string
+    buttonColorActive?: string
+    buttonBorderActive?: string
 }
 
 
@@ -21,12 +23,14 @@ const primaryStyle: StyleVariant = {
     buttonColorHover: 'var(--background1-main);'
 }
 const primaryEmptyStyle: StyleVariant = {
-    buttonColor: 'var(--background1-main);',
+    buttonColor: 'var(--background-tertiary3);',
     buttonBackground: 'transparent;',
     buttonBackgroundHover: 'transparent;',
-    buttonColorHover: 'var(--background-tertiary3);',
+    buttonColorHover: 'var(--background-secondary4);',
     buttonBorder: '2px solid var(--background-tertiary3);',
-    buttonBorderHover: '2px solid var(--background-tertiary1);',
+    buttonBorderHover: '2px solid var(--background-tertiary4);',
+    buttonColorActive: 'var(--background-secondary2);',
+    buttonBorderActive: 'var(--background-secondary2);'
 }
 
 
@@ -41,9 +45,11 @@ const secondaryEmptyStyle: StyleVariant = {
     buttonColor: 'var(--secondary4);',
     buttonBackground: 'transparent;',
     buttonBorder: '2px solid var(--secondary4);',
-    buttonBorderHover: '2px solid var(--secondary3);',
+    buttonBorderHover: '2px solid var(--secondary5);',
     buttonBackgroundHover: 'transparent;',
-    buttonColorHover: 'var(--secondary3);',
+    buttonColorHover: 'var(--secondary5);',
+    buttonColorActive: 'var(--secondary4);',
+    buttonBorderActive: 'var(--secondary4);'
 
 }
 
@@ -114,7 +120,9 @@ export const handleButtonColor: (props: any) => {} = (props: any) => {
         buttonBackgroundHover: `background-color: ${style.buttonBackgroundHover}`,
         buttonColorHover: `color: ${style.buttonColorHover}`,
         buttonBorder: `border: ${style.buttonBorder}`,
-        buttonBorderHover: `border: ${style.buttonBorderHover}`
+        buttonBorderHover: `border: ${style.buttonBorderHover}`,
+        buttonColorActive: `color: ${style.buttonColorActive}`,
+        buttonBorderActive: `border: 2px solid ${style.buttonBorderActive}`
     }
 }
 

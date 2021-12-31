@@ -8,7 +8,7 @@ export const ResponsiveDiv = styled.div`
   padding: 40px 50px 20px;
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
-  background: var(--background5-main);
+  background: var(--background-secondary2);
   transition: all 0.6s ease-out;
   box-shadow: 0.5px 0.5px 1px var(--background4-main),
     -0.5px -0.5px 1px var(--background1-main);
@@ -76,7 +76,7 @@ export const ContactField = styled.div`
 
 export const ContactFieldContent = styled.input`
   &::placeholder {
-    color: var(--background3-main);
+    color: var(--background-secondary3);
     font-weight: 500;
     ${ResponsiveDiv}:hover & {
       color: var(--background-tertiary3);
@@ -101,7 +101,6 @@ export const ContactFieldContent = styled.input`
   margin-bottom: 20px;
   transition: 1.9s;
   font-weight: 600;
-
   @media (max-width: 798px) {
     font-size: 15px;
     font-weight: 500;
@@ -114,13 +113,7 @@ export const MessageField = styled(ContactFieldContent)`
   overflow-y: auto;
 `
 export const SendButtonWrapper = styled.div`
-  opacity: 0.7;
-  transition: all 0.3s ease-in;
-  ${ResponsiveDiv}:hover & {
-    opacity: 1;
-  }
   display: flex;
-
   justify-content: flex-end;
   max-width: 100%;
   margin-bottom: 1.5rem;

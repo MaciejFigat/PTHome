@@ -108,10 +108,14 @@ export const SendButton = styled.button`
   /* buttonBackground */
   ${(props) => handleButtonColor(props).buttonBackground}
   ${(props) => handleButtonColor(props).buttonColor}
+  &:active:hover {
+    ${(props) => handleButtonColor(props).buttonColorActive}
+  }
   /* color for the link inside the button */
   a {
     ${(props) => handleButtonColor(props).buttonColor}
   }
+
   &:hover {
     transition: all 0.3s ease-out;
     /* buttonBackgroundHover */
@@ -142,7 +146,14 @@ export const SendButton = styled.button`
   font-weight: 700;
   text-align: center;
   transition: 0.5s;
+  &:active {
+    opacity: 0.9;
+    ${(props) => handleButtonColor(props).buttonBorderActive}
 
+    a {
+      ${(props) => handleButtonColor(props).buttonColorActive}
+    }
+  }
   @media (max-width: 798px) {
     /* padding: 25px 20px 25px; */
     height: 2vh;
