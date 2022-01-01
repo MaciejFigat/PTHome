@@ -1,4 +1,3 @@
-import sumo2 from '../assets/sumo2.svg'
 import sumo from '../assets/sumo.svg'
 import woman from '../assets/woman.svg'
 import handstand from '../assets/handstand.svg'
@@ -9,7 +8,7 @@ export const homeData = {
     'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure, mollitia?',
   subtitle:
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat perspiciatis non deleniti doloremque, iure laudantium quaerat esse odit. Similique nihil voluptate voluptatem sed tempora sunt libero, saepe corrupti laboriosam suscipit.',
-  img: sumo2,
+  img: sumo,
   buttonLabel: 'Wallace Stevens',
 }
 
