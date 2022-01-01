@@ -1,19 +1,15 @@
 {
-  "name": "ptHome",
+  "name": "pthome",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
-    "build": "tsc backend/src/server",
-    "start": "npm run build && node build/index.js",
+    "build": "npm run build --prefix backend",
+    "start": "npm run build && node backend/build/src/server.js",
     "client": "npm start --prefix frontend",
-    "server": "nodemon --exec ts-node backend/src/server.ts",
+    "server": "nodemon --exec ts-node backend/src/server",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "data:import": "node backend/src/seeder",
-    "data:destroy": "node backend/src/seeder -d",
-    "blogData:import": "node backend/src/seederBlog.mjs",
-    "blogData:destroy": "node backend/src/seederBlog -d"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",

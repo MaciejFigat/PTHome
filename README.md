@@ -3,3 +3,5 @@ build script versions:
 
 "build": "rimraf backend/src/server.js && tsc backend/src/server.ts",
 "build": "tsc backend/src/server.ts",
+
+"start": "npm run build && node build/index.js",
