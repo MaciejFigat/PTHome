@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "build": "tsc backend/src/server.ts",
+    "build": "tsc backend/src/server",
     "start": "npm run build && node build/index.js",
     "client": "npm start --prefix frontend",
     "server": "nodemon --exec ts-node backend/src/server.ts",
