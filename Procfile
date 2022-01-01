@@ -1,3 +1,3 @@
 
-web: npm start
-22222web: node backend/build/src/server.js
+web: node backend/build/src/server.js
+2222web: npm start
