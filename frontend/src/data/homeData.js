@@ -1,14 +1,15 @@
-import sumo from '../assets/sumo.svg'
-import woman from '../assets/woman.svg'
-import handstand from '../assets/handstand.svg'
-import proWrestlers from '../assets/proWrestlers.svg'
+import sumo2 from '../assets/sumo2'
+import sumo from '../assets/sumo'
+import woman from '../assets/woman'
+import handstand from '../assets/handstand'
+import proWrestlers from '../assets/proWrestlers'
 export const homeData = {
   topline: 'Lorem ipsum dolor sit.',
   headline:
     'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure, mollitia?',
   subtitle:
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat perspiciatis non deleniti doloremque, iure laudantium quaerat esse odit. Similique nihil voluptate voluptatem sed tempora sunt libero, saepe corrupti laboriosam suscipit.',
-  img: sumo,
+  img: sumo2,
   buttonLabel: 'Wallace Stevens',
 }
 
