@@ -24,27 +24,28 @@ app.use('/api/articles', articleRoutes)
 
 // const __dirname = path.resolve()
 
-// response.writeHead(201, {
-//   'Content-Type': 'application/javascript',
-// })
+
 
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '/frontend/build')))
 
-    // app.get('service-worker.js', (req, res) => {
-    // app.get('service-worker.js', (req, res) => {
-    //     res.sendFile(
-    //         path.resolve(__dirname, 'frontend', 'build', 'service-worker.js')
-    //         // path.resolve(__dirname, 'frontend', 'build')
-    //     )
-    // })
+    // app.use(express.static(path.resolve(__dirname, "/frontend/build")));
+
+    // app.get("*", function (request, response) {
+    //     response.sendFile(path.resolve(__dirname, "/frontend/build", "index.html"));
+    // });
+
+    // app.use(express.static(path.join(__dirname, '/frontend/build')))
+    // app.get('*', (req, res) =>
+    //     res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
+    // )
+    app.use(express.static(path.join(path.resolve(), '/frontend/build')))
     app.get('*', (req, res) =>
-        res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
+        res.sendFile(path.resolve(path.resolve(), 'frontend', 'build', 'index.html'))
     )
 } else {
     app.get('/', (req, res) => {
         res.send('API is running')
-        //@ts-ignore
+        // @ts-ignore
         next()
     })
 }
