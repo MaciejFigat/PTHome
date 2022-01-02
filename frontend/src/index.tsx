@@ -8,7 +8,6 @@ import reportWebVitals from './reportWebVitals'
 import { BrowserRouter as Router } from 'react-router-dom'
 import * as serviceWorkerRegistration from './serviceWorkerRegistration'
 
-serviceWorkerRegistration.register()
 // smoothScrollPolyfill.polyfill()
 
 ReactDOM.render(
@@ -21,3 +20,5 @@ ReactDOM.render(
 )
 
 reportWebVitals()
+// @ts-ignore
+serviceWorkerRegistration.register()
