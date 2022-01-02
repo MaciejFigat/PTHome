@@ -47,17 +47,17 @@ if (process.env.NODE_ENV === 'production') {
 
     // });
 
-    app.use(express.static('frontend/build'));
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
-    });
+    // app.use(express.static('frontend/build'));
+    // app.get('*', (req, res) => {
+    //     res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+    // });
 
-    // app.use('/', express.static(path.join(path.resolve(), '/frontend/build')))
-    // app.get('*', (req, res) =>
+    app.use('/', express.static(path.join(path.resolve(), '/frontend/build')))
+    app.get('*', (req, res) =>
 
-    //     res.sendFile(path.resolve(path.resolve(), 'frontend', 'build', 'index.html'))
+        res.sendFile(path.resolve(path.resolve(), 'frontend', 'build', 'index.html'))
 
-    // )
+    )
 } else {
     app.get('/', (req, res) => {
         res.send('API is running')
