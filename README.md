@@ -9,3 +9,8 @@ build script versions:
 "start": "npm run build && npm run build --prefix frontend && node backend/build/src/server.js",
 
  "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
+
+ {
+message: "ENOENT: no such file or directory, stat '/app/backend/build/src/frontend/build/index.html'",
+stack: "Error: ENOENT: no such file or directory, stat '/app/backend/build/src/frontend/build/index.html'"
+}
