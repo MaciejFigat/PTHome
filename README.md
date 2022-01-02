@@ -14,3 +14,5 @@ build script versions:
 message: "ENOENT: no such file or directory, stat '/app/backend/build/src/frontend/build/index.html'",
 stack: "Error: ENOENT: no such file or directory, stat '/app/backend/build/src/frontend/build/index.html'"
 }
+
+web: node backend/build/src/server.js
