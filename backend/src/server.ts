@@ -6,7 +6,6 @@ import path from 'path'
 import userRoutes from '../routes/userRoutes'
 import articleRoutes from '../routes/articleRoutes'
 import connectDB from '../config/db'
-
 import { notFound, errorHandler } from '../middleware/errorMiddleware'
 
 
@@ -26,6 +25,8 @@ app.use('/api/articles', articleRoutes)
 
 
 
+
+
 if (process.env.NODE_ENV === 'production') {
 
     // app.use(express.static(path.resolve(__dirname, "/frontend/build")));
@@ -39,14 +40,19 @@ if (process.env.NODE_ENV === 'production') {
     //     res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
     // )
 
+    app.use(express.static('frontend/build'));
 
+    app.get('*', (req, res) => {
+        // res.sendFile(path.resolve(path.resolve(), 'frontend', 'build', 'index.html'));
+        res.sendFile(path.resolve('frontend', 'build', 'index.html'));
+    });
 
-    app.use(express.static(path.join(path.resolve(), '/frontend/build')))
-    app.get('*', (req, res) =>
-        res.sendFile(path.resolve('frontend', 'build', 'index.html'))
-        // res.sendFile(path.resolve(path.resolve(), 'frontend', 'build', 'index.html'))
+    //  app.use(express.static(path.join(path.resolve(), '/frontend/build')))
+    // app.get('*', (req, res) =>
+    //  res.sendFile(path.resolve('frontend', 'build', 'index.html'))
+    //  res.sendFile(path.resolve(path.resolve(), 'frontend', 'build', 'index.html'))
 
-    )
+    // )
 } else {
     app.get('/', (req, res) => {
         res.send('API is running')
