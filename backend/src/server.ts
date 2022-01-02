@@ -52,12 +52,22 @@ if (process.env.NODE_ENV === 'production') {
     //     res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
     // });
 
-    app.use('/', express.static(path.join(path.resolve(), '/frontend/build')))
-    app.get('*', (req, res) =>
 
-        res.sendFile(path.resolve(path.resolve(), 'frontend', 'build', 'index.html'))
+    // define the folder that will be used for static assets
+    app.use(express.static(path.join(path.resolve(), '../frontend/build')));
 
-    )
+    // handle every other route with index.html, which will contain
+    // a script tag to your application's JavaScript file(s).
+    app.get('*', function (request, response) {
+        response.sendFile(path.resolve(path.resolve(), '../frontend/build', 'index.html'));
+    })
+
+    // app.use('/', express.static(path.join(path.resolve(), '/frontend/build')))
+    // app.get('*', (req, res) =>
+
+    //     res.sendFile(path.resolve(path.resolve(), 'frontend', 'build', 'index.html'))
+
+    // )
 } else {
     app.get('/', (req, res) => {
         res.send('API is running')
