@@ -6,7 +6,6 @@ import { Provider } from 'react-redux'
 import { store } from './app/store'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter as Router } from 'react-router-dom'
-import * as serviceWorkerRegistration from './serviceWorkerRegistration'
 
 // smoothScrollPolyfill.polyfill()
 
@@ -20,5 +19,3 @@ ReactDOM.render(
 )
 
 reportWebVitals()
-// @ts-ignore
-serviceWorkerRegistration.register()
