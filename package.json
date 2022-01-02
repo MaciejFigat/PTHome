@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "build": "npm run build --prefix backend",
-    "start": "npm run build && npm run build --prefix frontend && node backend/build/src/server.js",
+    "start": "npm run build && node backend/build/src/server.js",
     "client": "npm start --prefix frontend",
     "server": "nodemon --exec ts-node backend/src/server",
     "dev": "concurrently \"npm run server\" \"npm run client\"",

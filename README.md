@@ -6,4 +6,6 @@ build script versions:
 
 "start": "npm run build && node build/index.js",
 
+"start": "npm run build && npm run build --prefix frontend && node backend/build/src/server.js",
+
  "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
