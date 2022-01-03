@@ -3,5 +3,5 @@
   from = "/api"
   to = "http://pthome.herokuapp.com/"
   status = 200
-  force = true # COMMENT: ensure that we always redirect
+  force = true 
   headers = {X-From = "Netlify"}
