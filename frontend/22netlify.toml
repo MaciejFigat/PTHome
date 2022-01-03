@@ -4,4 +4,4 @@
   to = "http://pthome.herokuapp.com/api/*"
   status = 200
   force = true 
-  headers = {X-From = "Netlify"}
+  
