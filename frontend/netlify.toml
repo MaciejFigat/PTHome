@@ -1,6 +1,6 @@
 
 [[redirects]]
-  from = "/api/*"
+  from = "http://ptfront.netlify.app/api/*"
   to = "http://pthome.herokuapp.com/api/*"
   status = 200
   force = true 
