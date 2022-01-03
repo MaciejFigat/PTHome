@@ -1,8 +1,8 @@
-import sumo2 from '../assets/sumo2.svg'
-import sumo from '../assets/sumo.svg'
-import woman from '../assets/woman.svg'
-import handstand from '../assets/handstand.svg'
-import proWrestlers from '../assets/proWrestlers.svg'
+import sumo2 from './assets/sumo2.svg'
+import sumo from './assets/sumo.svg'
+import woman from './assets/woman.svg'
+import handstand from './assets/handstand.svg'
+import proWrestlers from './assets/proWrestlers.svg'
 // Cannot find file '../assets/sumo2' in './src/data'.
 
 export const homeData = {
