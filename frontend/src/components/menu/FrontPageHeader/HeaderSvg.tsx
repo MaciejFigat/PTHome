@@ -37,7 +37,7 @@ const HeaderSvg: React.FC<HeaderSvgProps> = ({
     },
   }
   const [path, setPath] = useState('')
-  const [viewBox, setViewBox] = useState('')
+  const [viewBox, setViewBox] = useState<null | string | number>(null)
 
   useEffect(() => {
     switch (version) {
@@ -52,6 +52,7 @@ const HeaderSvg: React.FC<HeaderSvgProps> = ({
       case 'sumo2':
         setPath(svgPathSumo2)
         setViewBox('0 20 548 432')
+
         return
       case 'woman':
         setPath(svgPathWoman)
@@ -77,6 +78,7 @@ const HeaderSvg: React.FC<HeaderSvgProps> = ({
         <HeaderSvgItem
           xmlns='http://www.w3.org/2000/svg'
           viewBox={viewBox}
+          // viewBox='0 0 1845.9375 2584.6875'
           as={motion.svg}
         >
           <motion.path
