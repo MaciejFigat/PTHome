@@ -8,15 +8,24 @@ export const ResponsiveDiv = styled.div`
   padding: 40px 50px 20px;
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
-  background: var(--background-secondary2);
-  transition: all 0.6s ease-out;
-  box-shadow: 0.5px 0.5px 1px var(--background4-main),
-    -0.5px -0.5px 1px var(--background1-main);
-  &:hover {
-    background: var(--background-tertiary2);
-    box-shadow: 0.5px 0.5px 1px var(--background-tertiary1),
-      -0.5px -0.5px 1px var(--background-tertiary1);
+  @media (max-width: 600px) {
+    background: var(--background-secondary1);
+    box-shadow: 0.5px 0.5px 1px var(--background4-main),
+      -0.5px -0.5px 1px var(--background1-main);
   }
+
+  background: var(--background-tertiary2);
+  box-shadow: 0.5px 0.5px 1px var(--background-tertiary1),
+    -0.5px -0.5px 1px var(--background-tertiary1);
+  transition: all 0.6s ease-out;
+  @media (min-width: 600px) {
+    &:hover {
+      background: var(--background-secondary1);
+      box-shadow: 0.5px 0.5px 1px var(--background4-main),
+        -0.5px -0.5px 1px var(--background1-main);
+    }
+  }
+
   @media (max-width: 1100px) {
     width: 90vw;
     padding: 10px 10px 10px;
@@ -61,25 +70,35 @@ export const ContactField = styled.div`
       )
       1;
     transition: all 0.9s ease-out;
-    ${ResponsiveDiv}:hover & {
-      border-image: linear-gradient(
-          45deg,
-          var(--background-tertiary3),
-          var(--background-tertiary1),
-          var(--background-tertiary5)
-        )
-        1;
+    @media (min-width: 600px) {
+      ${ResponsiveDiv}:hover & {
+        border-image: linear-gradient(
+            45deg,
+            var(--background-tertiary3),
+            var(--background-tertiary1),
+            var(--background-tertiary5)
+          )
+          1;
+      }
     }
+
     animation: 4s rotate linear infinite;
   }
 `
 
 export const ContactFieldContent = styled.input`
   &::placeholder {
-    color: var(--background-secondary3);
+    /* color: var(--background-secondary3); */
+    color: var(--background-tertiary3);
     font-weight: 500;
-    ${ResponsiveDiv}:hover & {
-      color: var(--background-tertiary3);
+    @media (max-width: 600px) {
+      color: var(--background-secondary3);
+    }
+    @media (min-width: 600px) {
+      ${ResponsiveDiv}:hover & {
+        color: var(--background-secondary3);
+        /* color: var(--background-tertiary3); */
+      }
     }
   }
   font-family: 'Quicksand', sans-serif;
@@ -87,8 +106,10 @@ export const ContactFieldContent = styled.input`
   border: none;
   color: var(--background-tertiary4);
   transition: all 0.3s ease-out;
-  ${ResponsiveDiv}:hover & {
-    color: var(--background-tertiary3);
+  @media (min-width: 600px) {
+    ${ResponsiveDiv}:hover & {
+      color: var(--background-tertiary3);
+    }
   }
   background: none;
   line-height: 1.2;

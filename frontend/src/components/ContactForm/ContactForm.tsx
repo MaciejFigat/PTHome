@@ -46,30 +46,25 @@ const ContactForm: React.FC<ContactFormProps> = () => {
   const emailJSSendHandler = (e: any) => {
     e.preventDefault()
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i
-    // setSpinnerVisible(true)
+
     if (name.length < 1) {
       setToastOption('warningEmail')
-      // setSpinnerVisible(false)
       setToastMessage('Podaj imię')
     } else if (!regex.test(email)) {
       setToastOption('warningEmail')
-      // setSpinnerVisible(false)
       setToastMessage('Wpisz prawidłowy email')
     } else if (formMessage.length < 3) {
       setToastOption('warningEmail')
-      // setSpinnerVisible(false)
       setToastMessage('Wpisz wiadomość')
     } else {
       if (SERVICE_ID && TEMPLATE_ID && EMAILJS_ID) {
         emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, EMAILJS_ID).then(
           function () {
             setToastOption('sentEmail')
-            // setSpinnerVisible(false)
             setToastMessage('Wiadomość wysłana')
           },
           function () {
             setToastOption('errorEmail')
-            // setSpinnerVisible(false)
             setToastMessage('Error')
           }
         )
@@ -83,13 +78,6 @@ const ContactForm: React.FC<ContactFormProps> = () => {
         <ResponsiveDiv>
           {' '}
           <ContactFormContainer>
-            {/* <Loader
-              type='ThreeDots'
-              color='var(--text-main)'
-              height={20}
-              width={60}
-              visible={spinnerVisible}
-            /> */}
             <ContactFormStyled>
               <ContactField>
                 <ContactFieldContent

@@ -3,7 +3,6 @@ import sumo from './assets/sumo.svg'
 import woman from './assets/woman.svg'
 import handstand from './assets/handstand.svg'
 import proWrestlers from './assets/proWrestlers.svg'
-// Cannot find file '../assets/sumo2' in './src/data'.
 
 export const homeData = {
   topline: 'Lorem ipsum dolor sit.',

@@ -155,12 +155,11 @@ export const SendButton = styled.button`
     }
   }
   @media (max-width: 798px) {
-    /* padding: 25px 20px 25px; */
     height: 2vh;
     min-height: 30px;
     font-size: ${({ fontLarge }) => (fontLarge ? '18px' : '12px')};
-    /* font-weight: 600; */
     margin: 0;
     margin-top: 10px;
+    margin-left: 10px;
   }
 `
