@@ -13,8 +13,8 @@ import {
   ContactFieldContent,
   MessageField,
   SendButtonWrapper,
-  SendButton,
 } from '../components/ArticleTable/ArticleForm.styled'
+import { SendButton } from '../components/Buttons/Buttons.styled'
 import {
   AdminContainer,
   AdminWrapper,

@@ -16,9 +16,9 @@ import {
   ContactField,
   ContactFieldContent,
   MessageField,
-  SendButton,
   SendButtonWrapper,
 } from '../components/ArticleTable/ArticleForm.styled'
+import { SendButton } from '../components/Buttons/Buttons.styled'
 import {
   AdminContainer,
   AdminWrapper,

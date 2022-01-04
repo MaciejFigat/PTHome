@@ -5,7 +5,7 @@ import {
   getArticles,
   deleteArticle,
 } from '../../features/articles/articleSlice'
-import { SendButton } from './ArticleForm.styled'
+import { SendButton } from '../Buttons/Buttons.styled'
 import { Table, TableWrapper, AdminContainer } from './ArticleTable.styled'
 
 interface ArticleTableProps {}

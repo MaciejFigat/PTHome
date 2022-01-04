@@ -8,8 +8,8 @@ import {
   EditForm,
   ContactField,
   ContactFieldContent,
-  SendButton,
 } from '../components/ArticleTable/UserEdit.styled'
+import { SendButton } from '../components/Buttons/Buttons.styled'
 import {
   AdminContainer,
   AdminWrapper,

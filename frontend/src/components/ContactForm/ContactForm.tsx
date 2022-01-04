@@ -11,7 +11,7 @@ import {
   MessageField,
   SendButtonWrapper,
 } from './contactForm.styled.js'
-import { SendButton } from '../ArticleTable/ArticleForm.styled'
+import { SendButton } from '../Buttons/Buttons.styled'
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 interface ContactFormProps {}
