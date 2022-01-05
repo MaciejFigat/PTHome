@@ -32,7 +32,11 @@ export const IconsItem = styled.li`
   width: 100%;
   height: 100%;
   a {
-    color: var(--background-tertiary2);
+    ${(props) =>
+      props.variant && props.variant === 'light'
+        ? `color: var(--background-tertiary3);`
+        : `color: var(--background-tertiary2);`}
+    /* color: var(--background-tertiary2); */
     ${IconsItemDiv}:hover & {
       color: var(--background-tertiary4) !important;
     }

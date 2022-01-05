@@ -7,14 +7,16 @@ import {
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons'
 import { IconsItem, IconsWrapper, IconsItemDiv } from './SocialIcons.styled'
-interface SocialIconsProps {}
+interface SocialIconsProps {
+  variant?: string | 'light'
+}
 
-const SocialIcons: React.FC<SocialIconsProps> = () => {
+const SocialIcons: React.FC<SocialIconsProps> = ({ variant }) => {
   return (
     <>
       <IconsWrapper>
         <IconsItemDiv>
-          <IconsItem>
+          <IconsItem variant={variant}>
             <a
               href='https://www.instagram.com/ninaolgakirylowicz/'
               aria-label='telegram'
@@ -25,7 +27,7 @@ const SocialIcons: React.FC<SocialIconsProps> = () => {
           </IconsItem>
         </IconsItemDiv>
         <IconsItemDiv>
-          <IconsItem>
+          <IconsItem variant={variant}>
             <a
               href='https://www.instagram.com/ninaolgakirylowicz/'
               aria-label='twitter'
@@ -36,7 +38,7 @@ const SocialIcons: React.FC<SocialIconsProps> = () => {
           </IconsItem>
         </IconsItemDiv>{' '}
         <IconsItemDiv>
-          <IconsItem>
+          <IconsItem variant={variant}>
             <a
               href='https://www.instagram.com/ninaolgakirylowicz/'
               aria-label='instagram'
@@ -46,7 +48,7 @@ const SocialIcons: React.FC<SocialIconsProps> = () => {
           </IconsItem>
         </IconsItemDiv>
         <IconsItemDiv>
-          <IconsItem>
+          <IconsItem variant={variant}>
             <a
               href='https://www.facebook.com/profile.php?id=100044161188998'
               aria-label='facebook'
