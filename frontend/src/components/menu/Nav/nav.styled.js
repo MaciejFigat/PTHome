@@ -21,11 +21,11 @@ export const TransitionWrapper = styled.div`
 export const NavContainer = styled.nav`
   display: flex;
   justify-content: space-around;
-  /* max-width: 50%; */
+
   position: sticky;
   top: 0;
   height: fit-content;
-  /* max-width: 100vw; */
+
   background: var(--background1-main);
   box-shadow: inset 20px 20px 40px #171718, inset -20px -20px 40px #252526;
 
@@ -59,6 +59,11 @@ export const NavList = styled.ul`
     max-width: 50vw;
     padding-bottom: 3rem;
     gap: 1.75rem;
+    @media screen and (orientation: landscape) {
+      margin-top: 1.5rem;
+      padding-bottom: 1.75rem;
+      gap: 0.75rem;
+    }
   }
 `
 export const ListLoginWrapper = styled.div`
@@ -88,6 +93,9 @@ export const ListItem = styled.li`
     margin-right: 0.25rem;
     margin-left: 1.25rem;
     font-weight: 800;
+    @media screen and (orientation: landscape) {
+      font-size: 1.55rem;
+    }
   }
 `
 
@@ -105,6 +113,9 @@ export const ListItemMobile = styled.div`
     align-items: left;
     display: flex;
     margin-left: 0.5rem;
+    @media screen and (orientation: landscape) {
+      /* align-self: flex-end; */
+    }
   }
 `
 

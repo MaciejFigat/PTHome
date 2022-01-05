@@ -71,7 +71,6 @@ const NavListDesktop: React.FC<NavListMobileProps> = () => {
       </ListItem>
 
       <ListItemMobile>
-        <HeaderSvg version='handstand' />
         <SocialIcons />
       </ListItemMobile>
     </NavList>

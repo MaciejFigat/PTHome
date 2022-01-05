@@ -8,7 +8,6 @@ export const ResponsiveDiv = styled.div`
   padding: 40px 50px 20px;
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
-
   @media (max-width: 600px) {
     background: var(--background-secondary1);
     box-shadow: 0.5px 0.5px 1px var(--background4-main),
@@ -41,6 +40,7 @@ export const ContactFormContainer = styled.div`
 `
 export const ContactFormStyled = styled.form`
   width: 85%;
+
   margin-top: 2rem;
   @media (max-width: 798px) {
     min-width: fit-content;
