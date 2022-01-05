@@ -100,7 +100,7 @@ const ContactForm: React.FC<ContactFormProps> = () => {
                   value={formMessage}
                   placeholder='Message'
                   as='textarea'
-                  row='8'
+                  row='14'
                   onChange={(e: any) => setFormMessage(e.target.value)}
                 ></MessageField>
               </ContactField>
