@@ -8,9 +8,9 @@ export const IconsWrapper = styled.ul`
   flex-direction: row;
   font-size: 1.8rem;
   min-width: fit-content;
-  @media (max-width: 360px) {
+  /* @media (max-width: 360px) {
     font-size: 1.5rem;
-  }
+  } */
 `
 export const IconsItemDiv = styled.div`
   border: 1px solid var(--background-tertiary1);
