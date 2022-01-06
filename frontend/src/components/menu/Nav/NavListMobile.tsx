@@ -86,10 +86,7 @@ const NavListMobile: React.FC<NavListMobileProps> = ({ open }) => {
 
               <ListItemMobile>
                 {' '}
-                <motion.div
-                  whileHover={{ scale: 1.075 }}
-                  variants={itemVariants}
-                >
+                <motion.div variants={itemVariants}>
                   <SocialIcons variant='light' />
                 </motion.div>
               </ListItemMobile>
