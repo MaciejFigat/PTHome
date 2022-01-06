@@ -1,32 +1,8 @@
 import React from 'react'
-import { NavList, ListItem, ListItemMobile } from './nav.styled'
+import { NavList, ListItem, NavListDesktopWrapper } from './nav.styled'
 import { NavLink } from 'react-router-dom'
-import SocialIcons from '../../SvgIcon/SocialIcons'
-import { AnimatePresence, motion } from 'framer-motion'
-interface NavListMobileProps {
-  open: boolean
-}
 
-const itemVariants = {
-  closed: {
-    opacity: 0,
-  },
-  open: { opacity: 1 },
-}
-const sideVariants = {
-  closed: {
-    transition: {
-      staggerChildren: 0.15,
-      staggerDirection: -1,
-    },
-  },
-  open: {
-    transition: {
-      staggerChildren: 0.2,
-      staggerDirection: 1,
-    },
-  },
-}
+interface NavListMobileProps {}
 
 const links = [
   { name: 'Home', to: '/', id: '1' },
@@ -36,56 +12,26 @@ const links = [
   { name: 'Kontakt', to: '/contact', id: '5' },
 ]
 
-const NavListDesktop: React.FC<NavListMobileProps> = ({ open }) => {
+const NavListDesktop: React.FC<NavListMobileProps> = () => {
   return (
-    <AnimatePresence>
-      {open && (
-        <motion.div
-          className='aside'
-          initial={{ width: 0 }}
-          animate={{
-            width: 600,
-          }}
-          exit={{
-            width: 0,
-            transition: { delay: 0.7, duration: 0.3 },
-          }}
-        >
-          <motion.div
-            initial='closed'
-            animate='open'
-            exit='closed'
-            variants={sideVariants}
-          >
-            <NavList>
-              {links.map(({ name, to, id }) => (
-                <ListItem key={id}>
-                  {' '}
-                  <motion.div
-                    whileHover={{ scale: 1.075 }}
-                    variants={itemVariants}
-                  >
-                    <NavLink
-                      to={to}
-                      className={(navData) =>
-                        'nav_link' + (navData.isActive ? ' activated' : '')
-                      }
-                    >
-                      {' '}
-                      {name}
-                    </NavLink>
-                  </motion.div>
-                </ListItem>
-              ))}
-
-              <ListItemMobile>
-                <SocialIcons variant='light' />
-              </ListItemMobile>
-            </NavList>
-          </motion.div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+    <NavListDesktopWrapper>
+      <NavList>
+        {links.map(({ name, to, id }) => (
+          <ListItem key={id}>
+            {' '}
+            <NavLink
+              to={to}
+              className={(navData) =>
+                'nav_link' + (navData.isActive ? ' activated' : '')
+              }
+            >
+              {' '}
+              {name}
+            </NavLink>
+          </ListItem>
+        ))}
+      </NavList>
+    </NavListDesktopWrapper>
   )
 }
 export default NavListDesktop

@@ -13,6 +13,7 @@ import {
 import { NavLink } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../../../app/reduxHooks'
 import NavListDesktop from './NavListDesktop'
+import NavListMobile from './NavListMobile'
 import useScrollListener from '../../../hooks/useScrollListener'
 import SvgIcon from '../../SvgIcon/SvgIcon'
 import { logout } from '../../../features/users/userSlice'
@@ -123,7 +124,8 @@ const Nav: React.FC<NavProps> = () => {
           <HeaderTitleDesktop className={scrollTop === true ? 'hide' : 'show'}>
             {name && `${name}`}
           </HeaderTitleDesktop>
-          <NavListDesktop open={open} />
+          <NavListDesktop />
+          <NavListMobile open={open} />
           {Object.keys(userInfo).length > 0 && isAdmin && (
             <ListLoginWrapper>
               <NavLink

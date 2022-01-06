@@ -10,9 +10,10 @@ html {
   
 } 
 .aside {
-  background-color: #c4a8ff;
+  background: var(--background1-main);
   width: 18.75rem;
-  height: 100vh;
+  height: calc(100vh + 50px);
+
 }
 body {
   

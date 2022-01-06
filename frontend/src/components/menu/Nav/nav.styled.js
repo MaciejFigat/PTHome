@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
 export const TransitionWrapperMain = styled.div`
   position: sticky;
@@ -21,18 +22,19 @@ export const TransitionWrapper = styled.div`
 export const NavContainer = styled.nav`
   display: flex;
   justify-content: space-around;
-
   position: sticky;
   top: 0;
   height: fit-content;
-
-  background: var(--background1-main);
-  box-shadow: inset 20px 20px 40px #171718, inset -20px -20px 40px #252526;
+  overflow: hidden;
+  /* background: var(--background1-main); */
+  /* box-shadow: inset 20px 20px 40px #171718, inset -20px -20px 40px #252526; */
 
   @media (max-width: 1020px) {
     flex-direction: column;
     justify-content: center;
+    width: 100%;
     max-width: 100%;
+
     /* transform: translateX(-130%); */
     /* transition: all 200ms ease-in; */
     /* &.true {
@@ -153,6 +155,22 @@ export const HeaderTitleDesktop = styled.h1`
     transition: all 300ms ease-in;
     opacity: 0;
   }
+  @media (max-width: 1020px) {
+    display: none;
+  }
+`
+export const AnimatedWrapperMobile = styled(motion.div)`
+  background: var(--background1-main);
+  width: 18.75rem;
+  height: calc(100vh + 50px);
+
+  display: none;
+  @media (max-width: 1020px) {
+    display: flex;
+  }
+`
+export const NavListDesktopWrapper = styled.div`
+  display: flex;
   @media (max-width: 1020px) {
     display: none;
   }
