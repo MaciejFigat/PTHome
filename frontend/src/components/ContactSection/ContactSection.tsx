@@ -13,7 +13,7 @@ import {
   Img,
   CopyHeading,
 } from './ContactSection.styled'
-
+import DropAnimationWrapper from '../AnimationWrappers/DropAnimationWrapper'
 interface InfoData {
   topline: string
   headline: string
@@ -68,33 +68,35 @@ const ContactSection: React.FC<ContactSectionProps> = ({
         <Container>
           <InfoRow imgStart={imgStart}>
             <InfoColumn>
-              <TextWrapper>
-                <Heading>Lorem ipsum dolor sit.</Heading>
-                <TopLine>
-                  Lorem ipsum dolor sit amet consectetur adipisicing.
-                </TopLine>
-                <TopLine>
-                  Lorem ipsum dolor sit amet consectetur adipisicing.
-                </TopLine>
-                <TopLine>
-                  Lorem ipsum dolor sit amet consectetur adipisicing.
-                </TopLine>
-                <CopyHeading
-                  contentAfter={copySuccess}
-                  id='copyEmail'
-                  onClick={() => copyHandler('copyEmail')}
-                  onMouseEnter={() => hoverHelper()}
-                  onMouseLeave={() => leaveHelper()}
-                >
-                  secretEmail@special.com
-                </CopyHeading>
+              <DropAnimationWrapper>
+                <TextWrapper>
+                  <Heading>Lorem ipsum dolor sit.</Heading>
+                  <TopLine>
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                  </TopLine>
+                  <TopLine>
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                  </TopLine>
+                  <TopLine>
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                  </TopLine>
+                  <CopyHeading
+                    contentAfter={copySuccess}
+                    id='copyEmail'
+                    onClick={() => copyHandler('copyEmail')}
+                    onMouseEnter={() => hoverHelper()}
+                    onMouseLeave={() => leaveHelper()}
+                  >
+                    secretEmail@special.com
+                  </CopyHeading>
 
-                <SocialIcons />
-                <Subtitle>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
-                  vero omnis harum laborum voluptatum delectus.
-                </Subtitle>
-              </TextWrapper>
+                  <SocialIcons />
+                  <Subtitle>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
+                    vero omnis harum laborum voluptatum delectus.
+                  </Subtitle>
+                </TextWrapper>
+              </DropAnimationWrapper>
             </InfoColumn>
             <InfoColumn>
               {children ? (
