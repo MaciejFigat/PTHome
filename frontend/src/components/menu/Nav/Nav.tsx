@@ -17,6 +17,7 @@ import useScrollListener from '../../../hooks/useScrollListener'
 import SvgIcon from '../../SvgIcon/SvgIcon'
 import { logout } from '../../../features/users/userSlice'
 import { UserInfo } from '../../../interfaces'
+import { useCycle } from 'framer-motion'
 interface NavProps {}
 
 const Nav: React.FC<NavProps> = () => {
@@ -25,14 +26,12 @@ const Nav: React.FC<NavProps> = () => {
   const userInfo: UserInfo = useAppSelector((state) => state.user.userInfo)
   const { name, isAdmin } = userInfo
 
-  const [menuOpen, setMenuOpen] = useState<boolean>(false)
+  const [open, cycleOpen] = useCycle(false, true)
   const handleClickMenu = () => {
-    setMenuOpen(!menuOpen)
+    cycleOpen()
   }
   const handleCloseMenu = () => {
-    if (menuOpen === true) {
-      setMenuOpen(false)
-    }
+    cycleOpen()
   }
 
   const logoutHandler = (e: any) => {
@@ -68,7 +67,7 @@ const Nav: React.FC<NavProps> = () => {
       >
         <MobileViewContainer>
           <div onClick={handleClickMenu}>
-            <Burger menuOpen={menuOpen} />
+            <Burger menuOpen={open} />
           </div>{' '}
           <HeaderTitleMobile>{name && `${name}`}</HeaderTitleMobile>
           {Object.keys(userInfo).length > 0 ? (
@@ -120,11 +119,11 @@ const Nav: React.FC<NavProps> = () => {
             </HeaderLoginWrapper>
           )}
         </MobileViewContainer>
-        <NavContainer className={menuOpen} onClick={handleCloseMenu}>
+        <NavContainer className={open} onClick={handleCloseMenu}>
           <HeaderTitleDesktop className={scrollTop === true ? 'hide' : 'show'}>
             {name && `${name}`}
           </HeaderTitleDesktop>
-          <NavListDesktop />
+          <NavListDesktop open={open} />
           {Object.keys(userInfo).length > 0 && isAdmin && (
             <ListLoginWrapper>
               <NavLink

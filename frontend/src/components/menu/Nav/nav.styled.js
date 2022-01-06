@@ -33,12 +33,12 @@ export const NavContainer = styled.nav`
     flex-direction: column;
     justify-content: center;
     max-width: 100%;
-    transform: translateX(-130%);
-    transition: all 200ms ease-in;
-    &.true {
+    /* transform: translateX(-130%); */
+    /* transition: all 200ms ease-in; */
+    /* &.true {
       transition: all 300ms ease-in;
       transform: translateX(0%);
-    }
+    } */
   }
 `
 // the following list is used for desktop navigation
@@ -59,7 +59,8 @@ export const NavList = styled.ul`
     max-width: 50vw;
     padding-bottom: 3rem;
     gap: 1.75rem;
-    @media screen and (orientation: landscape) {
+    /* @media screen and (orientation: landscape) { */
+    @media (max-width: 700px) and (orientation: landscape) {
       margin-top: 1.5rem;
       padding-bottom: 1.75rem;
       gap: 0.75rem;
@@ -93,7 +94,8 @@ export const ListItem = styled.li`
     margin-right: 0.25rem;
     margin-left: 1.25rem;
     font-weight: 800;
-    @media screen and (orientation: landscape) {
+    /* @media screen and (orientation: landscape) { */
+    @media (max-width: 700px) and (orientation: landscape) {
       font-size: 1.55rem;
     }
   }
@@ -113,9 +115,6 @@ export const ListItemMobile = styled.div`
     align-items: left;
     display: flex;
     margin-left: 0.5rem;
-    @media screen and (orientation: landscape) {
-      /* align-self: flex-end; */
-    }
   }
 `
 

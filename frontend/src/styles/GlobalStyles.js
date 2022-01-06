@@ -9,6 +9,11 @@ html {
   font-size: 100%;
   
 } 
+.aside {
+  background-color: #c4a8ff;
+  width: 18.75rem;
+  height: 100vh;
+}
 body {
   
     margin: 0;
