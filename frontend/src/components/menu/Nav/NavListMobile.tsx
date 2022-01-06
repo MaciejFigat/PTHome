@@ -21,14 +21,16 @@ const itemVariants = {
 const sideVariants = {
   closed: {
     transition: {
-      staggerChildren: 0.15,
+      staggerChildren: 0.07,
+      delayChildren: 0.2,
       staggerDirection: -1,
     },
   },
   open: {
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.05,
       staggerDirection: 1,
+      delayChildren: 0.2,
     },
   },
 }
@@ -83,7 +85,13 @@ const NavListMobile: React.FC<NavListMobileProps> = ({ open }) => {
               ))}
 
               <ListItemMobile>
-                <SocialIcons variant='light' />
+                {' '}
+                <motion.div
+                  whileHover={{ scale: 1.075 }}
+                  variants={itemVariants}
+                >
+                  <SocialIcons variant='light' />
+                </motion.div>
               </ListItemMobile>
             </NavList>
           </motion.div>

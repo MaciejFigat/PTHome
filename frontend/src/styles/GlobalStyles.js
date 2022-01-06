@@ -9,12 +9,7 @@ html {
   font-size: 100%;
   
 } 
-.aside {
-  background: var(--background1-main);
-  width: 18.75rem;
-  height: calc(100vh + 50px);
 
-}
 body {
   
     margin: 0;

@@ -17,6 +17,7 @@ export const TransitionWrapper = styled.div`
   position: sticky;
   top: 0;
   max-height: 3.2rem;
+  height: 55px;
   background: var(--background1-main);
 `
 export const NavContainer = styled.nav`
@@ -24,16 +25,18 @@ export const NavContainer = styled.nav`
   justify-content: space-around;
   position: sticky;
   top: 0;
-  height: fit-content;
+  min-height: fit-content;
+
   overflow: hidden;
   /* background: var(--background1-main); */
-  /* box-shadow: inset 20px 20px 40px #171718, inset -20px -20px 40px #252526; */
+  box-shadow: inset 20px 20px 40px #171718, inset -20px -20px 40px #252526;
 
   @media (max-width: 1020px) {
     flex-direction: column;
     justify-content: center;
     width: 100%;
     max-width: 100%;
+    box-shadow: none;
 
     /* transform: translateX(-130%); */
     /* transition: all 200ms ease-in; */
@@ -163,7 +166,7 @@ export const AnimatedWrapperMobile = styled(motion.div)`
   background: var(--background1-main);
   width: 18.75rem;
   height: calc(100vh + 50px);
-
+  box-shadow: inset 20px 20px 40px #171718, inset -20px -20px 40px #252526;
   display: none;
   @media (max-width: 1020px) {
     display: flex;
