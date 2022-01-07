@@ -7,8 +7,7 @@ import {
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons'
 import { IconsItem, IconsWrapper, IconsItemDiv } from './SocialIcons.styled'
-import { AnimatePresence, motion } from 'framer-motion'
-import DropAnimationWrapper from '../AnimationWrappers/DropAnimationWrapper'
+import { motion } from 'framer-motion'
 import StaggerChildrenWrapper from '../AnimationWrappers/StaggerChildrenWrapper'
 interface SocialIconsProps {
   variant?: string | 'light'
@@ -56,8 +55,12 @@ const SocialIcons: React.FC<SocialIconsProps> = ({ variant }) => {
     <StaggerChildrenWrapper>
       <IconsWrapper>
         {icons.map(({ href, ariaLabel, id, icon }) => (
-          <motion.div whileHover={{ scale: 1.075 }} variants={itemVariants}>
-            <IconsItemDiv key={id}>
+          <motion.div
+            whileHover={{ scale: 1.075 }}
+            variants={itemVariants}
+            key={id}
+          >
+            <IconsItemDiv>
               <IconsItem variant={variant}>
                 <a href={href} aria-label={ariaLabel}>
                   {' '}
