@@ -2,7 +2,8 @@ import styled from 'styled-components'
 
 export const InfoSec = styled.div`
   padding: 160px 0;
-  background: var(--background5-main);
+  background: var(--background-blue1);
+  /* background: var(--background2-main); */
   @media (max-width: 880px) {
     padding: 60px 0;
   }
@@ -54,6 +55,7 @@ export const TopLine = styled.div`
   font-size: 22px;
   line-height: 16px;
   font-weight: 700;
+  line-height: 1.1;
   letter-spacing: 1.4px;
   margin-bottom: 10px;
   @media screen and (max-width: 880px) {
@@ -62,7 +64,8 @@ export const TopLine = styled.div`
 `
 export const Heading = styled.h1`
   margin-bottom: 24px;
-  font-size: 48px;
+  margin-top: 0;
+  font-size: 40px;
   line-height: 1.1;
 
   @media screen and (max-width: 760px) {
@@ -70,7 +73,7 @@ export const Heading = styled.h1`
   }
 `
 export const CopyHeading = styled.h1`
-  margin-bottom: 24px;
+  margin-bottom: 2rem;
   font-size: 36px;
   line-height: 1.1;
   transition: all 0.3s ease-in;
@@ -98,6 +101,7 @@ export const CopyHeading = styled.h1`
 export const Subtitle = styled.p`
   color: var(--background-tertiary1);
   max-width: 440px;
+  margin-top: 2rem;
   margin-bottom: 35px;
   font-size: 18px;
   line-height: 24px;

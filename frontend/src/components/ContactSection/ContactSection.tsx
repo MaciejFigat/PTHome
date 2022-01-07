@@ -14,6 +14,7 @@ import {
   CopyHeading,
 } from './ContactSection.styled'
 import DropAnimationWrapper from '../AnimationWrappers/DropAnimationWrapper'
+import FadeInAnimationWrapper from '../AnimationWrappers/FadeInAnimationWrapper'
 interface InfoData {
   topline: string
   headline: string
@@ -70,31 +71,23 @@ const ContactSection: React.FC<ContactSectionProps> = ({
             <InfoColumn>
               <TextWrapper>
                 <DropAnimationWrapper direction='top'>
-                  <Heading>Lorem ipsum dolor sit.</Heading>{' '}
+                  <Heading>Zapraszam do kontaktu</Heading>{' '}
                 </DropAnimationWrapper>
                 <DropAnimationWrapper>
                   {' '}
-                  <TopLine>
-                    11 Lorem ipsum dolor sit amet consectetur adipisicing.
-                  </TopLine>
+                  <TopLine>Proponuję:</TopLine>
                 </DropAnimationWrapper>
                 <DropAnimationWrapper delay={1}>
                   {' '}
-                  <TopLine>
-                    22 Lorem ipsum dolor sit amet consectetur adipisicing.
-                  </TopLine>
+                  <TopLine>treningi indywidualne i grupowe</TopLine>
                 </DropAnimationWrapper>{' '}
                 <DropAnimationWrapper delay={2}>
                   {' '}
-                  <TopLine>
-                    33 Lorem ipsum dolor sit amet consectetur adipisicing.
-                  </TopLine>
+                  <TopLine>plany treningowe</TopLine>
                 </DropAnimationWrapper>
                 <DropAnimationWrapper delay={3}>
                   {' '}
-                  <TopLine>
-                    44 Lorem ipsum dolor sit amet consectetur adipisicing.
-                  </TopLine>
+                  <TopLine>testy sprawnościowe</TopLine>
                 </DropAnimationWrapper>
                 <DropAnimationWrapper direction='left'>
                   <CopyHeading
@@ -108,10 +101,12 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                   </CopyHeading>{' '}
                 </DropAnimationWrapper>
                 <SocialIcons />
-                <Subtitle>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
-                  vero omnis harum laborum voluptatum delectus.
-                </Subtitle>
+                <FadeInAnimationWrapper>
+                  <Subtitle>
+                    Jeśli masz pytanie dotyczące treningów, czy samych ćwiczeń,
+                    nie wahaj się i wyślij wiadomość.
+                  </Subtitle>
+                </FadeInAnimationWrapper>
               </TextWrapper>
             </InfoColumn>
             <InfoColumn>

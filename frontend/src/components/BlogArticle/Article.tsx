@@ -5,6 +5,7 @@ import {
   ArticleWrapper,
   ArticleTitle,
   ArticleSection,
+  ArticleTopline,
 } from './Article.styled'
 
 interface ArticleProps {
@@ -19,7 +20,7 @@ const Article: React.FC<ArticleProps> = ({ data }) => {
       <h5>{data.createdAt.substring(0, 10)}</h5>
       <p>by {data.author}</p>
       <ArticleTitle>{data.headline}</ArticleTitle>
-      <h4>{data.topline}</h4>
+      <ArticleTopline>{data.topline}</ArticleTopline>
       <ArticleImage src={data.imgLink} alt='article ilustration' />
       <ArticleSection>{data.subtitle}</ArticleSection>
     </ArticleWrapper>

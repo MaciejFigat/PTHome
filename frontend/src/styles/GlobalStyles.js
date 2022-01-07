@@ -17,7 +17,8 @@ body {
     max-width: 100vw;
     height: 100%;
     overflow-wrap: break-word;
-    background-color: var(--secondary3);  
+    // background-color: var(--background3-main);  
+    background-color: var(--redblue3);  
     // font-family: 'Quicksand', sans-serif; 
     font-family: 'Atkinson Hyperlegible', sans-serif;
     font-family: 'Raleway', sans-serif;
@@ -64,6 +65,7 @@ body {
     --background-blue7: #7EBDC2;
 
     --background-secondary1: #264653;
+    --background-secondary15: rgba(38, 70, 83, 0.9);
     --background-secondary2: #2a9d8f;
     --background-secondary3: #e9c46a;
     --background-secondary4: #f4a261;
@@ -71,6 +73,7 @@ body {
     
     --background-tertiary1: #1d3557;
     --background-tertiary2: #457b9d;
+    --background-tertiary25: rgba(69, 123, 157, 0.9);
     --background-tertiary3: #a8dadc;
     --background-tertiary4: #f1faee;
     --background-tertiary5: #e63946;
