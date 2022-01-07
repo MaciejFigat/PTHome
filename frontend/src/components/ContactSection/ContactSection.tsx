@@ -96,15 +96,17 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                     44 Lorem ipsum dolor sit amet consectetur adipisicing.
                   </TopLine>
                 </DropAnimationWrapper>
-                <CopyHeading
-                  contentAfter={copySuccess}
-                  id='copyEmail'
-                  onClick={() => copyHandler('copyEmail')}
-                  onMouseEnter={() => hoverHelper()}
-                  onMouseLeave={() => leaveHelper()}
-                >
-                  secretEmail@special.com
-                </CopyHeading>
+                <DropAnimationWrapper direction='left'>
+                  <CopyHeading
+                    contentAfter={copySuccess}
+                    id='copyEmail'
+                    onClick={() => copyHandler('copyEmail')}
+                    onMouseEnter={() => hoverHelper()}
+                    onMouseLeave={() => leaveHelper()}
+                  >
+                    secretEmail@special.com
+                  </CopyHeading>{' '}
+                </DropAnimationWrapper>
                 <SocialIcons />
                 <Subtitle>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos

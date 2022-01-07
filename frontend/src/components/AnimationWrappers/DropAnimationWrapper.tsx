@@ -20,6 +20,7 @@ const DropAnimationWrapper: React.FC<DropAnimationWrapperProps> = ({
           transition={{
             delay: 0.3,
             duration: 0.9,
+            damping: 20,
           }}
         >
           {children}
@@ -27,11 +28,12 @@ const DropAnimationWrapper: React.FC<DropAnimationWrapperProps> = ({
       )}
       {!direction && delay === 1 && (
         <motion.div
-          initial={{ y: 250, opacity: 0 }}
+          initial={{ y: 200, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{
             delay: 0.6,
             duration: 0.9,
+            damping: 20,
           }}
         >
           {children}
@@ -39,11 +41,12 @@ const DropAnimationWrapper: React.FC<DropAnimationWrapperProps> = ({
       )}
       {!direction && delay === 2 && (
         <motion.div
-          initial={{ y: 250, opacity: 0 }}
+          initial={{ y: 150, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{
             delay: 0.9,
             duration: 0.9,
+            damping: 20,
           }}
         >
           {children}
@@ -51,11 +54,12 @@ const DropAnimationWrapper: React.FC<DropAnimationWrapperProps> = ({
       )}
       {!direction && delay === 3 && (
         <motion.div
-          initial={{ y: 250, opacity: 0 }}
+          initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{
             delay: 1.2,
             duration: 0.9,
+            damping: 20,
           }}
         >
           {children}
@@ -63,11 +67,12 @@ const DropAnimationWrapper: React.FC<DropAnimationWrapperProps> = ({
       )}
       {direction === 'left' && (
         <motion.div
-          initial={{ x: -250, opacity: 0 }}
+          initial={{ x: -150, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{
-            delay: 0.3,
+            delay: 1.5,
             duration: 0.9,
+            damping: 20,
           }}
         >
           {children}
@@ -75,11 +80,12 @@ const DropAnimationWrapper: React.FC<DropAnimationWrapperProps> = ({
       )}
       {direction === 'right' && (
         <motion.div
-          initial={{ x: 250, opacity: 0 }}
+          initial={{ x: 150, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{
             delay: 0.3,
             duration: 0.9,
+            damping: 20,
           }}
         >
           {children}
@@ -87,11 +93,12 @@ const DropAnimationWrapper: React.FC<DropAnimationWrapperProps> = ({
       )}
       {direction === 'top' && (
         <motion.div
-          initial={{ y: -250, opacity: 0 }}
+          initial={{ y: -150, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{
             delay: 0.3,
             duration: 0.9,
+            damping: 30,
           }}
         >
           {children}
