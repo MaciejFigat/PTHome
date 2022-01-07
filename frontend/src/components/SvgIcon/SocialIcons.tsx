@@ -44,20 +44,10 @@ const itemVariants = {
   closed: {
     y: 50,
     opacity: 0,
-    // transition: {
-    //   delay: 0.3,
-    //   duration: 0.9,
-    //   damping: 20,
-    // },
   },
   open: {
     y: 0,
     opacity: 1,
-    // transition: {
-    //   delay: 0.3,
-    //   duration: 0.9,
-    //   damping: 20,
-    // },
   },
 }
 
