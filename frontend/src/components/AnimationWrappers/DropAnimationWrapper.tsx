@@ -2,20 +2,101 @@ import React, { ReactNode } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 interface DropAnimationWrapperProps {
   children?: ReactNode
+  delay?: 1 | 2 | 3
+  direction?: 'left' | 'right' | 'top'
 }
 
 const DropAnimationWrapper: React.FC<DropAnimationWrapperProps> = ({
   children,
+  delay,
+  direction,
 }) => {
   return (
     <AnimatePresence>
-      <motion.div
-        initial={{ y: -250, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.5, duration: 0.7 }}
-      >
-        {children}
-      </motion.div>
+      {!direction && !delay && (
+        <motion.div
+          initial={{ y: 250, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            delay: 0.3,
+            duration: 0.9,
+          }}
+        >
+          {children}
+        </motion.div>
+      )}
+      {!direction && delay === 1 && (
+        <motion.div
+          initial={{ y: 250, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            delay: 0.6,
+            duration: 0.9,
+          }}
+        >
+          {children}
+        </motion.div>
+      )}
+      {!direction && delay === 2 && (
+        <motion.div
+          initial={{ y: 250, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            delay: 0.9,
+            duration: 0.9,
+          }}
+        >
+          {children}
+        </motion.div>
+      )}
+      {!direction && delay === 3 && (
+        <motion.div
+          initial={{ y: 250, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            delay: 1.2,
+            duration: 0.9,
+          }}
+        >
+          {children}
+        </motion.div>
+      )}
+      {direction === 'left' && (
+        <motion.div
+          initial={{ x: -250, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{
+            delay: 0.3,
+            duration: 0.9,
+          }}
+        >
+          {children}
+        </motion.div>
+      )}
+      {direction === 'right' && (
+        <motion.div
+          initial={{ x: 250, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{
+            delay: 0.3,
+            duration: 0.9,
+          }}
+        >
+          {children}
+        </motion.div>
+      )}
+      {direction === 'top' && (
+        <motion.div
+          initial={{ y: -250, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            delay: 0.3,
+            duration: 0.9,
+          }}
+        >
+          {children}
+        </motion.div>
+      )}
     </AnimatePresence>
   )
 }

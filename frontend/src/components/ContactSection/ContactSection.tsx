@@ -33,7 +33,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
   imgStart,
   children,
 }) => {
-  const [copySuccess, setCopySuccess] = useState('Copied!')
+  const [copySuccess, setCopySuccess] = useState('')
 
   const copyHandler = (id: string) => {
     const copyText = document.getElementById(id)?.innerText
@@ -68,35 +68,49 @@ const ContactSection: React.FC<ContactSectionProps> = ({
         <Container>
           <InfoRow imgStart={imgStart}>
             <InfoColumn>
-              <DropAnimationWrapper>
-                <TextWrapper>
-                  <Heading>Lorem ipsum dolor sit.</Heading>
+              <TextWrapper>
+                <DropAnimationWrapper direction='top'>
+                  <Heading>Lorem ipsum dolor sit.</Heading>{' '}
+                </DropAnimationWrapper>
+                <DropAnimationWrapper>
+                  {' '}
                   <TopLine>
-                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    11 Lorem ipsum dolor sit amet consectetur adipisicing.
                   </TopLine>
+                </DropAnimationWrapper>
+                <DropAnimationWrapper delay={1}>
+                  {' '}
                   <TopLine>
-                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    22 Lorem ipsum dolor sit amet consectetur adipisicing.
                   </TopLine>
+                </DropAnimationWrapper>{' '}
+                <DropAnimationWrapper delay={2}>
+                  {' '}
                   <TopLine>
-                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    33 Lorem ipsum dolor sit amet consectetur adipisicing.
                   </TopLine>
-                  <CopyHeading
-                    contentAfter={copySuccess}
-                    id='copyEmail'
-                    onClick={() => copyHandler('copyEmail')}
-                    onMouseEnter={() => hoverHelper()}
-                    onMouseLeave={() => leaveHelper()}
-                  >
-                    secretEmail@special.com
-                  </CopyHeading>
-
-                  <SocialIcons />
-                  <Subtitle>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
-                    vero omnis harum laborum voluptatum delectus.
-                  </Subtitle>
-                </TextWrapper>
-              </DropAnimationWrapper>
+                </DropAnimationWrapper>
+                <DropAnimationWrapper delay={3}>
+                  {' '}
+                  <TopLine>
+                    44 Lorem ipsum dolor sit amet consectetur adipisicing.
+                  </TopLine>
+                </DropAnimationWrapper>
+                <CopyHeading
+                  contentAfter={copySuccess}
+                  id='copyEmail'
+                  onClick={() => copyHandler('copyEmail')}
+                  onMouseEnter={() => hoverHelper()}
+                  onMouseLeave={() => leaveHelper()}
+                >
+                  secretEmail@special.com
+                </CopyHeading>
+                <SocialIcons />
+                <Subtitle>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
+                  vero omnis harum laborum voluptatum delectus.
+                </Subtitle>
+              </TextWrapper>
             </InfoColumn>
             <InfoColumn>
               {children ? (

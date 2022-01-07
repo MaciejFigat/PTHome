@@ -26,10 +26,7 @@ export const NavContainer = styled.nav`
   position: sticky;
   top: 0;
   min-height: fit-content;
-
   overflow: hidden;
-  /* background: var(--background1-main); */
-  box-shadow: inset 20px 20px 40px #171718, inset -20px -20px 40px #252526;
 
   @media (max-width: 1020px) {
     flex-direction: column;
@@ -37,13 +34,6 @@ export const NavContainer = styled.nav`
     width: 100%;
     max-width: 100%;
     box-shadow: none;
-
-    /* transform: translateX(-130%); */
-    /* transition: all 200ms ease-in; */
-    /* &.true {
-      transition: all 300ms ease-in;
-      transform: translateX(0%);
-    } */
   }
 `
 // the following list is used for desktop navigation
