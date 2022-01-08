@@ -87,15 +87,14 @@ body {
    
     .nav_link {
       color: var(--background4-main);
-      // color: var(--background-blue1);
       display: flex;
       align-items: center;
-      
+    
     }
     .nav_link.activated {
       // color: var(--background5-main);
       // color: var(--secondary2);
-      
+     
       color: var(--background-blue6);
 
      
@@ -103,8 +102,7 @@ body {
     }
     .nav_link:hover  {
       color: var(--background5-main);
-   
-      transition: 0.3s; 
+         transition: 0.3s; 
     }
     a, a:link, a:visited {
       text-decoration: none;

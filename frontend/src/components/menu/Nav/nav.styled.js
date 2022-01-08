@@ -5,6 +5,7 @@ export const TransitionWrapperMain = styled.div`
   position: sticky;
   z-index: 3;
   top: -2px;
+
   .active {
     transition: all 200ms ease-in;
   }
@@ -18,7 +19,21 @@ export const TransitionWrapper = styled.div`
   top: 0;
   max-height: 3.2rem;
   height: 55px;
-  background: var(--background1-main);
+  background: linear-gradient(
+    90deg,
+    var(--background2-main),
+    var(--background2-main),
+    var(--background1-main),
+    var(--background1-main),
+    var(--background1-main),
+    var(--background1-main),
+    var(--background2-main),
+    var(--background2-main)
+  );
+  @media (max-width: 1020px) {
+    background: var(--background1-main);
+  }
+  /* background: var(--background1-main); */
   /* background: var(--background-blue6); */
 `
 export const NavContainer = styled.nav`
