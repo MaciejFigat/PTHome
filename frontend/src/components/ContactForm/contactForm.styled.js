@@ -6,23 +6,16 @@ export const ResponsiveDiv = styled.div`
   border-radius: 4px;
   width: 40vw;
   padding: 0px 0px 10px;
-  /* margin-top: 1.25rem; */
-  /* margin-bottom: 1.25rem; */
+
   @media (max-width: 600px) {
     background: var(--background-secondary1);
     box-shadow: 0.5px 0.5px 1px var(--background4-main),
       -0.5px -0.5px 1px var(--background1-main);
   }
-  /* background: rgba(38, 70, 83, 0.8);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(12.5px);
-  -webkit-backdrop-filter: blur(12.5px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18); */
 
-  background: var(--background-tertiary25); */
-  box-shadow: 0.5px 0.5px 1px var(--background-tertiary1),
-    -0.5px -0.5px 1px var(--background-tertiary1);
+  background: var(--background-tertiary25);
+  box-shadow: 0.5px 0.5px 1px var(--background-tertiary25),
+    -0.5px -0.5px 1px var(--background-tertiary25);
   transition: all 0.6s ease-out;
   @media (min-width: 600px) {
     &:hover {

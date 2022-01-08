@@ -4,7 +4,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const FooterContainer = styled.div`
   display: flex;
-  background-color: var(--background2-main);
+  /* background-color: var(--background2-main); */
+  /* background-color: var(--background-blue6); */
+  background: linear-gradient(
+    145deg,
+    var(--background2-main),
+    var(--background-blue6)
+  );
   padding: 4rem 0 2rem 0;
   justify-content: center;
   align-items: center;

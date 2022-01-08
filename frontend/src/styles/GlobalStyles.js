@@ -73,7 +73,7 @@ body {
     
     --background-tertiary1: #1d3557;
     --background-tertiary2: #457b9d;
-    --background-tertiary25: rgba(69, 123, 157, 0.9);
+    --background-tertiary25: rgba(69, 123, 157, 1);
     --background-tertiary3: #a8dadc;
     --background-tertiary4: #f1faee;
     --background-tertiary5: #e63946;
@@ -87,13 +87,16 @@ body {
    
     .nav_link {
       color: var(--background4-main);
+      // color: var(--background-blue1);
       display: flex;
       align-items: center;
       
     }
     .nav_link.activated {
       // color: var(--background5-main);
-      color: var(--secondary2);
+      // color: var(--secondary2);
+      
+      color: var(--background-blue6);
 
      
       

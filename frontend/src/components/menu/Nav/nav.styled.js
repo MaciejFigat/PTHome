@@ -19,6 +19,7 @@ export const TransitionWrapper = styled.div`
   max-height: 3.2rem;
   height: 55px;
   background: var(--background1-main);
+  /* background: var(--background-blue6); */
 `
 export const NavContainer = styled.nav`
   display: flex;
@@ -55,11 +56,14 @@ export const NavList = styled.ul`
     padding-bottom: 3rem;
     gap: 1.75rem;
     /* @media screen and (orientation: landscape) { */
-    @media (max-width: 700px) and (orientation: landscape) {
-      margin-top: 1rem;
-      padding-bottom: 1.75rem;
-      gap: 0.75rem;
-    }
+  }
+  @media (max-width: 700px) and (orientation: landscape) {
+    margin-top: 1rem;
+    padding-bottom: 1.75rem;
+    gap: 0.75rem;
+  }
+  @media (max-width: 400px) {
+    margin-top: 0rem;
   }
 `
 export const ListLoginWrapper = styled.div`
@@ -82,6 +86,7 @@ export const ListItem = styled.li`
   display: flex;
   text-transform: uppercase;
   color: var(--background5-main);
+  /* color: var(--background-blue6); */
   @media (max-width: 1020px) {
     flex-direction: column;
     align-content: flex-start;
@@ -154,6 +159,8 @@ export const HeaderTitleDesktop = styled.h1`
 `
 export const AnimatedWrapperMobile = styled(motion.div)`
   background: var(--background1-main);
+
+  /* background: var(--background-tertiary25); */
   width: 18.75rem;
   height: calc(100vh + 50px);
   box-shadow: inset 20px 20px 40px #171718, inset -20px -20px 40px #252526;

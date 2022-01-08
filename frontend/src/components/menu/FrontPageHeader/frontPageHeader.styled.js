@@ -4,8 +4,20 @@ export const HeaderContainer = styled.div`
   display: flex;
   height: fit-content;
   max-width: 100%;
-  background: var(--background1-main);
-  box-shadow: inset 20px 20px 40px #171718, inset -20px -20px 40px #252526;
+  /* background: var(--background1-main); */
+  /* background: var(--background-blue6); */
+  /* background: var(--background-tertiary25); */
+  /* background: linear-gradient(
+    180deg,
+    var(--background2-main),
+    var(--background1-main)
+  ); */
+  background: linear-gradient(
+    145deg,
+    var(--background2-main),
+    var(--background-blue6)
+  );
+  /* box-shadow: inset 20px 20px 40px #171718, inset -20px -20px 40px #252526; */
   z-index: 22;
   @media (max-width: 1020px) {
     display: none;
@@ -14,7 +26,7 @@ export const HeaderContainer = styled.div`
 export const HeaderTitle = styled.h1`
   color: var(--background4-main);
   font-size: 1.75rem;
-  font-weight: 200;
+  font-weight: 400;
 
   @media (max-width: 1020px) {
     font-size: 1rem;
