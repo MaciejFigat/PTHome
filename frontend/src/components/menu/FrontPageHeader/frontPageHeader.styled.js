@@ -20,12 +20,10 @@ export const HeaderContainer = styled.div`
   background: linear-gradient(
     90deg,
     var(--background2-main),
-    var(--background2-main),
     var(--background1-main),
     var(--background1-main),
     var(--background1-main),
     var(--background1-main),
-    var(--background2-main),
     var(--background2-main)
   );
   /* box-shadow: inset 20px 20px 40px #171718, inset -20px -20px 40px #252526; */
