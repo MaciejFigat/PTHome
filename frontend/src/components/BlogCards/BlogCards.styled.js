@@ -12,7 +12,9 @@ export const BlogCardWrapper = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   gap: 2rem;
   place-items: center;
-
+  @media screen and (min-width: 1670px) {
+    max-width: 1500px;
+  }
   @media screen and (max-width: 470px) {
     margin-top: 1rem;
     gap: 1rem;

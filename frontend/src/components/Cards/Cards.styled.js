@@ -1,19 +1,42 @@
 import styled from 'styled-components'
 
+export const Wrapper = styled.div`
+  display: grid;
+  place-items: center;
+`
 export const CardsWrapper = styled.div`
-  display: flex;
-  flex-flow: row wrap;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin: 0px auto;
-  max-width: 80%;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  display: grid;
+  max-width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 2rem;
+  place-items: center;
+  @media screen and (min-width: 1670px) {
+    max-width: 1500px;
+  }
+  @media screen and (max-width: 470px) {
+    margin-top: 1rem;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
 `
 
+export const CardBody = styled.div`
+  height: 400px;
+  width: 300px;
+  min-width: 100%;
+
+  /* background: var(--background-tertiary2); */
+  &:hover {
+    opacity: 0.7;
+  }
+`
 export const CardH2 = styled.h2`
-  margin: 0px 0px 1.45rem;
+  margin: 10px 0px 1.45rem;
   padding: 0px;
-  color: inherit;
+  display: grid;
+  place-items: center;
   font-weight: bold;
   text-rendering: optimizelegibility;
   font-size: 1.62671rem;
@@ -32,14 +55,15 @@ export const CardP = styled.p`
   margin-bottom: 1.5rem;
 `
 export const CardImage = styled.img`
-  position: absolute;
-  top: 0px;
-  left: 0px;
+  padding-right: 0;
+  border: 0;
+  object-fit: contain;
+  max-width: fit-content;
+  max-height: 300px;
+  overflow: hidden;
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 50%;
-  opacity: 1;
-  transition: opacity 500ms ease 0s;
-  font-family: 'object-fit: cover; object-position: 50% 50%';
+  aspect-ratio: 16 / 9;
+  /* object-position: center; */
+  transition: 200ms transform ease-in-out;
 `

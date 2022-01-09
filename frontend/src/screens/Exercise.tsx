@@ -1,4 +1,5 @@
 import React from 'react'
+import Cards from '../components/Cards/Cards'
 
 import SmallSection from '../components/SectionSmall/SmallSection'
 
@@ -9,10 +10,11 @@ const Exercise: React.FC<ExerciseProps> = () => {
     <>
       {' '}
       <SmallSection
-        title='Here you can contact me'
-        description='I like emails'
-        variant='dark'
+        title='Oferuję następujące usługi'
+        description='zapraszam serdecznie'
+        variant='primary'
       />
+      <Cards />
     </>
   )
 }

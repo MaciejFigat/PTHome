@@ -37,8 +37,8 @@ export const HeaderTitle = styled.h1`
   font-size: 1.75rem;
   font-weight: 400;
 
-  @media (max-width: 1020px) {
-    font-size: 1rem;
+  @media (max-width: 1220px) {
+    font-size: 1.5rem;
   }
 `
 
@@ -49,6 +49,8 @@ export const HeaderList = styled.ul`
   align-items: center;
   width: 100vw;
   padding: 0;
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
 `
 export const HeaderItem = styled.li`
   margin-right: 1rem;
@@ -61,7 +63,7 @@ export const HeaderItem = styled.li`
   }
 `
 export const HeaderSvgContainer = styled.div`
-  height: 10vh;
+  height: 9vh;
   display: flex;
   place-content: center;
   overflow: hidden;
