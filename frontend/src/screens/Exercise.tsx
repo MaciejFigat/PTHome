@@ -48,7 +48,7 @@ const Exercise: React.FC<ExerciseProps> = () => {
       <SmallSection
         title='Oferuję następujące usługi'
         description='zapraszam serdecznie'
-        variant='primary'
+        variant='blue'
       />
       <Cards data={data} />
     </>

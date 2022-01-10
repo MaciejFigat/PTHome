@@ -49,6 +49,16 @@ const lightStyle: StyleVariant = {
     color: `var(--background-blue1);`,
     containerBackground: `var(--background-blue5);`,
 }
+const blueStyle: StyleVariant = {
+
+    linearGradient: `
+        var(--background-blue3),
+        var(--background-blue2),
+        var(--background-blue4)
+     `,
+    color: `var(--background2-main);`,
+    containerBackground: `none;`,
+}
 /* for color #1E1E1F */
 const darkStyle: StyleVariant = {
 
@@ -92,6 +102,9 @@ export const handleSectionColor: (props: any) => {} = (props: any) => {
 
         case 'light':
             style = lightStyle
+            break;
+        case 'blue':
+            style = blueStyle
             break;
 
         default:

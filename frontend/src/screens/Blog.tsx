@@ -28,9 +28,9 @@ const Blog: React.FC<BlogProps> = () => {
     <>
       {' '}
       <SmallSection
-        title='My blog'
-        description='most recent articles'
-        variant='secondary'
+        title='Mój blog'
+        description='ostatnie artykuły'
+        variant='blue'
       />
       <BlogWrapper>
         <BlogCardWrapper>

@@ -96,7 +96,9 @@ body {
       // color: var(--secondary2);
      
       color: var(--background-blue6);
-
+      @media (min-width: 1020px) {
+        color: var(--redblue3);
+     }
      
       
     }
