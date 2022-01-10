@@ -47,12 +47,12 @@ export const CardH2 = styled.h2`
 `
 
 export const CardP = styled.p`
-  /* color: rgb(135, 135, 135); */
-  font-weight: 300;
-  font-size: 1.6rem;
-  line-height: 1.6;
-  color: rgb(247, 78, 161);
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1.2;
+
   margin-bottom: 1.5rem;
+  text-align: center;
 `
 export const CardImage = styled.img`
   padding-right: 0;

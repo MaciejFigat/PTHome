@@ -5,43 +5,24 @@ import {
   Wrapper,
   CardH2,
   CardImage,
+  CardP,
 } from './Cards.styled'
-import arm from '../../data/assets/arm.svg'
-import handstand from '../../data/assets/handstand.svg'
-import proWrestlers from '../../data/assets/proWrestlers.svg'
-import sumo from '../../data/assets/sumo.svg'
-import sumo2 from '../../data/assets/sumo2.svg'
 
-interface CardsProps {}
+interface CardsProps {
+  data: { img: any; title: string; text: string }[]
+}
 
-const Cards: React.FC<CardsProps> = () => {
+const Cards: React.FC<CardsProps> = ({ data }) => {
   return (
     <Wrapper>
       <CardsWrapper>
-        <CardBody>
-          <CardImage src={sumo} />
-          <CardH2>Testy sprawnościowe</CardH2>
-        </CardBody>
-        <CardBody>
-          <CardImage src={arm} />
-          <CardH2>Treningi indywidualne</CardH2>
-        </CardBody>
-        <CardBody>
-          <CardImage src={sumo2} />
-          <CardH2>Treningi grupowe</CardH2>
-        </CardBody>
-        <CardBody>
-          <CardImage src={proWrestlers} />
-          <CardH2>Plany treningowe</CardH2>
-        </CardBody>
-        <CardBody>
-          <CardImage src={sumo} />
-          <CardH2>Zwiększanie mobilności</CardH2>
-        </CardBody>
-        <CardBody>
-          <CardImage src={handstand} />
-          <CardH2>Treningi performance</CardH2>
-        </CardBody>
+        {data.map(({ title, img, text }) => (
+          <CardBody key={title}>
+            <CardImage src={img} />
+            <CardH2>{title}</CardH2>
+            <CardP>{text}</CardP>
+          </CardBody>
+        ))}
       </CardsWrapper>
     </Wrapper>
   )
