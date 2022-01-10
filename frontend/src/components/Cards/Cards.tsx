@@ -11,7 +11,6 @@ import handstand from '../../data/assets/handstand.svg'
 import proWrestlers from '../../data/assets/proWrestlers.svg'
 import sumo from '../../data/assets/sumo.svg'
 import sumo2 from '../../data/assets/sumo2.svg'
-import woman from '../../data/assets/woman.svg'
 
 interface CardsProps {}
 

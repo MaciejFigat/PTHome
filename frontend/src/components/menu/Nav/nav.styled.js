@@ -29,11 +29,6 @@ export const TransitionWrapper = styled.div`
     var(--background2-main)
   );
 
-  /* @media (min-width: 1020px) {
-    &:hover {
-      background: var(--background1-main);
-    }
-  } */
   @media (max-width: 1020px) {
     background: var(--background1-main);
   }

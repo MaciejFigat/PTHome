@@ -4,6 +4,12 @@ export const Wrapper = styled.div`
   display: grid;
   place-items: center;
 `
+export const CardBody = styled.div`
+  height: 400px;
+  width: 300px;
+  min-width: 100%;
+  transition: 0.3s;
+`
 export const CardsWrapper = styled.div`
   margin-top: 3rem;
   margin-bottom: 1rem;
@@ -20,18 +26,15 @@ export const CardsWrapper = styled.div`
     gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   }
-`
 
-export const CardBody = styled.div`
-  height: 400px;
-  width: 300px;
-  min-width: 100%;
-
-  /* background: var(--background-tertiary2); */
-  &:hover {
-    opacity: 0.7;
+  &:hover > ${CardBody} {
+    opacity: 0.2;
+  }
+  &:hover > ${CardBody}:hover {
+    opacity: 1;
   }
 `
+
 export const CardH2 = styled.h2`
   margin: 10px 0px 1.45rem;
   padding: 0px;
@@ -41,9 +44,6 @@ export const CardH2 = styled.h2`
   text-rendering: optimizelegibility;
   font-size: 1.62671rem;
   line-height: 1.1;
-`
-export const CardImage2 = styled.img`
-  object-fit: contain !important;
 `
 
 export const CardP = styled.p`
