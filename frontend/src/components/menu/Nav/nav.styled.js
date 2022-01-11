@@ -22,12 +22,17 @@ export const TransitionWrapper = styled.div`
   background: linear-gradient(
     90deg,
     var(--background2-main),
+    var(--background-blue6)
+  );
+  /* background: linear-gradient(
+    90deg,
+    var(--background2-main),
     var(--background1-main),
     var(--background1-main),
     var(--background1-main),
     var(--background1-main),
     var(--background2-main)
-  );
+  ); */
 
   @media (max-width: 1020px) {
     background: var(--background1-main);

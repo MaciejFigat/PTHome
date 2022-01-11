@@ -6,12 +6,13 @@ import handstand from '../data/assets/handstand.svg'
 import proWrestlers from '../data/assets/proWrestlers.svg'
 import sumo from '../data/assets/sumo.svg'
 import sumo2 from '../data/assets/sumo2.svg'
+import angryMan from '../data/assets/angryMan.svg'
 interface ExerciseProps {}
 
 const data = [
   {
     title: 'Testy sprawnościowe',
-    img: sumo,
+    img: angryMan,
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, incidunt?',
   },
   {

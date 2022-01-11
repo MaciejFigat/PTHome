@@ -3,7 +3,8 @@ import Home from './screens/Home'
 import Contact from './screens/Contact'
 import { GlobalStyle } from './styles/GlobalStyles'
 import { Routes, Route, useLocation } from 'react-router-dom'
-import FrontPageHeader from './components/menu/FrontPageHeader/FrontPageHeader'
+// import FrontPageHeader from './components/menu/FrontPageHeader/FrontPageHeader'
+import FrontPageHeaderTwo from './components/menu/FrontPageHeader/FrontPageHeaderTwo'
 import Shop from './screens/Shop'
 import Exercise from './screens/Exercise'
 import Blog from './screens/Blog'
@@ -29,7 +30,8 @@ function App() {
     <>
       <ScrollTopHelper />
       <GlobalStyle />
-      <FrontPageHeader title='George B. trener personalny' />
+
+      <FrontPageHeaderTwo title='Trener Personalny' subtitle='Nina K.' />
       <Nav />
 
       <Routes location={location} key={location.key}>

@@ -7,13 +7,21 @@ import { svgPathSumo2 } from './svgPathSumo2'
 import { svgPathWoman } from './svgPathWoman'
 import { svgPathHandstand } from './svgPathHandstand'
 import { svgPathWrestlers } from './svgPathWrestlers'
+import { svgPathAngryMan } from './svgPathAngryMan'
 
 interface HeaderSvgProps {
   colorVisibleFill?: string
   colorVisibleStroke?: string
   colorHiddenFill?: string
   colorHiddenStroke?: string
-  version?: 'sumo' | 'birds' | 'sumo2' | 'woman' | 'wrestlers' | 'handstand'
+  version?:
+    | 'sumo'
+    | 'birds'
+    | 'sumo2'
+    | 'woman'
+    | 'wrestlers'
+    | 'handstand'
+    | 'angryMan'
 }
 
 const HeaderSvg: React.FC<HeaderSvgProps> = ({
@@ -53,6 +61,10 @@ const HeaderSvg: React.FC<HeaderSvgProps> = ({
         setPath(svgPathSumo2)
         setViewBox('0 20 548 432')
 
+        return
+      case 'angryMan':
+        setPath(svgPathAngryMan)
+        setViewBox('0 71 528 272')
         return
       case 'woman':
         setPath(svgPathWoman)
