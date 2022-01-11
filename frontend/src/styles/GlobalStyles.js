@@ -125,13 +125,18 @@ body {
     var(--background2-main),
     var(--background-blue6)
   );
-  
+  @media (max-width: 1020px) {
+    background: var(--background-blue6);
+   
+  }
 }
 
 ::-webkit-scrollbar-thumb {
-  // background: #3C3B3D;
   background: var(--secondary5);
-
+  @media (max-width: 1020px) {
+    background: var(--background1-main);
+   
+  }
   border-radius: 2px;
   // -webkit-box-shadow: inset 10px 10px 20px #2e2d2e,
   // inset -10px -10px 20px #4a494c;
