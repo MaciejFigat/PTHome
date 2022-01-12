@@ -33,6 +33,15 @@ export const HeaderTitle = styled.h1`
     font-size: 1.5rem;
   }
 `
+export const HeaderSubtitle = styled(HeaderTitle)`
+  transition: 0.3s;
+  color: var(--secondary2);
+  border-radius: 25%;
+  &:hover {
+    transition: 0.3s;
+    color: var(--secondary5);
+  }
+`
 
 export const HeaderList = styled.ul`
   justify-content: space-around;

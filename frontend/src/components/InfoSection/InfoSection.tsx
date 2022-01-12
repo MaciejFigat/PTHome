@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react'
+import { NavLink } from 'react-router-dom'
 import {
   InfoSec,
   Container,
@@ -13,7 +14,6 @@ import {
   ImgWrapper,
   Img,
 } from './InfoSection.styled'
-
 interface InfoData {
   topline: string
   headline: string
@@ -28,6 +28,7 @@ interface InfoSectionProps {
   imgStart?: boolean
   children?: ReactNode
   buttonLink?: string
+  buttonNavLink?: string
 }
 
 const InfoSection: React.FC<InfoSectionProps> = ({
@@ -36,6 +37,7 @@ const InfoSection: React.FC<InfoSectionProps> = ({
   imgStart,
   children,
   buttonLink,
+  buttonNavLink,
 }) => {
   return (
     <>
@@ -49,18 +51,13 @@ const InfoSection: React.FC<InfoSectionProps> = ({
                 <Subtitle variant={variant}>{data.subtitle}</Subtitle>
                 {data.buttonLabel && (
                   <Button large fontLarge variant={variant}>
-                    {buttonLink ? (
+                    {buttonNavLink && (
+                      <NavLink to={buttonNavLink}>{data.buttonLabel}</NavLink>
+                    )}
+                    {buttonLink && (
                       <ButtonLink
                         variant={variant}
                         href={buttonLink}
-                        target='_blank'
-                      >
-                        {data.buttonLabel}
-                      </ButtonLink>
-                    ) : (
-                      <ButtonLink
-                        variant={variant}
-                        href='https://www.poetryfoundation.org/play/75764'
                         target='_blank'
                       >
                         {data.buttonLabel}

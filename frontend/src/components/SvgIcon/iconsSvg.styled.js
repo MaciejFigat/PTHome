@@ -16,6 +16,7 @@ export const IconsWrapper = styled.ul`
 export const IconsItem = styled.li`
   margin-right: 1rem;
   padding: 0;
+  font-size: 1.1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,5 +26,8 @@ export const IconsItem = styled.li`
     &:last-child {
       margin-right: 0rem;
     }
+  }
+  &:hover {
+    color: var(--background5-main);
   }
 `

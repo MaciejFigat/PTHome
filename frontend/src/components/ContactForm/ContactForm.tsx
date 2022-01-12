@@ -83,7 +83,7 @@ const ContactForm: React.FC<ContactFormProps> = () => {
                 <ContactFieldContent
                   type='text'
                   value={name}
-                  placeholder='Name'
+                  placeholder='Imię'
                   onChange={(e: any) => setName(e.target.value)}
                 />
               </ContactField>
@@ -98,7 +98,7 @@ const ContactForm: React.FC<ContactFormProps> = () => {
               <ContactField>
                 <MessageField
                   value={formMessage}
-                  placeholder='Message'
+                  placeholder='Wiadomość'
                   as='textarea'
                   row='14'
                   onChange={(e: any) => setFormMessage(e.target.value)}

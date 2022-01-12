@@ -13,7 +13,12 @@ const Home: React.FC = () => {
   return (
     <>
       <Toast option='registerUser' />
-      <InfoSection data={homeData} variant='tertiary' imgStart></InfoSection>
+      <InfoSection
+        data={homeData}
+        buttonNavLink='/contact'
+        variant='tertiary'
+        imgStart
+      ></InfoSection>
       <InfoSection data={homeDataTwo} variant='primary'></InfoSection>
       <InfoSection
         data={homeDataThree}

@@ -84,6 +84,11 @@ export const NavList = styled.ul`
   }
 `
 export const ListLoginWrapper = styled.div`
+  a {
+    &:hover {
+      color: red;
+    }
+  }
   @media (max-width: 1020px) {
     display: none;
   }

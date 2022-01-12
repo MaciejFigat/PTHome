@@ -102,17 +102,19 @@ body {
     }
     .nav_link:hover  {
       color: var(--background5-main);
-         transition: 0.3s; 
+      //  transition: 0.3s; 
+    
     }
-    a, a:link, a:visited {
+    a, a:link, a:visited, a:hover {
       text-decoration: none;
+      // color: var(--background4-main);
      
       // color: var(--background4-main);
   
       // transition: 0.3s;
       
     }
-    
+  
     
     
 }

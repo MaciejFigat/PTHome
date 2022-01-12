@@ -71,7 +71,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
             <InfoColumn>
               <TextWrapper>
                 <DropAnimationWrapper direction='top'>
-                  <Heading>Zapraszam do kontaktu</Heading>{' '}
+                  <Heading>Zarezerwuj trening lub konsultacje</Heading>{' '}
                 </DropAnimationWrapper>
                 <DropAnimationWrapper>
                   {' '}

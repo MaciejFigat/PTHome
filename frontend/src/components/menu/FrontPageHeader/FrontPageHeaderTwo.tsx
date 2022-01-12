@@ -8,6 +8,7 @@ import {
   HeaderTitle,
   HeaderList,
   HeaderItem,
+  HeaderSubtitle,
 } from './frontPageHeader.styled'
 
 interface FrontPageHeaderTwoProps {
@@ -24,7 +25,7 @@ const FrontPageHeaderTwo: React.FC<FrontPageHeaderTwoProps> = ({
       <HeaderList>
         <HeaderItem>
           <FadeInAnimationWrapper>
-            <HeaderTitle>{subtitle}</HeaderTitle>
+            <HeaderSubtitle>{subtitle}</HeaderSubtitle>
           </FadeInAnimationWrapper>
         </HeaderItem>
         <HeaderItem>
