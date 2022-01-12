@@ -6,10 +6,20 @@ export const FooterContainer = styled.div`
   display: flex;
   /* background-color: var(--background2-main); */
   /* background-color: var(--background-blue6); */
-  background: linear-gradient(
-    145deg,
-    var(--background2-main),
-    var(--background-blue6)
+  background-image: linear-gradient(
+    90deg,
+    hsl(355deg 78% 56%) 0%,
+    hsl(7deg 79% 61%) 5%,
+    hsl(16deg 81% 63%) 9%,
+    hsl(23deg 85% 66%) 12%,
+    hsl(20deg 72% 69%) 15%,
+    hsl(327deg 31% 67%) 18%,
+    hsl(256deg 49% 67%) 21%,
+    hsl(230deg 89% 64%) 25%,
+    hsl(220deg 86% 53%) 31%,
+    hsl(215deg 76% 47%) 40%,
+    hsl(208deg 79% 39%) 56%,
+    hsl(195deg 89% 28%) 100%
   );
   padding: 4rem 0 2rem 0;
   justify-content: center;
@@ -24,10 +34,10 @@ export const FooterSection = styled.section`
   text-align: center;
   margin-bottom: 24px;
   max-width: 70%;
-  color: var(--background4-main);
+  color: var(--background5-main);
 `
 export const FooterSectionHeading = styled.p`
-  color: var(--background4-main);
+  color: var(--secondary3);
   margin-bottom: 24px;
   font-size: 24px;
   @media screen and (max-width: 770px) {
@@ -37,7 +47,7 @@ export const FooterSectionHeading = styled.p`
   }
 `
 export const FooterSectionText = styled.div`
-  color: var(--background5-main);
+  color: var(--secondary3);
   margin-bottom: 24px;
   font-size: 20px;
 `
@@ -55,7 +65,7 @@ export const FormInput = styled.input`
   padding: 10px 20px;
   border-radius: 4px;
   margin-right: 10px;
-  border: 2px solid var(--background5-main);
+  border: 2px solid var(--secondary5);
   font-size: 18px;
   outline: none;
   color: var(--secondary1);
@@ -91,7 +101,7 @@ export const FooterLinksItems = styled.div`
   align-items: flex-start;
   margin: 18px;
   box-sizing: border-box;
-  color: var(--background4-main);
+  color: var(--secondary3);
   @media screen and (max-width: 880px) {
     padding: 0px;
     width: 80%;

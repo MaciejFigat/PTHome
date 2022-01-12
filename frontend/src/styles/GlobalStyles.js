@@ -86,7 +86,8 @@ body {
 
    
     .nav_link {
-      color: var(--background4-main);
+      // color: var(--background4-main);
+      color: var(--secondary4);
       display: flex;
       align-items: center;
     
