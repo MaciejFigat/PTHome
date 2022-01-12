@@ -19,6 +19,9 @@ export const InfoSec = styled.div`
   @media (max-width: 880px) {
     padding: 60px 0;
   }
+  @media (max-width: 380px) {
+    padding: 10px 0;
+  }
 `
 export const InfoRow = styled.div`
   display: flex;
@@ -132,6 +135,7 @@ export const Subtitle = styled.p`
   margin-bottom: 35px;
   font-size: 18px;
   line-height: 24px;
+  letter-spacing: 0.025em;
   /* subtitleColor */
   ${(props) => handleSectionColor(props).subtitleColor}
 `

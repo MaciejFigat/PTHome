@@ -1,17 +1,16 @@
-import sumo2 from './assets/sumo2.svg'
+import angryMan from './assets/angryMan.svg'
 import sumo from './assets/sumo.svg'
 import woman from './assets/woman.svg'
 import handstand from './assets/handstand.svg'
 import proWrestlers from './assets/proWrestlers.svg'
 
 export const homeData = {
-  topline: 'Lorem ipsum dolor sit.',
-  headline:
-    'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure, mollitia?',
+  topline: 'Siła na miarę',
+  headline: 'Nina - trener medyczny',
   subtitle:
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat perspiciatis non deleniti doloremque, iure laudantium quaerat esse odit. Similique nihil voluptate voluptatem sed tempora sunt libero, saepe corrupti laboriosam suscipit.',
-  img: sumo2,
-  buttonLabel: 'Wallace Stevens',
+    'Proponuję treningi indywidualne i grupowe. Rozpisywanie planów treningowych. Przeprowadzanie testów sprawnościowych.',
+  img: angryMan,
+  buttonLabel: 'Zarezerwuj trening',
 }
 
 export const homeDataTwo = {

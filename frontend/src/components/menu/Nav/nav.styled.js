@@ -98,8 +98,10 @@ export const HeaderLoginWrapper = styled.div`
 
 export const ListItem = styled.li`
   margin-right: 1rem;
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.05rem;
+
+  letter-spacing: 0.075em;
+  font-weight: 400;
   display: flex;
   text-transform: uppercase;
   color: var(--background5-main);

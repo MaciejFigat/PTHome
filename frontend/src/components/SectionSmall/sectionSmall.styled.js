@@ -18,6 +18,7 @@ export const SectionContainer = styled.div`
 
 export const SectionTitle = styled.h1`
   font-size: 2rem;
+  font-weight: 500;
   margin: 1rem;
   &:after {
     content: '';

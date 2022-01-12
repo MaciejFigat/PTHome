@@ -26,9 +26,9 @@ export const HeaderContainer = styled.div`
 `
 export const HeaderTitle = styled.h1`
   color: var(--background4-main);
-  font-size: 1.75rem;
+  font-size: 1.55rem;
   font-weight: 400;
-
+  letter-spacing: 0.075em;
   @media (max-width: 1220px) {
     font-size: 1.5rem;
   }
