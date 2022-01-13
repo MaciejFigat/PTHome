@@ -155,7 +155,7 @@ export const MobileViewContainer = styled.div`
   margin-top: -1px !important;
 `
 export const HeaderTitleMobile = styled.h1`
-  color: var(--background2-main);
+  color: var(--bluegreen3);
   font-size: 1.75rem;
   font-weight: 400;
   display: none;
