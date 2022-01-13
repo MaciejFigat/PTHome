@@ -13,7 +13,11 @@ export const IconsWrapper = styled.ul`
   }
 `
 export const IconsItemDiv = styled.div`
-  border: 1px solid var(--background-tertiary1);
+  ${(props) =>
+    props.variant && props.variant === 'light'
+      ? `border: 2px solid var(--bluegreen1);`
+      : `border: 2px solid var(--background-tertiary1);`}
+
   border-radius: 50%;
   margin-right: 1rem;
   padding: 0.75rem;
@@ -22,7 +26,14 @@ export const IconsItemDiv = styled.div`
   min-width: 40px;
   min-height: 40px;
   &:hover {
-    background: var(--background-tertiary2);
+    ${(props) =>
+      props.variant && props.variant === 'light'
+        ? `background: var(--bluegreen2);`
+        : `background: var(--background-tertiary2);`}
+    ${(props) =>
+      props.variant && props.variant === 'light'
+        ? `border: 2px solid var(--bluegreen2);`
+        : `border: 2px solid var(--background-tertiary1);`}
   }
 `
 
@@ -34,11 +45,14 @@ export const IconsItem = styled.li`
   a {
     ${(props) =>
       props.variant && props.variant === 'light'
-        ? `color: var(--background-tertiary3);`
+        ? `color: var(--bluegreen3);`
         : `color: var(--background-tertiary2);`}
-    /* color: var(--background-tertiary2); */
+
     ${IconsItemDiv}:hover & {
-      color: var(--background-tertiary4) !important;
+      ${(props) =>
+        props.variant && props.variant === 'light'
+          ? `color: var(--bluegreen1);`
+          : `color: var(--background-tertiary4);`}
     }
   }
 `

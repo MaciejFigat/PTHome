@@ -19,34 +19,12 @@ export const TransitionWrapper = styled.div`
   top: 0;
   max-height: 3.2rem;
   height: 55px;
-  background-image: linear-gradient(
-    90deg,
-    hsl(12deg 76% 61%) 0%,
-    hsl(17deg 79% 63%) 4%,
-    hsl(21deg 81% 64%) 8%,
-    hsl(24deg 85% 66%) 11%,
-    hsl(20deg 72% 69%) 15%,
-    hsl(327deg 31% 67%) 20%,
-    hsl(256deg 49% 67%) 24%,
-    hsl(230deg 89% 64%) 30%,
-    hsl(220deg 86% 53%) 38%,
-    hsl(215deg 76% 47%) 48%,
-    hsl(208deg 79% 39%) 64%,
-    hsl(195deg 89% 28%) 100%
-  );
-  /* background: linear-gradient(
-    90deg,
-    var(--background2-main),
-    var(--background1-main),
-    var(--background1-main),
-    var(--background1-main),
-    var(--background1-main),
-    var(--background2-main)
-  ); */
+  background: var(--bluegreen5);
 
   @media (max-width: 1020px) {
     /* background: var(--background1-main); */
-    background-image: linear-gradient(
+
+    /* background-image: linear-gradient(
       90deg,
       hsl(12deg 76% 61%) 0%,
       hsl(17deg 79% 63%) 4%,
@@ -60,7 +38,7 @@ export const TransitionWrapper = styled.div`
       hsl(215deg 76% 47%) 48%,
       hsl(208deg 79% 39%) 64%,
       hsl(195deg 89% 28%) 100%
-    );
+    ); */
   }
 `
 export const NavContainer = styled.nav`
@@ -95,6 +73,7 @@ export const NavList = styled.ul`
     justify-content: center;
     min-height: 85vh;
     max-width: 50vw;
+    min-width: fit-content;
     padding-bottom: 3rem;
     gap: 1.75rem;
     /* @media screen and (orientation: landscape) { */
@@ -207,10 +186,9 @@ export const HeaderTitleDesktop = styled.h1`
   }
 `
 export const AnimatedWrapperMobile = styled(motion.div)`
-  background: var(--background1-main);
+  background: var(--bluegreen4);
   width: 18.75rem;
   height: calc(100vh + 50px);
-  box-shadow: inset 20px 20px 40px #171718, inset -20px -20px 40px #252526;
   display: none;
   @media (max-width: 1020px) {
     display: flex;

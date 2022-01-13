@@ -11,19 +11,17 @@ export const HeaderContainer = styled.div`
   ); */
   /* var(--background2-main), */
   background-image: linear-gradient(
-    90deg,
-    hsl(12deg 76% 61%) 0%,
-    hsl(17deg 79% 63%) 4%,
-    hsl(21deg 81% 64%) 8%,
-    hsl(24deg 85% 66%) 11%,
-    hsl(20deg 72% 69%) 15%,
-    hsl(327deg 31% 67%) 20%,
-    hsl(256deg 49% 67%) 24%,
-    hsl(230deg 89% 64%) 30%,
-    hsl(220deg 86% 53%) 38%,
-    hsl(215deg 76% 47%) 48%,
-    hsl(208deg 79% 39%) 64%,
-    hsl(195deg 89% 28%) 100%
+    0deg,
+    hsl(114deg 74% 17%) 0%,
+    hsl(111deg 73% 19%) 16%,
+    hsl(109deg 70% 21%) 32%,
+    hsl(106deg 69% 23%) 46%,
+    hsl(103deg 67% 25%) 58%,
+    hsl(101deg 65% 27%) 69%,
+    hsl(98deg 62% 29%) 78%,
+    hsl(95deg 61% 31%) 85%,
+    hsl(92deg 59% 33%) 92%,
+    hsl(89deg 57% 35%) 100%
   );
 
   z-index: 22;
@@ -32,9 +30,16 @@ export const HeaderContainer = styled.div`
   }
 `
 export const HeaderTitle = styled.h1`
-  color: var(--background5-main);
+  background: -webkit-linear-gradient(
+    180deg,
+    var(--bluegreen3),
+    var(--bluegreen2)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
   font-size: 1.55rem;
-  font-weight: 400;
+  font-weight: 800;
   letter-spacing: 0.075em;
   @media (max-width: 1220px) {
     font-size: 1.5rem;

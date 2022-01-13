@@ -20,6 +20,7 @@ import { logout } from '../../../features/users/userSlice'
 import { UserInfo } from '../../../interfaces'
 import { useCycle } from 'framer-motion'
 import FadeInAnimationWrapper from '../../AnimationWrappers/FadeInAnimationWrapper'
+import { IconsWrapper } from '../../SvgIcon/iconsSvg.styled'
 interface NavProps {}
 
 const Nav: React.FC<NavProps> = () => {
@@ -128,58 +129,60 @@ const Nav: React.FC<NavProps> = () => {
           <NavListDesktop />
           <NavListMobile open={open} />
           <FadeInAnimationWrapper>
-            {Object.keys(userInfo).length > 0 && isAdmin && (
-              <ListLoginWrapper>
-                <NavLink
-                  to='/admin'
-                  className={(navData) =>
-                    'nav_link' + (navData.isActive ? ' activated' : '')
-                  }
-                >
-                  {' '}
-                  <SvgIcon variant='admin' />
-                </NavLink>
-              </ListLoginWrapper>
-            )}
-            {Object.keys(userInfo).length > 0 && isAdmin === false && (
-              <ListLoginWrapper>
-                <NavLink
-                  to='/profile'
-                  className={(navData) =>
-                    'nav_link' + (navData.isActive ? ' activated' : '')
-                  }
-                >
-                  {' '}
-                  <SvgIcon variant='user' />
-                </NavLink>
-              </ListLoginWrapper>
-            )}{' '}
-            {Object.keys(userInfo).length > 0 ? (
-              <ListLoginWrapper>
-                <NavLink
-                  to='/'
-                  onClick={logoutHandler}
-                  className={(navData) =>
-                    'nav_link' + (navData.isActive ? ' activated' : '')
-                  }
-                >
-                  {' '}
-                  <SvgIcon variant='logout' />
-                </NavLink>
-              </ListLoginWrapper>
-            ) : (
-              <ListLoginWrapper>
-                <NavLink
-                  to='/login'
-                  className={(navData) =>
-                    'nav_link' + (navData.isActive ? ' activated' : '')
-                  }
-                >
-                  {' '}
-                  <SvgIcon variant='login' />
-                </NavLink>
-              </ListLoginWrapper>
-            )}
+            <IconsWrapper>
+              {Object.keys(userInfo).length > 0 && isAdmin && (
+                <ListLoginWrapper>
+                  <NavLink
+                    to='/admin'
+                    className={(navData) =>
+                      'nav_link' + (navData.isActive ? ' activated' : '')
+                    }
+                  >
+                    {' '}
+                    <SvgIcon variant='admin' />
+                  </NavLink>
+                </ListLoginWrapper>
+              )}
+              {Object.keys(userInfo).length > 0 && isAdmin === false && (
+                <ListLoginWrapper>
+                  <NavLink
+                    to='/profile'
+                    className={(navData) =>
+                      'nav_link' + (navData.isActive ? ' activated' : '')
+                    }
+                  >
+                    {' '}
+                    <SvgIcon variant='user' />
+                  </NavLink>
+                </ListLoginWrapper>
+              )}{' '}
+              {Object.keys(userInfo).length > 0 ? (
+                <ListLoginWrapper>
+                  <NavLink
+                    to='/'
+                    onClick={logoutHandler}
+                    className={(navData) =>
+                      'nav_link' + (navData.isActive ? ' activated' : '')
+                    }
+                  >
+                    {' '}
+                    <SvgIcon variant='logout' />
+                  </NavLink>
+                </ListLoginWrapper>
+              ) : (
+                <ListLoginWrapper>
+                  <NavLink
+                    to='/login'
+                    className={(navData) =>
+                      'nav_link' + (navData.isActive ? ' activated' : '')
+                    }
+                  >
+                    {' '}
+                    <SvgIcon variant='login' />
+                  </NavLink>
+                </ListLoginWrapper>
+              )}
+            </IconsWrapper>
           </FadeInAnimationWrapper>
         </NavContainer>
       </TransitionWrapper>

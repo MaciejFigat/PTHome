@@ -60,7 +60,7 @@ const SocialIcons: React.FC<SocialIconsProps> = ({ variant }) => {
             variants={itemVariants}
             key={id}
           >
-            <IconsItemDiv>
+            <IconsItemDiv variant={variant}>
               <IconsItem variant={variant}>
                 <a href={href} aria-label={ariaLabel}>
                   {' '}

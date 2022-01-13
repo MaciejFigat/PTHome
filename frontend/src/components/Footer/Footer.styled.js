@@ -7,19 +7,25 @@ export const FooterContainer = styled.div`
   /* background-color: var(--background2-main); */
   /* background-color: var(--background-blue6); */
   background-image: linear-gradient(
-    90deg,
-    hsl(355deg 78% 56%) 0%,
-    hsl(7deg 79% 61%) 5%,
-    hsl(16deg 81% 63%) 9%,
-    hsl(23deg 85% 66%) 12%,
-    hsl(20deg 72% 69%) 15%,
-    hsl(327deg 31% 67%) 18%,
-    hsl(256deg 49% 67%) 21%,
-    hsl(230deg 89% 64%) 25%,
-    hsl(220deg 86% 53%) 31%,
-    hsl(215deg 76% 47%) 40%,
-    hsl(208deg 79% 39%) 56%,
-    hsl(195deg 89% 28%) 100%
+    185deg,
+    hsl(114deg 74% 17%) 0%,
+    hsl(110deg 70% 19%) 4%,
+    hsl(106deg 67% 21%) 8%,
+    hsl(103deg 65% 23%) 12%,
+    hsl(100deg 62% 25%) 17%,
+    hsl(97deg 61% 28%) 22%,
+    hsl(95deg 59% 30%) 28%,
+    hsl(93deg 58% 32%) 34%,
+    hsl(90deg 57% 34%) 41%,
+    hsl(86deg 58% 36%) 49%,
+    hsl(79deg 59% 38%) 58%,
+    hsl(72deg 59% 40%) 68%,
+    hsl(67deg 59% 42%) 78%,
+    hsl(61deg 58% 44%) 86%,
+    hsl(56deg 58% 48%) 91%,
+    hsl(51deg 65% 53%) 95%,
+    hsl(47deg 80% 58%) 98%,
+    hsl(44deg 99% 64%) 100%
   );
   padding: 4rem 0 2rem 0;
   justify-content: center;
@@ -114,12 +120,12 @@ export const FooterLinkTitle = styled.h2`
 `
 
 export const FooterLink = styled(Link)`
-  color: var(--secondary4);
+  color: var(--bluegreen5);
   text-decoration: none;
   margin-bottom: 10px;
   &:hover {
     transition: all 0.3s ease-out;
-    color: var(--secondary2);
+    color: var(--secondary3);
   }
 `
 export const FooterMedia = styled.div`
@@ -139,7 +145,7 @@ export const FooterMediaWrapper = styled.section`
   }
 `
 export const FooterLogo = styled(Link)`
-  color: var(--secondary3);
+  color: var(--bluegreen5);
   justify-self: start;
   cursor: pointer;
   text-decoration: none;
@@ -153,7 +159,7 @@ export const FooterIcon = styled(FontAwesomeIcon)`
 `
 export const FooterRights = styled.div`
   display: flex;
-  color: var(--secondary4);
+  color: var(--bluegreen5);
   @media screen and (max-width: 770px) {
     margin-bottom: 18px;
   }
@@ -165,10 +171,10 @@ export const SocialIcons = styled.div`
   width: 260px;
 `
 export const SocialIconLink = styled.a`
-  color: var(--secondary4);
+  color: var(--bluegreen5);
   font-size: 18px;
   &:hover {
     transition: all 0.3s ease-out;
-    color: var(--secondary2);
+    color: var(--bluegreen1);
   }
 `

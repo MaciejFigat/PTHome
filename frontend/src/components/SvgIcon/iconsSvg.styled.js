@@ -6,21 +6,22 @@ export const IconsWrapper = styled.ul`
   display: flex;
   justify-content: center;
   flex-direction: row;
+
   a {
-    color: var(--background4-main);
+    color: var(--bluegreen3);
     &:hover {
-      color: var(--background5-main);
+      color: var(--bluegreen1);
     }
   }
 `
 export const IconsItem = styled.li`
   margin-right: 1rem;
   padding: 0;
-  font-size: 1.1rem;
+  font-size: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--background4-main);
+  color: var(--bluegreen3);
   @media (max-width: 1020px) {
     margin-right: 0.75rem;
     &:last-child {
@@ -28,6 +29,6 @@ export const IconsItem = styled.li`
     }
   }
   &:hover {
-    color: var(--background5-main);
+    color: var(--bluegreen1);
   }
 `
