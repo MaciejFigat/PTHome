@@ -16,7 +16,7 @@ const Home: React.FC = () => {
       <InfoSection
         data={homeData}
         buttonNavLink='/contact'
-        variant='tertiary'
+        variant='bluegreen'
         imgStart
       ></InfoSection>
       <InfoSection data={homeDataTwo} variant='primary'></InfoSection>

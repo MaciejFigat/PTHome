@@ -19,7 +19,21 @@ body {
     overflow-wrap: break-word;
    
     // background-color: var(--redblue3);  
-    background-color: var(--bluegreen1);  
+    // background-color: var(--bluegreen1);  
+    background-image: linear-gradient(
+      355deg,
+      hsl(114deg 74% 17%) 0%,
+      hsl(122deg 73% 23%) 4%,
+      hsl(129deg 70% 29%) 7%,
+      hsl(137deg 69% 35%) 11%,
+      hsl(144deg 66% 41%) 14%,
+      hsl(151deg 64% 47%) 16%,
+      hsl(159deg 62% 53%) 18%,
+      hsl(166deg 60% 59%) 20%,
+      hsl(174deg 59% 65%) 23%,
+      hsl(181deg 56% 71%) 26%,
+      hsl(188deg 54% 77%) 38%
+    );
     // font-family: 'Quicksand', sans-serif; 
     font-family: 'Atkinson Hyperlegible', sans-serif;
     font-family: 'Raleway', sans-serif;
@@ -52,6 +66,12 @@ body {
    --bluegreen3:#FECC47;
    --bluegreen4:#5B8D27;
    --bluegreen5:#114B0B;
+   --bluegreen6:#006AC3;
+   --bluegreen7:#AD123F;
+   --bluegreen8:#ECA0C1;
+   --bluegreen9:#A3BF89;
+   --bluegreen10:#00C2E1;
+   --bluegreen11:#FE7BFF;
    
    
    --pink1: #f7a14e;

@@ -1,5 +1,6 @@
 interface StyleVariant {
-    sectionBackground: string
+    sectionBackground?: string
+    sectionBackgroundGradient?: string
     color: string
     subtitleColor: string
     headingColor: string
@@ -69,8 +70,20 @@ const blueStyle: StyleVariant = {
     buttonBackgroundHover: 'var(--background-blue7);',
     buttonColorHover: 'var(--background-blue5);'
 }
-const defaultStyle: StyleVariant = {
+const bluegreenStyle: StyleVariant = {
 
+    sectionBackground: `transparent;`,
+    sectionBackgroundGradient: `linear-gradient(to bottom, #a4dbe4, #69e6de, #45eeb9, #6af07b, #a8eb12);`,
+    color: `var(--bluegreen4);`,
+    subtitleColor: 'var(--bluegreen4);',
+    headingColor: 'var(--bluegreen3);',
+    toplineColor: 'var(--bluegreen4);',
+    buttonColor: 'var(--bluegreen5);',
+    buttonBackground: 'var(--bluegreen3);',
+    buttonBackgroundHover: 'var(--bluegreen8);',
+    buttonColorHover: 'var(--background2-main);'
+}
+const defaultStyle: StyleVariant = {
 
     sectionBackground: `var(--background-tertiary1);`,
     color: `var(--background-tertiary2);`,
@@ -102,6 +115,9 @@ export const handleSectionColor: (props: any) => {} = (props: any) => {
         case 'blue':
             style = blueStyle
             break;
+        case 'bluegreen':
+            style = bluegreenStyle
+            break;
 
         default:
             style = defaultStyle
@@ -109,7 +125,9 @@ export const handleSectionColor: (props: any) => {} = (props: any) => {
 
     }
     return {
+
         color: `color: ${style.color}`,
+        sectionBackgroundGradient: `background-image: ${style.sectionBackgroundGradient}`,
         sectionBackground: `background-color: ${style.sectionBackground}`,
         subtitleColor: `color: ${style.subtitleColor}`,
         headingColor: `color: ${style.headingColor}`,

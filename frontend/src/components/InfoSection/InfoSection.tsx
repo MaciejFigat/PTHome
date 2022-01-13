@@ -24,7 +24,7 @@ interface InfoData {
 
 interface InfoSectionProps {
   data: InfoData
-  variant?: 'primary' | 'secondary' | 'tertiary' | 'blue'
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'blue' | 'bluegreen'
   imgStart?: boolean
   children?: ReactNode
   buttonLink?: string

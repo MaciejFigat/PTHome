@@ -16,6 +16,7 @@ export const InfoSec = styled.div`
   ${(props) => handleSectionColor(props).color}
   padding: 160px 0;
   ${(props) => handleSectionColor(props).sectionBackground}
+  ${(props) => handleSectionColor(props).sectionBackgroundGradient}
   @media (max-width: 880px) {
     padding: 60px 0;
   }
@@ -77,6 +78,7 @@ export const Button = styled.button`
   outline: none;
   cursor: pointer;
   border: none;
+  transition: all 0.3s ease-in;
   /* buttonColor */
   ${(props) => handleSectionColor(props).buttonColor}
   /* color for the link inside the button */
@@ -84,7 +86,7 @@ export const Button = styled.button`
     ${(props) => handleSectionColor(props).buttonColor}
   }
   &:hover {
-    transition: all 0.3s ease-out;
+    transition: all 0.3s ease-in;
     /* buttonBackgroundHover */
     ${(props) => handleSectionColor(props).buttonBackgroundHover}
     /* buttonColorHover */
@@ -134,7 +136,8 @@ export const Subtitle = styled.p`
   max-width: 440px;
   margin-bottom: 35px;
   font-size: 18px;
-  line-height: 24px;
+  /* line-height: 24px; */
+  line-height: 1.6rem;
   letter-spacing: 0.025em;
   /* subtitleColor */
   ${(props) => handleSectionColor(props).subtitleColor}

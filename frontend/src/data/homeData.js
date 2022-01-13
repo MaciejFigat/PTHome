@@ -39,7 +39,6 @@ export const homeDataFour = {
   subtitle:
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat perspiciatis non deleniti doloremque, iure laudantium quaerat esse odit. Similique nihil voluptate voluptatem sed tempora sunt libero, saepe corrupti laboriosam suscipit.',
   img: handstand,
-  buttonLabel: 'Klak the button',
 }
 export const homeDataFive = {
   topline: 'Lorem ipsum dolor sit.',
