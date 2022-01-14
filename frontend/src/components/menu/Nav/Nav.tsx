@@ -43,16 +43,18 @@ const Nav: React.FC<NavProps> = () => {
   }
 
   const [scrollDirection, setScrollDirection] = useState<
-    'up' | 'down' | undefined | null
+    'up' | 'down' | 'top' | undefined | null
   >()
   const [scrollTop, setScrollTop] = useState<boolean>(true)
   const scroll = useScrollListener()
 
   // on scroll I update scrollDirection
   useEffect(() => {
-    if (scroll.y > 250 && scroll.y - scroll.lastY > 0)
+    if (scroll.y > 200 && scroll.y - scroll.lastY > 0) {
       setScrollDirection('down')
-    else {
+    } else if (scroll.y <= 200) {
+      setScrollDirection('top')
+    } else if (scroll.y > 700 && scroll.y - scroll.lastY < 0) {
       setScrollDirection('up')
     }
     if (scroll.y <= 300) setScrollTop(true)
@@ -64,9 +66,11 @@ const Nav: React.FC<NavProps> = () => {
   return (
     <TransitionWrapperMain>
       <TransitionWrapper
-        className={
-          scrollDirection === 'up' || null || undefined ? 'active' : 'hidden'
-        }
+        className={`${
+          scrollDirection === 'up' || null || undefined ? 'active' : ''
+        } ${scrollDirection === 'down' ? 'hidden' : ''} ${
+          scrollDirection === 'top' ? 'top' : ''
+        }`}
       >
         <MobileViewContainer>
           <div onClick={handleClickMenu}>
@@ -122,12 +126,14 @@ const Nav: React.FC<NavProps> = () => {
             </HeaderLoginWrapper>
           )}
         </MobileViewContainer>
+
         <NavContainer className={open} onClick={handleCloseMenu}>
+          <NavListDesktop />
+          <NavListMobile open={open} />
           <HeaderTitleDesktop className={scrollTop === true ? 'hide' : 'show'}>
             {name && `${name}`}
           </HeaderTitleDesktop>
-          <NavListDesktop />
-          <NavListMobile open={open} />
+
           <FadeInAnimationWrapper>
             <IconsWrapper>
               {Object.keys(userInfo).length > 0 && isAdmin && (

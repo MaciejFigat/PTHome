@@ -5,13 +5,48 @@ export const TransitionWrapperMain = styled.div`
   position: sticky;
   z-index: 3;
   top: -2px;
+  background: transparent;
 
+  transition: color 1200ms ease-out;
+  /* transition: background 1200ms ease-out; */
+  .nav_link {
+    transition: color 600ms ease-out;
+    color: var(--background-main5);
+  }
+  .top {
+    /* li is for login/logout icons in navbar */
+    li {
+      color: var(--bluegreen5);
+    }
+    /* additional className for burger so it changes color with scroll */
+    .burger {
+      background: var(--bluegreen5);
+    }
+    transition: color 1200ms ease-out;
+    transition: background 1200ms ease-out;
+    background: transparent;
+    .nav_link {
+      color: var(--bluegreen5);
+    }
+  }
   .active {
+    /* li is for login/logout icons in navbar */
+    li {
+      color: var(--bluegreen3);
+    }
     transition: all 200ms ease-in;
+    /* transition: color 1200ms ease-out; */
+    /* transition: background 1200ms ease-out; */
+    background: var(--bluegreen5);
   }
   .hidden {
-    transition: all 300ms ease-in;
+    /* li is for login/logout icons in navbar */
+    li {
+      color: var(--bluegreen5);
+    }
+    transition: all 200ms ease-in;
     transform: translateY(-130%);
+    color: var(--background-main5);
   }
 `
 export const TransitionWrapper = styled.div`
@@ -19,7 +54,7 @@ export const TransitionWrapper = styled.div`
   top: 0;
   max-height: 3.2rem;
   height: 55px;
-  background: var(--bluegreen5);
+  /* background: var(--bluegreen5); */
 
   @media (max-width: 1020px) {
     /* background: var(--background1-main); */
@@ -88,11 +123,6 @@ export const NavList = styled.ul`
   }
 `
 export const ListLoginWrapper = styled.div`
-  a {
-    &:hover {
-      color: red;
-    }
-  }
   @media (max-width: 1020px) {
     display: none;
   }
@@ -114,7 +144,7 @@ export const ListItem = styled.li`
   display: flex;
   text-transform: uppercase;
   color: var(--background5-main);
-  /* color: var(--background-blue6); */
+
   @media (max-width: 1020px) {
     flex-direction: column;
     align-content: flex-start;
@@ -166,7 +196,6 @@ export const HeaderTitleMobile = styled.h1`
   }
 `
 export const HeaderTitleDesktop = styled.h1`
-  color: var(--background4-main);
   font-size: 1.25rem;
   font-weight: 200;
   margin: 0;
@@ -175,11 +204,13 @@ export const HeaderTitleDesktop = styled.h1`
   transition: all 200ms ease-in;
   &.show {
     transition: all 200ms ease-in;
-    opacity: 100%;
+    /* opacity: 100%; */
+    color: var(--bluegreen3);
   }
   &.hide {
     transition: all 300ms ease-in;
-    opacity: 0;
+    /* opacity: 0; */
+    color: var(--bluegreen5);
   }
   @media (max-width: 1020px) {
     display: none;

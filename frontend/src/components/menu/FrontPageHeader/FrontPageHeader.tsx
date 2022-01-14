@@ -11,12 +11,12 @@ import {
   HeaderSubtitle,
 } from './frontPageHeader.styled'
 
-interface FrontPageHeaderTwoProps {
+interface FrontPageHeaderProps {
   title: string
   subtitle: string
 }
 
-const FrontPageHeaderTwo: React.FC<FrontPageHeaderTwoProps> = ({
+const FrontPageHeader: React.FC<FrontPageHeaderProps> = ({
   title,
   subtitle,
 }) => {
@@ -40,4 +40,4 @@ const FrontPageHeaderTwo: React.FC<FrontPageHeaderTwoProps> = ({
     </HeaderContainer>
   )
 }
-export default FrontPageHeaderTwo
+export default FrontPageHeader

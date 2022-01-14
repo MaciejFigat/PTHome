@@ -8,9 +8,9 @@ export const IconsWrapper = styled.ul`
   flex-direction: row;
 
   a {
-    color: var(--bluegreen3);
+    color: var(--bluegreen5);
     &:hover {
-      color: var(--bluegreen1);
+      color: var(--bluegreen4);
     }
   }
 `
@@ -21,7 +21,7 @@ export const IconsItem = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--bluegreen3);
+  /* color: var(--bluegreen5); */
   @media (max-width: 1020px) {
     margin-right: 0.75rem;
     &:last-child {
@@ -29,6 +29,6 @@ export const IconsItem = styled.li`
     }
   }
   &:hover {
-    color: var(--bluegreen1);
+    color: var(--bluegreen4);
   }
 `

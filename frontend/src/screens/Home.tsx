@@ -8,6 +8,7 @@ import {
   homeDataFive,
 } from '../data/homeData'
 import Toast from '../components/Toast/Toast'
+import AnimatedBubble from '../components/AnimatedBubble/AnimatedBubble'
 
 const Home: React.FC = () => {
   return (
@@ -18,7 +19,9 @@ const Home: React.FC = () => {
         buttonNavLink='/contact'
         variant='bluegreen'
         imgStart
-      ></InfoSection>
+      >
+        <AnimatedBubble />
+      </InfoSection>
       <InfoSection data={homeDataTwo} variant='primary'></InfoSection>
       <InfoSection
         data={homeDataThree}

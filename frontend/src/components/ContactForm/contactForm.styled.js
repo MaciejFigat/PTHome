@@ -82,13 +82,13 @@ export const ContactField = styled.div`
       }
     }
 
-    animation: 4s rotate linear infinite;
+    /* animation: 4s rotate linear infinite; */
+    animation: gradient-animation 4s ease-in-out infinite;
   }
 `
 
 export const ContactFieldContent = styled.input`
   &::placeholder {
-    /* color: var(--background-secondary3); */
     color: var(--background-tertiary3);
     font-weight: 500;
     @media (max-width: 600px) {
@@ -97,7 +97,6 @@ export const ContactFieldContent = styled.input`
     @media (min-width: 600px) {
       ${ResponsiveDiv}:hover & {
         color: var(--background-secondary3);
-        /* color: var(--background-tertiary3); */
       }
     }
   }

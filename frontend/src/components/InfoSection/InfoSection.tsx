@@ -19,7 +19,7 @@ interface InfoData {
   headline: string
   subtitle: string
   buttonLabel?: string
-  img: any
+  img?: any
 }
 
 interface InfoSectionProps {

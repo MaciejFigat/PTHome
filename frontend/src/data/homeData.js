@@ -8,8 +8,8 @@ export const homeData = {
   topline: 'Siła na miarę',
   headline: 'Nina - trener medyczny',
   subtitle:
-    'Proponuję treningi indywidualne i grupowe. Rozpisywanie planów treningowych. Przeprowadzanie testów sprawnościowych.',
-  img: angryMan,
+    'Proponuję treningi indywidualne oraz grupowe. Rozpisywanie planów treningowych. Przeprowadzanie testów sprawnościowych.',
+  // img: angryMan,
   buttonLabel: 'Zarezerwuj trening',
 }
 

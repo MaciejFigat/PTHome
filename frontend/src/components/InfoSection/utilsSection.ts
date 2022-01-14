@@ -75,11 +75,13 @@ const bluegreenStyle: StyleVariant = {
     sectionBackground: `transparent;`,
     sectionBackgroundGradient: `linear-gradient(to bottom, #a4dbe4, #69e6de, #45eeb9, #6af07b, #a8eb12);`,
     color: `var(--bluegreen4);`,
-    subtitleColor: 'var(--bluegreen4);',
+    subtitleColor: 'var(--bluegreen5);',
     headingColor: 'var(--bluegreen3);',
     toplineColor: 'var(--bluegreen4);',
     buttonColor: 'var(--bluegreen5);',
-    buttonBackground: 'var(--bluegreen3);',
+    buttonBackground: 'var(--secondary2);',
+    // buttonBackground: 'linear-gradient( 90deg, var(--secondary5), var(--background-blue6));',
+    // buttonBackground: `linear-gradient(to top, red, #69e6de, #45eeb9, #6af07b, red);`,
     buttonBackgroundHover: 'var(--bluegreen8);',
     buttonColorHover: 'var(--background2-main);'
 }

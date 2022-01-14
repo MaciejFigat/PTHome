@@ -99,7 +99,8 @@ export const Button = styled.button`
   }
 
   @media screen and (max-width: 760px) {
-    padding: '8px 14px';
+    padding: ${({ large }) => (large ? '8px 14px' : '6px 12px')};
+    font-size: ${({ fontLarge }) => (fontLarge ? '18px' : '16px')};
   }
 `
 export const ButtonLink = styled.a`

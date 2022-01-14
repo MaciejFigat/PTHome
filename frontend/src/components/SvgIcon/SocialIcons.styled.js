@@ -35,6 +35,9 @@ export const IconsItemDiv = styled.div`
         ? `border: 2px solid var(--bluegreen2);`
         : `border: 2px solid var(--background-tertiary1);`}
   }
+  @media (max-width: 360px) {
+    margin-right: 0.5rem;
+  }
 `
 
 export const IconsItem = styled.li`

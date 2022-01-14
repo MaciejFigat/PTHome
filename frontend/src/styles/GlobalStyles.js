@@ -115,7 +115,7 @@ body {
    
     .nav_link {
       // color: var(--background4-main);
-      color: var(--bluegreen3);
+      // color: var(--bluegreen3);
       display: flex;
       align-items: center;
       @media (max-width: 1020px) {
@@ -131,7 +131,7 @@ body {
     }
     .nav_link.activated {
           
-      color: var(--bluegreen2);
+      // color: var(--bluegreen2);
       @media (max-width: 1020px) {
      
         background: -webkit-linear-gradient(

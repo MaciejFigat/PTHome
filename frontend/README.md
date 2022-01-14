@@ -1,3 +1,19 @@
+
+### Styling roadmap
+`styling for burger lines`
+
+.burger - additional className to be responsive towards scroll events
+in components/menu/Nav/nav.styled.js in TransitionWrapperMain
+
+`styling menu navlinks`
+in globalStyles and components/menu/Nav/nav.styled.js in TransitionWrapperMain
+
+`styling header and nav svg icons - small`
+components/SvgIcon/iconsSvg.styled.js
+
+and components/menu/Nav/nav.styled.js in TransitionWrapperMain 
+
+
 ### `Structure explanation - Navigation`
 ├──FrontpageHeader (this header is rendered only in desktop view)
 ├──Nav.tsx (this component implements a custom hook that enables changing classess of certain components according to screen scrolling)

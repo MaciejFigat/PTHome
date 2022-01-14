@@ -8,11 +8,11 @@ const Burger: React.FC<BurgerProps> = ({ menuOpen }) => {
   return (
     <BurgerWrapper className={`toggle ${menuOpen}`}>
       <BurgerContainer>
-        <BurgerLine className={`lineFour ${menuOpen}`}></BurgerLine>
-        <BurgerLine className={`lineOne ${menuOpen}`}></BurgerLine>
-        <BurgerLine className={`lineTwo ${menuOpen}`}></BurgerLine>
-        <BurgerLine className={`lineThree ${menuOpen}`}></BurgerLine>
-        <BurgerLine className={`lineFour ${menuOpen}`}></BurgerLine>
+        <BurgerLine className={`lineFour ${menuOpen} burger`}></BurgerLine>
+        <BurgerLine className={`lineOne ${menuOpen} burger`}></BurgerLine>
+        <BurgerLine className={`lineTwo ${menuOpen} burger`}></BurgerLine>
+        <BurgerLine className={`lineThree ${menuOpen} burger`}></BurgerLine>
+        <BurgerLine className={`lineFour ${menuOpen} burger`}></BurgerLine>
       </BurgerContainer>
     </BurgerWrapper>
   )

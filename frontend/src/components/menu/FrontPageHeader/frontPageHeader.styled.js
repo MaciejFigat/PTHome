@@ -9,7 +9,7 @@ export const HeaderContainer = styled.div`
     var(--secondary5),
     var(--background-blue6)
   ); */
-  background: var(--bluegreen5);
+  /* background: var(--bluegreen5); */
   /* background-image: linear-gradient(
     0deg,
     hsl(114deg 74% 17%) 0%,
@@ -30,13 +30,13 @@ export const HeaderContainer = styled.div`
   }
 `
 export const HeaderTitle = styled.h1`
-  background: -webkit-linear-gradient(
+  color: var(--bluegreen5);
+
+  /* background: -webkit-linear-gradient(
     180deg,
-    var(--bluegreen3),
-    var(--bluegreen2)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    var(--bluegreen4),
+    var(--bluegreen7)
+  ); */
 
   font-size: 1.55rem;
   font-weight: 800;
@@ -48,15 +48,14 @@ export const HeaderTitle = styled.h1`
 export const HeaderSubtitle = styled(HeaderTitle)`
   transition: all 1.3s ease-in;
   border-radius: 25%;
-  color: var(--secondary4);
+
   &:hover {
     transition: all 1.3s ease-in;
     background: -webkit-linear-gradient(
       180deg,
-      var(--bluegreen1),
-      var(--bluegreen3)
+      var(--bluegreen6),
+      var(--bluegreen7)
     );
-
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
