@@ -19,7 +19,7 @@ export const BurgerContainer = styled.div`
 
 export const BurgerLine = styled.div`
   border-radius: 6%;
-  background: var(--bluegreen3);
+  /* background: var(--bluegreen3); */
   margin: 5px;
   align-self: center;
   transition: all 0.3s ease;

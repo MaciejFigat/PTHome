@@ -19,6 +19,7 @@ const Home: React.FC = () => {
         buttonNavLink='/contact'
         variant='bluegreen'
         imgStart
+        paddingTop='small'
       >
         <AnimatedBubble />
       </InfoSection>

@@ -1,4 +1,4 @@
-import angryMan from './assets/angryMan.svg'
+// import angryMan from './assets/angryMan.svg'
 import sumo from './assets/sumo.svg'
 import woman from './assets/woman.svg'
 import handstand from './assets/handstand.svg'

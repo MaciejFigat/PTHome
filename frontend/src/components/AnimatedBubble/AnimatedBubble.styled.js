@@ -28,40 +28,64 @@ const float = keyframes`
     25% {  transform: rotate(10deg) translateX(35%) translateY(-100%);}
     50% {  transform: rotate(0deg) translateX(-35%) translateY(100%);}
     100% {  transform: rotate(0deg) translateX(0%) translateY(0%); }`
+const floatTwo = keyframes`   
+ 0% {  transform: rotate(0deg) translateX(0%) translateY(0%); }
+ 25% {  transform: rotate(10deg) translateX(15%) translateY(-40%);}
+ 37% {  transform: rotate(15deg) translateX(-25%) translateY(-40%);}
+ 50% {  transform: rotate(0deg) translateX(-30%) translateY(40%);}
+ 75% {  transform: rotate(20deg) translateX(-25%) translateY(40%);}
+ 100% {  transform: rotate(0deg) translateX(0%) translateY(0%); }`
 
 export const BubbleWrapper = styled.div`
   position: relative;
-  /* margin: auto; */
   display: block;
-  /* margin-top: 5%; */
-  /* min-width: 400px; */
   width: 100%;
-  /* max-width: 40vw; */
-  height: 100vh;
-  /* max-height: 70vh; */
+  height: 95vh;
   z-index: 0;
+  @media (min-width: 620px) and (max-width: 880px) {
+    overflow-x: hidden;
+    width: 100vw;
+  }
   @media (max-width: 620px) {
-    overflow: hidden;
+    overflow-x: hidden;
+    min-width: 100%;
     width: 98vw;
+  }
+  @media (max-width: 350px) {
+    width: 97vw;
   }
 `
 export const BubbleMain = styled.div`
   position: absolute;
-  z-index: 100;
-  z-index: -222;
+  /* z-index: -222; */
+  transition: background-image 0.5s ease;
 `
 export const BubbleOne = styled(BubbleMain)`
   height: 10rem;
   width: 10rem;
-  background: #774898;
-  top: calc(50% - 5rem);
-  right: calc(50% - 5rem);
+  opacity: 0.99;
+  background: radial-gradient(
+    ellipse at top,
+    var(--secondary5),
+    var(--background-blue6)
+  );
+  top: calc(50% - 6rem);
+  right: calc(50% - 6rem);
   animation: ${blob} 10s ease-in-out infinite, ${float} 67s ease-in-out infinite;
 `
+// closest-side, - for radiant gradient
+// background: radial-gradient(circle at 100%, #333, #333 50%, #eee 75%, #333 75%);
+// background: radial-gradient(ellipse at top, #e66465, transparent),
+//             radial-gradient(ellipse at bottom, #4d9f0c, transparent);
 export const BubbleTwo = styled(BubbleMain)`
   height: 8rem;
   width: 4rem;
-  background: #de4383;
+  opacity: 0.38;
+  background-image: linear-gradient(
+    120deg,
+    var(--bluegreen1),
+    var(--bluegreen2)
+  );
   top: 15%;
   right: -10%;
   border-radius: 65% 40% 35% 50% / 65% 38% 75% 36%;
@@ -71,8 +95,42 @@ export const BubbleTwo = styled(BubbleMain)`
 export const BubbleThree = styled(BubbleMain)`
   height: 6rem;
   width: 6rem;
-  background: red;
-  top: 80%;
+  opacity: 0.4;
+  background-image: linear-gradient(
+    90deg,
+    var(--bluegreen1),
+    var(--bluegreen11)
+  );
+  top: 60%;
   right: 70%;
   animation: ${blob} 5s ease-in-out infinite, ${float} 95s ease-in-out infinite;
+`
+export const BubbleFour = styled(BubbleMain)`
+  height: 6rem;
+  width: 6rem;
+  opacity: 0.54;
+  background-image: linear-gradient(
+    90deg,
+    var(--bluegreen2),
+    var(--bluegreen9)
+  );
+  top: 20%;
+  right: -40%;
+  animation: ${blob} 5s ease-in-out infinite, ${float} 95s ease-in-out infinite;
+`
+export const BubbleFive = styled(BubbleMain)`
+  height: 17rem;
+  width: 16rem;
+  opacity: 0.14;
+  z-index: -11;
+  background-image: linear-gradient(
+    90deg,
+    var(--bluegreen4),
+    var(--bluegreen7)
+  );
+  top: calc(21% - 2rem);
+  right: calc(33% - 2rem);
+
+  animation: ${blob} 15s ease-in-out infinite,
+    ${floatTwo} 125s ease-in-out infinite;
 `

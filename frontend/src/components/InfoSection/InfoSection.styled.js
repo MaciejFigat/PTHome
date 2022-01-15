@@ -14,7 +14,9 @@ import { handleSectionColor } from './utilsSection'
 
 export const InfoSec = styled.div`
   ${(props) => handleSectionColor(props).color}
-  padding: 160px 0;
+  ${({ paddingTop }) =>
+    paddingTop === 'small' ? 'padding: 10px 0;' : 'padding: 160px 0;'};
+
   ${(props) => handleSectionColor(props).sectionBackground}
   ${(props) => handleSectionColor(props).sectionBackgroundGradient}
   @media (max-width: 880px) {
@@ -31,7 +33,9 @@ export const InfoRow = styled.div`
   flex-direction: ${({ imgStart }) =>
     imgStart === true ? 'row-reverse' : 'row'};
   @media (max-width: 880px) {
-    flex-direction: column-reverse;
+    flex-direction: ${({ imgStart }) =>
+      imgStart === true ? 'column-reverse' : 'column'};
+    /* flex-direction: column-reverse; */
   }
 `
 export const InfoColumn = styled.div`

@@ -6,7 +6,6 @@ export const TransitionWrapperMain = styled.div`
   z-index: 3;
   top: -2px;
   background: transparent;
-
   transition: color 1200ms ease-out;
   /* transition: background 1200ms ease-out; */
   .nav_link {
@@ -14,6 +13,10 @@ export const TransitionWrapperMain = styled.div`
     color: var(--background-main5);
   }
   .top {
+    /* this is for the username of logged user */
+    h1 {
+      color: var(--bluegreen5);
+    }
     /* li is for login/logout icons in navbar */
     li {
       color: var(--bluegreen5);
@@ -30,6 +33,9 @@ export const TransitionWrapperMain = styled.div`
     }
   }
   .active {
+    .burger {
+      background: var(--bluegreen3);
+    }
     /* li is for login/logout icons in navbar */
     li {
       color: var(--bluegreen3);
@@ -40,6 +46,13 @@ export const TransitionWrapperMain = styled.div`
     background: var(--bluegreen5);
   }
   .hidden {
+    .burger {
+      background: var(--bluegreen5);
+    }
+    /* this is for the username of logged user */
+    h1 {
+      color: var(--bluegreen5);
+    }
     /* li is for login/logout icons in navbar */
     li {
       color: var(--bluegreen5);
@@ -55,25 +68,8 @@ export const TransitionWrapper = styled.div`
   max-height: 3.2rem;
   height: 55px;
   /* background: var(--bluegreen5); */
-
+  /* z-index: -3; */
   @media (max-width: 1020px) {
-    /* background: var(--background1-main); */
-
-    /* background-image: linear-gradient(
-      90deg,
-      hsl(12deg 76% 61%) 0%,
-      hsl(17deg 79% 63%) 4%,
-      hsl(21deg 81% 64%) 8%,
-      hsl(24deg 85% 66%) 11%,
-      hsl(20deg 72% 69%) 15%,
-      hsl(327deg 31% 67%) 20%,
-      hsl(256deg 49% 67%) 24%,
-      hsl(230deg 89% 64%) 30%,
-      hsl(220deg 86% 53%) 38%,
-      hsl(215deg 76% 47%) 48%,
-      hsl(208deg 79% 39%) 64%,
-      hsl(195deg 89% 28%) 100%
-    ); */
   }
 `
 export const NavContainer = styled.nav`

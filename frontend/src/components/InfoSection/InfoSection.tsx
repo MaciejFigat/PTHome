@@ -29,6 +29,7 @@ interface InfoSectionProps {
   children?: ReactNode
   buttonLink?: string
   buttonNavLink?: string
+  paddingTop?: 'large' | 'small' | undefined
 }
 
 const InfoSection: React.FC<InfoSectionProps> = ({
@@ -38,10 +39,11 @@ const InfoSection: React.FC<InfoSectionProps> = ({
   children,
   buttonLink,
   buttonNavLink,
+  paddingTop,
 }) => {
   return (
     <>
-      <InfoSec variant={variant}>
+      <InfoSec variant={variant} paddingTop={paddingTop}>
         <Container>
           <InfoRow imgStart={imgStart}>
             <InfoColumn>
