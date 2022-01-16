@@ -34,7 +34,9 @@ const Nav: React.FC<NavProps> = () => {
     cycleOpen()
   }
   const handleCloseMenu = () => {
-    cycleOpen()
+    if (open === true) {
+      cycleOpen()
+    }
   }
 
   const logoutHandler = (e: any) => {

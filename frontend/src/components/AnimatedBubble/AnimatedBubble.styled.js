@@ -30,11 +30,29 @@ const float = keyframes`
     100% {  transform: rotate(0deg) translateX(0%) translateY(0%); }`
 const floatTwo = keyframes`   
  0% {  transform: rotate(0deg) translateX(0%) translateY(0%); }
- 25% {  transform: rotate(10deg) translateX(15%) translateY(-40%);}
- 37% {  transform: rotate(15deg) translateX(-25%) translateY(-40%);}
- 50% {  transform: rotate(0deg) translateX(-30%) translateY(40%);}
- 75% {  transform: rotate(20deg) translateX(-25%) translateY(40%);}
+ 25% {  transform: rotate(10deg) translateX(15%) translateY(-35%);}
+ 37% {  transform: rotate(15deg) translateX(-25%) translateY(-35%);}
+ 50% {  transform: rotate(0deg) translateX(-30%) translateY(30%);}
+ 75% {  transform: rotate(20deg) translateX(-25%) translateY(30%);}
  100% {  transform: rotate(0deg) translateX(0%) translateY(0%); }`
+const floatThree = keyframes`   
+ 0% {  transform: rotate(0deg) translateX(0%) translateY(0%); }
+ 25% {  transform: rotate(10deg) translateX(15%) translateY(-35%); max-height: 200px;}}
+ 37% {  transform: rotate(15deg) translateX(-25%) translateY(-35%);max-height: 160px;}}
+ 50% {  transform: rotate(0deg) translateX(-30%) translateY(30%); max-height: 140px;}}
+ 75% {  transform: rotate(20deg) translateX(-25%) translateY(30%);max-height: 200px;}}
+ 100% {  transform: rotate(0deg) translateX(0%) translateY(0%); }`
+
+const floatFour = keyframes`   
+    0% {  transform: rotate(0deg) translateX(0%) translateY(0%); }
+    13% {  transform: rotate(15deg) translateX(-25%) translateY(35%); max-height: 310px;}
+    25% {  transform: rotate(30deg) translateX(-35%) translateY(25%); max-height: 300px;}
+    37% {  transform: rotate(45deg) translateX(-43%) translateY(-25%);  max-height: 260px;}
+    50% {  transform: rotate(30deg) translateX(35%) translateY(-30%);  max-height: 220px;}
+    67% {  transform: rotate(15deg) translateX(70%) translateY(-23%);  max-height: 240px;}
+    75% {  transform: rotate(-5deg) translateX(80%) translateY(25%); max-height: 270px;}
+    87% {  transform: rotate(-22deg) translateX(30%) translateY(45%); max-height: 320px;}
+    100% {  transform: rotate(0deg) translateX(0%) translateY(0%); }`
 
 export const BubbleWrapper = styled.div`
   position: relative;
@@ -47,30 +65,30 @@ export const BubbleWrapper = styled.div`
   }
   @media (min-width: 620px) and (max-width: 880px) {
     overflow-x: hidden;
-    width: 100vw;
+    width: 98vw;
   }
   @media (max-width: 620px) {
     overflow-x: hidden;
     min-width: 100%;
     width: 98vw;
   }
-  @media (max-width: 350px) {
-    width: 97vw;
+  @media (max-width: 366px) {
+    width: 96vw;
   }
 `
 export const BubbleMain = styled.div`
   position: absolute;
   /* z-index: -222; */
-  transition: background-image 0.5s ease;
+  /* transition: background-image 0.5s ease; */
 `
 export const BubbleOne = styled(BubbleMain)`
   height: 10rem;
   width: 10rem;
-  opacity: 0.99;
+  opacity: 0.49;
   background: radial-gradient(
     ellipse at top,
-    var(--secondary5),
-    var(--background-blue6)
+    var(--bluegreen1),
+    var(--bluegreen11)
   );
   top: calc(50% - 6rem);
   right: calc(50% - 6rem);
@@ -133,7 +151,44 @@ export const BubbleFive = styled(BubbleMain)`
   );
   top: calc(21% - 2rem);
   right: calc(33% - 2rem);
-
+  transition: all 1s;
+  &:hover {
+    opacity: 0.44;
+    width: 16.5rem;
+    height: 17.5rem;
+  }
   animation: ${blob} 15s ease-in-out infinite,
     ${floatTwo} 125s ease-in-out infinite;
+`
+export const Img = styled.img`
+  padding-right: 0;
+  border: 0;
+  position: absolute;
+  max-width: 110%;
+  /* width: 40vw; */
+
+  max-height: 340px;
+  z-index: -999;
+  opacity: 0.2;
+  /* aspect-ratio: 16 / 9; */
+  object-fit: cover;
+
+  object-position: center;
+  top: 20%;
+  right: 10%;
+  /* overflow: visible; */
+  animation: ${floatFour} 75s ease-in-out infinite;
+  @media (max-width: 680px) {
+    animation: ${floatThree} 75s ease-in-out infinite;
+  }
+  &:after {
+    content: 'Oxytocine';
+    display: block;
+    position: relative;
+    border: 20px solid white;
+    bottom: 24px;
+    left: 0;
+    width: 100%;
+    height: 335px;
+  }
 `
