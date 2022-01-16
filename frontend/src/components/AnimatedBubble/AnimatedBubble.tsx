@@ -1,7 +1,6 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import DragAnimationWrapper from '../AnimationWrappers/DragAnimationWrapper'
 import Oxytocin from '../../data/assets/Oxytocin.svg'
-// import OxytocinLabels from '../../data/assets/OxytocinLabels.png'
 import {
   BubbleOne,
   BubbleTwo,
@@ -9,13 +8,25 @@ import {
   BubbleWrapper,
   BubbleFour,
   BubbleFive,
+  FlotingWrapper,
+  Img,
 } from './AnimatedBubble.styled'
-import { Img } from './AnimatedBubble.styled'
 
 interface AnimatedBubbleProps {}
 
 const AnimatedBubble: React.FC<AnimatedBubbleProps> = () => {
   const constraintsRef = useRef(null)
+  const [vanish, setVanish] = useState<boolean>(false)
+  const bubbleHandler = () => {
+    setVanish(true)
+  }
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setVanish(false)
+    }, 3000)
+    return () => clearTimeout(timer)
+  }, [vanish])
 
   return (
     <BubbleWrapper ref={constraintsRef}>
@@ -25,7 +36,9 @@ const AnimatedBubble: React.FC<AnimatedBubbleProps> = () => {
       {/* <DragAnimationWrapper constraintsRef={constraintsRef}>
         ddd.
       </DragAnimationWrapper> */}
-      <Img src={Oxytocin} />
+      <FlotingWrapper>
+        <Img src={Oxytocin} />
+      </FlotingWrapper>
 
       {/* <DragAnimationWrapper constraintsRef={constraintsRef}> */}
       {/* <Img src={OxytocinLabels} /> */}
@@ -34,7 +47,10 @@ const AnimatedBubble: React.FC<AnimatedBubbleProps> = () => {
       <DragAnimationWrapper constraintsRef={constraintsRef}>
         <BubbleOne>One</BubbleOne>
       </DragAnimationWrapper>
-      <BubbleFive>fIVE</BubbleFive>
+      <BubbleFive onClick={bubbleHandler} vanish={vanish}>
+        fIVE
+      </BubbleFive>
+      {/* <BubbleFive>fIVE</BubbleFive> */}
     </BubbleWrapper>
   )
 }

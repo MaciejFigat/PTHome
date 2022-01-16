@@ -28,12 +28,27 @@ const float = keyframes`
     25% {  transform: rotate(10deg) translateX(35%) translateY(-100%);}
     50% {  transform: rotate(0deg) translateX(-35%) translateY(100%);}
     100% {  transform: rotate(0deg) translateX(0%) translateY(0%); }`
-const floatTwo = keyframes`   
+// const floatTwo = keyframes`
+//  0% {  transform: rotate(0deg) translateX(0%) translateY(0%); }
+//  25% {  transform: rotate(10deg) translateX(15%) translateY(-35%);  height: 16rem;
+//   width: 15rem;}
+//  37% {  transform: rotate(15deg) translateX(-25%) translateY(-35%);  height: 15rem;
+//   width: 14rem;}
+//  50% {  transform: rotate(0deg) translateX(-30%) translateY(30%); height: 14rem;
+//   width: 13rem;}
+//  75% {  transform: rotate(20deg) translateX(-25%) translateY(30%);  height: 16rem;
+//   width: 15rem;}
+//  100% {  transform: rotate(0deg) translateX(0%) translateY(0%); }`
+const floatFive = keyframes`   
  0% {  transform: rotate(0deg) translateX(0%) translateY(0%); }
- 25% {  transform: rotate(10deg) translateX(15%) translateY(-35%);}
- 37% {  transform: rotate(15deg) translateX(-25%) translateY(-35%);}
- 50% {  transform: rotate(0deg) translateX(-30%) translateY(30%);}
- 75% {  transform: rotate(20deg) translateX(-25%) translateY(30%);}
+ 25% {  transform: rotate(10deg) translateX(15%) translateY(-35%);  height: 11rem;
+  width: 10rem; opacity: 0.09;}
+ 37% {  transform: rotate(15deg) translateX(-25%) translateY(-35%);  height: 15rem;
+  width: 14rem; opacity: 0.19;}
+ 50% {  transform: rotate(0deg) translateX(-30%) translateY(30%); height: 14rem;
+  width: 13rem; opacity: 0.29;}
+ 75% {  transform: rotate(20deg) translateX(-25%) translateY(30%);  height: 16rem;
+  width: 15rem; opacity: 0.39;}
  100% {  transform: rotate(0deg) translateX(0%) translateY(0%); }`
 const floatThree = keyframes`   
  0% {  transform: rotate(0deg) translateX(0%) translateY(0%); }
@@ -45,13 +60,13 @@ const floatThree = keyframes`
 
 const floatFour = keyframes`   
     0% {  transform: rotate(0deg) translateX(0%) translateY(0%); }
-    13% {  transform: rotate(15deg) translateX(-25%) translateY(35%); max-height: 310px;}
-    25% {  transform: rotate(30deg) translateX(-35%) translateY(25%); max-height: 300px;}
-    37% {  transform: rotate(45deg) translateX(-43%) translateY(-25%);  max-height: 260px;}
-    50% {  transform: rotate(30deg) translateX(35%) translateY(-30%);  max-height: 220px;}
-    67% {  transform: rotate(15deg) translateX(70%) translateY(-23%);  max-height: 240px;}
-    75% {  transform: rotate(-5deg) translateX(80%) translateY(25%); max-height: 270px;}
-    87% {  transform: rotate(-22deg) translateX(30%) translateY(45%); max-height: 320px;}
+    13% {  transform: rotate(15deg) translateX(-25%) translateY(35%); max-height: 310px; opacity: 0.49;}
+    25% {  transform: rotate(30deg) translateX(-35%) translateY(25%); max-height: 280px; opacity: 0.36;}
+    37% {  transform: rotate(45deg) translateX(-43%) translateY(-25%);  max-height: 260px; opacity: 0.27;}
+    50% {  transform: rotate(30deg) translateX(35%) translateY(-30%);  max-height: 220px; opacity: 0.28;}
+    67% {  transform: rotate(15deg) translateX(70%) translateY(-23%);  max-height: 240px; opacity: 0.28;}
+    75% {  transform: rotate(-5deg) translateX(80%) translateY(25%); max-height: 270px; opacity: 0.18;}
+    87% {  transform: rotate(-22deg) translateX(30%) translateY(45%); max-height: 320px; opacity: 0.28;}
     100% {  transform: rotate(0deg) translateX(0%) translateY(0%); }`
 
 export const BubbleWrapper = styled.div`
@@ -78,8 +93,6 @@ export const BubbleWrapper = styled.div`
 `
 export const BubbleMain = styled.div`
   position: absolute;
-  /* z-index: -222; */
-  /* transition: background-image 0.5s ease; */
 `
 export const BubbleOne = styled(BubbleMain)`
   height: 10rem;
@@ -142,23 +155,52 @@ export const BubbleFour = styled(BubbleMain)`
 export const BubbleFive = styled(BubbleMain)`
   height: 17rem;
   width: 16rem;
-  opacity: 0.14;
+  /* opacity: 0.34; */
   z-index: -11;
   background-image: linear-gradient(
     90deg,
     var(--bluegreen4),
     var(--bluegreen7)
   );
-  top: calc(21% - 2rem);
+  top: calc(11% - 2rem);
   right: calc(33% - 2rem);
-  transition: all 1s;
-  &:hover {
-    opacity: 0.44;
-    width: 16.5rem;
-    height: 17.5rem;
-  }
+
+  /* opacity: ${({ vanish }) => (vanish === true ? '0' : '0.34')}; */
   animation: ${blob} 15s ease-in-out infinite,
-    ${floatTwo} 125s ease-in-out infinite;
+    ${floatFive} 76s ease-in-out infinite;
+  ${({ vanish }) =>
+    vanish === true
+      ? `opacity: 0.0; 3s linear 1s infinite running slidein;`
+      : `opacity: 0.34;`}
+  transition: all 2s ease-out;
+`
+export const FlotingWrapper = styled.div`
+  animation: ${floatFour} 75s ease-in-out infinite;
+  @media (max-width: 680px) {
+    animation: ${floatThree} 75s ease-in-out infinite;
+  }
+
+  opacity: 0.27;
+  &:after {
+    transition: all 1.3s;
+    content: 'Oxytocine';
+    color: black;
+    opacity: 0;
+    font-size: 18px;
+    display: block;
+    position: absolute;
+    border: none;
+    bottom: 0;
+    left: 50%;
+    width: 40%;
+    /* height: 335px; */
+  }
+  &:hover {
+    &:after {
+      /* transition: all 1.3s; */
+      opacity: 0.9;
+    }
+  }
 `
 export const Img = styled.img`
   padding-right: 0;
@@ -169,26 +211,11 @@ export const Img = styled.img`
 
   max-height: 340px;
   z-index: -999;
-  opacity: 0.2;
-  /* aspect-ratio: 16 / 9; */
+
   object-fit: cover;
 
   object-position: center;
   top: 20%;
   right: 10%;
   /* overflow: visible; */
-  animation: ${floatFour} 75s ease-in-out infinite;
-  @media (max-width: 680px) {
-    animation: ${floatThree} 75s ease-in-out infinite;
-  }
-  &:after {
-    content: 'Oxytocine';
-    display: block;
-    position: relative;
-    border: 20px solid white;
-    bottom: 24px;
-    left: 0;
-    width: 100%;
-    height: 335px;
-  }
 `

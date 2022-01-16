@@ -89,7 +89,8 @@ export const CopyHeading = styled.h1`
     content: '${(props) => props.contentAfter}';
     opacity: ${(props) => (props.contentAfter ? `1` : '0')};
     transition: all 0.3s ease-in;
-    font-size: 18px;
+    z-index: 11111;
+    font-size: 28px;
     display: block;
     position: relative;
     bottom: 0px;
