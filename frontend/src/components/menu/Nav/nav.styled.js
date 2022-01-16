@@ -45,6 +45,16 @@ export const TransitionWrapperMain = styled.div`
     /* transition: background 1200ms ease-out; */
     background: var(--bluegreen5);
   }
+  .open.top {
+    transition: all 300ms ease-in;
+    background: var(--bluegreen5);
+    .burger {
+      background: var(--bluegreen3);
+    }
+    li {
+      color: var(--bluegreen3);
+    }
+  }
   .hidden {
     .burger {
       background: var(--bluegreen5);
@@ -176,6 +186,8 @@ export const MobileViewContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  /* background: ${({ menuOpen }) =>
+    menuOpen === true ? 'var(--bluegreen1)' : 'transparent'}; */
   margin: 0 1.5rem 0 1rem;
   /* this below fixes the irritating gap in nav when you scroll it down */
   margin-top: -1px !important;

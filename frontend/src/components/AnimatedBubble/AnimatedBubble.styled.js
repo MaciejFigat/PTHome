@@ -42,6 +42,9 @@ export const BubbleWrapper = styled.div`
   width: 100%;
   height: 95vh;
   z-index: 0;
+  @media (max-width: 700px) and (orientation: landscape) {
+    height: 200vh;
+  }
   @media (min-width: 620px) and (max-width: 880px) {
     overflow-x: hidden;
     width: 100vw;

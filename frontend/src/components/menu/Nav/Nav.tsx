@@ -70,7 +70,7 @@ const Nav: React.FC<NavProps> = () => {
           scrollDirection === 'up' || null || undefined ? 'active' : ''
         } ${scrollDirection === 'down' ? 'hidden' : ''} ${
           scrollDirection === 'top' ? 'top' : ''
-        }`}
+        } ${open === true ? 'open' : ''}`}
       >
         <MobileViewContainer>
           <div onClick={handleClickMenu}>
