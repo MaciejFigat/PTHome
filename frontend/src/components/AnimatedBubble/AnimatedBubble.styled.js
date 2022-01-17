@@ -180,8 +180,8 @@ export const FlotingWrapper = styled.div`
   @media (max-width: 680px) {
     animation: ${floatThree} 75s ease-in-out infinite;
   }
-  /* min-height: 10rem; */
-  /* min-width: 10rem; */
+  min-height: 10rem;
+  min-width: 10rem;
   opacity: 0.27;
   &:after {
     transition: all 1.3s;
@@ -192,14 +192,12 @@ export const FlotingWrapper = styled.div`
     display: block;
     position: absolute;
     border: none;
-    bottom: 0;
+    top: 25px;
     left: 50%;
     width: 40%;
-    /* height: 335px; */
   }
   &:hover {
     &:after {
-      /* transition: all 1.3s; */
       opacity: 0.9;
     }
   }
@@ -209,15 +207,11 @@ export const Img = styled.img`
   border: 0;
   position: absolute;
   max-width: 110%;
-  /* width: 40vw; */
-
+  min-width: 133px;
   max-height: 340px;
   z-index: -999;
-
   object-fit: cover;
-
   object-position: center;
   top: 20%;
   right: 10%;
-  /* overflow: visible; */
 `

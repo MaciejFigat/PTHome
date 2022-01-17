@@ -3,11 +3,10 @@ import { motion } from 'framer-motion'
 
 export const TransitionWrapperMain = styled.div`
   position: sticky;
-  z-index: 3;
+  /* z-index: 3; */
   top: -2px;
   background: transparent;
   transition: color 1200ms ease-out;
-  /* transition: background 1200ms ease-out; */
   .nav_link {
     transition: color 600ms ease-out;
     color: var(--background-main5);
@@ -41,8 +40,6 @@ export const TransitionWrapperMain = styled.div`
       color: var(--bluegreen3);
     }
     transition: all 200ms ease-in;
-    /* transition: color 1200ms ease-out; */
-    /* transition: background 1200ms ease-out; */
     background: var(--bluegreen5);
   }
   .open.top {
