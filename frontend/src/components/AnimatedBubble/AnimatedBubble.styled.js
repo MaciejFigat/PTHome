@@ -40,12 +40,13 @@ const floatFive = keyframes`
  75% {  transform: rotate(20deg) translateX(-25%) translateY(30%);  height: 16rem;
   width: 15rem; opacity: 0.39;}
  100% {  transform: rotate(0deg) translateX(0%) translateY(0%); }`
+
 const floatThree = keyframes`   
  0% {  transform: rotate(0deg) translateX(0%) translateY(0%); }
- 25% {  transform: rotate(10deg) translateX(15%) translateY(-35%); max-height: 200px;}}
- 37% {  transform: rotate(15deg) translateX(-25%) translateY(-35%);max-height: 160px;}}
- 50% {  transform: rotate(0deg) translateX(-30%) translateY(30%); max-height: 140px;}}
- 75% {  transform: rotate(20deg) translateX(-25%) translateY(30%);max-height: 200px;}}
+ 25% {  transform: rotate(10deg) translateX(15%) translateY(-55%); max-height: 200px;}
+ 37% {  transform: rotate(15deg) translateX(-45%) translateY(-75%);max-height: 160px;}
+ 50% {  transform: rotate(0deg) translateX(-30%) translateY(50%); max-height: 140px;}
+ 75% {  transform: rotate(20deg) translateX(-25%) translateY(70%);max-height: 200px;}
  100% {  transform: rotate(0deg) translateX(0%) translateY(0%); }`
 
 const floatFour = keyframes`   
@@ -62,24 +63,32 @@ const floatFour = keyframes`
 export const OverflowWrapper = styled.div`
   /* display: grid;
   place-items: center; */
+  /* position: relative; */
+  /* display: block; */
+  /* overflow-y: visible;
+  height: 95vh;
+  min-width: 800px;
+  @media (max-width: 844px) and (orientation: landscape) {
+    height: 200vh;
+  } */
 `
 export const BubbleWrapper = styled.div`
   height: 95vh;
-  @media (max-width: 700px) and (orientation: landscape) {
+
+  @media (max-width: 844px) and (orientation: landscape) {
     height: 200vh;
   }
-  min-height: fit-content;
+  /* min-height: fit-content; */
   position: relative;
   display: block;
   width: 100%;
   z-index: 0;
 
-  /* @media (max-width: 700px) and (orientation: landscape) {
+  @media (max-width: 700px) and (orientation: landscape) {
     height: 200vh;
-  } */
+  }
   @media (min-width: 620px) and (max-width: 880px) {
     overflow-x: hidden;
-
     width: 98vw;
   }
   @media (max-width: 620px) {
@@ -88,7 +97,7 @@ export const BubbleWrapper = styled.div`
     width: 98vw;
   }
   @media (max-width: 366px) {
-    width: 96vw;
+    width: 96.5vw;
   }
 `
 export const BubbleMain = styled.div`
@@ -168,7 +177,11 @@ export const BubbleFive = styled(BubbleMain)`
 
   /* opacity: ${({ vanish }) => (vanish === true ? '0' : '0.34')}; */
   animation: ${blob} 15s ease-in-out infinite,
-    ${floatFive} 76s ease-in-out infinite;
+    ${floatFive} 75s ease-in-out infinite;
+  @media (max-width: 880px) {
+    top: calc(22% - 2rem);
+    right: calc(33% - 2rem);
+  }
   ${({ vanish }) =>
     vanish === true
       ? `opacity: 0.0; 3s linear 1s infinite running slidein;`
@@ -177,12 +190,17 @@ export const BubbleFive = styled(BubbleMain)`
 `
 export const FlotingWrapper = styled.div`
   animation: ${floatFour} 75s ease-in-out infinite;
-  @media (max-width: 680px) {
+  @media (max-width: 880px) {
     animation: ${floatThree} 75s ease-in-out infinite;
   }
   min-height: 10rem;
   min-width: 10rem;
   opacity: 0.27;
+  &:hover {
+    &:after {
+      opacity: 0.9;
+    }
+  }
   &:after {
     transition: all 1.3s;
     content: 'Oxytocine';
@@ -191,14 +209,15 @@ export const FlotingWrapper = styled.div`
     font-size: 18px;
     display: block;
     position: absolute;
-    border: none;
-    top: 25px;
-    left: 50%;
+    /* top: -145px; */
+    top: 20%;
+    left: 45%;
     width: 40%;
-  }
-  &:hover {
-    &:after {
-      opacity: 0.9;
+
+    @media (max-width: 880px) {
+      top: 150%;
+      left: 70%;
+      width: 40%;
     }
   }
 `
@@ -214,4 +233,8 @@ export const Img = styled.img`
   object-position: center;
   top: 20%;
   right: 10%;
+  @media (max-width: 880px) {
+    top: 70%;
+    right: -10%;
+  }
 `
