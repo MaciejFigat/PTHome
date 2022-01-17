@@ -28,17 +28,7 @@ const float = keyframes`
     25% {  transform: rotate(10deg) translateX(35%) translateY(-100%);}
     50% {  transform: rotate(0deg) translateX(-35%) translateY(100%);}
     100% {  transform: rotate(0deg) translateX(0%) translateY(0%); }`
-// const floatTwo = keyframes`
-//  0% {  transform: rotate(0deg) translateX(0%) translateY(0%); }
-//  25% {  transform: rotate(10deg) translateX(15%) translateY(-35%);  height: 16rem;
-//   width: 15rem;}
-//  37% {  transform: rotate(15deg) translateX(-25%) translateY(-35%);  height: 15rem;
-//   width: 14rem;}
-//  50% {  transform: rotate(0deg) translateX(-30%) translateY(30%); height: 14rem;
-//   width: 13rem;}
-//  75% {  transform: rotate(20deg) translateX(-25%) translateY(30%);  height: 16rem;
-//   width: 15rem;}
-//  100% {  transform: rotate(0deg) translateX(0%) translateY(0%); }`
+
 const floatFive = keyframes`   
  0% {  transform: rotate(0deg) translateX(0%) translateY(0%); }
  25% {  transform: rotate(10deg) translateX(15%) translateY(-35%);  height: 11rem;
@@ -69,17 +59,27 @@ const floatFour = keyframes`
     87% {  transform: rotate(-22deg) translateX(30%) translateY(45%); max-height: 320px; opacity: 0.28;}
     100% {  transform: rotate(0deg) translateX(0%) translateY(0%); }`
 
+export const OverflowWrapper = styled.div`
+  /* display: grid;
+  place-items: center; */
+`
 export const BubbleWrapper = styled.div`
-  position: relative;
-  display: block;
-  width: 100%;
   height: 95vh;
-  z-index: 0;
   @media (max-width: 700px) and (orientation: landscape) {
     height: 200vh;
   }
+  min-height: fit-content;
+  position: relative;
+  display: block;
+  width: 100%;
+  z-index: 0;
+
+  /* @media (max-width: 700px) and (orientation: landscape) {
+    height: 200vh;
+  } */
   @media (min-width: 620px) and (max-width: 880px) {
     overflow-x: hidden;
+
     width: 98vw;
   }
   @media (max-width: 620px) {
@@ -93,6 +93,7 @@ export const BubbleWrapper = styled.div`
 `
 export const BubbleMain = styled.div`
   position: absolute;
+  /* overflow: auto; */
 `
 export const BubbleOne = styled(BubbleMain)`
   height: 10rem;
@@ -179,7 +180,8 @@ export const FlotingWrapper = styled.div`
   @media (max-width: 680px) {
     animation: ${floatThree} 75s ease-in-out infinite;
   }
-
+  /* min-height: 10rem; */
+  /* min-width: 10rem; */
   opacity: 0.27;
   &:after {
     transition: all 1.3s;

@@ -20,7 +20,7 @@ export const InfoSec = styled.div`
   ${(props) => handleSectionColor(props).sectionBackground}
   ${(props) => handleSectionColor(props).sectionBackgroundGradient}
   @media (max-width: 880px) {
-    padding: 60px 0;
+    padding: 0px 0;
   }
   @media (max-width: 380px) {
     padding: 10px 0;

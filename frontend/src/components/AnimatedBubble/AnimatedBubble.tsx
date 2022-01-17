@@ -6,6 +6,7 @@ import {
   BubbleTwo,
   BubbleThree,
   BubbleWrapper,
+  OverflowWrapper,
   BubbleFour,
   BubbleFive,
   FlotingWrapper,
@@ -29,29 +30,31 @@ const AnimatedBubble: React.FC<AnimatedBubbleProps> = () => {
   }, [vanish])
 
   return (
-    <BubbleWrapper ref={constraintsRef}>
-      <BubbleTwo>Two</BubbleTwo>
-      <BubbleThree>Three</BubbleThree>
-      <BubbleFour>Four</BubbleFour>
-      {/* <DragAnimationWrapper constraintsRef={constraintsRef}>
+    <OverflowWrapper>
+      <BubbleWrapper ref={constraintsRef}>
+        <BubbleTwo>Two</BubbleTwo>
+        <BubbleThree>Three</BubbleThree>
+        <BubbleFour>Four</BubbleFour>
+        {/* <DragAnimationWrapper constraintsRef={constraintsRef}>
         ddd.
       </DragAnimationWrapper> */}
-      <FlotingWrapper>
-        <Img src={Oxytocin} />
-      </FlotingWrapper>
+        <FlotingWrapper>
+          <Img src={Oxytocin} />
+        </FlotingWrapper>
 
-      {/* <DragAnimationWrapper constraintsRef={constraintsRef}> */}
-      {/* <Img src={OxytocinLabels} /> */}
-      {/* </DragAnimationWrapper> */}
+        {/* <DragAnimationWrapper constraintsRef={constraintsRef}> */}
+        {/* <Img src={OxytocinLabels} /> */}
+        {/* </DragAnimationWrapper> */}
 
-      <DragAnimationWrapper constraintsRef={constraintsRef}>
-        <BubbleOne>One</BubbleOne>
-      </DragAnimationWrapper>
-      <BubbleFive onClick={bubbleHandler} vanish={vanish}>
-        fIVE
-      </BubbleFive>
-      {/* <BubbleFive>fIVE</BubbleFive> */}
-    </BubbleWrapper>
+        <DragAnimationWrapper constraintsRef={constraintsRef}>
+          <BubbleOne>One</BubbleOne>
+        </DragAnimationWrapper>
+        <BubbleFive onClick={bubbleHandler} vanish={vanish}>
+          fIVE
+        </BubbleFive>
+        {/* <BubbleFive>fIVE</BubbleFive> */}
+      </BubbleWrapper>
+    </OverflowWrapper>
   )
 }
 export default AnimatedBubble

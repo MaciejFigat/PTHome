@@ -77,10 +77,6 @@ export const TransitionWrapper = styled.div`
   top: 0;
   max-height: 3.2rem;
   height: 55px;
-  /* background: var(--bluegreen5); */
-  /* z-index: -3; */
-  @media (max-width: 1020px) {
-  }
 `
 export const NavContainer = styled.nav`
   display: flex;
@@ -135,6 +131,7 @@ export const ListLoginWrapper = styled.div`
 `
 export const HeaderLoginWrapper = styled.div`
   display: flex;
+
   gap: 2rem;
   @media (min-width: 1020px) {
     display: none;
