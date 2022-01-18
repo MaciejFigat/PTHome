@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 export const TransitionWrapperMain = styled.div`
   position: sticky;
-  /* z-index: 3; */
+  /* z-index: 20; */
   top: -2px;
   background: transparent;
   transition: color 1200ms ease-out;
@@ -138,13 +138,12 @@ export const HeaderLoginWrapper = styled.div`
 export const ListItem = styled.li`
   margin-right: 1rem;
   font-size: 1.05rem;
-
   letter-spacing: 0.075em;
   font-weight: 400;
   display: flex;
+
   text-transform: uppercase;
   color: var(--background5-main);
-
   @media (max-width: 1020px) {
     flex-direction: column;
     align-content: flex-start;
@@ -223,6 +222,7 @@ export const AnimatedWrapperMobile = styled(motion.div)`
   width: 18.75rem;
   height: calc(100vh + 50px);
   display: none;
+  /* z-index: 21; */
   @media (max-width: 1020px) {
     display: flex;
   }

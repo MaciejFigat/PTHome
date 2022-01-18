@@ -73,6 +73,8 @@ export const OverflowWrapper = styled.div`
   } */
 `
 export const BubbleWrapper = styled.div`
+  /* for vanishing clicked bubble */
+
   height: 95vh;
 
   @media (max-width: 844px) and (orientation: landscape) {
@@ -82,7 +84,7 @@ export const BubbleWrapper = styled.div`
   position: relative;
   display: block;
   width: 100%;
-  z-index: 0;
+  /* z-index: 10; */
 
   @media (max-width: 700px) and (orientation: landscape) {
     height: 200vh;
@@ -102,7 +104,7 @@ export const BubbleWrapper = styled.div`
 `
 export const BubbleMain = styled.div`
   position: absolute;
-  /* overflow: auto; */
+  /* z-index: 20; */
 `
 export const BubbleOne = styled(BubbleMain)`
   height: 10rem;
@@ -165,8 +167,7 @@ export const BubbleFour = styled(BubbleMain)`
 export const BubbleFive = styled(BubbleMain)`
   height: 17rem;
   width: 16rem;
-  /* opacity: 0.34; */
-  z-index: -11;
+  /* z-index: 1; */
   background-image: linear-gradient(
     90deg,
     var(--bluegreen4),
@@ -174,27 +175,42 @@ export const BubbleFive = styled(BubbleMain)`
   );
   top: calc(11% - 2rem);
   right: calc(33% - 2rem);
-
-  /* opacity: ${({ vanish }) => (vanish === true ? '0' : '0.34')}; */
   animation: ${blob} 15s ease-in-out infinite,
     ${floatFive} 75s ease-in-out infinite;
   @media (max-width: 880px) {
     top: calc(22% - 2rem);
     right: calc(33% - 2rem);
   }
-  ${({ vanish }) =>
-    vanish === true
-      ? `opacity: 0.0; 3s linear 1s infinite running slidein;`
-      : `opacity: 0.34;`}
+  opacity: 0.34;
   transition: all 2s ease-out;
+  &:hover {
+    &:after {
+      opacity: 0.9;
+    }
+  }
+  &:after {
+    transition: all 1.3s;
+    content: "I'm a blob";
+    color: black;
+    opacity: 0;
+    font-size: 18px;
+    display: block;
+    position: absolute;
+
+    top: 20%;
+    left: 25%;
+    width: 40%;
+  }
 `
 export const FlotingWrapper = styled.div`
   animation: ${floatFour} 75s ease-in-out infinite;
   @media (max-width: 880px) {
     animation: ${floatThree} 75s ease-in-out infinite;
   }
-  min-height: 10rem;
-  min-width: 10rem;
+  /* min-height: 10rem; */
+  /* min-width: 10rem; */
+  position: relative;
+  /* z-index: 23; */
   opacity: 0.27;
   &:hover {
     &:after {
@@ -209,14 +225,13 @@ export const FlotingWrapper = styled.div`
     font-size: 18px;
     display: block;
     position: absolute;
-    /* top: -145px; */
     top: 20%;
     left: 45%;
     width: 40%;
 
     @media (max-width: 880px) {
-      top: 150%;
-      left: 70%;
+      top: 210%;
+      left: 79%;
       width: 40%;
     }
   }
@@ -228,7 +243,6 @@ export const Img = styled.img`
   max-width: 110%;
   min-width: 133px;
   max-height: 340px;
-  z-index: -999;
   object-fit: cover;
   object-position: center;
   top: 20%;

@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef, useState } from 'react'
 import DragAnimationWrapper from '../AnimationWrappers/DragAnimationWrapper'
 import Oxytocin from '../../data/assets/Oxytocin.svg'
 import {
@@ -21,13 +21,6 @@ const AnimatedBubble: React.FC<AnimatedBubbleProps> = () => {
     setVanish(true)
   }
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setVanish(false)
-    }, 3000)
-    return () => clearTimeout(timer)
-  }, [vanish])
-
   return (
     <BubbleWrapper ref={constraintsRef}>
       <BubbleTwo>Two</BubbleTwo>
@@ -47,7 +40,10 @@ const AnimatedBubble: React.FC<AnimatedBubbleProps> = () => {
       <DragAnimationWrapper constraintsRef={constraintsRef}>
         <BubbleOne>One</BubbleOne>
       </DragAnimationWrapper>
-      <BubbleFive onClick={bubbleHandler} vanish={vanish}>
+      <BubbleFive
+        onClick={bubbleHandler}
+        className={`${vanish === true ? 'vanish' : ''}`}
+      >
         fIVE
       </BubbleFive>
       {/* <BubbleFive>fIVE</BubbleFive> */}

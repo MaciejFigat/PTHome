@@ -8,6 +8,12 @@ import {
 import { NavLink } from 'react-router-dom'
 import SocialIcons from '../../SvgIcon/SocialIcons'
 import { AnimatePresence, motion } from 'framer-motion'
+import AnimatedBubble from '../../AnimatedBubble/AnimatedBubble'
+import {
+  BubbleFive,
+  BubbleThree,
+  BubbleTwo,
+} from '../../AnimatedBubble/AnimatedBubble.styled'
 interface NavListMobileProps {
   open: boolean
 }
@@ -63,6 +69,10 @@ const NavListMobile: React.FC<NavListMobileProps> = ({ open }) => {
             exit='closed'
             variants={sideVariants}
           >
+            {' '}
+            <BubbleTwo />
+            <BubbleThree />
+            <BubbleFive />
             <NavList>
               {links.map(({ name, to, id }) => (
                 <ListItem key={id}>
@@ -90,8 +100,9 @@ const NavListMobile: React.FC<NavListMobileProps> = ({ open }) => {
                   <SocialIcons variant='light' />
                 </motion.div>
               </ListItemMobile>
-            </NavList>
+            </NavList>{' '}
           </motion.div>
+          {/* <AnimatedBubble /> */}
         </AnimatedWrapperMobile>
       )}
     </AnimatePresence>
