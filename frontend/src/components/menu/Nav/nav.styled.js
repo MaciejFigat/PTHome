@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 export const TransitionWrapperMain = styled.div`
   position: sticky;
-  /* z-index: 20; */
+  z-index: 20;
   top: -2px;
   background: transparent;
   transition: color 1200ms ease-out;

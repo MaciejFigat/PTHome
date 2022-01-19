@@ -8,11 +8,17 @@ import {
 import { NavLink } from 'react-router-dom'
 import SocialIcons from '../../SvgIcon/SocialIcons'
 import { AnimatePresence, motion } from 'framer-motion'
-import AnimatedBubble from '../../AnimatedBubble/AnimatedBubble'
+import Oxytocin from '../../../data/assets/Oxytocin.svg'
+import Adrenaline from '../../../data/assets/Adrenaline.svg'
 import {
-  BubbleFive,
+  BubbleOverlay,
   BubbleThree,
-  BubbleTwo,
+  ImgSmallTwo,
+  ImgSmall,
+  FloatingWrapperThree,
+  FloatingWrapperTwo,
+  BubbleOne,
+  WrapperImgPosition,
 } from '../../AnimatedBubble/AnimatedBubble.styled'
 interface NavListMobileProps {
   open: boolean
@@ -70,9 +76,18 @@ const NavListMobile: React.FC<NavListMobileProps> = ({ open }) => {
             variants={sideVariants}
           >
             {' '}
-            <BubbleTwo />
-            <BubbleThree />
-            <BubbleFive />
+            <BubbleOverlay>
+              <WrapperImgPosition>
+                <FloatingWrapperTwo content='Oxytocin'>
+                  <ImgSmallTwo src={Oxytocin} />
+                </FloatingWrapperTwo>
+              </WrapperImgPosition>
+              <BubbleOne />
+              <BubbleThree />
+              <FloatingWrapperThree content='Adrenaline'>
+                <ImgSmall src={Adrenaline} />
+              </FloatingWrapperThree>
+            </BubbleOverlay>
             <NavList>
               {links.map(({ name, to, id }) => (
                 <ListItem key={id}>
@@ -102,7 +117,6 @@ const NavListMobile: React.FC<NavListMobileProps> = ({ open }) => {
               </ListItemMobile>
             </NavList>{' '}
           </motion.div>
-          {/* <AnimatedBubble /> */}
         </AnimatedWrapperMobile>
       )}
     </AnimatePresence>

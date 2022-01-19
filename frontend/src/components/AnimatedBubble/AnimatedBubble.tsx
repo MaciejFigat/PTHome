@@ -8,7 +8,7 @@ import {
   BubbleWrapper,
   BubbleFour,
   BubbleFive,
-  FlotingWrapper,
+  FloatingWrapper,
   Img,
 } from './AnimatedBubble.styled'
 
@@ -29,9 +29,9 @@ const AnimatedBubble: React.FC<AnimatedBubbleProps> = () => {
       {/* <DragAnimationWrapper constraintsRef={constraintsRef}>
         ddd.
       </DragAnimationWrapper> */}
-      <FlotingWrapper>
+      <FloatingWrapper content='Oxytocin'>
         <Img src={Oxytocin} />
-      </FlotingWrapper>
+      </FloatingWrapper>
 
       {/* <DragAnimationWrapper constraintsRef={constraintsRef}> */}
       {/* <Img src={OxytocinLabels} /> */}

@@ -60,31 +60,22 @@ const floatFour = keyframes`
     87% {  transform: rotate(-22deg) translateX(30%) translateY(45%); max-height: 320px; opacity: 0.28;}
     100% {  transform: rotate(0deg) translateX(0%) translateY(0%); }`
 
-export const OverflowWrapper = styled.div`
-  /* display: grid;
-  place-items: center; */
-  /* position: relative; */
-  /* display: block; */
-  /* overflow-y: visible;
-  height: 95vh;
-  min-width: 800px;
-  @media (max-width: 844px) and (orientation: landscape) {
-    height: 200vh;
-  } */
+export const OverflowWrapper = styled.div``
+export const BubbleOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 `
 export const BubbleWrapper = styled.div`
-  /* for vanishing clicked bubble */
-
   height: 95vh;
-
   @media (max-width: 844px) and (orientation: landscape) {
     height: 200vh;
   }
-  /* min-height: fit-content; */
   position: relative;
   display: block;
   width: 100%;
-  /* z-index: 10; */
 
   @media (max-width: 700px) and (orientation: landscape) {
     height: 200vh;
@@ -104,7 +95,6 @@ export const BubbleWrapper = styled.div`
 `
 export const BubbleMain = styled.div`
   position: absolute;
-  /* z-index: 20; */
 `
 export const BubbleOne = styled(BubbleMain)`
   height: 10rem;
@@ -183,11 +173,11 @@ export const BubbleFive = styled(BubbleMain)`
   }
   opacity: 0.34;
   transition: all 2s ease-out;
-  &:hover {
+  /* &:hover {
     &:after {
       opacity: 0.9;
     }
-  }
+  } */
   &:after {
     transition: all 1.3s;
     content: "I'm a blob";
@@ -202,40 +192,7 @@ export const BubbleFive = styled(BubbleMain)`
     width: 40%;
   }
 `
-export const FlotingWrapper = styled.div`
-  animation: ${floatFour} 75s ease-in-out infinite;
-  @media (max-width: 880px) {
-    animation: ${floatThree} 75s ease-in-out infinite;
-  }
-  /* min-height: 10rem; */
-  /* min-width: 10rem; */
-  position: relative;
-  /* z-index: 23; */
-  opacity: 0.27;
-  &:hover {
-    &:after {
-      opacity: 0.9;
-    }
-  }
-  &:after {
-    transition: all 1.3s;
-    content: 'Oxytocine';
-    color: black;
-    opacity: 0;
-    font-size: 18px;
-    display: block;
-    position: absolute;
-    top: 20%;
-    left: 45%;
-    width: 40%;
 
-    @media (max-width: 880px) {
-      top: 210%;
-      left: 79%;
-      width: 40%;
-    }
-  }
-`
 export const Img = styled.img`
   padding-right: 0;
   border: 0;
@@ -250,5 +207,111 @@ export const Img = styled.img`
   @media (max-width: 880px) {
     top: 70%;
     right: -10%;
+  }
+`
+export const ImgSmall = styled.img`
+  padding-right: 0;
+  border: 0;
+  position: absolute;
+  max-height: 110px;
+  object-fit: cover;
+  object-position: center;
+  top: 60%;
+  right: 10%;
+  @media (max-width: 880px) {
+    top: 50%;
+    right: 10%;
+  }
+`
+export const ImgSmallTwo = styled(ImgSmall)`
+  max-height: 240px;
+  top: 20%;
+  right: 30%;
+  @media (max-width: 880px) {
+    top: 10%;
+    right: 20%;
+  }
+`
+export const FloatingWrapper = styled.div`
+  animation: ${floatFour} 75s ease-in-out infinite;
+  @media (max-width: 880px) {
+    animation: ${floatThree} 75s ease-in-out infinite;
+  }
+  position: relative;
+  opacity: 0.27;
+  &:hover {
+    &:after {
+      opacity: 0.9;
+    }
+  }
+  &:after {
+    transition: all 1.3s;
+    content: '${(props) => props.content}';
+    color: black;
+    opacity: 0;
+    font-size: 18px;
+    position: absolute;
+    top: 20%;
+    left: 45%;
+    width: 40%;
+    @media (min-width: 880px) and (max-width: 1020px) {
+      top: 10%;
+      left: 39%;
+    }
+    @media (max-width: 880px) {
+      top: 210%;
+      left: 79%;
+    }
+  }
+`
+export const WrapperImgPosition = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+`
+export const FloatingWrapperThree = styled(FloatingWrapper)`
+  top: 40%;
+  left: -10%;
+  max-height: fit-content;
+  &:hover ${ImgSmall} {
+    &:after {
+      opacity: 0.9;
+    }
+  }
+  &:after {
+    top: 60%;
+    left: 63%;
+
+    @media (min-width: 880px) and (max-width: 1020px) {
+      top: 60%;
+      left: 63%;
+    }
+    @media (max-width: 880px) {
+      top: 45%;
+      left: 63%;
+    }
+  }
+`
+export const FloatingWrapperTwo = styled(FloatingWrapper)`
+  top: 10%;
+  left: -20%;
+  max-height: fit-content;
+  animation: ${float} 145s ease-in-out infinite;
+  @media (max-width: 880px) {
+    animation: ${float} 145s ease-in-out infinite;
+  }
+  &:after {
+    top: 70%;
+    left: 70%;
+    @media (min-width: 880px) and (max-width: 1020px) {
+      top: 20%;
+      left: 43%;
+    }
+    @media (max-width: 880px) {
+      top: 7%;
+      left: 45%;
+    }
   }
 `
