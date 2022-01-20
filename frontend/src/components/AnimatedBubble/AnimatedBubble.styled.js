@@ -246,14 +246,16 @@ export const FloatingWrapper = styled.div`
   }
   &:after {
     transition: all 1.3s;
-    content: '${(props) => props.content}';
+    content: '${(props) =>
+      props.content ? props.content : 'Recommended by Joe R.'}';
     color: black;
     opacity: 0;
     font-size: 18px;
     position: absolute;
-    top: 20%;
+    /* top: 20%; */
     left: 45%;
     width: 40%;
+    min-width: fit-content;
     @media (min-width: 880px) and (max-width: 1020px) {
       top: 10%;
       left: 39%;
@@ -275,15 +277,9 @@ export const FloatingWrapperThree = styled(FloatingWrapper)`
   top: 40%;
   left: -10%;
   max-height: fit-content;
-  &:hover ${ImgSmall} {
-    &:after {
-      opacity: 0.9;
-    }
-  }
   &:after {
     top: 60%;
     left: 63%;
-
     @media (min-width: 880px) and (max-width: 1020px) {
       top: 60%;
       left: 63%;
@@ -294,24 +290,29 @@ export const FloatingWrapperThree = styled(FloatingWrapper)`
     }
   }
 `
-export const FloatingWrapperTwo = styled(FloatingWrapper)`
-  top: 10%;
-  left: -20%;
+export const FloatingWrapperCustom = styled(FloatingWrapper)`
+  top: ${(props) => (props.top ? props.top : '20%')};
+  left: ${(props) => props.left};
+  max-width: 200px;
   max-height: fit-content;
+  /* animation: ${floatFour} 75s ease-in-out infinite;
+  @media (max-width: 880px) {
+    animation: ${floatThree} 75s ease-in-out infinite;
+  } */
+
   animation: ${float} 145s ease-in-out infinite;
   @media (max-width: 880px) {
     animation: ${float} 145s ease-in-out infinite;
   }
+
   &:after {
-    top: 70%;
-    left: 70%;
+    top: -5px;
+    left: 25px;
     @media (min-width: 880px) and (max-width: 1020px) {
-      top: 20%;
-      left: 43%;
+      left: -10px;
     }
     @media (max-width: 880px) {
-      top: 7%;
-      left: 45%;
+      left: -15px;
     }
   }
 `

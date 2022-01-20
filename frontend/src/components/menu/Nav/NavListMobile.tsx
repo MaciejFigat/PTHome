@@ -15,8 +15,7 @@ import {
   BubbleThree,
   ImgSmallTwo,
   ImgSmall,
-  FloatingWrapperThree,
-  FloatingWrapperTwo,
+  FloatingWrapperCustom,
   BubbleOne,
   WrapperImgPosition,
 } from '../../AnimatedBubble/AnimatedBubble.styled'
@@ -78,15 +77,28 @@ const NavListMobile: React.FC<NavListMobileProps> = ({ open }) => {
             {' '}
             <BubbleOverlay>
               <WrapperImgPosition>
-                <FloatingWrapperTwo content='Oxytocin'>
+                <FloatingWrapperCustom
+                  top='10%'
+                  left='37%'
+                  content='Oxytocin'
+                  floatTwo
+                >
                   <ImgSmallTwo src={Oxytocin} />
-                </FloatingWrapperTwo>
+                </FloatingWrapperCustom>
+                <FloatingWrapperCustom
+                  top='40%'
+                  left='60%'
+                  content='Adrenaline'
+                  floatOne
+                >
+                  <ImgSmall src={Adrenaline} />
+                </FloatingWrapperCustom>
               </WrapperImgPosition>
               <BubbleOne />
               <BubbleThree />
-              <FloatingWrapperThree content='Adrenaline'>
+              {/* <FloatingWrapperThree content='Adrenaline'>
                 <ImgSmall src={Adrenaline} />
-              </FloatingWrapperThree>
+              </FloatingWrapperThree> */}
             </BubbleOverlay>
             <NavList>
               {links.map(({ name, to, id }) => (
