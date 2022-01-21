@@ -8,17 +8,7 @@ import {
 import { NavLink } from 'react-router-dom'
 import SocialIcons from '../../SvgIcon/SocialIcons'
 import { AnimatePresence, motion } from 'framer-motion'
-import Oxytocin from '../../../data/assets/Oxytocin.svg'
-import Adrenaline from '../../../data/assets/Adrenaline.svg'
-import {
-  BubbleOverlay,
-  BubbleThree,
-  ImgSmallTwo,
-  ImgSmall,
-  FloatingWrapperCustom,
-  BubbleOne,
-  WrapperImgPosition,
-} from '../../AnimatedBubble/AnimatedBubble.styled'
+import AnimatedOverlay from '../../AnimatedBubble/AnimatedOverlay'
 interface NavListMobileProps {
   open: boolean
 }
@@ -75,31 +65,9 @@ const NavListMobile: React.FC<NavListMobileProps> = ({ open }) => {
             variants={sideVariants}
           >
             {' '}
-            <BubbleOverlay>
-              <WrapperImgPosition>
-                <FloatingWrapperCustom
-                  top='10%'
-                  left='37%'
-                  content='Oxytocin'
-                  floatTwo
-                >
-                  <ImgSmallTwo src={Oxytocin} />
-                </FloatingWrapperCustom>
-                <FloatingWrapperCustom
-                  top='40%'
-                  left='60%'
-                  content='Adrenaline'
-                  floatOne
-                >
-                  <ImgSmall src={Adrenaline} />
-                </FloatingWrapperCustom>
-              </WrapperImgPosition>
-              <BubbleOne />
-              <BubbleThree />
-              {/* <FloatingWrapperThree content='Adrenaline'>
-                <ImgSmall src={Adrenaline} />
-              </FloatingWrapperThree> */}
-            </BubbleOverlay>
+            <motion.div variants={itemVariants}>
+              <AnimatedOverlay />
+            </motion.div>
             <NavList>
               {links.map(({ name, to, id }) => (
                 <ListItem key={id}>

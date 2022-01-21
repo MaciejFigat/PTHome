@@ -295,14 +295,12 @@ export const FloatingWrapperCustom = styled(FloatingWrapper)`
   left: ${(props) => props.left};
   max-width: 200px;
   max-height: fit-content;
-  /* animation: ${floatFour} 75s ease-in-out infinite;
-  @media (max-width: 880px) {
-    animation: ${floatThree} 75s ease-in-out infinite;
-  } */
 
-  animation: ${float} 145s ease-in-out infinite;
+  animation: ${(props) => (props.floatOne ? float : floatFour)} 75s ease-in-out
+    infinite;
   @media (max-width: 880px) {
-    animation: ${float} 145s ease-in-out infinite;
+    animation: ${(props) => (props.floatOne ? float : floatThree)} 75s
+      ease-in-out;
   }
 
   &:after {
