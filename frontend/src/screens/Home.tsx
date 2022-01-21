@@ -9,11 +9,13 @@ import {
 } from '../data/homeData'
 import Toast from '../components/Toast/Toast'
 import AnimatedBubble from '../components/AnimatedBubble/AnimatedBubble'
+import ScrollSection from '../components/ScrollSection/ScrollSection'
 
 const Home: React.FC = () => {
   return (
     <>
       <Toast option='registerUser' />
+      <ScrollSection />
       <InfoSection
         data={homeData}
         buttonNavLink='/contact'

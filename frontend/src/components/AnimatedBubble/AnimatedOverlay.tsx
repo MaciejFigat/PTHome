@@ -13,7 +13,7 @@ import {
 import FadeInAnimationWrapper from '../AnimationWrappers/FadeInAnimationWrapper'
 interface AnimatedOverlayProps {}
 
-const AnimatedOverlay: React.FC<AnimatedOverlayProps> = ({}) => {
+const AnimatedOverlay: React.FC<AnimatedOverlayProps> = () => {
   return (
     <FadeInAnimationWrapper>
       <BubbleOverlay>

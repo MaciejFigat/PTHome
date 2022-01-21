@@ -157,7 +157,6 @@ export const BubbleFour = styled(BubbleMain)`
 export const BubbleFive = styled(BubbleMain)`
   height: 17rem;
   width: 16rem;
-  /* z-index: 1; */
   background-image: linear-gradient(
     90deg,
     var(--bluegreen4),
@@ -173,11 +172,7 @@ export const BubbleFive = styled(BubbleMain)`
   }
   opacity: 0.34;
   transition: all 2s ease-out;
-  /* &:hover {
-    &:after {
-      opacity: 0.9;
-    }
-  } */
+
   &:after {
     transition: all 1.3s;
     content: "I'm a blob";
@@ -252,7 +247,6 @@ export const FloatingWrapper = styled.div`
     opacity: 0;
     font-size: 18px;
     position: absolute;
-    /* top: 20%; */
     left: 45%;
     width: 40%;
     min-width: fit-content;
@@ -273,37 +267,27 @@ export const WrapperImgPosition = styled.div`
   width: 100%;
   height: 100%;
 `
-export const FloatingWrapperThree = styled(FloatingWrapper)`
-  top: 40%;
-  left: -10%;
-  max-height: fit-content;
-  &:after {
-    top: 60%;
-    left: 63%;
-    @media (min-width: 880px) and (max-width: 1020px) {
-      top: 60%;
-      left: 63%;
-    }
-    @media (max-width: 880px) {
-      top: 45%;
-      left: 63%;
-    }
-  }
-`
-export const FloatingWrapperCustom = styled(FloatingWrapper)`
+
+export const FloatingWrapperCustom = styled.div`
+  position: relative;
+  opacity: 0.27;
   top: ${(props) => (props.top ? props.top : '20%')};
   left: ${(props) => props.left};
   max-width: 200px;
   max-height: fit-content;
-
   animation: ${(props) => (props.floatOne ? float : floatFour)} 75s ease-in-out
     infinite;
   @media (max-width: 880px) {
     animation: ${(props) => (props.floatOne ? float : floatThree)} 75s
       ease-in-out;
   }
-
   &:after {
+    transition: all 1.3s;
+    content: '${(props) =>
+      props.content ? props.content : 'Recommended by Joe R.'}';
+    color: black;
+    opacity: 0;
+    font-size: 18px;
     top: -5px;
     left: 25px;
     @media (min-width: 880px) and (max-width: 1020px) {
@@ -311,6 +295,11 @@ export const FloatingWrapperCustom = styled(FloatingWrapper)`
     }
     @media (max-width: 880px) {
       left: -15px;
+    }
+  }
+  &:hover {
+    &:after {
+      opacity: 0.9;
     }
   }
 `
