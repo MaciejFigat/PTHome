@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const ScrollSec = styled.div`
-  padding: 10px 0;
+  /* padding: 10px 0; */
   background-image: linear-gradient(
     to bottom,
     #a4dbe4,
@@ -11,13 +11,15 @@ export const ScrollSec = styled.div`
     #a8eb12
   );
   color: var(--bluegreen4);
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  min-height: fit-content;
   @media (max-width: 880px) {
     padding: 0px 0;
   }
 `
 export const ScrollSectionRow = styled.div`
   display: flex;
+  /* min-height: fit-content; */
   /* margin: 0 -15px -15px -15px; */
   /* align-items: center; */
   flex-direction: ${({ imgStart }) =>
@@ -31,12 +33,12 @@ export const ScrollSectionRow = styled.div`
 
 export const SectionColumn = styled.div`
   position: sticky;
-  top: 310px;
+  /* top: 310px; */
+  top: 0;
   margin-bottom: 15px;
   margin-right: 15px;
   padding-left: 15px;
-  /* max-height: 60vh; */
-  max-height: 500px;
+  max-height: 160vh;
   /* align-items: flex-start; */
   /* justify-content: flex-start; */
   flex-basis: 20%;
@@ -44,7 +46,7 @@ export const SectionColumn = styled.div`
   display: flex;
   @media screen and (min-width: 770px) {
     max-width: 100%;
-    justify-content: center;
+    /* justify-content: center; */
   }
 `
 export const SectionColumnScroll = styled.div`
@@ -57,7 +59,7 @@ export const SectionColumnScroll = styled.div`
 
 export const TextWrapper = styled.div`
   /* max-width: 540px; */
-  min-height: 500px;
+  /* min-height: 500px; */
   padding-top: 0;
   background: lime;
   padding-bottom: 60;

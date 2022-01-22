@@ -55,9 +55,11 @@ export const SectionColumnScroll = styled.div`
   top: 0;
   position: sticky;
   margin-bottom: 15px;
+  max-height: 220vh;
   /* margin-right: 15px; */
   padding-left: 10px;
-  padding-right: 10px;
+  /* padding-right: 10px; */
+  padding-right: 0;
   /* top: 310px; */
   /* max-width: 340px; */
 `

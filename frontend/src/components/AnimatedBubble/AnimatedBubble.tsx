@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import DragAnimationWrapper from '../AnimationWrappers/DragAnimationWrapper'
+// import DragAnimationWrapper from '../AnimationWrappers/DragAnimationWrapper'
 import Oxytocin from '../../data/assets/Oxytocin.svg'
 import {
   BubbleOne,
