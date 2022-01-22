@@ -38,12 +38,16 @@ export const SectionColumn = styled.div`
   margin-bottom: 15px;
   margin-right: 15px;
   padding-left: 15px;
-  max-height: 160vh;
+  max-height: 100vh;
+  min-height: fit-content;
   /* align-items: flex-start; */
   /* justify-content: flex-start; */
   flex-basis: 20%;
   flex-direction: column;
   display: flex;
+  @media (max-width: 880px) {
+    display: none;
+  }
   @media screen and (min-width: 770px) {
     max-width: 100%;
     /* justify-content: center; */

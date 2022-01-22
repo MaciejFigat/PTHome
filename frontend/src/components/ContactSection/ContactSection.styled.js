@@ -2,8 +2,7 @@ import styled from 'styled-components'
 
 export const InfoSec = styled.div`
   padding: 80px 0;
-  background: var(--background-blue1);
-  /* background: var(--background2-main); */
+  background: var(--gradient2-main);
   @media (max-width: 880px) {
     padding: 60px 0;
   }

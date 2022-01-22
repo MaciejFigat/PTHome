@@ -20,20 +20,7 @@ body {
    
     // background-color: var(--redblue3);  
     // background-color: var(--bluegreen1);  
-    background-image: linear-gradient(
-      355deg,
-      hsl(114deg 74% 17%) 0%,
-      hsl(122deg 73% 23%) 4%,
-      hsl(129deg 70% 29%) 7%,
-      hsl(137deg 69% 35%) 11%,
-      hsl(144deg 66% 41%) 14%,
-      hsl(151deg 64% 47%) 16%,
-      hsl(159deg 62% 53%) 18%,
-      hsl(166deg 60% 59%) 20%,
-      hsl(174deg 59% 65%) 23%,
-      hsl(181deg 56% 71%) 26%,
-      hsl(188deg 54% 77%) 38%
-    );
+    background-image: var(--gradient1-main);
     // font-family: 'Quicksand', sans-serif; 
     font-family: 'Atkinson Hyperlegible', sans-serif;
     font-family: 'Raleway', sans-serif;
@@ -43,6 +30,22 @@ body {
   
    --padding: 2rem;
    
+   --gradient1-main: linear-gradient(
+    355deg,
+    hsl(114deg 74% 17%) 0%,
+    hsl(122deg 73% 23%) 4%,
+    hsl(129deg 70% 29%) 7%,
+    hsl(137deg 69% 35%) 11%,
+    hsl(144deg 66% 41%) 14%,
+    hsl(151deg 64% 47%) 16%,
+    hsl(159deg 62% 53%) 18%,
+    hsl(166deg 60% 59%) 20%,
+    hsl(174deg 59% 65%) 23%,
+    hsl(181deg 56% 71%) 26%,
+    hsl(188deg 54% 77%) 38%
+  );
+  --gradient2-main: linear-gradient(to bottom, #a4dbe4, #69e6de, #45eeb9, #6af07b, #a8eb12);
+
    --background1-main: #1E1E1F;
    --background2-main: #3C3B3D;
    --background3-main: #6D6C70;
@@ -129,16 +132,16 @@ body {
     }
     .nav_link.activated {
           
-      // color: var(--bluegreen2);
+      color: var(--bluegreen10);
       @media (max-width: 1020px) {
      
-        background: -webkit-linear-gradient(
+        background-image: linear-gradient(
           180deg,
           var(--bluegreen3),
           var(--bluegreen1)
         );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
      }
      
       
@@ -186,13 +189,12 @@ body {
    
   }
   border-radius: 2px;
-  // -webkit-box-shadow: inset 10px 10px 20px #2e2d2e,
-  // inset -10px -10px 20px #4a494c;
+  
 }
 ::-webkit-scrollbar-track {
-  // -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.7);
+
   border-radius: 2px;
-  // background-color: #CBC9CF;
+
   
 }
 

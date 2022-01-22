@@ -8,21 +8,25 @@ export const ResponsiveDiv = styled.div`
   padding: 0px 0px 10px;
 
   @media (max-width: 600px) {
-    background: var(--background-secondary1);
+    /* background: var(--background-secondary1);
     box-shadow: 0.5px 0.5px 1px var(--background4-main),
-      -0.5px -0.5px 1px var(--background1-main);
+      -0.5px -0.5px 1px var(--background1-main); */
   }
+  backdrop-filter: blur(20px) saturate(123%);
+  -webkit-backdrop-filter: blur(20px) saturate(123%);
+  background-color: rgba(17, 25, 40, 0.76);
 
-  background: var(--background-tertiary25);
-  box-shadow: 0.5px 0.5px 1px var(--background-tertiary25),
-    -0.5px -0.5px 1px var(--background-tertiary25);
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  /* background: var(--background-tertiary25); */
+  /* box-shadow: 0.5px 0.5px 1px var(--background-tertiary25),
+    -0.5px -0.5px 1px var(--background-tertiary25); */
   transition: all 0.6s ease-out;
   @media (min-width: 600px) {
-    &:hover {
+    /* &:hover {
       background: var(--background-secondary15);
       box-shadow: 0.5px 0.5px 1px var(--background4-main),
         -0.5px -0.5px 1px var(--background1-main);
-    }
+    } */
   }
 
   @media (max-width: 1100px) {
@@ -94,22 +98,22 @@ export const ContactFieldContent = styled.input`
     @media (max-width: 600px) {
       color: var(--background-secondary3);
     }
-    @media (min-width: 600px) {
+    /* @media (min-width: 600px) {
       ${ResponsiveDiv}:hover & {
         color: var(--background-secondary3);
       }
-    }
+    } */
   }
   font-family: 'Quicksand', sans-serif;
   outline: none;
   border: none;
   color: var(--background-tertiary4);
   transition: all 0.3s ease-out;
-  @media (min-width: 600px) {
+  /* @media (min-width: 600px) {
     ${ResponsiveDiv}:hover & {
       color: var(--background-tertiary3);
     }
-  }
+  } */
   background: none;
   line-height: 1.2;
   cursor: text;

@@ -1,12 +1,14 @@
 import React from 'react'
 import Cards from '../components/Cards/Cards'
-import SmallSection from '../components/SectionSmall/SmallSection'
 import arm from '../data/assets/arm.svg'
 import handstand from '../data/assets/handstand.svg'
 import proWrestlers from '../data/assets/proWrestlers.svg'
 import sumo from '../data/assets/sumo.svg'
 import sumo2 from '../data/assets/sumo2.svg'
 import angryMan from '../data/assets/angryMan.svg'
+import Scroll2 from '../components/ScrollSection/Scroll2'
+import { CardImage } from '../components/Cards/Cards.styled'
+
 interface ExerciseProps {}
 
 const data = [
@@ -46,12 +48,31 @@ const Exercise: React.FC<ExerciseProps> = () => {
   return (
     <>
       {' '}
-      <SmallSection
-        title='Oferuję następujące usługi'
-        description='zapraszam serdecznie'
-        variant='blue'
+      <Scroll2
+        narrowSection={
+          <>
+            <p>
+              <CardImage src={arm} />
+            </p>
+            <p>
+              <CardImage src={sumo} />
+            </p>
+            <p>
+              <CardImage src={angryMan} />
+            </p>
+            <p>
+              <CardImage src={sumo2} />
+            </p>
+            <p>
+              <CardImage src={handstand} />
+            </p>
+            <p>
+              <CardImage src={proWrestlers} />
+            </p>
+          </>
+        }
+        wideSection={<Cards data={data} />}
       />
-      <Cards data={data} />
     </>
   )
 }

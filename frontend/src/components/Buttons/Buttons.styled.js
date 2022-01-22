@@ -31,8 +31,8 @@ export const SendButton = styled.button`
   outline: none;
   border: none;
   ${(props) => handleButtonColor(props).buttonBorder};
-  padding: ${({ large }) => (large ? '12px 40px 38px' : '10px 20px 25px')};
-  font-size: ${({ fontLarge }) => (fontLarge ? '20px' : '14px')};
+  padding: ${({ large }) => (large ? '12px 25px 33px' : '10px 20px 25px')};
+  font-size: ${({ fontLarge }) => (fontLarge ? '18px' : '14px')};
   margin: 5px 0px 5px 10px;
   cursor: pointer;
   max-width: 20%;

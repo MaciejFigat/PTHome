@@ -73,7 +73,7 @@ const blueStyle: StyleVariant = {
 const bluegreenStyle: StyleVariant = {
 
     sectionBackground: `transparent;`,
-    sectionBackgroundGradient: `linear-gradient(to bottom, #a4dbe4, #69e6de, #45eeb9, #6af07b, #a8eb12);`,
+    sectionBackgroundGradient: 'var(--gradient2-main);',
     color: `var(--bluegreen4);`,
     subtitleColor: 'var(--bluegreen5);',
     headingColor: 'var(--bluegreen3);',

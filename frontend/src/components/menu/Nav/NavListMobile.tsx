@@ -39,8 +39,8 @@ const sideVariants = {
 const links = [
   { name: 'Home', to: '/', id: '1' },
   { name: 'Blog', to: '/blog', id: '2' },
-  { name: 'Ćwiczenia', to: '/exercise', id: '3' },
-  { name: 'Shop', to: '/shop', id: '4' },
+  { name: 'Usługi', to: '/exercise', id: '3' },
+  { name: 'Sklep', to: '/shop', id: '4' },
   { name: 'Kontakt', to: '/contact', id: '5' },
 ]
 
