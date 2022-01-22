@@ -114,8 +114,6 @@ body {
 
    
     .nav_link {
-      // color: var(--background4-main);
-      // color: var(--bluegreen3);
       display: flex;
       align-items: center;
       @media (max-width: 1020px) {
@@ -146,9 +144,8 @@ body {
       
     }
     .nav_link:hover  {
-     
-      color: var(--bluegreen1);
-      //  transition: 0.3s; 
+       color: var(--bluegreen10);
+       transition: 0.3s; 
     
     }
     a, a:link, a:visited, a:hover {

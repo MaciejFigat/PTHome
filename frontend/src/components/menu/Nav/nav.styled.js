@@ -18,7 +18,11 @@ export const TransitionWrapperMain = styled.div`
     }
     /* li is for login/logout icons in navbar */
     li {
+      transition: color 300ms ease-out;
       color: var(--bluegreen5);
+      &:hover {
+        color: var(--bluegreen11);
+      }
     }
     /* additional className for burger so it changes color with scroll */
     .burger {
@@ -74,8 +78,13 @@ export const TransitionWrapper = styled.div`
   top: 0;
   max-height: 3.2rem;
   height: 55px;
+  @media (min-width: 1020px) {
+    display: flex;
+    justify-content: center;
+  }
 `
 export const NavContainer = styled.nav`
+  max-width: 1020px;
   display: flex;
   justify-content: space-around;
   position: sticky;
@@ -98,6 +107,7 @@ export const NavList = styled.ul`
   justify-content: space-around;
   padding: 0;
   min-width: 50vw;
+
   @media (max-width: 1020px) {
     width: 100%;
     position: sticky;
@@ -110,7 +120,6 @@ export const NavList = styled.ul`
     min-width: fit-content;
     padding-bottom: 3rem;
     gap: 1.75rem;
-    /* @media screen and (orientation: landscape) { */
   }
   @media (max-width: 700px) and (orientation: landscape) {
     margin-top: 1rem;
@@ -128,7 +137,6 @@ export const ListLoginWrapper = styled.div`
 `
 export const HeaderLoginWrapper = styled.div`
   display: flex;
-
   gap: 2rem;
   @media (min-width: 1020px) {
     display: none;
@@ -179,8 +187,6 @@ export const MobileViewContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* background: ${({ menuOpen }) =>
-    menuOpen === true ? 'var(--bluegreen1)' : 'transparent'}; */
   margin: 0 1.5rem 0 1rem;
   /* this below fixes the irritating gap in nav when you scroll it down */
   margin-top: -1px !important;
@@ -200,17 +206,16 @@ export const HeaderTitleDesktop = styled.h1`
   font-size: 1.25rem;
   font-weight: 200;
   margin: 0;
+  margin-right: 1rem;
   display: flex;
   align-items: center;
   transition: all 200ms ease-in;
   &.show {
     transition: all 200ms ease-in;
-    /* opacity: 100%; */
     color: var(--bluegreen3);
   }
   &.hide {
     transition: all 300ms ease-in;
-    /* opacity: 0; */
     color: var(--bluegreen5);
   }
   @media (max-width: 1020px) {
@@ -222,13 +227,15 @@ export const AnimatedWrapperMobile = styled(motion.div)`
   width: 18.75rem;
   height: calc(100vh + 50px);
   display: none;
-  /* z-index: 21; */
   @media (max-width: 1020px) {
     display: flex;
   }
 `
 export const NavListDesktopWrapper = styled.div`
   display: flex;
+  @media (min-width: 1020px) {
+    max-width: 1020px;
+  }
   @media (max-width: 1020px) {
     display: none;
   }

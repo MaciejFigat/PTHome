@@ -1,29 +1,15 @@
 import styled from 'styled-components'
 
+export const WrapperContainer = styled.div`
+  display: grid;
+  place-items: center;
+`
 export const HeaderContainer = styled.div`
   display: flex;
   height: fit-content;
-  max-width: 100%;
-  /* background: linear-gradient(
-    90deg,
-    var(--secondary5),
-    var(--background-blue6)
-  ); */
-  /* background: var(--bluegreen5); */
-  /* background-image: linear-gradient(
-    0deg,
-    hsl(114deg 74% 17%) 0%,
-    hsl(111deg 73% 19%) 16%,
-    hsl(109deg 70% 21%) 32%,
-    hsl(106deg 69% 23%) 46%,
-    hsl(103deg 67% 25%) 58%,
-    hsl(101deg 65% 27%) 69%,
-    hsl(98deg 62% 29%) 78%,
-    hsl(95deg 61% 31%) 85%,
-    hsl(92deg 59% 33%) 92%,
-    hsl(89deg 57% 35%) 100%
-  ); */
 
+  /* max-width: 100%; */
+  max-width: 1020px;
   z-index: 22;
   @media (max-width: 1020px) {
     display: none;
@@ -31,13 +17,6 @@ export const HeaderContainer = styled.div`
 `
 export const HeaderTitle = styled.h1`
   color: var(--bluegreen5);
-
-  /* background: -webkit-linear-gradient(
-    180deg,
-    var(--bluegreen4),
-    var(--bluegreen7)
-  ); */
-
   font-size: 1.55rem;
   font-weight: 800;
   letter-spacing: 0.075em;

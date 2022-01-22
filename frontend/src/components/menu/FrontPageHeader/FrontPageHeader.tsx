@@ -1,6 +1,7 @@
 import React from 'react'
 import DropAnimationWrapper from '../../AnimationWrappers/DropAnimationWrapper'
 import FadeInAnimationWrapper from '../../AnimationWrappers/FadeInAnimationWrapper'
+import { Wrapper } from '../../Cards/Cards.styled'
 import ContactIcons from '../../SvgIcon/ContactIcons'
 
 import {
@@ -9,6 +10,7 @@ import {
   HeaderList,
   HeaderItem,
   HeaderSubtitle,
+  WrapperContainer,
 } from './frontPageHeader.styled'
 
 interface FrontPageHeaderProps {
@@ -21,23 +23,25 @@ const FrontPageHeader: React.FC<FrontPageHeaderProps> = ({
   subtitle,
 }) => {
   return (
-    <HeaderContainer>
-      <HeaderList>
-        <HeaderItem>
-          <FadeInAnimationWrapper>
-            <HeaderSubtitle>{subtitle}</HeaderSubtitle>
-          </FadeInAnimationWrapper>
-        </HeaderItem>
-        <HeaderItem>
-          <DropAnimationWrapper direction='left' delay={2}>
-            <HeaderTitle>{title}</HeaderTitle>
-          </DropAnimationWrapper>
-        </HeaderItem>
-        <HeaderItem>
-          <ContactIcons />
-        </HeaderItem>
-      </HeaderList>
-    </HeaderContainer>
+    <WrapperContainer>
+      <HeaderContainer>
+        <HeaderList>
+          <HeaderItem>
+            <FadeInAnimationWrapper>
+              <HeaderSubtitle>{subtitle}</HeaderSubtitle>
+            </FadeInAnimationWrapper>
+          </HeaderItem>
+          <HeaderItem>
+            <DropAnimationWrapper direction='left' delay={2}>
+              <HeaderTitle>{title}</HeaderTitle>
+            </DropAnimationWrapper>
+          </HeaderItem>
+          <HeaderItem>
+            <ContactIcons />
+          </HeaderItem>
+        </HeaderList>
+      </HeaderContainer>
+    </WrapperContainer>
   )
 }
 export default FrontPageHeader

@@ -10,7 +10,7 @@ export const IconsWrapper = styled.ul`
   a {
     color: var(--bluegreen5);
     &:hover {
-      color: var(--bluegreen4);
+      color: var(--bluegreen10);
     }
   }
 `
@@ -21,7 +21,6 @@ export const IconsItem = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* color: var(--bluegreen5); */
   @media (max-width: 1020px) {
     margin-right: 0.75rem;
     &:last-child {
