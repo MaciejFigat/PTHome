@@ -10,7 +10,6 @@ import {
 import Toast from '../components/Toast/Toast'
 import AnimatedBubble from '../components/AnimatedBubble/AnimatedBubble'
 import ScrollSection from '../components/ScrollSection/ScrollSection'
-import Scroll2 from '../components/ScrollSection/Scroll2'
 import FrontSection from '../components/FrontSection/FrontSection'
 
 const Home: React.FC = () => {
@@ -27,17 +26,7 @@ const Home: React.FC = () => {
       >
         <AnimatedBubble />
       </InfoSection>
-      <Scroll2>
-        <InfoSection data={homeDataTwo} variant='primary'></InfoSection>
-        <InfoSection
-          data={homeDataThree}
-          variant='secondary'
-          imgStart
-        ></InfoSection>
-        <InfoSection data={homeDataFour} variant='tertiary'></InfoSection>
-        <InfoSection variant='secondary' data={homeDataFive}></InfoSection>
-        <InfoSection variant='primary' data={homeDataFive}></InfoSection>
-      </Scroll2>
+
       <ScrollSection>
         <InfoSection data={homeDataTwo} variant='primary'></InfoSection>
         <InfoSection
