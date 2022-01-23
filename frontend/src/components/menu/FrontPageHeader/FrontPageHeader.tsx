@@ -1,7 +1,6 @@
 import React from 'react'
 import DropAnimationWrapper from '../../AnimationWrappers/DropAnimationWrapper'
 import FadeInAnimationWrapper from '../../AnimationWrappers/FadeInAnimationWrapper'
-import { Wrapper } from '../../Cards/Cards.styled'
 import ContactIcons from '../../SvgIcon/ContactIcons'
 
 import {

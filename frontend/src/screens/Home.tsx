@@ -11,12 +11,13 @@ import Toast from '../components/Toast/Toast'
 import AnimatedBubble from '../components/AnimatedBubble/AnimatedBubble'
 import ScrollSection from '../components/ScrollSection/ScrollSection'
 import Scroll2 from '../components/ScrollSection/Scroll2'
+import FrontSection from '../components/FrontSection/FrontSection'
 
 const Home: React.FC = () => {
   return (
     <>
       <Toast option='registerUser' />
-
+      <FrontSection />
       <InfoSection
         data={homeData}
         buttonNavLink='/contact'

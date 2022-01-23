@@ -11,7 +11,6 @@ export const ScrollSec = styled.div`
     #a8eb12
   );
   color: var(--bluegreen4);
-  /* min-height: 100vh; */
   min-height: fit-content;
   @media (max-width: 880px) {
     padding: 0px 0;
@@ -19,7 +18,7 @@ export const ScrollSec = styled.div`
 `
 export const ScrollSectionRow = styled.div`
   display: flex;
-  /* min-height: fit-content; */
+  min-height: fit-content;
   /* margin: 0 -15px -15px -15px; */
   /* align-items: center; */
   flex-direction: ${({ imgStart }) =>
@@ -46,7 +45,7 @@ export const SectionColumn = styled.div`
   min-height: fit-content;
   /* align-items: flex-start; */
   /* justify-content: flex-start; */
-  flex-basis: 20%;
+  flex-basis: 15%;
   flex-direction: column;
   display: flex;
   @media (max-width: 880px) {

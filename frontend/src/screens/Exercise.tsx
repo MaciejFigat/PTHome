@@ -7,7 +7,7 @@ import sumo from '../data/assets/sumo.svg'
 import sumo2 from '../data/assets/sumo2.svg'
 import angryMan from '../data/assets/angryMan.svg'
 import Scroll2 from '../components/ScrollSection/Scroll2'
-import { CardImage } from '../components/Cards/Cards.styled'
+import { CardImageSmall } from '../components/Cards/Cards.styled'
 
 interface ExerciseProps {}
 
@@ -52,22 +52,22 @@ const Exercise: React.FC<ExerciseProps> = () => {
         narrowSection={
           <>
             <p>
-              <CardImage src={arm} />
+              <CardImageSmall src={arm} />
             </p>
             <p>
-              <CardImage src={sumo} />
+              <CardImageSmall src={sumo} />
             </p>
             <p>
-              <CardImage src={angryMan} />
+              <CardImageSmall src={angryMan} />
             </p>
             <p>
-              <CardImage src={sumo2} />
+              <CardImageSmall src={sumo2} />
             </p>
             <p>
-              <CardImage src={handstand} />
+              <CardImageSmall src={handstand} />
             </p>
             <p>
-              <CardImage src={proWrestlers} />
+              <CardImageSmall src={proWrestlers} />
             </p>
           </>
         }

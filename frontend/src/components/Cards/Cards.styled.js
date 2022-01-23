@@ -67,3 +67,6 @@ export const CardImage = styled.img`
   /* object-position: center; */
   transition: 200ms transform ease-in-out;
 `
+export const CardImageSmall = styled(CardImage)`
+  max-height: calc(100vh / 8);
+`
