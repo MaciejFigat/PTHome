@@ -16,7 +16,7 @@ export const IconsItemDiv = styled.div`
   ${(props) =>
     props.variant && props.variant === 'light'
       ? `border: 2px solid var(--bluegreen1);`
-      : `border: 2px solid var(--background-tertiary1);`}
+      : `border: 2px solid var(--bluegreen5);`}
 
   border-radius: 50%;
   margin-right: 1rem;
@@ -29,11 +29,11 @@ export const IconsItemDiv = styled.div`
     ${(props) =>
       props.variant && props.variant === 'light'
         ? `background: var(--bluegreen2);`
-        : `background: var(--background-tertiary2);`}
+        : `background: var(--bluegreen8);`}
     ${(props) =>
       props.variant && props.variant === 'light'
         ? `border: 2px solid var(--bluegreen2);`
-        : `border: 2px solid var(--background-tertiary1);`}
+        : `border: 2px solid var(--bluegreen7);`}
   }
   @media (max-width: 360px) {
     margin-right: 0.5rem;
@@ -49,13 +49,13 @@ export const IconsItem = styled.li`
     ${(props) =>
       props.variant && props.variant === 'light'
         ? `color: var(--bluegreen3);`
-        : `color: var(--background-tertiary2);`}
+        : `color: var(--bluegreen5);`}
 
     ${IconsItemDiv}:hover & {
       ${(props) =>
         props.variant && props.variant === 'light'
           ? `color: var(--bluegreen1);`
-          : `color: var(--background-tertiary4);`}
+          : `color: var(--bluegreen7);`}
     }
   }
 `

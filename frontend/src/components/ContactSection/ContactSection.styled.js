@@ -29,7 +29,7 @@ export const InfoColumn = styled.div`
   }
 `
 export const TextWrapper = styled.div`
-  color: var(--background-tertiary2);
+  color: var(--bluegreen5);
   max-width: 540px;
   padding-top: 0;
   padding-bottom: 60;
