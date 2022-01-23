@@ -32,6 +32,10 @@ export const ScrollSectionRow = styled.div`
 `
 
 export const SectionColumn = styled.div`
+  backdrop-filter: blur(24px) saturate(110%);
+  -webkit-backdrop-filter: blur(24px) saturate(110%);
+  /* background: rgba(0, 0, 0, 0.015); */
+  border-right: 1px solid rgba(255, 255, 255, 0.125);
   position: sticky;
   /* top: 310px; */
   top: 0;
