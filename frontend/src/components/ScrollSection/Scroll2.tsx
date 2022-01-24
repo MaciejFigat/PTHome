@@ -10,14 +10,27 @@ import {
 interface Scroll2Props {
   wideSection?: ReactNode
   narrowSection?: ReactNode
+  widthSmall?: string
+  widthBig?: string
+  transparent?: boolean
 }
 
-const Scroll2: React.FC<Scroll2Props> = ({ wideSection, narrowSection }) => {
+const Scroll2: React.FC<Scroll2Props> = ({
+  wideSection,
+  narrowSection,
+  widthSmall,
+  widthBig,
+  transparent,
+}) => {
   return (
     <ScrollSec>
       <ScrollSectionRow>
-        <SectionColumn>{narrowSection}</SectionColumn>
-        <SectionColumnScroll>{wideSection}</SectionColumnScroll>
+        <SectionColumn transparent={transparent} width={widthSmall}>
+          {narrowSection}
+        </SectionColumn>
+        <SectionColumnScroll width={widthBig}>
+          {wideSection}
+        </SectionColumnScroll>
       </ScrollSectionRow>
     </ScrollSec>
   )

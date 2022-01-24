@@ -12,7 +12,7 @@ export const FrontSec = styled.div`
 `
 export const FrontTopline = styled.h3`
   display: none;
-
+  letter-spacing: -0.065em;
   @media (max-width: 1020px) {
     font-size: 36px;
     display: block;

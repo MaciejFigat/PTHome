@@ -11,12 +11,14 @@ import Toast from '../components/Toast/Toast'
 import AnimatedBubble from '../components/AnimatedBubble/AnimatedBubble'
 import ScrollSection from '../components/ScrollSection/ScrollSection'
 import FrontSection from '../components/FrontSection/FrontSection'
+import FrontScroll from '../components/FrontScroll/FrontScroll'
 
 const Home: React.FC = () => {
   return (
     <>
       <Toast option='registerUser' />
       <FrontSection />
+      <FrontScroll />
       <InfoSection
         data={homeData}
         buttonNavLink='/contact'
@@ -27,7 +29,7 @@ const Home: React.FC = () => {
         <AnimatedBubble />
       </InfoSection>
 
-      <ScrollSection>
+      {/* <ScrollSection>
         <InfoSection data={homeDataTwo} variant='primary'></InfoSection>
         <InfoSection
           data={homeDataThree}
@@ -37,7 +39,7 @@ const Home: React.FC = () => {
         <InfoSection data={homeDataFour} variant='tertiary'></InfoSection>
         <InfoSection variant='secondary' data={homeDataFive}></InfoSection>
         <InfoSection variant='primary' data={homeDataFive}></InfoSection>
-      </ScrollSection>
+      </ScrollSection> */}
     </>
   )
 }

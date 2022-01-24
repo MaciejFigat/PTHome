@@ -60,15 +60,6 @@ const floatFour = keyframes`
     87% {  transform: rotate(-22deg) translateX(30%) translateY(45%); max-height: 320px; opacity: 0.28;}
     100% {  transform: rotate(0deg) translateX(0%) translateY(0%); }`
 
-const move = keyframes`
-  from {
-    transform: rotate(0deg) scale(1) translateX(-20px);
-  }
-  to {
-    transform: rotate(360deg) scale(2.3) translateX(20px);
-  }
-`
-
 export const OverflowWrapper = styled.div``
 export const BubbleOverlay = styled.div`
   position: absolute;
@@ -109,7 +100,7 @@ export const BubbleOne = styled(BubbleMain)`
   height: 10rem;
   width: 10rem;
   opacity: 0.69;
-  z-index: 1;
+  /* z-index: 1; */
   background: radial-gradient(
     ellipse at top,
     var(--bluegreen1),
@@ -122,15 +113,20 @@ export const BubbleOne = styled(BubbleMain)`
 export const BubbleOneBlurry = styled(BubbleOne)`
   display: grid;
   place-items: center;
-  background: none;
+  opacity: 0.29;
+  /* opacity: 1; */
+  /* background: none; */
+  background: radial-gradient(ellipse at top, var(--bluegreen1), transparent),
+    radial-gradient(ellipse at bottom, var(--bluegreen5), transparent);
+
   top: ${(props) => (props.top ? props.top : `calc(20% - 6rem)`)};
   right: ${(props) => (props.right ? props.right : `calc(60% - 6rem)`)};
-  border: 1px solid var(--background4-main);
+
+  /* border: 1px solid var(--bluegreen8); */
   animation: ${blob} 10s ease-in-out infinite,
     ${floatThree} 67s ease-in-out infinite;
-  box-shadow: inset -10px -10px 100px var(--background4-main),
-    10px 10px 20px var(--background4-main),
-    inset 0px 0px 10px var(--background4-main);
+  box-shadow: inset -10px -10px 100px var(--bluegreen5),
+    10px 10px 20px var(--bluegreen5), inset 0px 0px 10px var(--bluegreen5);
 `
 // closest-side, - for radiant gradient
 // background: radial-gradient(circle at 100%, #333, #333 50%, #eee 75%, #333 75%);
@@ -155,7 +151,7 @@ export const BubbleThree = styled(BubbleMain)`
   height: 6rem;
   width: 6rem;
   opacity: 0.4;
-  z-index: 1;
+  /* z-index: 1; */
   background-image: linear-gradient(
     90deg,
     var(--bluegreen1),

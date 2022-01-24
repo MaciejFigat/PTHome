@@ -51,7 +51,8 @@ export const InfoColumn = styled.div`
   }
 `
 export const TextWrapper = styled.div`
-  max-width: 540px;
+  /* max-width: 540px; */
+  min-width: fit-content;
   padding-top: 0;
   padding-bottom: 60;
   @media screen and (max-width: 770px) {

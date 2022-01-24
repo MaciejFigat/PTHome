@@ -4,22 +4,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const FooterContainer = styled.div`
   display: flex;
-
-  background-image: linear-gradient(
-    180deg,
-    hsl(114deg 74% 17%) 0%,
-    hsl(108deg 69% 22%) 4%,
-    hsl(101deg 64% 26%) 10%,
-    hsl(94deg 60% 32%) 17%,
-    hsl(98deg 52% 38%) 25%,
-    hsl(125deg 39% 49%) 37%,
-    hsl(152deg 43% 60%) 50%,
-    hsl(179deg 50% 72%) 64%,
-    hsl(188deg 54% 77%) 77%,
-    hsl(188deg 54% 77%) 87%,
-    hsl(188deg 54% 77%) 94%,
-    hsl(188deg 54% 77%) 100%
-  );
+  background-image: radial-gradient(
+      at 47% 33%,
+      hsl(114.38, 74%, 17%) 0,
+      transparent 59%
+    ),
+    radial-gradient(at 82% 65%, hsl(342.58, 71%, 27%) 0, transparent 55%);
   padding: 4rem 0 2rem 0;
   justify-content: center;
   align-items: center;

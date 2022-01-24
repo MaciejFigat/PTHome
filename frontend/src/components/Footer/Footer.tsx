@@ -28,6 +28,7 @@ import {
   faYoutube,
 } from '@fortawesome/free-brands-svg-icons'
 import HeaderSvg from '../menu/FrontPageHeader/HeaderSvg'
+
 interface FooterProps {}
 
 const Footer: React.FC<FooterProps> = () => {
@@ -51,22 +52,6 @@ const Footer: React.FC<FooterProps> = () => {
         </FooterForm>
       </FooterSection>
       <FooterLinksContainer>
-        <FooterLinksWrapper>
-          <FooterLinksItems>
-            <FooterLinkTitle>Lorem, ipsum dolor.</FooterLinkTitle>
-            <FooterLink to='/'>Lorem, ipsum.</FooterLink>
-            <FooterLink to='/'>Lorem, ipsum.</FooterLink>
-            <FooterLink to='/'>Lorem, ipsum.</FooterLink>
-            <FooterLink to='/'>Lorem, ipsum.</FooterLink>
-          </FooterLinksItems>
-          <FooterLinksItems>
-            <FooterLinkTitle>Lorem, ipsum dolor.</FooterLinkTitle>
-            <FooterLink to='/'>Lorem, ipsum.</FooterLink>
-            <FooterLink to='/'>Lorem, ipsum.</FooterLink>
-            <FooterLink to='/'>Lorem, ipsum.</FooterLink>
-            <FooterLink to='/'>Lorem, ipsum.</FooterLink>
-          </FooterLinksItems>
-        </FooterLinksWrapper>
         <FooterLinksWrapper>
           <FooterLinksItems>
             <FooterLinkTitle>Lorem, ipsum dolor.</FooterLinkTitle>

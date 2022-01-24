@@ -14,12 +14,13 @@ const FrontSection: React.FC<FrontSectionProps> = () => {
     <FrontSec>
       <FadeInAnimationWrapper>
         <FrontTopline>Nina K.</FrontTopline>
-        <FrontHeader>Trener Medyczny</FrontHeader>
-        <BubbleThree />
+        <FrontHeader>Trener Medyczny </FrontHeader>
         <BubbleOne />
-        <BubbleOneBlurry top='calc(70% + 6rem)' right='calc(50% - 6rem)'>
-          .
-        </BubbleOneBlurry>
+        <BubbleThree />
+        <BubbleOneBlurry
+          top='calc(70% + 6rem)'
+          right='calc(50% - 6rem)'
+        ></BubbleOneBlurry>
       </FadeInAnimationWrapper>
     </FrontSec>
   )

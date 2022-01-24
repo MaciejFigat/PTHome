@@ -13,7 +13,7 @@ export const ScrollSec = styled.div`
   color: var(--bluegreen4);
   min-height: fit-content;
   @media (max-width: 880px) {
-    padding: 0px 0;
+    padding: 0;
   }
 `
 export const ScrollSectionRow = styled.div`
@@ -24,32 +24,40 @@ export const ScrollSectionRow = styled.div`
   flex-direction: ${({ imgStart }) =>
     imgStart === true ? 'row-reverse' : 'row'};
   @media (max-width: 880px) {
-    flex-direction: ${({ imgStart }) =>
-      imgStart === true ? 'column-reverse' : 'column'};
+    /* flex-direction: ${({ imgStart }) =>
+      imgStart === true ? 'column-reverse' : 'column'}; */
     /* flex-direction: column-reverse; */
   }
 `
 
 export const SectionColumn = styled.div`
   backdrop-filter: blur(24px) saturate(110%);
-  -webkit-backdrop-filter: blur(24px) saturate(110%);
-  /* background: rgba(0, 0, 0, 0.015); */
-  border-right: 1px solid rgba(255, 255, 255, 0.125);
+  backdrop-filter: ${({ transparent }) =>
+    transparent ? 'blur(0) saturate(100%)' : 'blur(24px) saturate(110%)'};
+  -webkit-backdrop-filter: ${({ transparent }) =>
+    transparent ? 'blur(0px) saturate(100%)' : 'blur(24px) saturate(110%)'};
+  background: ${({ transparent }) =>
+    transparent ? 'none' : 'rgba(0, 0, 0, 0.015)'};
+  border-right: ${({ transparent }) =>
+    transparent ? 'none' : '1px solid rgba(255, 255, 255, 0.125)'};
   position: sticky;
-  /* top: 310px; */
   top: 0;
   margin-bottom: 15px;
   margin-right: 15px;
   padding-left: 15px;
   max-height: 100vh;
   min-height: fit-content;
-  /* align-items: flex-start; */
-  /* justify-content: flex-start; */
-  flex-basis: 15%;
+
+  flex-basis: ${({ width }) => (width ? `${width}` : '15%')};
+  @media (max-width: 440px) {
+    flex-basis: 0%;
+    margin: 0;
+    padding-left: 0px;
+  }
   flex-direction: column;
   display: flex;
   @media (max-width: 880px) {
-    display: none;
+    /* display: none; */
   }
   @media screen and (min-width: 770px) {
     max-width: 100%;
@@ -57,23 +65,19 @@ export const SectionColumn = styled.div`
   }
 `
 export const SectionColumnScroll = styled.div`
-  flex: 1;
+  /* flex: 1; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 15px;
-  /* margin-right: 15px; */
   padding-left: 15px;
-  flex-basis: 80%;
-`
-
-export const TextWrapper = styled.div`
-  /* max-width: 540px; */
-  /* min-height: 500px; */
-  padding-top: 0;
-  background: lime;
-  padding-bottom: 60;
-  @media screen and (max-width: 770px) {
-    padding-bottom: 25px;
+  flex-basis: ${({ width }) => (width ? `${width}` : '80%')};
+  @media (max-width: 440px) {
+    flex-basis: 100%;
+    padding-left: 0px;
   }
 `
+
 export const Container = styled.div`
   z-index: 1;
   max-width: 100%;
