@@ -1,6 +1,5 @@
 import styled, { keyframes } from 'styled-components'
 
-// Create the keyframes
 const blob = keyframes`
 
     0% { 
@@ -117,8 +116,6 @@ export const BubbleOneBlurry = styled(BubbleOne)`
   display: grid;
   place-items: center;
   opacity: 0.29;
-  /* opacity: 1; */
-  /* background: none; */
   background: radial-gradient(ellipse at top, var(--bluegreen1), transparent),
     radial-gradient(ellipse at bottom, var(--bluegreen5), transparent);
 

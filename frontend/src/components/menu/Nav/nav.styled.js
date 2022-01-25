@@ -46,22 +46,36 @@ export const TransitionWrapperMain = styled.div`
     }
     transition: all 600ms ease-in;
     /* background for the scrolling div with navlist in it */
-    /* background: var(--bluegreen5); */
-    /* background: transparent; */
+
     background: rgba(164, 219, 228, 0.9);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.125);
   }
+  .active.open {
+    .burger {
+      background: var(--bluegreen2);
+    }
+    /* li is for login/logout icons in navbar */
+    li {
+      color: var(--bluegreen2);
+    }
+    transition: all 600ms ease-in;
+
+    background: var(--bluegreen5);
+    border-bottom: none;
+  }
+
   .open.top {
     transition: all 300ms ease-in;
     /* background for the scrolling div with navlist in it */
-    /* background: var(--bluegreen5); */
     background: transparent;
-
-    .burger {
-      background: var(--bluegreen6);
+    /* background for testing resolutions */
+    @media (max-width: 1020px) {
+      background: var(--bluegreen5);
+      li {
+        color: var(--bluegreen2);
+      }
     }
-    li {
-      color: var(--bluegreen6);
+    .burger {
+      background: var(--bluegreen2);
     }
   }
   .hidden {

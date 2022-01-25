@@ -54,7 +54,8 @@ export const HeaderItem = styled.li`
   margin-right: 1rem;
   font-size: 1.25rem;
   font-weight: 500;
-
+  display: flex;
+  flex-direction: row;
   @media (max-width: 740px) {
     font-size: 1rem;
     margin-right: 0.25rem;

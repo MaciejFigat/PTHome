@@ -1,11 +1,13 @@
 import styled from 'styled-components'
 
 export const MeatballContainer = styled.div`
-  /* min-height: 300px; */
-  /* min-width: 300px; */
+  position: relative;
+  top: 140px;
+  right: -80%;
 `
 export const MeatballImg = styled.img`
+  /* position: absolute; */
   clip-path: url(#metaballOne);
-  width: 10em;
-  height: 10em;
+  width: ${(props) => (props.width ? props.width : '20rem')};
+  height: ${(props) => (props.height ? props.height : '20rem')}; ;
 `

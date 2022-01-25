@@ -72,10 +72,10 @@ const Footer: React.FC<FooterProps> = () => {
       <FooterMedia>
         <FooterMediaWrapper>
           <HeaderSvg
-            colorVisibleFill='#ca61f4'
-            colorVisibleStroke='#513ba1'
-            colorHiddenStroke='#e6f32f'
-            colorHiddenFill='#d7e23b'
+            colorVisibleFill='#65d639'
+            colorVisibleStroke='#57cf89'
+            colorHiddenStroke='#487bb4'
+            colorHiddenFill='#378eb6'
             version='sumo2'
           />
           <FooterRights>BestWorksYet &copy; 2021</FooterRights>

@@ -11,11 +11,10 @@ export const FrontSec = styled.div`
 }
 `
 export const FrontTopline = styled.h3`
-  display: none;
+  font-size: 46px;
   letter-spacing: -0.065em;
   @media (max-width: 1020px) {
     font-size: 36px;
-    display: block;
   }
   @media (max-width: 640px) {
     font-size: 33px;

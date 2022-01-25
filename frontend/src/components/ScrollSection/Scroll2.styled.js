@@ -56,12 +56,9 @@ export const SectionColumn = styled.div`
   }
   flex-direction: column;
   display: flex;
-  @media (max-width: 880px) {
-    /* display: none; */
-  }
+
   @media screen and (min-width: 770px) {
     max-width: 100%;
-    /* justify-content: center; */
   }
 `
 export const SectionColumnScroll = styled.div`

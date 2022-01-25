@@ -11,6 +11,7 @@ import {
   TextWrapper,
   TopLine,
 } from '../InfoSection/InfoSection.styled'
+import Meatball from '../Meatballs/Meatball'
 import Scroll2 from '../ScrollSection/Scroll2'
 import {
   GlassCard,
@@ -22,6 +23,8 @@ import {
   GlassCardThree,
   GlassCardTwo,
 } from './FrontScroll.styled'
+import back from '../../data/assets/back.png'
+import { MeatballContainer } from '../Meatballs/Meatballs.styled'
 interface FrontScrollProps {}
 
 const FrontScroll: React.FC<FrontScrollProps> = () => {
@@ -46,6 +49,14 @@ const FrontScroll: React.FC<FrontScrollProps> = () => {
               <DragAnimationWrapper constraintsRef={constraintsRef}>
                 <GlassCardSeven>
                   <TextWrapper>
+                    {/* <MeatballContainer>
+                      <Meatball
+                        img={back}
+                        alt='back muscles'
+                        width='7em'
+                        height='7em'
+                      />
+                    </MeatballContainer> */}
                     <TopLine variant='bluegreen'>topline</TopLine>
                     <Heading variant='tertiary'>
                       Kim jest trener medyczny?

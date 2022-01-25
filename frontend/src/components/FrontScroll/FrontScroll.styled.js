@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const GlassCardContainer = styled.div`
+  padding-top: 3rem;
   display: flex;
   position: relative;
   justify-content: center;
@@ -14,11 +15,12 @@ export const GlassCard = styled.div`
   -webkit-backdrop-filter: blur(11px) saturate(123%);
   background-color: rgba(91, 141, 39, 0.62);
   border-radius: 12px;
-  padding: 1rem;
+  padding: 2rem;
   border: 1px solid rgba(255, 255, 255, 0.125);
   max-width: 40vw;
   @media (max-width: 880px) {
     min-width: 340px;
+    padding: 1rem;
   }
   @media (max-width: 580px) {
     margin-right: 0.5rem;

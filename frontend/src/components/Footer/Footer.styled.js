@@ -4,12 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const FooterContainer = styled.div`
   display: flex;
-  background-image: radial-gradient(
-      at 47% 33%,
-      hsl(114.38, 74%, 17%) 0,
-      transparent 59%
-    ),
-    radial-gradient(at 82% 65%, hsl(342.58, 71%, 27%) 0, transparent 55%);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(85, 111, 157, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.125);
   padding: 4rem 0 2rem 0;
   justify-content: center;
   align-items: center;
@@ -103,7 +101,7 @@ export const FooterLinkTitle = styled.h2`
 `
 
 export const FooterLink = styled(Link)`
-  color: var(--bluegreen5);
+  color: var(--bluegreen9);
   text-decoration: none;
   margin-bottom: 10px;
   &:hover {
@@ -127,22 +125,13 @@ export const FooterMediaWrapper = styled.section`
     flex-direction: column;
   }
 `
-export const FooterLogo = styled(Link)`
-  color: var(--bluegreen5);
-  justify-self: start;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 1.9rem;
-  display: flex;
-  align-items: center;
-  margin-bottom: 18px;
-`
+
 export const FooterIcon = styled(FontAwesomeIcon)`
   margin-right: 12px;
 `
 export const FooterRights = styled.div`
   display: flex;
-  color: var(--bluegreen5);
+  color: var(--bluegreen9);
   @media screen and (max-width: 770px) {
     margin-bottom: 18px;
   }
@@ -154,7 +143,7 @@ export const SocialIcons = styled.div`
   width: 260px;
 `
 export const SocialIconLink = styled.a`
-  color: var(--bluegreen5);
+  color: var(--bluegreen9);
   font-size: 18px;
   &:hover {
     transition: all 0.3s ease-out;
