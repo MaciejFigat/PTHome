@@ -14,7 +14,7 @@ const links = [
 ]
 const itemVariants = {
   closed: {
-    y: 20,
+    y: 10,
     opacity: 0,
   },
   open: {
@@ -25,7 +25,7 @@ const itemVariants = {
 const NavListDesktop: React.FC<NavListMobileProps> = () => {
   return (
     <NavListDesktopWrapper>
-      <StaggerChildrenWrapper>
+      <StaggerChildrenWrapper delay='rightFast'>
         <NavList>
           {links.map(({ name, to, id }) => (
             <motion.div variants={itemVariants} key={id}>

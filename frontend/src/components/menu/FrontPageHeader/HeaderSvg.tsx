@@ -90,7 +90,6 @@ const HeaderSvg: React.FC<HeaderSvgProps> = ({
         <HeaderSvgItem
           xmlns='http://www.w3.org/2000/svg'
           viewBox={viewBox}
-          // viewBox='0 0 1845.9375 2584.6875'
           as={motion.svg}
         >
           <motion.path

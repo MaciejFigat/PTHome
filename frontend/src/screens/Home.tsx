@@ -1,15 +1,14 @@
 import React from 'react'
-import InfoSection from '../components/InfoSection/InfoSection'
-import {
-  homeData,
-  homeDataTwo,
-  homeDataThree,
-  homeDataFour,
-  homeDataFive,
-} from '../data/homeData'
+// import InfoSection from '../components/InfoSection/InfoSection'
+import // homeData,
+// homeDataTwo,
+// homeDataThree,
+// homeDataFour,
+// homeDataFive,
+'../data/homeData'
 import Toast from '../components/Toast/Toast'
-import AnimatedBubble from '../components/AnimatedBubble/AnimatedBubble'
-import ScrollSection from '../components/ScrollSection/ScrollSection'
+// import AnimatedBubble from '../components/AnimatedBubble/AnimatedBubble'
+// import ScrollSection from '../components/ScrollSection/ScrollSection'
 import FrontSection from '../components/FrontSection/FrontSection'
 import FrontScroll from '../components/FrontScroll/FrontScroll'
 
@@ -19,7 +18,7 @@ const Home: React.FC = () => {
       <Toast option='registerUser' />
       <FrontSection />
       <FrontScroll />
-      <InfoSection
+      {/* <InfoSection
         data={homeData}
         buttonNavLink='/contact'
         variant='bluegreen'
@@ -27,7 +26,7 @@ const Home: React.FC = () => {
         paddingTop='small'
       >
         <AnimatedBubble />
-      </InfoSection>
+      </InfoSection> */}
 
       {/* <ScrollSection>
         <InfoSection data={homeDataTwo} variant='primary'></InfoSection>

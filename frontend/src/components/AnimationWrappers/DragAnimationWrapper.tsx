@@ -6,17 +6,16 @@ interface DragAnimationWrapperProps {
   constraintsRef: any
 }
 // Usage
-{
-  /* import React, { useRef } from 'react'
+
+/* import React, { useRef } from 'react'
   const constraintsRef = useRef(null)
    */
-}
-{
-  /*<Container useRef={constraintsRef}></Container>
+
+/*<Container useRef={constraintsRef}></Container>
   /* <DragAnimationWrapper constraintsRef={constraintsRef}>
         ddd.
       </DragAnimationWrapper> */
-}
+
 const DragAnimationWrapper: React.FC<DragAnimationWrapperProps> = ({
   children,
   constraintsRef,

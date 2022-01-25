@@ -38,17 +38,17 @@ export const TransitionWrapperMain = styled.div`
   }
   .active {
     .burger {
-      background: var(--bluegreen3);
+      background: var(--bluegreen6);
     }
     /* li is for login/logout icons in navbar */
     li {
-      color: var(--bluegreen3);
+      color: var(--bluegreen6);
     }
     transition: all 600ms ease-in;
     /* background for the scrolling div with navlist in it */
     /* background: var(--bluegreen5); */
     /* background: transparent; */
-    background: rgba(163, 191, 137, 0.75);
+    background: rgba(164, 219, 228, 0.9);
     border-bottom: 1px solid rgba(255, 255, 255, 0.125);
   }
   .open.top {
@@ -58,10 +58,10 @@ export const TransitionWrapperMain = styled.div`
     background: transparent;
 
     .burger {
-      background: var(--bluegreen3);
+      background: var(--bluegreen6);
     }
     li {
-      color: var(--bluegreen3);
+      color: var(--bluegreen6);
     }
   }
   .hidden {
