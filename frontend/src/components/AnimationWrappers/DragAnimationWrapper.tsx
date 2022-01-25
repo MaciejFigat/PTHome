@@ -5,7 +5,18 @@ interface DragAnimationWrapperProps {
   children: ReactNode
   constraintsRef: any
 }
-
+// Usage
+{
+  /* import React, { useRef } from 'react'
+  const constraintsRef = useRef(null)
+   */
+}
+{
+  /*<Container useRef={constraintsRef}></Container>
+  /* <DragAnimationWrapper constraintsRef={constraintsRef}>
+        ddd.
+      </DragAnimationWrapper> */
+}
 const DragAnimationWrapper: React.FC<DragAnimationWrapperProps> = ({
   children,
   constraintsRef,
@@ -13,13 +24,13 @@ const DragAnimationWrapper: React.FC<DragAnimationWrapperProps> = ({
   return (
     <motion.div
       drag
-      dragConstraints={{
-        top: -20,
-        left: -20,
-        right: 20,
-        bottom: 20,
-      }}
-      //   dragConstraints={constraintsRef}
+      // dragConstraints={{
+      //   top: -20,
+      //   left: -20,
+      //   right: 20,
+      //   bottom: 20,
+      // }}
+      dragConstraints={constraintsRef}
     >
       {children}
     </motion.div>

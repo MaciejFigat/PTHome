@@ -1,10 +1,10 @@
-import React from 'react'
-import AnimatedBubble from '../AnimatedBubble/AnimatedBubble'
+import React, { useRef } from 'react'
 import {
   BubbleOneBlurry,
   BubbleThree,
   BubbleTwo,
 } from '../AnimatedBubble/AnimatedBubble.styled'
+import DragAnimationWrapper from '../AnimationWrappers/DragAnimationWrapper'
 import {
   Heading,
   Subtitle,
@@ -25,6 +25,7 @@ import {
 interface FrontScrollProps {}
 
 const FrontScroll: React.FC<FrontScrollProps> = () => {
+  const constraintsRef = useRef(null)
   return (
     <>
       <Scroll2
@@ -41,43 +42,39 @@ const FrontScroll: React.FC<FrontScrollProps> = () => {
         wideSection={
           <>
             {' '}
-            <GlassCardContainer>
-              <GlassCardSeven>
-                <TextWrapper>
-                  <TopLine variant='bluegreen'>topline</TopLine>
-                  <Heading variant='tertiary'>
-                    Kim jest trener medyczny?
-                  </Heading>
-                  <Subtitle variant='tertiary'>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
-                    totam voluptatem sunt minus! Deserunt ab nesciunt omnis.
-                    Officia, nostrum saepe.
-                  </Subtitle>
-                </TextWrapper>
-              </GlassCardSeven>
+            <GlassCardContainer ref={constraintsRef}>
+              <DragAnimationWrapper constraintsRef={constraintsRef}>
+                <GlassCardSeven>
+                  <TextWrapper>
+                    <TopLine variant='bluegreen'>topline</TopLine>
+                    <Heading variant='tertiary'>
+                      Kim jest trener medyczny?
+                    </Heading>
+                    <Subtitle variant='tertiary'>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Ad totam voluptatem sunt minus! Deserunt ab nesciunt
+                      omnis. Officia, nostrum saepe.
+                    </Subtitle>
+                  </TextWrapper>
+                </GlassCardSeven>
+              </DragAnimationWrapper>
               <GlassCardTwo>
                 <TextWrapper>
-                  <TopLine variant='bluegreen'>topline</TopLine>
-                  <Heading variant='tertiary'>
-                    Kim jest trener medyczny?
-                  </Heading>
+                  <TopLine variant='bluegreen'>Kurs BLACKROLL® Therapy</TopLine>
+                  <Heading variant='tertiary'>Uprawnienia </Heading>
                   <Subtitle variant='tertiary'>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
-                    totam voluptatem sunt minus! Deserunt ab nesciunt omnis.
-                    Officia, nostrum saepe.
+                    Jestem absolwentką pierwszej edycji rocznego szkolenia
+                    BLACKROLL® Therapy, dającego uprawnienia trenera medycznego.
                   </Subtitle>
                 </TextWrapper>
               </GlassCardTwo>
               <GlassCardThree>
                 <TextWrapper>
-                  <TopLine variant='bluegreen'>topline</TopLine>
-                  <Heading variant='tertiary'>
-                    Kim jest trener medyczny?
-                  </Heading>
+                  <TopLine variant='bluegreen'>AWF</TopLine>
+                  <Heading variant='tertiary'>Fizjoterapia</Heading>
                   <Subtitle variant='tertiary'>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
-                    totam voluptatem sunt minus! Deserunt ab nesciunt omnis.
-                    Officia, nostrum saepe.
+                    Zgłębiam wiedzę na wydziale Fizjoterapi Warszawskiej
+                    Akademii Wychowania Fizycznego.
                   </Subtitle>
                 </TextWrapper>
               </GlassCardThree>

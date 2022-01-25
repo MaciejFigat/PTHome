@@ -28,6 +28,7 @@ export const TransitionWrapperMain = styled.div`
     .burger {
       background: var(--bluegreen5);
     }
+    transition: all 1000ms ease-in;
     transition: color 1200ms ease-out;
     transition: background 1200ms ease-out;
     background: transparent;
@@ -43,12 +44,19 @@ export const TransitionWrapperMain = styled.div`
     li {
       color: var(--bluegreen3);
     }
-    transition: all 200ms ease-in;
-    background: var(--bluegreen5);
+    transition: all 600ms ease-in;
+    /* background for the scrolling div with navlist in it */
+    /* background: var(--bluegreen5); */
+    /* background: transparent; */
+    background: rgba(163, 191, 137, 0.75);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.125);
   }
   .open.top {
     transition: all 300ms ease-in;
-    background: var(--bluegreen5);
+    /* background for the scrolling div with navlist in it */
+    /* background: var(--bluegreen5); */
+    background: transparent;
+
     .burger {
       background: var(--bluegreen3);
     }
@@ -57,6 +65,8 @@ export const TransitionWrapperMain = styled.div`
     }
   }
   .hidden {
+    transition: border-bottom 600ms ease-in;
+    /* border-bottom: 1px solid rgba(255, 255, 255, 0.125); */
     .burger {
       background: var(--bluegreen5);
     }
@@ -71,6 +81,7 @@ export const TransitionWrapperMain = styled.div`
     transition: all 200ms ease-in;
     transform: translateY(-130%);
     color: var(--background-main5);
+    /* background: rgba(0, 0, 0, 0.015); */
   }
 `
 export const TransitionWrapper = styled.div`
@@ -107,7 +118,6 @@ export const NavList = styled.ul`
   justify-content: space-around;
   padding: 0;
   min-width: 50vw;
-
   @media (max-width: 1020px) {
     width: 100%;
     position: sticky;
@@ -149,7 +159,6 @@ export const ListItem = styled.li`
   letter-spacing: 0.075em;
   font-weight: 400;
   display: flex;
-
   text-transform: uppercase;
   color: var(--background5-main);
   @media (max-width: 1020px) {

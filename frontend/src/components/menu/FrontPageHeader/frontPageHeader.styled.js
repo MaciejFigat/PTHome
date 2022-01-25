@@ -9,7 +9,7 @@ export const HeaderContainer = styled.div`
   height: fit-content;
 
   /* max-width: 100%; */
-  max-width: 1020px;
+  max-width: 1010px;
   z-index: 22;
   @media (max-width: 1020px) {
     display: none;

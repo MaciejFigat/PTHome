@@ -100,7 +100,6 @@ export const BubbleOne = styled(BubbleMain)`
   height: 10rem;
   width: 10rem;
   opacity: 0.69;
-  /* z-index: 1; */
   background: radial-gradient(
     ellipse at top,
     var(--bluegreen1),
@@ -109,6 +108,10 @@ export const BubbleOne = styled(BubbleMain)`
   top: calc(50% - 6rem);
   right: calc(50% - 6rem);
   animation: ${blob} 10s ease-in-out infinite, ${float} 67s ease-in-out infinite;
+  @media (max-width: 880px) {
+    animation: ${blob} 10s ease-in-out infinite,
+      ${floatThree} 67s ease-in-out infinite;
+  }
 `
 export const BubbleOneBlurry = styled(BubbleOne)`
   display: grid;
