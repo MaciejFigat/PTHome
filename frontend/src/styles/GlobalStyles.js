@@ -17,13 +17,10 @@ body {
     max-width: 100vw;
     height: 100%;
     overflow-wrap: break-word;
-   
-    // background-color: var(--redblue3);  
-    // background-color: var(--bluegreen1);  
-    background-image: var(--gradient1-main);
-    // font-family: 'Quicksand', sans-serif; 
-    font-family: 'Atkinson Hyperlegible', sans-serif;
-    font-family: 'Raleway', sans-serif;
+      background-image: var(--gradient1-main);
+      // font-family: 'Atkinson Hyperlegible', sans-serif;
+      font-family: 'Raleway', sans-serif;
+      // font-family: 'Quicksand', sans-serif; 
 }
 
 :root {
