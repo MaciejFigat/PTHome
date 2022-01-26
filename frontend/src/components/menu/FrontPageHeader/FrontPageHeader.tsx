@@ -2,16 +2,16 @@ import React from 'react'
 import DropAnimationWrapper from '../../AnimationWrappers/DropAnimationWrapper'
 import FadeInAnimationWrapper from '../../AnimationWrappers/FadeInAnimationWrapper'
 import ContactIcons from '../../SvgIcon/ContactIcons'
-import Meatball from '../../Meatballs/Meatball'
-import back from '../../../data/assets/back.png'
+import mirror from '../../../data/assets/mirror.jpg'
 import {
   HeaderContainer,
   HeaderTitle,
   HeaderList,
   HeaderItem,
-  HeaderSubtitle,
+  // HeaderSubtitle,
   WrapperContainer,
 } from './frontPageHeader.styled'
+import Meatball from '../../Meatballs/Meatball'
 
 interface FrontPageHeaderProps {
   title: string
@@ -29,7 +29,8 @@ const FrontPageHeader: React.FC<FrontPageHeaderProps> = ({
           <HeaderItem>
             <FadeInAnimationWrapper>
               <Meatball
-                img={back}
+                version='header'
+                img={mirror}
                 alt='back muscles'
                 width='4em'
                 height='4em'

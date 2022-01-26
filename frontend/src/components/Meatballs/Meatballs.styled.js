@@ -9,10 +9,31 @@ export const SvgMeatball = styled.svg``
 export const MeatballImg = styled.img`
   object-fit: cover;
   /* display: block; */
-  clip-path: url(#metaballOne);
-  -webkit-clip-path: url(#metaballOne);
+  /* clip-path: ${(props) => props.id && `url(#${props.id})`}; */
+
+  /* clip-path: url(${(props) => props.id}); */
+  /* clip-path: url(${(props) => props.id}); */
+  /* ${(props) => props.id && `clip-path: url(#${props.id});`} */
+  /* ${(props) => props.id && `clip-path: url(#meatballTwo);`} */
+  clip-path: url(#meatballTwo);
+  /* -webkit-clip-path: url(#metaballOne); */
   width: ${(props) => (props.width ? props.width : '20rem')};
   height: ${(props) => (props.height ? props.height : '20rem')};
   /* max-width: 12rem;
   max-height: 12rem; */
+`
+export const MeatballImgAlt = styled.img`
+  object-fit: cover;
+  clip-path: url(#meatballHeader);
+  -webkit-clip-path: url(#meatballHeader);
+  width: ${(props) => (props.width ? props.width : '20rem')};
+  height: ${(props) => (props.height ? props.height : '20rem')};
+`
+export const MeatballImgHeader = styled(MeatballImg)`
+  clip-path: url(#meatballHeader);
+  -webkit-clip-path: url(#meatballHeader);
+`
+export const MeatballImgThree = styled(MeatballImg)`
+  clip-path: url(#meatballThree);
+  -webkit-clip-path: url(#meatballThree);
 `
