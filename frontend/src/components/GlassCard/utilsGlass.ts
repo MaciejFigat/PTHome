@@ -15,14 +15,15 @@ const primaryStyle: StyleVariant = {
 }
 
 const secondaryStyle: StyleVariant = {
-    cardBackground: `rgba(17, 75, 11, 0.49);`,
+    cardBackground: `rgba(17, 75, 11, 0.65);`,
+    // cardBackground: `rgba(17, 25, 40, 0.7);`,
     toplineColor: `var(--bluegreen3);`,
     headingColor: `var(--bluegreen8);`,
     subtitleColor: `var(--bluegreen3);`,
     backdropFilter: `blur(11px) saturate(123%);`
 }
 const tertiaryStyle: StyleVariant = {
-    cardBackground: `rgba(173, 18, 63, 0.55);`,
+    cardBackground: `rgba(173, 18, 63, 0.65);`,
     toplineColor: `var(--bluegreen3);`,
     headingColor: `var(--bluegreen10);`,
     subtitleColor: `var(--bluegreen3);`,
