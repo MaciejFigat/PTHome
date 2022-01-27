@@ -2,7 +2,7 @@ import React from 'react'
 import DropAnimationWrapper from '../../AnimationWrappers/DropAnimationWrapper'
 import FadeInAnimationWrapper from '../../AnimationWrappers/FadeInAnimationWrapper'
 import ContactIcons from '../../SvgIcon/ContactIcons'
-import mirror from '../../../data/assets/mirror.jpg'
+import back from '../../../data/assets/back.png'
 import {
   HeaderContainer,
   HeaderTitle,
@@ -30,7 +30,7 @@ const FrontPageHeader: React.FC<FrontPageHeaderProps> = ({
             <FadeInAnimationWrapper>
               <Meatball
                 version='header'
-                img={mirror}
+                img={back}
                 alt='back muscles'
                 width='4em'
                 height='4em'

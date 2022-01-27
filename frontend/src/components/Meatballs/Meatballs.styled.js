@@ -22,13 +22,7 @@ export const MeatballImg = styled.img`
   /* max-width: 12rem;
   max-height: 12rem; */
 `
-export const MeatballImgAlt = styled.img`
-  object-fit: cover;
-  clip-path: url(#meatballHeader);
-  -webkit-clip-path: url(#meatballHeader);
-  width: ${(props) => (props.width ? props.width : '20rem')};
-  height: ${(props) => (props.height ? props.height : '20rem')};
-`
+
 export const MeatballImgHeader = styled(MeatballImg)`
   clip-path: url(#meatballHeader);
   -webkit-clip-path: url(#meatballHeader);

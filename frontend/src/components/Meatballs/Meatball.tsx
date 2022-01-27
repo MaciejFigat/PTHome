@@ -1,7 +1,6 @@
 import React from 'react'
 import {
   MeatballImg,
-  MeatballImgAlt,
   MeatballImgHeader,
   MeatballImgThree,
   SvgMeatball,
@@ -12,7 +11,6 @@ interface MeatballProps {
   img: any
   alt: string
   version?: 'primary' | 'secondary' | 'header'
-  // svgId: string
 }
 
 const Meatball: React.FC<MeatballProps> = ({
@@ -21,7 +19,6 @@ const Meatball: React.FC<MeatballProps> = ({
   img,
   alt,
   version,
-  // svgId,
 }) => {
   return (
     <>
