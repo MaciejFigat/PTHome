@@ -132,8 +132,7 @@ export const Heading = styled.h1`
   font-size: 48px;
   line-height: 1.1;
   /* headingColor */
-  color: ${(props) => handleSectionColor(props).headingColor};
-
+  color: ${(props) => handleSectionColor(props).toplineColor};
   @media screen and (max-width: 760px) {
     font-size: 36px;
   }

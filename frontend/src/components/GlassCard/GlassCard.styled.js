@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-
+import { handleGlassColor } from './utilsGlass'
 export const GlassCardContainer = styled.div`
   padding-top: 3rem;
   display: flex;
@@ -9,11 +9,49 @@ export const GlassCardContainer = styled.div`
   flex-direction: column;
   gap: 2rem;
 `
+
+export const ToplineGlass = styled.div`
+  /* toplineColor */
+  ${(props) => handleGlassColor(props).toplineColor}
+  font-size: 18px;
+  line-height: 16px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  margin-bottom: 10px;
+`
+export const HeadingGlass = styled.h1`
+  margin-bottom: 24px;
+  font-size: 48px;
+  line-height: 1.1;
+  /* headingColor */
+  ${(props) => handleGlassColor(props).headingColor};
+
+  @media screen and (max-width: 760px) {
+    font-size: 36px;
+  }
+`
+export const SubtitleGlass = styled.p`
+  max-width: 440px;
+  margin-bottom: 35px;
+  font-size: 18px;
+  /* line-height: 24px; */
+  line-height: 1.6rem;
+  letter-spacing: 0.025em;
+  /* subtitleColor */
+  ${(props) => handleGlassColor(props).subtitleColor}
+`
 export const GlassCard = styled.div`
   position: relative;
-  backdrop-filter: blur(11px) saturate(123%);
-  -webkit-backdrop-filter: blur(11px) saturate(123%);
-  background-color: rgba(91, 141, 39, 0.62);
+  left: ${(props) => (props.left ? props.left : '0')};
+  /* backdrop-filter: blur(11px) saturate(123%); */
+  /* backdrop-filter */
+  ${(props) => handleGlassColor(props).backdropFilter};
+  ${(props) => handleGlassColor(props).backdropFilterWebkit};
+  /* -webkit-backdrop-filter: blur(11px) saturate(123%); */
+  /* background-color: rgba(91, 141, 39, 0.62); */
+  /* background-color */
+  ${(props) => handleGlassColor(props).cardBackground};
+
   border-radius: 12px;
   padding: 2rem;
   border: 1px solid rgba(255, 255, 255, 0.125);
@@ -65,7 +103,7 @@ export const GlassCardFour = styled(GlassCard)`
   border-radius: 12px;
   border: 1px solid rgba(209, 213, 219, 0.3);
 `
-
+// lame a bit
 export const GlassCardFive = styled(GlassCard)`
   backdrop-filter: blur(11px) saturate(159%);
   -webkit-backdrop-filter: blur(11px) saturate(159%);
