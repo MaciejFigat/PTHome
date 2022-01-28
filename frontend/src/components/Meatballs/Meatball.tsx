@@ -1,6 +1,7 @@
 import React from 'react'
 import {
   MeatballImg,
+  MeatballImgFour,
   MeatballImgHeader,
   MeatballImgThree,
   SvgMeatball,
@@ -10,7 +11,8 @@ interface MeatballProps {
   height?: string
   img: any
   alt: string
-  version?: 'primary' | 'secondary' | 'header'
+  translate?: string
+  version?: 'primary' | 'secondary' | 'header' | 'tertiary'
 }
 
 const Meatball: React.FC<MeatballProps> = ({
@@ -19,6 +21,7 @@ const Meatball: React.FC<MeatballProps> = ({
   img,
   alt,
   version,
+  translate,
 }) => {
   return (
     <>
@@ -29,6 +32,7 @@ const Meatball: React.FC<MeatballProps> = ({
             alt={alt}
             width={width}
             height={height}
+            translate={translate}
           />
           <SvgMeatball width='0' height='0'>
             <defs>
@@ -41,7 +45,13 @@ const Meatball: React.FC<MeatballProps> = ({
       )}
       {version && version === 'primary' && (
         <>
-          <MeatballImg src={img} alt={alt} width={width} height={height} />
+          <MeatballImg
+            src={img}
+            alt={alt}
+            width={width}
+            height={height}
+            translate={translate}
+          />
           <SvgMeatball width='0' height='0'>
             <defs>
               <clipPath id='meatballTwo' clipPathUnits='objectBoundingBox'>
@@ -54,11 +64,43 @@ const Meatball: React.FC<MeatballProps> = ({
 
       {version && version === 'secondary' && (
         <>
-          <MeatballImgThree src={img} alt={alt} width={width} height={height} />
+          <MeatballImgThree
+            src={img}
+            alt={alt}
+            width={width}
+            height={height}
+            translate={translate}
+          />
           <SvgMeatball width='0' height='0'>
             <defs>
               <clipPath id='meatballThree' clipPathUnits='objectBoundingBox'>
                 <path d='M0.205479 0C0.277043 0 0.340063 0.0365844 0.376855 0.092071C0.444067 0.189784 0.514971 0.206347 0.620632 0.135363C0.65634 0.110481 0.699754 0.0958904 0.746575 0.0958904C0.868381 0.0958904 0.967123 0.194633 0.967123 0.316438C0.967123 0.425445 0.888041 0.515981 0.784119 0.533804C0.710088 0.548466 0.68036 0.588291 0.696108 0.678347C0.699559 0.69553 0.70137 0.713307 0.70137 0.731507C0.70137 0.879792 0.581161 1 0.432877 1C0.284592 1 0.164384 0.879792 0.164384 0.731507C0.164384 0.689677 0.173949 0.650081 0.191013 0.614787C0.244052 0.496908 0.212525 0.43617 0.12271 0.393608C0.0504471 0.361769 0 0.289515 0 0.205479C0 0.0919963 0.0919963 0 0.205479 0Z' />
+              </clipPath>
+            </defs>
+          </SvgMeatball>
+        </>
+      )}
+      {version && version === 'tertiary' && (
+        <>
+          <MeatballImgFour
+            src={img}
+            alt={alt}
+            width={width}
+            height={height}
+            translate={translate}
+          />
+          <SvgMeatball width='0' height='0'>
+            <defs>
+              <clipPath id='meatballFour' clipPathUnits='objectBoundingBox'>
+                {/* <path
+                  d='M0.749037 0.445154C0.693359 0.416943 0.675498 0.41687 0.61509 0.4655C0.580903 0.493988 0.539425 0.510676 0.494714 0.510676C0.445492 0.510676 0.40019 0.490452 0.364218 0.456523C0.306275 0.403122 0.288996 0.402007 0.233362 0.424677C0.214721 0.43292 0.194581 0.437419 0.173568 0.437419C0.0777091 0.437419 0 0.343778 0 0.228265C0 0.112752 0.0777091 0.0191105 0.173568 0.0191105C0.202995 0.0191105 0.230711 0.0279347 0.254993 0.0435069C0.307455 0.0753358 0.32474 0.0774781 0.387343 0.0351608C0.41883 0.0128166 0.455529 0 0.494714 0C0.537297 0 0.576947 0.0151369 0.610159 0.0411891C0.671553 0.087462 0.689415 0.0866704 0.74439 0.0564625C0.767852 0.0427352 0.794193 0.035036 0.822026 0.035036C0.920319 0.035036 1 0.131054 1 0.249499C1 0.367943 0.920319 0.463961 0.822026 0.463961C0.796016 0.463961 0.771309 0.457238 0.749037 0.445154Z'
+                  fill='#C4C4C4'
+                /> */}
+
+                <path
+                  d='M0.749037 0.735262C0.693359 0.688665 0.675498 0.688544 0.61509 0.768867C0.580903 0.815922 0.539425 0.843485 0.494714 0.843485C0.445492 0.843485 0.40019 0.810081 0.364218 0.754041C0.306275 0.665838 0.288996 0.663996 0.233362 0.70144C0.214721 0.715054 0.194581 0.722486 0.173568 0.722486C0.0777091 0.722486 0 0.567818 0 0.377025C0 0.186233 0.0777091 0.0315649 0.173568 0.0315649C0.202995 0.0315649 0.230711 0.0461398 0.254993 0.0718604C0.307455 0.124432 0.32474 0.127971 0.387343 0.0580751C0.41883 0.0211693 0.455529 0 0.494714 0C0.537297 0 0.576947 0.0250016 0.610159 0.0680321C0.671553 0.144461 0.689415 0.143154 0.74439 0.0932593C0.767852 0.0705858 0.794193 0.057869 0.822026 0.057869C0.920319 0.057869 1 0.216463 1 0.412098C1 0.607733 0.920319 0.766326 0.822026 0.766326C0.796016 0.766326 0.771309 0.755221 0.749037 0.735262Z'
+                  fill='#C4C4C4'
+                />
               </clipPath>
             </defs>
           </SvgMeatball>

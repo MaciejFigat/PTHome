@@ -1,5 +1,4 @@
-import React from 'react'
-import Meatball from '../Meatballs/Meatball'
+import React, { ReactNode } from 'react'
 import {
   GlassCard,
   ToplineGlass,
@@ -7,8 +6,7 @@ import {
   SubtitleGlass,
   GlassTextWrapper,
 } from './GlassCard.styled'
-import nina2 from '../../data/assets/nina2.jpg'
-import { MeatballContainer } from '../Meatballs/Meatballs.styled'
+
 interface GlassCardMainProps {
   topline?: string
   heading: string
@@ -23,6 +21,8 @@ interface GlassCardMainProps {
     | 'dark'
     | 'light'
     | 'blue'
+    | 'superDark'
+  children?: ReactNode
 }
 
 const GlassCardMain: React.FC<GlassCardMainProps> = ({
@@ -31,18 +31,11 @@ const GlassCardMain: React.FC<GlassCardMainProps> = ({
   subtitle,
   variant,
   left,
+  children,
 }) => {
   return (
     <GlassCard left={left} variant={variant}>
-      <MeatballContainer>
-        <Meatball
-          height='22rem'
-          width='22rem'
-          img={nina2}
-          version='secondary'
-          alt='trainer'
-        />
-      </MeatballContainer>
+      {children}
       <GlassTextWrapper>
         <ToplineGlass variant={variant}>{topline}</ToplineGlass>
         <HeadingGlass variant={variant}>{heading}</HeadingGlass>

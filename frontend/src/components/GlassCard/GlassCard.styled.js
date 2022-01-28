@@ -31,6 +31,7 @@ export const ToplineGlass = styled.div`
   margin-bottom: 10px;
 `
 export const HeadingGlass = styled.h1`
+  background: rgba(0, 0, 0, 0.015);
   margin-bottom: 24px;
   font-size: 42px;
   line-height: 1.1;

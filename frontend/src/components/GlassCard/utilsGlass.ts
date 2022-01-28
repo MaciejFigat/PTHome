@@ -45,6 +45,13 @@ const darkStyle: StyleVariant = {
     subtitleColor: `var(--bluegreen1);`,
     backdropFilter: `blur(16px) saturate(180%);`
 }
+const superDarkStyle: StyleVariant = {
+    cardBackground: `rgba(17, 25, 40, 0.75);`,
+    toplineColor: `var(--redblue2);`,
+    headingColor: `var(--bluegreen3);`,
+    subtitleColor: `var(--bluegreen1);`,
+    backdropFilter: `blur(16px) saturate(180%);`
+}
 const defaultStyle: StyleVariant = {
     cardBackground: `var(--bluegreen2);`,
     toplineColor: `var(--bluegreen5);`,
@@ -82,6 +89,10 @@ export const handleGlassColor: (props: any) => {} = (props: any) => {
 
         case 'bluegreen':
             style = lightStyle
+            break;
+
+        case 'superDark':
+            style = superDarkStyle
             break;
 
         default:
