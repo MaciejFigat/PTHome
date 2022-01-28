@@ -35,6 +35,7 @@ const FrontScroll: React.FC<FrontScrollProps> = () => {
             <GlassCardContainer ref={constraintsRef}>
               <GlassCardMain
                 variant='dark'
+                paddingTop='8rem'
                 topline='kim jestem'
                 heading='Witaj, nazywam się Nina!'
                 subtitle='Jestem trenerem personalnym i medycznym z wieloletnim doświadczeniem. Ukończyłam wiele specjalistycznych kursów dotyczących metod treningowych. Jestem studentką Fizjoterapii AWF.'
@@ -52,6 +53,7 @@ const FrontScroll: React.FC<FrontScrollProps> = () => {
               </GlassCardMain>
               <GlassCardMain
                 variant='superDark'
+                paddingTop='7rem'
                 left='-30vw'
                 topline='wyzwania i bezpieczeństwo'
                 heading=' Kim jest trener medyczny?'
@@ -81,6 +83,7 @@ const FrontScroll: React.FC<FrontScrollProps> = () => {
                 </MeatballContainer> */}
               <GlassCardMain
                 variant='secondary'
+                paddingTop='7.5rem'
                 left='-20vw'
                 topline='Kurs BLACKROLL® Therapy'
                 heading='Uprawnienia '

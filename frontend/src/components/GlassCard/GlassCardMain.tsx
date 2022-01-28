@@ -11,6 +11,7 @@ interface GlassCardMainProps {
   topline?: string
   heading: string
   subtitle: string
+  paddingTop?: string
   left?: string
   variant?:
     | 'primary'
@@ -32,9 +33,10 @@ const GlassCardMain: React.FC<GlassCardMainProps> = ({
   variant,
   left,
   children,
+  paddingTop,
 }) => {
   return (
-    <GlassCard left={left} variant={variant}>
+    <GlassCard left={left} variant={variant} paddingTop={paddingTop}>
       {children}
       <GlassTextWrapper>
         <ToplineGlass variant={variant}>{topline}</ToplineGlass>

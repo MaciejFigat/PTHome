@@ -9,6 +9,10 @@ export const GlassCardContainer = styled.div`
   align-items: center;
   flex-direction: column;
   gap: 2rem;
+  @media (max-width: 400px) {
+    max-width: 95vw;
+    /* min-width: 300px; */
+  }
 `
 
 export const GlassTextWrapper = styled.div`
@@ -18,10 +22,6 @@ export const GlassTextWrapper = styled.div`
   /* right: -200px; */
 `
 export const ToplineGlass = styled.div`
-  position: relative;
-  top: 100%;
-  /* right: -200px; */
-  /* right: -50%; */
   /* toplineColor */
   ${(props) => handleGlassColor(props).toplineColor}
   font-size: 18px;
@@ -45,11 +45,18 @@ export const HeadingGlass = styled.h1`
 export const SubtitleGlass = styled.p`
   max-width: 440px;
   margin-bottom: 0;
-  font-size: 18px;
+  font-size: 22px;
+  font-weight: 500;
   line-height: 1.6rem;
   letter-spacing: 0.025em;
   /* subtitleColor */
   ${(props) => handleGlassColor(props).subtitleColor}
+  @media (max-width: 880px) {
+    font-size: 20px;
+  }
+  @media (max-width: 580px) {
+    font-size: 18px;
+  }
 `
 
 export const GlassCard = styled.div`
@@ -62,31 +69,42 @@ export const GlassCard = styled.div`
   /* background-color: rgba(91, 141, 39, 0.62); */
   /* background-color */
   ${(props) => handleGlassColor(props).cardBackground};
-
   border-radius: 12px;
   padding: 3rem;
-  padding-top: 6rem;
+  padding-top: ${(props) => (props.paddingTop ? props.paddingTop : '3rem')};
   border: 1px solid rgba(255, 255, 255, 0.125);
   /* max-height: fit-content; */
   max-width: 40vw;
+  max-width: 450px;
+  /* min-height: 400px; */
+  margin-right: 0.5rem;
   @media (max-width: 880px) {
     min-width: 340px;
     padding: 2rem;
+    padding-top: ${(props) => (props.paddingTop ? props.paddingTop : '3rem')};
   }
   @media (max-width: 580px) {
-    margin-right: 0.5rem;
-    margin-left: 0.5rem;
-    max-width: 55vw;
-    left: 0 !important;
-  }
-  @media (max-width: 440px) {
+    margin-right: 0.25rem;
+    margin-left: 0.25rem;
     max-width: 90vw;
     min-width: 300px;
+    left: 0 !important;
   }
-  @media (max-width: 440px) {
-    min-width: 240px;
+  @media (max-width: 400px) {
+    margin-right: 0;
+    margin-left: 0;
+    max-width: 85vw;
+    min-width: 250px;
+    /* min-width: 300px; */
+  }
+  @media (max-width: 340px) {
+    min-width: 200px;
+    padding: 1.75rem;
+    padding-right: 0.75rem;
+    padding-top: ${(props) => (props.paddingTop ? props.paddingTop : '3rem')};
+    /* max-width: 95%; */
   }
   @media (max-width: 300px) {
-    min-width: 200px;
+    /* min-width: 200px; */
   }
 `
