@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import {
   BubbleOneBlurry,
   BubbleThree,
@@ -8,14 +8,15 @@ import Scroll2 from '../ScrollSection/Scroll2'
 import { GlassCardContainer } from '../GlassCard/GlassCard.styled'
 import GlassCardMain from '../GlassCard/GlassCardMain'
 import nina2 from '../../data/assets/nina2.jpg'
+import acrylicSW1 from '../../data/assets/acrylicSW1.jpg'
 import acrylicSW2 from '../../data/assets/acrylicSW2.jpg'
 import acrylicSW3 from '../../data/assets/acrylicSW3.jpg'
+import acrylicSW4 from '../../data/assets/acrylicSW4.jpg'
 import { MeatballContainer } from '../Meatballs/Meatballs.styled'
 import Meatball from '../Meatballs/Meatball'
 interface FrontScrollProps {}
 
 const FrontScroll: React.FC<FrontScrollProps> = () => {
-  const constraintsRef = useRef(null)
   return (
     <>
       <Scroll2
@@ -32,10 +33,10 @@ const FrontScroll: React.FC<FrontScrollProps> = () => {
         wideSection={
           <>
             {' '}
-            <GlassCardContainer ref={constraintsRef}>
+            <GlassCardContainer>
               <GlassCardMain
                 variant='dark'
-                paddingTop='8rem'
+                paddingTop='16rem'
                 topline='kim jestem'
                 heading='Witaj, nazywam się Nina!'
                 subtitle='Jestem trenerem personalnym i medycznym z wieloletnim doświadczeniem. Ukończyłam wiele specjalistycznych kursów dotyczących metod treningowych. Jestem studentką Fizjoterapii AWF.'
@@ -53,7 +54,7 @@ const FrontScroll: React.FC<FrontScrollProps> = () => {
               </GlassCardMain>
               <GlassCardMain
                 variant='superDark'
-                paddingTop='7rem'
+                paddingTop='12rem'
                 left='-30vw'
                 topline='wyzwania i bezpieczeństwo'
                 heading=' Kim jest trener medyczny?'
@@ -83,12 +84,12 @@ const FrontScroll: React.FC<FrontScrollProps> = () => {
                 </MeatballContainer> */}
               <GlassCardMain
                 variant='secondary'
-                paddingTop='7.5rem'
+                paddingTop='13rem'
                 left='-20vw'
                 topline='Kurs BLACKROLL® Therapy'
                 heading='Uprawnienia '
                 subtitle=' Jestem absolwentką pierwszej edycji rocznego szkolenia
-                BLACKROLL® Therapy, dającego uprawnienia trenera medycznego.'
+                BLACKROLL® Therapy, dającego uprawnienia trenera medycznego. Ukończyłam również kurs trenera personalnego. Cyklicznie uczestniczę w specjalistycznych kursach i praktykach w placówkach medycznych.'
               >
                 {' '}
                 <MeatballContainer top='82px' right='-75%'>
@@ -103,28 +104,54 @@ const FrontScroll: React.FC<FrontScrollProps> = () => {
                 </MeatballContainer>
               </GlassCardMain>
               <GlassCardMain
-                variant='primary'
+                variant='tertiary'
+                paddingTop='7.5rem'
                 left='-10vw'
-                topline='korzyści treningu medycznego'
-                heading='Zysk z inwestycji w specjalistyczny trening'
+                topline='Co zyskujemy?'
+                heading='Korzyści z treningu medycznego'
                 subtitle=' Podstawowym celem jest poprawa jakości ruchu i możliwości
                 motorycznych klienta, a także ograniczanie dolegliwości
                 takich jak ból i dyskomfort. Bieżące stosowanie testów
                 pozwala na modyfikowanie ćwiczeń oraz uzyskanie postępu,
                 przy jednoczesnym zachowaniu bezpieczeństwa.'
-              ></GlassCardMain>
+              >
+                {' '}
+                <MeatballContainer top='-227px' right='-25%'>
+                  <Meatball
+                    height='33%'
+                    width='59%'
+                    translate='rotate(125deg) translate(0px, 25%)'
+                    img={acrylicSW1}
+                    version='tertiary'
+                    alt='trainer'
+                  />
+                </MeatballContainer>
+              </GlassCardMain>
               <GlassCardMain
                 variant='dark'
+                paddingTop='7.5rem'
                 left='-20vw'
                 topline='współpraca z profesjonalistami'
-                heading='Czy można łączyć ten tryb treningu z inną opieką medyczną?'
+                heading='Czy można łączyć trening z inną opieką medyczną?'
                 subtitle='Trener medyczny nie zastępuje opieki lekarskiej czy
                 fizjoterapeutycznej. Dzięki współpracy z personelem
                 medycznym i stosowaniu się do ram zaleceń jest w stanie
                 odpowiednio modyfikować ćwiczenia i monitorować wszelką
                 aktywność na siłowni. Zwiększa to
                 efektywność klienta w dążeniu do celu oraz do odzyskania sprawności.'
-              />
+              >
+                {' '}
+                <MeatballContainer top='-42px' right='-75%'>
+                  <Meatball
+                    height='49%'
+                    width='89%'
+                    translate='rotate(180deg) translate(130px, 75%)'
+                    img={acrylicSW4}
+                    version='tertiary'
+                    alt='trainer'
+                  />
+                </MeatballContainer>
+              </GlassCardMain>
             </GlassCardContainer>
           </>
         }
