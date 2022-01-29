@@ -9,8 +9,8 @@ import {
 interface MeatballProps {
   width?: string
   height?: string
-  img: any
-  alt: string
+  img?: any
+  alt?: string
   translate?: string
   version?: 'primary' | 'secondary' | 'header' | 'tertiary'
 }

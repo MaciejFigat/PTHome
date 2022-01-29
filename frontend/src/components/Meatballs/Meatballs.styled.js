@@ -6,6 +6,13 @@ export const MeatballContainer = styled.div`
   right: ${(props) => (props.right ? props.right : '-55%')};
 `
 export const SvgMeatball = styled.svg``
+export const MeatballBackground = styled.div`
+  transform: ${(props) =>
+    props.translate ? props.translate : 'translate(0px, 0%)'};
+  clip-path: url(#meatballTwo);
+  width: ${(props) => (props.width ? props.width : '20rem')};
+  height: ${(props) => (props.height ? props.height : '20rem')};
+`
 export const MeatballImg = styled.img`
   object-fit: cover;
   opacity: 0.85;

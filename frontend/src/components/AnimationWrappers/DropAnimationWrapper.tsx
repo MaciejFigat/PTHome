@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+
 interface DropAnimationWrapperProps {
   children?: ReactNode
   delay?: 1 | 2 | 3

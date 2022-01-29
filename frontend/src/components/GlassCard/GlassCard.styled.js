@@ -47,7 +47,7 @@ export const SubtitleGlass = styled.p`
   margin-bottom: 0;
   font-size: 22px;
   font-weight: 500;
-  line-height: 1.6rem;
+  line-height: 1.8rem;
   letter-spacing: 0.025em;
   /* subtitleColor */
   ${(props) => handleGlassColor(props).subtitleColor}

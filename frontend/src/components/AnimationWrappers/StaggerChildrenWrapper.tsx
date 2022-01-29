@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+
 interface StaggerChildrenWrapperProps {
   children?: ReactNode
   delay?: 'rightFast' | 'leftSlow'
