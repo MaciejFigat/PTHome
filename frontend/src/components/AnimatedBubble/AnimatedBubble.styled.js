@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components'
-
+import { handleBubbleColor } from './utilsBubble'
 const blob = keyframes`
 
     0% { 
