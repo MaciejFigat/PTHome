@@ -14,7 +14,6 @@ import acrylicSW3 from '../../data/assets/acrylicSW3.jpg'
 import acrylicSW4 from '../../data/assets/acrylicSW4.jpg'
 import { MeatballContainer } from '../Meatballs/Meatballs.styled'
 import Meatball from '../Meatballs/Meatball'
-import FadeInAnimationWrapper from '../AnimationWrappers/FadeInAnimationWrapper'
 import FadeInWhenVisibleWrapper from '../AnimationWrappers/FadeInWhenVisibleWrapper'
 interface FrontScrollProps {}
 

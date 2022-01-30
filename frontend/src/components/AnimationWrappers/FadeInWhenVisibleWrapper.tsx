@@ -2,7 +2,6 @@ import React, { ReactNode, useEffect } from 'react'
 
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import FadeInAnimationWrapper from './FadeInAnimationWrapper'
 
 interface FadeInWhenVisibleWrapperProps {
   children: ReactNode
