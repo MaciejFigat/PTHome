@@ -9,16 +9,11 @@ export const AdminContainer = styled.div`
   padding-bottom: 3rem;
   place-items: center;
   overflow: hidden;
-  @media screen and (max-width: 770px) {
-    /* max-width: 50%;
-    width: 50%; */
-  }
 `
 export const TableWrapper = styled.div`
   display: flex;
   justify-content: center;
   max-width: 80%;
-  /* width: 100%; */
   padding: 1rem;
   font-weight: 600;
   overflow-wrap: break-word;
@@ -30,7 +25,6 @@ export const TableWrapper = styled.div`
   }
 `
 export const Table = styled.table`
-  /* max-width: 10%; */
   table-layout: fixed;
   border: 2px solid var(--background1-main);
   th {

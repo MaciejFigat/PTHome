@@ -4,7 +4,7 @@ export const FrontSec = styled.div`
   display: grid;
     place-items: center;
   min-height: calc(100vh - 120px);
-  /* background-color: #a4dbe4; */
+
     background-image: 
         radial-gradient(at 47% 33%, hsl(188.44, 54%, 77%) 0, transparent 59%), 
         radial-gradient(at 62% 55%, hsl(334, 66%, 78%) 0, transparent 55%);

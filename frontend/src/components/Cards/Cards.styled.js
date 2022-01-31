@@ -64,7 +64,6 @@ export const CardImage = styled.img`
   display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
-  /* object-position: center; */
   transition: 200ms transform ease-in-out;
 `
 export const CardImageSmall = styled(CardImage)`

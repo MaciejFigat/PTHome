@@ -98,22 +98,13 @@ export const ContactFieldContent = styled.input`
     @media (max-width: 600px) {
       color: var(--background-secondary3);
     }
-    /* @media (min-width: 600px) {
-      ${ResponsiveDiv}:hover & {
-        color: var(--background-secondary3);
-      }
-    } */
   }
   font-family: 'Quicksand', sans-serif;
   outline: none;
   border: none;
   color: var(--background-tertiary4);
   transition: all 0.3s ease-out;
-  /* @media (min-width: 600px) {
-    ${ResponsiveDiv}:hover & {
-      color: var(--background-tertiary3);
-    }
-  } */
+
   background: none;
   line-height: 1.2;
   cursor: text;

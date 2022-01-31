@@ -39,16 +39,15 @@ export const BlogCardContainer = styled.div`
   width: 450px;
   max-width: 100%;
   background-color: var(--bluegreen10);
-  /* background-color: var(--secondary2); */
+
   &:hover {
-    /* background-color: var(--secondary5); */
     background-color: var(--bluegreen7);
     color: var(--background5-main);
     transition: all 0.3s ease-out;
   }
   color: var(--background1-main);
   border-radius: 0.25rem;
-  /* border: 1px solid var(--background5-main); */
+
   overflow: hidden;
   &:hover ${BlogCardImg} {
     transform: scale(1.025);
