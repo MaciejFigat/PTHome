@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 export const ResponsiveDiv = styled.div`
   display: grid;
@@ -6,28 +6,12 @@ export const ResponsiveDiv = styled.div`
   border-radius: 4px;
   width: 40vw;
   padding: 0px 0px 10px;
-
-  @media (max-width: 600px) {
-    /* background: var(--background-secondary1);
-    box-shadow: 0.5px 0.5px 1px var(--background4-main),
-      -0.5px -0.5px 1px var(--background1-main); */
-  }
-  backdrop-filter: blur(20px) saturate(123%);
-  -webkit-backdrop-filter: blur(20px) saturate(123%);
-  background-color: rgba(17, 25, 40, 0.76);
-
+  backdrop-filter: blur(5px) saturate(144%);
+  -webkit-backdrop-filter: blur(5px) saturate(144%);
+  background-color: rgba(17, 75, 11, 0.61);
+  border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.125);
-  /* background: var(--background-tertiary25); */
-  /* box-shadow: 0.5px 0.5px 1px var(--background-tertiary25),
-    -0.5px -0.5px 1px var(--background-tertiary25); */
   transition: all 0.6s ease-out;
-  @media (min-width: 600px) {
-    /* &:hover {
-      background: var(--background-secondary15);
-      box-shadow: 0.5px 0.5px 1px var(--background4-main),
-        -0.5px -0.5px 1px var(--background1-main);
-    } */
-  }
 
   @media (max-width: 1100px) {
     width: 90vw;
@@ -50,6 +34,36 @@ export const ContactFormStyled = styled.form`
     min-width: fit-content;
   }
 `
+
+const gradient = keyframes`
+  0% {
+    border-image:  linear-gradient(
+        45deg,
+        var(--background-tertiary5),
+        var(--background-tertiary4),
+        var(--background-tertiary3)
+      )
+      1;
+  }
+  50% {
+    border-image: linear-gradient(
+            45deg,
+            var(--background-tertiary3),
+            var(--background-tertiary1),
+            var(--background-tertiary5)
+          )
+          1;
+  }
+  100% {
+    border-image:  linear-gradient(
+        45deg,
+        var(--background-tertiary5),
+        var(--background-tertiary4),
+        var(--background-tertiary3)
+      )
+      1;
+  }
+`
 export const ContactField = styled.div`
   font-family: 'Quicksand', sans-serif;
   display: flex;
@@ -66,15 +80,15 @@ export const ContactField = styled.div`
     height: 5px;
     --angle: 0deg;
     border-bottom: 2px solid;
-    border-image: linear-gradient(
+    /* border-image: linear-gradient(
         45deg,
         var(--background-tertiary5),
         var(--background-tertiary4),
         var(--background-tertiary3)
       )
       1;
-    transition: all 0.9s ease-out;
-    @media (min-width: 600px) {
+    transition: all 0.9s ease-out; */
+    /* @media (min-width: 600px) {
       ${ResponsiveDiv}:hover & {
         border-image: linear-gradient(
             45deg,
@@ -84,10 +98,9 @@ export const ContactField = styled.div`
           )
           1;
       }
-    }
+    } */
 
-    /* animation: 4s rotate linear infinite; */
-    animation: gradient-animation 4s ease-in-out infinite;
+    animation: ${gradient} 33s ease-in-out infinite;
   }
 `
 

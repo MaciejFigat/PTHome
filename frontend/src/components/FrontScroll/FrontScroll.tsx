@@ -27,7 +27,19 @@ const FrontScroll: React.FC<FrontScrollProps> = () => {
         narrowSection={
           <>
             <BubbleThree />
-            <BubbleOneBlurry />
+            <BubbleOneBlurry
+              variant='secondary'
+              width='15rem'
+              height='15rem'
+              borderColor='red'
+              top='calc(80% - 1rem)'
+              right='calc(60% - 16rem)'
+            />
+            <BubbleOneBlurry
+              variant='primary'
+              top='calc(20% - 12rem)'
+              right='calc(60% - 6rem)'
+            />
             <BubbleTwo />
           </>
         }

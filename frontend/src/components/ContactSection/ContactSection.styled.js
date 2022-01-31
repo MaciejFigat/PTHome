@@ -2,7 +2,8 @@ import styled from 'styled-components'
 
 export const InfoSec = styled.div`
   padding: 80px 0;
-  background: var(--gradient2-main);
+  /* z-index: 99; */
+  /* background: var(--gradient2-main); */
   @media (max-width: 880px) {
     padding: 60px 0;
   }
@@ -38,7 +39,7 @@ export const TextWrapper = styled.div`
   }
 `
 export const Container = styled.div`
-  z-index: 1;
+  /* z-index: 1; */
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -52,10 +53,10 @@ export const Container = styled.div`
 
 export const TopLine = styled.div`
   font-size: 22px;
-  line-height: 16px;
+
   font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: 1.4px;
+  line-height: 1.025;
+  letter-spacing: 1.1px;
   margin-bottom: 10px;
   @media screen and (max-width: 880px) {
     font-size: 18px;
@@ -64,23 +65,23 @@ export const TopLine = styled.div`
 export const Heading = styled.h1`
   margin-bottom: 24px;
   margin-top: 0;
-  font-size: 40px;
+  font-size: 36px;
   line-height: 1.1;
 
   @media screen and (max-width: 760px) {
-    font-size: 36px;
+    font-size: 32px;
   }
 `
 export const CopyHeading = styled.h1`
   margin-bottom: 2rem;
-  font-size: 36px;
+  font-size: 29px;
   line-height: 1.1;
   transition: all 0.3s ease-in;
   &:hover {
     color: var(--background-tertiary4);
   }
   @media screen and (max-width: 760px) {
-    font-size: 24px;
+    font-size: 26px;
   }
 
   &:after {
@@ -88,8 +89,8 @@ export const CopyHeading = styled.h1`
     content: '${(props) => props.contentAfter}';
     opacity: ${(props) => (props.contentAfter ? `1` : '0')};
     transition: all 0.3s ease-in;
-    z-index: 11111;
-    font-size: 28px;
+    z-index: 11;
+    font-size: 22px;
     display: block;
     position: relative;
     bottom: 0px;

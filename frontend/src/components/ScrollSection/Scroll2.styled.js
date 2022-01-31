@@ -47,7 +47,6 @@ export const SectionColumn = styled.div`
   padding-left: 15px;
   max-height: 100vh;
   min-height: fit-content;
-
   flex-basis: ${({ width }) => (width ? `${width}` : '15%')};
   @media (max-width: 440px) {
     flex-basis: 0%;

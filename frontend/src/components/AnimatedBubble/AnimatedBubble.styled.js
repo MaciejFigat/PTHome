@@ -1,7 +1,6 @@
 import styled, { keyframes } from 'styled-components'
 import { handleBubbleColor } from './utilsBubble'
 const blob = keyframes`
-
     0% { 
       border-radius: 65% 60% 35% 50% / 65% 38% 75% 36%; 
     } 
@@ -59,7 +58,6 @@ const floatFour = keyframes`
     87% {  transform: rotate(-22deg) translateX(30%) translateY(45%); max-height: 320px; opacity: 0.28;}
     100% {  transform: rotate(0deg) translateX(0%) translateY(0%); }`
 
-export const OverflowWrapper = styled.div``
 export const BubbleOverlay = styled.div`
   position: absolute;
   top: 0;
@@ -114,24 +112,33 @@ export const BubbleOne = styled(BubbleMain)`
 `
 export const BubbleOneBlurry = styled(BubbleOne)`
   display: grid;
+  z-index: -1;
   place-items: center;
-  opacity: 0.29;
-  background: radial-gradient(ellipse at top, var(--bluegreen1), transparent),
-    radial-gradient(ellipse at bottom, var(--bluegreen5), transparent);
+  /* position: relative; */
+  height: ${(props) => (props.width ? props.width : `11rem`)};
+  width: ${(props) => (props.width ? props.width : `11rem`)};
+  opacity: ${(props) => (props.opacity ? props.opacity : `0.29`)};
 
+  /* background */
+  ${(props) => handleBubbleColor(props).bubbleBackground}
+  /* box-shadow */
+  ${(props) => handleBubbleColor(props).bubbleShadow}
   top: ${(props) => (props.top ? props.top : `calc(20% - 6rem)`)};
   right: ${(props) => (props.right ? props.right : `calc(60% - 6rem)`)};
 
-  /* border: 1px solid var(--bluegreen8); */
-  animation: ${blob} 10s ease-in-out infinite,
-    ${floatThree} 67s ease-in-out infinite;
-  box-shadow: inset -10px -10px 100px var(--bluegreen5),
-    10px 10px 20px var(--bluegreen5), inset 0px 0px 10px var(--bluegreen5);
+  border: ${(props) =>
+    props.borderColor ? `1px solid ${props.borderColor}` : `none`};
+
+  animation: ${blob}
+      ${(props) =>
+        props.animationFloatDuration ? props.animationFloatDuration : `10s`}
+      ease-in-out infinite,
+    ${floatThree}
+      ${(props) => (props.animationDuration ? props.animationDuration : `67s`)}
+      ease-in-out infinite;
+  /* ${floatThree} 67s ease-in-out infinite; */
 `
-// closest-side, - for radiant gradient
-// background: radial-gradient(circle at 100%, #333, #333 50%, #eee 75%, #333 75%);
-// background: radial-gradient(ellipse at top, #e66465, transparent),
-//             radial-gradient(ellipse at bottom, #4d9f0c, transparent);
+
 export const BubbleTwo = styled(BubbleMain)`
   height: 8rem;
   width: 4rem;

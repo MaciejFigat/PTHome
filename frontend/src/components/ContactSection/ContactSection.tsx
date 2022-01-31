@@ -50,7 +50,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
     }
   }
   const hoverHelper = () => {
-    setCopySuccess('Copy to clipboard?')
+    setCopySuccess('Skopiuj do schowka?')
   }
   const leaveHelper = () => {
     setCopySuccess('')
@@ -71,7 +71,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
             <InfoColumn>
               <TextWrapper>
                 <DropAnimationWrapper direction='top'>
-                  <Heading>Zarezerwuj trening lub konsultację</Heading>{' '}
+                  <Heading>Napisz do mnie</Heading>{' '}
                 </DropAnimationWrapper>
                 <DropAnimationWrapper>
                   {' '}
