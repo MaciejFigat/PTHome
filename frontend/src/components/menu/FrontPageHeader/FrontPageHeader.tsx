@@ -8,7 +8,6 @@ import {
   HeaderTitle,
   HeaderList,
   HeaderItem,
-  // HeaderSubtitle,
   WrapperContainer,
 } from './frontPageHeader.styled'
 import Meatball from '../../Meatballs/Meatball'

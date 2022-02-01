@@ -4,13 +4,6 @@ import {
   FooterSection,
   FooterSectionHeading,
   FooterSectionText,
-  FormInput,
-  FooterForm,
-  FooterLinksWrapper,
-  FooterLink,
-  FooterLinksContainer,
-  FooterLinksItems,
-  FooterLinkTitle,
   FooterMedia,
   FooterMediaWrapper,
   FooterIcon,
@@ -18,7 +11,14 @@ import {
   SocialIcons,
   SocialIconLink,
 } from './Footer.styled'
-import { Button } from '../InfoSection/InfoSection.styled'
+import Serotonin from '../../data/assets/Serotonin.svg'
+import BetaEndorphineSmall from '../../data/assets/BetaEndorphineSmall.png'
+import {
+  ImgSmall,
+  FloatingWrapperCustom,
+  WrapperImgPosition,
+  ImgSmallTwo,
+} from '../AnimatedBubble/AnimatedBubble.styled'
 
 import {
   faFacebook,
@@ -42,33 +42,25 @@ const Footer: React.FC<FooterProps> = () => {
         <FooterSectionText>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum, quia!
         </FooterSectionText>
-        <FooterForm>
-          <FormInput
-            name='email'
-            type='email'
-            placeholder='Do You wish to subscribe?'
-          ></FormInput>
-          <Button variant='tertiary'>Subscribe</Button>
-        </FooterForm>
       </FooterSection>
-      <FooterLinksContainer>
-        <FooterLinksWrapper>
-          <FooterLinksItems>
-            <FooterLinkTitle>Lorem, ipsum dolor.</FooterLinkTitle>
-            <FooterLink to='/'>Lorem, ipsum.</FooterLink>
-            <FooterLink to='/'>Lorem, ipsum.</FooterLink>
-            <FooterLink to='/'>Lorem, ipsum.</FooterLink>
-            <FooterLink to='/'>Lorem, ipsum.</FooterLink>
-          </FooterLinksItems>
-          <FooterLinksItems>
-            <FooterLinkTitle>Lorem, ipsum dolor.</FooterLinkTitle>
-            <FooterLink to='/'>Lorem, ipsum.</FooterLink>
-            <FooterLink to='/'>Lorem, ipsum.</FooterLink>
-            <FooterLink to='/'>Lorem, ipsum.</FooterLink>
-            <FooterLink to='/'>Lorem, ipsum.</FooterLink>
-          </FooterLinksItems>
-        </FooterLinksWrapper>
-      </FooterLinksContainer>
+      <WrapperImgPosition>
+        <FloatingWrapperCustom
+          top='10%'
+          left='37%'
+          content='Beta Endorphine'
+          floatTwo
+        >
+          <ImgSmallTwo src={BetaEndorphineSmall} />
+        </FloatingWrapperCustom>
+        <FloatingWrapperCustom
+          top='40%'
+          left='60%'
+          content='Serotonin'
+          floatOne
+        >
+          <ImgSmall src={Serotonin} />
+        </FloatingWrapperCustom>
+      </WrapperImgPosition>
       <FooterMedia>
         <FooterMediaWrapper>
           <HeaderSvg
