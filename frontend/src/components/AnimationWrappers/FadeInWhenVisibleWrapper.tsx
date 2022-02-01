@@ -11,7 +11,7 @@ const FadeInWhenVisibleWrapper: React.FC<FadeInWhenVisibleWrapperProps> = ({
   children,
 }) => {
   const [ref, inView] = useInView({
-    triggerOnce: true,
+    triggerOnce: false,
   })
   const controls = useAnimation()
 
