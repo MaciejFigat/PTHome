@@ -53,8 +53,8 @@ const Footer: React.FC<FooterProps> = () => {
           <ImgSmallTwo src={BetaEndorphineSmall} />
         </FloatingWrapperCustom>
         <FloatingWrapperCustom
-          top='40%'
-          left='60%'
+          top='55%'
+          left='10%'
           content='Serotonin'
           floatOne
         >
