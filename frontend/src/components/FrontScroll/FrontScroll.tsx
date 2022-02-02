@@ -1,9 +1,5 @@
 import React from 'react'
-// import {
-//   BubbleOneBlurry,
-//   BubbleThree,
-//   BubbleTwo,
-// } from '../AnimatedBubble/AnimatedBubble.styled'
+import { BubbleOneBlurry } from '../AnimatedBubble/AnimatedBubble.styled'
 import Scroll2 from '../ScrollSection/Scroll2'
 import { GlassCardContainer } from '../GlassCard/GlassCard.styled'
 import GlassCardMain from '../GlassCard/GlassCardMain'
@@ -15,7 +11,7 @@ import acrylicSW4 from '../../data/assets/acrylicSW4.jpg'
 import { MeatballContainer } from '../Meatballs/Meatballs.styled'
 import Meatball from '../Meatballs/Meatball'
 import Serotonin from '../../data/assets/Serotonin.svg'
-import Adrenaline from '../../data/assets/Adrenaline.svg'
+
 import Oxytocin from '../../data/assets/Oxytocin.svg'
 // import BetaEndorphineSmall from '../../data/assets/BetaEndorphineSmall.png'
 import {
@@ -36,56 +32,43 @@ const FrontScroll: React.FC<FrontScrollProps> = () => {
         transparent
         narrowSection={
           <>
-            {/* <BubbleThree />
-            <BubbleOneBlurry
+            {/* <BubbleThree /> */}
+            {/* <BubbleOneBlurry
               variant='secondary'
-              width='15rem'
-              height='15rem'
+              width='5rem'
+              height='5rem'
               borderColor='red'
-              top='calc(80% - 1rem)'
+              top='calc(20% - 1rem)'
               right='calc(60% - 16rem)'
             />{' '} */}
             <WrapperImgPosition>
               <FloatingWrapperCustom
                 top='15%'
                 left='20%'
+                opacity='0.07'
                 content='Serotonin'
                 floatTwo
               >
                 <ImgSmallTwo src={Serotonin} />
               </FloatingWrapperCustom>
-              <FloatingWrapperCustom
-                top='-55%'
-                left='160%'
-                content='Adrenaline'
-                floatOne
-              >
-                <ImgSmallTwo src={Adrenaline} />
-              </FloatingWrapperCustom>
+
               <FloatingWrapperCustom
                 top='57%'
                 left='50%'
+                opacity='0.22'
                 content='Oxytocin'
                 floatOne
               >
                 <ImgSmallTwo src={Oxytocin} />
               </FloatingWrapperCustom>
-              {/* <FloatingWrapperCustom
-                top='10%'
-                left='97%'
-                opacity='0.47'
-                content='Beta Endorphine'
-                floatOne
-              >
-                <ImgSmallTwo src={BetaEndorphineSmall} />
-              </FloatingWrapperCustom> */}
             </WrapperImgPosition>
-            {/* <BubbleOneBlurry
-              variant='primary'
-              top='calc(20% - 12rem)'
-              right='calc(60% - 6rem)'
+            <BubbleOneBlurry
+              width='5rem'
+              height='5rem'
+              variant='tertiary'
+              top='calc(70% - 12rem)'
+              right='calc(-145%)'
             />
-            <BubbleTwo /> */}
           </>
         }
         wideSection={

@@ -102,12 +102,13 @@ export const BubbleOne = styled(BubbleMain)`
     var(--bluegreen1),
     var(--bluegreen11)
   );
-  top: calc(50% - 6rem);
-  right: calc(50% - 6rem);
-  animation: ${blob} 10s ease-in-out infinite, ${float} 67s ease-in-out infinite;
+  top: calc(65% - 3rem);
+  right: calc(50% - 5rem);
+  animation: ${blob} 10s ease-in-out infinite;
+  /* ${float} 67s ease-in-out infinite; */
   @media (max-width: 880px) {
-    animation: ${blob} 10s ease-in-out infinite,
-      ${floatThree} 67s ease-in-out infinite;
+    animation: ${blob} 10s ease-in-out infinite;
+    /* ${floatThree} 67s ease-in-out infinite; */
   }
 `
 export const BubbleOneBlurry = styled(BubbleOne)`
