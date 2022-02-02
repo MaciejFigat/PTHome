@@ -24,7 +24,7 @@ const secondaryStyle: StyleVariant = {
 }
 const tertiaryStyle: StyleVariant = {
     bubbleBackground: `radial-gradient(circle at 100%, var(--bluegreen10), var(--bluegreen10) 50%, var(--bluegreen10) 75%, var(--bluegreen10) 75%);`,
-    bubbleShadow: `inset -10px -10px 100px var(--bluegreen10),
+    bubbleShadow: `inset -10px -10px 50px var(--bluegreen9),
     10px 10px 20px var(--background3-main), inset 0px 0px 10px var(--background2-main);`,
 }
 
