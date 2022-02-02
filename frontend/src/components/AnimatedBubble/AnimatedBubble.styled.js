@@ -297,7 +297,7 @@ export const WrapperImgPosition = styled.div`
 
 export const FloatingWrapperCustom = styled.div`
   position: relative;
-  opacity: 0.27;
+  opacity: ${(props) => (props.opacity ? props.opacity : '0.27')};
   top: ${(props) => (props.top ? props.top : '20%')};
   left: ${(props) => props.left};
   max-width: 200px;

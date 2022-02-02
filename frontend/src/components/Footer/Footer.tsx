@@ -11,14 +11,6 @@ import {
   SocialIcons,
   SocialIconLink,
 } from './Footer.styled'
-import Serotonin from '../../data/assets/Serotonin.svg'
-import BetaEndorphineSmall from '../../data/assets/BetaEndorphineSmall.png'
-import {
-  ImgSmall,
-  FloatingWrapperCustom,
-  WrapperImgPosition,
-  ImgSmallTwo,
-} from '../AnimatedBubble/AnimatedBubble.styled'
 
 import {
   faFacebook,
@@ -43,24 +35,7 @@ const Footer: React.FC<FooterProps> = () => {
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum, quia!
         </FooterSectionText>
       </FooterSection>
-      <WrapperImgPosition>
-        <FloatingWrapperCustom
-          top='10%'
-          left='37%'
-          content='Beta Endorphine'
-          floatTwo
-        >
-          <ImgSmallTwo src={BetaEndorphineSmall} />
-        </FloatingWrapperCustom>
-        <FloatingWrapperCustom
-          top='55%'
-          left='10%'
-          content='Serotonin'
-          floatOne
-        >
-          <ImgSmall src={Serotonin} />
-        </FloatingWrapperCustom>
-      </WrapperImgPosition>
+
       <FooterMedia>
         <FooterMediaWrapper>
           <HeaderSvg

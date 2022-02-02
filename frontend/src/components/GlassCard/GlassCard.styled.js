@@ -8,10 +8,12 @@ export const GlassCardContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 2rem;
+  gap: 5rem;
+  @media (max-width: 880px) {
+    gap: 2rem;
+  }
   @media (max-width: 400px) {
     max-width: 95vw;
-    /* min-width: 300px; */
   }
 `
 

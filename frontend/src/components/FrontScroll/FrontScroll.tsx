@@ -1,9 +1,9 @@
 import React from 'react'
-import {
-  BubbleOneBlurry,
-  BubbleThree,
-  BubbleTwo,
-} from '../AnimatedBubble/AnimatedBubble.styled'
+// import {
+//   BubbleOneBlurry,
+//   BubbleThree,
+//   BubbleTwo,
+// } from '../AnimatedBubble/AnimatedBubble.styled'
 import Scroll2 from '../ScrollSection/Scroll2'
 import { GlassCardContainer } from '../GlassCard/GlassCard.styled'
 import GlassCardMain from '../GlassCard/GlassCardMain'
@@ -14,6 +14,16 @@ import acrylicSW3 from '../../data/assets/acrylicSW3.jpg'
 import acrylicSW4 from '../../data/assets/acrylicSW4.jpg'
 import { MeatballContainer } from '../Meatballs/Meatballs.styled'
 import Meatball from '../Meatballs/Meatball'
+import Serotonin from '../../data/assets/Serotonin.svg'
+import Adrenaline from '../../data/assets/Adrenaline.svg'
+import Oxytocin from '../../data/assets/Oxytocin.svg'
+// import BetaEndorphineSmall from '../../data/assets/BetaEndorphineSmall.png'
+import {
+  FloatingWrapperCustom,
+  WrapperImgPosition,
+  ImgSmallTwo,
+} from '../AnimatedBubble/AnimatedBubble.styled'
+
 import FadeInWhenVisibleWrapper from '../AnimationWrappers/FadeInWhenVisibleWrapper'
 interface FrontScrollProps {}
 
@@ -26,7 +36,7 @@ const FrontScroll: React.FC<FrontScrollProps> = () => {
         transparent
         narrowSection={
           <>
-            <BubbleThree />
+            {/* <BubbleThree />
             <BubbleOneBlurry
               variant='secondary'
               width='15rem'
@@ -34,13 +44,48 @@ const FrontScroll: React.FC<FrontScrollProps> = () => {
               borderColor='red'
               top='calc(80% - 1rem)'
               right='calc(60% - 16rem)'
-            />
-            <BubbleOneBlurry
+            />{' '} */}
+            <WrapperImgPosition>
+              <FloatingWrapperCustom
+                top='15%'
+                left='20%'
+                content='Serotonin'
+                floatTwo
+              >
+                <ImgSmallTwo src={Serotonin} />
+              </FloatingWrapperCustom>
+              <FloatingWrapperCustom
+                top='-55%'
+                left='160%'
+                content='Adrenaline'
+                floatOne
+              >
+                <ImgSmallTwo src={Adrenaline} />
+              </FloatingWrapperCustom>
+              <FloatingWrapperCustom
+                top='57%'
+                left='50%'
+                content='Oxytocin'
+                floatOne
+              >
+                <ImgSmallTwo src={Oxytocin} />
+              </FloatingWrapperCustom>
+              {/* <FloatingWrapperCustom
+                top='10%'
+                left='97%'
+                opacity='0.47'
+                content='Beta Endorphine'
+                floatOne
+              >
+                <ImgSmallTwo src={BetaEndorphineSmall} />
+              </FloatingWrapperCustom> */}
+            </WrapperImgPosition>
+            {/* <BubbleOneBlurry
               variant='primary'
               top='calc(20% - 12rem)'
               right='calc(60% - 6rem)'
             />
-            <BubbleTwo />
+            <BubbleTwo /> */}
           </>
         }
         wideSection={
@@ -71,7 +116,7 @@ const FrontScroll: React.FC<FrontScrollProps> = () => {
                 <GlassCardMain
                   variant='superDark'
                   paddingTop='12rem'
-                  left='-30vw'
+                  left='-10vw'
                   topline='wyzwania i bezpieczeństwo'
                   heading=' Kim jest trener medyczny?'
                   subtitle='Jest to specjalista posiadający dodatkowe kompetencje z zakresu anatomii, fizjologii, diagnostki oraz biomechaniki w treningu. Trener medyczny jest w stanie pracować z klientami wymagającymi zaawansowanej strategii treningowej.'
@@ -104,7 +149,7 @@ const FrontScroll: React.FC<FrontScrollProps> = () => {
                 <GlassCardMain
                   variant='secondary'
                   paddingTop='13rem'
-                  left='-20vw'
+                  left='0vw'
                   topline='Kurs BLACKROLL® Therapy'
                   heading='Uprawnienia '
                   subtitle=' Jestem absolwentką pierwszej edycji rocznego szkolenia
@@ -155,7 +200,7 @@ const FrontScroll: React.FC<FrontScrollProps> = () => {
                 <GlassCardMain
                   variant='dark'
                   paddingTop='7.5rem'
-                  left='-20vw'
+                  left='0vw'
                   topline='współpraca z profesjonalistami'
                   heading='Czy można łączyć trening z inną opieką medyczną?'
                   subtitle='Trener medyczny nie zastępuje opieki lekarskiej czy
