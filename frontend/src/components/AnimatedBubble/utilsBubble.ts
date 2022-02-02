@@ -15,8 +15,10 @@ const primaryStyle: StyleVariant = {
 const secondaryStyle: StyleVariant = {
     bubbleBackground: `radial-gradient(ellipse at top, var(--bluegreen1), transparent),
     radial-gradient(ellipse at bottom, var(--bluegreen11), transparent);`,
-    bubbleShadow: `inset -10px -10px 100px var(--bluegreen11),
-    10px 10px 20px var(--background3-main), inset 0px 0px 10px var(--background3-main);`,
+    bubbleShadow: `inset -10px -10px 30px var(--bluegreen7),
+    10px 10px 20px var(--bluegreen7), inset 0px 0px 10px var(--bluegreen11);`,
+    // bubbleShadow: `inset -10px -10px 100px var(--bluegreen7),
+    // 10px 10px 20px var(--background7-main), inset 0px 0px 10px var(--background7-main);`,
 
     // bubbleShadow: `none`,
 }

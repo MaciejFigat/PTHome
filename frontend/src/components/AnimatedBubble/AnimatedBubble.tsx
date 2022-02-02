@@ -22,9 +22,7 @@ const AnimatedBubble: React.FC<AnimatedBubbleProps> = () => {
       <BubbleTwo />
       <BubbleThree />
       <BubbleFour />
-      {/* <DragAnimationWrapper constraintsRef={constraintsRef}>
-        ddd.
-      </DragAnimationWrapper> */}
+
       <FloatingWrapper content='Oxytocin'>
         <Img src={Oxytocin} />
       </FloatingWrapper>

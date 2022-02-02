@@ -11,9 +11,7 @@ import acrylicSW4 from '../../data/assets/acrylicSW4.jpg'
 import { MeatballContainer } from '../Meatballs/Meatballs.styled'
 import Meatball from '../Meatballs/Meatball'
 import Serotonin from '../../data/assets/Serotonin.svg'
-
 import Oxytocin from '../../data/assets/Oxytocin.svg'
-// import BetaEndorphineSmall from '../../data/assets/BetaEndorphineSmall.png'
 import {
   FloatingWrapperCustom,
   WrapperImgPosition,
@@ -32,15 +30,6 @@ const FrontScroll: React.FC<FrontScrollProps> = () => {
         transparent
         narrowSection={
           <>
-            {/* <BubbleThree /> */}
-            {/* <BubbleOneBlurry
-              variant='secondary'
-              width='5rem'
-              height='5rem'
-              borderColor='red'
-              top='calc(20% - 1rem)'
-              right='calc(60% - 16rem)'
-            />{' '} */}
             <WrapperImgPosition>
               <FloatingWrapperCustom
                 top='15%'

@@ -22,13 +22,6 @@ const FrontSection: React.FC<FrontSectionProps> = () => {
         <FrontHeader>Trener Medyczny </FrontHeader>
         <BubbleOne />
         <BubbleThree />
-        {/* <BubbleOneBlurry
-          width='4rem'
-          height='4rem'
-          variant='primary'
-          top='calc(70% - 12rem)'
-          right='calc(25%)'
-        /> */}
         <WrapperImgPosition>
           <FloatingWrapperCustom
             top='10%'
@@ -43,7 +36,8 @@ const FrontSection: React.FC<FrontSectionProps> = () => {
         <BubbleOneBlurry
           width='7rem'
           height='7rem'
-          variant='primary'
+          variant='secondary'
+          opacity='0.59'
           top='calc(70% - 12rem)'
           right='calc(25%)'
         />

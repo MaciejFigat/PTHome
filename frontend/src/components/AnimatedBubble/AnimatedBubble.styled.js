@@ -96,7 +96,9 @@ export const BubbleMain = styled.div`
 export const BubbleOne = styled(BubbleMain)`
   height: 10rem;
   width: 10rem;
-  opacity: 0.69;
+  opacity: 0.43;
+  box-shadow: inset -10px -10px 30px var(--bluegreen7),
+    10px 10px 20px var(--bluegreen7), inset 0px 0px 10px var(--bluegreen11);
   background: radial-gradient(
     ellipse at top,
     var(--bluegreen1),
@@ -115,7 +117,6 @@ export const BubbleOneBlurry = styled(BubbleOne)`
   display: grid;
   z-index: -1;
   place-items: center;
-  /* position: relative; */
   height: ${(props) => (props.width ? props.width : `11rem`)};
   width: ${(props) => (props.width ? props.width : `11rem`)};
   opacity: ${(props) => (props.opacity ? props.opacity : `0.29`)};
@@ -159,15 +160,16 @@ export const BubbleThree = styled(BubbleMain)`
   height: 6rem;
   width: 6rem;
   opacity: 0.4;
-  /* z-index: 1; */
-  background-image: linear-gradient(
-    90deg,
+  box-shadow: inset -10px -10px 100px var(--bluegreen5),
+    10px 10px 20px var(--bluegreen5), inset 0px 0px 10px var(--bluegreen5);
+  background: radial-gradient(
+    ellipse at top,
     var(--bluegreen1),
-    var(--bluegreen11)
+    var(--bluegreen3)
   );
   top: 60%;
   right: 70%;
-  animation: ${blob} 5s ease-in-out infinite, ${float} 95s ease-in-out infinite;
+  animation: ${blob} 17s ease-in-out infinite;
 `
 export const BubbleFour = styled(BubbleMain)`
   height: 6rem;
