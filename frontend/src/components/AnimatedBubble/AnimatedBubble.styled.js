@@ -113,6 +113,7 @@ export const BubbleOne = styled(BubbleMain)`
     /* ${floatThree} 67s ease-in-out infinite; */
   }
 `
+
 export const BubbleOneBlurry = styled(BubbleOne)`
   display: grid;
   z-index: -1;
@@ -140,7 +141,20 @@ export const BubbleOneBlurry = styled(BubbleOne)`
       ease-in-out infinite;
   /* ${floatThree} 67s ease-in-out infinite; */
 `
+export const BubbleOneBlurryStatic = styled(BubbleOne)`
+  animation: none;
+  border-radius: 65% 60% 35% 50% / 65% 38% 75% 36%;
+  top: ${(props) => (props.top ? props.top : `calc(20% - 6rem)`)};
+  right: ${(props) => (props.right ? props.right : `calc(60% - 6rem)`)};
+  height: ${(props) => (props.width ? props.width : `5rem`)};
+  width: ${(props) => (props.width ? props.width : `5rem`)};
+  opacity: ${(props) => (props.opacity ? props.opacity : `0.29`)};
 
+  /* background */
+  ${(props) => handleBubbleColor(props).bubbleBackground}
+  /* box-shadow */
+  ${(props) => handleBubbleColor(props).bubbleShadow}
+`
 export const BubbleTwo = styled(BubbleMain)`
   height: 8rem;
   width: 4rem;
@@ -332,4 +346,7 @@ export const FloatingWrapperCustom = styled.div`
       opacity: 0.9;
     }
   }
+`
+export const FloatingWrapperStatic = styled(FloatingWrapperCustom)`
+  animation: none;
 `

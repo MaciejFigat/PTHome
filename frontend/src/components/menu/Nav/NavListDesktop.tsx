@@ -7,9 +7,9 @@ interface NavListMobileProps {}
 
 const links = [
   { name: 'Home', to: '/', id: '1' },
-  { name: 'Blog', to: '/blog', id: '2' },
-  { name: 'Usługi', to: '/exercise', id: '3' },
-  { name: 'Sklep', to: '/shop', id: '4' },
+  { name: 'O mnie', to: '/shop', id: '2' },
+  { name: 'Blog', to: '/blog', id: '3' },
+  { name: 'Usługi', to: '/exercise', id: '4' },
   { name: 'Kontakt', to: '/contact', id: '5' },
 ]
 const itemVariants = {

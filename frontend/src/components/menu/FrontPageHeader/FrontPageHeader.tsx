@@ -14,13 +14,9 @@ import Meatball from '../../Meatballs/Meatball'
 
 interface FrontPageHeaderProps {
   title: string
-  subtitle: string
 }
 
-const FrontPageHeader: React.FC<FrontPageHeaderProps> = ({
-  title,
-  subtitle,
-}) => {
+const FrontPageHeader: React.FC<FrontPageHeaderProps> = ({ title }) => {
   return (
     <WrapperContainer>
       <HeaderContainer>
@@ -36,11 +32,6 @@ const FrontPageHeader: React.FC<FrontPageHeaderProps> = ({
               />
             </FadeInAnimationWrapper>
           </HeaderItem>
-          {/* <HeaderItem>
-            <FadeInAnimationWrapper>
-              <HeaderSubtitle>{subtitle}</HeaderSubtitle>
-            </FadeInAnimationWrapper>
-          </HeaderItem> */}
           <HeaderItem>
             <DropAnimationWrapper direction='left' delay={2}>
               <HeaderTitle>{title}</HeaderTitle>

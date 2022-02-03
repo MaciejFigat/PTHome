@@ -106,16 +106,7 @@ const FrontScroll: React.FC<FrontScrollProps> = () => {
                   </MeatballContainer>
                 </GlassCardMain>
               </FadeInWhenVisibleWrapper>
-              {/* <MeatballContainer top='72px' right='-90%'>
-                  <Meatball
-                    height='59%'
-                    width='59%'
-                    translate='rotate(-90deg) translate(130px, 75%)'
-                    img={acrylicSW2}
-                    version='tertiary'
-                    alt='trainer'
-                  />
-                </MeatballContainer> */}{' '}
+
               <FadeInWhenVisibleWrapper>
                 {' '}
                 <GlassCardMain

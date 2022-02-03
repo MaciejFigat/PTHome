@@ -30,7 +30,7 @@ function App() {
       <ScrollTopHelper />
       <GlobalStyle />
 
-      <FrontPageHeader title='Treningi na miarę' subtitle='Nina K.' />
+      <FrontPageHeader title='Treningi na miarę' />
       <Nav />
 
       <Routes location={location} key={location.key}>

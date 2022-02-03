@@ -6,8 +6,8 @@ import proWrestlers from '../data/assets/proWrestlers.svg'
 import sumo from '../data/assets/sumo.svg'
 import sumo2 from '../data/assets/sumo2.svg'
 import angryMan from '../data/assets/angryMan.svg'
-import Scroll2 from '../components/ScrollSection/Scroll2'
-import { CardImageSmall } from '../components/Cards/Cards.styled'
+// import Scroll2 from '../components/ScrollSection/Scroll2'
+// import { CardImageSmall } from '../components/Cards/Cards.styled'
 
 interface ExerciseProps {}
 
@@ -48,7 +48,7 @@ const Exercise: React.FC<ExerciseProps> = () => {
   return (
     <>
       {' '}
-      <Scroll2
+      {/* <Scroll2
         narrowSection={
           <>
             <p>
@@ -72,7 +72,8 @@ const Exercise: React.FC<ExerciseProps> = () => {
           </>
         }
         wideSection={<Cards data={data} />}
-      />
+      /> */}
+      <Cards data={data} />
     </>
   )
 }
