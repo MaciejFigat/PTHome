@@ -10,7 +10,8 @@ import React from 'react'
 import Toast from '../components/Toast/Toast'
 // import AnimatedBubble from '../components/AnimatedBubble/AnimatedBubble'
 // import ScrollSection from '../components/ScrollSection/ScrollSection'
-import FrontSection from '../components/FrontSection/FrontSection'
+import FrontSectionStatic from '../components/FrontSection/FrontSectionStatic'
+// import FrontSection from '../components/FrontSection/FrontSection'
 // import FrontScroll from '../components/FrontScroll/FrontScroll'
 // import mirror from '../data/assets/mirror.jpg'
 
@@ -18,7 +19,8 @@ const Home: React.FC = () => {
   return (
     <>
       <Toast option='registerUser' />
-      <FrontSection />
+      <FrontSectionStatic />
+      {/* <FrontSection /> */}
       {/* <FrontScroll /> */}
 
       {/* <ScrollSection> */}

@@ -2,7 +2,7 @@ import React from 'react'
 import DropAnimationWrapper from '../../AnimationWrappers/DropAnimationWrapper'
 import FadeInAnimationWrapper from '../../AnimationWrappers/FadeInAnimationWrapper'
 import ContactIcons from '../../SvgIcon/ContactIcons'
-import back from '../../../data/assets/back.png'
+import back from '../../../data/assets/back.webp'
 import {
   HeaderContainer,
   HeaderTitle,
