@@ -87,12 +87,23 @@ const bluegreenStyle: StyleVariant = {
     sectionBackgroundGradient: 'var(--gradient2-main);',
     color: `var(--bluegreen4);`,
     subtitleColor: 'var(--bluegreen5);',
-    headingColor: 'var(--bluegreen3);',
+    headingColor: 'var(--bluegreen10);',
     toplineColor: 'var(--bluegreen4);',
     buttonColor: 'var(--bluegreen5);',
     buttonBackground: 'var(--secondary2);',
-    // buttonBackground: 'linear-gradient( 90deg, var(--secondary5), var(--background-blue6));',
-    // buttonBackground: `linear-gradient(to top, red, #69e6de, #45eeb9, #6af07b, red);`,
+    buttonBackgroundHover: 'var(--bluegreen8);',
+    buttonColorHover: 'var(--background2-main);'
+}
+const transparentStyle: StyleVariant = {
+
+    sectionBackground: `transparent;`,
+    // sectionBackgroundGradient: 'var(--gradient2-main);',
+    color: `var(--bluegreen4);`,
+    subtitleColor: 'var(--bluegreen5);',
+    headingColor: 'var(--bluegreen5);',
+    toplineColor: 'var(--bluegreen4);',
+    buttonColor: 'var(--bluegreen5);',
+    buttonBackground: 'var(--secondary2);',
     buttonBackgroundHover: 'var(--bluegreen8);',
     buttonColorHover: 'var(--background2-main);'
 }
@@ -130,6 +141,9 @@ export const handleSectionColor: (props: any) => {} = (props: any) => {
             break;
         case 'bluegreen':
             style = bluegreenStyle
+            break;
+        case 'transparent':
+            style = transparentStyle
             break;
 
         default:

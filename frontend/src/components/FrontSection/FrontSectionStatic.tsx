@@ -13,10 +13,7 @@ import {
   FrontTopline,
 } from './FrontSection.styled'
 import Adrenaline from '../../data/assets/Adrenaline.svg'
-// import {
-//   FloatingWrapperStatic,
-//   ImgSmall,
-// } from '../AnimatedBubble/AnimatedBubble.styled'
+
 interface FrontSectionStaticProps {}
 
 const FrontSectionStatic: React.FC<FrontSectionStaticProps> = () => {

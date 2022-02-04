@@ -15,13 +15,14 @@ import { handleSectionColor } from './utilsSection'
 export const InfoSec = styled.div`
   ${(props) => handleSectionColor(props).color}
   ${({ paddingTop }) =>
-    paddingTop === 'small' ? 'padding: 10px 0;' : 'padding: 160px 0;'};
+    paddingTop === 'small' ? 'padding: 80px 0;' : 'padding: 120px 0;'};
 
   ${(props) => handleSectionColor(props).sectionBackground}
   opacity: 0.8;
   ${(props) => handleSectionColor(props).sectionBackgroundGradient}
   @media (max-width: 880px) {
-    padding: 0px 0;
+    ${({ paddingTop }) =>
+      paddingTop === 'small' ? 'padding: 20px 0;' : 'padding: 40px 0;'};
   }
   @media (max-width: 380px) {
     padding: 10px 0;
@@ -149,7 +150,7 @@ export const Subtitle = styled.p`
   ${(props) => handleSectionColor(props).subtitleColor}
 `
 export const ImgWrapper = styled.div`
-  max-width: 555px;
+  /* max-width: 555px; */
   display: flex;
   justify-content: ${({ imgStart }) => (imgStart ? 'flex-start' : 'flex-end')};
   @media (max-width: 880px) {
@@ -159,6 +160,7 @@ export const ImgWrapper = styled.div`
 export const Img = styled.img`
   padding-right: 0;
   border: 0;
+  border-radius: 20px;
   max-width: 100%;
   vertical-align: middle;
   display: inline-block;

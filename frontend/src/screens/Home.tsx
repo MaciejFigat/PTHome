@@ -17,16 +17,32 @@ const Home: React.FC = () => {
       <Toast option='registerUser' />
       <FrontSectionStatic />
       <FrontSection />
-
-      <InfoSection data={homeDataTwo} variant='primary'></InfoSection>
       <InfoSection
-        data={homeDataThree}
-        variant='secondary'
+        paddingTop='small'
+        data={homeDataTwo}
+        variant='transparent'
         imgStart
       ></InfoSection>
-      <InfoSection data={homeDataFour} variant='tertiary'></InfoSection>
-      <InfoSection variant='secondary' data={homeDataFive}></InfoSection>
-      <InfoSection variant='primary' data={homeDataFive}></InfoSection>
+      <InfoSection
+        paddingTop='small'
+        data={homeDataThree}
+        variant='bluegreen'
+      ></InfoSection>
+      <InfoSection
+        paddingTop='small'
+        data={homeDataFour}
+        variant='tertiary'
+      ></InfoSection>
+      <InfoSection
+        paddingTop='small'
+        variant='secondary'
+        data={homeDataFive}
+      ></InfoSection>
+      <InfoSection
+        paddingTop='small'
+        variant='primary'
+        data={homeDataFive}
+      ></InfoSection>
     </>
   )
 }

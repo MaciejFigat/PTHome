@@ -10,10 +10,7 @@ import {
 import FadeInAnimationWrapper from '../AnimationWrappers/FadeInAnimationWrapper'
 import { FrontHeader, FrontSec, FrontTopline } from './FrontSection.styled'
 import Adrenaline from '../../data/assets/Adrenaline.svg'
-// import {
-//     WrapperImgPosition,
-//   ImgSmall,
-// } from '../AnimatedBubble/AnimatedBubble.styled'
+
 interface FrontSectionProps {}
 
 const FrontSection: React.FC<FrontSectionProps> = () => {

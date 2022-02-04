@@ -1,7 +1,7 @@
-import handstand from './assets/handstand.svg'
 import proWrestlers from './assets/proWrestlers.svg'
 import mirror from './assets/mirror.jpg'
 import nina1 from './assets/nina1.jpg'
+import nina2 from './assets/nina2.jpg'
 
 export const homeData = {
   topline: 'Siła na miarę',
@@ -33,7 +33,7 @@ export const homeDataFour = {
     'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure, mollitia?',
   subtitle:
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat perspiciatis non deleniti doloremque, iure laudantium quaerat esse odit. Similique nihil voluptate voluptatem sed tempora sunt libero, saepe corrupti laboriosam suscipit.',
-  img: handstand,
+  img: nina2,
 }
 export const homeDataFive = {
   topline: 'Lorem ipsum dolor sit.',
