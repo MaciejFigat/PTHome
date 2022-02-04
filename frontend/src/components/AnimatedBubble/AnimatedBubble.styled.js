@@ -40,12 +40,12 @@ const floatFive = keyframes`
  100% {  transform: rotate(0deg) translateX(0%) translateY(0%); }`
 
 const floatThree = keyframes`   
- 0% {  transform: rotate(0deg) translateX(0%) translateY(0%); }
- 25% {  transform: rotate(10deg) translateX(15%) translateY(-55%); max-height: 200px;}
- 37% {  transform: rotate(15deg) translateX(-45%) translateY(-75%);max-height: 160px;}
- 50% {  transform: rotate(0deg) translateX(-30%) translateY(50%); max-height: 140px;}
- 75% {  transform: rotate(20deg) translateX(-25%) translateY(70%);max-height: 200px;}
- 100% {  transform: rotate(0deg) translateX(0%) translateY(0%); }`
+ 0% {  transform: rotate(0deg) translateX(0%) translateY(0%);}
+ 25% {  transform: rotate(10deg) translateX(15%) translateY(-35%);}
+ 37% {  transform: rotate(15deg) translateX(-45%) translateY(-45%);}
+ 50% {  transform: rotate(0deg) translateX(-30%) translateY(30%);}
+ 75% {  transform: rotate(20deg) translateX(-25%) translateY(40%);}
+ 100% {  transform: rotate(0deg) translateX(0%) translateY(0%);}`
 
 const floatFour = keyframes`   
     0% {  transform: rotate(0deg) translateX(0%) translateY(0%); }

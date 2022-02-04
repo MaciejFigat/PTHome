@@ -2,10 +2,10 @@ import React from 'react'
 import {
   BubbleThree,
   BubbleOne,
-  BubbleOneBlurryStatic,
   FloatingWrapperCustom,
   WrapperImgPosition,
   ImgSmall,
+  BubbleOneBlurry,
 } from '../AnimatedBubble/AnimatedBubble.styled'
 import FadeInAnimationWrapper from '../AnimationWrappers/FadeInAnimationWrapper'
 import { FrontHeader, FrontSec, FrontTopline } from './FrontSection.styled'
@@ -31,19 +31,23 @@ const FrontSection: React.FC<FrontSectionProps> = () => {
             <ImgSmall src={Adrenaline} />
           </FloatingWrapperCustom>
         </WrapperImgPosition>
-        <BubbleOneBlurryStatic
+        <BubbleOneBlurry
           width='5rem'
           variant='secondary'
           opacity='0.2'
           top='49%'
           right='18%'
+          animationFloatDuration='18s'
+          animationDuration='53s'
         />
-        <BubbleOneBlurryStatic
+        <BubbleOneBlurry
           width='9rem'
           variant='tertiary'
           opacity='0.27'
           top='29%'
           right='78%'
+          animationFloatDuration='23s'
+          animationDuration='53s'
         />
       </FadeInAnimationWrapper>
     </FrontSec>
