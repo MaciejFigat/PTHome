@@ -2,13 +2,30 @@ import styled from 'styled-components'
 
 export const FrontSec = styled.div`
   display: grid;
-    place-items: center;
+  place-items: center;
   min-height: calc(100vh - 120px);
 
-    background-image: 
-        radial-gradient(at 47% 33%, hsl(188.44, 54%, 77%) 0, transparent 59%), 
-        radial-gradient(at 62% 55%, hsl(334, 66%, 78%) 0, transparent 55%);
-}
+  background-image: radial-gradient(
+      at 47% 33%,
+      hsl(188.44, 54%, 77%) 0,
+      transparent 59%
+    ),
+    radial-gradient(at 62% 55%, hsl(334, 66%, 78%) 0, transparent 55%);
+  @media (max-width: 1020px) {
+    min-height: 100vh;
+  }
+  @media (max-width: 640px) {
+    display: none;
+  }
+`
+export const FrontSecStatic = styled(FrontSec)`
+  display: none;
+  @media (max-width: 640px) {
+    display: grid;
+  }
+  @media (max-width: 640px) {
+    min-height: calc(115vh - 120px);
+  }
 `
 export const FrontTopline = styled.h3`
   font-size: 46px;

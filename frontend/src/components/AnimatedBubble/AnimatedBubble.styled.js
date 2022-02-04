@@ -113,7 +113,10 @@ export const BubbleOne = styled(BubbleMain)`
     /* ${floatThree} 67s ease-in-out infinite; */
   }
 `
-
+export const BubbleOneStatic = styled(BubbleOne)`
+  animation: none;
+  border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%;
+`
 export const BubbleOneBlurry = styled(BubbleOne)`
   display: grid;
   z-index: -1;
@@ -174,7 +177,7 @@ export const BubbleThree = styled(BubbleMain)`
   height: 6rem;
   width: 6rem;
   opacity: 0.4;
-  box-shadow: inset -10px -10px 100px var(--bluegreen5),
+  box-shadow: inset -10px -10px 30px var(--bluegreen5),
     10px 10px 20px var(--bluegreen5), inset 0px 0px 10px var(--bluegreen5);
   background: radial-gradient(
     ellipse at top,
@@ -184,6 +187,10 @@ export const BubbleThree = styled(BubbleMain)`
   top: 60%;
   right: 70%;
   animation: ${blob} 17s ease-in-out infinite;
+`
+export const BubbleThreeStatic = styled(BubbleThree)`
+  animation: none;
+  border-radius: 89% 54% 62% 42% / 83% 45% 75% 63%;
 `
 export const BubbleFour = styled(BubbleMain)`
   height: 6rem;

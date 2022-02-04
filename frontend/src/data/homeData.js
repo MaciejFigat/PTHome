@@ -1,16 +1,13 @@
-// import angryMan from './assets/angryMan.svg'
-import sumo from './assets/sumo.svg'
-import woman from './assets/woman.svg'
 import handstand from './assets/handstand.svg'
 import proWrestlers from './assets/proWrestlers.svg'
+import mirror from './assets/mirror.jpg'
+import nina1 from './assets/nina1.jpg'
 
 export const homeData = {
   topline: 'Siła na miarę',
   headline: 'Nina - trener medyczny',
   subtitle:
     'Proponuję treningi indywidualne oraz grupowe. Rozpisywanie planów treningowych. Przeprowadzanie testów sprawnościowych.',
-  // img: angryMan,
-  buttonLabel: 'Zarezerwuj trening',
 }
 
 export const homeDataTwo = {
@@ -19,8 +16,7 @@ export const homeDataTwo = {
     'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure, mollitia?',
   subtitle:
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat perspiciatis non deleniti doloremque, iure laudantium quaerat esse odit. Similique nihil voluptate voluptatem sed tempora sunt libero, saepe corrupti laboriosam suscipit.',
-  img: sumo,
-  buttonLabel: 'Klak the button',
+  img: mirror,
 }
 
 export const homeDataThree = {
@@ -29,8 +25,7 @@ export const homeDataThree = {
     'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure, mollitia?',
   subtitle:
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat perspiciatis non deleniti doloremque, iure laudantium quaerat esse odit. Similique nihil voluptate voluptatem sed tempora sunt libero, saepe corrupti laboriosam suscipit.',
-  img: woman,
-  buttonLabel: 'Klak the button',
+  img: nina1,
 }
 export const homeDataFour = {
   topline: 'Lorem ipsum dolor sit.',
@@ -47,5 +42,4 @@ export const homeDataFive = {
   subtitle:
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat perspiciatis non deleniti doloremque, iure laudantium quaerat esse odit. Similique nihil voluptate voluptatem sed tempora sunt libero, saepe corrupti laboriosam suscipit.',
   img: proWrestlers,
-  buttonLabel: 'Klak the button',
 }

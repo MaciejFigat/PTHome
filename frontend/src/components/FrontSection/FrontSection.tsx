@@ -3,15 +3,17 @@ import {
   BubbleThree,
   BubbleOne,
   BubbleOneBlurryStatic,
+  FloatingWrapperCustom,
+  WrapperImgPosition,
+  ImgSmall,
 } from '../AnimatedBubble/AnimatedBubble.styled'
 import FadeInAnimationWrapper from '../AnimationWrappers/FadeInAnimationWrapper'
 import { FrontHeader, FrontSec, FrontTopline } from './FrontSection.styled'
 import Adrenaline from '../../data/assets/Adrenaline.svg'
-import {
-  FloatingWrapperStatic,
-  WrapperImgPosition,
-  ImgSmall,
-} from '../AnimatedBubble/AnimatedBubble.styled'
+// import {
+//     WrapperImgPosition,
+//   ImgSmall,
+// } from '../AnimatedBubble/AnimatedBubble.styled'
 interface FrontSectionProps {}
 
 const FrontSection: React.FC<FrontSectionProps> = () => {
@@ -23,14 +25,14 @@ const FrontSection: React.FC<FrontSectionProps> = () => {
         <BubbleOne />
         <BubbleThree />
         <WrapperImgPosition>
-          <FloatingWrapperStatic
-            top='10%'
-            left='0%'
-            opacity='0.19'
+          <FloatingWrapperCustom
+            top='80%'
+            left='36%'
+            opacity='0.15'
             content='Adrenaline'
           >
             <ImgSmall src={Adrenaline} />
-          </FloatingWrapperStatic>
+          </FloatingWrapperCustom>
         </WrapperImgPosition>
         <BubbleOneBlurryStatic
           width='5rem'
@@ -40,7 +42,7 @@ const FrontSection: React.FC<FrontSectionProps> = () => {
           right='18%'
         />
         <BubbleOneBlurryStatic
-          width='7rem'
+          width='9rem'
           variant='tertiary'
           opacity='0.27'
           top='29%'

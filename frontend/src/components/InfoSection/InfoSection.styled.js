@@ -18,6 +18,7 @@ export const InfoSec = styled.div`
     paddingTop === 'small' ? 'padding: 10px 0;' : 'padding: 160px 0;'};
 
   ${(props) => handleSectionColor(props).sectionBackground}
+  opacity: 0.8;
   ${(props) => handleSectionColor(props).sectionBackgroundGradient}
   @media (max-width: 880px) {
     padding: 0px 0;
@@ -130,9 +131,9 @@ export const TopLine = styled.div`
 export const Heading = styled.h1`
   margin-bottom: 24px;
   font-size: 48px;
-  line-height: 1.1;
+  line-height: 1.05;
   /* headingColor */
-  color: ${(props) => handleSectionColor(props).toplineColor};
+  ${(props) => handleSectionColor(props).headingColor};
   @media screen and (max-width: 760px) {
     font-size: 36px;
   }

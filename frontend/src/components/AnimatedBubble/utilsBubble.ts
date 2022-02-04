@@ -17,15 +17,11 @@ const secondaryStyle: StyleVariant = {
     radial-gradient(ellipse at bottom, var(--bluegreen11), transparent);`,
     bubbleShadow: `inset -10px -10px 30px var(--bluegreen7),
     10px 10px 20px var(--bluegreen7), inset 0px 0px 10px var(--bluegreen11);`,
-    // bubbleShadow: `inset -10px -10px 100px var(--bluegreen7),
-    // 10px 10px 20px var(--background7-main), inset 0px 0px 10px var(--background7-main);`,
 
-    // bubbleShadow: `none`,
 }
 const tertiaryStyle: StyleVariant = {
-    bubbleBackground: `radial-gradient(circle at 100%, var(--bluegreen10), var(--bluegreen10) 50%, var(--bluegreen10) 75%, var(--bluegreen10) 75%);`,
-    bubbleShadow: `inset -10px -10px 50px var(--bluegreen9),
-    10px 10px 20px var(--background3-main), inset 0px 0px 10px var(--background2-main);`,
+    bubbleBackground: `radial-gradient(circle at 100%, var(--background-blue1), var(--background-blue2) 50%, var(--bluegreen1) 75%, var(--bluegreen1) 75%);`,
+    bubbleShadow: `inset -10px -10px 50px var(--background-blue3), inset -10px -10px 30px var(--background-blue6), 10px 10px 20px var(--background-blue6), inset 0px 0px 10px var(--background-blue1);`,
 }
 
 

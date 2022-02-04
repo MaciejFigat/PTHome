@@ -20,11 +20,12 @@ interface StyleVariant {
 
 const primaryStyle: StyleVariant = {
 
-    sectionBackground: `var(--background1-main);`,
+    // sectionBackground: `var(--background1-main);`,
+    sectionBackground: `var(--bluegreen5);`,
     color: `var(--background5-main);`,
-    subtitleColor: 'var(--background5-main);',
-    headingColor: 'var(--background5-main);',
-    toplineColor: 'var(--background5-main);',
+    subtitleColor: 'var(--bluegreen9);',
+    headingColor: 'var(--bluegreen4);',
+    toplineColor: 'var(--bluegreen9);',
     buttonColor: 'var(--background5-main);',
     buttonBackground: 'var(--background2-main);',
     buttonBackgroundHover: 'var(--background4-main);',
@@ -34,29 +35,39 @@ const primaryStyle: StyleVariant = {
 
 const secondaryStyle: StyleVariant = {
 
-    sectionBackground: `var(--secondary3);`,
-    color: `var(--background1-main);`,
-    subtitleColor: 'var(--secondary1);',
-    headingColor: 'var(--secondary5);',
-    toplineColor: 'var(--secondary2);',
+    sectionBackground: `var(--bluegreen4);`,
+    color: `var(--bluegreen9);`,
+    subtitleColor: 'var(--background1-main);',
+    headingColor: 'var(--bluegreen6);',
+    toplineColor: 'var(--bluegreen3);',
     buttonColor: 'var(--secondary4);',
     buttonBackground: 'var(--secondary1);',
     buttonBackgroundHover: 'var(--secondary2);',
     buttonColorHover: 'var(--secondary1);'
 
+
 }
 
 const tertiaryStyle: StyleVariant = {
 
-    sectionBackground: `var(--background-tertiary1);`,
+    sectionBackground: `var(--bluegreen8);`,
     color: `var(--background-tertiary2);`,
-    subtitleColor: 'var(--background-tertiary4);',
-    headingColor: 'var(--background-tertiary5);',
-    toplineColor: 'var(--background-tertiary3);',
+    subtitleColor: 'var(--bluegreen6);',
+    headingColor: 'var(--bluegreen7);',
+    toplineColor: 'var(--bluegreen6);',
     buttonColor: 'var(--background-tertiary4);',
     buttonBackground: 'var(--background-tertiary5);',
     buttonBackgroundHover: 'var(--background-tertiary4);',
     buttonColorHover: 'var(--background-tertiary1);'
+    // sectionBackground: `var(--background-tertiary1);`,
+    // color: `var(--background-tertiary2);`,
+    // subtitleColor: 'var(--background-tertiary4);',
+    // headingColor: 'var(--background-tertiary5);',
+    // toplineColor: 'var(--background-tertiary3);',
+    // buttonColor: 'var(--background-tertiary4);',
+    // buttonBackground: 'var(--background-tertiary5);',
+    // buttonBackgroundHover: 'var(--background-tertiary4);',
+    // buttonColorHover: 'var(--background-tertiary1);'
 }
 const blueStyle: StyleVariant = {
 
