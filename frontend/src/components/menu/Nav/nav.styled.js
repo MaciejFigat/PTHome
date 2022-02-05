@@ -145,7 +145,7 @@ export const NavList = styled.ul`
     padding-bottom: 3rem;
     gap: 1.75rem;
   }
-  @media (max-width: 700px) and (orientation: landscape) {
+  @media (max-width: 1020px) and (orientation: landscape) {
     margin-top: 1rem;
     padding-bottom: 1.75rem;
     gap: 0.75rem;
