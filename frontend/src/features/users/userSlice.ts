@@ -49,7 +49,39 @@ export const sendUserId = createAsyncThunk(
         }
     }
 )
+// Thunk for resetting the password 
+// we find the user by the email and get his data -> in order to create a link, that will be sent to his email, used to redirect him into user update page  
+// 
+export const sendUserIdToResetPassword = createAsyncThunk(
+    'user/resetPassword',
 
+    async (userLogin: UserLogin) => {
+
+        const { email } = userLogin
+        try {
+
+            const config = {
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            }
+            const { data } = await axios.post(
+                '/api/users/resetPassword',
+                { email },
+                config
+            )
+
+            localStorage.setItem('userInfo', JSON.stringify(data))
+
+            return data
+
+        } catch (error: any) {
+            return error
+        }
+    }
+)
+
+// 
 interface NewUserInfo {
     name: string
     email: string
@@ -278,6 +310,21 @@ const userSlice = createSlice({
 
         })
         builder.addCase(sendUserId.rejected, (state, action) => {
+            state.loading = false
+
+        })
+        builder.addCase(sendUserIdToResetPassword.pending, (state, action) => {
+            state.loading = true
+
+        })
+        builder.addCase(sendUserIdToResetPassword.fulfilled, (state, action) => {
+            state.loading = false
+            state.userInfo = (action.payload.name !== 'Error') && { id: action.payload._id, name: action.payload.name, email: action.payload.email, isAdmin: action.payload.isAdmin, token: action.payload.token }
+            state.error = action.payload.message
+
+
+        })
+        builder.addCase(sendUserIdToResetPassword.rejected, (state, action) => {
             state.loading = false
 
         })

@@ -2,6 +2,28 @@ import asyncHandler from 'express-async-handler'
 import generateToken from '../utilities/generateToken'
 import User from '../models/userModel'
 
+// @description authenticate user & get token - give email and send link to reset password
+// @route POST /api/users/resetPassword
+// @access Public
+const resetUserPassword = asyncHandler(async (req, res) => {
+    const { email } = req.body
+    const user = await User.findOne({ email: email })
+
+    if (user) {
+        res.json({
+            _id: user._id,
+            name: user.name,
+            email: user.email,
+            isAdmin: user.isAdmin,
+            token: generateToken(user._id),
+        })
+    } else {
+        res.status(401)
+        throw new Error('Wrong username or password')
+    }
+})
+
+
 // @description authenticate user & get token
 // @route POST /api/users/login
 // @access Public
