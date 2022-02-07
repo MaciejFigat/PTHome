@@ -40,22 +40,13 @@ const resetUserPassword = asyncHandler(async (req, res) => {
 
     // find user by the resetToken
 
+
     const { resetPasswordToken } = req.body
 
-
     const user = await User.findOne({
-        resetPasswordToken: resetPasswordToken,
+        resetPasswordToken: resetPasswordToken
     })
 
-    // const user = await User.findOne({
-    //     resetPasswordToken: resetPasswordToken, resetPasswordExpires: {
-    //         [Op.gt]: Date.now(),
-    //     }
-    // })
-
-    // after I found the corresponding user I log him in
-
-    // if (user && user.resetPasswordToken === resetPasswordToken) {
     if (user) {
         res.json({
             _id: user._id,
@@ -64,6 +55,8 @@ const resetUserPassword = asyncHandler(async (req, res) => {
             isAdmin: user.isAdmin,
             token: generateToken(user._id),
         })
+
+
     } else {
         res.status(401)
         throw new Error('Password reset link is invalid or has expired')
@@ -92,9 +85,11 @@ const authUser = asyncHandler(async (req, res) => {
         throw new Error('Wrong username or password')
     }
 })
-const resetUserPassword1 = asyncHandler(async (req, res) => {
-    const { email } = req.body
-    const user = await User.findOne({ email: email })
+
+const testReset = asyncHandler(async (req, res) => {
+
+    const { resetPasswordToken } = req.body
+    const user = await User.findOne({ resetPasswordToken: resetPasswordToken })
 
     if (user) {
         res.json({
@@ -270,4 +265,5 @@ export {
     getUserProfile,
     resetUserPassword,
     forgotUserPassword,
+    testReset,
 }

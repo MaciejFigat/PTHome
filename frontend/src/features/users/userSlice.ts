@@ -85,6 +85,28 @@ export const sendEmailToResetPassword = createAsyncThunk(
         }
     }
 )
+interface UserToken {
+    resetPasswordToken: string | any
+}
+export const testResetPassword = createAsyncThunk(
+    'user/test',
+
+    async (userToken: UserToken) => {
+
+        const { resetPasswordToken } = userToken
+        try {
+            const { data } = await axios.post(
+                // `/api/users/passwordReset?resetPasswordToken=${resetPasswordToken}`
+                '/api/users/test',
+                { resetPasswordToken }
+            )
+            return data
+
+        } catch (error: any) {
+            return error
+        }
+    }
+)
 
 // 
 interface NewUserInfo {
@@ -315,6 +337,21 @@ const userSlice = createSlice({
 
         })
         builder.addCase(sendUserId.rejected, (state, action) => {
+            state.loading = false
+
+        })
+        builder.addCase(testResetPassword.pending, (state, action) => {
+            state.loading = true
+
+        })
+        builder.addCase(testResetPassword.fulfilled, (state, action) => {
+            state.loading = false
+            state.userInfo = (action.payload.name !== 'Error') && { id: action.payload._id, name: action.payload.name, email: action.payload.email, isAdmin: action.payload.isAdmin, token: action.payload.token }
+            state.error = action.payload.message
+
+
+        })
+        builder.addCase(testResetPassword.rejected, (state, action) => {
             state.loading = false
 
         })

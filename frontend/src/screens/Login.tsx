@@ -1,7 +1,11 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useAppDispatch } from '../app/reduxHooks'
-import { logout, sendUserId } from '../features/users/userSlice'
+import {
+  logout,
+  sendUserId,
+  testResetPassword,
+} from '../features/users/userSlice'
 import {
   Wrapper,
   Form,
@@ -39,6 +43,13 @@ const Login: React.FC<LoginProps> = () => {
     dispatch(sendEmailToResetPassword(userEmail))
     console.log(email)
   }
+  const userToken = {
+    resetPasswordToken: 'e4cce7334f1776b91b330bb6731f2e3bfee33ccb',
+  }
+  const testHandler = (e: any) => {
+    e.preventDefault()
+    dispatch(testResetPassword(userToken))
+  }
   return (
     <LoginContainer>
       <Wrapper>
@@ -68,8 +79,12 @@ const Login: React.FC<LoginProps> = () => {
           <Title>
             Forgot the password - please type the email and click
             <LoginLink onClick={resetPasswordHandler}>
-              &nbsp;reset password.
+              reset password.
             </LoginLink>
+          </Title>
+          <Title>
+            test it
+            <LoginLink onClick={testHandler}>test</LoginLink>
           </Title>
         </Form>
 
