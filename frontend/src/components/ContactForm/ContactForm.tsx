@@ -14,11 +14,12 @@ import {
 import { SendButton } from '../Buttons/Buttons.styled'
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 interface ContactFormProps {}
 
 const ContactForm: React.FC<ContactFormProps> = () => {
   const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
+  const [email, setEmail] = useState<string>('')
   const [formMessage, setFormMessage] = useState('')
   const [toastOption, setToastOption] = useState<
     'noneEmail' | 'sentEmail' | 'errorEmail' | 'warningEmail'

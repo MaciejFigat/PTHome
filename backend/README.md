@@ -102,3 +102,20 @@ joi for veryfication
 3. Configure The Email Transporter
 utils/sendEmail.ts 
 4. passwordResetRoutes & passwordResetController
+
+<!-- different approach to resetting the password -->
+1. sendUserIdToResetPassword - frontend - thunk to hit the /users/resetPassword route
+2. resetUserPassword - controller
+3. users/resetPassword
+
+
+<!-- yet another way of resetting the password via email -->
+
+1. Added   `resetPasswordToken: { type: String, required: false, }, resetPasswordExpires: { type: Date, required: false, },` to userModel.ts 
+2. Added forgotPassword route to user routes - this will be hit when user requests to have an email sent to reset the password -
+3. added forgotUserPassword controller - it will be used in the beforementioned route
+4. installed crypto to generate a resetToken
+<!-- up to this point it works, ie. I create a token and expiration date in the user object -->
+5. create a route resetUserPassword when hit it would find the user by the resetToken provided
+after finding the user it would log him in and enable the password update
+6. install sequelize to compare the expiration date of resetToken

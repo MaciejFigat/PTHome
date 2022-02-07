@@ -1,14 +1,61 @@
 import asyncHandler from 'express-async-handler'
 import generateToken from '../utilities/generateToken'
 import User from '../models/userModel'
+import crypto from 'crypto'
+// sequelize is to compare reset token expiration date with the day of the request to reset 
+import Sequelize from 'sequelize';
 
-// @description authenticate user & get token - give email and send link to reset password
-// @route POST /api/users/resetPassword
+// @description user provides an email and send link to reset password
+// @route POST /api/users/forgotPassword
 // @access Public
-const resetUserPassword = asyncHandler(async (req, res) => {
+const forgotUserPassword = asyncHandler(async (req, res) => {
     const { email } = req.body
+    // if email provided is empty 
+    if (email === '') {
+        res.status(400).send('email required');
+    }
     const user = await User.findOne({ email: email })
 
+    if (user) {
+        // create reset token 
+        const resetToken = crypto.randomBytes(20).toString('hex')
+        // save it to the user as resetPasswordToken
+        await user.updateOne({
+            resetPasswordToken: resetToken,
+            resetPasswordExpires: Date.now() + 3600000,
+        })
+
+    } else {
+        res.status(401)
+        throw new Error('Email is not in our database')
+    }
+})
+
+// @description authenticate user & get token - give email and send link to reset password
+// @route GET/api/users/resetPassword
+// @access Public
+const Op = Sequelize.Op;
+
+const resetUserPassword = asyncHandler(async (req, res) => {
+
+    // find user by the resetToken
+
+    const { resetPasswordToken } = req.body
+
+
+    const user = await User.findOne({
+        resetPasswordToken: resetPasswordToken,
+    })
+
+    // const user = await User.findOne({
+    //     resetPasswordToken: resetPasswordToken, resetPasswordExpires: {
+    //         [Op.gt]: Date.now(),
+    //     }
+    // })
+
+    // after I found the corresponding user I log him in
+
+    // if (user && user.resetPasswordToken === resetPasswordToken) {
     if (user) {
         res.json({
             _id: user._id,
@@ -19,7 +66,7 @@ const resetUserPassword = asyncHandler(async (req, res) => {
         })
     } else {
         res.status(401)
-        throw new Error('Wrong username or password')
+        throw new Error('Password reset link is invalid or has expired')
     }
 })
 
@@ -43,6 +90,23 @@ const authUser = asyncHandler(async (req, res) => {
     } else {
         res.status(401)
         throw new Error('Wrong username or password')
+    }
+})
+const resetUserPassword1 = asyncHandler(async (req, res) => {
+    const { email } = req.body
+    const user = await User.findOne({ email: email })
+
+    if (user) {
+        res.json({
+            _id: user._id,
+            name: user.name,
+            email: user.email,
+            isAdmin: user.isAdmin,
+            token: generateToken(user._id),
+        })
+    } else {
+        res.status(401)
+        throw new Error('why it is not working')
     }
 })
 
@@ -194,26 +258,7 @@ const getUserProfile = asyncHandler(async (req: any, res: any) => {
     }
 })
 
-// @description reset/recover user password with email (by the User)
-// @route GET /api/users/profile
-// @access private
 
-// const resetUserPassword = asyncHandler(async (req: any, res: any) => {
-
-//     const user = await User.findById(req.user.email)
-
-//     if (user) {
-//         res.json({
-//             _id: user._id,
-//             name: user.name,
-//             email: user.email,
-//             isAdmin: user.isAdmin,
-//         })
-//     } else {
-//         res.status(404)
-//         throw new Error('User not found')
-//     }
-// })
 export {
     authUser,
     registerUser,
@@ -223,4 +268,6 @@ export {
     getUserById,
     updateUserProfile,
     getUserProfile,
+    resetUserPassword,
+    forgotUserPassword,
 }

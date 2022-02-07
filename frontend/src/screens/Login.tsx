@@ -12,7 +12,7 @@ import {
   LoginContainer,
 } from '../styles/login'
 import useRedirectLoggedListener from '../hooks/useRedirectListenerLogged'
-
+import { sendEmailToResetPassword } from '../features/users/userSlice'
 interface LoginProps {}
 
 const Login: React.FC<LoginProps> = () => {
@@ -33,7 +33,12 @@ const Login: React.FC<LoginProps> = () => {
     e.preventDefault()
     dispatch(logout())
   }
-
+  const userEmail = { email }
+  const resetPasswordHandler = (e: any) => {
+    e.preventDefault()
+    dispatch(sendEmailToResetPassword(userEmail))
+    console.log(email)
+  }
   return (
     <LoginContainer>
       <Wrapper>
@@ -59,6 +64,12 @@ const Login: React.FC<LoginProps> = () => {
             <Link to='/register'>
               <LoginLink>&nbsp;register.</LoginLink>
             </Link>
+          </Title>
+          <Title>
+            Forgot the password - please type the email and click
+            <LoginLink onClick={resetPasswordHandler}>
+              &nbsp;reset password.
+            </LoginLink>
           </Title>
         </Form>
 

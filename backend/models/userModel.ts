@@ -8,6 +8,8 @@ export interface User extends Document {
     password: string
     isAdmin?: boolean
     matchPassword: (password: string) => Promise<boolean>
+    resetPasswordToken?: string | number,
+    resetPasswordExpires?: string | number | any,
 }
 
 const userSchema = new Schema<User>(
@@ -29,6 +31,14 @@ const userSchema = new Schema<User>(
             type: Boolean,
             required: true,
             default: false,
+        },
+        resetPasswordToken: {
+            type: String,
+            required: false,
+        },
+        resetPasswordExpires: {
+            type: Date,
+            required: false,
         },
 
     },
