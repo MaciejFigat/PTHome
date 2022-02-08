@@ -38,6 +38,7 @@ const Login: React.FC<LoginProps> = () => {
     dispatch(logout())
   }
   const userEmail = { email }
+
   const resetPasswordHandler = (e: any) => {
     e.preventDefault()
     dispatch(sendEmailToResetPassword(userEmail))

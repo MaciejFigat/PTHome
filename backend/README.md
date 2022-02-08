@@ -84,8 +84,8 @@ const add: Add = x => {
 
 0. <!-- Nodemailer functionality -->
 npm install nodemailer joi
-joi for veryfication
-
+<!-- joi for veryfication -->
+<!-- 
 1. added Joi methods in userModel.ts
 
 `export const validate = (user: User) => {
@@ -95,13 +95,13 @@ joi for veryfication
         password: Joi.string().required(),
     });
     return schema.validate(user);
-};`
+};` -->
 <!-- maybe the export will work -->
 
 2. create tokenSchema
 3. Configure The Email Transporter
 utils/sendEmail.ts 
-4. passwordResetRoutes & passwordResetController
+<!-- 4. passwordResetRoutes & passwordResetController  -->
 
 <!-- different approach to resetting the password -->
 1. sendUserIdToResetPassword - frontend - thunk to hit the /users/resetPassword route

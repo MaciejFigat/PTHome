@@ -1,6 +1,6 @@
 import { model, Schema, Document } from 'mongoose'
 import bcrypt from 'bcryptjs'
-import Joi from 'joi'
+
 
 export interface User extends Document {
     name: string
@@ -62,14 +62,7 @@ userSchema.pre('save', async function (this: any, next: Function,) {
 
 const User = model<User>('User', userSchema)
 
-export const validate = (user: User) => {
-    const schema = Joi.object({
-        name: Joi.string().required(),
-        email: Joi.string().email().required(),
-        password: Joi.string().required(),
-    });
-    return schema.validate(user);
-};
+
 
 export default User
 
