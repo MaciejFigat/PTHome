@@ -1,95 +1,36 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
 import { useAppDispatch } from '../app/reduxHooks'
-import {
-  logout,
-  sendUserId,
-  testResetPassword,
-} from '../features/users/userSlice'
-import {
-  Wrapper,
-  Form,
-  Input,
-  Button,
-  Title,
-  LoginLink,
-  LoginContainer,
-} from '../styles/login'
+import { testResetPassword } from '../features/users/userSlice'
+import { Wrapper, Form, Input, Button, LoginContainer } from '../styles/login'
 import useRedirectLoggedListener from '../hooks/useRedirectListenerLogged'
-import { sendEmailToResetPassword } from '../features/users/userSlice'
+
 interface ResetPasswordProps {}
 
 const ResetPassword: React.FC<ResetPasswordProps> = () => {
   const dispatch = useAppDispatch()
 
   useRedirectLoggedListener()
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-
-  const userInfo = { email, password }
-
+  const [token, setToken] = useState<string | number | any>('')
+  // e4cce7334f1776b91b330bb6731f2e3bfee33ccb
   const submitHandler = (e: any) => {
     e.preventDefault()
-    dispatch(sendUserId(userInfo))
+    dispatch(testResetPassword(token))
   }
 
-  const logoutHandler = (e: any) => {
-    e.preventDefault()
-    dispatch(logout())
-  }
-  const userEmail = { email }
-
-  const resetPasswordHandler = (e: any) => {
-    e.preventDefault()
-    dispatch(sendEmailToResetPassword(userEmail))
-    console.log(email)
-  }
-  const userToken = {
-    resetPasswordToken: 'e4cce7334f1776b91b330bb6731f2e3bfee33ccb',
-  }
-  const testHandler = (e: any) => {
-    e.preventDefault()
-    dispatch(testResetPassword(userToken))
-  }
   return (
     <LoginContainer>
       <Wrapper>
-        <h3>Welcome back</h3>
+        <h3>Please copy token you received on your email.</h3>
         <Form onSubmit={submitHandler}>
           <Input
-            type='email'
-            name='email'
-            placeholder='Enter your email'
-            value={email}
-            onChange={(e: any) => setEmail(e.target.value)}
-          />
-          <Input
-            type='password'
-            name='password'
-            placeholder='Enter your password'
-            value={password}
-            onChange={(e: any) => setPassword(e.target.value)}
+            type='token'
+            name='token'
+            placeholder='Enter your token'
+            value={token}
+            onChange={(e: any) => setToken(e.target.value)}
           />
           <Button>Login</Button>
-          <Title>
-            Please feel free to{' '}
-            <Link to='/register'>
-              <LoginLink>&nbsp;register.</LoginLink>
-            </Link>
-          </Title>
-          <Title>
-            Forgot the password - please type the email and click
-            <LoginLink onClick={resetPasswordHandler}>
-              reset password.
-            </LoginLink>
-          </Title>
-          <Title>
-            test it
-            <LoginLink onClick={testHandler}>test</LoginLink>
-          </Title>
         </Form>
-
-        <Button onClick={logoutHandler}>Logout</Button>
       </Wrapper>
     </LoginContainer>
   )

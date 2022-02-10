@@ -21,6 +21,7 @@ import UserProfile from './screens/UserProfile'
 import AdminPanel from './screens/AdminPanel'
 import BlogAdminPreview from './screens/BlogAdminPreview'
 import BlogAdminEditPreview from './screens/BlogAdminEditPreview'
+import ResetPassword from './screens/ResetPassword'
 
 function App() {
   const location = useLocation()
@@ -39,6 +40,7 @@ function App() {
         <Route path='/contact' element={<Contact />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
+        <Route path='/resetpassword' element={<ResetPassword />} />
         <Route path='/blog' element={<Blog />} />
         <Route path='/blog/article/:id' element={<BlogArticle />} />
         <Route path='/admin' element={<AdminPanel />} />
