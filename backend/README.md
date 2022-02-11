@@ -107,3 +107,40 @@ utils/sendEmail.ts
 5. create a route resetUserPassword when hit it would find the user by the resetToken provided
 after finding the user it would log him in and enable the password update
 6. install sequelize to compare the expiration date of resetToken
+
+
+* Signup Confirmation Email With Node.js 
+|   ├── 
+1.  Prepare the User Model
+ adding status:
+  ├──  new user will be created with “Pending” status by default
+ `status: {
+      type: String, 
+      enum: ['Pending', 'Active'],
+      default: 'Pending'
+    },`
+adding confirmationCode
+  ├── `confirmationCode: { 
+      type: String, 
+      unique: true },`
+2. Login procedures change:
+Only users with `status : active` will be able to login
+||||| when I hit users/login route |||||   ├── if (user.status != "Active") {
+        return res.status(401).send({
+          message: "Pending Account. Please Verify Your Email!",
+        });
+      }
+
+2. Register procedures change:      
+   ├── create registration token - I think similar to the one used for resetting the password will suffice 
+   ├── so when users/register route is hit it will create a token for registration 
+3.  Create the confirmation route
+        ├── backend route that changes status on Active after comparing the registration token with the one in the db
+4. Send the Confirmation Email
+|email|_https:__&token____=>||change the status from `Pending` to `Active`||
+||||||||_________________________|||||||||||||||||
+         ├── will hit a 
+|   ├── 
+|   ├── 
+|   ├── 
+|   ├── 
