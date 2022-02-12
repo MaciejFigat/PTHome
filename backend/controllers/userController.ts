@@ -31,6 +31,32 @@ const forgotUserPassword = asyncHandler(async (req, res) => {
     }
 })
 
+// @description user provides an email and send link to reset password
+// @route PUT /api/users/confirmation
+// @access Public
+const confirmUser = asyncHandler(async (req, res) => {
+    const { email } = req.body
+    // if email provided is empty 
+    if (email === '') {
+        res.status(400).send('email required');
+    }
+    const user = await User.findOne({ confirmationCode: req.params.confirmationCode })
+    // here -!!!!!!!!!!!!!!!!!!!!!!!!!!
+    if (user) {
+        // create reset token 
+        const resetToken = crypto.randomBytes(20).toString('hex')
+        // save it to the user as resetPasswordToken
+        await user.updateOne({
+            resetPasswordToken: resetToken,
+            resetPasswordExpires: Date.now() + 3600000,
+        })
+
+    } else {
+        res.status(401)
+        throw new Error('Email is not in our database')
+    }
+})
+
 // @description authenticate user & get token - give email and send link to reset password
 // @route GET/api/users/resetPassword
 // @access Public
@@ -266,4 +292,5 @@ export {
     resetUserPassword,
     forgotUserPassword,
     testReset,
+    confirmUser
 }

@@ -144,6 +144,8 @@ Only users with `status : active` will be able to login
          ├── will hit a 
 5. Create a welcome screen
 
+...confirmUser controller
+
 
 |   ├──user model updated 
 |   ├── 
