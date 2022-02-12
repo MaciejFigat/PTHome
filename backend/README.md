@@ -136,11 +136,16 @@ Only users with `status : active` will be able to login
    ├── so when users/register route is hit it will create a token for registration 
 3.  Create the confirmation route
         ├── backend route that changes status on Active after comparing the registration token with the one in the db
+            ├──
+        `User.findOne({confirmationCode: req.params.confirmationCode})`
 4. Send the Confirmation Email
 |email|_https:__&token____=>||change the status from `Pending` to `Active`||
 ||||||||_________________________|||||||||||||||||
          ├── will hit a 
-|   ├── 
+5. Create a welcome screen
+
+
+|   ├──user model updated 
 |   ├── 
 |   ├── 
 |   ├── 

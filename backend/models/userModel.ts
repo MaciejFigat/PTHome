@@ -10,6 +10,8 @@ export interface User extends Document {
     matchPassword: (password: string) => Promise<boolean>
     resetPasswordToken?: string | number,
     resetPasswordExpires?: string | number | any,
+    status: 'Pending' | 'Active'
+    confirmationCode: string | number | any,
 }
 
 const userSchema = new Schema<User>(
@@ -39,6 +41,15 @@ const userSchema = new Schema<User>(
         resetPasswordExpires: {
             type: Date,
             required: false,
+        },
+        status: {
+            type: String,
+            enum: ['Pending', 'Active'],
+            default: 'Pending'
+        },
+        confirmationCode: {
+            type: String,
+            unique: true
         },
 
     },
