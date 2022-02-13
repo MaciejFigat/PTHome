@@ -5,7 +5,7 @@ import crypto from 'crypto'
 // sequelize is to compare reset token expiration date with the day of the request to reset 
 import Sequelize from 'sequelize';
 
-// @description user provides an email and send link to reset password
+// @description user provides an email, requests the reset of the password -> sends a link to reset password
 // @route POST /api/users/forgotPassword
 // @access Public
 const forgotUserPassword = asyncHandler(async (req, res) => {
@@ -31,29 +31,53 @@ const forgotUserPassword = asyncHandler(async (req, res) => {
     }
 })
 
-// @description user provides an email and send link to reset password
+// @description user confirms his status through a link with a confirmation token, changes status from pending to active 
 // @route PUT /api/users/confirmation
 // @access Public
 const confirmUser = asyncHandler(async (req, res) => {
-    const { email } = req.body
-    // if email provided is empty 
-    if (email === '') {
-        res.status(400).send('email required');
-    }
+    const { confirmationCode } = req.body
     const user = await User.findOne({ confirmationCode: req.params.confirmationCode })
-    // here -!!!!!!!!!!!!!!!!!!!!!!!!!!
     if (user) {
-        // create reset token 
-        const resetToken = crypto.randomBytes(20).toString('hex')
-        // save it to the user as resetPasswordToken
         await user.updateOne({
-            resetPasswordToken: resetToken,
-            resetPasswordExpires: Date.now() + 3600000,
+            confirmationCode: 'Active'
         })
 
     } else {
         res.status(401)
-        throw new Error('Email is not in our database')
+        throw new Error('confirmation code invalid')
+    }
+})
+// @description admin changes user status from pending to active or pending or create the status: pending for old users
+// @route PUT /api/users/adminconfirmation
+// @access private/Admin
+const confirmUserByAdmin = asyncHandler(async (req, res) => {
+
+    const user = await User.findById(req.params.id)
+
+    if (user && user.confirmationCode === 'Pending') {
+        await user.updateOne({
+            status: 'Active'
+        })
+        res.json({ message: 'User status changed to Active' })
+    } else if (user && user.confirmationCode === 'Active') {
+        await user.updateOne({
+            status: 'Pending'
+        })
+        res.json({ message: 'User status changed to Pending' })
+
+    } else if (user && !user.confirmationCode) {
+
+        const confirmationToken = crypto.randomBytes(20).toString('hex')
+
+        await user.updateOne({
+            confirmationCode: confirmationToken,
+            status: 'Pending'
+        })
+        res.json({ message: 'User status pending added and confirmation code created' })
+    }
+    else {
+        res.status(401)
+        throw new Error('user does not exist')
     }
 })
 
@@ -292,5 +316,6 @@ export {
     resetUserPassword,
     forgotUserPassword,
     testReset,
-    confirmUser
+    confirmUser,
+    confirmUserByAdmin,
 }

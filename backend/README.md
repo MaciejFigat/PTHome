@@ -148,6 +148,16 @@ Only users with `status : active` will be able to login
 
 
 |   ├──user model updated 
+|        ├── confirmationCode
+|        ├── status: Active | Pending
+
+
+/adminconfirmation').put(confirmUserByAdmin)
+| route  ├──/userconfirmation  - put - (confirmUser) - users passess confirmationCode from a link and it changes the status to active 
+| route  ├── /adminconfirmation - put - confirmUserByAdmin - admin changes the status, passes id in request
+| route  ├── 
 |   ├── 
 |   ├── 
 |   ├── 
+|   ├── 
+
