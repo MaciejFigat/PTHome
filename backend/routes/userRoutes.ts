@@ -25,9 +25,10 @@ router.route('/passwordReset').get(resetUserPassword)
 router.route('/test').post(testReset)
 
 router.route('/userconfirmation').put(confirmUser)
-router.route('/adminconfirmation').put(protect, admin, confirmUserByAdmin)
-router.route('/adminconfirmationolduser').post(protect, admin, confirmOldUserByAdmin)
 
+router.route('/adminconfirmation').put(protect, admin, confirmUserByAdmin).post(protect, admin, confirmOldUserByAdmin)
+
+// router.route('/adminconfirmationolduser')
 
 router.post('/login', authUser)
 

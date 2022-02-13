@@ -39,7 +39,7 @@ const confirmUser = asyncHandler(async (req, res) => {
     const user = await User.findOne({ confirmationCode: req.params.confirmationCode })
     if (user) {
         await user.updateOne({
-            confirmationCode: 'Active'
+            status: 'Active'
         })
 
     } else {
@@ -72,7 +72,7 @@ const confirmUserByAdmin = asyncHandler(async (req, res) => {
     }
 })
 // @description admin changes adds status: active and creates confirmationCode
-// @route POST /api/users/adminconfirmationolduser/:id
+// @route POST /api/users/adminconfirmation/:id
 // @access private/Admin
 const confirmOldUserByAdmin = asyncHandler(async (req, res) => {
 
@@ -181,10 +181,14 @@ const registerUser = asyncHandler(async (req, res) => {
         res.status(400)
         throw new Error('User already exists')
     }
+    const confirmationToken = crypto.randomBytes(20).toString('hex')
+
     const user = await User.create({
         name,
         email,
         password,
+        status: 'Pending',
+        confirmationCode: confirmationToken,
     })
 
     if (user) {
