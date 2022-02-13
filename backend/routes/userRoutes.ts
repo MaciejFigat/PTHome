@@ -12,7 +12,8 @@ import {
     forgotUserPassword,
     testReset,
     confirmUser,
-    confirmUserByAdmin
+    confirmUserByAdmin,
+    confirmOldUserByAdmin
 } from '../controllers/userController'
 import { protect, admin } from '../middleware/authMiddleware'
 const router = express.Router()
@@ -24,7 +25,8 @@ router.route('/passwordReset').get(resetUserPassword)
 router.route('/test').post(testReset)
 
 router.route('/userconfirmation').put(confirmUser)
-router.route('/adminconfirmation').put(confirmUserByAdmin)
+router.route('/adminconfirmation').put(protect, admin, confirmUserByAdmin)
+router.route('/adminconfirmationolduser').post(protect, admin, confirmOldUserByAdmin)
 
 
 router.post('/login', authUser)

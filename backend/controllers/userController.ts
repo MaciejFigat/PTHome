@@ -47,8 +47,8 @@ const confirmUser = asyncHandler(async (req, res) => {
         throw new Error('confirmation code invalid')
     }
 })
-// @description admin changes user status from pending to active or pending or create the status: pending for old users
-// @route PUT /api/users/adminconfirmation
+// @description admin changes user status from pending to active or pending 
+// @route PUT /api/users/adminconfirmation/:id
 // @access private/Admin
 const confirmUserByAdmin = asyncHandler(async (req, res) => {
 
@@ -65,15 +65,28 @@ const confirmUserByAdmin = asyncHandler(async (req, res) => {
         })
         res.json({ message: 'User status changed to Pending' })
 
-    } else if (user && !user.confirmationCode) {
+    }
+    else {
+        res.status(401)
+        throw new Error('user does not exist')
+    }
+})
+// @description admin changes adds status: active and creates confirmationCode
+// @route POST /api/users/adminconfirmationolduser/:id
+// @access private/Admin
+const confirmOldUserByAdmin = asyncHandler(async (req, res) => {
+
+    const user = await User.findById(req.params.id)
+
+    if (user && !user.confirmationCode) {
 
         const confirmationToken = crypto.randomBytes(20).toString('hex')
 
         await user.updateOne({
             confirmationCode: confirmationToken,
-            status: 'Pending'
+            status: 'Active'
         })
-        res.json({ message: 'User status pending added and confirmation code created' })
+        res.json({ message: 'User status active added and confirmation code created' })
     }
     else {
         res.status(401)
@@ -318,4 +331,5 @@ export {
     testReset,
     confirmUser,
     confirmUserByAdmin,
+    confirmOldUserByAdmin,
 }

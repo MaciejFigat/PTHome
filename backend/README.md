@@ -153,9 +153,9 @@ Only users with `status : active` will be able to login
 
 
 /adminconfirmation').put(confirmUserByAdmin)
-| route  ├──/userconfirmation  - put - (confirmUser) - users passess confirmationCode from a link and it changes the status to active 
-| route  ├── /adminconfirmation - put - confirmUserByAdmin - admin changes the status, passes id in request
-| route  ├── 
+| route  ├── /userconfirmation  - put - (confirmUser) - users passess confirmationCode from a link and it changes the status to active 
+| route  ├── /adminconfirmation/:id - put - confirmUserByAdmin - admin changes the status to active|pending, passes id in request
+| route  ├── /adminconfirmationolduser/:id - post - confirmOldUserByAdmin - admin adds status: active and confirmationCode to the old user that created his account durin earlier version of the authentication
 |   ├── 
 |   ├── 
 |   ├── 
