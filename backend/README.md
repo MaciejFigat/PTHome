@@ -159,9 +159,16 @@ Only users with `status : active` will be able to login
 - put - confirmUserByAdmin - admin changes the status to active|pending, passes id in request
 - post - confirmOldUserByAdmin - admin adds status: active and confirmationCode to the old user that created his account durin earlier version of the authentication
 
+registerUser - changelog:
+- added status: 'Pending'
+- added confirmationCode: 
 
-|   ├── 
-- 
+|   ├── thunks in redux 
+-        ├── /adminconfirmation/:id 
+                    ├──  userConfirmByAdmin
+                    ├── oldUserConfirmByAdmin
+    ├── /userconfirmation    
+                    ├── userConfirm   
 - 
 |   ├── 
 |   ├── 

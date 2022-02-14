@@ -54,7 +54,6 @@ export const sendUserId = createAsyncThunk(
 // 
 interface UserEmail {
     email: string
-
 }
 
 export const sendEmailToResetPassword = createAsyncThunk(
@@ -76,8 +75,6 @@ export const sendEmailToResetPassword = createAsyncThunk(
                 config
             )
 
-            // localStorage.setItem('userInfo', JSON.stringify(data))
-
             return data
 
         } catch (error: any) {
@@ -85,6 +82,8 @@ export const sendEmailToResetPassword = createAsyncThunk(
         }
     }
 )
+
+// sending the token logs in the user that requested it
 interface UserToken {
     resetPasswordToken: string | any
 }
@@ -175,12 +174,14 @@ export const updateUserProfile = createAsyncThunk(
     }
 )
 // done by the Admin
-// HERE ------------------------------------------------------------>
-export const userConfirmByAdmin = createAsyncThunk(
-    'user/updateUser',
-    async (updatedUserInfo: UserInfo, thunkAPI) => {
+// Admin can either set status on active or pending for registered
 
-        const { isAdmin, _id } = updatedUserInfo
+export const oldUserConfirmByAdmin = createAsyncThunk(
+    'user/confirmUserByAdmin',
+    async (UserData: UserInfo, thunkAPI) => {
+
+        const { _id } = UserData
+        // const { isAdmin, _id } = UserData
 
         try {
             const state: any = thunkAPI.getState()
@@ -193,8 +194,69 @@ export const userConfirmByAdmin = createAsyncThunk(
             }
 
             const { data } = await axios.put(
-                `/api/users/${_id}`,
-                { name, email, isAdmin },
+                `/api/users/adminconfirmation/${_id}`,
+                // { isAdmin },
+                config
+            )
+            return data
+
+        } catch (error: any) {
+            return error
+
+        }
+    }
+)
+// done by the Admin
+// Admin can either set status on active or pending for registered
+
+export const userConfirmByAdmin = createAsyncThunk(
+    'user/confirmUserByAdmin',
+    async (UserData: UserInfo, thunkAPI) => {
+
+        const { _id } = UserData
+
+        try {
+            const state: any = thunkAPI.getState()
+            const userInfo = state.user.userInfo
+            const config = {
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${userInfo.token}`,
+                },
+            }
+
+            const { data } = await axios.put(
+                `/api/users/adminconfirmation/${_id}`,
+                config
+            )
+            return data
+
+        } catch (error: any) {
+            return error
+
+        }
+    }
+)
+// done by the user
+// users sends activation token to set his status to pending
+interface ConfirmationToken {
+    confirmationToken: string | any
+}
+export const userConfirm = createAsyncThunk(
+    'user/confirmUserByAdmin',
+    async (confirmationToken: ConfirmationToken, thunkAPI) => {
+
+
+
+        try {
+            const config = {
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            }
+            const { data } = await axios.put(
+                '/api/users/userconfirmation',
+                { confirmationToken },
                 config
             )
             return data
