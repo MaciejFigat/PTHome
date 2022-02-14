@@ -175,6 +175,37 @@ export const updateUserProfile = createAsyncThunk(
     }
 )
 // done by the Admin
+// HERE ------------------------------------------------------------>
+export const userConfirmByAdmin = createAsyncThunk(
+    'user/updateUser',
+    async (updatedUserInfo: UserInfo, thunkAPI) => {
+
+        const { isAdmin, _id } = updatedUserInfo
+
+        try {
+            const state: any = thunkAPI.getState()
+            const userInfo = state.user.userInfo
+            const config = {
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${userInfo.token}`,
+                },
+            }
+
+            const { data } = await axios.put(
+                `/api/users/${_id}`,
+                { name, email, isAdmin },
+                config
+            )
+            return data
+
+        } catch (error: any) {
+            return error
+
+        }
+    }
+)
+// done by the Admin
 export const updateUser = createAsyncThunk(
     'user/updateUser',
     async (updatedUserInfo: UserInfo, thunkAPI) => {
