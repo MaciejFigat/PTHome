@@ -35,12 +35,17 @@ const forgotUserPassword = asyncHandler(async (req, res) => {
 // @route PUT /api/users/confirmation
 // @access Public
 const confirmUser = asyncHandler(async (req, res) => {
+
     const { confirmationCode } = req.body
-    const user = await User.findOne({ confirmationCode: req.params.confirmationCode })
+
+    const user = await User.findOne({ confirmationCode: confirmationCode })
+
     if (user) {
-        await user.updateOne({
-            status: 'Active'
-        })
+        const userStatus = 'Active'
+        user.status = userStatus
+        await user.save()
+        res.json({ message: 'User status changed' })
+
 
     } else {
         res.status(401)

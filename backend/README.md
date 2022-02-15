@@ -163,12 +163,12 @@ registerUser - changelog:
 - added status: 'Pending'
 - added confirmationCode: 
 
-|   ├── thunks in redux 
--        ├── /adminconfirmation/:id 
-                    ├──  userConfirmByAdmin
-                    ├── oldUserConfirmByAdmin
+updateUser: to include status change
+
+confirmUser -used by the user by passing the confirmationCode to change the status to active
     ├── /userconfirmation    
-                    ├── userConfirm   
+                    ├── confirmUser
+    tested in FE in userConfirm thunk  in Login.tsx   
 - 
 |   ├── 
 |   ├── 

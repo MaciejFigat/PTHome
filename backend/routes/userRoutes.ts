@@ -13,7 +13,7 @@ import {
     testReset,
     confirmUser,
     confirmUserByAdmin,
-    confirmOldUserByAdmin
+
 } from '../controllers/userController'
 import { protect, admin } from '../middleware/authMiddleware'
 const router = express.Router()
@@ -25,7 +25,8 @@ router.route('/passwordReset').get(resetUserPassword)
 
 router.route('/test').post(testReset)
 
-router.route('/userconfirmation').put(confirmUser)
+// router.route('/userconfirmation').put(confirmUser)
+router.route('/userconfirmation').post(confirmUser)
 
 
 // router.route('/adminconfirmation/:id').put(protect, admin, confirmUserByAdmin)

@@ -4,6 +4,7 @@ import { useAppDispatch } from '../app/reduxHooks'
 import {
   logout,
   sendUserId,
+  testActivateUser,
   testResetPassword,
 } from '../features/users/userSlice'
 import {
@@ -47,9 +48,16 @@ const Login: React.FC<LoginProps> = () => {
   const userToken = {
     resetPasswordToken: 'e4cce7334f1776b91b330bb6731f2e3bfee33ccb',
   }
+  const activationToken = {
+    confirmationCode: '6576c76d847bbe489784967a8e6b6ce2f1be6dfb',
+  }
   const testHandler = (e: any) => {
     e.preventDefault()
     dispatch(testResetPassword(userToken))
+  }
+  const activateHandler = (e: any) => {
+    e.preventDefault()
+    dispatch(testActivateUser(activationToken))
   }
   return (
     <LoginContainer>
@@ -86,6 +94,10 @@ const Login: React.FC<LoginProps> = () => {
           <Title>
             test it
             <LoginLink onClick={testHandler}>test</LoginLink>
+          </Title>
+          <Title>
+            testing testActivateUser
+            <LoginLink onClick={activateHandler}>test</LoginLink>
           </Title>
         </Form>
 

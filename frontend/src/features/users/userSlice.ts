@@ -107,6 +107,29 @@ export const testResetPassword = createAsyncThunk(
         }
     }
 )
+// sending the token logs in the user that requested it
+interface ActivationToken {
+    confirmationCode: string | any
+}
+export const testActivateUser = createAsyncThunk(
+    'user/testActivate',
+
+    async (userToken: ActivationToken) => {
+
+        const { confirmationCode } = userToken
+        try {
+            const { data } = await axios.post(
+
+                '/api/users/userconfirmation',
+                { confirmationCode }
+            )
+            return data
+
+        } catch (error: any) {
+            return error
+        }
+    }
+)
 
 // 
 interface NewUserInfo {
@@ -174,39 +197,7 @@ export const updateUserProfile = createAsyncThunk(
         }
     }
 )
-// done by the Admin
-// Admin can either set status on active or pending for registered
 
-export const oldUserConfirmByAdmin = createAsyncThunk(
-    'user/confirmOldUserByAdmin',
-    async (id: string, thunkAPI) => {
-
-        // const { _id } = UserData
-        // const { isAdmin, _id } = UserData
-
-        try {
-            const state: any = thunkAPI.getState()
-            const userInfo = state.user.userInfo
-            const config = {
-                headers: {
-                    'Content-Type': 'application/json',
-                    Authorization: `Bearer ${userInfo.token}`,
-                },
-            }
-
-            const { data } = await axios.post(
-                `/api/users/adminconfirmation/${id}`,
-                // { isAdmin },
-                config
-            )
-            return data
-
-        } catch (error: any) {
-            return error
-
-        }
-    }
-)
 // done by the Admin
 // Admin can either set status on active or pending for registered
 
@@ -251,13 +242,14 @@ export const userConfirmByAdmin = createAsyncThunk(
 // done by the user
 // users sends activation token to set his status to pending
 interface ConfirmationToken {
-    confirmationToken: string | any
+    confirmationCode: string | any
 }
 export const userConfirm = createAsyncThunk(
     'user/confirmUserByAdmin',
-    async (confirmationToken: ConfirmationToken, thunkAPI) => {
+    async (activationToken: ConfirmationToken, thunkAPI) => {
 
 
+        const { confirmationCode } = activationToken
 
         try {
             const config = {
@@ -267,7 +259,7 @@ export const userConfirm = createAsyncThunk(
             }
             const { data } = await axios.put(
                 '/api/users/userconfirmation',
-                { confirmationToken },
+                { confirmationCode },
                 config
             )
             return data
@@ -456,6 +448,20 @@ const userSlice = createSlice({
 
         })
         builder.addCase(testResetPassword.rejected, (state, action) => {
+            state.loading = false
+
+        })
+        builder.addCase(testActivateUser.pending, (state, action) => {
+            state.loading = true
+
+        })
+        builder.addCase(testActivateUser.fulfilled, (state, action) => {
+            state.loading = false
+            state.error = action.payload.message
+
+
+        })
+        builder.addCase(testActivateUser.rejected, (state, action) => {
             state.loading = false
 
         })
