@@ -50,21 +50,8 @@ const confirmUser = asyncHandler(async (req, res) => {
 // @description admin changes user status from pending to active or pending 
 // @route PUT /api/users/adminconfirmation/:id
 // @access private/Admin
+// no longer needed - updateUser has that functionality now
 const confirmUserByAdmin = asyncHandler(async (req, res) => {
-
-    // const user = await User.findById(req.params.id)
-
-
-    // if (user && user.status === 'Pending') {
-    //     await user.updateOne({
-    //         status: 'Active'
-    //     })
-    //     res.json({ message: 'User status changed to Active' })
-    // } else if (user && user.status === 'Active') {
-    //     await user.updateOne({
-    //         status: 'Pending'
-    //     })
-
 
     const user = await User.findById(req.params.id)
     const userStatus = 'Active'
@@ -77,51 +64,8 @@ const confirmUserByAdmin = asyncHandler(async (req, res) => {
         throw new Error('User not found')
     }
 
-    // if (user) {
-    //     user.status = 'Active'
-    //     const updatedUser = await user.save()
-    //     res.json({
-    //         status: updatedUser.status,
-    //     })
-    //     res.json({ message: 'User status changed to Active' })
-    // } else {
-    //     res.status(404)
-    //     throw new Error('User not found')
-    // }
-    // if (user) {
-    //     await user.updateOne({
-    //         status: 'Active'
-    //     })
-    //     res.json({ message: 'User status changed to Active' })
-    // }
-    // else {
-    //     res.status(401)
-    //     throw new Error('user does not exist')
-    // }
 })
-// @description admin changes adds status: active and creates confirmationCode
-// @route POST /api/users/adminconfirmation/:id
-// @access private/Admin
-const confirmOldUserByAdmin = asyncHandler(async (req, res) => {
 
-    const user = await User.findById(req.params.id)
-
-    // if (user && !user.confirmationCode) {
-    if (user) {
-
-        const confirmationToken = crypto.randomBytes(20).toString('hex')
-
-        await user.updateOne({
-            confirmationCode: confirmationToken,
-            status: 'Active'
-        })
-        res.json({ message: 'User status active added and confirmation code created' })
-    }
-    else {
-        res.status(401)
-        throw new Error('user does not exist')
-    }
-})
 
 // @description authenticate user & get token - give email and send link to reset password
 // @route GET/api/users/resetPassword
@@ -366,5 +310,4 @@ export {
     testReset,
     confirmUser,
     confirmUserByAdmin,
-    confirmOldUserByAdmin,
 }
