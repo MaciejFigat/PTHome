@@ -52,24 +52,52 @@ const confirmUser = asyncHandler(async (req, res) => {
 // @access private/Admin
 const confirmUserByAdmin = asyncHandler(async (req, res) => {
 
+    // const user = await User.findById(req.params.id)
+
+
+    // if (user && user.status === 'Pending') {
+    //     await user.updateOne({
+    //         status: 'Active'
+    //     })
+    //     res.json({ message: 'User status changed to Active' })
+    // } else if (user && user.status === 'Active') {
+    //     await user.updateOne({
+    //         status: 'Pending'
+    //     })
+
+
     const user = await User.findById(req.params.id)
-
-    if (user && user.confirmationCode === 'Pending') {
-        await user.updateOne({
-            status: 'Active'
-        })
-        res.json({ message: 'User status changed to Active' })
-    } else if (user && user.confirmationCode === 'Active') {
-        await user.updateOne({
-            status: 'Pending'
-        })
-        res.json({ message: 'User status changed to Pending' })
-
+    const userStatus = 'Active'
+    if (user && user.status) {
+        user.status = userStatus
+        await user.save()
+        res.json({ message: 'User status changed' })
+    } else {
+        res.status(404)
+        throw new Error('User not found')
     }
-    else {
-        res.status(401)
-        throw new Error('user does not exist')
-    }
+
+    // if (user) {
+    //     user.status = 'Active'
+    //     const updatedUser = await user.save()
+    //     res.json({
+    //         status: updatedUser.status,
+    //     })
+    //     res.json({ message: 'User status changed to Active' })
+    // } else {
+    //     res.status(404)
+    //     throw new Error('User not found')
+    // }
+    // if (user) {
+    //     await user.updateOne({
+    //         status: 'Active'
+    //     })
+    //     res.json({ message: 'User status changed to Active' })
+    // }
+    // else {
+    //     res.status(401)
+    //     throw new Error('user does not exist')
+    // }
 })
 // @description admin changes adds status: active and creates confirmationCode
 // @route POST /api/users/adminconfirmation/:id
@@ -242,6 +270,7 @@ const updateUser = asyncHandler(async (req, res) => {
         user.name = req.body.name || user.name
         user.email = req.body.email || user.email
         user.isAdmin = req.body.isAdmin
+        user.status = req.body.status
 
         const updatedUser = await user.save()
 
@@ -250,6 +279,7 @@ const updateUser = asyncHandler(async (req, res) => {
             name: updatedUser.name,
             email: updatedUser.email,
             isAdmin: updatedUser.isAdmin,
+            status: updatedUser.status,
         })
     } else {
         res.status(404)

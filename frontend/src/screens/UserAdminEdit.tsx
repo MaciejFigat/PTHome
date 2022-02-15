@@ -30,17 +30,31 @@ const UserAdminEdit: React.FC<UserAdminEditProps> = () => {
     name: nameState,
     email: emailState,
     isAdmin: isAdminState,
+    status: userStatus,
   } = user
 
   const [name, setName] = useState(nameState)
   const [email, setEmail] = useState(emailState)
   const [isAdmin, setIsAdmin] = useState<boolean | undefined>(isAdminState)
+  const [status, setStatus] = useState<'Active' | 'Pending' | undefined>(
+    userStatus
+  )
 
   const updatedUser = {
     _id: id,
     name: name,
     email: email,
     isAdmin: isAdmin,
+    status: status,
+  }
+
+  const activateHandler = (e: any) => {
+    e.preventDefault()
+    if (status === 'Pending') {
+      setStatus('Active')
+    } else {
+      setStatus('Pending')
+    }
   }
   const editHandler = (e: any) => {
     e.preventDefault()
@@ -102,6 +116,37 @@ const UserAdminEdit: React.FC<UserAdminEditProps> = () => {
           >
             {user.name} is not an Admin
           </p>
+        )}
+        {status === 'Active' ? (
+          <>
+            <p
+              style={{
+                color: 'var(--success1)',
+                fontSize: '20px',
+                fontWeight: 700,
+              }}
+            >
+              {user.name}'s status is is Active
+            </p>
+            <SendButton onClick={activateHandler} variant='success'>
+              set as inactive
+            </SendButton>
+          </>
+        ) : (
+          <>
+            <p
+              style={{
+                color: 'red',
+                fontSize: '20px',
+                fontWeight: 700,
+              }}
+            >
+              {user.name}'s status is Pending
+            </p>{' '}
+            <SendButton onClick={activateHandler} variant='info'>
+              activate
+            </SendButton>
+          </>
         )}
         <SendButton onClick={adminGiveHandler} variant='info'>
           set as Admin

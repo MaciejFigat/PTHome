@@ -9,6 +9,7 @@ interface UserInfo {
     email?: string
     password?: string
     isAdmin?: boolean
+    status?: 'Active' | 'Pending'
 }
 interface UserLogin {
     email: string
@@ -193,7 +194,7 @@ export const oldUserConfirmByAdmin = createAsyncThunk(
                 },
             }
 
-            const { data } = await axios.put(
+            const { data } = await axios.post(
                 `/api/users/adminconfirmation/${id}`,
                 // { isAdmin },
                 config
@@ -211,8 +212,21 @@ export const oldUserConfirmByAdmin = createAsyncThunk(
 
 export const userConfirmByAdmin = createAsyncThunk(
     'user/confirmUserByAdmin',
-    async (id: string, thunkAPI) => {
 
+    async (id: string, thunkAPI) => {
+        // try {
+        //     const state: any = thunkAPI.getState()
+        //     const userInfo = state.user.userInfo
+        //     const config = {
+        //         headers: {
+        //             Authorization: `Bearer ${userInfo.token}`,
+        //         },
+        //     }
+
+        //     const { data } = await axios.put(
+        //         `/api/users/adminconfirmation/${id}`, config
+        //     )
+        //     return data
         try {
             const state: any = thunkAPI.getState()
             const userInfo = state.user.userInfo
@@ -224,8 +238,7 @@ export const userConfirmByAdmin = createAsyncThunk(
             }
 
             const { data } = await axios.put(
-                `/api/users/adminconfirmation/${id}`,
-                config
+                `/api/users/adminconfirmation/${id}`, config
             )
             return data
 
@@ -270,7 +283,7 @@ export const updateUser = createAsyncThunk(
     'user/updateUser',
     async (updatedUserInfo: UserInfo, thunkAPI) => {
 
-        const { name, email, isAdmin, _id } = updatedUserInfo
+        const { name, email, isAdmin, _id, status } = updatedUserInfo
 
         try {
             const state: any = thunkAPI.getState()
@@ -284,7 +297,7 @@ export const updateUser = createAsyncThunk(
 
             const { data } = await axios.put(
                 `/api/users/${_id}`,
-                { name, email, isAdmin },
+                { name, email, isAdmin, status },
                 config
             )
             return data
