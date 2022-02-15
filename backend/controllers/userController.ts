@@ -78,7 +78,8 @@ const confirmOldUserByAdmin = asyncHandler(async (req, res) => {
 
     const user = await User.findById(req.params.id)
 
-    if (user && !user.confirmationCode) {
+    // if (user && !user.confirmationCode) {
+    if (user) {
 
         const confirmationToken = crypto.randomBytes(20).toString('hex')
 

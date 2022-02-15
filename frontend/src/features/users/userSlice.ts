@@ -177,10 +177,10 @@ export const updateUserProfile = createAsyncThunk(
 // Admin can either set status on active or pending for registered
 
 export const oldUserConfirmByAdmin = createAsyncThunk(
-    'user/confirmUserByAdmin',
-    async (UserData: UserInfo, thunkAPI) => {
+    'user/confirmOldUserByAdmin',
+    async (id: string, thunkAPI) => {
 
-        const { _id } = UserData
+        // const { _id } = UserData
         // const { isAdmin, _id } = UserData
 
         try {
@@ -194,7 +194,7 @@ export const oldUserConfirmByAdmin = createAsyncThunk(
             }
 
             const { data } = await axios.put(
-                `/api/users/adminconfirmation/${_id}`,
+                `/api/users/adminconfirmation/${id}`,
                 // { isAdmin },
                 config
             )
@@ -211,9 +211,7 @@ export const oldUserConfirmByAdmin = createAsyncThunk(
 
 export const userConfirmByAdmin = createAsyncThunk(
     'user/confirmUserByAdmin',
-    async (UserData: UserInfo, thunkAPI) => {
-
-        const { _id } = UserData
+    async (id: string, thunkAPI) => {
 
         try {
             const state: any = thunkAPI.getState()
@@ -226,7 +224,7 @@ export const userConfirmByAdmin = createAsyncThunk(
             }
 
             const { data } = await axios.put(
-                `/api/users/adminconfirmation/${_id}`,
+                `/api/users/adminconfirmation/${id}`,
                 config
             )
             return data
@@ -515,6 +513,32 @@ const userSlice = createSlice({
             state.success = true
         })
         builder.addCase(deleteUser.rejected, (state, action) => {
+            state.loading = false
+
+        })
+        builder.addCase(oldUserConfirmByAdmin.pending, (state, action) => {
+            state.loading = true
+            state.success = false
+        })
+        builder.addCase(oldUserConfirmByAdmin.fulfilled, (state, action) => {
+            state.loading = false
+            state.error = action.payload.message
+            state.success = true
+        })
+        builder.addCase(oldUserConfirmByAdmin.rejected, (state, action) => {
+            state.loading = false
+
+        })
+        builder.addCase(userConfirmByAdmin.pending, (state, action) => {
+            state.loading = true
+            state.success = false
+        })
+        builder.addCase(userConfirmByAdmin.fulfilled, (state, action) => {
+            state.loading = false
+            state.error = action.payload.message
+            state.success = true
+        })
+        builder.addCase(userConfirmByAdmin.rejected, (state, action) => {
             state.loading = false
 
         })

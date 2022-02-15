@@ -2,7 +2,12 @@ import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { UserInfo } from '../interfaces'
 import { useAppDispatch, useAppSelector } from '../app/reduxHooks'
-import { getUsers, deleteUser } from '../features/users/userSlice'
+import {
+  getUsers,
+  deleteUser,
+  userConfirmByAdmin,
+  oldUserConfirmByAdmin,
+} from '../features/users/userSlice'
 import { SendButton } from '../components/Buttons/Buttons.styled'
 import {
   AdminContainer,
@@ -22,6 +27,12 @@ const UserListAdmin: React.FC<UserListAdminProps> = () => {
   const userInfo: UserInfo = useAppSelector((state) => state.user.userInfo)
   const deleteUserHandler = (id: string) => {
     dispatch(deleteUser(id))
+  }
+  const confirmUserHandler = (id: string) => {
+    dispatch(userConfirmByAdmin(id))
+  }
+  const confirmOldUserHandler = (id: string) => {
+    dispatch(oldUserConfirmByAdmin(id))
   }
 
   // getUsers I have to pass an argument (anything really) because my thunk in the slice needs an argument to also receive thunkAPI, when thunkAPI is alone it's not working
@@ -64,6 +75,18 @@ const UserListAdmin: React.FC<UserListAdminProps> = () => {
                         onClick={() => deleteUserHandler(user._id)}
                       >
                         Delete
+                      </SendButton>
+                      <SendButton
+                        variant='primary'
+                        onClick={() => confirmOldUserHandler(user._id)}
+                      >
+                        Testing oldUserConfirmByAdmin
+                      </SendButton>
+                      <SendButton
+                        variant='secondary'
+                        onClick={() => confirmUserHandler(user._id)}
+                      >
+                        Testing userConfirmByAdmin
                       </SendButton>
                     </td>
                   </tr>
