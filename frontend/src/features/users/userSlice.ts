@@ -529,32 +529,7 @@ const userSlice = createSlice({
             state.loading = false
 
         })
-        builder.addCase(oldUserConfirmByAdmin.pending, (state, action) => {
-            state.loading = true
-            state.success = false
-        })
-        builder.addCase(oldUserConfirmByAdmin.fulfilled, (state, action) => {
-            state.loading = false
-            state.error = action.payload.message
-            state.success = true
-        })
-        builder.addCase(oldUserConfirmByAdmin.rejected, (state, action) => {
-            state.loading = false
 
-        })
-        builder.addCase(userConfirmByAdmin.pending, (state, action) => {
-            state.loading = true
-            state.success = false
-        })
-        builder.addCase(userConfirmByAdmin.fulfilled, (state, action) => {
-            state.loading = false
-            state.error = action.payload.message
-            state.success = true
-        })
-        builder.addCase(userConfirmByAdmin.rejected, (state, action) => {
-            state.loading = false
-
-        })
         builder.addCase(updateUser.pending, (state, action) => {
             state.loading = true
             state.success = false
