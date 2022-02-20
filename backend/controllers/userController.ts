@@ -146,7 +146,7 @@ const testReset = asyncHandler(async (req, res) => {
     }
 })
 
-// @description Register a new user
+// @description Register a new user, and create the confirmationToken and send it to provided email
 // @route POST /api/users
 // @access Public
 

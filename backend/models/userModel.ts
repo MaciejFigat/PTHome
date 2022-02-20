@@ -51,7 +51,6 @@ const userSchema = new Schema<User>(
             type: String,
             unique: true
         },
-
     },
     {
         timestamps: true,

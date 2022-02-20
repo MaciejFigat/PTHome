@@ -12,20 +12,21 @@ import {
     forgotUserPassword,
     testReset,
     confirmUser,
-    confirmUserByAdmin,
 
 } from '../controllers/userController'
 import { protect, admin } from '../middleware/authMiddleware'
 const router = express.Router()
-
+// registerUser - create the confirmationToken and send it to provided email
 router.route('/').post(registerUser).get(protect, admin, getUsers)
+// this one sends an email with resetToken
 router.route('/forgotPassword').post(forgotUserPassword)
+// this one logs the user in upon receiving the resetToken
 router.route('/passwordReset').get(resetUserPassword)
 
 
 router.route('/test').post(testReset)
 
-// router.route('/userconfirmation').put(confirmUser)
+// 
 router.route('/userconfirmation').post(confirmUser)
 
 
