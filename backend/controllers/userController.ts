@@ -8,7 +8,7 @@ import Sequelize from 'sequelize';
 // @description user provides an email, requests the reset of the password -> sends a link to reset password
 // @route POST /api/users/forgotPassword
 // @access Public
-
+import sendEmailTest from '../utilities/nodemailerTestTwo'
 const forgotUserPassword = asyncHandler(async (req, res) => {
     const { email } = req.body
     // if email provided is empty 
@@ -20,8 +20,6 @@ const forgotUserPassword = asyncHandler(async (req, res) => {
     if (user) {
         // create reset token 
         const resetToken = crypto.randomBytes(20).toString('hex')
-        // here we send the email
-
 
         // save it to the user as resetPasswordToken
         await user.updateOne({
@@ -29,6 +27,11 @@ const forgotUserPassword = asyncHandler(async (req, res) => {
             resetPasswordExpires: Date.now() + 3600000,
         })
 
+        // here we send the email
+        const userEmail = 'wyqover9000@gmail.com'
+        const subject = 'hello test'
+        const text = 'I am testing You'
+        sendEmailTest(userEmail, subject, text)
     } else {
         res.status(401)
         throw new Error('Email is not in our database')
