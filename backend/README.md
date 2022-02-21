@@ -169,8 +169,12 @@ confirmUser -used by the user by passing the confirmationCode to change the stat
     ├── /userconfirmation    
                     ├── confirmUser
     tested in FE in userConfirm thunk  in Login.tsx   
-- 
-|   ├── 
+
+
+registerUser - create the confirmationToken and send it to users email
+forgotUserPassword - resetPasswordToken send it to provided email
+
+|   ├── be/utilities/nodemailerTest for testing purposes
 |   ├── 
 |   ├── 
 

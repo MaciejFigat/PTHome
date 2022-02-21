@@ -8,6 +8,7 @@ import Sequelize from 'sequelize';
 // @description user provides an email, requests the reset of the password -> sends a link to reset password
 // @route POST /api/users/forgotPassword
 // @access Public
+
 const forgotUserPassword = asyncHandler(async (req, res) => {
     const { email } = req.body
     // if email provided is empty 
@@ -19,6 +20,9 @@ const forgotUserPassword = asyncHandler(async (req, res) => {
     if (user) {
         // create reset token 
         const resetToken = crypto.randomBytes(20).toString('hex')
+        // here we send the email
+
+
         // save it to the user as resetPasswordToken
         await user.updateOne({
             resetPasswordToken: resetToken,
