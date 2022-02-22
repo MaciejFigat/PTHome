@@ -174,9 +174,14 @@ confirmUser -used by the user by passing the confirmationCode to change the stat
 registerUser - create the confirmationToken and send it to users email
 forgotUserPassword - resetPasswordToken send it to provided email
 
-|   ├── be/utilities/nodemailerTest for testing purposes
+
 |   ├── be/utilities/nodemailerTestTwo for testing purposes - this one works
-forgotUserPassword is tested here
+                           ├──takes htmlBody as a new prop 
+
+
+controllers that use nodemailer module
+|forgotUserPassword | sends an email with resetPasswordToken
+|registerUser| sends an email with confirmationToken
 |   ├── 
 |   ├── 
 

@@ -4,11 +4,11 @@ import User from '../models/userModel'
 import crypto from 'crypto'
 // sequelize is to compare reset token expiration date with the day of the request to reset 
 import Sequelize from 'sequelize';
+import sendEmailTest from '../utilities/nodemailerTestTwo'
 
 // @description user provides an email, requests the reset of the password -> sends a link to reset password
 // @route POST /api/users/forgotPassword
 // @access Public
-import sendEmailTest from '../utilities/nodemailerTestTwo'
 const forgotUserPassword = asyncHandler(async (req, res) => {
     const { email } = req.body
     // if email provided is empty 
@@ -26,16 +26,18 @@ const forgotUserPassword = asyncHandler(async (req, res) => {
             resetPasswordToken: resetToken,
             resetPasswordExpires: Date.now() + 3600000,
         })
-
-        // here we send the email
+        // here we send the email with the reset link
         const userEmail = 'wyqover9000@gmail.com'
         const subject = 'hello test'
         const text = 'I am testing You'
-        sendEmailTest(userEmail, subject, text)
+        const htmlBody = '<form method="post" action="http://localhost:5000/api/users/test?e4cce7334f1776b91b330bb6731f2e3bfee33ccb"><input type ="hidden" name ="extra_submit_param" value ="extra_submit_value"><button type="submit" name ="submit_param" value ="submit_value">This is a link that sends a POST Testing</button></form>'
+        sendEmailTest(userEmail, subject, text, htmlBody)
     } else {
         res.status(401)
         throw new Error('Email is not in our database')
     }
+
+
 })
 
 // @description user confirms his status through a link with a confirmation token, changes status from pending to active 
@@ -188,6 +190,12 @@ const registerUser = asyncHandler(async (req, res) => {
         res.status(400)
         throw new Error('Invalid user data')
     }
+    // here we send the email with confirmationToken
+    const userEmail = 'wyqover9000@gmail.com'
+    const subject = 'hello test'
+    const text = 'I am testing You'
+    const htmlBody = '<b>I am testing You</b>'
+    sendEmailTest(userEmail, subject, text, htmlBody)
 })
 
 // @description get all users

@@ -1,7 +1,7 @@
 import nodemailer from 'nodemailer'
 import dotenv from 'dotenv'
 
-const sendEmailTest = async (userEmail: string, subject: string, text: string) => {
+const sendEmailTest = async (userEmail: string, subject: string, text: string, htmlBody: string) => {
 
     dotenv.config()
 
@@ -19,6 +19,7 @@ const sendEmailTest = async (userEmail: string, subject: string, text: string) =
             to: userEmail,
             subject: subject,
             text: text,
+            html: htmlBody
         })
 
         console.log('email sent sucessfully')

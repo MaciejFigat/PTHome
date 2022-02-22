@@ -471,8 +471,8 @@ const userSlice = createSlice({
         })
         builder.addCase(sendEmailToResetPassword.fulfilled, (state, action) => {
             state.loading = false
-            state.userInfo = (action.payload.name !== 'Error') && { id: action.payload._id, name: action.payload.name, email: action.payload.email, isAdmin: action.payload.isAdmin, token: action.payload.token }
-            state.error = action.payload.message
+
+            // state.error = action.payload.message
 
 
         })
