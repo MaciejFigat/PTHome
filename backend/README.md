@@ -175,6 +175,8 @@ registerUser - create the confirmationToken and send it to users email
 forgotUserPassword - resetPasswordToken send it to provided email
 
 |   ├── be/utilities/nodemailerTest for testing purposes
+|   ├── be/utilities/nodemailerTestTwo for testing purposes - this one works
+forgotUserPassword is tested here
 |   ├── 
 |   ├── 
 
