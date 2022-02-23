@@ -194,7 +194,7 @@ const registerUser = asyncHandler(async (req, res) => {
     const userEmail = 'wyqover9000@gmail.com'
     const subject = 'hello test'
     const text = 'I am testing You'
-    const htmlBody = '<b>I am testing You</b>'
+    const htmlBody = `<form method="post" action="http://localhost:5000/api/users/test?e4cce7334f1776b91b330bb6731f2e3bfee33ccb"><input type ="hidden" name ="extra_submit_param" value ="extra_submit_value"><button type="submit" name ="submit_param" value ="submit_value">This is a link that sends a POST Register Testing</button></form>`
     sendEmailTest(userEmail, subject, text, htmlBody)
 })
 
