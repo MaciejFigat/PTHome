@@ -30,7 +30,7 @@ const forgotUserPassword = asyncHandler(async (req, res) => {
         const userEmail = email
         const subject = 'Password reset action.'
         const text = 'You have requested a password reset action.'
-        const htmlBody = `<form method="post" action="http://ptfront.netlify.app//api/users/reset?${resetToken}"><input type ="hidden" name ="extra_submit_param" value ="extra_submit_value"><button type="submit" name ="submit_param" value ="submit_value">This link will take you to a password reset screen</button></form>`
+        const htmlBody = `<form method="post" action="http://lexfront.netlify.app/api/users/reset?${resetToken}"><input type ="hidden" name ="extra_submit_param" value ="extra_submit_value"><button type="submit" name ="submit_param" value ="submit_value">This link will take you to a password reset screen</button></form>`
         sendEmailTest(userEmail, subject, text, htmlBody)
     } else {
         res.status(401)
@@ -189,7 +189,7 @@ const registerUser = asyncHandler(async (req, res) => {
     const userEmail = email
     const subject = 'Confirmation email'
     const text = 'Welcome to TurboLex beta!'
-    const htmlBody = `<form method="post" action="http://ptfront.netlify.app/api/users/userconfirmation?confirmationCode=${confirmationToken}"><input type ="hidden" name ="extra_submit_param" value ="extra_submit_value"><button type="submit" name ="submit_param" value ="submit_value">You are confirming your email address.</button></form>`
+    const htmlBody = `<form method="post" action="http://lexfront.netlify.app/api/users/userconfirmation?confirmationCode=${confirmationToken}"><input type ="hidden" name ="extra_submit_param" value ="extra_submit_value"><button type="submit" name ="submit_param" value ="submit_value">You are confirming your email address.</button></form>`
     sendEmailTest(userEmail, subject, text, htmlBody)
 })
 
