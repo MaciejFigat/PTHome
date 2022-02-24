@@ -27,10 +27,10 @@ const forgotUserPassword = asyncHandler(async (req, res) => {
             resetPasswordExpires: Date.now() + 3600000,
         })
         // here we send the email with the reset link
-        const userEmail = 'wyqover9000@gmail.com'
-        const subject = 'hello test'
-        const text = 'I am testing You'
-        const htmlBody = '<form method="post" action="http://localhost:5000/api/users/test?e4cce7334f1776b91b330bb6731f2e3bfee33ccb"><input type ="hidden" name ="extra_submit_param" value ="extra_submit_value"><button type="submit" name ="submit_param" value ="submit_value">This is a link that sends a POST Testing</button></form>'
+        const userEmail = email
+        const subject = 'Password reset action.'
+        const text = 'You have requested a password reset action.'
+        const htmlBody = `<form method="post" action="http://ptfront.netlify.app//api/users/reset?${resetToken}"><input type ="hidden" name ="extra_submit_param" value ="extra_submit_value"><button type="submit" name ="submit_param" value ="submit_value">This link will take you to a password reset screen</button></form>`
         sendEmailTest(userEmail, subject, text, htmlBody)
     } else {
         res.status(401)
@@ -41,7 +41,7 @@ const forgotUserPassword = asyncHandler(async (req, res) => {
 })
 
 // @description user confirms his status through a link with a confirmation token, changes status from pending to active 
-// @route PUT /api/users/confirmation
+// @route PUT /api/users/userconfirmation
 // @access Public
 const confirmUser = asyncHandler(async (req, res) => {
 
@@ -87,12 +87,8 @@ const confirmUserByAdmin = asyncHandler(async (req, res) => {
 const Op = Sequelize.Op;
 
 const resetUserPassword = asyncHandler(async (req, res) => {
-
     // find user by the resetToken
-
-
     const { resetPasswordToken } = req.body
-
     const user = await User.findOne({
         resetPasswordToken: resetPasswordToken
     })
@@ -105,7 +101,6 @@ const resetUserPassword = asyncHandler(async (req, res) => {
             isAdmin: user.isAdmin,
             token: generateToken(user._id),
         })
-
 
     } else {
         res.status(401)
@@ -191,10 +186,10 @@ const registerUser = asyncHandler(async (req, res) => {
         throw new Error('Invalid user data')
     }
     // here we send the email with confirmationToken
-    const userEmail = 'wyqover9000@gmail.com'
-    const subject = 'hello test'
-    const text = 'I am testing You'
-    const htmlBody = `<form method="post" action="http://localhost:5000/api/users/test?e4cce7334f1776b91b330bb6731f2e3bfee33ccb"><input type ="hidden" name ="extra_submit_param" value ="extra_submit_value"><button type="submit" name ="submit_param" value ="submit_value">This is a link that sends a POST Register Testing</button></form>`
+    const userEmail = email
+    const subject = 'Confirmation email'
+    const text = 'Welcome to TurboLex beta!'
+    const htmlBody = `<form method="post" action="http://ptfront.netlify.app/api/users/userconfirmation?confirmationCode=${confirmationToken}"><input type ="hidden" name ="extra_submit_param" value ="extra_submit_value"><button type="submit" name ="submit_param" value ="submit_value">You are confirming your email address.</button></form>`
     sendEmailTest(userEmail, subject, text, htmlBody)
 })
 

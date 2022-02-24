@@ -49,7 +49,7 @@ const Login: React.FC<LoginProps> = () => {
     resetPasswordToken: 'e4cce7334f1776b91b330bb6731f2e3bfee33ccb',
   }
   const activationToken = {
-    confirmationCode: '6576c76d847bbe489784967a8e6b6ce2f1be6dfb',
+    confirmationCode: '51816e6778d2823b351e44b041ef22e6d5962c32',
   }
   const testHandler = (e: any) => {
     e.preventDefault()

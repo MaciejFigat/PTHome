@@ -24,9 +24,9 @@ router.route('/forgotPassword').post(forgotUserPassword)
 router.route('/passwordReset').get(resetUserPassword)
 
 
-router.route('/test').post(testReset)
+router.route('/reset').post(testReset)
 
-// 
+// confirm by the user in the email with the token
 router.route('/userconfirmation').post(confirmUser)
 
 
