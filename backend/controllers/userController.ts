@@ -189,7 +189,8 @@ const registerUser = asyncHandler(async (req, res) => {
     const userEmail = email
     const subject = 'Confirmation email'
     const text = 'Welcome to TurboLex beta!'
-    const htmlBody = `<form method="post" action="http://localhost:5000/api/users/userconfirmation?confirmationCode=${confirmationToken}"><input type ="hidden" name ="extra_submit_param" value ="extra_submit_value"><button type="submit" name ="submit_param" value ="submit_value">You are confirming your email address.</button><a href='http://localhost:5000/api/users/userconfirmation?confirmationCode=${confirmationToken}'>Alternative link</a></form>`
+    const htmlBody = `<form method="post" action="http://localhost:3000/resetpassword"><input type ="hidden" name ="extra_submit_param" value ="extra_submit_value">Please copy this token: <b>${confirmationToken}</b> and use it to login and set new password.<button type="submit" name ="submit_param" value ="submit_value">Go to reset password screen --></button><a href='http://localhost:3000/resetpassword'>Alternative link</a></form>`
+    // const htmlBody = `<form method="post" action="http://localhost:5000/api/users/userconfirmation?confirmationCode=${confirmationToken}"><input type ="hidden" name ="extra_submit_param" value ="extra_submit_value"><button type="submit" name ="submit_param" value ="submit_value">You are confirming your email address.</button><a href='http://localhost:5000/api/users/userconfirmation?confirmationCode=${confirmationToken}'>Alternative link</a></form>`
     sendEmailTest(userEmail, subject, text, htmlBody)
 })
 
