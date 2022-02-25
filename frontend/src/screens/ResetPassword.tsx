@@ -11,16 +11,20 @@ const ResetPassword: React.FC<ResetPasswordProps> = () => {
 
   useRedirectLoggedListener()
   const [token, setToken] = useState<string | number | any>('')
-  // e4cce7334f1776b91b330bb6731f2e3bfee33ccb
+
+  const userToken = {
+    resetPasswordToken: token,
+  }
+
   const submitHandler = (e: any) => {
     e.preventDefault()
-    dispatch(testResetPassword(token))
+    dispatch(testResetPassword(userToken))
   }
 
   return (
     <LoginContainer>
       <Wrapper>
-        <h3>Please copy token you received on your email.</h3>
+        <h3>Please copy the token you received on your email.</h3>
         <Form onSubmit={submitHandler}>
           <Input
             type='token'

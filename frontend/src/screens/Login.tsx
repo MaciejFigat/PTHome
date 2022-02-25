@@ -46,7 +46,7 @@ const Login: React.FC<LoginProps> = () => {
     console.log(email)
   }
   const userToken = {
-    resetPasswordToken: 'e4cce7334f1776b91b330bb6731f2e3bfee33ccb',
+    resetPasswordToken: '408228422f1fb4c30f34272ebd7f89000f286967',
   }
   const activationToken = {
     confirmationCode: '51816e6778d2823b351e44b041ef22e6d5962c32',
