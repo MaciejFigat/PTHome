@@ -182,6 +182,7 @@ forgotUserPassword - resetPasswordToken send it to provided email
 controllers that use nodemailer module
 |forgotUserPassword | sends an email with resetPasswordToken
 |registerUser| sends an email with confirmationToken
-|   ├── 
+|user will receive token in the email with the link to login site where he uses this token to log in   ├── this is the new method 
+
 |   ├── 
 
