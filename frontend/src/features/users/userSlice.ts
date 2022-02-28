@@ -108,6 +108,7 @@ export const testResetPassword = createAsyncThunk(
     }
 )
 // sending the token logs in the user that requested it
+// 
 interface ActivationToken {
     confirmationCode: string | any
 }

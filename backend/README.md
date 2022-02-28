@@ -185,4 +185,4 @@ controllers that use nodemailer module
 |user will receive token in the email with the link to login site where he uses this token to log in   ├── this is the new method 
 
 |   ├── 
-
+testActivateUser - > confirmUser 
