@@ -186,3 +186,5 @@ controllers that use nodemailer module
 
 |   ├── 
 testActivateUser - > confirmUser 
+STILL DOESNT WORK !!!!
+EXTERNAL LINK IS CAUSING THE SERVER RESPONSE HOWEVER IT IS NOT REFLECTED IN THE DB
