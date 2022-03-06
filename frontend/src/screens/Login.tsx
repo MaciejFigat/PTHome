@@ -68,12 +68,14 @@ const Login: React.FC<LoginProps> = () => {
             type='email'
             name='email'
             placeholder='Enter your email'
+            autoComplete='email'
             value={email}
             onChange={(e: any) => setEmail(e.target.value)}
           />
           <Input
             type='password'
             name='password'
+            autoComplete='current-password'
             placeholder='Enter your password'
             value={password}
             onChange={(e: any) => setPassword(e.target.value)}
@@ -100,7 +102,6 @@ const Login: React.FC<LoginProps> = () => {
             <LoginLink onClick={activateHandler}>test</LoginLink>
           </Title>
         </Form>
-
         <Button onClick={logoutHandler}>Logout</Button>
       </Wrapper>
     </LoginContainer>

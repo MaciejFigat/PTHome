@@ -19,7 +19,8 @@ const sendEmailTest = async (userEmail: string, subject: string, text: string, h
             to: userEmail,
             subject: subject,
             text: text,
-            html: htmlBody
+            html: htmlBody,
+
         })
 
         console.log('email sent sucessfully')

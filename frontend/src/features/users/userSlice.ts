@@ -107,7 +107,7 @@ export const testResetPassword = createAsyncThunk(
         }
     }
 )
-// sending the token logs in the user that requested it
+// sending the confirmationCode sets status to Active
 // 
 interface ActivationToken {
     confirmationCode: string | any

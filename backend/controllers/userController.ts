@@ -30,7 +30,21 @@ const forgotUserPassword = asyncHandler(async (req, res) => {
         const userEmail = email
         const subject = 'Password reset action.'
         const text = 'You have requested a password reset action.'
-        const htmlBody = `<><p>Please copy this token: <b>${resetToken}</b> and use it to login and set new password.</p><form method="post" action="http://localhost:3000/resetpassword"><input type ="hidden" name ="extra_submit_param" value ="extra_submit_value"><button type="submit" name ="submit_param" value ="submit_value">Go to reset password screen --></button><a href='http://localhost:3000/resetpassword'>Alternative link</a></form></>`
+        const htmlBody = `<><p>Please copy this token: <b id='input'>${resetToken}</b> and use it to login and set new password.</p><form method="post" action="http://localhost:3000/resetpassword"><input type ="hidden" name ="extra_submit_param" value ="extra_submit_value"><button type="submit" name ="submit_param" value ="submit_value">Go to reset password screen --></button><a href='http://localhost:3000/resetpassword'>Alternative link</a></form>
+        
+        
+<button id="copy">Copy</button>
+        
+        <script>
+        function copy() {
+            var copyText = document.querySelector("#input");
+            copyText.select();
+            document.execCommand("copy");
+          }
+          
+          document.querySelector("#copy").addEventListener("click", copy);
+        </script>
+        </>`
         // const htmlBody = `<form method="post" action="http://localhost:5000/api/users/reset?${resetToken}"><input type ="hidden" name ="extra_submit_param" value ="extra_submit_value"><button type="submit" name ="submit_param" value ="submit_value">This link will take you to a password reset screen</button><a href='http://localhost:5000/api/users/reset?${resetToken}'>Alternative link</a></form>`
         sendEmailTest(userEmail, subject, text, htmlBody)
     } else {
@@ -191,7 +205,9 @@ const registerUser = asyncHandler(async (req, res) => {
     const subject = 'Confirmation email'
     const text = 'Welcome to TurboLex beta!'
 
-    const htmlBody = `<><b>Please confirm your email by clicking the link below.</b><form method="post" action="https://pthome.herokuapp.com/api/users/userconfirmation?confirmationCode=f2d473d17b4e12668407c2ebcf3c8ee4b274d057"><input type ="hidden" name ="extra_submit_param" value ="extra_submit_value"><button type="submit" name ="submit_param" value ="submit_value">You are confirming your email address.</button><a href='http://localhost:5000/api/users/userconfirmation?confirmationCode=f2d473d17b4e12668407c2ebcf3c8ee4b274d057'>Alternative link</a></form></>`
+    const htmlBody = `<b>Please copy the confirmation code and use it on the following confirmation screen in our application.</b>
+    <h2>Your code:  ${confirmationToken}</h2>
+    <a href='http://localhost:3000/confirmaccount'>Please follow the link and paste the code there.</a></>`
     // const htmlBody = `<><b>Please confirm your email by clicking the link below.</b><form method="post" action="http://localhost:5000/api/users/userconfirmation?confirmationCode=${confirmationToken}"><input type ="hidden" name ="extra_submit_param" value ="extra_submit_value"><button type="submit" name ="submit_param" value ="submit_value">You are confirming your email address.</button><a href='http://localhost:5000/api/users/userconfirmation?confirmationCode=${confirmationToken}'>Alternative link</a></form></>`
     sendEmailTest(userEmail, subject, text, htmlBody)
 })

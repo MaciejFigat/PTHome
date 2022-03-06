@@ -80,6 +80,7 @@ const UserAdminEdit: React.FC<UserAdminEditProps> = () => {
       setName(nameState)
       setEmail(emailState)
       setIsAdmin(isAdminState)
+      setStatus(userStatus)
     }
   }, [
     dispatch,
@@ -89,6 +90,7 @@ const UserAdminEdit: React.FC<UserAdminEditProps> = () => {
     userInfo,
     params,
     navigate,
+    userStatus,
   ])
 
   return (

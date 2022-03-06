@@ -125,6 +125,7 @@ export const NavContainer = styled.nav`
     width: 100%;
     max-width: 100%;
     box-shadow: none;
+    overflow: hidden;
   }
 `
 // the following list is used for desktop navigation
