@@ -30,7 +30,35 @@ const forgotUserPassword = asyncHandler(async (req, res) => {
         const userEmail = email
         const subject = 'Password reset action.'
         const text = 'You have requested a password reset action.'
-        const htmlBody = `<><p>Please copy this token: <b id='input'>${resetToken}</b> and use it to login and set new password.</p><form method="post" action="http://localhost:3000/resetpassword"><input type ="hidden" name ="extra_submit_param" value ="extra_submit_value"><button type="submit" name ="submit_param" value ="submit_value">Go to reset password screen --></button><a href='http://localhost:3000/resetpassword'>Alternative link</a></form>
+        const htmlBody = `<html>
+        <head>
+          <title>Reset Password</title>
+        </head>
+        <style>
+          body {
+            color: #000;
+            font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+            font-size: 16px;
+            line-height: 24px;
+          }
+        </style>
+        <body>
+        <button id="copy">Copy</button>
+        
+        <script>
+        function copy() {
+            var copyText = document.querySelector("#input");
+            copyText.select();
+            document.execCommand("copy");
+          }
+          
+          document.querySelector("#copy").addEventListener("click", copy);
+        </script>
+          <p>Hello,</p>
+          <p>A password reset was requested for this email address (<%= emailAddress %>). If you requested this reset, click the link below to reset your password:</p>
+          <p><a href="<%= resetLink %>">Reset Your Password</a></p>
+        </body>
+      </html>
         
         
 <button id="copy">Copy</button>
@@ -44,7 +72,22 @@ const forgotUserPassword = asyncHandler(async (req, res) => {
           
           document.querySelector("#copy").addEventListener("click", copy);
         </script>
-        </>`
+       `
+        //         const htmlBody = `<><p>Please copy this token: <b id='input'>${resetToken}</b> and use it to login and set new password.</p><form method="post" action="http://localhost:3000/resetpassword"><input type ="hidden" name ="extra_submit_param" value ="extra_submit_value"><button type="submit" name ="submit_param" value ="submit_value">Go to reset password screen --></button><a href='http://localhost:3000/resetpassword'>Alternative link</a></form>
+
+
+        // <button id="copy">Copy</button>
+
+        //         <script>
+        //         function copy() {
+        //             var copyText = document.querySelector("#input");
+        //             copyText.select();
+        //             document.execCommand("copy");
+        //           }
+
+        //           document.querySelector("#copy").addEventListener("click", copy);
+        //         </script>
+        //         </>`
         // const htmlBody = `<form method="post" action="http://localhost:5000/api/users/reset?${resetToken}"><input type ="hidden" name ="extra_submit_param" value ="extra_submit_value"><button type="submit" name ="submit_param" value ="submit_value">This link will take you to a password reset screen</button><a href='http://localhost:5000/api/users/reset?${resetToken}'>Alternative link</a></form>`
         sendEmailTest(userEmail, subject, text, htmlBody)
     } else {
