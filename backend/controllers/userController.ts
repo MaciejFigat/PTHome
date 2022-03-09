@@ -43,11 +43,13 @@ const forgotUserPassword = asyncHandler(async (req, res) => {
           }
         </style>
         <body>
+        <div id="keyDiv">copy the content</div>
         <button id="copy">Copy</button>
+        
         
         <script>
         function copy() {
-            var copyText = document.querySelector("#input");
+            var copyText = document.querySelector("#keyDiv");
             copyText.select();
             document.execCommand("copy");
           }
@@ -58,21 +60,7 @@ const forgotUserPassword = asyncHandler(async (req, res) => {
           <p>A password reset was requested for this email address (<%= emailAddress %>). If you requested this reset, click the link below to reset your password:</p>
           <p><a href="<%= resetLink %>">Reset Your Password</a></p>
         </body>
-      </html>
-        
-        
-<button id="copy">Copy</button>
-        
-        <script>
-        function copy() {
-            var copyText = document.querySelector("#input");
-            copyText.select();
-            document.execCommand("copy");
-          }
-          
-          document.querySelector("#copy").addEventListener("click", copy);
-        </script>
-       `
+      </html>`
         //         const htmlBody = `<><p>Please copy this token: <b id='input'>${resetToken}</b> and use it to login and set new password.</p><form method="post" action="http://localhost:3000/resetpassword"><input type ="hidden" name ="extra_submit_param" value ="extra_submit_value"><button type="submit" name ="submit_param" value ="submit_value">Go to reset password screen --></button><a href='http://localhost:3000/resetpassword'>Alternative link</a></form>
 
 
