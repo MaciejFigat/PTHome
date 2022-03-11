@@ -32,7 +32,8 @@ const forgotUserPassword = asyncHandler(async (req, res) => {
         const text = 'You have requested a password reset action.'
 
         const htmlBody = `<p>Please copy this token: <b>${resetToken}</b> and use it to login and set  a new password.</p>
-        <a href='http://localhost:3000/resetpassword'>Alternative link</a>`
+        <a href='https://lexfront.netlify.app/resetpassword'>Alternative link</a>`
+        // <a href='http://localhost:3000/resetpassword'>Alternative link</a>`
         // const htmlBody = `<form method="post" action="http://localhost:5000/api/users/reset?${resetToken}"><input type ="hidden" name ="extra_submit_param" value ="extra_submit_value"><button type="submit" name ="submit_param" value ="submit_value">This link will take you to a password reset screen</button><a href='http://localhost:5000/api/users/reset?${resetToken}'>Alternative link</a></form>`
         sendEmailTest(userEmail, subject, text, htmlBody)
     } else {
