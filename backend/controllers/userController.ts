@@ -29,8 +29,7 @@ const forgotUserPassword = asyncHandler(async (req, res) => {
         // here we send the email with the reset link
         const userEmail = email
         const subject = 'Password reset action.'
-        const text = 'You have requested a password reset action.'
-
+        const text = 'Welcome to TurboLex beta!'
         const htmlBody = `<p>Please copy this token: <b>${resetToken}</b> and use it to login and set  a new password.</p>
         <a href='https://lexfront.netlify.app/resetpassword'>Alternative link</a>`
         // <a href='http://localhost:3000/resetpassword'>Alternative link</a>`
