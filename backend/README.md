@@ -188,3 +188,13 @@ controllers that use nodemailer module
 testActivateUser - > confirmUser 
 STILL DOESNT WORK !!!!
 EXTERNAL LINK IS CAUSING THE SERVER RESPONSE HOWEVER IT IS NOT REFLECTED IN THE DB
+
+Misc 
+
+Nullish Coalescing
+    let x = foo ?? bar() return foo if it's not null or undefined otherwise calculate bar
+
+“Non-null assertion operator“
+
+    const selectionRange = selection!.getRangeAt(0)
+    basically it means that when you add the exclamation mark after a property/value, you are telling TypeScript that you are certain that value is not null or undefined.
