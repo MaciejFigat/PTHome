@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react'
-// import AnimatedBubble from '../AnimatedBubble/AnimatedBubble'
 import {
   SectionColumn,
   ScrollSectionRow,
