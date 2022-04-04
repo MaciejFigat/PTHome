@@ -7,13 +7,12 @@ export interface Fragment extends Document {
         ref: string
     }
 
-    // idRedux: string,
     source: string,
     excerpt: string,
     coordinates: string,
     title: string,
     description: string
-
+    // updatedAt?: number
 
 }
 
@@ -25,10 +24,6 @@ const fragmentSchema = new Schema<Fragment>(
             ref: 'User',
         },
 
-        // idRedux: {
-        //     type: String,
-        //     required: true,
-        // },
         source: {
             type: String,
             required: true,
@@ -48,7 +43,11 @@ const fragmentSchema = new Schema<Fragment>(
         description: {
             type: String,
             required: true,
-        }
+        },
+        // updatedAt: {
+        //     type: Date,
+        //     required: false,
+        // },
 
 
     },

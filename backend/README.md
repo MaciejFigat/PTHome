@@ -198,3 +198,10 @@ Nullish Coalescing
 
     const selectionRange = selection!.getRangeAt(0)
     basically it means that when you add the exclamation mark after a property/value, you are telling TypeScript that you are certain that value is not null or undefined.
+
+BE fragment functionality
+@route POST /api/fragments - addNewFragment (controller)
+
+@route PUT /api/fragments/:id  - updateFragment (c)
+
+@route GET /api/fragments/myfragments - getMyFragments (c)

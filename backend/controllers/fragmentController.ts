@@ -31,78 +31,50 @@ const addNewFragment = asyncHandler(async (req: any, res: any) => {
 })
 
 
-// @description get order by id
-// @route GET /api/orders/:id
+
+
+// @description update Fragment 
+// @route PUT /api/fragments/:id 
 // @access private
 
-const getOrderById = asyncHandler(async (req, res) => {
-    // the following will find order by its id and add to that associated user and email
-    const order = await Order.findById(req.params.id).populate(
-        'user',
-        'name email'
-    )
-    if (order) {
-        res.json(order)
-    } else {
+const updateFragment = asyncHandler(async (req, res) => {
+    const {
+        source,
+        excerpt,
+        coordinates,
+        title,
+        description,
+    } = req.body
+    const fragment = await Fragment.findById(req.params.id)
+
+    if (fragment) {
+
+        fragment.source = source
+        fragment.excerpt = excerpt
+        fragment.coordinates = coordinates
+        fragment.title = title
+        fragment.description = description
+        // fragment.updatedAt = Date.now()
+
+        const updatedFragment = await fragment.save()
+        res.json(updatedFragment)
+    }
+    else {
         res.status(404)
-        throw new Error('Order not found')
+        throw new Error('Fragment not found')
     }
 })
 
-// @description update order to paid
-// @route PUT /api/orders/:id/pay - I think it's a put request
+
+
+// @description get logged in user fragments
+// @route GET /api/fragments/myfragments
 // @access private
 
-const updateOrderToPaid = asyncHandler(async (req, res) => {
-    const order = await Order.findById(req.params.id)
-
-    if (order) {
-        order.isPaid = true
-        order.paidAt = Date.now()
-        order.paymentResult = {
-            id: req.body.id,
-            status: req.body.status,
-            update_time: req.body.update_time,
-            email_address: req.body.payer.email_address,
-        }
-
-        const updatedOrder = await order.save()
-
-        res.json(updatedOrder)
-    } else {
-        res.status(404)
-        throw new Error('Order not found')
-    }
-})
-
-// @description update order to delivered
-// @route PUT /api/orders/:id/deliver
-// @access private/admin
-
-const updateOrderToDelivered = asyncHandler(async (req, res) => {
-    const order = await Order.findById(req.params.id)
-
-    if (order) {
-        order.isDelivered = true
-        order.deliveredAt = Date.now()
-
-        const updatedOrder = await order.save()
-
-        res.json(updatedOrder)
-    } else {
-        res.status(404)
-        throw new Error('Order not found')
-    }
-})
-
-// @description get logged in user orders
-// @route GET /api/orders/myorders
-// @access private
-
-const getMyOrders = asyncHandler(async (req, res) => {
-    //only want to find orders that user is equal req.user_id, so only logged in user
-    const orders = await Order.find({ user: req.user._id })
-    res.json(orders)
+const getMyFragments = asyncHandler(async (req: any, res: any) => {
+    //only want to find fragments that user is equal req.user_id, so only logged in user
+    const fragments = await Fragment.find({ user: req.user._id })
+    res.json(fragments)
 })
 
 // @description get all orders
