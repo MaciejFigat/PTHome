@@ -77,20 +77,37 @@ const getMyFragments = asyncHandler(async (req: any, res: any) => {
     res.json(fragments)
 })
 
-// @description get all orders
-// @route GET /api/orders
+// @description delete selected fragment
+// @route DELETE /api/fragments/:id
 // @access private/admin
 
-const getOrders = asyncHandler(async (req, res) => {
-    const orders = await Order.find({}).populate('user', 'id name')
-    res.json(orders)
+const deleteFragment = asyncHandler(async (req, res) => {
+    const fragment = await Fragment.findById(req.params.id)
+
+    if (fragment) {
+        await fragment.remove()
+        res.json({ message: 'Fragment removed' })
+    } else {
+        res.status(404)
+        throw new Error('Fragment not found')
+    }
+})
+
+
+// @description get all fragments
+// @route GET /api/fragments
+// @access private/admin
+
+const getAllFragments = asyncHandler(async (req, res) => {
+    const fragments = await Fragment.find({}).populate('user', 'id name')
+    res.json(fragments)
 })
 
 export {
-    addOrderItems,
-    getOrderById,
-    updateOrderToPaid,
-    updateOrderToDelivered,
-    getMyOrders,
-    getOrders,
+    addNewFragment,
+    updateFragment,
+    getMyFragments,
+    deleteFragment,
+    getAllFragments
+
 }

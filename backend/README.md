@@ -205,3 +205,7 @@ BE fragment functionality
 @route PUT /api/fragments/:id  - updateFragment (c)
 
 @route GET /api/fragments/myfragments - getMyFragments (c)
+
+@route DELETE /api/fragments/:id - deleteFragment (c)
+
+@route GET /api/fragments - getAllFragments (c)
