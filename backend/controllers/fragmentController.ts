@@ -12,6 +12,7 @@ const addNewFragment = asyncHandler(async (req: any, res: any) => {
         coordinates,
         title,
         description,
+        keywords
     } = req.body
 
 
@@ -22,6 +23,7 @@ const addNewFragment = asyncHandler(async (req: any, res: any) => {
         coordinates,
         title,
         description,
+        keywords
     })
 
     const createdFragment = await fragment.save()
