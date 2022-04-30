@@ -11,8 +11,9 @@ export interface Fragment extends Document {
     excerpt: string,
     coordinates: string,
     title: string,
-    description: string
-    // updatedAt?: number
+    description: string,
+    // todo part of keyword functionality
+    keywords: string[]
 
 }
 
@@ -44,10 +45,12 @@ const fragmentSchema = new Schema<Fragment>(
             type: String,
             required: true,
         },
-        // updatedAt: {
-        //     type: Date,
-        //     required: false,
-        // },
+        // todo part of keyword functionality
+        keywords: [{
+            type: String,
+            required: false,
+        }],
+
 
 
     },
