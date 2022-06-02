@@ -31,38 +31,48 @@ app.use('/api/fragments', fragmentRoutes)
 
 //todo lex API
 // app.get('/lexapi', (req, res) => {
-app.get('/lexapi', async (req: any, res: any, next) => {
+app.get(`/lexapi/search/`, async (req: any, res: any, next) => {
     // const {
     //     searchquery
     // } = req.body
+    // const {
+    //     searchquery
+    // } = req.queryreq.query.
+    const searchquery = req.query.searchquery
+    // const searchquery = req.query.id
+    // const searchquery = 'test'
     // axios.get(`https://null.turbo-lex.pl/search/?query=${searchquery}`)
-    axios.get(`https://null.turbo-lex.pl/`)
+    axios.get(`https://null.turbo-lex.pl/search/?query=${searchquery}`)
+
+
         .then(response => {
             console.log(response.data.url);
             console.log(response.data);
             // console.log(res.json(JSON.parse(JSON.stringify(response.data))));
+            // res.json(JSON.parse(JSON.stringify(response.data)))
             res.json(JSON.parse(JSON.stringify(response.data)))
-
 
         })
         .catch(error => {
             console.log(error);
         });
-    // try {
-    //     // axios.get('https://null.turbo-lex.pl/doc/73470228')
-    //     // axios.get('https://null.turbo-lex.pl/')
-    //     // axios.get('https://null.turbo-lex.pl/search/?query=obrona%20konieczna')
-    //     axios.get('https://null.turbo-lex.pl/search/?query=vat')
-    //         // .then(data => res.status(200).send(data)).then(data => res.json(JSON.parse(data)))
-    //         .then(data => res.status(200).send(data))
-    //         .catch(err => res.send(err));
 
-    //     console.log(res.headers)
-    // }
-    // catch (err) {
-    //     console.error("GG", err);
-    // }
 })
+// ! Working example ----------- 
+// app.get('/lexapi', async (req: any, res: any, next) => {
+
+//     axios.get(`https://null.turbo-lex.pl/`)
+//         .then(response => {
+//             console.log(response.data.url);
+//             console.log(response.data);
+//             res.json(JSON.parse(JSON.stringify(response.data)))
+//         })
+//         .catch(error => {
+//             console.log(error);
+//         });
+
+// })
+// ! Working example End ----------
 //@ts-ignore
 // request(
 //     { url: 'https://null.turbo-lex.pl/' },
