@@ -47,11 +47,7 @@ app.get(`/lexapi/search/`, async (req: any, res: any, next) => {
 
 })
 // todo https://null.turbo-lex.pl/doc/26042463?query_doc=dochodowy&selected_doc=2
-<<<<<<< HEAD
-app.get(`/lexapi/doc/:id`, async (req: any, res: any, next) => {
-=======
-app.get(`/lexapi/doc/:nr`, async (req: any, res: any, next) => {
->>>>>>> 03b0345e4e4f2530fe5d6b70e4af1132c939e034
+app.get(`/lexapi/doc/`, async (req: any, res: any, next) => {
     // const query = 'podatek dochodowy'
     // const selectedDoc = 2
     // const docNumber = 26042463
@@ -68,10 +64,10 @@ app.get(`/lexapi/doc/:nr`, async (req: any, res: any, next) => {
     // typeof selectedDoc !== 'undefined' &&
     // typeof docNumber !== 'undefined'
     // ) {
-    // axios.get(`https://null.turbo-lex.pl/doc/${docNumber}?query_doc=${query}&selected_doc=${selectedDoc}`)
     axios.get(`https://null.turbo-lex.pl/doc/${req.query.nr}`)
+        // axios.get(`https://null.turbo-lex.pl/doc/${docNumber}?query_doc=${query}&selected_doc=${selectedDoc}`)
         .then(response => {
-            // console.log(response.data.url);
+            console.log(response.data.url);
             // console.log(response.data);
             res.json(JSON.parse(JSON.stringify(response.data)))
         })
