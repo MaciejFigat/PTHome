@@ -79,6 +79,22 @@ app.get(`/lexapi/doc/`, async (req: any, res: any, next) => {
     // }
 
 })
+// todo https://null.turbo-lex.pl/doc/26042463
+app.get(`/lexapi/doc/:id`, async (req: any, res: any, next) => {
+
+    axios.get(`https://null.turbo-lex.pl/doc/${req.query.nr}`)
+
+        .then(response => {
+            console.log(response.data.url);
+
+            res.json(JSON.parse(JSON.stringify(response.data)))
+        })
+        .catch(error => {
+            console.log(error);
+        });
+
+
+})
 // ! Working example ----------- 
 // app.get('/lexapi', async (req: any, res: any, next) => {
 
