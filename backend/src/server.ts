@@ -54,18 +54,15 @@ app.get(`/lexapi/doc/`, async (req: any, res: any, next) => {
     // const { searchquery, selectedDoc, docNumber } = req.query.docQuery
     // const { query, selectedDoc, docNumber } = req.query.searchquery
     // const { query, selectedDoc, docNumber } = req.query.docQuery
+    const { query, selectedDoc, docNumber } = req.query
 
-    // const searchquery = 'dochodowy'
-    // const selectedDoc = 2
-    // const docNumber = 26042463
-    // if (
-    //     typeof req.query.searchquery !== 'undefined'
-    // typeof query !== 'undefined' &&
-    // typeof selectedDoc !== 'undefined' &&
-    // typeof docNumber !== 'undefined'
-    // ) {
-    axios.get(`https://null.turbo-lex.pl/doc/${req.query.nr}`)
-        // axios.get(`https://null.turbo-lex.pl/doc/${docNumber}?query_doc=${query}&selected_doc=${selectedDoc}`)
+
+
+
+    //? 87283004?query=sp%C3%B3%C5%82ki+skarbu+pa%C5%84stwa&selected=0&jumpto=True"
+
+    // axios.get(`https://null.turbo-lex.pl/doc/${docNumber}?query_doc=${query}&selected_doc=${selectedDoc}`)
+    axios.get(`https://null.turbo-lex.pl/doc/${docNumber}?query=${query}&selected=${selectedDoc}`)
         .then(response => {
             console.log(response.data.url);
             // console.log(response.data);
@@ -85,7 +82,7 @@ app.get(`/lexapi/doc/:id`, async (req: any, res: any, next) => {
     axios.get(`https://null.turbo-lex.pl/doc/${req.query.nr}`)
 
         .then(response => {
-            console.log(response.data.url);
+            // console.log(response.data.url);
 
             res.json(JSON.parse(JSON.stringify(response.data)))
         })
