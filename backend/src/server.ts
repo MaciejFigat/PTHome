@@ -56,7 +56,7 @@ app.get(`/lexapi/doc/`, async (req: any, res: any, next) => {
     axios.get(`https://null.turbo-lex.pl/doc/${docNumber}?query_doc=${query}&selected_doc=${selectedDoc}`)
         // axios.get(`https://null.turbo-lex.pl/doc/${docNumber}?query=${query}&selected=${selectedDoc}`)
         .then(response => {
-            console.log(response.data.url);
+            // console.log(response.data.url);
             res.json(JSON.parse(JSON.stringify(response.data)))
         })
         .catch(error => {
