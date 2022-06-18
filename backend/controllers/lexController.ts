@@ -1,5 +1,5 @@
 import asyncHandler from 'express-async-handler'
-
+import axios from 'axios'
 
 // @description 
 // @route GET /lexapi
@@ -7,7 +7,18 @@ import asyncHandler from 'express-async-handler'
 
 const getResponse = asyncHandler(async (req, res) => {
 
-    // const articles = await Article.find({})
+
+    axios.get(`https://null.turbo-lex.pl/`)
+        .then(response => {
+            // console.log(response.data.url);
+            console.log(response.data);
+            res.json(JSON.parse(JSON.stringify(response.data)))
+        })
+        .catch(error => {
+            console.log(error);
+        });
+
+
     res.json(res)
 })
 

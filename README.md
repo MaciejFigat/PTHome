@@ -34,3 +34,8 @@ npm install xpath-range
 
 3. onHighlightAction 
 We are using redux, so this action will build an annotation object of type highlight and dispatch a saveUserUserAnnotation that will save metadata to the database (more details to follow under the database model session). That metadata is then used to reconstruct a highlighted text once a user refreshes or loads that page again.
+
+
+*** https://null.turbo-lex.pl/search/?query=test** Valid request
+*** https://null.turbo-lex.pl/doc/90218449** Valid request
+*** https://null.turbo-lex.pl/doc/85725494?query_doc=skarbu&selected_doc=1** Valid request

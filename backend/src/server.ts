@@ -8,7 +8,7 @@ import articleRoutes from '../routes/articleRoutes'
 import fragmentRoutes from '../routes/fragmentRoutes'
 import connectDB from '../config/db'
 import { notFound, errorHandler } from '../middleware/errorMiddleware'
-// import lexapiRoutes from '../routes/lexapiRoutes'
+import lexapiRoutes from '../routes/lexapiRoutes'
 import axios from 'axios'
 
 dotenv.config()
@@ -27,7 +27,8 @@ app.use((req, res, next) => {
 app.use('/api/users', userRoutes)
 app.use('/api/articles', articleRoutes)
 app.use('/api/fragments', fragmentRoutes)
-// app.use('/lexapi/', lexapiRoutes)
+//todo 
+app.use('/lexapi', lexapiRoutes)
 
 //todo lex API search query
 
@@ -37,8 +38,7 @@ app.get(`/lexapi/search/`, async (req: any, res: any, next) => {
 
     axios.get(`https://null.turbo-lex.pl/search/?query=${searchquery}`)
         .then(response => {
-            // console.log(response.data.url);
-            // console.log(response.data);
+
             res.json(JSON.parse(JSON.stringify(response.data)))
         })
         .catch(error => {
@@ -56,7 +56,7 @@ app.get(`/lexapi/doc/`, async (req: any, res: any, next) => {
     axios.get(`https://null.turbo-lex.pl/doc/${docNumber}?query_doc=${query}&selected_doc=${selectedDoc}`)
         // axios.get(`https://null.turbo-lex.pl/doc/${docNumber}?query=${query}&selected=${selectedDoc}`)
         .then(response => {
-            // console.log(response.data.url);
+
             res.json(JSON.parse(JSON.stringify(response.data)))
         })
         .catch(error => {
