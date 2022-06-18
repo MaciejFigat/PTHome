@@ -8,7 +8,7 @@ import articleRoutes from '../routes/articleRoutes'
 import fragmentRoutes from '../routes/fragmentRoutes'
 import connectDB from '../config/db'
 import { notFound, errorHandler } from '../middleware/errorMiddleware'
-import lexapiRoutes from '../routes/lexapiRoutes'
+// import lexapiRoutes from '../routes/lexapiRoutes'
 import axios from 'axios'
 
 dotenv.config()
@@ -28,7 +28,7 @@ app.use('/api/users', userRoutes)
 app.use('/api/articles', articleRoutes)
 app.use('/api/fragments', fragmentRoutes)
 //todo 
-app.use('/lexapi', lexapiRoutes)
+// app.use('/lexapi', lexapiRoutes)
 
 //todo lex API search query
 
