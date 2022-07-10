@@ -65,6 +65,24 @@ app.get(`/lexapi/doc/`, async (req: any, res: any, next) => {
 
 
 })
+//!WORK IN PROGRESS /searchSkip
+
+// todo https://null.turbo-lex.pl/searchSkip/?query=cfc&skip=1&take=2&start_date=20160101&end_date=20220101
+app.get(`/lexapi/searchSkip/`, async (req: any, res: any, next) => {
+
+    const { query, skip, take, start_date, end_date } = req.query
+    axios.get(`https://null.turbo-lex.pl/searchSkip/?query=${query}&skip=${skip}&take=${take}&start_date=${start_date}&end_date=${end_date}`)
+
+        .then(response => {
+            res.json(JSON.parse(JSON.stringify(response.data)))
+        })
+        .catch(error => {
+            console.log(error);
+        });
+
+
+})
+//!
 // todo https://null.turbo-lex.pl/doc/26042463
 app.get(`/lexapi/doc/nr`, async (req: any, res: any, next) => {
 
