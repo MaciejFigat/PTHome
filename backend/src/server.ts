@@ -65,6 +65,28 @@ app.get(`/lexapi/doc/`, async (req: any, res: any, next) => {
 
 
 })
+//? /lexapi/doc/id/query Doc id and query - used in recent links
+app.get(`/lexapi/doc/id/query`, async (req: any, res: any, next) => {
+
+    const { query, docNumber } = req.query
+
+    //? 87283004?query=sp%C3%B3%C5%82ki+skarbu+pa%C5%84stwa&selected=0&jumpto=True"
+
+    axios.get(`https://null.turbo-lex.pl/doc/${docNumber}?query_doc=${query}`)
+        // axios.get(`https://null.turbo-lex.pl/doc/${docNumber}?query=${query}&selected=${selectedDoc}`)
+        .then(response => {
+
+            res.json(JSON.parse(JSON.stringify(response.data)))
+        })
+        .catch(error => {
+            console.log(error);
+        });
+
+
+})
+
+
+
 //!WORK IN PROGRESS /searchSkip
 
 // todo https://null.turbo-lex.pl/searchSkip/?query=cfc&skip=1&take=2&start_date=20160101&end_date=20220101

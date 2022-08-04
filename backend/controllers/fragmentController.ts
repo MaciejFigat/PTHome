@@ -12,7 +12,8 @@ const addNewFragment = asyncHandler(async (req: any, res: any) => {
         coordinates,
         title,
         description,
-        keywords
+        keywords,
+        keywordValue
     } = req.body
 
 
@@ -23,7 +24,8 @@ const addNewFragment = asyncHandler(async (req: any, res: any) => {
         coordinates,
         title,
         description,
-        keywords
+        keywords,
+        keywordValue
     })
 
     const createdFragment = await fragment.save()
@@ -45,7 +47,8 @@ const updateFragment = asyncHandler(async (req, res) => {
         coordinates,
         title,
         description,
-        keywords
+        keywords,
+        keywordValue
     } = req.body
     const fragment = await Fragment.findById(req.params.id)
 
@@ -57,6 +60,7 @@ const updateFragment = asyncHandler(async (req, res) => {
         fragment.title = title
         fragment.description = description
         fragment.keywords = keywords
+        fragment.keywordValue = keywordValue
 
 
         const updatedFragment = await fragment.save()
