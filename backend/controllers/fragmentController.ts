@@ -54,13 +54,13 @@ const updateFragment = asyncHandler(async (req, res) => {
 
     if (fragment) {
 
-        fragment.source = source
-        fragment.excerpt = excerpt
-        fragment.coordinates = coordinates
-        fragment.title = title
-        fragment.description = description
-        fragment.keywords = keywords
-        fragment.keywordValue = keywordValue
+        fragment.source = source || fragment.source
+        fragment.excerpt = excerpt || fragment.excerpt
+        fragment.coordinates = coordinates || fragment.coordinates
+        fragment.title = title || fragment.title
+        fragment.description = description || fragment.description
+        fragment.keywords = keywords || fragment.keywords
+        fragment.keywordValue = keywordValue || fragment.keywordValue
 
 
         const updatedFragment = await fragment.save()
