@@ -14,7 +14,7 @@ export interface Fragment extends Document {
     description: string,
     // todo part of keyword functionality
     keywords: string[]
-    keywordValue: { keyword: string, value: boolean }[]
+    keywordValue: { keyword: string, value: boolean, skip: boolean, labelOne: string, labelTwo: string }[]
 
 }
 
@@ -53,38 +53,15 @@ const fragmentSchema = new Schema<Fragment>(
         }],
         keywordValue: [{
             keyword: String,
-            value: Boolean
-            // keyword: String,
-            // value: Boolean
+            value: Boolean,
+            skip: Boolean,
+            labelOne: String,
+            labelTwo: String
+
         }
 
 
         ],
-        // keywordValue: [{
-        //     type: Array,
-        //     keyword: {
-        //         type: String,
-        //         required: false,
-        //     },
-        //     value: {
-        //         type: Boolean,
-        //         required: false,
-        //     },
-        //     required: false,
-
-        // }],
-        // keywordValue: [{
-        //     keyword: {
-        //         type: String,
-        //         required: false,
-        //     },
-        //     value: {
-        //         type: Boolean,
-        //         required: false,
-        //     },
-        //     required: false,
-
-        // }],
 
 
 
