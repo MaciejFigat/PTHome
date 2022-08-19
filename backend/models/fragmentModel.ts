@@ -13,7 +13,9 @@ export interface Fragment extends Document {
     title: string,
     description: string,
     // todo part of keyword functionality
-    keywords: string[]
+    docId: string,
+    query: string,
+    keywords: string[],
     keywordValue: { keyword: string, value: boolean, skip: boolean, labelOne: string, labelTwo: string }[]
 
 }
@@ -46,7 +48,15 @@ const fragmentSchema = new Schema<Fragment>(
             type: String,
             required: true,
         },
-        // todo part of keyword functionality
+
+        docId: {
+            type: String,
+            required: false,
+        },
+        query: {
+            type: String,
+            required: false,
+        },
         keywords: [{
             type: String,
             required: false,
