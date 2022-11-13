@@ -101,6 +101,7 @@ const resetUserPassword = asyncHandler(async (req, res) => {
             _id: user._id,
             name: user.name,
             email: user.email,
+            status: user.status,
             isAdmin: user.isAdmin,
             token: generateToken(user._id),
         })
@@ -124,11 +125,14 @@ const authUser = asyncHandler(async (req, res) => {
         res.json({
             _id: user._id,
             name: user.name,
+            status: user.status,
             email: user.email,
             isAdmin: user.isAdmin,
-            status: user.status,
             token: generateToken(user._id),
+
         })
+
+
     } else {
         res.status(401)
         throw new Error('Wrong username or password')
@@ -144,6 +148,7 @@ const testReset = asyncHandler(async (req, res) => {
         res.json({
             _id: user._id,
             name: user.name,
+            status: user.status,
             email: user.email,
             isAdmin: user.isAdmin,
             token: generateToken(user._id),

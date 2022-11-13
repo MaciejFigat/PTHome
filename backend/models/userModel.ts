@@ -8,10 +8,10 @@ export interface User extends Document {
     password: string
     isAdmin?: boolean
     matchPassword: (password: string) => Promise<boolean>
-    resetPasswordToken?: string | number,
-    resetPasswordExpires?: string | number | any,
+    resetPasswordToken?: string | number
+    resetPasswordExpires?: string | number | any
     status: 'Pending' | 'Active'
-    confirmationCode: string | number | any,
+    confirmationCode: string | number | any
 }
 
 const userSchema = new Schema<User>(
@@ -44,6 +44,7 @@ const userSchema = new Schema<User>(
         },
         status: {
             type: String,
+            required: true,
             enum: ['Pending', 'Active'],
             default: 'Pending'
         },
@@ -57,11 +58,23 @@ const userSchema = new Schema<User>(
     }
 )
 
-userSchema.methods.matchPassword = async function (enteredPassword: string) {
+// userSchema.methods.matchPassword = async function (enteredPassword: string) {
+//     return await bcrypt.compare(enteredPassword, this.password)
+// }
+
+// userSchema.pre('save', async function (this: any, next: Function,) {
+//     if (!this.isModified('password')) {
+//         next()
+//     }
+
+//     const salt = await bcrypt.genSalt(10)
+//     this.password = await bcrypt.hash(this.password, salt)
+// })
+
+userSchema.methods.matchPassword = async function (enteredPassword) {
     return await bcrypt.compare(enteredPassword, this.password)
 }
-
-userSchema.pre('save', async function (this: any, next: Function,) {
+userSchema.pre('save', async function (next) {
     if (!this.isModified('password')) {
         next()
     }
