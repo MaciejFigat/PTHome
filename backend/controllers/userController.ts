@@ -28,10 +28,46 @@ const forgotUserPassword = asyncHandler(async (req, res) => {
         })
         // here we send the email with the reset link
         const userEmail = email
-        const subject = 'Password reset action.'
-        const text = 'Welcome to TurboLex beta!'
-        const htmlBody = `<p>Please copy this token: <b>${resetToken}</b> and use it to login and set a new password.</p>
-        <a href='https://lexfront.netlify.app/resetpassword'>Alternative link</a>`
+        const subject = 'TurboLex reset hasła'
+        const text = 'Zmiana hasła lub zalogowanie bez zmiany.'
+        const htmlBody = (process.env.NODE_ENV === 'production') ? (`
+        
+                    <div style='display: grid; place-items:center; border-radius: 10px; background-color: #F7F6F2; padding: 16px;'>
+ 
+                        <h2>Wiadomość została wygenerowana w celu resetu hasła w serwisie TurboLex</h2> 
+ 
+                        <h3 style='font-size: 16px; color: #3B5367;'>
+                        Poniższy link prowadzi do ekranu umożliwiającego reset hasła bądź zalogowanie się starym hasłem.</h3>
+   
+
+                            <button style='background-color: #3B5367; text-align: center; border-radius: 5px; border: none; padding: 10px; width: 240px;'>
+                                <a style='text-decoration: none; color: #F7F6F2; font-size: 20px;' href='https://lexbis.netlify.app/resetpassword/${resetToken}'>
+                                Resetuj hasło
+                                </a>
+                            </button>
+ 
+                    </div>`) :
+            (`      <div style='display: grid; place-items:center; border-radius: 10px; background-color: #F7F6F2; padding: 16px;'>
+ 
+                            <h2>Wiadomość została wygenerowana w celu resetu hasła w serwisie TurboLex</h2> 
+ 
+                            <h3 style='font-size: 16px; color: #3B5367;'>
+                            Poniższy link prowadzi do ekranu umożliwiającego reset hasła bądź zalogowanie się starym hasłem.</h3>
+   
+
+                            <button style='background-color: #3B5367; text-align: center; border-radius: 5px; border: none; padding: 10px; width: 240px;'>
+                                    <a style='text-decoration: none; color: #F7F6F2; font-size: 20px;' href='http://localhost:3000/resetpassword/${resetToken}'>
+                                     Resetuj hasło
+                                    </a>
+                            </button>
+ 
+                    </div>`)
+
+
+
+        // `<p>Please copy this token: <b>${resetToken}</b> and use it to login and set a new password.</p>
+        // <a href='https://lexfront.netlify.app/resetpassword'>Alternative link</a>`
+
         // <a href='http://localhost:3000/resetpassword'>Alternative link</a>`
         // const htmlBody = `<form method="post" action="http://localhost:5000/api/users/reset?${resetToken}"><input type ="hidden" name ="extra_submit_param" value ="extra_submit_value"><button type="submit" name ="submit_param" value ="submit_value">This link will take you to a password reset screen</button><a href='http://localhost:5000/api/users/reset?${resetToken}'>Alternative link</a></form>`
         sendEmailTest(userEmail, subject, text, htmlBody)
@@ -197,13 +233,47 @@ const registerUser = asyncHandler(async (req, res) => {
     }
     // here we send the email with confirmationToken
     const userEmail = email
-    const subject = 'Confirmation email'
-    const text = 'Welcome to TurboLex beta!'
+    const subject = 'Witaj w TurboLex'
+    const text = 'Aktywacja konta'
 
-    const htmlBody = `<b>Please copy the confirmation code and use it on the following confirmation screen in our application.</b>
-    <h2>Your code: ${confirmationToken}</h2>
-    <a href='http://localhost:3000/confirmaccount/${confirmationToken}'>Please follow the link and paste the code there.</a></>`
-    // <a href='https://lexbis.netlify.app/confirmaccount?confirmationToken=${confirmationToken}>Please follow the link and paste the code there.</a></>`
+    const htmlBody = (process.env.NODE_ENV === 'production') ? (`
+       
+        <div style='display: grid; place-items:center; border-radius: 10px; background-color: #F7F6F2; padding: 16px;'>
+        
+            <h2>Dziękujemy za rejestrację w TurboLex</h2> 
+        
+            <h3 style='font-size: 16px; color: #3B5367;'>Poniższy link weryfikuje email podany podczas rejestracji na serwisie TurboLex</h3>
+          
+
+            <button style='background-color: #3B5367; text-align: center; border-radius: 5px; border: none; padding: 10px; width: 240px;'>
+                    <a style='text-decoration: none; color: #F7F6F2; font-size: 20px;' href='https://lexbis.netlify.app/confirmaccount/${confirmationToken}'>
+                         Aktywuj konto TurboLex
+                    </a>
+            </button>
+        
+        </div>
+        
+        
+        `) :
+
+
+        (`<div style='display: grid; place-items:center; border-radius: 10px; background-color: #F7F6F2; padding: 16px;'>
+        
+            <h2>Dziękujemy za rejestrację w TurboLex</h2> 
+        
+            <h3 style='font-size: 16px; color: #3B5367;'>Poniższy link weryfikuje email podany podczas rejestracji na serwisie TurboLex</h3>
+          
+
+            <button style='background-color: #3B5367; text-align: center; border-radius: 5px; border: none; padding: 10px; width: 240px;'>
+                    <a style='text-decoration: none; color: #F7F6F2; font-size: 20px;' href='http://localhost:3000/confirmaccount/${confirmationToken}'>
+                         Aktywuj konto TurboLex
+                    </a>
+            </button>
+        
+        </div>`)
+
+
+    // <a href='https://lexbis.netlify.app/confirmaccount/${confirmationToken}'>Please follow the link and paste the code there.</a></>`
     // const htmlBody = `<><b>Please confirm your email by clicking the link below.</b><form method="post" action="http://localhost:5000/api/users/userconfirmation?confirmationCode=${confirmationToken}"><input type ="hidden" name ="extra_submit_param" value ="extra_submit_value"><button type="submit" name ="submit_param" value ="submit_value">You are confirming your email address.</button><a href='http://localhost:5000/api/users/userconfirmation?confirmationCode=${confirmationToken}'>Alternative link</a></form></>`
     sendEmailTest(userEmail, subject, text, htmlBody)
 })
