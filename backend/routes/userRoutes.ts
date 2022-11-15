@@ -20,10 +20,10 @@ const router = express.Router()
 router.route('/').post(registerUser).get(protect, admin, getUsers)
 // this one sends an email with resetToken
 router.route('/forgotPassword').post(forgotUserPassword)
-// this one logs the user in upon receiving the resetToken
+// this one logs the user in upon receiving the resetToken - inactive
 router.route('/passwordReset').get(resetUserPassword)
 
-
+// this is the one used to log in user with the use of resetToken
 router.route('/reset').post(testReset)
 
 // confirm by the user in the email with the token

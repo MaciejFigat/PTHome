@@ -188,6 +188,7 @@ const testReset = asyncHandler(async (req, res) => {
             email: user.email,
             isAdmin: user.isAdmin,
             token: generateToken(user._id),
+            message: 'User reset token confirmed',
         })
     } else {
         res.status(401)
@@ -313,8 +314,8 @@ const updateUser = asyncHandler(async (req, res) => {
     if (user) {
         user.name = req.body.name || user.name
         user.email = req.body.email || user.email
-        user.isAdmin = req.body.isAdmin
-        user.status = req.body.status
+        user.isAdmin = req.body.isAdmin || user.isAdmin
+        user.status = req.body.status || user.status
 
         const updatedUser = await user.save()
 
