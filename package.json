@@ -7,6 +7,7 @@
     "build": "npm run build --prefix backend",
     "buildRender": "npm run buildRender --prefix backend",
     "start": "npm run build && node backend/build/src/server.js",
+    "startRender": "npm run buildRender && node backend/build/src/server.js",
     "client": "npm start --prefix frontend",
     "server": "nodemon --exec ts-node backend/src/server",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
