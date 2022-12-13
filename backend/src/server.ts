@@ -21,8 +21,9 @@ app.use(express.json())
 //todo lex API
 app.use((req, res, next) => {
     // res.header('Access-Control-Allow-Origin', '*');
+    res.header("Content-Type", "application/json");
     res.header('Access-Control-Allow-Origin', 'https://lexbis.netlify.app');
-    // res.header("Access-Control-Allow-Headers", "Content-Type");
+    res.header("Access-Control-Allow-Headers", "Content-Type");
     next();
 });
 
