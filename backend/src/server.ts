@@ -30,8 +30,7 @@ app.use((req, res, next) => {
 
 app.options("*", function (req, res) {
     res.header("Content-Type", "application/json");
-    res.header('Access-Control-Allow-Headers', 'Authorization');
-    res.header("Access-Control-Allow-Headers", "Content-Type");
+    res.header('Access-Control-Allow-Headers', 'Authorization, Content-Type')
     res.send();
 });
 
