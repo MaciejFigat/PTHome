@@ -27,6 +27,12 @@ app.use((req, res, next) => {
     next();
 });
 
+app.options("*", function (req, res) {
+    res.header("Content-Type", "application/json");
+    res.header("Access-Control-Allow-Headers", "Content-Type");
+    res.send();
+});
+
 app.use('/api/users', userRoutes)
 app.use('/api/articles', articleRoutes)
 app.use('/api/fragments', fragmentRoutes)
