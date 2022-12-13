@@ -22,6 +22,7 @@ app.use(express.json())
 app.use((req, res, next) => {
     // res.header('Access-Control-Allow-Origin', '*');
     res.header("Content-Type", "application/json");
+    res.header('Access-Control-Allow-Headers', 'Authorization');
     res.header('Access-Control-Allow-Origin', 'https://lexbis.netlify.app');
     res.header("Access-Control-Allow-Headers", "Content-Type");
     next();
@@ -29,7 +30,7 @@ app.use((req, res, next) => {
 
 app.options("*", function (req, res) {
     res.header("Content-Type", "application/json");
-    res.setHeader('Access-Control-Allow-Headers', 'Authorization')
+    res.header('Access-Control-Allow-Headers', 'Authorization');
     res.header("Access-Control-Allow-Headers", "Content-Type");
     res.send();
 });
